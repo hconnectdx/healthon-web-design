@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>그룹관리</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+		<meta content="Coderthemes" name="author" />
+		<!-- App favicon -->
+		<link rel="shortcut icon" href="assets/images/favicon.ico" />
+
+		<!-- App css -->
+		<link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
+		<link href="assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
+
+		<link href="assets/css/vendor/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/vendor/responsive.bootstrap4.css" rel="stylesheet" type="text/css" />
+		<link href="assets/lib/simplelightbox/simpleLightbox.min.css" rel="stylesheet" type="text/css" />
+
+		<link href="assets/css/base.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/common.css" rel="stylesheet" type="text/css" />
+	</head>
+
+	<body
+		class="loading"
+		data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'
+	>
+		<!-- Begin page -->
+		<div class="wrapper">
+			<!-- ========== Left Sidebar Start ========== -->
+			<div class="left-side-menu">
+				<!-- LOGO -->
+				<a href="main.html" class="logo text-center logo-light">
+					<span class="logo-lg">
+						<img src="assets/images/logo.png" alt="" height="16" />
+					</span>
+					<span class="logo-sm">
+						<img src="assets/images/logo_sm.png" alt="" height="16" />
+					</span>
+				</a>
+				<!-- LOGO -->
+				<a href="main.html" class="logo text-center logo-dark">
+					<span class="logo-lg">
+						<img src="assets/images/logo-dark.png" alt="" height="16" />
+					</span>
+					<span class="logo-sm">
+						<img src="assets/images/logo_sm_dark.png" alt="" height="16" />
+					</span>
+				</a>
+
+				<div class="h-100" id="left-side-menu-container" data-simplebar>
+					<!--- Sidemenu -->
+					<ul class="metismenu side-nav">
+						<li class="side-nav-title side-nav-item">Navigation</li>
+						<li class="side-nav-item">
+							<a href="main.html" class="side-nav-link">
+								<i class="uil-presentation-lines-alt"></i>
+								<span> Dashboards </span>
+							</a>
+						</li>
+						<li class="side-nav-item">
+							<a href="#" class="side-nav-link">
+								<i class="uil-users-alt"></i>
+								<span> 사용자관리 </span>
+								<span class="menu-arrow"></span>
+							</a>
+							<ul class="side-nav-second-level" aria-expanded="false">
+								<li>
+									<a href="users.html">전체사용자</a>
+								</li>
+								<li>
+									<a href="auth01.html">승인 관리</a>
+								</li>
+								<li>
+									<a href="send_message.html">메시지관리</a>
+								</li>
+								<li>
+									<a href="message_list.html">메세지 발송 이력</a>
+								</li>
+							</ul>
+						</li>
+						<li class="side-nav-item">
+							<a href="javascript: void(0);" class="side-nav-link">
+								<i class="uil-comments-alt"></i>
+								<span> 상담 </span>
+								<span class="menu-arrow"></span>
+							</a>
+							<ul class="side-nav-second-level" aria-expanded="false">
+								<li>
+									<a href=".html">대화형 상담</a>
+								</li>
+								<li>
+									<a href=".html">단답형 상담</a>
+								</li>
+								<li>
+									<a href=".html">비대면 상담</a>
+								</li>
+								<li>
+									<a href="doc01.html">문서함</a>
+								</li>
+								<!-- <li>
+                                <a href="consult.html">1:1 상담</a>
+                            </li>
+                            <li>
+                                <a href="telehealth.html">Tel health</a>
+                            </li> -->
+							</ul>
+						</li>
+						<li class="side-nav-item">
+							<a href="javascript: void(0);" class="side-nav-link">
+								<i class="uil-eye"></i>
+								<span> 모니터링 </span>
+								<span class="menu-arrow"></span>
+							</a>
+							<ul class="side-nav-second-level" aria-expanded="false">
+								<li>
+									<a href="moniter_danger.html">위험지수 관리</a>
+								</li>
+								<li>
+									<a href="moniter_adapter.html">순응도 관리</a>
+								</li>
+							</ul>
+						</li>
+						<li class="side-nav-item">
+							<a href="javascript: void(0);" class="side-nav-link">
+								<i class="uil uil-image"></i>
+								<span> 콘텐츠관리 </span>
+								<span class="menu-arrow"></span>
+							</a>
+							<ul class="side-nav-second-level" aria-expanded="false">
+								<li>
+									<a href="sys_content.html">콘텐츠관리</a>
+								</li>
+								<li>
+									<a href="sys_video.html">동영상 관리</a>
+								</li>
+								<li>
+									<a href="sdf.html">줄넘기 팁 관리</a>
+								</li>
+							</ul>
+						</li>
+						<li class="side-nav-item">
+							<a href="javascript: void(0);" class="side-nav-link">
+								<i class="uil-game-structure"></i>
+								<span> 시스템운영 </span>
+								<span class="menu-arrow"></span>
+							</a>
+							<ul class="side-nav-second-level" aria-expanded="false">
+								<li>
+									<a href="sys_group.html">그룹관리</a>
+								</li>
+								<li>
+									<a href="sys_webuser.html">웹 사용자관리</a>
+								</li>
+								<li>
+									<a href="sys_version.html">버전관리</a>
+								</li>
+								<li>
+									<a href="sys_appoint.html">약관 관리</a>
+								</li>
+								<li>
+									<a href="sys_service.html">서비스 문의</a>
+								</li>
+								<li>
+									<a href="sys_connecthistory.html">접속 이력 관리</a>
+								</li>
+								<li>
+									<a href=".html">결제 관리</a>
+								</li>
+								<li>
+									<a href="sys_checkitem.html">검사 항목관리</a>
+								</li>
+								<li>
+									<a href="sys_note.html">공지사항 관리</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<div class="clearfix"></div>
+				</div>
+				<!-- Sidebar -left -->
+			</div>
+			<!-- Left Sidebar End -->
+
+			<!-- ============================================================== -->
+			<!-- Start Page Content here -->
+			<!-- ============================================================== -->
+
+			<div class="content-page">
+				<div class="content">
+					<!-- Topbar Start -->
+					<div class="navbar-custom">
+						<ul class="list-unstyled topbar-right-menu float-right mb-0">
+							<li class="dropdown notification-list d-lg-none">
+								<a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+									<i class="dripicons-search noti-icon"></i>
+								</a>
+								<div class="dropdown-menu dropdown-menu-animated dropdown-lg p-0">
+									<form class="p-3">
+										<input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username" />
+									</form>
+								</div>
+							</li>
+
+							<li class="dropdown notification-list">
+								<a
+									class="nav-link dropdown-toggle nav-user arrow-none mr-0"
+									data-toggle="dropdown"
+									href="#"
+									role="button"
+									aria-haspopup="false"
+									aria-expanded="false"
+								>
+									<span class="account-user-avatar">
+										<img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle" />
+									</span>
+									<span>
+										<span class="account-user-name">James Kim</span>
+										<span class="account-position">의사 <i class="dripicons-chevron-down"></i></span>
+									</span>
+								</a>
+								<div class="dropdown-menu dropdown-menu-right dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
+									<!-- item-->
+									<a href="javascript:void(0);" onclick="showMyAccountDlg()" class="dropdown-item notify-item">
+										<i class="mdi mdi-account-circle mr-1"></i>
+										<span>My Account</span>
+									</a>
+
+									<!-- item-->
+									<a href="javascript:void(0);" onclick="showSettingDlg()" class="dropdown-item notify-item">
+										<i class="mdi mdi-account-edit mr-1"></i>
+										<span>Settings</span>
+									</a>
+									<!-- item-->
+									<a href="login.html" class="dropdown-item notify-item">
+										<i class="mdi mdi-logout mr-1"></i>
+										<span>Logout</span>
+									</a>
+								</div>
+							</li>
+						</ul>
+						<button class="button-menu-mobile open-left disable-btn">
+							<i class="mdi mdi-menu"></i>
+						</button>
+						<h4 class="page-title color-title float-left mt-3">그룹 관리</h4>
+						<div class="app-search dropdown d-none d-lg-block float-right">
+							<form>
+								<div class="input-group">
+									<input type="text" class="form-control dropdown-toggle" placeholder="사용자를 검색할수 있습니다." id="top-search" />
+									<span class="mdi mdi-magnify search-icon"></span>
+									<div class="input-group-append">
+										<button class="btn btn-primary" type="submit">검색</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					<!-- end Topbar -->
+					<!-- Start Content-->
+					<div class="container-fluid">
+						<!-- start page title -->
+						<div class="row">
+							<div class="col-12">
+								<div class="page-title-box">
+									<div class="page-title-right">
+										<ol class="breadcrumb m-0 pt-0">
+											<li class="breadcrumb-item"><a href="javascript: void(0);">시스템 운영</a></li>
+											<li class="breadcrumb-item">그룹 관리</li>
+										</ol>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- end page title -->
+						<div>
+							<ul class="nav nav-tabs nav-bordered mb-3 nav-tabs-my">
+								<li class="nav-item">
+									<a href="#group_lookup" data-toggle="tab" aria-expanded="false" class="nav-link rounded-0 active">
+										<span class="d-md-block">그룹 조회</span>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="#group_new" data-toggle="tab" aria-expanded="false" class="nav-link rounded-0">
+										<span class="d-md-block">신규 그룹 등록</span>
+									</a>
+								</li>
+							</ul>
+							<div class="tab-content">
+								<div class="tab-pane show active" id="group_lookup">
+									<div class="card">
+										<div class="card-body">
+											<table class="table table-centered table-hover w-100 nowrap" id="note-datatable">
+												<thead class="thead-light">
+													<tr>
+														<th>구분</th>
+														<th>상태</th>
+														<th>그룹 이름</th>
+														<th>사용자 승인</th>
+														<th>대표 관리자</th>
+														<th>대표 관리자 이메일</th>
+														<th>대표 관리자 연락처</th>
+														<th>등록일</th>
+														<th style="width: 225px">관리</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>병원</td>
+														<td>활성</td>
+														<td>ABCDEFGH Hospital</td>
+														<td>해당 없음</td>
+														<td>홍길동</td>
+														<td>hong@hc.com</td>
+														<td>+82 212345333</td>
+														<td>2020-01-01 14:20</td>
+														<td>
+															<button class="btn btn-positive cursor" type="submit"><i class="mdi mdi-square-edit-outline pr-10"></i>등록정보수정</button>
+														</td>
+													</tr>
+													<tr>
+														<td>병원</td>
+														<td>비활성</td>
+														<td>ABCDE Hospital</td>
+														<td>직접 승인</td>
+														<td>김영미</td>
+														<td>kim@hc.com</td>
+														<td>+82 212334567</td>
+														<td>2020-01-01 14:20</td>
+														<td>
+															<button class="btn btn-positive cursor" type="submit"><i class="mdi mdi-square-edit-outline pr-10"></i>등록정보수정</button>
+														</td>
+													</tr>
+													<tr>
+														<td>병원</td>
+														<td>활성</td>
+														<td>GG Hospital</td>
+														<td>
+															<a class="btn-download" href="javascript:void(0)">데이터 매칭<i class="pl-10 dripicons-download"></i></a>
+														</td>
+														<td>홍길동</td>
+														<td>hong@hc.com</td>
+														<td>+82 212345333</td>
+														<td>2020-01-01 14:20</td>
+														<td>
+															<button class="btn btn-positive btn-primary cursor" type="submit">
+																<i class="mdi mdi-square-edit-outline pr-10"></i>등록정보수정
+															</button>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+										<!-- end card-body-->
+									</div>
+									<!-- end card-->
+								</div>
+								<div class="tab-pane show" id="group_new">
+									<div class="row">
+										<div class="col-xl-7 col-lg-6 order-lg-1 order-xl-1 mb-2 mb-lg-0">
+											<div class="card">
+												<div class="card-body">
+													<h4 class="card-title">신규 그룹 등록</h4>
+													<div class="row">
+														<div class="col-xl-6">
+															<div class="form-group mb-0">
+																<label class="col-form-label"><b>구분</b></label>
+															</div>
+															<div class="form-row mb-2">
+																<!-- 2022 아델리 추가 -->
+																<select class="form-control select-gr" id="example-select">
+																	<option>일반기업</option>
+																	<option value="grActive">의료기관</option>
+																</select>
+																<!-- // 2022 아델리 추가 -->
+															</div>
+														</div>
+														<div class="col-xl-6">
+															<div class="form-group mb-0">
+																<label class="col-form-label"><b>그룹 이름</b></label>
+															</div>
+															<div class="form-row">
+																<!-- state-check 클래스 없애면 체크아이콘 없어집니다. -->
+																<div class="form-group col-xl-9 state-check">
+																	<input class="form-control" type="email" required="" placeholder="그룹이름을 입력하세요." />
+																</div>
+																<div class="form-group col-xl-3">
+																	<button class="btn btn-secondary form-control" type="button">중복확인</button>
+																</div>
+															</div>
+														</div>
+														<div class="col-xl-6">
+															<div class="form-group mb-0">
+																<label class="col-form-label"><b>인증 여부</b></label>
+															</div>
+															<div class="form-row mb-2">
+																<select class="form-control" id="example-select">
+																	<option>인증 불필요</option>
+																</select>
+															</div>
+														</div>
+														<div class="col-xl-6">
+															<div class="form-group mb-0 sys_group-hide">
+																<label class="col-form-label"><b>&nbsp;</b></label>
+															</div>
+															<div class="form-row mb-2">
+																<div class="readonly-pd"><input type="text" class="form-control" readonly /></div>
+															</div>
+														</div>
+
+														<div class="col-xl-6">
+															<div class="form-group mb-0">
+																<label class="col-form-label"><b>부서</b></label>
+															</div>
+															<div class="form-row mb-2">
+																<select class="form-control" id="example-select">
+																	<option>소속 불필요</option>
+																</select>
+															</div>
+														</div>
+														<div class="col-xl-6">
+															<div class="form-group mb-0 sys_group-hide">
+																<label class="col-form-label"><b>&nbsp;</b></label>
+															</div>
+															<div class="form-row mb-2">
+																<div class="readonly-pd"><input type="text" class="form-control" readonly /></div>
+															</div>
+														</div>
+
+														<div class="col-xl-6">
+															<div class="form-group mb-0">
+																<label class="col-form-label"><b>부서</b></label>
+															</div>
+															<div class="form-row mb-2">
+																<select class="form-control" id="example-select">
+																	<option>소속 불필요</option>
+																</select>
+															</div>
+														</div>
+														<div class="col-xl-6">
+															<div class="form-group mb-0">
+																<div class="d-flex align-items-center">
+																	<div class="ml-auto">
+																		<label class="col-form-label mr-3">
+																			<a href=""
+																				><b>
+																					<i class="dripicons-download mr-1"></i>
+																					Template file
+																				</b></a
+																			>
+																		</label>
+																		<a href=""
+																			><b>
+																				<i class="dripicons-download mr-1"></i>
+																				Uploaded file
+																			</b></a
+																		>
+																	</div>
+																</div>
+															</div>
+															<div class="input-group">
+																<!-- state-file 클래스 없애면 휴지통아이콘 없어집니다. -->
+																<div class="custom-file mb-2 state-file">
+																	<input type="file" class="custom-file-input" id="inputGroupFile04" />
+																	<div class="state-file__btn"><i class="uil uil-trash-alt"></i></div>
+																	<label class="custom-file-label" for="inputGroupFile04" id="label-inputGroupFile04" style="color: #adb5bd"
+																		>대표이미지를 업로드 하세요.(png , jpg)</label
+																	>
+																</div>
+															</div>
+														</div>
+
+														<!-- 2022 아델리 추가 -->
+														<div class="col-xl-12 select-gr-wrap">
+															<div class="form-group mb-0">
+																<label class="col-form-label"><b>진료과</b></label>
+															</div>
+															<div class="form-row">
+																<div class="form-group col-xl-6">
+																	<select class="form-control">
+																		<option>진료과 등록</option>
+																		<option>진료과 미등록</option>
+																	</select>
+																</div>
+																<div class="form-group col-xl-6">
+																	<button class="btn btn-secondary form-control" type="button" style="max-width: 98px">중복확인</button>
+																</div>
+															</div>
+															<div class="form-row">
+																<div class="form-group col-xl-6">
+																	<select class="form-control">
+																		<option>진료과 미등록</option>
+																		<option>진료과 등록</option>
+																	</select>
+																</div>
+																<div class="form-group col-xl-6">
+																	<div class="input-group">
+																		<div class="custom-file mb-2 state-file">
+																			<input type="file" class="custom-file-input" id="inputGroupFile04" />
+																			<div class="state-file__btn"><i class="uil uil-trash-alt"></i></div>
+																			<label class="custom-file-label" for="inputGroupFile04" id="label-inputGroupFile04" style="color: #adb5bd"
+																				>대표이미지를 업로드 하세요.(png , jpg)</label
+																			>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<!-- // 2022 아델리 추가 -->
+														<div class="col-xl-6">
+															<div class="form-group mb-0">
+																<label class="col-form-label"><b>그룹 연락처</b></label>
+															</div>
+															<div class="form-row">
+																<div class="form-group col-xl-3">
+																	<select class="form-control">
+																		<option>+82</option>
+																	</select>
+																</div>
+																<div class="form-group col-xl-6 state-check">
+																	<input type="text" class="form-control" placeholder="'-'를 빼고 숫자만 입력하세요" />
+																</div>
+																<div class="form-group col-xl-3">
+																	<button class="btn btn-secondary form-control" type="button">중복확인</button>
+																</div>
+															</div>
+														</div>
+														<div class="col-xl-6">
+															<div class="form-group mb-0">
+																<div class="d-flex align-items-center">
+																	<label class="col-form-label"><b>그룹 대표 이미지</b> (권장 사이즈 : 50X50px)</label>
+																	<div class="ml-auto">
+																		<a href="#" class="image-gallery" id="preview"><i class="dripicons-preview font-18" style="color: #6c757d"></i></a>
+																	</div>
+																</div>
+															</div>
+															<div class="input-group">
+																<!-- state-file 클래스 없애면 휴지통아이콘 없어집니다. -->
+																<div class="custom-file mb-2 state-file">
+																	<input type="file" class="custom-file-input" id="inputGroupFile04" />
+																	<div class="state-file__btn"><i class="uil uil-trash-alt"></i></div>
+																	<label class="custom-file-label" for="inputGroupFile04" id="label-inputGroupFile04" style="color: #adb5bd"
+																		>대표이미지를 업로드 하세요.(png , jpg)</label
+																	>
+																</div>
+															</div>
+														</div>
+														<div class="col-xl-12 mt-1">
+															<div class="form-group mb-0">
+																<label class="col-form-label"><b>그룹 시간대 및 주소</b> - (좌측부터) 시간대, 위도, 경도, (하단)APP표기 주소</label>
+															</div>
+															<div class="form-row">
+																<div class="form-group col-md-4">
+																	<select class="form-control">
+																		<option>UTC+00</option>
+																		<option>UTC+01</option>
+																	</select>
+																</div>
+																<div class="form-group col-md-4">
+																	<input type="text" class="form-control" placeholder="ex) 37.551125" />
+																</div>
+																<div class="form-group col-md-4">
+																	<input type="text" class="form-control" placeholder="ex) 127.049658" />
+																</div>
+																<div class="form-group col-md-12">
+																	<input type="text" class="form-control" placeholder="상세 주소를 입력하세요." />
+																</div>
+															</div>
+														</div>
+														<div class="col-xl-12">
+															<div class="form-group mt-2 mb-0">
+																<label for="example-textarea"><b>그룹 소개 메시지</b></label>
+																<textarea class="form-control" id="example-textarea" placeholder="내용을 입력하세요." rows="9"></textarea>
+															</div>
+														</div>
+														<div class="col-xl-12">
+															<div class="form-group mt-3 mb-0">
+																<label for="example-textarea"><b>그룹 메뉴 설정</b> (이름 및 세부 기능 설정)</label>
+																<p class="font-12">※ 활성 메뉴 제일 상단에 놓인 메뉴는 APP 그룹카드 내 제일 좌측에 표기됩니다</p>
+															</div>
+															<div class="row bg-dragula m-0 mb-2 px-2 align-items-center" style="padding: 15px 0">
+																<div class="col-md-6" id="hover-popover01">
+																	<b>▶ 그룹카드 하단 메뉴</b>
+																	<i
+																		class="dripicons-question font-16 pr-1"
+																		data-toggle="popover"
+																		data-trigger="hover"
+																		data-content="앱 그룹카드에 하단에 노출되는 고정메뉴 입니다."
+																		title="그룹카드 하단 메뉴"
+																	></i>
+																</div>
+																<div class="col-md-6">
+																	<select class="form-control">
+																		<option>공지사항</option>
+																		<option value="">병원 검사 결과</option>
+																	</select>
+																</div>
+															</div>
+
+															<div class="row" data-plugin="dragula" data-containers='["company-list-left", "company-list-right"]'>
+																<div class="col-md-6">
+																	<div class="bg-dragula" style="padding: 25px">
+																		<h5 class="mt-0" id="hover-popover02" style="position: relative; z-index: 20">
+																			<b>▶ 활성 메뉴</b>
+																			<i
+																				class="dripicons-question font-16 pr-1"
+																				data-toggle="popover"
+																				data-trigger="hover"
+																				data-content="앱 그룹카드에 구성되는 메뉴로 활성메뉴에 포함된 기능만 사용자에게 보여지게 됩니다."
+																				title="그룹카드 하단 메뉴"
+																			></i>
+																		</h5>
+																		<div id="company-list-left" style="padding-top: 12px">
+																			<div class="card mb-0 mt-2">
+																				<div class="card-body" style="padding: 25px">
+																					<h5 class="card-title">비 대면 상담 (Vonage 화상통화 기능)</h5>
+																					<div class="form-row">
+																						<div class="form-group col-xl-12" style="margin-bottom: 0.75rem">
+																							<input type="text" class="form-control" placeholder="APP에 표시되는 이름을 입력하세요." />
+																						</div>
+																					</div>
+																					<div class="form-row">
+																						<div class="form-group col-xl-12" style="margin-bottom: 0.75rem">
+																							<input type="text" class="form-control" placeholder="API Key를 입력하세요." />
+																						</div>
+																					</div>
+																					<div class="form-row">
+																						<div class="form-group col-xl-12" style="margin-bottom: 0.75rem">
+																							<input type="text" class="form-control" placeholder="Secret Key를 입력하세요." />
+																						</div>
+																					</div>
+																					<div class="form-row">
+																						<div class="d-flex align-items-center">
+																							<div class="col-xl-12">
+																								<div class="combine-wrapper">
+																									<input
+																										type="text"
+																										class="form-control"
+																										data-provide="datepicker"
+																										data-date-format="yyyy-mm-dd"
+																										value="2020-01-01"
+																									/>
+																									<i class="uil-calendar-alt"></i>
+																								</div>
+																								<span class="dash">~</span>
+																								<div class="combine-wrapper">
+																									<input
+																										type="text"
+																										class="form-control"
+																										data-provide="datepicker"
+																										data-date-format="yyyy-mm-dd"
+																										value="2020-01-01"
+																									/>
+																									<i class="uil-calendar-alt"></i>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																					<div class="form-row">
+																						<div class="form-group col-xl-12" style="margin-bottom: 0.75rem">
+																							<select class="form-control" id="nonFace">
+																								<option value="option01">비대면 상담(피드백 제외)</option>
+																								<option value="option02">비 대면 상담 + 문서함</option>
+																							</select>
+																						</div>
+																					</div>
+																					<div class="form-row" id="documentbox" style="display: none">
+																						<div class="form-group col-xl-12" style="margin-bottom: 0.75rem">
+																							<input type="text" class="form-control" placeholder="문서함 이름을 입력하세요." />
+																						</div>
+																					</div>
+																					<div class="form-row">
+																						<div class="form-group col-xl-12" style="margin-bottom: 0">
+																							<select class="form-control">
+																								<option>무료</option>
+																							</select>
+																						</div>
+																					</div>
+																				</div>
+																				<!-- end card-body -->
+																			</div>
+																			<!-- end col -->
+																		</div>
+																		<!-- end company-list-1-->
+																	</div>
+																	<!-- end div.bg-light-->
+																</div>
+																<!-- end col -->
+
+																<div class="col-md-6">
+																	<div class="bg-dragula" style="padding: 25px">
+																		<h5 class="mt-0"><b>▶ 비 활성 메뉴</b></h5>
+																		<div id="company-list-right" style="padding-top: 12px">
+																			<div class="card mb-0 mt-2">
+																				<div class="card-body" style="padding: 25px">
+																					<h5 class="card-title">문답형 상담 (문답 형태)</h5>
+																					<div class="form-row">
+																						<div class="form-group col-xl-12" style="margin-bottom: 0.75rem">
+																							<input type="text" class="form-control" placeholder="APP에 표시되는 이름을 입력하세요." />
+																						</div>
+																					</div>
+																					<div class="form-row">
+																						<div class="form-group col-xl-12" style="margin-bottom: 0">
+																							<select class="form-control">
+																								<option>유로 (PG 결제)</option>
+																							</select>
+																						</div>
+																					</div>
+																				</div>
+																				<!-- end card-body -->
+																			</div>
+																			<!-- end col -->
+
+																			<div class="card mb-0 mt-2">
+																				<div class="card-body" style="padding: 25px">
+																					<h5 class="card-title">공지사항</h5>
+																					<div class="form-row">
+																						<div class="form-group col-xl-12" style="margin-bottom: 0.75rem">
+																							<input type="text" class="form-control" placeholder="APP에 표시되는 이름을 입력하세요." />
+																						</div>
+																					</div>
+																					<div class="form-row">
+																						<div class="form-group col-xl-12" style="margin-bottom: 0">
+																							<select class="form-control">
+																								<option>사용자 참여형</option>
+																							</select>
+																						</div>
+																					</div>
+																				</div>
+																				<!-- end card-body -->
+																			</div>
+																			<!-- end col -->
+
+																			<div class="card mb-0 mt-2">
+																				<div class="card-body" style="padding: 25px">
+																					<h5 class="card-title">대화형 상담 (자유로운 글과 댓글 작성)</h5>
+																					<div class="form-row">
+																						<div class="form-group col-xl-12" style="margin-bottom: 0.75rem">
+																							<input type="text" class="form-control" placeholder="APP에 표시되는 이름을 입력하세요." />
+																						</div>
+																					</div>
+																					<div class="form-row">
+																						<div class="form-group col-xl-12" style="margin-bottom: 0">
+																							<select class="form-control">
+																								<option>1:1 상담</option>
+																							</select>
+																						</div>
+																					</div>
+																				</div>
+																				<!-- end card-body -->
+																			</div>
+																			<!-- end col -->
+																		</div>
+																		<!-- end company-list-2-->
+																	</div>
+																	<!-- end div.bg-light-->
+																</div>
+																<!-- end col -->
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-xl-5 col-lg-6 order-lg-2 order-xl-1">
+											<div class="card">
+												<div class="card-body">
+													<div class="border p-20 mb-20 border">
+														<div class="row justify-content-between">
+															<div class="col-xl-6">
+																<b>그룹 상태</b>
+															</div>
+															<div class="col-xl-6">
+																<div class="row justify-content-end">
+																	<span class="mr-1">비활성</span>
+																	<div class="custom-control custom-switch">
+																		<input type="checkbox" class="custom-control-input" id="customSwitch3" />
+																		<label class="custom-control-label" for="customSwitch3"></label>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<p class="font-12 mt-10 mb-0">
+															※ 활성 상태 시, 사용자 앱 그룹 목록에 즉시 노출<br />
+															※ 비활성 상태 시, 사용자가 소속 그룹 신규 등록 불가
+														</p>
+													</div>
+													<div class="border p-20 border">
+														<b class="mt-8 border-bottom border-dark pb-10 d-block mb-15">대표 그룹관리자 등록</b>
+														<div class="form-group mb-0">
+															<label class="col-form-label">이름</label>
+														</div>
+														<div class="form-row mb-0">
+															<div class="form-group col-xl-6">
+																<input class="form-control" type="text" required="" placeholder="이름을 입력하세요." />
+															</div>
+															<div class="form-group col-xl-6">
+																<input class="form-control" type="text" required="" placeholder="성을 입력하세요." />
+															</div>
+														</div>
+														<div class="form-group mb-0">
+															<label class="col-form-label">이메일 주소</label>
+														</div>
+														<div class="form-row">
+															<div class="form-group col-xl-9 state-check">
+																<input class="form-control" type="email" required="" placeholder="대표 관리자 이메일 주소를 입력하세요." />
+															</div>
+															<div class="form-group col-xl-3">
+																<button class="btn btn-secondary form-control" type="button">중복확인</button>
+															</div>
+														</div>
+														<div class="form-group mb-0">
+															<label class="col-form-label">연락처</label>
+														</div>
+														<div class="form-row">
+															<div class="form-group col-xl-3">
+																<select class="form-control">
+																	<option>+82</option>
+																</select>
+															</div>
+															<div class="form-group col-xl-6 state-check">
+																<input type="text" class="form-control" placeholder="대표 연락처를 입력하세요." />
+															</div>
+
+															<div class="form-group col-xl-3">
+																<button class="btn btn-secondary form-control" type="button">중복확인</button>
+															</div>
+														</div>
+														<div class="form-group mb-0" style="margin-top: -10px">
+															<label class="col-form-label font-12 pb-0">
+																※ 입력하신 이메일 주소는 로그인 아이디로 사용되며, 연락처로 임시 비밀번호가 전송됩니다.
+															</label>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="sys-group">
+												<button class="btn btn-light mr-10 width-100" style="background-color: #ccc; color: #313a46">취소</button
+												><button class="btn btn-primary width-100">확인</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- end col -->
+						</div>
+
+						<!-- Footer Start -->
+						<footer class="footer">
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-md-6">© HealthConnect Co., Ltd.</div>
+									<div class="col-md-6"></div>
+								</div>
+							</div>
+						</footer>
+						<!-- end Footer -->
+					</div>
+
+					<!-- ============================================================== -->
+					<!-- End Page content -->
+					<!-- ============================================================== -->
+				</div>
+				<!-- END wrapper -->
+				<!-- 2022 아델리 추가 -->
+				<div id="GR_02_01" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="schedule-create-modalLabe" aria-hidden="true" data-backdrop="static">
+					<div class="modal-dialog modal-dialog-centered modal-lg">
+						<div class="modal-content">
+							<div class="modal-header modal-colored-header bg-primary">
+								<h4 class="modal-title" id="schedule-create-modalLabel">진료과 설정</h4>
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+							</div>
+							<div class="modal-body pt-0 modal-bg-c" data-simplebar style="max-height: 600px">
+								<form action="#">
+									<div class="form-row">
+										<div class="col-md-12 pl-2 pr-2">
+											<div class="form-row">
+												<div class="form-group mb-0 w-100">
+													<div class="d-flex flex-wrap justify-content-end">
+														<div class="w-100 text-right mt-2">
+															<label class="col-form-label">
+																<a href=""
+																	><b>
+																		<i class="dripicons-download mr-1"></i>
+																		Template file
+																	</b></a
+																>
+															</label>
+														</div>
+														<div class="w-100">
+															<div class="custom-file mb-2 state-file">
+																<input type="file" class="custom-file-input" id="inputGroupFile04" />
+																<div class="state-file__btn"><i class="uil uil-trash-alt"></i></div>
+																<label class="custom-file-label" for="inputGroupFile04" id="label-inputGroupFile04" style="color: #adb5bd"
+																	>대표이미지를 업로드 하세요.(png , jpg)</label
+																>
+															</div>
+														</div>
+													</div>
+													<table
+														class="table user-detail-table table-centered table-hover w-100 nowrap thead-only-gray"
+														id="gr-datatable01"
+														style="margin-top: 0 !important"
+													>
+														<colgroup>
+															<col width="10%" />
+															<col width="30%" />
+															<col width="30%" />
+															<col width="30%" />
+														</colgroup>
+														<thead class="thead-light">
+															<tr>
+																<th>사용</th>
+																<th>진료과</th>
+																<th>진료과 코드</th>
+																<th>서울대병원</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td>
+																	<div class="checkbox">
+																		<div class="custom-control custom-checkbox">
+																			<input type="checkbox" class="custom-control-input custom-control-input-success" id="customCheckgr1" />
+																			<label class="custom-control-label custom-control-label-success font-13" for="customCheckgr1"></label>
+																		</div>
+																	</div>
+																</td>
+																<td>호흡기 내과</td>
+																<td>A001</td>
+																<td><input type="text" class="form-control" placeholder="호흡기 내과" readonly /></td>
+															</tr>
+															<tr>
+																<td>
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox" class="custom-control-input custom-control-input-success" id="customCheckgr2" checked />
+																		<label class="custom-control-label custom-control-label-success font-13" for="customCheckgr2"></label>
+																	</div>
+																</td>
+																<td>순환기 내과</td>
+																<td>A002</td>
+																<td><input type="text" class="form-control" placeholder="순환기 내과" /></td>
+															</tr>
+															<tr>
+																<td>
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox" class="custom-control-input custom-control-input-success" id="customCheckgr3" />
+																		<label class="custom-control-label custom-control-label-success font-13" for="customCheckgr3"></label>
+																	</div>
+																</td>
+																<td>소화기 내과</td>
+																<td>A003</td>
+																<td><input type="text" class="form-control" placeholder="소화기 내과" readonly /></td>
+															</tr>
+															<tr>
+																<td>
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox" class="custom-control-input custom-control-input-success" id="customCheckgr4" checked />
+																		<label class="custom-control-label custom-control-label-success font-13" for="customCheckgr4"></label>
+																	</div>
+																</td>
+																<td>혈액종양 내과</td>
+																<td>A004</td>
+																<td><input type="text" class="form-control" placeholder="순환기 내과" /></td>
+															</tr>
+															<tr>
+																<td>
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox" class="custom-control-input custom-control-input-success" id="customCheckgr5" checked />
+																		<label class="custom-control-label custom-control-label-success font-13" for="customCheckgr5"></label>
+																	</div>
+																</td>
+																<td>간담체 외과</td>
+																<td>B001</td>
+																<td><input type="text" class="form-control" placeholder="간담체 외과" /></td>
+															</tr>
+															<tr>
+																<td>
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox" class="custom-control-input custom-control-input-success" id="customCheckgr6" />
+																		<label class="custom-control-label custom-control-label-success font-13" for="customCheckgr6"></label>
+																	</div>
+																</td>
+																<td>외상 외과</td>
+																<td>B002</td>
+																<td><input type="text" class="form-control" placeholder="순환기 내과" readonly /></td>
+															</tr>
+															<tr>
+																<td>
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox" class="custom-control-input custom-control-input-success" id="customCheckgr7" />
+																		<label class="custom-control-label custom-control-label-success font-13" for="customCheckgr7"></label>
+																	</div>
+																</td>
+																<td>외과(일반)</td>
+																<td>B003</td>
+																<td><input type="text" class="form-control" placeholder="호흡기 내과" readonly /></td>
+															</tr>
+															<tr>
+																<td>
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox" class="custom-control-input custom-control-input-success" id="customCheckgr8" />
+																		<label class="custom-control-label custom-control-label-success font-13" for="customCheckgr8"></label>
+																	</div>
+																</td>
+																<td>산부인과</td>
+																<td>C001</td>
+																<td><input type="text" class="form-control" placeholder="산부인과" readonly /></td>
+															</tr>
+															<tr>
+																<td>
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox" class="custom-control-input custom-control-input-success" id="customCheckgr9" />
+																		<label class="custom-control-label custom-control-label-success font-13" for="customCheckgr9"></label>
+																	</div>
+																</td>
+																<td>가정의학과</td>
+																<td>D001</td>
+																<td><input type="text" class="form-control" placeholder="호흡기 내과" readonly /></td>
+															</tr>
+															<tr>
+																<td>
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox" class="custom-control-input custom-control-input-success" id="customCheckgr10" />
+																		<label class="custom-control-label custom-control-label-success font-13" for="customCheckgr10"></label>
+																	</div>
+																</td>
+																<td>건강증진센터</td>
+																<td>E001</td>
+																<td><input type="text" class="form-control" placeholder="순환기 내과" readonly /></td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+
+							<div class="modal-footer">
+								<button type="button" class="ml-1 btn btn-light" onclick="">취소</button>
+								<button type="button" class="ml-1 btn btn-primary" onclick="">확인</button>
+							</div>
+						</div>
+						<!-- /.modal-content -->
+					</div>
+					<!-- /.modal-dialog -->
+				</div>
+
+				<div style="position: fixed; bottom: 0; right: 500px; background: rgba(0, 0, 0, 0.5); width: 500px; padding: 20px; z-index: 100">
+					<a href="javascript:void(0)" onclick="GR_02_01()" style="color: #fff">GR-02-01 : 신규 예약 생성</a><br />
+				</div>
+				<!-- // 2022 아델리 추가 -->
+
+				<div data-include-html="modal/account.html"></div>
+				<div data-include-html="modal/setting.html"></div>
+				<div data-include-html="modal/password.html"></div>
+
+				<div class="slbElement" style="display: none" id="custom-sbl">
+					<div class="slbOverlay"></div>
+					<div class="slbWrapOuter">
+						<div class="slbWrap">
+							<div class="slbContentOuter">
+								<div class="slbContent">
+									<div class="slbImageWrap"><img class="slbImage" src="assets/images/small/small-1.jpg" id="sbl-image" /></div>
+								</div>
+								<button type="button" title="Close" class="slbCloseBtn" id="close-sbl">×</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<script src="assets/js/vendor.min.js"></script>
+				<script src="assets/js/app.min.js"></script>
+
+				<script src="assets/js/vendor/jquery.dataTables.min.js"></script>
+				<script src="assets/js/vendor/dataTables.bootstrap4.js"></script>
+				<script src="assets/js/vendor/dataTables.responsive.min.js"></script>
+				<script src="assets/js/vendor/responsive.bootstrap4.min.js"></script>
+				<script src="assets/js/vendor/apexcharts.min.js"></script>
+				<script src="assets/js/vendor/dataTables.checkboxes.min.js"></script>
+				<script src="assets/lib/simplelightbox/simpleLightbox.min.js"></script>
+				<script src="assets/js/vendor/dragula.min.js"></script>
+				<script src="assets/js/ui/component.dragula.js"></script>
+
+				<script src="assets/js/common.js"></script>
+				<script src="assets/js/page/gr.js"></script>
+				<script src="assets/js/page/202207_gr.js"></script>
+				<script>
+					function updateUserPassword() {
+						$("#login-password-modal").modal("hide");
+					}
+
+					function showMyAccountDlg() {
+						$("#my-info-modal").modal("show");
+					}
+
+					function updateLoginPasswordDlg() {
+						$("#login-password-modal").modal("show");
+					}
+
+					function showSettingDlg() {
+						$("#setting-modal").modal("show");
+					}
+
+					function updateUserInfo() {
+						$("#my-info-modal").modal("hide");
+						$("#success-alert-modal").modal("show");
+					}
+
+					$("#nonFace").change(function (e) {
+						if (this.value === "option02") {
+							$("#documentbox").show();
+						} else {
+							$("#documentbox").hide();
+						}
+					});
+
+					// 2022 아델리 추가
+					function GR_02_01() {
+						$("#GR_02_01").modal("show");
+					}
+
+					$(".select-gr-wrap").hide();
+					$(".select-gr").on("change", function () {
+						var val = $(".select-gr").val();
+						if (val === "grActive") {
+							$(".select-gr-wrap").show();
+						} else {
+							$(".select-gr-wrap").hide();
+						}
+					});
+					// 2022 아델리 추가 end
+				</script>
+			</div>
+		</div>
+	</body>
+</html>
