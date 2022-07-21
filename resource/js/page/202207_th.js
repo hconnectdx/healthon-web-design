@@ -210,7 +210,7 @@ $(document).ready(function () {
 
 	$("#th-datatable10").DataTable({
 		screenY: true,
-		scrollX: false,
+		scrollX: true,
 		language: {
 			paginate: {
 				previous: "<i class='mdi mdi-chevron-left'>",

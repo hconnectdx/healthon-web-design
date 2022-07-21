@@ -61,6 +61,7 @@ $(document).ready(function () {
 	});
 
 	$("#applog-datatable03").DataTable({
+		screenY: true,
 		scrollX: true,
 		searching: false,
 		lengthChange: false,

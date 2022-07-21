@@ -46,97 +46,110 @@
 			var t = [
 					{
 						title: "박정연",
-						start: new Date(2020, 12, 4),
+						start: new Date(2022, 6, 4),
 						className: "bg-cal-dim",
 					},
 					{
 						title: "최진성",
-						start: new Date(2020, 12, 4),
+						start: new Date(2022, 6, 4),
 						className: "bg-cal-dim",
 					},
 					{
 						title: "최진성",
-						start: new Date(2020, 12, 4),
+						start: new Date(2022, 6, 4),
 						className: "bg-cal-success",
 					},
 					{
 						title: "최진성",
-						start: new Date(2020, 12, 10),
+						start: new Date(2022, 6, 10),
 						className: "bg-cal-dim",
 					},
 					{
 						title: "최진성",
-						start: new Date(2020, 12, 10),
+						start: new Date(2022, 6, 10),
 						className: "bg-cal-warning",
 					},
 					{
 						title: "최진성",
-						start: new Date(2020, 12, 10),
+						start: new Date(2022, 6, 10),
 						className: "bg-cal-success",
 					},
 					{
 						title: "최진성",
-						start: new Date(2020, 12, 10),
+						start: new Date(2022, 6, 10),
 						className: "bg-cal-info",
 					},
 					{
 						title: "이주회",
-						start: new Date(2020, 12, 10),
+						start: new Date(2022, 6, 10),
 						className: "bg-cal-dim",
 					},
 					{
 						title: "이주회",
-						start: new Date(2020, 12, 8),
+						start: new Date(2022, 6, 8),
 						className: "bg-cal-warning",
 					},
 					{
 						title: "이주회",
-						start: new Date(2020, 12, 8),
+						start: new Date(2022, 6, 8),
 						className: "bg-cal-warning",
 					},
 					{
 						title: "이주회",
-						start: new Date(2020, 12, 8),
+						start: new Date(2022, 6, 8),
 						className: "bg-cal-warning",
 					},
 					{
 						title: "이주회",
-						start: new Date(2020, 12, 8),
+						start: new Date(2022, 6, 8),
 						className: "bg-cal-info",
 					},
 					{
 						title: "이주회",
-						start: new Date(2020, 12, 8),
+						start: new Date(2022, 6, 8),
 						className: "bg-cal-info",
 					},
 					{
 						title: "이주회",
-						start: new Date(2020, 12, 8),
+						start: new Date(2022, 6, 8),
 						className: "bg-cal-info",
 					},
 					{
 						title: "이주회",
-						start: new Date(2020, 12, 8),
+						start: new Date(2022, 6, 8),
 						className: "bg-cal-dim",
 					},
 					{
 						title: "이주회",
-						start: new Date(2020, 12, 13),
+						start: new Date(2022, 6, 13),
 						className: "bg-cal-success",
 					},
 					{
 						title: "최진성",
-						start: new Date(2020, 12, 13),
+						start: new Date(2022, 6, 13),
 						className: "bg-cal-success",
 					},
 					{
 						title: "최진성",
-						start: new Date(2020, 12, 14),
+						start: new Date(2022, 6, 14),
 						className: "bg-cal-info",
+					},
+					{
+						title: "아델리아델리아델리아델리아델리",
+						start: new Date(2022, 6, 14),
+						className: "bg-danger",
 					},
 				],
 				a = this;
 			(a.$calendarObj = new FullCalendar.Calendar(a.$calendar[0], {
+				//Phase 2.2
+				//아델리
+				dayMaxEvents: true,
+				dayMaxEvents: 3,
+				moreLinkContent: function (args) {
+					return "+" + args.num + "명";
+				},
+
 				slotDuration: "00:15:00",
 				slotMinTime: "08:00:00",
 				slotMaxTime: "19:00:00",
@@ -203,4 +216,23 @@
 	(function () {
 		"use strict";
 		window.jQuery.CalendarApp.init();
+
+		//Phase 2.2
+		//아델리
+		$.CalendarApp.$calendar
+			.find(".fc-toolbar-chunk:nth-child(3)")
+			.html(
+				'<div class="row no-gutters justify-content-between"> ' +
+					'<div class="col d-flex align-items-center"> ' +
+					'<span class="box-m-1 bg-danger"></span>' +
+					'<a href="javascript:void(0)" data-toggle="modal" data-target="#HG_WEB_TH_01_10">예약변경 필요<i class="mdi mdi-alert-circle-outline ml-1"></i></a>' +
+					'<span class="box-m-1 ml-3"></span>' +
+					"상담 미확정" +
+					'<span class="box-m-3 ml-3"></span>' +
+					"상담 확정" +
+					'<span class="box-m-4 ml-3"></span>' +
+					"상담 완료" +
+					"</div>" +
+					"</div>"
+			);
 	})();

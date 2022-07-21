@@ -7,19 +7,19 @@
 		<meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
 		<meta content="Coderthemes" name="author" />
 		<!-- App favicon -->
-		<link rel="shortcut icon" href="assets/images/favicon.ico" />
+		<link rel="shortcut icon" href="resource/images/favicon.ico" />
 
 		<!-- App css -->
-		<link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-		<link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
-		<link href="assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
-		<link href="assets/css/base.css" rel="stylesheet" type="text/css" />
-		<link href="assets/css/page/consult.css" rel="stylesheet" type="text/css" id="consult-style" />
-		<link href="assets/css/vendor/fullcalendar.min.css" rel="stylesheet" type="text/css" />
-		<link href="assets/css/page/telehealth.css" rel="stylesheet" type="text/css" />
-		<link href="assets/css/vendor/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" />
-		<link href="assets/css/vendor/responsive.bootstrap4.css" rel="stylesheet" type="text/css" />
-		<link href="assets/css/common.css" rel="stylesheet" type="text/css" id="common-style" />
+		<link href="resource/css/icons.min.css" rel="stylesheet" type="text/css" />
+		<link href="resource/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
+		<link href="resource/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
+		<link href="resource/css/base.css" rel="stylesheet" type="text/css" />
+		<link href="resource/css/page/consult.css" rel="stylesheet" type="text/css" id="consult-style" />
+		<link href="resource/css/vendor/fullcalendar.min.css" rel="stylesheet" type="text/css" />
+		<link href="resource/css/page/telehealth.css" rel="stylesheet" type="text/css" />
+		<link href="resource/css/vendor/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" />
+		<link href="resource/css/vendor/responsive.bootstrap4.css" rel="stylesheet" type="text/css" />
+		<link href="resource/css/common.css" rel="stylesheet" type="text/css" id="common-style" />
 	</head>
 
 	<body
@@ -33,19 +33,19 @@
 				<!-- LOGO -->
 				<a href="main.html" class="logo text-center logo-light">
 					<span class="logo-lg">
-						<img src="assets/images/logo.png" alt="" height="16" />
+						<img src="resource/images/logo.png" alt="" height="16" />
 					</span>
 					<span class="logo-sm">
-						<img src="assets/images/logo_sm.png" alt="" height="16" />
+						<img src="resource/images/logo_sm.png" alt="" height="16" />
 					</span>
 				</a>
 				<!-- LOGO -->
 				<a href="main.html" class="logo text-center logo-dark">
 					<span class="logo-lg">
-						<img src="assets/images/logo-dark.png" alt="" height="16" />
+						<img src="resource/images/logo-dark.png" alt="" height="16" />
 					</span>
 					<span class="logo-sm">
-						<img src="assets/images/logo_sm_dark.png" alt="" height="16" />
+						<img src="resource/images/logo_sm_dark.png" alt="" height="16" />
 					</span>
 				</a>
 
@@ -213,7 +213,7 @@
 									aria-expanded="false"
 								>
 									<span class="account-user-avatar">
-										<img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle" />
+										<img src="resource/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle" />
 									</span>
 									<span>
 										<span class="account-user-name">James Kim</span>
@@ -305,44 +305,11 @@
 											<div class="card">
 												<div class="card-body">
 													<div id="calendar" style="max-height: 750px"></div>
-
-													<div class="row no-gutters justify-content-between pt-3">
-														<div class="col d-flex">
-															<div class="ml-auto d-flex align-items-center">
-																<span class="box-m-1 bg-danger"></span>
-																<a href="javascript:void(0)" data-toggle="modal" data-target="#HG_WEB_TH_01_10"
-																	>예약변경 필요<i class="mdi mdi-alert-circle-outline"></i
-																></a>
-																<span class="box-m-1 ml-2"></span> 상담 미확정 <span class="box-m-3 ml-3"></span> 상담 확정
-																<span class="box-m-4 ml-3"></span> 상담 완료
-															</div>
-														</div>
-													</div>
-
-													<div class="d-none">
-														<button class="btn btn-lg font-16 btn-danger btn-block" id="btn-new-event1">
-															<i class="mdi mdi-plus-circle-outline"></i> Create New Event
-														</button>
-														<div id="external-events" class="m-t-20">
-															<br />
-															<p class="text-muted">Drag and drop your event or click in the calendar</p>
-															<div class="external-event bg-primary-lighten text-success" data-class="bg-primary">
-																<i class="mdi mdi-checkbox-blank-circle mr-2 vertical-middle"></i>New Theme Release
-															</div>
-															<div class="external-event bg-info-lighten text-info" data-class="bg-info">
-																<i class="mdi mdi-checkbox-blank-circle mr-2 vertical-middle"></i>My Event
-															</div>
-															<div class="external-event bg-warning-lighten text-warning" data-class="bg-warning">
-																<i class="mdi mdi-checkbox-blank-circle mr-2 vertical-middle"></i>Meet manager
-															</div>
-															<div class="external-event bg-danger-lighten text-danger" data-class="bg-danger">
-																<i class="mdi mdi-checkbox-blank-circle mr-2 vertical-middle"></i>Create New theme
-															</div>
-														</div>
-													</div>
 												</div>
 											</div>
 										</div>
+										<!-- Phase 2.2 -->
+										<!-- 아델리 -->
 										<div class="col-xl-3 col-lg-12 col-md-12">
 											<div class="card">
 												<div class="px-3 pt-3">
@@ -368,7 +335,7 @@
 																	<span>13:20</span>
 																</div>
 																<div class="media mb-n2">
-																	<img class="mr-2 rounded-circle" src="assets/images/users/avatar-3.jpg" alt="Generic placeholder image" height="32" />
+																	<img class="mr-2 rounded-circle" src="resource/images/users/avatar-3.jpg" alt="Generic placeholder image" height="32" />
 																	<div class="media-body">
 																		<h5 class="m-0">홍길동<small class="font-14 text-muted ml-1">(남)</small></h5>
 																		<p class="text-muted"><small>1950-1-23</small></p>
@@ -408,7 +375,7 @@
 																	<span>13:20</span>
 																</div>
 																<div class="media mb-n2">
-																	<img class="mr-2 rounded-circle" src="assets/images/users/avatar-3.jpg" alt="Generic placeholder image" height="32" />
+																	<img class="mr-2 rounded-circle" src="resource/images/users/avatar-3.jpg" alt="Generic placeholder image" height="32" />
 																	<div class="media-body">
 																		<h5 class="m-0">홍길동<small class="font-14 text-muted ml-1">(남)</small></h5>
 																		<p class="text-muted"><small>1950-1-23</small></p>
@@ -452,7 +419,7 @@
 																	<span>13:20</span>
 																</div>
 																<div class="media mb-n2">
-																	<img class="mr-2 rounded-circle" src="assets/images/users/avatar-3.jpg" alt="Generic placeholder image" height="32" />
+																	<img class="mr-2 rounded-circle" src="resource/images/users/avatar-3.jpg" alt="Generic placeholder image" height="32" />
 																	<div class="media-body">
 																		<h5 class="m-0">홍길동<small class="font-14 text-muted ml-1">(남)</small></h5>
 																		<p class="text-muted"><small>1950-1-23</small></p>
@@ -490,7 +457,7 @@
 																	<span>13:20</span>
 																</div>
 																<div class="media mb-n2">
-																	<img class="mr-2 rounded-circle" src="assets/images/users/avatar-3.jpg" alt="Generic placeholder image" height="32" />
+																	<img class="mr-2 rounded-circle" src="resource/images/users/avatar-3.jpg" alt="Generic placeholder image" height="32" />
 																	<div class="media-body">
 																		<h5 class="m-0">홍길동<small class="font-14 text-muted ml-1">(남)</small></h5>
 																		<p class="text-muted"><small>1950-1-23</small></p>
@@ -527,7 +494,7 @@
 																	<span>13:20</span>
 																</div>
 																<div class="media mb-n2">
-																	<img class="mr-2 rounded-circle" src="assets/images/users/avatar-3.jpg" alt="Generic placeholder image" height="32" />
+																	<img class="mr-2 rounded-circle" src="resource/images/users/avatar-3.jpg" alt="Generic placeholder image" height="32" />
 																	<div class="media-body">
 																		<h5 class="m-0">홍길동<small class="font-14 text-muted ml-1">(남)</small></h5>
 																		<p class="text-muted"><small>1950-1-23</small></p>
@@ -564,7 +531,7 @@
 																	<span>13:20</span>
 																</div>
 																<div class="media mb-n2">
-																	<img class="mr-2 rounded-circle" src="assets/images/users/avatar-3.jpg" alt="Generic placeholder image" height="32" />
+																	<img class="mr-2 rounded-circle" src="resource/images/users/avatar-3.jpg" alt="Generic placeholder image" height="32" />
 																	<div class="media-body">
 																		<h5 class="m-0">홍길동<small class="font-14 text-muted ml-1">(남)</small></h5>
 																		<p class="text-muted"><small>1950-1-23</small></p>
@@ -602,7 +569,7 @@
 																	<span>13:20</span>
 																</div>
 																<div class="media mb-n2">
-																	<img class="mr-2 rounded-circle" src="assets/images/users/avatar-3.jpg" alt="Generic placeholder image" height="32" />
+																	<img class="mr-2 rounded-circle" src="resource/images/users/avatar-3.jpg" alt="Generic placeholder image" height="32" />
 																	<div class="media-body">
 																		<h5 class="m-0">홍길동<small class="font-14 text-muted ml-1">(남)</small></h5>
 																		<p class="text-muted"><small>1950-1-23</small></p>
@@ -632,6 +599,8 @@
 												</div>
 											</div>
 										</div>
+										<!-- //Phase 2.2 -->
+										<!-- //아델리 -->
 									</div>
 								</div>
 								<div class="tab-pane" id="video-call-tab">
@@ -668,7 +637,7 @@
 													</div>
 												</div>
 											</div>
-											<table class="table table-centered table-hover w-100 nowrap" id="th-datatable07">
+											<table class="table table-centered table-hover nowrap" id="th-datatable07">
 												<thead class="thead-light">
 													<tr>
 														<th>No</th>
@@ -865,6 +834,9 @@
 										</div>
 									</div>
 								</div>
+
+								<!-- Phase 2.2 -->
+								<!-- 아델리 -->
 								<div class="tab-pane" id="time-tab">
 									<div class="row">
 										<div class="col-xl-12">
@@ -877,6 +849,9 @@
 														<select class="form-control form-select mr-1" style="max-width: 200px">
 															<option value="">진료과 전체</option>
 														</select>
+														<select class="form-control form-select mr-1" style="max-width: 200px">
+															<option value="">[의사] 홍길동</option>
+														</select>
 													</div>
 												</div>
 											</div>
@@ -885,19 +860,6 @@
 											<div class="card">
 												<div class="card-body">
 													<div id="calendar3" style="max-height: 750px"></div>
-
-													<div class="row no-gutters justify-content-between pt-3">
-														<div class="col d-flex">
-															<div class="ml-auto d-flex align-items-center">
-																<span class="box-m-1 bg-danger"></span>
-																<a href="javascript:void(0)" data-toggle="modal" data-target="#HG_WEB_TH_01_11_02"
-																	>예약변경 필요<i class="mdi mdi-alert-circle-outline"></i
-																></a>
-																<span class="box-m-1 ml-2"></span> 상담 미확정 <span class="box-m-3 ml-3"></span> 상담 확정
-																<span class="box-m-4 ml-3"></span> 상담 완료
-															</div>
-														</div>
-													</div>
 
 													<div class="d-none">
 														<button class="btn btn-lg font-16 btn-danger btn-block" id="btn-new-event1">
@@ -924,7 +886,178 @@
 											</div>
 										</div>
 										<div class="col-xl-6 col-lg-12 col-md-12">
-											<div class="card" style="height: 830px">
+											<div class="card">
+												<div class="px-3 pt-3">
+													<div class="form-group mt-1">
+														<div class="d-flex justify-content-between flex">
+															<label class="col-form-label"><b>기본 상담시간 설정</b></label>
+															<div class="d-flex align-items-center justify-content-end" style="min-width: 200px">
+																<label class="col-form-label"><b>상담주기</b> </label>
+																<span class="ml-2">15분</span>
+															</div>
+														</div>
+														<p>기본 상담시간을 변경하려면 수정 버튼을 누르세요. 변경된 일정은 내일부터 적용됩니다.</p>
+														<table class="table table-centered table-hover nowrap table-bordered table-th-setting">
+															<colgroup>
+																<col style="width: 23%" />
+																<col style="width: 11%" />
+																<col style="width: 11%" />
+																<col style="width: 11%" />
+																<col style="width: 11%" />
+																<col style="width: 11%" />
+																<col style="width: 11%" />
+																<col style="width: 11%" />
+															</colgroup>
+															<thead class="thead-light">
+																<tr class="text-center">
+																	<th>시간</th>
+																	<th>일</th>
+																	<th>월</th>
+																	<th>화</th>
+																	<th>수</th>
+																	<th>목</th>
+																	<th>금</th>
+																	<th>토</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<th class="text-center">11:00 ~ 12:00</th>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<th class="text-center">12:00 ~ 13:00</th>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<th class="text-center">13:00 ~ 14:00</th>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<th class="text-center">14:00 ~ 15:00</th>
+																	<td></td>
+																	<td class="text-center"><div class="text-primary">●</div></td>
+																	<td></td>
+																	<td class="text-center"><div class="text-primary">●</div></td>
+																	<td class="text-center"><div class="text-primary">●</div></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<th class="text-center">15:00 ~ 16:00</th>
+																	<td></td>
+																	<td class="text-center"><div class="text-primary">●</div></td>
+																	<td></td>
+																	<td class="text-center"><div class="text-primary">●</div></td>
+																	<td class="text-center"><div class="text-primary">●</div></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<th class="text-center">16:00 ~ 17:00</th>
+																	<td></td>
+																	<td></td>
+																	<td
+																		class="bg-danger text-center text-white"
+																		data-toggle="tooltip"
+																		data-placement="top"
+																		title=""
+																		data-html="true"
+																		data-original-title="2022-01-01<br />2022-01-02"
+																	>
+																		<i class="mdi mdi-alert-circle-outline" style="font-size: 20px"></i>
+																	</td>
+																	<td
+																		class="bg-danger text-center text-white"
+																		data-toggle="tooltip"
+																		data-placement="top"
+																		title=""
+																		data-html="true"
+																		data-original-title="2022-01-01<br />2022-01-02"
+																	>
+																		<i class="mdi mdi-alert-circle-outline" style="font-size: 20px"></i>
+																	</td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<th class="text-center">17:00 ~ 18:00</th>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td
+																		class="bg-danger text-center text-white"
+																		data-toggle="tooltip"
+																		data-placement="top"
+																		title=""
+																		data-html="true"
+																		data-original-title="2022-01-01<br />2022-01-02"
+																	>
+																		<i class="mdi mdi-alert-circle-outline" style="font-size: 20px"></i>
+																	</td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<th class="text-center">18:00 ~ 19:00</th>
+																	<td></td>
+																	<td class="text-center"><div class="text-primary">●</div></td>
+																	<td></td>
+																	<td
+																		class="bg-danger text-center text-white"
+																		data-toggle="tooltip"
+																		data-placement="top"
+																		title=""
+																		data-html="true"
+																		data-original-title="2022-01-01<br />2022-01-02"
+																	>
+																		<i class="mdi mdi-alert-circle-outline" style="font-size: 20px"></i>
+																	</td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<th class="text-center">19:00 ~ 20:00</th>
+																	<td></td>
+																	<td class="text-center"><div class="text-primary">●</div></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+															</tbody>
+														</table>
+														<div class="d-flex mt-4 justify-content-end">
+															<!-- <div class="text-right"><button type="button" class="btn btn-light mr-2">취소</button></div> -->
+															<div class="text-right"><button type="button" class="btn btn-primary">수정</button></div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="card">
 												<div class="px-3 pt-3">
 													<div class="form-group mt-1">
 														<div class="d-flex justify-content-between flex">
@@ -940,7 +1073,17 @@
 															</div>
 														</div>
 														<p>기본 상담시간을 수정한 후 저장 버튼을 누르세요.</p>
-														<table class="table table-centered table-hover w-100 nowrap table-bordered table-th-setting">
+														<table class="table table-centered table-hover nowrap table-bordered table-th-setting table-modify">
+															<colgroup>
+																<col style="width: 23%" />
+																<col style="width: 11%" />
+																<col style="width: 11%" />
+																<col style="width: 11%" />
+																<col style="width: 11%" />
+																<col style="width: 11%" />
+																<col style="width: 11%" />
+																<col style="width: 11%" />
+															</colgroup>
 															<thead class="thead-light">
 																<tr class="text-center">
 																	<th>시간</th>
@@ -955,90 +1098,92 @@
 															</thead>
 															<tbody>
 																<tr>
-																	<td class="text-center">11:00 ~ 12:00</td>
-																	<td class="bg-primary cursor"></td>
-																	<td class="bg-success cursor"></td>
-																	<td class="bg-primary cursor"></td>
+																	<th class="text-center">11:00 ~ 12:00</th>
 																	<td></td>
 																	<td></td>
-																	<td class="bg-success cursor"></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<th class="text-center">12:00 ~ 13:00</th>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<th class="text-center">13:00 ~ 14:00</th>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<th class="text-center">14:00 ~ 15:00</th>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<th class="text-center">15:00 ~ 16:00</th>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<th class="text-center">16:00 ~ 17:00</th>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
 																	<td></td>
 																</tr>
 																<tr>
-																	<td class="text-center">12:00 ~ 13:00</td>
+																	<th class="text-center">17:00 ~ 18:00</th>
 																	<td></td>
 																	<td></td>
-																	<td
-																		class="bg-danger cursor"
-																		data-toggle="tooltip"
-																		data-placement="top"
-																		title=""
-																		data-html="true"
-																		data-original-title="2022-01-01<br />2022-01-02"
-																	></td>
-																	<td class="bg-success cursor"></td>
 																	<td></td>
-																	<td class="bg-primary cursor"></td>
 																	<td></td>
-																</tr>
-																<tr>
-																	<td class="text-center">13:00 ~ 14:00</td>
-																	<td
-																		class="bg-danger cursor"
-																		data-toggle="tooltip"
-																		data-placement="top"
-																		title=""
-																		data-html="true"
-																		data-original-title="2022-01-01<br />2022-01-02"
-																	></td>
-																	<td class="bg-primary cursor"></td>
-																	<td class="bg-primary cursor"></td>
-																	<td class="bg-success cursor"></td>
 																	<td></td>
 																	<td></td>
 																	<td></td>
 																</tr>
 																<tr>
-																	<td class="text-center">15:00 ~ 16:00</td>
+																	<th class="text-center">18:00 ~ 19:00</th>
 																	<td></td>
-																	<td class="bg-success cursor"></td>
-																	<td></td>
-																	<td></td>
-																	<td class="bg-primary cursor"></td>
-																	<td></td>
-																	<td></td>
-																</tr>
-																<tr>
-																	<td class="text-center">17:00 ~ 18:00</td>
 																	<td></td>
 																	<td></td>
 																	<td></td>
 																	<td></td>
 																	<td></td>
 																	<td></td>
-																	<td
-																		class="bg-danger cursor"
-																		data-toggle="tooltip"
-																		data-placement="top"
-																		title=""
-																		data-html="true"
-																		data-original-title="2022-01-01<br />2022-01-02"
-																	></td>
 																</tr>
 																<tr>
-																	<td class="text-center">19:00 ~ 20:00</td>
-																	<td class="bg-success cursor"></td>
+																	<th class="text-center">19:00 ~ 20:00</th>
 																	<td></td>
-																	<td class="bg-primary cursor"></td>
 																	<td></td>
-																	<td
-																		class="bg-danger cursor"
-																		data-toggle="tooltip"
-																		data-placement="top"
-																		title=""
-																		data-html="true"
-																		data-original-title="2022-01-01<br />2022-01-02"
-																	></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
 																	<td></td>
 																	<td></td>
 																</tr>
@@ -1057,252 +1202,254 @@
 								<div class="tab-pane" id="time-list-tab">
 									<div class="card">
 										<div class="card-body">
-											<div class="d-flex">
-												<select class="form-control form-select mr-1" style="max-width: 200px">
-													<option value="">서울대병원</option>
-												</select>
-												<select class="form-control form-select mr-1" style="max-width: 200px">
-													<option value="">진료과 전체</option>
-												</select>
-											</div>
-											<div class="dataTables_scroll mt-2">
-												<div class="dataTables_scrollBody" style="position: relative; overflow: auto; width: 100%">
-													<table class="table table-centered table-hover nowrap" id="th-datatable10">
-														<colgroup>
-															<col width="7%" />
-															<col width="7%" />
-															<col width="7%" />
-															<col width="7%" />
-															<col width="7%" />
-															<col width="7%" />
-															<col width="7%" />
-															<col width="7%" />
-															<col width="7%" />
-															<col width="7%" />
-															<col width="7%" />
-															<col width="7%" />
-															<col width="7%" />
-														</colgroup>
-														<thead class="thead-light text-center">
-															<tr>
-																<th>진료과</th>
-																<th>구분</th>
-																<th>이름</th>
-																<th>상담주기</th>
-																<th>일</th>
-																<th>월</th>
-																<th>화</th>
-																<th>수</th>
-																<th>목</th>
-																<th>금</th>
-																<th>토</th>
-																<th>예외 일정</th>
-																<th>관리</th>
-															</tr>
-														</thead>
-														<tbody class="text-center">
-															<tr>
-																<td class="text-center">가정의학과</td>
-																<td>의사</td>
-																<td>홍길동</td>
-																<td>10분</td>
-																<td>-</td>
-																<td>-</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td>-</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td>-</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td><button type="button" class="btn btn-positive">관리</button></td>
-															</tr>
-															<tr>
-																<td class="text-center">가정의학과</td>
-																<td>의사</td>
-																<td>홍길동</td>
-																<td>10분</td>
-																<td>-</td>
-																<td>-</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td>-</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td>-</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td><button type="button" class="btn btn-positive">관리</button></td>
-															</tr>
-															<tr>
-																<td class="text-center">가정의학과</td>
-																<td>의사</td>
-																<td>홍길동</td>
-																<td>10분</td>
-																<td>-</td>
-																<td>-</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td>-</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td>-</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td><button type="button" class="btn btn-positive">관리</button></td>
-															</tr>
-															<tr>
-																<td class="text-center">가정의학과</td>
-																<td>의사</td>
-																<td>홍길동</td>
-																<td>10분</td>
-																<td>-</td>
-																<td>-</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td>-</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td>-</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td><button type="button" class="btn btn-positive">관리</button></td>
-															</tr>
-															<tr>
-																<td class="text-center">가정의학과</td>
-																<td>의사</td>
-																<td>홍길동</td>
-																<td>10분</td>
-																<td>-</td>
-																<td>-</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td>-</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td>-</td>
-																<td><button type="button" class="btn btn-positive">관리</button></td>
-															</tr>
-															<tr>
-																<td class="text-center">가정의학과</td>
-																<td>의사</td>
-																<td>홍길동</td>
-																<td>10분</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td>-</td>
-																<td>-</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td>-</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td>-</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td><button type="button" class="btn btn-positive">관리</button></td>
-															</tr>
-															<tr>
-																<td class="text-center">가정의학과</td>
-																<td>의사</td>
-																<td>홍길동</td>
-																<td>10분</td>
-																<td>-</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td>-</td>
-																<td>-</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td>-</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td><button type="button" class="btn btn-positive">관리</button></td>
-															</tr>
-															<tr>
-																<td class="text-center">가정의학과</td>
-																<td>의사</td>
-																<td>홍길동</td>
-																<td>10분</td>
-																<td>-</td>
-																<td>-</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td>-</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td>-</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td><button type="button" class="btn btn-positive">관리</button></td>
-															</tr>
-															<tr>
-																<td class="text-center">가정의학과</td>
-																<td>의사</td>
-																<td>홍길동</td>
-																<td>10분</td>
-																<td>-</td>
-																<td>-</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td>-</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td>-</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td><button type="button" class="btn btn-positive">관리</button></td>
-															</tr>
-															<tr>
-																<td class="text-center">가정의학과</td>
-																<td>의사</td>
-																<td>홍길동</td>
-																<td>10분</td>
-																<td>-</td>
-																<td>-</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td>-</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td>-</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td><button type="button" class="btn btn-positive">관리</button></td>
-															</tr>
-															<tr>
-																<td class="text-center">가정의학과</td>
-																<td>의사</td>
-																<td>홍길동</td>
-																<td>10분</td>
-																<td>-</td>
-																<td>-</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td>-</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td>-</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td><button type="button" class="btn btn-positive">관리</button></td>
-															</tr>
-															<tr>
-																<td class="text-center">가정의학과</td>
-																<td>의사</td>
-																<td>홍길동</td>
-																<td>10분</td>
-																<td>-</td>
-																<td>-</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td>-</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td>-</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td><button type="button" class="btn btn-positive">관리</button></td>
-															</tr>
-															<tr>
-																<td class="text-center">가정의학과</td>
-																<td>의사</td>
-																<td>홍길동</td>
-																<td>10분</td>
-																<td>-</td>
-																<td>-</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td>-</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td>-</td>
-																<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
-																<td><button type="button" class="btn btn-positive">관리</button></td>
-															</tr>
-														</tbody>
-													</table>
+											<div class="row">
+												<div class="col-12">
+													<div class="d-flex">
+														<select class="form-control form-select mr-1" style="max-width: 200px">
+															<option value="">서울대병원</option>
+														</select>
+														<select class="form-control form-select mr-1" style="max-width: 200px">
+															<option value="">진료과 전체</option>
+														</select>
+													</div>
 												</div>
 											</div>
+											<table class="table table-centered table-hover nowrap" id="th-datatable10">
+												<colgroup>
+													<col width="7%" />
+													<col width="7%" />
+													<col width="7%" />
+													<col width="7%" />
+													<col width="7%" />
+													<col width="7%" />
+													<col width="7%" />
+													<col width="7%" />
+													<col width="7%" />
+													<col width="7%" />
+													<col width="7%" />
+													<col width="7%" />
+													<col width="7%" />
+												</colgroup>
+												<thead class="thead-light text-center">
+													<tr>
+														<th>진료과</th>
+														<th>구분</th>
+														<th>이름</th>
+														<th>상담주기</th>
+														<th>일</th>
+														<th>월</th>
+														<th>화</th>
+														<th>수</th>
+														<th>목</th>
+														<th>금</th>
+														<th>토</th>
+														<th>예외 일정</th>
+														<th>관리</th>
+													</tr>
+												</thead>
+												<tbody class="text-center">
+													<tr>
+														<td class="text-center">가정의학과</td>
+														<td>의사</td>
+														<td>홍길동</td>
+														<td>10분</td>
+														<td>-</td>
+														<td>-</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td>-</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td>-</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td><button type="button" class="btn btn-positive">관리</button></td>
+													</tr>
+													<tr>
+														<td class="text-center">가정의학과</td>
+														<td>의사</td>
+														<td>홍길동</td>
+														<td>10분</td>
+														<td>-</td>
+														<td>-</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td>-</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td>-</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td><button type="button" class="btn btn-positive">관리</button></td>
+													</tr>
+													<tr>
+														<td class="text-center">가정의학과</td>
+														<td>의사</td>
+														<td>홍길동</td>
+														<td>10분</td>
+														<td>-</td>
+														<td>-</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td>-</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td>-</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td><button type="button" class="btn btn-positive">관리</button></td>
+													</tr>
+													<tr>
+														<td class="text-center">가정의학과</td>
+														<td>의사</td>
+														<td>홍길동</td>
+														<td>10분</td>
+														<td>-</td>
+														<td>-</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td>-</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td>-</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td><button type="button" class="btn btn-positive">관리</button></td>
+													</tr>
+													<tr>
+														<td class="text-center">가정의학과</td>
+														<td>의사</td>
+														<td>홍길동</td>
+														<td>10분</td>
+														<td>-</td>
+														<td>-</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td>-</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td>-</td>
+														<td><button type="button" class="btn btn-positive">관리</button></td>
+													</tr>
+													<tr>
+														<td class="text-center">가정의학과</td>
+														<td>의사</td>
+														<td>홍길동</td>
+														<td>10분</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td>-</td>
+														<td>-</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td>-</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td>-</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td><button type="button" class="btn btn-positive">관리</button></td>
+													</tr>
+													<tr>
+														<td class="text-center">가정의학과</td>
+														<td>의사</td>
+														<td>홍길동</td>
+														<td>10분</td>
+														<td>-</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td>-</td>
+														<td>-</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td>-</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td><button type="button" class="btn btn-positive">관리</button></td>
+													</tr>
+													<tr>
+														<td class="text-center">가정의학과</td>
+														<td>의사</td>
+														<td>홍길동</td>
+														<td>10분</td>
+														<td>-</td>
+														<td>-</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td>-</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td>-</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td><button type="button" class="btn btn-positive">관리</button></td>
+													</tr>
+													<tr>
+														<td class="text-center">가정의학과</td>
+														<td>의사</td>
+														<td>홍길동</td>
+														<td>10분</td>
+														<td>-</td>
+														<td>-</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td>-</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td>-</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td><button type="button" class="btn btn-positive">관리</button></td>
+													</tr>
+													<tr>
+														<td class="text-center">가정의학과</td>
+														<td>의사</td>
+														<td>홍길동</td>
+														<td>10분</td>
+														<td>-</td>
+														<td>-</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td>-</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td>-</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td><button type="button" class="btn btn-positive">관리</button></td>
+													</tr>
+													<tr>
+														<td class="text-center">가정의학과</td>
+														<td>의사</td>
+														<td>홍길동</td>
+														<td>10분</td>
+														<td>-</td>
+														<td>-</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td>-</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td>-</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td><button type="button" class="btn btn-positive">관리</button></td>
+													</tr>
+													<tr>
+														<td class="text-center">가정의학과</td>
+														<td>의사</td>
+														<td>홍길동</td>
+														<td>10분</td>
+														<td>-</td>
+														<td>-</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td>-</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td>-</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td><button type="button" class="btn btn-positive">관리</button></td>
+													</tr>
+													<tr>
+														<td class="text-center">가정의학과</td>
+														<td>의사</td>
+														<td>홍길동</td>
+														<td>10분</td>
+														<td>-</td>
+														<td>-</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td>-</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td>-</td>
+														<td>10:00 ~ 11:00<br />13:00 ~ 15:00</td>
+														<td><button type="button" class="btn btn-positive">관리</button></td>
+													</tr>
+												</tbody>
+											</table>
 										</div>
 									</div>
 								</div>
+								<!-- //Phase 2.2 -->
+								<!-- //아델리 -->
 							</div>
 						</div>
 					</div>
@@ -1474,7 +1621,7 @@
 									<div class="form-row">
 										<div class="form-group mb-0 w-100">
 											<input type="text" class="form-control" placeholder="닉네임 또는 실명을 검색하세요" aria-label="" />
-											<table class="table user-detail-table table-centered table-hover w-100 nowrap thead-only-gray" id="th-datatable01">
+											<table class="table user-detail-table table-centered table-hover nowrap thead-only-gray" id="th-datatable01">
 												<thead class="thead-light">
 													<tr>
 														<th></th>
@@ -1485,7 +1632,7 @@
 												<tbody>
 													<tr>
 														<td></td>
-														<td>홍길동</td>
+														<td>홍길동홍길동홍길동홍길동홍길동홍길동홍길동</td>
 														<td>010-1234-1234</td>
 													</tr>
 													<tr>
@@ -1648,7 +1795,7 @@
 													<input type="search" class="form-control" placeholder="실명을 검색하세요" aria-controls="adapter-datatable" />
 												</div>
 											</div>
-											<table class="table user-detail-table table-centered table-hover w-100 nowrap thead-only-gray" id="th-datatable02">
+											<table class="table user-detail-table table-centered table-hover nowrap thead-only-gray" id="th-datatable02">
 												<thead class="thead-light">
 													<tr>
 														<th></th>
@@ -1665,7 +1812,7 @@
 																<label class="custom-control-label" for="customRadio001" onclick=""></label>
 															</div>
 														</td>
-														<td>가정의학과</td>
+														<td>가정의학과가정의학과가정의학과가정의학과</td>
 														<td>의사</td>
 														<td>오의사</td>
 													</tr>
@@ -1945,7 +2092,7 @@
 									</div>
 									<div class="form-row">
 										<div class="form-group mb-0 w-100">
-											<table class="table user-detail-table table-centered table-hover w-100 nowrap thead-only-gray" id="th-datatable03">
+											<table class="table user-detail-table table-centered table-hover nowrap thead-only-gray" id="th-datatable03">
 												<thead class="thead-light">
 													<tr>
 														<th>담당자</th>
@@ -1958,7 +2105,7 @@
 												<tbody>
 													<tr>
 														<td class="text-center"></td>
-														<td>가정의학과</td>
+														<td>가정의학과가정의학과가정의학과가정의학과</td>
 														<td>의사</td>
 														<td>오의사</td>
 														<td>
@@ -2267,7 +2414,7 @@
 												</div>
 											</div>
 											<table
-												class="table user-detail-table table-centered table-hover w-100 nowrap thead-only-gray"
+												class="table user-detail-table table-centered table-hover nowrap thead-only-gray"
 												style="margin-top: 0 !important"
 												id="th-datatable04"
 											>
@@ -2321,8 +2468,8 @@
 											<div class="card mb-1">
 												<div class="row">
 													<div class="col-auto">
-														<a href="assets/images/small/small-1.jpg">
-															<img src="assets/images/small/small-1.jpg" alt="post-img" class="rounded mr-1" height="80" />
+														<a href="resource/images/small/small-1.jpg">
+															<img src="resource/images/small/small-1.jpg" alt="post-img" class="rounded mr-1" height="80" />
 														</a>
 													</div>
 												</div>
@@ -2330,8 +2477,8 @@
 											<div class="card mb-1">
 												<div class="row">
 													<div class="col-auto">
-														<a href="assets/images/small/small-2.jpg">
-															<img src="assets/images/small/small-2.jpg" alt="post-img" class="rounded mr-1" height="80" />
+														<a href="resource/images/small/small-2.jpg">
+															<img src="resource/images/small/small-2.jpg" alt="post-img" class="rounded mr-1" height="80" />
 														</a>
 													</div>
 												</div>
@@ -2339,8 +2486,8 @@
 											<div class="card mb-1">
 												<div class="row">
 													<div class="col-auto">
-														<a href="assets/images/small/small-2.jpg">
-															<img src="assets/images/small/small-2.jpg" alt="post-img" class="rounded mr-1" height="80" />
+														<a href="resource/images/small/small-2.jpg">
+															<img src="resource/images/small/small-2.jpg" alt="post-img" class="rounded mr-1" height="80" />
 														</a>
 													</div>
 												</div>
@@ -2432,7 +2579,7 @@
 								<div class="card mb-0 h-550p overflow-y-hidden">
 									<div class="card-body" data-simplebar style="max-height: 500px">
 										<table
-											class="table user-detail-table table-centered table-hover w-100 nowrap thead-only-gray"
+											class="table user-detail-table table-centered table-hover nowrap thead-only-gray"
 											style="margin-top: 0 !important"
 											id="th-datatable06"
 										>
@@ -2635,7 +2782,7 @@
 						<h4 class="modal-title" id="schedule-create-modalLabel">예약 변경 필요</h4>
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 					</div>
-					<div class="modal-body vertical-scroll" style="height: 400px">
+					<div class="modal-body" data-simplebar style="height: 520px">
 						<form action="#">
 							<div class="form-group my-0">
 								담당자의 일정이 변경되어 예약을 변경해야 하는 상담이 <strong class="text-primary">5건</strong> 있습니다.<br />
@@ -2643,7 +2790,7 @@
 							</div>
 							<hr class="mt-2 mb-2" />
 							<table
-								class="table user-detail-table table-centered table-hover w-100 nowrap thead-only-gray pt-0"
+								class="table user-detail-table table-centered table-hover nowrap thead-only-gray pt-0"
 								id="th-datatable08"
 								style="margin-top: 0 !important"
 							>
@@ -2664,7 +2811,7 @@
 												<label class="custom-control-label" for="HG_WEB_TH_01_10_customRadio001" onclick=""></label>
 											</div>
 										</td>
-										<td>김의사</td>
+										<td>김의사김의사김의사김의사김의사김의사김의사</td>
 										<td>2022-01-01 19:00</td>
 										<td>오의사</td>
 										<td>010-1234-1234</td>
@@ -2818,7 +2965,7 @@
 						<h4 class="modal-title" id="schedule-create-modalLabel">상담시간 변경 확인</h4>
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 					</div>
-					<div class="modal-body vertical-scroll" style="height: 400px">
+					<div class="modal-body" data-simplebar style="height: 520px">
 						<form action="#">
 							<div class="form-group my-0">
 								기본 상담시간을 변경하신 요일에 이미 예약된 상담이 <strong class="text-primary">5건</strong> 있습니다.<br />
@@ -2828,8 +2975,8 @@
 							</div>
 							<hr class="mt-2 mb-2" />
 							<table
-								class="table user-detail-table table-centered table-hover w-100 nowrap thead-only-gray pt-0"
-								id="th-datatable08"
+								class="table user-detail-table table-centered table-hover nowrap thead-only-gray pt-0"
+								id="th-datatable09"
 								style="margin-top: 0 !important"
 							>
 								<thead class="thead-light">
@@ -2937,34 +3084,34 @@
 										</div>
 									</div>
 
-									<table class="table table-centered table-hover w-100 nowrap table-bordered mt-0 table-th-setting2">
+									<table class="table table-centered table-hover nowrap table-bordered mt-0 table-th-setting2 table-modify">
 										<colgroup>
 											<col width="50%" />
 										</colgroup>
 										<tbody>
 											<tr>
-												<td class="text-center">11:00 ~ 12:00</td>
-												<td class="cursor"></td>
+												<th class="text-center">11:00 ~ 12:00</th>
+												<td></td>
 											</tr>
 											<tr>
-												<td class="text-center">12:00 ~ 13:00</td>
-												<td class="bg-primary cursor"></td>
+												<th class="text-center">12:00 ~ 13:00</th>
+												<td class="bg-info text-center color-white">가능</td>
 											</tr>
 											<tr>
-												<td class="text-center">13:00 ~ 14:00</td>
-												<td class="cursor"></td>
+												<th class="text-center">13:00 ~ 14:00</th>
+												<td></td>
 											</tr>
 											<tr>
-												<td class="text-center">15:00 ~ 16:00</td>
-												<td class="bg-primary cursor"></td>
+												<th class="text-center">15:00 ~ 16:00</th>
+												<td class="bg-info text-center color-white">가능</td>
 											</tr>
 											<tr>
-												<td class="text-center">17:00 ~ 18:00</td>
-												<td class="cursor"></td>
+												<th class="text-center">17:00 ~ 18:00</th>
+												<td></td>
 											</tr>
 											<tr>
-												<td class="text-center">19:00 ~ 20:00</td>
-												<td class="cursor"></td>
+												<th class="text-center">19:00 ~ 20:00</th>
+												<td></td>
 											</tr>
 										</tbody>
 									</table>
@@ -3007,27 +3154,27 @@
 		<div data-include-html="modal/setting.html"></div>
 		<div data-include-html="modal/password.html"></div>
 
-		<script src="assets/js/vendor.min.js"></script>
-		<script src="assets/js/app.min.js"></script>
-		<script src="assets/js/vendor/apexcharts.min.js"></script>
-		<script src="assets/js/ui/component.todo.js"></script>
-		<script src="assets/js/common.js"></script>
-		<script src="assets/js/vendor/fullcalendar.min.js"></script>
-		<script src="assets/js/pages/demo.calendar.js"></script>
-		<script src="assets/js/pages/demo.calendar3.js"></script>
+		<script src="resource/js/vendor.min.js"></script>
+		<script src="resource/js/app.min.js"></script>
+		<script src="resource/js/vendor/apexcharts.min.js"></script>
+		<script src="resource/js/ui/component.todo.js"></script>
+		<script src="resource/js/common.js"></script>
+		<script src="resource/js/vendor/fullcalendar.min.js"></script>
+		<script src="resource/js/pages/demo.calendar.js"></script>
+		<script src="resource/js/pages/demo.calendar3.js"></script>
 
-		<script src="assets/js/vendor/jquery.dataTables.min.js"></script>
-		<script src="assets/js/vendor/dataTables.bootstrap4.js"></script>
-		<script src="assets/js/vendor/dataTables.responsive.min.js"></script>
-		<script src="assets/js/vendor/apexcharts.min.js"></script>
-		<script src="assets/lib/simplelightbox/simpleLightbox.min.js"></script>
-		<script src="assets/js/vendor/dataTables.checkboxes.min.js"></script>
-		<script src="assets/js/vendor/responsive.bootstrap4.min.js"></script>
+		<script src="resource/js/vendor/jquery.dataTables.min.js"></script>
+		<script src="resource/js/vendor/dataTables.bootstrap4.js"></script>
+		<script src="resource/js/vendor/dataTables.responsive.min.js"></script>
+		<script src="resource/js/vendor/apexcharts.min.js"></script>
+		<script src="resource/lib/simplelightbox/simpleLightbox.min.js"></script>
+		<script src="resource/js/vendor/dataTables.checkboxes.min.js"></script>
+		<script src="resource/js/vendor/responsive.bootstrap4.min.js"></script>
 
-		<script src="assets/js/page/telehealth.js"></script>
-		<script src="assets/js/page/202207_th.js"></script>
+		<script src="resource/js/page/telehealth.js"></script>
+		<script src="resource/js/page/202207_th.js"></script>
 
-		<script src="assets/js/bootstrap4-toggle.min.js"></script>
+		<script src="resource/js/bootstrap4-toggle.min.js"></script>
 
 		<script>
 			function updateUserPassword() {
@@ -3053,7 +3200,8 @@
 				$("#contents-modal").modal("show");
 			}
 
-			// 2022 아델리 추가
+			//Phase 2.2
+			//아델리
 			function HG_WEB_TH_01_01() {
 				$("#HG_WEB_TH_01_01").modal("show");
 			}
@@ -3105,15 +3253,16 @@
 			function HG_WEB_TH_04_02() {
 				$("#HG_WEB_TH_04_02").modal("show");
 			}
-
-			// $(document).ready(function () {
-			// 	$('a[data-toggle="tab"]').on("click", function (e) {
-			// 		alert(1);
-			// 		$("#calendar").fullCalendar("render");
-			// 		$("#calendar3").fullCalendar("render");
-			// 	});
-			// });
-			// 2022 아델리 추가 end
+			$(".table-modify tbody td").on("click", function () {
+				$(this).toggleClass("bg-info");
+				$(this).toggleClass("text-center");
+				$(this).toggleClass("color-white");
+				if ($(this).hasClass("bg-info")) {
+					$(this).text("가능");
+				} else {
+					$(this).text("");
+				}
+			});
 		</script>
 	</body>
 </html>

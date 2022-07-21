@@ -144,13 +144,14 @@
 				],
 				a = this;
 			(a.$calendarObj = new FullCalendar.Calendar(a.$calendar[0], {
-				// 2022 아델리 추가
+				//Phase 2.2
+				//아델리
 				dayMaxEvents: true,
 				dayMaxEvents: 3,
 				moreLinkContent: function (args) {
 					return "+" + args.num + "명";
 				},
-				// 2022 아델리 추가 end
+
 				slotDuration: "00:15:00",
 				slotMinTime: "08:00:00",
 				slotMaxTime: "19:00:00",
@@ -218,3 +219,8 @@
 		"use strict";
 		window.jQuery.CalendarApp.init();
 	})();
+$(".nav-item a").on("click", function () {
+	setTimeout(function () {
+		window.jQuery.CalendarApp.init();
+	}, 100);
+});
