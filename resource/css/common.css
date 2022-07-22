@@ -1194,12 +1194,6 @@ button i {
 	background: #e4e4e4;
 }
 
-body[data-leftbar-theme="dark"] .datepicker table tr td.disabled,
-body[data-leftbar-theme="dark"] .datepicker table tr td.disabled:hover {
-	background: #3e2a50;
-	color: #857f7f;
-}
-
 .fc-daygrid-event.bg-danger {
 	padding-right: 22px;
 }
@@ -1447,6 +1441,5 @@ body[data-leftbar-theme="dark"] .datepicker table tr td.disabled:hover {
 	animation-timing-function: ease-in-out;
 	animation-iteration-count: infinite;
 }
-
 /* //2022 아델리 추가 */
 /* //Phase 2.2 */

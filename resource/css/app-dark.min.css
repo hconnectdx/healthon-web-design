@@ -17642,4 +17642,9 @@ textarea::-webkit-scrollbar-thumb {
 .page-aside-right-top {
     border-color:#464f5b   !important
 }
+.datepicker table tr td.disabled,
+.datepicker table tr td.disabled:hover {
+	background: #3e2a50 !important;
+	color: #857f7f !important;
+}
 /*# sourceMappingURL=app-dark.min.css.map */
