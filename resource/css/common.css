@@ -1324,8 +1324,13 @@ button i {
 .conversation-windows__list .div-ct .spinner-border {
 	margin-top: 20px;
 }
-.conversation-windows__list .card .dropdown {
-	margin: -10px -12px 0 0;
+.conversation .card .dropdown {
+	margin: -8px -14px 0 0;
+}
+.conversation .card .dropdown-toggle {
+	border-radius: 3px;
+	background: rgba(49, 58, 70, 0.5) !important;
+	color: #fff;
 }
 
 @media (max-width: 1806px) {
