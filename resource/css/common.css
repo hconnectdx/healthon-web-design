@@ -1077,12 +1077,17 @@ button i {
 .mCSB_horizontal.mCSB_inside > .mCSB_container {
 	margin: 0 !important;
 }
-
 @media (max-width: 990px) {
 	.th-bottom-wrap {
 		margin-top: 16px;
 		padding-left: 0;
 		padding-right: 0;
+	}
+	.th-bottom-wrap .text-right > .btn {
+		margin-top: 10px;
+	}
+	.th-bottom-wrap .position-relative > .btn {
+		margin-top: 10px;
 	}
 	.th-bottom-wrap .text-right {
 		text-align: left !important;
@@ -1267,6 +1272,10 @@ button i {
 .conversation .conversation-windows__wrap {
 	height: calc(100vh - 138px);
 }
+.conversation .conversation-windows__one,
+.conversation .conversation-windows__list {
+	height: calc(100vh - 162px);
+}
 
 .conversation .conversation-windows__item {
 	float: left;
@@ -1315,20 +1324,35 @@ button i {
 .conversation-windows__list .div-ct .spinner-border {
 	margin-top: 20px;
 }
+.conversation-windows__list .card .dropdown {
+	margin: -10px -12px 0 0;
+}
 
 @media (max-width: 1806px) {
 	.conversation .conversation-windows__wrap {
 		height: calc(100vh - 168px);
+	}
+	.conversation .conversation-windows__one,
+	.conversation .conversation-windows__list {
+		height: calc(100vh - 192px);
 	}
 }
 @media (max-width: 1366px) {
 	.conversation .conversation-windows__wrap {
 		height: calc(100vh - 200px);
 	}
+	.conversation .conversation-windows__one,
+	.conversation .conversation-windows__list {
+		height: calc(100vh - 224px);
+	}
 }
 @media (max-width: 1332px) {
 	.conversation .conversation-windows__wrap {
 		height: calc(100vh - 232px);
+	}
+	.conversation .conversation-windows__one,
+	.conversation .conversation-windows__list {
+		height: calc(100vh - 256px);
 	}
 }
 @media (max-width: 991px) {
