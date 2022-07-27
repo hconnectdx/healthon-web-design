@@ -1055,7 +1055,7 @@ dataColors && (colors = dataColors.split(","));
 var options = {
     annotations: {
         yaxis: [{
-            y: 700,
+            y: 300,
             borderColor: "#cfcd13",
             label: { borderColor: "#0acf97", style: { color: "#fff", background: "#0acf97" }, text: "" }
         }],
