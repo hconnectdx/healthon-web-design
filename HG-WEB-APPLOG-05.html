@@ -3603,6 +3603,9 @@
 				<!-- /.modal-dialog -->
 			</div>
 			<!-- /.modal -->
+
+			<!-- Phase 2.2 -->
+			<!-- 아델리 -->
 			<div
 				id="meal-detail-modal"
 				class="modal fade"
@@ -3612,17 +3615,16 @@
 				aria-hidden="true"
 				data-backdrop="static"
 			>
-				<div class="modal-dialog modal-custom-large modal-dialog-centered">
+				<div class="modal-dialog modal-80-width modal-dialog-centered">
 					<div class="modal-content">
 						<div class="modal-header modal-colored-header bg-primary">
 							<h4 class="modal-title" id="meal-detail-header-modalLabel">상세조회-식사</h4>
 							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 						</div>
-						<div class="modal-body p-0">
+						<div class="modal-body p-0" data-simplebar style="max-height: 720px">
 							<div class="card">
 								<div class="card-body border-bottom">
 									<div class="top-search mini">
-										<label class="mb-0 mr-1">FROM</label>
 										<div class="combine-wrapper mr-2">
 											<input
 												type="text"
@@ -3634,21 +3636,9 @@
 											/>
 											<i class="uil-calendar-alt"></i>
 										</div>
-										<label class="mb-0 mr-1">TO</label>
-										<div class="combine-wrapper">
-											<input
-												type="text"
-												class="form-control"
-												style="width: 140px; display: inline-block"
-												data-provide="datepicker"
-												data-date-format="yyyy-mm-dd"
-												value="2020-01-01"
-											/>
-											<i class="uil-calendar-alt"></i>
-										</div>
-										<button class="btn btn-secondary ml-2 t-btn-1">조회</button>
+										<button class="btn btn-light mr-1"><i class="mdi mdi-chevron-left"></i> 이전 7일</button>
+										<button class="btn btn-light">다음 7일 <i class="mdi mdi-chevron-right"></i></button>
 										<div class="top-search-btn">
-											<button class="btn btn-secondary t-btn-2">조회</button>
 											<span class="float-right">목표칼로리 : <b class="text-primary">3,500kcal</b></span>
 										</div>
 									</div>
@@ -3657,129 +3647,485 @@
 							<div class="custom-box">
 								<div class="card">
 									<div class="card-body">
-										<div id="line-chart-meal" data-colors="#7453ff,#6c757d"></div>
-									</div>
-								</div>
-							</div>
-							<div class="custom-box">
-								<div class="row">
-									<div class="col-md-6">
-										<div class="card mb-0 h-100">
-											<div class="card-body">
-												<h5 class="font-w-600 mb-3 mini-title">영양소 섭취량</h5>
-												<table class="table table-sm table-centered mb-0 thead-only-gray">
+										<div class="dataTables_scroll">
+											<div class="dataTables_scrollBody" style="position: relative; overflow: auto; width: 100%">
+												<table class="table table-sm table-centered mb-0 thead-only-gray text-nowrap">
 													<thead class="thead-light">
 														<tr>
-															<th>구분</th>
-															<th>총 섭취량</th>
-															<th style="width: 40%"></th>
+															<th rowspan="2">끼니</th>
+															<th colspan="2">2022-06-01(수)</th>
+															<th colspan="2">2022-06-01(수)</th>
+															<th colspan="2">2022-06-01(수)</th>
+															<th colspan="2">2022-06-01(수)</th>
+															<th colspan="2">2022-06-01(수)</th>
+															<th colspan="2">2022-06-01(수)</th>
+															<th colspan="2">2022-06-01(수)</th>
+															<th>평균</th>
+														</tr>
+														<tr>
+															<th>음식명</th>
+															<th>열량</th>
+															<th>음식명</th>
+															<th>열량</th>
+															<th>음식명</th>
+															<th>열량</th>
+															<th>음식명</th>
+															<th>열량</th>
+															<th>음식명</th>
+															<th>열량</th>
+															<th>음식명</th>
+															<th>열량</th>
+															<th>음식명</th>
+															<th>열량</th>
+															<th>열량</th>
 														</tr>
 													</thead>
 													<tbody>
 														<tr>
-															<td>목표섭취량</td>
-															<td>2,100kcal</td>
+															<td>아침</td>
 															<td>
-																<div class="progress" style="height: 3px">
-																	<div
-																		class="progress-bar"
-																		role="progressbar"
-																		style="width: 65%; height: 20px"
-																		aria-valuenow="65"
-																		aria-valuemin="0"
-																		aria-valuemax="100"
-																	></div>
-																</div>
+																쌀밥<br />
+																김치찌개<br />
+																달걀말이
 															</td>
+															<td>
+																1,000kcal<br />
+																1,000kcal<br />
+																1,000kcal
+															</td>
+															<td>
+																쌀밥<br />
+																김치찌개<br />
+																달걀말이
+															</td>
+															<td>
+																1,000kcal<br />
+																1,000kcal<br />
+																1,000kcal
+															</td>
+															<td>
+																쌀밥<br />
+																김치찌개<br />
+																달걀말이
+															</td>
+															<td>
+																1,000kcal<br />
+																1,000kcal<br />
+																1,000kcal
+															</td>
+															<td>
+																쌀밥<br />
+																김치찌개<br />
+																달걀말이
+															</td>
+															<td>
+																1,000kcal<br />
+																1,000kcal<br />
+																1,000kcal
+															</td>
+															<td>
+																쌀밥<br />
+																김치찌개<br />
+																달걀말이
+															</td>
+															<td>
+																1,000kcal<br />
+																1,000kcal<br />
+																1,000kcal
+															</td>
+															<td>
+																쌀밥<br />
+																김치찌개<br />
+																달걀말이
+															</td>
+															<td>
+																1,000kcal<br />
+																1,000kcal<br />
+																1,000kcal
+															</td>
+															<td>
+																쌀밥<br />
+																김치찌개<br />
+																달걀말이
+															</td>
+															<td>
+																1,000kcal<br />
+																1,000kcal<br />
+																1,000kcal
+															</td>
+															<td>1,000kcal</td>
 														</tr>
 														<tr>
-															<td>평균섭취량</td>
-															<td>1,234kcal</td>
+															<td>점심</td>
 															<td>
-																<div class="progress" style="height: 3px">
-																	<div
-																		class="progress-bar"
-																		role="progressbar"
-																		style="width: 65%; height: 20px"
-																		aria-valuenow="65"
-																		aria-valuemin="0"
-																		aria-valuemax="100"
-																	></div>
-																</div>
+																쌀밥<br />
+																김치찌개<br />
+																달걀말이
 															</td>
+															<td>
+																1,000kcal<br />
+																1,000kcal<br />
+																1,000kcal
+															</td>
+															<td>
+																쌀밥<br />
+																김치찌개<br />
+																달걀말이
+															</td>
+															<td>
+																1,000kcal<br />
+																1,000kcal<br />
+																1,000kcal
+															</td>
+															<td>
+																쌀밥<br />
+																김치찌개<br />
+																달걀말이
+															</td>
+															<td>
+																1,000kcal<br />
+																1,000kcal<br />
+																1,000kcal
+															</td>
+															<td>
+																쌀밥<br />
+																김치찌개<br />
+																달걀말이
+															</td>
+															<td>
+																1,000kcal<br />
+																1,000kcal<br />
+																1,000kcal
+															</td>
+															<td>
+																쌀밥<br />
+																김치찌개<br />
+																달걀말이
+															</td>
+															<td>
+																1,000kcal<br />
+																1,000kcal<br />
+																1,000kcal
+															</td>
+															<td>
+																쌀밥<br />
+																김치찌개<br />
+																달걀말이
+															</td>
+															<td>
+																1,000kcal<br />
+																1,000kcal<br />
+																1,000kcal
+															</td>
+															<td>
+																쌀밥<br />
+																김치찌개<br />
+																달걀말이
+															</td>
+															<td>
+																1,000kcal<br />
+																1,000kcal<br />
+																1,000kcal
+															</td>
+															<td>1,000kcal</td>
+														</tr>
+														<tr>
+															<td>저녁</td>
+															<td>
+																쌀밥<br />
+																김치찌개<br />
+																달걀말이
+															</td>
+															<td>
+																1,000kcal<br />
+																1,000kcal<br />
+																1,000kcal
+															</td>
+															<td>
+																쌀밥<br />
+																김치찌개<br />
+																달걀말이
+															</td>
+															<td>
+																1,000kcal<br />
+																1,000kcal<br />
+																1,000kcal
+															</td>
+															<td>
+																쌀밥<br />
+																김치찌개<br />
+																달걀말이
+															</td>
+															<td>
+																1,000kcal<br />
+																1,000kcal<br />
+																1,000kcal
+															</td>
+															<td>
+																쌀밥<br />
+																김치찌개<br />
+																달걀말이
+															</td>
+															<td>
+																1,000kcal<br />
+																1,000kcal<br />
+																1,000kcal
+															</td>
+															<td>
+																쌀밥<br />
+																김치찌개<br />
+																달걀말이
+															</td>
+															<td>
+																1,000kcal<br />
+																1,000kcal<br />
+																1,000kcal
+															</td>
+															<td>
+																쌀밥<br />
+																김치찌개<br />
+																달걀말이
+															</td>
+															<td>
+																1,000kcal<br />
+																1,000kcal<br />
+																1,000kcal
+															</td>
+															<td>
+																쌀밥<br />
+																김치찌개<br />
+																달걀말이
+															</td>
+															<td>
+																1,000kcal<br />
+																1,000kcal<br />
+																1,000kcal
+															</td>
+															<td>1,000kcal</td>
+														</tr>
+														<tr>
+															<td>간식</td>
+															<td>
+																쌀밥<br />
+																김치찌개<br />
+																달걀말이
+															</td>
+															<td>
+																1,000kcal<br />
+																1,000kcal<br />
+																1,000kcal
+															</td>
+															<td>
+																쌀밥<br />
+																김치찌개<br />
+																달걀말이
+															</td>
+															<td>
+																1,000kcal<br />
+																1,000kcal<br />
+																1,000kcal
+															</td>
+															<td>
+																쌀밥<br />
+																김치찌개<br />
+																달걀말이
+															</td>
+															<td>
+																1,000kcal<br />
+																1,000kcal<br />
+																1,000kcal
+															</td>
+															<td>
+																쌀밥<br />
+																김치찌개<br />
+																달걀말이
+															</td>
+															<td>
+																1,000kcal<br />
+																1,000kcal<br />
+																1,000kcal
+															</td>
+															<td>
+																쌀밥<br />
+																김치찌개<br />
+																달걀말이
+															</td>
+															<td>
+																1,000kcal<br />
+																1,000kcal<br />
+																1,000kcal
+															</td>
+															<td>
+																쌀밥<br />
+																김치찌개<br />
+																달걀말이
+															</td>
+															<td>
+																1,000kcal<br />
+																1,000kcal<br />
+																1,000kcal
+															</td>
+															<td>
+																쌀밥<br />
+																김치찌개<br />
+																달걀말이
+															</td>
+															<td>
+																1,000kcal<br />
+																1,000kcal<br />
+																1,000kcal
+															</td>
+															<td>1,000kcal</td>
+														</tr>
+														<tr>
+															<td>합계</td>
+															<td>
+															</td>
+															<td>
+																1,000kcal
+															</td>
+															<td>
+															</td>
+															<td>
+																1,000kcal
+															</td>
+															<td>
+															</td>
+															<td>
+																1,000kcal
+															</td>
+															<td>
+															</td>
+															<td>
+																1,000kcal
+															</td>
+															<td>
+															</td>
+															<td>
+																1,000kcal
+															</td>
+															<td>
+															</td>
+															<td>
+																1,000kcal
+															</td>
+															<td>
+															</td>
+															<td>
+																1,000kcal
+															</td>
+															<td>1,000kcal</td>
 														</tr>
 													</tbody>
 												</table>
 											</div>
 										</div>
 									</div>
-									<div class="col-md-6">
+								</div>
+							</div>
+							<div class="custom-box">
+								<div class="row mb-2">
+									<div class="col-xl-6 col-lg-12 col-md-12 col-xs-12">
 										<div class="card mb-0 h-100">
 											<div class="card-body">
-												<h5 class="font-w-600 mb-3 mini-title">영양소 비율</h5>
+												<div id="line-chart-meal01" data-colors="#7453ff,#6c757d"></div>
+											</div>
+										</div>
+									</div>
+									<div class="col-xl-6 col-lg-12 col-md-12 col-xs-12">
+										<div class="card mb-0 h-100">
+											<div class="card-body">
+												<h5 class="font-w-600 mb-3 mini-title">주요 섭취 음식</h5>
 												<table class="table table-sm table-centered mb-0 thead-only-gray">
 													<thead class="thead-light">
 														<tr>
-															<th>구분</th>
-															<th>실제 섭취율</th>
-															<th>권장 섭취율</th>
-															<th style="width: 40%"></th>
+															<th>주요 섭취 음식</th>
+															<th>횟수</th>
+															<th>1일 섭취 열량</th>
+															<th>총 섭취 열량</th>
 														</tr>
 													</thead>
 													<tbody>
 														<tr>
-															<td>탄수화물</td>
-															<td>74%(초과)</td>
-															<td>55%</td>
-															<td>
-																<div class="progress" style="height: 3px">
-																	<div
-																		class="progress-bar"
-																		role="progressbar"
-																		style="width: 65%; height: 20px"
-																		aria-valuenow="65"
-																		aria-valuemin="0"
-																		aria-valuemax="100"
-																	></div>
-																</div>
-															</td>
+															<td>쌀밥</td>
+															<td>7</td>
+															<td>600kal</td>
+															<td>4,200kcal</td>
 														</tr>
 														<tr>
-															<td>단백질</td>
-															<td>12%</td>
-															<td>20%</td>
-															<td>
-																<div class="progress" style="height: 3px">
-																	<div
-																		class="progress-bar"
-																		role="progressbar"
-																		style="width: 65%; height: 20px"
-																		aria-valuenow="65"
-																		aria-valuemin="0"
-																		aria-valuemax="100"
-																	></div>
-																</div>
-															</td>
+															<td>쌀밥</td>
+															<td>7</td>
+															<td>600kal</td>
+															<td>4,200kcal</td>
 														</tr>
 														<tr>
-															<td>지방</td>
-															<td>14%</td>
-															<td>25%</td>
-															<td>
-																<div class="progress" style="height: 3px">
-																	<div
-																		class="progress-bar"
-																		role="progressbar"
-																		style="width: 65%; height: 20px"
-																		aria-valuenow="65"
-																		aria-valuemin="0"
-																		aria-valuemax="100"
-																	></div>
-																</div>
-															</td>
+															<td>쌀밥</td>
+															<td>7</td>
+															<td>600kal</td>
+															<td>4,200kcal</td>
+														</tr>
+														<tr>
+															<td>쌀밥</td>
+															<td>7</td>
+															<td>600kal</td>
+															<td>4,200kcal</td>
+														</tr>
+														<tr>
+															<td>쌀밥</td>
+															<td>7</td>
+															<td>600kal</td>
+															<td>4,200kcal</td>
+														</tr>
+														<tr>
+															<td>쌀밥</td>
+															<td>7</td>
+															<td>600kal</td>
+															<td>4,200kcal</td>
 														</tr>
 													</tbody>
 												</table>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row mb-2">
+									<div class="col-xl-6 col-lg-12 col-md-12 col-xs-12">
+										<div class="card mb-0 h-100">
+											<div class="card-body">
+												<div id="line-chart-meal02" data-colors="#7453ff,#6c757d"></div>
+											</div>
+										</div>
+									</div>
+									<div class="col-xl-6 col-lg-12 col-md-12 col-xs-12">
+										<div class="card mb-0 h-100">
+											<div class="card-body">
+												<div id="line-chart-meal03" data-colors="#7453ff,#6c757d"></div>
+												<p class="text-center m-0">
+													※ 목표섭취량: 총 섭취 열량의 10% 이내(WHO기준)
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xl-6 col-lg-12 col-md-12 col-xs-12">
+										<div class="card mb-0 h-100">
+											<div class="card-body">
+												<div id="donut-chart-meal01" data-colors="#7453ff,#6c757d"></div>
+												<p class="text-center m-0 mt-3">
+													※  권장섭취비율: 아침, 점심, 저녁= 1:1.5:2<br />
+													간식은 10%이내 권장
+												</p>
+											</div>
+										</div>
+									</div>
+									<div class="col-xl-6 col-lg-12 col-md-12 col-xs-12">
+										<div class="card mb-0 h-100">
+											<div class="card-body">
+												<div id="donut-chart-meal02" data-colors="#7453ff,#6c757d"></div>
+												<p class="text-center m-0 mt-3">
+													※ 권장섭취비율: 탄수화물 55-65%, 지방 15-25%, 단백질 7-20%
+												</p>
 											</div>
 										</div>
 									</div>
@@ -3792,6 +4138,9 @@
 				<!-- /.modal-dialog -->
 			</div>
 			<!-- /.modal -->
+			<!-- //Phase 2.2 -->
+			<!-- //아델리 -->
+
 			<div
 				id="meal-diary-detail-modal"
 				class="modal fade"
@@ -7023,9 +7372,10 @@
 		<!-- 모달 가이드 -->
 		<!-- 2022 아델리 추가 -->
 		<div style="position: fixed; bottom: 0; right: 500px; background: rgba(0, 0, 0, 0.5); width: 500px; padding: 20px; z-index: 100">
-			<a href="javascript:void(0)" onclick="APPLOG_05_01()" style="color: #fff">APPLOG-05-01 : 신규 예약 생성</a><br />
-			<a href="javascript:void(0)" onclick="APPLOG_05_02()" style="color: #fff">APPLOG-05-02 : 상담자 선택</a><br />
-			<a href="javascript:void(0)" onclick="APPLOG_05_03()" style="color: #fff">APPLOG-05-03 : 예약 확정 완료 </a><br />
+			<a href="javascript:void(0)" onclick="APPLOG_05_01()" style="color: #fff">HG-WEB-APPLOG-05-01 : 신규 예약 생성</a><br />
+			<a href="javascript:void(0)" onclick="APPLOG_05_02()" style="color: #fff">HG-WEB-APPLOG-05-02 : 상담자 선택</a><br />
+			<a href="javascript:void(0)" onclick="APPLOG_05_03()" style="color: #fff">HG-WEB-APPLOG-05-03 : 예약 확정 완료 </a><br />
+			<a href="javascript:void(0)" onclick="showMealDetailModal()" style="color: #fff">HG-WEB-APPLOG-01-05 : 식사 상세조회 </a><br />
 		</div>
 		<!-- 2022 아델리 추가 end-->
 

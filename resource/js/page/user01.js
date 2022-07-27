@@ -966,7 +966,7 @@ var options = {
     chart = new ApexCharts(document.querySelector("#basic-radialbar"), options);
 chart.render();
 
-var colors = ["#39afd1"], dataColors = $("#line-chart-meal").data("colors");
+var colors = ["#39afd1"], dataColors = $("#line-chart-meal01").data("colors");
 dataColors && (colors = dataColors.split(","));
 var options = {
     annotations: {
@@ -977,7 +977,7 @@ var options = {
         }],
     },
 
-    chart: { height: 280, type: "bar", toolbar: { show: !1 } },
+    chart: { height: 320, type: "bar", toolbar: { show: !1 } },
     plotOptions: { bar: { horizontal: !1 } },
     dataLabels: { enabled: !1 },
     series: [{ name: "", data: [2412, 3600, 4748, 3870, 2240, 3280, 4690, 3812, 4200, 4748, 3470, 3040, 2880, 3390, 3912, 4200, 4748, 3770, 3112, 3600] }],
@@ -985,7 +985,7 @@ var options = {
     xaxis: { categories: ["9/1", "9/2", "9/3", "9/4", "9/5", "9/6", "9/7", "9/8", "9/9", "9/10", "9/11", "9/12", "9/13", "9/14", "9/15", "9/16", "9/17", "9/18", "9/19", "9/20"], title: { text: "" } },
     states: { hover: { filter: "none" } },
     grid: { borderColor: "#f1f3fa" },
-    title: { text: "일 4,550 kcal", align: "left" },
+    title: { text: "일자별 섭취량", align: "left" },
     tooltip: {
         followCursor: !1,
         marker: { show: !1 },
@@ -996,7 +996,7 @@ var options = {
         },
         y: {
             formatter: function (e) {
-                return "<div> " + e + " kcal</div><div> - 탄수화물 : 153g (59%)</div><div> - 지방 : 25g (26%)</div> <div> - 나트륨 : 13g (25%)</div>";
+                return "<div> " + e + " kcal</div><div> - 탄수화물 : 153g (59%)</div><div> - 단백질 : 25g (26%)</div> <div> - 지방 : 13g (25%)</div>";
             }
         },
         style: {
@@ -1005,9 +1005,158 @@ var options = {
             fontWeight: "normal"
         }
     },
-}, chart = new ApexCharts(document.querySelector("#line-chart-meal"), options);
+}, chart = new ApexCharts(document.querySelector("#line-chart-meal01"), options);
 chart.render();
 
+var colors = ["#39afd1"], dataColors = $("#line-chart-meal02").data("colors");
+dataColors && (colors = dataColors.split(","));
+var options = {
+    annotations: {
+        yaxis: [{
+            y: 700,
+            borderColor: "#cfcd13",
+            label: { borderColor: "#0acf97", style: { color: "#fff", background: "#0acf97" }, text: "" }
+        }],
+    },
+
+    chart: { height: 320, type: "bar", toolbar: { show: !1 } },
+    plotOptions: { bar: { horizontal: !1 } },
+    dataLabels: { enabled: !1 },
+    series: [{ name: "", data: [300, 600, 900, 1200, 1500, 1800, 2100, 2400, 2700, 3000, 300, 600, 900, 1200, 1500, 1800, 2100, 2400, 2700, 3000] }],
+    colors: colors,
+    xaxis: { categories: ["9/1", "9/2", "9/3", "9/4", "9/5", "9/6", "9/7", "9/8", "9/9", "9/10", "9/11", "9/12", "9/13", "9/14", "9/15", "9/16", "9/17", "9/18", "9/19", "9/20"], title: { text: "" } },
+    states: { hover: { filter: "none" } },
+    grid: { borderColor: "#f1f3fa" },
+    title: { text: "일자별 나트륨 섭취량", align: "left" },
+    tooltip: {
+        followCursor: !1,
+        marker: { show: !1 },
+        x: {
+            formatter: function (e) {
+                return "2020-" + e;
+            }
+        },
+        y: {
+            formatter: function (e) {
+                return "<div> " + e + " mg</div>";
+            }
+        },
+        style: {
+            fontSize: "11px",
+            fontFamily: "\"Spoqa Han Sans Regular\" sans-serif",
+            fontWeight: "normal"
+        }
+    },
+}, chart = new ApexCharts(document.querySelector("#line-chart-meal02"), options);
+chart.render();
+
+var colors = ["#39afd1"], dataColors = $("#line-chart-meal03").data("colors");
+dataColors && (colors = dataColors.split(","));
+var options = {
+    annotations: {
+        yaxis: [{
+            y: 700,
+            borderColor: "#cfcd13",
+            label: { borderColor: "#0acf97", style: { color: "#fff", background: "#0acf97" }, text: "" }
+        }],
+    },
+
+    chart: { height: 320, type: "bar", toolbar: { show: !1 } },
+    plotOptions: { bar: { horizontal: !1 } },
+    dataLabels: { enabled: !1 },
+    series: [{ name: "", data: [50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500] }],
+    colors: colors,
+    xaxis: { categories: ["9/1", "9/2", "9/3", "9/4", "9/5", "9/6", "9/7", "9/8", "9/9", "9/10", "9/11", "9/12", "9/13", "9/14", "9/15", "9/16", "9/17", "9/18", "9/19", "9/20"], title: { text: "" } },
+    states: { hover: { filter: "none" } },
+    grid: { borderColor: "#f1f3fa" },
+    title: { text: "일자별 당 섭취량", align: "left" },
+    tooltip: {
+        followCursor: !1,
+        marker: { show: !1 },
+        x: {
+            formatter: function (e) {
+                return "2020-" + e;
+            }
+        },
+        y: {
+            formatter: function (e) {
+                return "<div> " + e + " g</div>";
+            }
+        },
+        style: {
+            fontSize: "11px",
+            fontFamily: "\"Spoqa Han Sans Regular\" sans-serif",
+            fontWeight: "normal"
+        }
+    },
+}, chart = new ApexCharts(document.querySelector("#line-chart-meal03"), options);
+chart.render();
+
+var options = {
+    chart: {height: 300, type: "pie"},
+    series: [400, 500, 600, 700],
+    legend: {
+        show: !0,
+        position: "bottom",
+        horizontalAlign: "center",
+        verticalAlign: "middle",
+        floating: !1,
+        fontSize: "13px",
+        offsetX: 0,
+        offsetY: 7
+    },
+    title: { text: "1일 끼니별 섭취 비율", align: "left" },
+    labels: ["아침", "점심", "저녁", "간식"],
+    responsive: [{breakpoint: 600, options: {chart: {height: 280}, legend: {show: !1}}}],
+    tooltip: {
+        y: {
+            formatter: function (e,a) {
+                //return "<div>아침<br />" + e + "kcal<br />(50%)</div>";
+                return "<div>" + e + "kcal</div>";
+            }
+        },
+        style: {
+            fontSize: "11px",
+            fontFamily: "\"Spoqa Han Sans Regular\" sans-serif",
+            fontWeight: "normal"
+        }
+    },
+};
+(chart = new ApexCharts(document.querySelector("#donut-chart-meal01"), options)).render();
+
+var options = {
+    chart: {height: 300, type: "pie"},
+    theme: {
+        palette: 'palette2' // upto palette10
+      },
+    series: [400, 500, 600, 700],
+    legend: {
+        show: !0,
+        position: "bottom",
+        horizontalAlign: "center",
+        verticalAlign: "middle",
+        floating: !1,
+        fontSize: "13px",
+        offsetX: 0,
+        offsetY: 7
+    },
+    title: { text: "1일 영양소별 섭취 비율", align: "left" },
+    labels: ["탄수화물", "단백질", "지방", "나트륨"],
+    responsive: [{breakpoint: 600, options: {chart: {height: 280}, legend: {show: !1}}}],
+    tooltip: {
+        y: {
+            formatter: function (e,a) {
+                return "<div>" + e + "g</div>";
+            }
+        },
+        style: {
+            fontSize: "11px",
+            fontFamily: "\"Spoqa Han Sans Regular\" sans-serif",
+            fontWeight: "normal"
+        }
+    },
+};
+(chart = new ApexCharts(document.querySelector("#donut-chart-meal02"), options)).render();
 
 var colors = ["#7453ff", "#0acf97"], dataColors = $("#line-chart-walking").data("colors");
 dataColors && (colors = dataColors.split(","));
