@@ -1127,7 +1127,7 @@ var options = {
 var options = {
     chart: {height: 300, type: "pie"},
     theme: {
-        palette: 'palette2' // upto palette10
+        palette: 'palette3' // upto palette10
       },
     series: [400, 500, 600, 700],
     legend: {
