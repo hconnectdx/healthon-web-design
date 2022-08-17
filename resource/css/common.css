@@ -735,6 +735,9 @@ select.form-control::-ms-expand {
 .btn-download:hover {
 	color: #6c757d;
 }
+.ico-disabled {
+	color: #d3d3d3;
+}
 
 [class*="btn-outline"] {
 	border: 1px solid;

@@ -1,498 +1,505 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
-	<head>
-		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-		<title>HEALTH ON 관리자 페이지 퍼블리싱 Status</title>
-		<style type="text/css">
-			html,
-			body {
-				margin: 0;
-				padding: 0;
-			}
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <title>HEALTH ON 관리자 페이지 퍼블리싱 Status</title>
+    <style type="text/css">
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
 
-			html {
-				overflow-y: scroll;
-			}
+      html {
+        overflow-y: scroll;
+      }
 
-			body {
-				color: #666;
-				background-color: #fff;
-				font: 12px/1.5 Dotum, "돋움";
-			}
+      body {
+        color: #666;
+        background-color: #fff;
+        font: 12px/1.5 Dotum, "돋움";
+      }
 
-			a {
-				color: #27e;
-				text-decoration: none;
-			}
+      a {
+        color: #27e;
+        text-decoration: none;
+      }
 
-			a:focus,
-			a:hover,
-			a:active {
-				text-decoration: underline;
-			}
+      a:focus,
+      a:hover,
+      a:active {
+        text-decoration: underline;
+      }
 
-			.header {
-				padding: 0.5em;
-			}
+      .header {
+        padding: 0.5em;
+      }
 
-			.header h1 {
-				display: inline;
-				margin-right: 1em;
-				color: #000;
-				font-size: 2em;
-			}
+      .header h1 {
+        display: inline;
+        margin-right: 1em;
+        color: #000;
+        font-size: 2em;
+      }
 
-			.header ul {
-				display: inline;
-				font-size: 1.5em;
-				list-style: none;
-			}
+      .header ul {
+        display: inline;
+        font-size: 1.5em;
+        list-style: none;
+      }
 
-			.header ul li {
-				display: inline;
-			}
+      .header ul li {
+        display: inline;
+      }
 
-			.group-title {
-				margin-top: 1em;
-				color: #000;
-				font-weight: bold;
-				font-size: 1.5em;
-			}
+      .group-title {
+        margin-top: 1em;
+        color: #000;
+        font-weight: bold;
+        font-size: 1.5em;
+      }
 
-			table {
-				width: 100%;
-				border-collapse: collapse;
-				border-spacing: 0;
-			}
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
 
-			table caption {
-				display: none;
-			}
+      table caption {
+        display: none;
+      }
 
-			table th {
-				color: #333;
-				background-color: #eee;
-			}
+      table th {
+        color: #333;
+        background-color: #eee;
+      }
 
-			table th,
-			table td {
-				padding: 6px 3px 2px 3px;
-				border: 1px solid #ddd;
-				text-align: left;
-				font-size: 12px;
-				font-family: "Dotum", "돋움";
-			}
+      table th,
+      table td {
+        padding: 6px 3px 2px 3px;
+        border: 1px solid #ddd;
+        text-align: left;
+        font-size: 12px;
+        font-family: "Dotum", "돋움";
+      }
 
-			table th,
-			table td.stat {
-				text-align: center;
-			}
+      table th,
+      table td.stat {
+        text-align: center;
+      }
 
-			table td.date p {
-				margin: 2px 0 0 0;
-			}
+      table td.date p {
+        margin: 2px 0 0 0;
+      }
 
-			table td.date p.new {
-				color: #9c27b0;
-				font-weight: bold;
-			}
+      table td.date p.new {
+        color: #9c27b0;
+        font-weight: bold;
+      }
 
-			table td .notice li {
-				list-style: none;
-				margin: 2px 0 0 0;
-				font-weight: bold;
-			}
+      table td .notice li {
+        list-style: none;
+        margin: 2px 0 0 0;
+        font-weight: bold;
+      }
 
-			table td .notice li.new {
-				color: #9c27b0;
-			}
+      table td .notice li.new {
+        color: #9c27b0;
+      }
 
-			table td.stat {
-				font-weight: bold;
-			}
+      table td.stat {
+        font-weight: bold;
+      }
 
-			table tr.even,
-			table tr td.multi {
-				background-color: #ffffff;
-			}
+      table tr.even,
+      table tr td.multi {
+        background-color: #ffffff;
+      }
 
-			table tr.add td {
-				background-color: #fd0;
-			}
+      table tr.add td {
+        background-color: #fd0;
+      }
 
-			table tr.modify td {
-				background-color: #fffeb4;
-			}
+      table tr.modify td {
+        background-color: #fffeb4;
+      }
 
-			table tr.hover td {
-				background-color: #fafafa;
-			}
+      table tr.hover td {
+        background-color: #fafafa;
+      }
 
-			table tr.none td {
-				color: #000;
-				background-color: #fc8989;
-			}
+      table tr.none td {
+        color: #000;
+        background-color: #fc8989;
+      }
 
-			table tr.up td {
-				background-color: #ffe9f5;
-			}
+      table tr.up td {
+        background-color: #ffe9f5;
+      }
 
-			.section {
-				margin: 3em 0;
-			}
+      .section {
+        margin: 3em 0;
+      }
 
-			body.js .section {
-				margin: 0;
-			}
+      body.js .section {
+        margin: 0;
+      }
 
-			.section .title {
-				margin: 0;
-				padding: 0;
-				color: #000;
-				font-weight: bold;
-				font-size: 100%;
-			}
+      .section .title {
+        margin: 0;
+        padding: 0;
+        color: #000;
+        font-weight: bold;
+        font-size: 100%;
+      }
 
-			body.js .section .title {
-				padding: 0.5em;
-				border: 1px solid #ccc;
-				background-color: #ddd;
-				cursor: pointer;
-			}
+      body.js .section .title {
+        padding: 0.5em;
+        border: 1px solid #ccc;
+        background-color: #ddd;
+        cursor: pointer;
+      }
 
-			body.js .section + .section .title {
-				border-top: 0;
-			}
+      body.js .section + .section .title {
+        border-top: 0;
+      }
 
-			body.js .section .title .page-count {
-				color: #666;
-				font-weight: normal;
-			}
+      body.js .section .title .page-count {
+        color: #666;
+        font-weight: normal;
+      }
 
-			body.js .section .content {
-				display: none;
-			}
+      body.js .section .content {
+        display: none;
+      }
 
-			#sb-body {
-				border: none !important;
-			}
+      #sb-body {
+        border: none !important;
+      }
 
-			.modi {
-				background: #000 !important;
-				color: #fff;
-				font-weight: bold;
-			}
+      .modi {
+        background: #000 !important;
+        color: #fff;
+        font-weight: bold;
+      }
 
-			.modi.blue {
-				background: skyblue !important;
-			}
+      .modi.blue {
+        background: skyblue !important;
+      }
 
-			.modi.red {
-				background: red !important;
-			}
+      .modi.red {
+        background: red !important;
+      }
 
-			.font_form {
-				margin: 0;
-				padding: 0;
-				padding-inline-start: 5px;
-			}
+      .font_form {
+        margin: 0;
+        padding: 0;
+        padding-inline-start: 5px;
+      }
 
-			.font_form li label {
-				font-size: 12px;
-				color: #444;
-				letter-spacing: 1px;
-			}
-		</style>
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-		<script type="text/javascript">
-			(function ($) {
-				$.fn.stat = function (options) {
-					var settings = $.extend(
-							{
-								title: "h2.title",
-								content: "div.content",
-								화면아이디s: "tbody tr",
-								stat: "td.stat",
-								index: 0,
-								openAll: false,
-								speed: "fast",
-							},
-							options
-						),
-						all_sections = this,
-						header = $("div.header");
-					return this.each(function () {
-						var self = this,
-							$self = $(self),
-							title_text = [],
-							completed = 0;
-						self.section_title = $(settings.title, $self);
-						self.content = $(settings.content, $self);
-						self.화면아이디s = $(settings.화면아이디s, $self);
-						self.화면아이디s.each(function () {
-							var stat = $(settings.stat, this);
-							stat.each(function () {
-								var text = $(this).text();
-								if (text) {
-									if (text == "none") {
-										$(this).css({ background: "#d2d2d2", color: "#fff" });
-									} else if (text == "ing") {
-										$(this).css({ background: "#5d9b1a", color: "#fff" });
-									} else if (text == "done") {
-										$(this).css({ background: "#1f78bd", color: "#fff" });
-									} else if (text == "edit") {
-										$(this).css({ background: "#ff2d2d", color: "#fff" });
-									}
-									completed++;
-								}
-							});
-						});
-						/*
+      .font_form li label {
+        font-size: 12px;
+        color: #444;
+        letter-spacing: 1px;
+      }
+    </style>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+    <script type="text/javascript">
+      (function ($) {
+        $.fn.stat = function (options) {
+          var settings = $.extend(
+              {
+                title: "h2.title",
+                content: "div.content",
+                화면아이디s: "tbody tr",
+                stat: "td.stat",
+                index: 0,
+                openAll: false,
+                speed: "fast",
+              },
+              options
+            ),
+            all_sections = this,
+            header = $("div.header");
+          return this.each(function () {
+            var self = this,
+              $self = $(self),
+              title_text = [],
+              completed = 0;
+            self.section_title = $(settings.title, $self);
+            self.content = $(settings.content, $self);
+            self.화면아이디s = $(settings.화면아이디s, $self);
+            self.화면아이디s.each(function () {
+              var stat = $(settings.stat, this);
+              stat.each(function () {
+                var text = $(this).text();
+                if (text) {
+                  if (text == "none") {
+                    $(this).css({ background: "#d2d2d2", color: "#fff" });
+                  } else if (text == "ing") {
+                    $(this).css({ background: "#5d9b1a", color: "#fff" });
+                  } else if (text == "done") {
+                    $(this).css({ background: "#1f78bd", color: "#fff" });
+                  } else if (text == "edit") {
+                    $(this).css({ background: "#ff2d2d", color: "#fff" });
+                  }
+                  completed++;
+                }
+              });
+            });
+            /*
                     if(completed == 0){
                         $(this).parent().parent().parent().hide();
                     };
                     */
-						self.화면아이디s
-							.bind("mouseenter", function () {
-								$(this).addClass("hover");
-							})
-							.bind("mouseleave", function () {
-								$(this).removeClass("hover");
-							});
-						title_text = [self.section_title.text(), ' <span class="page-count">(', completed, "/", self.화면아이디s.length, ")</span>"];
-						self.section_title.html(title_text.join(""));
-						self.section_title.bind("click", function () {
-							self.content.slideToggle(settings.speed);
-						});
-						if (settings.openAll || settings.index - 1 === all_sections.index(this)) {
-							self.content.css("display", "block");
-						}
-					});
-				};
-				$(document).ready(function () {
-					$("div.section").stat({ openAll: true });
-					$("#total").text($("tbody tr").length);
-					$("tbody tr:even").addClass("even");
-					$("tbody td[rowspan][rowspan!=1]").addClass("multi");
+            self.화면아이디s
+              .bind("mouseenter", function () {
+                $(this).addClass("hover");
+              })
+              .bind("mouseleave", function () {
+                $(this).removeClass("hover");
+              });
+            title_text = [self.section_title.text(), ' <span class="page-count">(', completed, "/", self.화면아이디s.length, ")</span>"];
+            self.section_title.html(title_text.join(""));
+            self.section_title.bind("click", function () {
+              self.content.slideToggle(settings.speed);
+            });
+            if (settings.openAll || settings.index - 1 === all_sections.index(this)) {
+              self.content.css("display", "block");
+            }
+          });
+        };
+        $(document).ready(function () {
+          $("div.section").stat({ openAll: true });
+          $("#total").text($("tbody tr").length);
+          $("tbody tr:even").addClass("even");
+          $("tbody td[rowspan][rowspan!=1]").addClass("multi");
 
-					// 페이지 선택 select 스크립트
-					$("#page_chooser option").each(function ($index, $element) {
-						$element = $($element);
-						var 화면아이디 = $element.data("화면아이디");
-						if (location.href.indexOf(화면아이디) > -1) {
-							$element.attr("selected", "selected");
-						}
-					});
-					$("#page_chooser").bind("change", function () {
-						location.href = $(this).val();
-					});
-					// 페이지 선택 select 스크립트 끝
+          // 페이지 선택 select 스크립트
+          $("#page_chooser option").each(function ($index, $element) {
+            $element = $($element);
+            var 화면아이디 = $element.data("화면아이디");
+            if (location.href.indexOf(화면아이디) > -1) {
+              $element.attr("selected", "selected");
+            }
+          });
+          $("#page_chooser").bind("change", function () {
+            location.href = $(this).val();
+          });
+          // 페이지 선택 select 스크립트 끝
 
-					// 폰트 선택 radio 스크립트
-					$("input:radio[name=chgFntsize]").click(function () {
-						var fontAddSize = $("input[name=chgFntsize]:checked").val();
-						fontAddSize = Number(fontAddSize);
-						if (isNaN(fontAddSize)) {
-							size = 0;
-						}
-						localStorage.setItem("fntAddSz", fontAddSize);
-					});
-					// 폰트 선택 radio 스크립트
-				});
-			})(jQuery);
-		</script>
-	</head>
+          // 폰트 선택 radio 스크립트
+          $("input:radio[name=chgFntsize]").click(function () {
+            var fontAddSize = $("input[name=chgFntsize]:checked").val();
+            fontAddSize = Number(fontAddSize);
+            if (isNaN(fontAddSize)) {
+              size = 0;
+            }
+            localStorage.setItem("fntAddSz", fontAddSize);
+          });
+          // 폰트 선택 radio 스크립트
+        });
+      })(jQuery);
+    </script>
+  </head>
 
-	<body>
-		<script type="text/javascript">
-			document.body.className += " js";
-		</script>
+  <body>
+    <script type="text/javascript">
+      document.body.className += " js";
+    </script>
 
-		<!-- 아델리 2022-07 -->
-		<h2>2022년 7월 아델리</h2>
-		<div class="section">
-			<h2 class="title">관리자 페이지 Status</h2>
-			<div class="content">
-				<table>
-					<colgroup>
-						<col style="width: 20%" />
-						<col style="width: 20%" />
-						<col style="width: 20%" />
-						<col style="width: 20%" />
-						<col style="width: 20%" />
-					</colgroup>
-					<thead>
-						<tr>
-							<th scope="col">1depth</th>
-							<th scope="col">2depth</th>
-							<th scope="col">화면아이디</th>
-							<th scope="col">페이지링크</th>
-							<th scope="col">비고</th>
-						</tr>
-					</thead>
-					<tbody>
-						<!-- 기타 -->
-						<tr>
-							<td rowspan="5">기타</td>
-							<td>시스템운영 > 그룹등록 (진료과 등록 추가)</td>
-							<td>HG-WEB-GR-02</td>
-							<td class="stat"><a href="HG-WEB-GR-02.html" target="_blank">Link (완료 20220720)</a></td>
-							<td rowspan="5">
-								<strong>1순위</strong><br />
-								<!-- 2022년 7월 22일 완료예정 -->
-							</td>
-						</tr>
-						<tr>
-							<td>시스템운영 > 그룹등록 (진료과 등록 추가) - 팝업(진료과 설정)</td>
-							<td>HG-WEB-GR-02-01</td>
-							<td class="stat"><a href="HG-WEB-GR-02.html" target="_blank">Link (완료 20220720)</a></td>
-						</tr>
-						<tr>
-							<td>시스템운영 > 웹 사용자 등록 (전문가 역할 추가, 진료과 선택 추가) - 팝업(웹 사용자 등록)</td>
-							<td>HG-WEB-UR-02</td>
-							<td class="stat"><a href="HG-WEB-UR-02.html" target="_blank">Link (완료 20220720)</a></td>
-						</tr>
-						<tr>
-							<td>시스템운영 > 약관관리 (가족등록 약관 추가에 따른 약관 구분 추가)</td>
-							<td>HG-WEB-TERM-01</td>
-							<td class="stat"><a href="HG-WEB-TERM-01.html" target="_blank">Link (완료 20220720)</a></td>
-						</tr>
-						<tr>
-							<td>시스템운영 > 약관관리</td>
-							<td>HG-WEB-TERM-02</td>
-							<td class="stat"><a href="HG-WEB-TERM-02.html" target="_blank">Link (완료 20220720)</a></td>
-						</tr>
-						<!-- //기타 -->
+    <!-- 아델리 2022-07 -->
+    <h2>2022년 7월 아델리</h2>
+    <div class="section">
+      <h2 class="title">관리자 페이지 Status</h2>
+      <div class="content">
+        <table>
+          <colgroup>
+            <col style="width: 20%" />
+            <col style="width: 20%" />
+            <col style="width: 20%" />
+            <col style="width: 20%" />
+            <col style="width: 20%" />
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col">1depth</th>
+              <th scope="col">2depth</th>
+              <th scope="col">화면아이디</th>
+              <th scope="col">페이지링크</th>
+              <th scope="col">비고</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- 기타 -->
+            <tr>
+              <td rowspan="5">기타</td>
+              <td>시스템운영 > 그룹등록 (진료과 등록 추가)</td>
+              <td>HG-WEB-GR-02</td>
+              <td class="stat"><a href="HG-WEB-GR-02.html" target="_blank">Link (완료 20220720)</a></td>
+              <td rowspan="5">
+                <strong>1순위</strong><br />
+                <!-- 2022년 7월 22일 완료예정 -->
+              </td>
+            </tr>
+            <tr>
+              <td>시스템운영 > 그룹등록 (진료과 등록 추가) - 팝업(진료과 설정)</td>
+              <td>HG-WEB-GR-02-01</td>
+              <td class="stat"><a href="HG-WEB-GR-02.html" target="_blank">Link (완료 20220720)</a></td>
+            </tr>
+            <tr>
+              <td>시스템운영 > 웹 사용자 등록 (전문가 역할 추가, 진료과 선택 추가) - 팝업(웹 사용자 등록)</td>
+              <td>HG-WEB-UR-02</td>
+              <td class="stat"><a href="HG-WEB-UR-02.html" target="_blank">Link (완료 20220720)</a></td>
+            </tr>
+            <tr>
+              <td>시스템운영 > 약관관리 (가족등록 약관 추가에 따른 약관 구분 추가)</td>
+              <td>HG-WEB-TERM-01</td>
+              <td class="stat"><a href="HG-WEB-TERM-01.html" target="_blank">Link (완료 20220720)</a></td>
+            </tr>
+            <tr>
+              <td>시스템운영 > 약관관리</td>
+              <td>HG-WEB-TERM-02</td>
+              <td class="stat"><a href="HG-WEB-TERM-02.html" target="_blank">Link (완료 20220720)</a></td>
+            </tr>
+            <!-- //기타 -->
 
-						<tr>
-							<td rowspan="18">N:N 화상상담 및 예약슬롯</td>
-							<td>전체 사용자</td>
-							<td>HG-WEB-APPLOG-05</td>
-							<td class="stat"><a href="HG-WEB-APPLOG-05.html" target="_blank">Link (완료 20220720)</a></td>
-							<td rowspan="18">
-								<strong>2순위</strong><br />
-								<!-- 2022년 7월 18일 완료예정 -->
-							</td>
-						</tr>
-						<tr>
-							<td>신규 예약 생성(대상자+보호자) - 팝업(신규 예약 생성)</td>
-							<td>HG-WEB-APPLOG-05-01</td>
-							<td class="stat"><a href="HG-WEB-APPLOG-05.html" target="_blank">Link (완료-20220719)</a></td>
-						</tr>
-						<tr>
-							<td>신규 예약 생성(대상자+보호자) - 팝업(상담자 선택)</td>
-							<td>HG-WEB-APPLOG-05-02</td>
-							<td class="stat"><a href="HG-WEB-APPLOG-05.html" target="_blank">Link (완료-20220719)</a></td>
-						</tr>
-						<tr>
-							<td>신규 예약 생성(대상자+보호자) - 팝업(예약 확정 완료)</td>
-							<td>HG-WEB-APPLOG-05-03</td>
-							<td class="stat"><a href="HG-WEB-APPLOG-05.html" target="_blank">Link (완료-20220719)</a></td>
-						</tr>
-						<tr>
-							<td>화상상담</td>
-							<td>HG-WEB-TH-01</td>
-							<td class="stat"><a href="HG-WEB-TH-01.html" target="_blank">Link (완료 20220720)</a></td>
-						</tr>
-						<tr>
-							<td>신규 예약 생성(대상자n명) - 팝업(신규 예약 생성 01)</td>
-							<td>HG-WEB-TH-01-01</td>
-							<td class="stat"><a href="HG-WEB-TH-01.html" target="_blank">Link (완료-20220719)</a></td>
-						</tr>
-						<tr>
-							<td>신규 예약 생성(대상자n명) - 팝업(신규 예약 생성 02)</td>
-							<td>HG-WEB-TH-01-02</td>
-							<td class="stat"><a href="HG-WEB-TH-01.html" target="_blank">Link (완료-20220719)</a></td>
-						</tr>
-						<tr>
-							<td>신규 예약 생성(대상자n명) - 팝업(신규 예약 생성 03)</td>
-							<td>HG-WEB-TH-01-03</td>
-							<td class="stat"><a href="HG-WEB-TH-01.html" target="_blank">Link (완료-20220719)</a></td>
-						</tr>
-						<tr>
-							<td>예약확정 - 팝업(예약 확정)</td>
-							<td>HG-WEB-TH-01-04</td>
-							<td class="stat"><a href="HG-WEB-TH-01.html" target="_blank">Link (완료-20220719)</a></td>
-						</tr>
-						<tr>
-							<td>예약확정 - 팝업(예약 확정 완료)</td>
-							<td>HG-WEB-TH-01-05</td>
-							<td class="stat"><a href="HG-WEB-TH-01.html" target="_blank">Link (완료-20220719)</a></td>
-						</tr>
-						<tr>
-							<td>반려 - 팝업(요청 반려)</td>
-							<td>HG-WEB-TH-01-06</td>
-							<td class="stat"><a href="HG-WEB-TH-01.html" target="_blank">Link (완료-20220719)</a></td>
-						</tr>
+            <tr>
+              <td rowspan="18">N:N 화상상담 및 예약슬롯</td>
+              <td>전체 사용자</td>
+              <td>HG-WEB-APPLOG-05</td>
+              <td class="stat"><a href="HG-WEB-APPLOG-05.html" target="_blank">Link (완료 20220720)</a></td>
+              <td rowspan="18">
+                <strong>2순위</strong><br />
+                <!-- 2022년 7월 18일 완료예정 -->
+              </td>
+            </tr>
+            <tr>
+              <td>신규 예약 생성(대상자+보호자) - 팝업(신규 예약 생성)</td>
+              <td>HG-WEB-APPLOG-05-01</td>
+              <td class="stat"><a href="HG-WEB-APPLOG-05.html" target="_blank">Link (완료-20220719)</a></td>
+            </tr>
+            <tr>
+              <td>신규 예약 생성(대상자+보호자) - 팝업(상담자 선택)</td>
+              <td>HG-WEB-APPLOG-05-02</td>
+              <td class="stat"><a href="HG-WEB-APPLOG-05.html" target="_blank">Link (완료-20220719)</a></td>
+            </tr>
+            <tr>
+              <td>신규 예약 생성(대상자+보호자) - 팝업(예약 확정 완료)</td>
+              <td>HG-WEB-APPLOG-05-03</td>
+              <td class="stat"><a href="HG-WEB-APPLOG-05.html" target="_blank">Link (완료-20220719)</a></td>
+            </tr>
+            <tr>
+              <td>화상상담</td>
+              <td>HG-WEB-TH-01</td>
+              <td class="stat"><a href="HG-WEB-TH-01.html" target="_blank">Link (완료 20220720)</a></td>
+            </tr>
+            <tr>
+              <td>신규 예약 생성(대상자n명) - 팝업(신규 예약 생성 01)</td>
+              <td>HG-WEB-TH-01-01</td>
+              <td class="stat"><a href="HG-WEB-TH-01.html" target="_blank">Link (완료-20220719)</a></td>
+            </tr>
+            <tr>
+              <td>신규 예약 생성(대상자n명) - 팝업(신규 예약 생성 02)</td>
+              <td>HG-WEB-TH-01-02</td>
+              <td class="stat"><a href="HG-WEB-TH-01.html" target="_blank">Link (완료-20220719)</a></td>
+            </tr>
+            <tr>
+              <td>신규 예약 생성(대상자n명) - 팝업(신규 예약 생성 03)</td>
+              <td>HG-WEB-TH-01-03</td>
+              <td class="stat"><a href="HG-WEB-TH-01.html" target="_blank">Link (완료-20220719)</a></td>
+            </tr>
+            <tr>
+              <td>예약확정 - 팝업(예약 확정)</td>
+              <td>HG-WEB-TH-01-04</td>
+              <td class="stat"><a href="HG-WEB-TH-01.html" target="_blank">Link (완료-20220719)</a></td>
+            </tr>
+            <tr>
+              <td>예약확정 - 팝업(예약 확정 완료)</td>
+              <td>HG-WEB-TH-01-05</td>
+              <td class="stat"><a href="HG-WEB-TH-01.html" target="_blank">Link (완료-20220719)</a></td>
+            </tr>
+            <tr>
+              <td>반려 - 팝업(요청 반려)</td>
+              <td>HG-WEB-TH-01-06</td>
+              <td class="stat"><a href="HG-WEB-TH-01.html" target="_blank">Link (완료-20220719)</a></td>
+            </tr>
 
-						<tr>
-							<td>반려 - 팝업(반려 확정)</td>
-							<td>HG-WEB-TH-01-07</td>
-							<td class="stat"><a href="HG-WEB-TH-01.html" target="_blank">Link (완료-20220719)</a></td>
-						</tr>
+            <tr>
+              <td>반려 - 팝업(반려 확정)</td>
+              <td>HG-WEB-TH-01-07</td>
+              <td class="stat"><a href="HG-WEB-TH-01.html" target="_blank">Link (완료-20220719)</a></td>
+            </tr>
 
-						<tr>
-							<td>예약내용 확인 - 팝업(예약 내용 확인)</td>
-							<td>HG-WEB-TH-01-08</td>
-							<td class="stat"><a href="HG-WEB-TH-01.html" target="_blank">Link (완료-20220719)</a></td>
-						</tr>
+            <tr>
+              <td>예약내용 확인 - 팝업(예약 내용 확인)</td>
+              <td>HG-WEB-TH-01-08</td>
+              <td class="stat"><a href="HG-WEB-TH-01.html" target="_blank">Link (완료-20220719)</a></td>
+            </tr>
 
-						<tr>
-							<td>참석자 조회 - 팝업(참석자 조회)</td>
-							<td>HG-WEB-TH-01-09</td>
-							<td class="stat"><a href="HG-WEB-TH-01.html" target="_blank">Link (완료-20220719)</a></td>
-						</tr>
+            <tr>
+              <td>참석자 조회 - 팝업(참석자 조회)</td>
+              <td>HG-WEB-TH-01-09</td>
+              <td class="stat"><a href="HG-WEB-TH-01.html" target="_blank">Link (완료-20220719)</a></td>
+            </tr>
 
-						<tr>
-							<td>참석자 조회 - 팝업(예약 변경 필요)</td>
-							<td>HG-WEB-TH-01-10</td>
-							<td class="stat"><a href="HG-WEB-TH-01.html" target="_blank">Link (완료-20220719)</a></td>
-						</tr>
+            <tr>
+              <td>참석자 조회 - 팝업(예약 변경 필요)</td>
+              <td>HG-WEB-TH-01-10</td>
+              <td class="stat"><a href="HG-WEB-TH-01.html" target="_blank">Link (완료-20220719)</a></td>
+            </tr>
 
-						<tr>
-							<td>참석자 조회 - 팝업(예약 취소)</td>
-							<td>HG-WEB-TH-01-13</td>
-							<td class="stat"><a href="HG-WEB-TH-01.html" target="_blank">Link (완료-20220719)</a></td>
-						</tr>
+            <tr>
+              <td>참석자 조회 - 팝업(예약 취소)</td>
+              <td>HG-WEB-TH-01-13</td>
+              <td class="stat"><a href="HG-WEB-TH-01.html" target="_blank">Link (완료-20220719)</a></td>
+            </tr>
 
-						<tr>
-							<td>참석자 조회 - 팝업(상담시간 변경 확인)</td>
-							<td>HG-WEB-TH-04-01</td>
-							<td class="stat"><a href="HG-WEB-TH-01.html" target="_blank">Link (완료-20220719)</a></td>
-						</tr>
+            <tr>
+              <td>참석자 조회 - 팝업(상담시간 변경 확인)</td>
+              <td>HG-WEB-TH-04-01</td>
+              <td class="stat"><a href="HG-WEB-TH-01.html" target="_blank">Link (완료-20220719)</a></td>
+            </tr>
 
-						<tr>
-							<td>참석자 조회 - 팝업(특정일 설정)</td>
-							<td>HG-WEB-TH-04-02</td>
-							<td class="stat"><a href="HG-WEB-TH-01.html" target="_blank">Link (완료 20220720)</a></td>
-						</tr>
+            <tr>
+              <td>참석자 조회 - 팝업(특정일 설정)</td>
+              <td>HG-WEB-TH-04-02</td>
+              <td class="stat"><a href="HG-WEB-TH-01.html" target="_blank">Link (완료 20220720)</a></td>
+            </tr>
 
-						<!-- N:N 화상상담 진행 -->
-						<tr>
-							<td>N:N 화상상담 진행</td>
-							<td>화상상담</td>
-							<td>HG-WEB-TH-03</td>
-							<td class="stat"><a href="HG-WEB-TH-03.html" target="_blank">Link (완료-20220726)</a></td>
-							<td><strong>3순위</strong><br /></td>
-						</tr>
-						<!-- //N:N 화상상담 진행 -->
+            <!-- N:N 화상상담 진행 -->
+            <tr>
+              <td>N:N 화상상담 진행</td>
+              <td>화상상담</td>
+              <td>HG-WEB-TH-03</td>
+              <td class="stat"><a href="HG-WEB-TH-03.html" target="_blank">Link (완료-20220726)</a></td>
+              <td><strong>3순위</strong><br /></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>화상상담 (dark)</td>
+              <td>HG-WEB-TH-03</td>
+              <td class="stat"><a href="HG-WEB-TH-03-dark.html" target="_blank">Link (완료-20220817)</a></td>
+              <td><strong>3순위</strong><br /></td>
+            </tr>
+            <!-- //N:N 화상상담 진행 -->
 
-						<!-- 식사 상세조회 -->
-						<tr>
-							<td>식사 상세조회</td>
-							<td>사용자관리 > 전체사용자 > 사용자 로그 - 팝업(상세조회 - 식사)</td>
-							<td>HG-WEB-APPLOG-01-05</td>
-							<td class="stat"><a href="HG-WEB-APPLOG-05.html" target="_blank">Link (완료-20220727)</a></td>
-							<td>
-								<strong>4순위</strong><br />
-								<!-- 2022년 7월 27일 완료예정 -->
-							</td>
-						</tr>
-						<!-- //식사 상세조회 -->
-					</tbody>
-				</table>
-			</div>
-		</div>
-		<!-- //아델리 2022-07 -->
-	</body>
+            <!-- 식사 상세조회 -->
+            <tr>
+              <td>식사 상세조회</td>
+              <td>사용자관리 > 전체사용자 > 사용자 로그 - 팝업(상세조회 - 식사)</td>
+              <td>HG-WEB-APPLOG-01-05</td>
+              <td class="stat"><a href="HG-WEB-APPLOG-05.html" target="_blank">Link (완료-20220727)</a></td>
+              <td>
+                <strong>4순위</strong><br />
+                <!-- 2022년 7월 27일 완료예정 -->
+              </td>
+            </tr>
+            <!-- //식사 상세조회 -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- //아델리 2022-07 -->
+  </body>
 </html>

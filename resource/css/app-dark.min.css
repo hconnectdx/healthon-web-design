@@ -3106,6 +3106,54 @@ fieldset:disabled a.btn {
     -webkit-box-shadow: 0 0 0 0.2rem rgba(251, 116, 144, .5);
     box-shadow: 0 0 0 0.2rem rgba(251, 116, 144, .5)
 }
+
+.btn-vc-blur {
+    color: #6c757d;
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+
+.btn-vc-blur:hover {
+    color: #ffffff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-vc-blur.focus, .btn-vc-blur:focus {
+    color: #ffffff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-vc-blur:not(:disabled):not(.disabled).active, .btn-vc-blur:not(:disabled):not(.disabled):active {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d
+}
+
+.btn-vc-division {
+    color: #ffbc00;
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+
+.btn-vc-division:hover {
+    color: #ffffff;
+    background-color: #ffbc00;
+    border-color: #ffbc00;
+}
+
+.btn-vc-division.focus, .btn-vc-division:focus {
+    color: #ffffff;
+    background-color: #ffbc00;
+    border-color: #ffbc00;
+}
+
+.btn-vc-division:not(:disabled):not(.disabled).active, .btn-vc-division:not(:disabled):not(.disabled):active {
+    color: #fff;
+    background-color: #ffbc00;
+    border-color: #ffbc00
+}
 .btn-vc-share {
     color: #0acf97;
     background-color: #ffffff;
