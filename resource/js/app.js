@@ -769,7 +769,7 @@ function($) {
                 'cancelLabel': '취소',
                 'weekLabel': 'W',
                 'customRangeLabel': 'Custom Range',
-                'daysOfWeek': moment.weekdaysMin(),
+                'daysOfWeek': moment.weekdaysShort(),
                 'monthNames': moment.monthsShort(),
                 'firstDay': moment.localeData().firstDayOfWeek()
             }

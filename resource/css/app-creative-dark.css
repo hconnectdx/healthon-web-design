@@ -4146,7 +4146,7 @@ input[type="button"].btn-block {
       display: inline-block;
       padding-right: 0.5rem;
       color: #8391a2;
-      content: ""; }
+      content: ">"; }
   .breadcrumb-item + .breadcrumb-item:hover::before {
     text-decoration: underline; }
   .breadcrumb-item + .breadcrumb-item:hover::before {

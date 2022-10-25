@@ -83,10 +83,10 @@ function includeHTML() {
 
 
 jQuery(function($) {
-    $(window).load("url", "data", function (response, status, request) {
-        $(".dataTables_length").parents(".row").addClass("dataTables_head");    
-    });
-    
+    // $(window).load("url", "data", function (response, status, request) {
+    //     $(".dataTables_length").parents(".row").addClass("dataTables_head");
+    // });
+
     $("body").on("show.bs.modal", "#login-password-modal", function() {
         $("#my-info-modal").modal("hide");
     })
@@ -116,7 +116,8 @@ jQuery(function($) {
 
     if( $.fn.dataTable )
     {
-        $.fn.dataTable.render.ellipsis = function ( cutoff, wordbreak, escapeHtml ) {
+        $.fn.dataTable.render.ellipsis = function ( cutoff, wordbreak, escapeHtml, callback ) {
+
             var esc = function ( t ) {
                 return t
                     .replace( /&/g, '&amp;' )
@@ -124,51 +125,74 @@ jQuery(function($) {
                     .replace( />/g, '&gt;' )
                     .replace( /"/g, '&quot;' );
             };
-         
+
             return function ( d, type, row ) {
+
+                var result = function (result, callback) {
+                    if (callback) {
+                        return callback (result, type, row);
+                    } else {
+                        return result
+                    }
+                }
+
                 // Order, search and type get the original data
                 if ( type !== 'display' ) {
-                    return d;
+                    return result(d, callback);
                 }
-         
-                if ( typeof d !== 'number' && typeof d !== 'string' ) {
-                    return d;
-                }
-                
-                var tag = false
-                d = d.toString(); // cast numbers
-                var str = d
 
-                if( $(d).find('.text-custom').length > 0 )
-                {
-                    tag = true
-                    d = $(d).find(".text-custom").html()
+                if ( typeof d !== 'number' && typeof d !== 'string' ) {
+                    return result(d, callback);
                 }
+
+                d = d.toString(); // cast numbers
 
                 if ( d.length < cutoff ) {
-                    return str
+                    return result(d, callback);
                 }
-         
+
                 var shortened = d.substr(0, cutoff-1);
-         
+
                 // Find the last white space character in the string
                 if ( wordbreak ) {
                     shortened = shortened.replace(/\s([^\s]*)$/, '');
                 }
-         
+
                 // Protect against uncontrolled HTML input
                 if ( escapeHtml ) {
                     shortened = esc( shortened );
                 }
-         
+
                 var ellipsis = '<span class="ellipsis" title="'+esc(d)+'">'+shortened+'&#8230;</span>';
-                if( tag ) 
-                {
-                    ellipsis = $(str).find('.text-custom').html(ellipsis).parent()[0].outerHTML
-                }
-                
-                return ellipsis
+
+                return result(ellipsis, callback);
             };
         };
-    }    
-})
+    }
+});
+
+// 넘어온 값이 빈값인지 체크합니다.
+// !value 하면 생기는 논리적 오류를 제거하기 위해
+// 명시적으로 value == 사용
+// [], {} 도 빈값으로 처리
+
+var isEmpty = function(value){
+    if( value === "" || value == null || value === undefined || value === 'undefined' || ( value != null && typeof value === "object" && !Object.keys(value).length ) ){
+        return true;
+    }else{
+        return false;
+    }
+};
+
+/**
+ * 파일(이미지)선택 src 미리보기 처리)
+ * */
+function readURL(input, srcTarget) {
+    if (input.files && input.files[0] && srcTarget != null && srcTarget != "") {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $(srcTarget).attr('src', e.target.result);
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+}

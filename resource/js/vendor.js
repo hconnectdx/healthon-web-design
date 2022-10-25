@@ -15626,8 +15626,6 @@ return jQuery;
       $(this._element).on(EVENT_CLICK_DISMISS, SELECTOR_DATA_DISMISS, function (event) {
         return _this.hide(event);
       });
-	  
-
       $(this._dialog).on(EVENT_MOUSEDOWN_DISMISS, function () {
         $(_this._element).one(EVENT_MOUSEUP_DISMISS, function (event) {
           if ($(event.target).is(_this._element)) {
@@ -23655,7 +23653,7 @@ return jQuery;
             cancelLabel: 'Cancel',
             weekLabel: 'W',
             customRangeLabel: 'Custom Range',
-            daysOfWeek: moment.weekdaysMin(),
+            daysOfWeek: moment.weekdaysShort(),
             monthNames: moment.monthsShort(),
             firstDay: moment.localeData().firstDayOfWeek()
         };

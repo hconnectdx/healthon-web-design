@@ -1,4 +1,4 @@
-@charset "UTF-8"; 
+@charset "UTF-8";
 /*!
  * Bootstrap v4.5.2 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
@@ -6,108 +6,108 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
-    /* noto-sans-kr-300 - latin_korean */
-    @font-face {
-      font-family: 'Noto Sans KR';
-      font-style: normal;
-      font-weight: 300;
-      src: url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-300.eot'); /* IE9 Compat Modes */
-      src: local(''),
-           url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-           url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-300.woff2') format('woff2'), /* Super Modern Browsers */
-           url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-300.woff') format('woff'), /* Modern Browsers */
-           url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-300.ttf') format('truetype'), /* Safari, Android, iOS */
-           url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-300.svg#NotoSansKR') format('svg'); /* Legacy iOS */
-           unicode-range:U+AC00-D7AF;
-    }
-    /* noto-sans-kr-regular - latin_korean */
-    @font-face {
-      font-family: 'Noto Sans KR';
-      font-style: normal;
-      font-weight: 400;
-      src: url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-regular.eot'); /* IE9 Compat Modes */
-      src: local(''),
-           url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-           url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-regular.woff2') format('woff2'), /* Super Modern Browsers */
-           url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-regular.woff') format('woff'), /* Modern Browsers */
-           url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-           url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-regular.svg#NotoSansKR') format('svg'); /* Legacy iOS */
-           unicode-range:U+AC00-D7AF;
-    }
-    /* noto-sans-kr-500 - latin_korean */
-    @font-face {
-      font-family: 'Noto Sans KR';
-      font-style: normal;
-      font-weight: 500;
-      src: url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-500.eot'); /* IE9 Compat Modes */
-      src: local(''),
-           url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-           url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-500.woff2') format('woff2'), /* Super Modern Browsers */
-           url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-500.woff') format('woff'), /* Modern Browsers */
-           url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-500.ttf') format('truetype'), /* Safari, Android, iOS */
-           url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-500.svg#NotoSansKR') format('svg'); /* Legacy iOS */
-           unicode-range:U+AC00-D7AF;
-    }
-    /* noto-sans-kr-700 - latin_korean */
-    @font-face {
-      font-family: 'Noto Sans KR';
-      font-style: normal;
-      font-weight: 700;
-      src: url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-700.eot'); /* IE9 Compat Modes */
-      src: local(''),
-           url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-           url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-700.woff2') format('woff2'), /* Super Modern Browsers */
-           url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-700.woff') format('woff'), /* Modern Browsers */
-           url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-700.ttf') format('truetype'), /* Safari, Android, iOS */
-           url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-700.svg#NotoSansKR') format('svg'); /* Legacy iOS */
-           unicode-range:U+AC00-D7AF;
-    }
+/* noto-sans-kr-300 - latin_korean */
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    src: url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-300.eot'); /* IE9 Compat Modes */
+    src: local(''),
+    url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-300.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-300.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-300.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-300.svg#NotoSansKR') format('svg'); /* Legacy iOS */
+    unicode-range:U+AC00-D7AF;
+}
+/* noto-sans-kr-regular - latin_korean */
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-regular.eot'); /* IE9 Compat Modes */
+    src: local(''),
+    url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-regular.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-regular.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-regular.svg#NotoSansKR') format('svg'); /* Legacy iOS */
+    unicode-range:U+AC00-D7AF;
+}
+/* noto-sans-kr-500 - latin_korean */
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-500.eot'); /* IE9 Compat Modes */
+    src: local(''),
+    url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-500.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-500.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-500.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-500.svg#NotoSansKR') format('svg'); /* Legacy iOS */
+    unicode-range:U+AC00-D7AF;
+}
+/* noto-sans-kr-700 - latin_korean */
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-700.eot'); /* IE9 Compat Modes */
+    src: local(''),
+    url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-700.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-700.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-700.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/NotoSans/noto-sans-kr-v13-latin_korean-700.svg#NotoSansKR') format('svg'); /* Legacy iOS */
+    unicode-range:U+AC00-D7AF;
+}
 
-    /* ubuntu-regular - latin */
-    @font-face {
-      font-family: 'Ubuntu';
-      font-style: normal;
-      font-weight: 400;
-      src: url('../fonts/ubuntu/ubuntu-v15-latin-regular.eot'); /* IE9 Compat Modes */
-      src: local(''),
-           url('../fonts/ubuntu/ubuntu-v15-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-           url('../fonts/ubuntu/ubuntu-v15-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-           url('../fonts/ubuntu/ubuntu-v15-latin-regular.woff') format('woff'), /* Modern Browsers */
-           url('../fonts/ubuntu/ubuntu-v15-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-           url('../fonts/ubuntu/ubuntu-v15-latin-regular.svg#Ubuntu') format('svg'); /* Legacy iOS */
-           unicode-range:U+0041-005A, U+0061-007A, U+0030-0039;
-    }
-    /* ubuntu-500 - latin */
-    @font-face {
-      font-family: 'Ubuntu';
-      font-style: normal;
-      font-weight: 500;
-      src: url('../fonts/ubuntu/ubuntu-v15-latin-500.eot'); /* IE9 Compat Modes */
-      src: local(''),
-           url('../fonts/ubuntu/ubuntu-v15-latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-           url('../fonts/ubuntu/ubuntu-v15-latin-500.woff2') format('woff2'), /* Super Modern Browsers */
-           url('../fonts/ubuntu/ubuntu-v15-latin-500.woff') format('woff'), /* Modern Browsers */
-           url('../fonts/ubuntu/ubuntu-v15-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
-           url('../fonts/ubuntu/ubuntu-v15-latin-500.svg#Ubuntu') format('svg'); /* Legacy iOS */
-           unicode-range:U+0041-005A, U+0061-007A, U+0030-0039;
-    }
-    /* ubuntu-700 - latin */
-    @font-face {
-      font-family: 'Ubuntu';
-      font-style: normal;
-      font-weight: 700;
-      src: url('../fonts/ubuntu/ubuntu-v15-latin-700.eot'); /* IE9 Compat Modes */
-      src: local(''),
-           url('../fonts/ubuntu/ubuntu-v15-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-           url('../fonts/ubuntu/ubuntu-v15-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
-           url('../fonts/ubuntu/ubuntu-v15-latin-700.woff') format('woff'), /* Modern Browsers */
-           url('../fonts/ubuntu/ubuntu-v15-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
-           url('../fonts/ubuntu/ubuntu-v15-latin-700.svg#Ubuntu') format('svg'); /* Legacy iOS */
-      unicode-range:U+0041-005A, U+0061-007A, U+0030-0039;
-    }
+/* ubuntu-regular - latin */
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/ubuntu/ubuntu-v15-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local(''),
+    url('../fonts/ubuntu/ubuntu-v15-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/ubuntu/ubuntu-v15-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/ubuntu/ubuntu-v15-latin-regular.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/ubuntu/ubuntu-v15-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/ubuntu/ubuntu-v15-latin-regular.svg#Ubuntu') format('svg'); /* Legacy iOS */
+    unicode-range:U+0041-005A, U+0061-007A, U+0030-0039;
+}
+/* ubuntu-500 - latin */
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/ubuntu/ubuntu-v15-latin-500.eot'); /* IE9 Compat Modes */
+    src: local(''),
+    url('../fonts/ubuntu/ubuntu-v15-latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/ubuntu/ubuntu-v15-latin-500.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/ubuntu/ubuntu-v15-latin-500.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/ubuntu/ubuntu-v15-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/ubuntu/ubuntu-v15-latin-500.svg#Ubuntu') format('svg'); /* Legacy iOS */
+    unicode-range:U+0041-005A, U+0061-007A, U+0030-0039;
+}
+/* ubuntu-700 - latin */
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/ubuntu/ubuntu-v15-latin-700.eot'); /* IE9 Compat Modes */
+    src: local(''),
+    url('../fonts/ubuntu/ubuntu-v15-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/ubuntu/ubuntu-v15-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/ubuntu/ubuntu-v15-latin-700.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/ubuntu/ubuntu-v15-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/ubuntu/ubuntu-v15-latin-700.svg#Ubuntu') format('svg'); /* Legacy iOS */
+    unicode-range:U+0041-005A, U+0061-007A, U+0030-0039;
+}
 
 
- :root{
+:root{
     --blue: #2c8ef8;
     --indigo: #7453ff;
     --purple: #6b5eae;
@@ -509,7 +509,7 @@ mark {
 
 .form-tilde {
     position: relative;
-    bottom: -19px;   
+    bottom: -19px;
 }
 
 .list-unstyled {
@@ -614,7 +614,7 @@ pre code {
     -webkit-box-align: center !important;
     -ms-flex-align: center !important;
     align-items: center !important;
-} 
+}
 
 .container,
 .container-fluid,
@@ -1589,7 +1589,7 @@ a {
         -ms-flex: 0 0 30%;
         flex: 0 0 30%;
         max-width: 30%;
-    }    
+    }
     .col-lg-4 {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 33.33333%;
@@ -1626,7 +1626,7 @@ a {
         flex: 0 0 69.66667%;
         max-width: 69.66667%
     }
-    
+
     .col-lg-8-5 {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 70.66667%;
@@ -3105,54 +3105,6 @@ fieldset:disabled a.btn {
 .show>.btn-danger.dropdown-toggle:focus {
     -webkit-box-shadow: 0 0 0 0.2rem rgba(251, 116, 144, .5);
     box-shadow: 0 0 0 0.2rem rgba(251, 116, 144, .5)
-}
-
-.btn-vc-blur {
-    color: #6c757d;
-    background-color: #ffffff;
-    border-color: #ffffff;
-}
-
-.btn-vc-blur:hover {
-    color: #ffffff;
-    background-color: #6c757d;
-    border-color: #6c757d;
-}
-
-.btn-vc-blur.focus, .btn-vc-blur:focus {
-    color: #ffffff;
-    background-color: #6c757d;
-    border-color: #6c757d;
-}
-
-.btn-vc-blur:not(:disabled):not(.disabled).active, .btn-vc-blur:not(:disabled):not(.disabled):active {
-    color: #fff;
-    background-color: #6c757d;
-    border-color: #6c757d
-}
-
-.btn-vc-division {
-    color: #ffbc00;
-    background-color: #ffffff;
-    border-color: #ffffff;
-}
-
-.btn-vc-division:hover {
-    color: #ffffff;
-    background-color: #ffbc00;
-    border-color: #ffbc00;
-}
-
-.btn-vc-division.focus, .btn-vc-division:focus {
-    color: #ffffff;
-    background-color: #ffbc00;
-    border-color: #ffbc00;
-}
-
-.btn-vc-division:not(:disabled):not(.disabled).active, .btn-vc-division:not(:disabled):not(.disabled):active {
-    color: #fff;
-    background-color: #ffbc00;
-    border-color: #ffbc00
 }
 .btn-vc-share {
     color: #0acf97;
@@ -5148,12 +5100,12 @@ input[type=submit].btn-block {
     min-height: 1px;
     padding: 1.5rem
 }
-  .card-body-prf {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-  min-height: 1px;
-  padding: 0.75rem; 
+.card-body-prf {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 0.75rem;
 }
 
 .card-body .dropdown {
@@ -6376,7 +6328,7 @@ a.close.disabled {
     border-radius: 0.2rem;
     outline: 0;
     max-height: 800px;
-    overflow-y: hidden;    
+    overflow-y: hidden;
 }
 .modal-backdrop {
     position: fixed;
@@ -12926,7 +12878,7 @@ input[data-switch=dark]:checked+label {
 }
 
 .tr-select-survey > td {
-    border-top: 0px 
+    border-top: 0px
 }
 
 .tr-select-survey > td:first-child {
@@ -12943,9 +12895,9 @@ input[data-switch=dark]:checked+label {
 
 .h4 {
     margin: 10px 0;
-    font-weight: 500; 
+    font-weight: 500;
 }
-  
+
 .h1, .h2, .h3, .h5, .h6, h1, h2, h3, h5, h6 {
     margin: 5px 0;
     font-weight: 400;
@@ -13332,7 +13284,7 @@ input[data-switch=dark]:checked+label {
     -webkit-box-align: flex-end;
     -ms-flex-align: flex-end;
     align-items: flex-end;
-    
+
 }
 
 .horizontal-steps:before {
@@ -17543,8 +17495,8 @@ body[data-leftbar-theme=dark] .side-nav .side-nav-third-level li.active > a {
 
 /* Dark */
 .color-title {
-   color:#ffffff !important;
-   font-size: 16px !important;
+    color:#ffffff !important;
+    font-size: 16px !important;
 }
 
 .nav-tabs-my.nav-bordered li a.active {
@@ -17592,7 +17544,7 @@ body[data-leftbar-theme=dark] .side-nav .side-nav-third-level li.active > a {
 
 select.form-control {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23e3eaef' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e") !important;
-} 
+}
 
 
 .btn-download {
@@ -17664,23 +17616,23 @@ select.form-control {
     margin: -50px 0 0 -20px;
 }
 html {
-  --scrollbarBG: #444f5a;
-  --thumbBG: #6b7680;
+    --scrollbarBG: #444f5a;
+    --thumbBG: #6b7680;
 }
 textarea::-webkit-scrollbar {
-  width: 11px;
+    width: 11px;
 }
 textarea {
-  scrollbar-width: thin;
-  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+    scrollbar-width: thin;
+    scrollbar-color: var(--thumbBG) var(--scrollbarBG);
 }
 textarea::-webkit-scrollbar-track {
-  background: var(--scrollbarBG);
+    background: var(--scrollbarBG);
 }
 textarea::-webkit-scrollbar-thumb {
-  background-color: var(--thumbBG) ;
-  border-radius: 6px;
-  border: 3px solid var(--scrollbarBG);
+    background-color: var(--thumbBG) ;
+    border-radius: 6px;
+    border: 3px solid var(--scrollbarBG);
 }
 
 .page-aside-right-bottom {
@@ -17692,7 +17644,7 @@ textarea::-webkit-scrollbar-thumb {
 }
 .datepicker table tr td.disabled,
 .datepicker table tr td.disabled:hover {
-	background: #3e2a50 !important;
-	color: #857f7f !important;
+    background: #3e2a50 !important;
+    color: #857f7f !important;
 }
 /*# sourceMappingURL=app-dark.min.css.map */
