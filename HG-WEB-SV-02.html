@@ -554,7 +554,7 @@
                                                         class="custom-control-input custom-control-input-success"
                                                         id="customCheck1-1">
                                                     <label class="custom-control-label custom-control-label-success"
-                                                        for="customCheck1-1">필수항목</label>
+                                                        for="customCheck1-1">필수 응답</label>
                                                 </div>
                                                 <div class="custom-control custom-checkbox mr-2">
                                                     <input type="checkbox"
@@ -659,7 +659,7 @@
                                 <!-- 주관식형 -->
 
                                 <!-- 단일선택형 -->
-                                <div class="card">
+                                <div class="card" style="display: none;">
                                     <div class="card-body">
                                         <!-- 20221102 -->
                                         <div class="checkbox ml-50 mb-1">
@@ -847,7 +847,7 @@
                                 <!-- 단일선택형 -->
 
                                 <!-- 복수선택형 -->
-                                <div class="card">
+                                <div class="card" style="display: none;">
                                     <div class="card-body">
                                         <!-- 20221102 -->
                                         <div class="checkbox ml-50 mb-1">
@@ -1036,7 +1036,7 @@
                                 <!-- 복수선택형 -->
 
                                 <!-- 목록 선택형_checkbox -->
-                                <div class="card">
+                                <div class="card" style="display: none;">
                                     <div class="card-body">
                                         <!-- 20221102 -->
                                         <div class="checkbox ml-50 mb-1">
@@ -1255,27 +1255,13 @@
                                                     class="custom-control-input custom-control-input-success"
                                                     id="customCheck5-1">
                                                 <label class="custom-control-label custom-control-label-success"
-                                                    for="customCheck5-1">필수항목</label>
-                                            </div>
-                                            <div class="custom-control custom-checkbox mr-2">
-                                                <input type="checkbox"
-                                                    class="custom-control-input custom-control-input-success"
-                                                    id="customCheck5-2">
-                                                <label class="custom-control-label custom-control-label-success"
-                                                    for="customCheck5-2">주요 문항</label>
-                                            </div>
-                                            <div class="custom-control custom-checkbox mr-2">
-                                                <input type="checkbox"
-                                                    class="custom-control-input custom-control-input-success"
-                                                    id="customCheck5-3">
-                                                <label class="custom-control-label custom-control-label-success"
-                                                    for="customCheck5-3">역채점 문항</label>
+                                                    for="customCheck5-1">주요 문항</label>
                                             </div>
                                         </div>
                                         </div>
                                         <form action>
                                             <div class="form-qst-input mb-2">
-                                                <label for="f-c-1" class="form-qst form-qst-title mb-0">질문1</label>
+                                                <label for="f-c-1" class="form-qst form-qst-title mb-0"></label>
                                                 <div class="d-block d-xl-flex align-items-center w-100 ">
                                                     <div class="form-qst-text mr-2">
                                                         <div class="row no-gutters">
@@ -1311,9 +1297,118 @@
                                                 </div>
                                             </div>
                                         </form>
+
+                                        <div class="sv-question">
+                                            <div class="sv-question__item">
+                                                <div class="checkbox ml-50 mb-1">
+                                                    <div class="d-flex">
+                                                    <div class="custom-control custom-checkbox mr-2">
+                                                        <input type="checkbox"
+                                                            class="custom-control-input custom-control-input-success"
+                                                            id="customCheck5-1">
+                                                        <label class="custom-control-label custom-control-label-success"
+                                                            for="customCheck5-1">필수 응답</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox mr-2">
+                                                        <input type="checkbox"
+                                                            class="custom-control-input custom-control-input-success"
+                                                            id="customCheck5-2">
+                                                        <label class="custom-control-label custom-control-label-success"
+                                                            for="customCheck5-2">주요 문항</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox mr-2">
+                                                        <input type="checkbox"
+                                                            class="custom-control-input custom-control-input-success"
+                                                            id="customCheck5-3">
+                                                        <label class="custom-control-label custom-control-label-success"
+                                                            for="customCheck5-3">역채점 문항</label>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                                <form action>
+                                                    <div class="form-qst-input mb-2">
+                                                        <label for="f-c-1" class="form-qst form-qst-title mb-0 sv-question__item-title">질문 2</label>
+                                                        <div class="d-block d-xl-flex align-items-center w-100 ">
+                                                            <div class="form-qst-text mr-2">
+                                                                <div class="row no-gutters">
+                                                                    <div class="col-xl-2 pb-1 pb-xl-0 pr-xl-2">
+                                                                        <input type="text" class="form-control" placeholder="문항분류" />
+                                                                    </div>
+                                                                    <div class="col-xl-2 pb-1 pb-xl-0 pr-xl-2">
+                                                                        <input type="text" class="form-control" placeholder="문항코드" />
+                                                                    </div>
+                                                                    <div class="col-xl-8">
+                                                                        <div class="d-flex">
+                                                                            <input type="text" class="form-control" placeholder="질문을 입력하세요." />
+                                                                            <button class="bg-white border-0"><i class="mdi mdi-close cursor text-secondary"></i></button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="sv-question__item">
+                                                <div class="checkbox ml-50 mb-1">
+                                                    <div class="d-flex">
+                                                    <div class="custom-control custom-checkbox mr-2">
+                                                        <input type="checkbox"
+                                                            class="custom-control-input custom-control-input-success"
+                                                            id="customCheck5-1">
+                                                        <label class="custom-control-label custom-control-label-success"
+                                                            for="customCheck5-1">필수 응답</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox mr-2">
+                                                        <input type="checkbox"
+                                                            class="custom-control-input custom-control-input-success"
+                                                            id="customCheck5-2">
+                                                        <label class="custom-control-label custom-control-label-success"
+                                                            for="customCheck5-2">주요 문항</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox mr-2">
+                                                        <input type="checkbox"
+                                                            class="custom-control-input custom-control-input-success"
+                                                            id="customCheck5-3">
+                                                        <label class="custom-control-label custom-control-label-success"
+                                                            for="customCheck5-3">역채점 문항</label>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                                <form action>
+                                                    <div class="form-qst-input mb-2">
+                                                        <label for="f-c-1" class="form-qst form-qst-title mb-0 sv-question__item-title">질문 3</label>
+                                                        <div class="d-block d-xl-flex align-items-center w-100 ">
+                                                            <div class="form-qst-text mr-2">
+                                                                <div class="row no-gutters">
+                                                                    <div class="col-xl-2 pb-1 pb-xl-0 pr-xl-2">
+                                                                        <input type="text" class="form-control" placeholder="문항분류" />
+                                                                    </div>
+                                                                    <div class="col-xl-2 pb-1 pb-xl-0 pr-xl-2">
+                                                                        <input type="text" class="form-control" placeholder="문항코드" />
+                                                                    </div>
+                                                                    <div class="col-xl-8">
+                                                                        <div class="d-flex">
+                                                                            <input type="text" class="form-control" placeholder="질문을 입력하세요." />
+                                                                            <button class="bg-white border-0"><i class="mdi mdi-close cursor text-secondary"></i></button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="form-qst-input mb-2">
+                                            <label for="f-c-1" class="form-qst form-qst-title mb-0"></label>
+                                            <div class="d-block d-xl-flex align-items-center w-100 ">
+                                                <button class="btn sv-question__btn" type="button">+ 세부질문 추가</button>                                               
+                                            </div>
+                                        </div>
                                         <!-- //20221102 -->
 
-                                        <div class="row mb-2">
+                                        <div class="row mb-2" style="display: none;">
                                             <div class="col-md-3 col-sm-12 ml-50">
                                                 <!-- Preview -->
                                                 <div class="dropzone-previews" id="file-previews5"></div>
@@ -1348,7 +1443,7 @@
                                             </div>
                                         </div>
 
-                                        <form action>
+                                        <form action style="display: none;">
                                             <div class="form-qst-input mb-2">
                                                 <label for="f-c-1" class="form-qst form-qst-title mb-0">점수</label>
                                                 <div class="form-qst-input mr-2">
@@ -1392,7 +1487,7 @@
                                         </form>
 
 
-                                        <div class="row mb-2">
+                                        <div class="row mb-2" style="display: none;">
                                             <div class="col-md-3 col-sm-12 ml-50">
                                                 <!-- Preview -->
                                                 <div class="dropzone-previews" id="file-previews5"></div>
@@ -1432,31 +1527,23 @@
                                         <div class="row mb-2">
                                             <div class="col-xl-1 mt-1 mb-1">답변</div>
                                             <div class="col-xl-11">
-                                                <select class="form-control w-auto d-inline mr-1">
-                                                    <option>5</option>
+                                                <select class="form-control w-auto d-inline mr-1 sv-score__select">
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
                                                 </select> 
                                                 점 척도
                                             </div>
                                         </div>
                                         <div class="row mb-2">
                                             <div class="col-xl-1 mt-1 mb-1">배점</div>
-                                            <div class="col-xl-11">
-                                                <div class="row no-gutters mb-1">
-                                                    <div class="col-10 col-xl-3 pr-1 pr-xl-2">
-                                                        <input type="text" class="form-control" placeholder="라벨을 입력하세요.">
-                                                    </div>
-                                                    <div class="col-2 col-xl-1">
-                                                        <input type="text" class="form-control" value="0">
-                                                    </div>
-                                                </div>
-                                                <div class="row no-gutters mb-1">
-                                                    <div class="col-10 col-xl-3 pr-1 pr-xl-2">
-                                                        <input type="text" class="form-control" placeholder="라벨을 입력하세요.">
-                                                    </div>
-                                                    <div class="col-2 col-xl-1">
-                                                        <input type="text" class="form-control" value="0">
-                                                    </div>
-                                                </div>
+                                            <div class="col-xl-11 sv-score">
                                                 <div class="row no-gutters mb-1">
                                                     <div class="col-10 col-xl-3 pr-1 pr-xl-2">
                                                         <input type="text" class="form-control" placeholder="라벨을 입력하세요.">
@@ -1510,124 +1597,96 @@
                                         <div class="row mb-4">
                                             <div class="col-xl-1 mt-2 mb-1">총점</div>
                                             <div class="col-xl-11">
-                                                <div>
-                                                    <div class="d-inline-block">
-                                                        <select class="form-control w-auto d-inline my-1">
-                                                            <option>문항분류1 총점</option>
-                                                        </select> 
-                                                        <select class="form-control w-auto d-inline mb-1">
-                                                            <option>+</option>
-                                                            <option>-</option>
+                                                <div class="sv-total">
+                                                    <div class="sv-total__item">
+                                                        <select class="form-control">
+                                                            <option>문항분류 <span class="idx">1</span> 총점</option>
                                                         </select> 
                                                     </div>
-                                                    <div class="d-inline-block">
-                                                        <select class="form-control w-auto d-inline mb-1">
-                                                            <option>문항분류2 총점</option>
-                                                        </select> 
-                                                        <select class="form-control w-auto d-inline mb-1">
+                                                    <div class="sv-total__item">
+                                                        <select class="form-control">
                                                             <option>+</option>
                                                             <option>-</option>
                                                         </select> 
+                                                        <select class="form-control">
+                                                            <option>문항분류 <span class="idx">2</span> 총점</option>
+                                                        </select> 
+                                                        <i class="mdi mdi-close cursor"></i>
                                                     </div>
-                                                    <div class="d-inline-block">
-                                                        <select class="form-control w-auto d-inline mb-1">
-                                                            <option>문항분류3 총점</option>
-                                                        </select> 
-                                                        <select class="form-control w-auto d-inline mb-1">
+                                                    <div class="sv-total__item">
+                                                        <select class="form-control">
                                                             <option>+</option>
                                                             <option>-</option>
                                                         </select> 
-                                                    </div>
-                                                    <div class="d-inline-block">
-                                                        <select class="form-control w-auto d-inline mb-1">
-                                                            <option>문항분류4 총점</option>
+                                                        <select class="form-control">
+                                                            <option>문항분류 <span class="idx">3</span> 총점</option>
                                                         </select> 
-                                                        <select class="form-control w-auto d-inline mb-1">
-                                                            <option>+</option>
-                                                            <option>-</option>
-                                                        </select> 
-                                                    </div>
-                                                    <div class="d-inline-block">
-                                                        <select class="form-control w-auto d-inline mb-1">
-                                                            <option>문항분류5 총점</option>
-                                                        </select> 
-                                                        <select class="form-control w-auto d-inline mb-1">
-                                                            <option>+</option>
-                                                            <option>-</option>
-                                                        </select> 
-                                                    </div>
-                                                    <div class="d-inline-block">
-                                                        <select class="form-control w-auto d-inline mb-1">
-                                                            <option>문항분류6 총점</option>
-                                                        </select> 
-                                                        <select class="form-control w-auto d-inline mb-1">
-                                                            <option>+</option>
-                                                            <option>-</option>
-                                                        </select> 
-                                                    </div>
-                                                    <div class="d-inline-block">
-                                                        <select class="form-control w-auto d-inline mb-1">
-                                                            <option>문항분류7 총점</option>
-                                                        </select> 
-                                                        <select class="form-control w-auto d-inline mb-1">
-                                                            <option>+</option>
-                                                            <option>-</option>
-                                                        </select> 
+                                                        <i class="mdi mdi-close cursor"></i>
                                                     </div>
                                                 </div>
-                                                <button class="btn" type="button">+ 계산식 추가</button>                                                
+                                                <button class="btn sv-total__btn" type="button">+ 계산식 추가</button>                                               
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-xl-1 mt-1 mb-1">판정 결과1</div>
-                                            <div class="col-xl-11">
-                                                <div class="d-block d-xl-flex row no-gutters mb-1">
-                                                    <div class="col-12 col-xl-4 pr-0 pr-xl-2 mb-1 mb-xl-0">
-                                                        <input type="text" class="form-control" placeholder="판정 결과를 입력하세요">
-                                                    </div>
-                                                    <div class="col-12 col-xl-4">
-                                                        <span class="d-flex align-items-center">
-                                                            <input type="text" class="form-control" placeholder="숫자 또는 소수점">
-                                                            <span class="mx-1">~</span>
-                                                            <input type="text" class="form-control" placeholder="숫자 또는 소수점">
-                                                        </span>
+                                        <div class="sv-evaluate">
+                                            <div class="sv-evaluate__item row">
+                                                <div class="sv-evaluate__item-title col-xl-1 mt-1 mb-1">판정 결과1</div>
+                                                <div class="col-xl-11">
+                                                    <div class="d-block d-xl-flex row no-gutters mb-1">
+                                                        <div class="col-12 col-xl-4 pr-0 pr-xl-2 mb-1 mb-xl-0">
+                                                            <input type="text" class="form-control" placeholder="판정 결과를 입력하세요">
+                                                        </div>
+                                                        <div class="col-12 col-xl-4">
+                                                            <span class="d-flex align-items-center">
+                                                                <input type="text" class="form-control" placeholder="숫자 또는 소수점">
+                                                                <span class="mx-1">~</span>
+                                                                <input type="text" class="form-control" placeholder="숫자 또는 소수점">
+                                                                <button class="bg-white border-0" style="opacity: 0; pointer-events: none; " ><i class="mdi mdi-close"></i></button>
+                                                            </span>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-xl-1 mt-1 mb-1">판정 결과2</div>
-                                            <div class="col-xl-11">
-                                                <div class="d-block d-xl-flex row no-gutters mb-1">
-                                                    <div class="col-12 col-xl-4 pr-0 pr-xl-2 mb-1 mb-xl-0">
-                                                        <input type="text" class="form-control" placeholder="판정 결과를 입력하세요">
+                                            <div class="sv-evaluate__item row">
+                                                <div class="sv-evaluate__item-title col-xl-1 mt-1 mb-1">판정 결과2</div>
+                                                <div class="col-xl-11">
+                                                    <div class="d-block d-xl-flex row no-gutters mb-1">
+                                                        <div class="col-12 col-xl-4 pr-0 pr-xl-2 mb-1 mb-xl-0">
+                                                            <input type="text" class="form-control" placeholder="판정 결과를 입력하세요">
+                                                        </div>
+                                                        <div class="col-12 col-xl-4">
+                                                            <span class="d-flex align-items-center">
+                                                                <input type="text" class="form-control" placeholder="숫자 또는 소수점">
+                                                                <span class="mx-1">~</span>
+                                                                <input type="text" class="form-control" placeholder="숫자 또는 소수점">
+                                                                <button class="bg-white border-0"><i class="mdi mdi-close cursor text-secondary"></i></button>
+                                                            </span>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-12 col-xl-4">
-                                                        <span class="d-flex align-items-center">
-                                                            <input type="text" class="form-control" placeholder="숫자 또는 소수점">
-                                                            <span class="mx-1">~</span>
-                                                            <input type="text" class="form-control" placeholder="숫자 또는 소수점">
-                                                        </span>
+                                                </div>
+                                            </div>
+                                            <div class="sv-evaluate__item row">
+                                                <div class="sv-evaluate__item-title col-xl-1 mt-1 mb-1">판정 결과3</div>
+                                                <div class="col-xl-11">
+                                                    <div class="d-block d-xl-flex row no-gutters mb-1">
+                                                        <div class="col-12 col-xl-4 pr-0 pr-xl-2 mb-1 mb-xl-0">
+                                                            <input type="text" class="form-control" placeholder="판정 결과를 입력하세요">
+                                                        </div>
+                                                        <div class="col-12 col-xl-4">
+                                                            <span class="d-flex align-items-center">
+                                                                <input type="text" class="form-control" placeholder="숫자 또는 소수점">
+                                                                <span class="mx-1">~</span>
+                                                                <input type="text" class="form-control" placeholder="숫자 또는 소수점">
+                                                                <button class="bg-white border-0"><i class="mdi mdi-close cursor text-secondary"></i></button>
+                                                            </span>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-xl-1 mt-1 mb-1">판정 결과3</div>
+                                            <div class="col-xl-1 mt-1 mb-1"></div>
                                             <div class="col-xl-11">
-                                                <div class="d-block d-xl-flex row no-gutters mb-1">
-                                                    <div class="col-12 col-xl-4 pr-0 pr-xl-2 mb-1 mb-xl-0">
-                                                        <input type="text" class="form-control" placeholder="판정 결과를 입력하세요">
-                                                    </div>
-                                                    <div class="col-12 col-xl-4">
-                                                        <span class="d-flex align-items-center">
-                                                            <input type="text" class="form-control" placeholder="숫자 또는 소수점">
-                                                            <span class="mx-1">~</span>
-                                                            <input type="text" class="form-control" placeholder="숫자 또는 소수점">
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                                <button class="btn" type="button">+ 판정 결과 추가</button>
+                                                <button class="sv-evaluate__btn btn" type="button">+ 판정 결과 추가</button>
                                             </div>
                                         </div>
                                     </div>
@@ -2762,6 +2821,159 @@
 
 
     </script>
+
+    <script>
+        //20221103
+        var questionIndex = 1;
+        var totalIndex = 0;
+        var evaluateIndex = 0;
+        function questionIndexing() {
+            $('.sv-question__item').each( function() {
+                questionIndex = questionIndex + 1;
+                $(this).find(".sv-question__item-title").html("");
+                $(this).find(".sv-question__item-title").html("질문 "+ questionIndex)
+            });
+            questionIndex = 1;
+        }
+        function totalIndexing() {
+            $('.sv-total__item').each( function() {
+                totalIndex = totalIndex + 1;
+                $(this).find(".sv-total__select").html("");
+                $(this).find(".sv-total__select").append($("<option>문항분류 "+ totalIndex +" 총점</option>"))
+            });
+            totalIndex = 0
+        }
+        function evaluateIndexing() {
+            $('.sv-evaluate__item').each( function() {
+                evaluateIndex = evaluateIndex + 1;
+                $(this).find(".sv-evaluate__item-title").html("");
+                $(this).find(".sv-evaluate__item-title").html("판정 결과"+ evaluateIndex)
+            });
+            evaluateIndex = 0
+        }
+
+        $(document).ready(function () {
+            //선호도형
+            $(document).on('click', '.sv-question__btn',function() {
+                $(".sv-question").append('<div class="sv-question__item">\
+                    <div class="checkbox ml-50 mb-1">\
+                        <div class="d-flex">\
+                        <div class="custom-control custom-checkbox mr-2">\
+                            <input type="checkbox"\
+                                class="custom-control-input custom-control-input-success"\
+                                id="customCheck5-1">\
+                            <label class="custom-control-label custom-control-label-success"\
+                                for="customCheck5-1">필수 응답</label>\
+                        </div>\
+                        <div class="custom-control custom-checkbox mr-2">\
+                            <input type="checkbox"\
+                                class="custom-control-input custom-control-input-success"\
+                                id="customCheck5-2">\
+                            <label class="custom-control-label custom-control-label-success"\
+                                for="customCheck5-2">주요 문항</label>\
+                        </div>\
+                        <div class="custom-control custom-checkbox mr-2">\
+                            <input type="checkbox"\
+                                class="custom-control-input custom-control-input-success"\
+                                id="customCheck5-3">\
+                            <label class="custom-control-label custom-control-label-success"\
+                                for="customCheck5-3">역채점 문항</label>\
+                        </div>\
+                    </div>\
+                    </div>\
+                    <form action>\
+                        <div class="form-qst-input mb-2">\
+                            <label for="f-c-1" class="form-qst form-qst-title mb-0 sv-question__item-title"></label>\
+                            <div class="d-block d-xl-flex align-items-center w-100 ">\
+                                <div class="form-qst-text mr-2">\
+                                    <div class="row no-gutters">\
+                                        <div class="col-xl-2 pb-1 pb-xl-0 pr-xl-2">\
+                                            <input type="text" class="form-control" placeholder="문항분류" />\
+                                        </div>\
+                                        <div class="col-xl-2 pb-1 pb-xl-0 pr-xl-2">\
+                                            <input type="text" class="form-control" placeholder="문항코드" />\
+                                        </div>\
+                                        <div class="col-xl-8">\
+                                            <div class="d-flex">\
+                                                <input type="text" class="form-control" placeholder="질문을 입력하세요." />\
+                                                <button class="bg-white border-0"><i class="mdi mdi-close cursor text-secondary"></i></button>\
+                                            </div>\
+                                        </div>\
+                                    </div>\
+                                </div>\
+                            </div>\
+                        </div>\
+                    </form>\
+                </div>')
+                questionIndexing()
+            });
+            $(document).on('click', '.sv-question__item .mdi-close',function() {
+                $(this).parents(".sv-question__item").remove();
+                questionIndexing()
+            });
+
+            //배점 
+            $(".sv-score__select").on("change", function () {
+                var total = $(this).val();
+                $(".sv-score").html("");
+                for (let index = 0; index < total; index++) {
+                    $(".sv-score").append('<div class="row no-gutters mb-1">\
+                        <div class="col-10 col-xl-3 pr-1 pr-xl-2">\
+                            <input type="text" class="form-control" placeholder="라벨을 입력하세요.">\
+                        </div>\
+                        <div class="col-2 col-xl-1">\
+                            <input type="text" class="form-control" value="0">\
+                        </div>\
+                    </div>');
+                }
+            });
+
+            //총점
+            $(document).on('click', '.sv-total__btn',function() {
+                $(".sv-total").append('<div class="sv-total__item">\
+                    <select class="form-control">\
+                        <option>+</option>\
+                        <option>-</option>\
+                    </select> \
+                    <select class="form-control sv-total__select">\
+                    </select> \
+                    <i class="mdi mdi-close cursor"></i>\
+                </div>')
+                totalIndexing()
+            });
+            $(document).on('click', '.sv-total__item .mdi-close',function() {
+                $(this).parents(".sv-total__item").remove();
+                totalIndexing()
+            });
+
+            //판정 결과
+            $(document).on('click', '.sv-evaluate__btn',function() {
+                $(".sv-evaluate").append('<div class="sv-evaluate__item row">\
+                    <div class="sv-evaluate__item-title col-xl-1 mt-1 mb-1"></div>\
+                    <div class="col-xl-11">\
+                        <div class="d-block d-xl-flex row no-gutters mb-1">\
+                            <div class="col-12 col-xl-4 pr-0 pr-xl-2 mb-1 mb-xl-0">\
+                                <input type="text" class="form-control" placeholder="판정 결과를 입력하세요">\
+                            </div>\
+                            <div class="col-12 col-xl-4">\
+                                <span class="d-flex align-items-center">\
+                                    <input type="text" class="form-control" placeholder="숫자 또는 소수점">\
+                                    <span class="mx-1">~</span>\
+                                    <input type="text" class="form-control" placeholder="숫자 또는 소수점">\
+                                    <button class="bg-white border-0"><i class="mdi mdi-close cursor text-secondary"></i></button>\
+                                </span>\
+                            </div>\
+                        </div>\
+                    </div>\
+                </div>')
+                evaluateIndexing();
+            });
+            $(document).on('click', '.sv-evaluate__item .mdi-close',function() {
+                $(this).parents(".sv-evaluate__item").remove();
+                evaluateIndexing();
+            });            
+        });
+    </script> 
 </body>
 
 </html>
