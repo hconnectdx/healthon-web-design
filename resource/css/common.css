@@ -1494,3 +1494,8 @@ button i {
 .survey__table thead tr th {
 	background: #eff1f9;
 }
+.sv-question__btn:focus,
+.sv-total__btn:focus,
+.sv-evaluate__btn:focus {
+	box-shadow: none;
+}
