@@ -11133,6 +11133,18 @@ body[data-leftbar-theme=dark][data-leftbar-compact-mode=condensed] .side-nav .si
 .form-qst-text {
     width: 100%;
 }
+.form-qst-text button.bg-white {
+    background: none !important;
+}
+.form-qst-text button.bg-white i {
+    color: #fff !important;
+}
+.sv-evaluate button.bg-white {
+    background: none !important;
+}
+.sv-evaluate button.bg-white i {
+    color: #fff !important;
+}
 
 .form-qst-input {
     display: -webkit-box;
@@ -17648,3 +17660,19 @@ textarea::-webkit-scrollbar-thumb {
     color: #857f7f !important;
 }
 /*# sourceMappingURL=app-dark.min.css.map */
+.sv-total__item {
+	background: #30363c !important;
+	border: 1px solid #47515d !important;
+}
+.survey .card .card-header .text-secondary {
+    color: #fff !important;
+}
+.survey .card .card-body .card-title strong {
+    color: #aab8c5 !important
+}
+.survey__table {
+    background-color: #464f5b !important;
+}
+.survey__table thead tr th {
+	background: #464f5b !important;
+}
