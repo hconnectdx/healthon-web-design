@@ -17671,8 +17671,9 @@ textarea::-webkit-scrollbar-thumb {
     color: #aab8c5 !important
 }
 .survey__table {
-    background-color: #464f5b !important;
+    /* background-color: #464f5b !important; */
 }
 .survey__table thead tr th {
 	background: #464f5b !important;
+    border-bottom: 1px solid #464f5b !important;
 }
