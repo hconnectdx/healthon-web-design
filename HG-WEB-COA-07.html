@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Telehealth</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+		<meta content="Coderthemes" name="author" />
+		<!-- App favicon -->
+		<link rel="shortcut icon" href="resource/images/favicon.ico" />
+
+		<!-- App css -->
+		<link href="resource/css/icons.min.css" rel="stylesheet" type="text/css" />
+		<link href="resource/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
+		<link href="resource/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
+		<link href="resource/lib/simplelightbox/simpleLightbox.min.css" rel="stylesheet" type="text/css" />
+		<link href="resource/css/base.css" rel="stylesheet" type="text/css" />
+		<link href="resource/css/page/consult.css" rel="stylesheet" type="text/css" id="consult-style" />
+		<link href="resource/css/vendor/fullcalendar.min.css" rel="stylesheet" type="text/css" />
+		<link href="resource/css/page/telehealth.css" rel="stylesheet" type="text/css" />
+		<link href="resource/css/vendor/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" />
+		<link href="resource/css/vendor/responsive.bootstrap4.css" rel="stylesheet" type="text/css" />
+		<link href="resource/css/common.css" rel="stylesheet" type="text/css" id="common-style" />
+	</head>
+
+	<body
+		class="loading"
+		data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'
+	>
+		<!-- Begin page -->
+		<div class="wrapper">
+			<!-- ========== Left Sidebar Start ========== -->
+			<div class="left-side-menu">
+				<!-- LOGO -->
+				<a href="main.html" class="logo text-center logo-light">
+					<span class="logo-lg">
+						<img src="resource/images/logo.png" alt="" height="16" />
+					</span>
+					<span class="logo-sm">
+						<img src="resource/images/logo_sm.png" alt="" height="16" />
+					</span>
+				</a>
+				<!-- LOGO -->
+				<a href="main.html" class="logo text-center logo-dark">
+					<span class="logo-lg">
+						<img src="resource/images/logo-dark.png" alt="" height="16" />
+					</span>
+					<span class="logo-sm">
+						<img src="resource/images/logo_sm_dark.png" alt="" height="16" />
+					</span>
+				</a>
+
+				<div class="h-100" id="left-side-menu-container" data-simplebar>
+					<!--- Sidemenu -->
+					<ul class="metismenu side-nav">
+						<li class="side-nav-title side-nav-item">Navigation</li>
+						<li class="side-nav-item">
+							<a href="main.html" class="side-nav-link">
+								<i class="uil-presentation-lines-alt"></i>
+								<span> Dashboards </span>
+							</a>
+						</li>
+						<li class="side-nav-item">
+							<a href="#" class="side-nav-link">
+								<i class="uil-users-alt"></i>
+								<span> 사용자관리 </span>
+								<span class="menu-arrow"></span>
+							</a>
+							<ul class="side-nav-second-level" aria-expanded="false">
+								<li>
+									<a href="users.html">전체사용자</a>
+								</li>
+								<li>
+									<a href="auth01.html">승인 관리</a>
+								</li>
+								<li>
+									<a href="send_message.html">메시지관리</a>
+								</li>
+								<li>
+									<a href="message_list.html">메세지 발송 이력</a>
+								</li>
+							</ul>
+						</li>
+						<li class="side-nav-item">
+							<a href="javascript: void(0);" class="side-nav-link">
+								<i class="uil-comments-alt"></i>
+								<span> 상담 </span>
+								<span class="menu-arrow"></span>
+							</a>
+							<ul class="side-nav-second-level" aria-expanded="false">
+								<li>
+									<a href=".html">대화형 상담</a>
+								</li>
+								<li>
+									<a href=".html">단답형 상담</a>
+								</li>
+								<li>
+									<a href=".html">비대면 상담</a>
+								</li>
+								<li>
+									<a href="doc01.html">문서함</a>
+								</li>
+								<!-- <li>
+                                <a href="consult.html">1:1 상담</a>
+                            </li>
+                            <li>
+                                <a href="telehealth.html">Tel health</a>
+                            </li> -->
+							</ul>
+						</li>
+						<li class="side-nav-item">
+							<a href="javascript: void(0);" class="side-nav-link">
+								<i class="uil-comments-alt"></i>
+								<span> 챗봇 코칭 </span>
+								<span class="menu-arrow"></span>
+							</a>
+							<ul class="side-nav-second-level" aria-expanded="false">
+								<li>
+									<a href=".html">프로그램 관리</a>
+								</li>
+								<li>
+									<a href=".html">기본버튼 관리</a>
+								</li>
+								<li>
+									<a href=".html">대화 관리</a>
+								</li>
+							</ul>
+						</li>
+						<li class="side-nav-item">
+							<a href="javascript: void(0);" class="side-nav-link">
+								<i class="uil-eye"></i>
+								<span> 모니터링 </span>
+								<span class="menu-arrow"></span>
+							</a>
+							<ul class="side-nav-second-level" aria-expanded="false">
+								<li>
+									<a href="moniter_danger.html">위험지수 관리</a>
+								</li>
+								<li>
+									<a href="moniter_adapter.html">순응도 관리</a>
+								</li>
+							</ul>
+						</li>
+						<li class="side-nav-item">
+							<a href="javascript: void(0);" class="side-nav-link">
+								<i class="uil uil-image"></i>
+								<span> 콘텐츠관리 </span>
+								<span class="menu-arrow"></span>
+							</a>
+							<ul class="side-nav-second-level" aria-expanded="false">
+								<li>
+									<a href="sys_content.html">콘텐츠관리</a>
+								</li>
+								<li>
+									<a href="sys_video.html">동영상 관리</a>
+								</li>
+								<li>
+									<a href="sdf.html">줄넘기 팁 관리</a>
+								</li>
+							</ul>
+						</li>
+						<li class="side-nav-item">
+							<a href="javascript: void(0);" class="side-nav-link">
+								<i class="uil-game-structure"></i>
+								<span> 시스템운영 </span>
+								<span class="menu-arrow"></span>
+							</a>
+							<ul class="side-nav-second-level" aria-expanded="false">
+								<li>
+									<a href="sys_group.html">그룹관리</a>
+								</li>
+								<li>
+									<a href="sys_webuser.html">웹 사용자관리</a>
+								</li>
+								<li>
+									<a href="sys_version.html">버전관리</a>
+								</li>
+								<li>
+									<a href="sys_appoint.html">약관 관리</a>
+								</li>
+								<li>
+									<a href="sys_service.html">서비스 문의</a>
+								</li>
+								<li>
+									<a href="sys_connecthistory.html">접속 이력 관리</a>
+								</li>
+								<li>
+									<a href=".html">결제 관리</a>
+								</li>
+								<li>
+									<a href="sys_checkitem.html">검사 항목관리</a>
+								</li>
+								<li>
+									<a href="sys_note.html">공지사항 관리</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<div class="clearfix"></div>
+				</div>
+				<!-- Sidebar -left -->
+			</div>
+			<!-- Left Sidebar End -->
+
+			<!-- ============================================================== -->
+			<!-- Start Page Content here -->
+			<!-- ============================================================== -->
+
+			<div class="content-page">
+				<div class="content">
+					<!-- Topbar Start -->
+					<div class="navbar-custom">
+						<ul class="list-unstyled topbar-right-menu float-right mb-0">
+							<li class="dropdown notification-list d-lg-none">
+								<a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+									<i class="dripicons-search noti-icon"></i>
+								</a>
+								<div class="dropdown-menu dropdown-menu-animated dropdown-lg p-0">
+									<form class="p-3">
+										<input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username" />
+									</form>
+								</div>
+							</li>
+
+							<li class="dropdown notification-list">
+								<a
+									class="nav-link dropdown-toggle nav-user arrow-none mr-0"
+									data-toggle="dropdown"
+									href="#"
+									role="button"
+									aria-haspopup="false"
+									aria-expanded="false"
+								>
+									<span class="account-user-avatar">
+										<img src="resource/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle" />
+									</span>
+									<span>
+										<span class="account-user-name">James Kim</span>
+										<span class="account-position">의사 <i class="dripicons-chevron-down"></i></span>
+									</span>
+								</a>
+								<div class="dropdown-menu dropdown-menu-right dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
+									<!-- item-->
+									<a href="javascript:void(0);" onclick="showMyAccountDlg()" class="dropdown-item notify-item">
+										<i class="mdi mdi-account-circle mr-1"></i>
+										<span>My Account</span>
+									</a>
+
+									<!-- item-->
+									<a href="javascript:void(0);" onclick="showSettingDlg()" class="dropdown-item notify-item">
+										<i class="mdi mdi-account-edit mr-1"></i>
+										<span>Settings</span>
+									</a>
+									<!-- item-->
+									<a href="login.html" class="dropdown-item notify-item">
+										<i class="mdi mdi-logout mr-1"></i>
+										<span>Logout</span>
+									</a>
+								</div>
+							</li>
+						</ul>
+						<button class="button-menu-mobile open-left disable-btn">
+							<i class="mdi mdi-menu"></i>
+						</button>
+						<h4 class="page-title color-title float-left mt-3">대화 관리</h4>
+						<div class="app-search dropdown d-none d-lg-block float-right">
+							<form>
+								<div class="input-group">
+									<input type="text" class="form-control dropdown-toggle" placeholder="사용자를 검색할수 있습니다." id="top-search" />
+									<span class="mdi mdi-magnify search-icon"></span>
+									<div class="input-group-append">
+										<button class="btn btn-primary" type="submit">검색</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					<!-- end Topbar -->
+
+					<!-- Start Content-->
+					<div class="container-fluid">
+						<!-- start page title -->
+						<div class="row">
+							<div class="col-12">
+								<div class="page-title-box">
+									<div class="page-title-right">
+										<ol class="breadcrumb m-0 pt-0">
+											<li class="breadcrumb-item"><a href="javascript: void(0);">챗봇 코칭</a></li>
+											<li class="breadcrumb-item active">대화 관리</li>
+										</ol>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- end page title -->
+
+						<div>
+							<ul class="nav nav-tabs nav-bordered mb-3 nav-tabs-my">
+								<li class="nav-item">
+									<a href="#talk-tab" data-toggle="tab" aria-expanded="false" class="nav-link rounded-0">
+										<span class="d-md-block">대화 전체</span>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="#talk-regist-tab" data-toggle="tab" aria-expanded="false" class="nav-link rounded-0 active">
+										<span class="d-md-block">대화 등록</span>
+									</a>
+								</li>
+							</ul>
+							<div class="tab-content">
+								<!-- 대화 전체 Tab -->
+								<div class="tab-pane" id="talk-tab">
+									HG-WEB-COA-06
+								</div>
+								<!--// 대화 전체 Tab -->
+
+								<!-- 대화 등록 Tab -->
+								<div class="tab-pane active show" id="talk-regist-tab">
+									<div class="row">
+										<div class="col-12">
+											<div class="card">
+												<div class="card-body">
+													<div class="row">
+														<div class="col-sm-6 col-lg-3 col-xl-2 mb-2">
+															<label class="form-label">대화 종류</label>
+															<select class="form-control select-talk" onchange="setTalk(this.selectedIndex, $(this).closest('div'))">
+																<option selected>챗봇 코칭</option>
+																<option>입력유도</option>
+																<option>기본 버튼</option>
+																<option>코치의 메시지</option>
+															</select>
+														</div>
+														<div class="col-sm-6 col-lg-3 col-xl-2 mb-2 show_1 show_2 show_4">
+															<label class="form-label">구분</label>
+															<select class="form-control">
+																<option>고혈압</option>
+																<option>당뇨</option>
+																<option>비만</option>
+																<option>일반</option>
+															</select>
+														</div>
+														<div class="col-sm-6 col-lg-3 col-xl-2 mb-2 show_1">
+															<label class="form-label">1일 발송횟수</label>
+															<select class="form-control">
+																<option>2회</option>
+															</select>
+														</div>
+														<div class="col-sm-6 col-lg-3 col-xl-2 mb-2 show_2" style="display:none">
+															<label class="form-label">미입력 항목</label>
+															<select class="form-control">
+																<option>식사</option>
+																<option>운동동영상</option>
+																<option>걷기</option>
+																<option>허리둘레</option>
+																<option>체중</option>
+																<option>혈당</option>
+																<option>혈압</option>
+																<option>복약</option>
+																<option>인슐린</option>
+															</select>
+														</div>
+														<div class="col-sm-12 col-lg-6 col-xl-4 mb-2 show_2" style="display:none">
+															<label class="form-label">발송 시점(미입력 기준)</label>
+															<div class="input-group">
+																<select class="form-control col-4 mr-1" onchange="setSendTime(this.selectedIndex, $(this))">
+																	<option>현재</option>
+																	<option>매일</option>
+																	<option>매주</option>
+																	<option>매월</option>
+																</select>
+																<select class="form-control col-4 mr-1 sv_2" style="display:none">
+																	<option>월요일</option>
+																	<option>화요일</option>
+																</select>
+																<select class="form-control col-4 mr-1 sv_3" style="display:none">
+																	<option>10일</option>
+																	<option>20일</option>
+																</select>
+																<input type="text" class="form-control col-4 sv_1 sv_2 sv_3" value="00:00" style="display:none">
+															</div>
+														</div>
+														<div class="col-sm-6 col-lg-3 col-xl-2 mb-2 show_3" style="display:none">
+															<label class="form-label">기능</label>
+															<select class="form-control select-func" onchange="setFunc(this.selectedIndex, $(this).closest('div').next())">
+																<option>대화형</option>
+																<option>건강데이터 입력형</option>
+																<option>화면이동형</option>
+															</select>
+														</div>
+														<div class="col-sm-6 col-lg-3 col-xl-2 mb-2 show_3" style="display:none">
+															<label class="form-label">기능상세</label>
+															<select class="form-control select-func">
+																<option class="showopt_1">동기부여</option>
+																<option class="showopt_1">Q&A</option>
+																<option class="showopt_1">코칭 추천</option>
+																<option class="showopt_1">상담 추천</option>
+																<option style="display:none" class="showopt_2">식사</option>
+																<option style="display:none" class="showopt_2">체중</option>
+																<option style="display:none" class="showopt_2">식사 다이어리</option>
+																<option style="display:none" class="showopt_2">허리둘레</option>
+																<option style="display:none" class="showopt_2">체중</option>
+																<option style="display:none" class="showopt_2">혈당</option>
+																<option style="display:none" class="showopt_2">혈압</option>
+																<option style="display:none" class="showopt_2">복약</option>
+																<option style="display:none" class="showopt_2">인슐린</option>
+																<option style="display:none" class="showopt_3">운동동영상</option>
+																<option style="display:none" class="showopt_3">건강콘텐츠</option>
+															</select>
+														</div>
+														<div class="col-sm-6 col-lg-3 col-xl-2 mb-2 show_4" style="display:none">
+															<label class="form-label">키워드</label>
+															<input type="text" class="form-control">
+														</div>
+														<div class="col-sm-6 col-lg-3 col-xl-2 mb-2 show_1">
+															<label class="form-label">사용 여부</label>
+															<div class="custom-control custom-checkbox">
+																<input type="checkbox" class="custom-control-input custom-control-input-success" id="customCheck" />
+																<label class="custom-control-label custom-control-label-success" for="customCheck">사용</label>
+															</div>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-sm-12">
+															<label class="form-label">대화명</label>
+															<div class="input-group align-items-center">
+																<input type="text" class="form-control" placeholder="제목을 입력하세요.">
+																<span class="ml-2">0 / 50</span>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="card">
+												<div class="card-body">
+													<div class="row mb-2">
+														<label class="col-sm-6 col-md-2 col-lg-1 col-form-label">1회차</label>
+														<div class="col-sm-10 col-md-6 col-lg-4 col-xl-3">
+															<div class="d-flex align-items-center">
+																<div class="form-group mb-0 w-100">
+																	<select class="form-control">
+																		<option>16</option>
+																	</select>
+																</div>
+																<div class="ml-1 mr-2">시</div>
+																<div class="form-group mb-0 w-100">
+																	<select class="form-control">
+																		<option>00</option>
+																	</select>
+																</div>
+																<div class="ml-1">분</div>
+															</div>
+														</div>
+													</div>														
+													<div class="row">
+														<div class="col-sm-12">
+															<label class="form-label">Push 메시지</label>
+															<div class="input-group align-items-center">
+																<button type="button" class="btn btn-light btn-icon"><i class="uil uil-smile"></i></button>
+																<input type="text" class="form-control" placeholder="내용을 입력하세요.">
+																<span class="ml-2">0 / 50</span>
+															</div>
+														</div>
+													</div>
+												
+													<div data-simplebar>
+														<div data-plugin="dragula" data-containers='["handle-dragula"]' data-handleClass="dragula-handle">
+															<table class="table user-detail-table w-100 thead-only-gray message-table" style="min-width:900px" id="handle-dragula">
+																<colgroup>
+																	<col style="width: 4%" />
+																	<col style="width: 10%" />
+																	<col style="width: 10%" />
+																	<col />
+																	<col style="width: 10%" />
+																	<col />
+																	<col />
+																	<col style="width: 12%" />
+																	<col style="width: 12%" />
+																	<col style="width: 12%" />
+																	<col style="width: 8%" />
+																</colgroup>
+																<thead class="thead-light">
+																	<tr>
+																		<th>순서</th>
+																		<th>번호</th>
+																		<th>유형</th>
+																		<th>유형상세</th>
+																		<th>요소</th>
+																		<th>내용</th>
+																		<th>동작</th>
+																		<th colspan="2">동작상세</th>
+																		<th class="text-center">첨부</th>
+																		<th class="text-center">관리</th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<tr>
+																		<td> <span class="dragula-handle"></span></td>
+																		<td class="bg-secondary-lighten">메시지1</td>
+																		<td>단일문장형</td>
+																		<td class="bg-secondary-lighten"></td>
+																		<td>문장</td>
+																		<td colspan="4" class="text-primary">안녕? 만나서 반가워</td>
+																		<td class="text-center">
+																			<div class="attach-list justify-content-center">
+																				<p class="attach-thumb avatar-md"><img src="resource/images/attached-files/img-4.jpg"></p>
+																			</div>
+																		</td>
+																		<td class="text-center">
+																			<i class="mdi mdi-square-edit-outline font-20 cursor mr-1"></i>
+																			<i class="mdi mdi-delete font-20 cursor"></i>
+																		</td>
+																	</tr>
+																</tbody>
+																<tbody>
+																	<tr>
+																		<td> <span class="dragula-handle"></span></td>
+																		<td class="bg-secondary-lighten">메시지2</td>
+																		<td>다지선다형</td>
+																		<td>기저질환 수집</td>
+																		<td>문장</td>
+																		<td colspan="4" class="text-primary">아래 질환 중 진단받은 질환이 있니?
+																			#{weight} 네요! #</td>
+																		<td class="text-center">
+																			<div class="attach-list justify-content-center">
+																				<p class="attach-thumb avatar-md"><img src="resource/images/attached-files/img-5.jpg"></p>
+																				<p class="attach-thumb avatar-md"><img src="resource/images/attached-files/img-5.jpg"></p>
+																			</div>
+																		</td>
+																		<td rowspan="6" class="text-center">
+																			<i class="mdi mdi-square-edit-outline font-20 cursor mr-1"></i>
+																			<i class="mdi mdi-delete font-20 cursor"></i>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td rowspan="5" colspan="4"></td>
+																		<td rowspan="2">버튼1</td>
+																		<td rowspan="2" class="text-primary">당뇨</td>
+																		<td rowspan="2">화면이동</td>
+																		<td rowspan="2">식사 입력 화면</td>
+																		<td>메시지3</td>
+																		<td rowspan="2" class="text-center">
+																			<div class="attach-list justify-content-center">
+																				<a href="" class="attach-thumb avatar-md"><img src="resource/images/attached-files/img-5.jpg"></a>
+																			</div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>미수행: 메시지 6</td>
+																	</tr>
+																	<tr>
+																		<td>버튼2</td>
+																		<td class="text-primary">고혈압</td>
+																		<td>다른 메시지 시작</td>
+																		<td colspan="2">메시지3. 주간레포트를…  </td>
+																		<td class="text-center bg-secondary-lighten"></td>
+																	</tr>
+																	<tr>
+																		<td>버튼3</td>
+																		<td class="text-primary">비만</td>
+																		<td>다른 메시지 시작</td>
+																		<td colspan="2" class="bg-secondary-lighten"></td>
+																		<td class="text-center bg-secondary-lighten"></td>
+																	</tr>
+																	<tr>
+																		<td>버튼4</td>
+																		<td class="text-primary">해당 없음</td>
+																		<td>동작 선택</td>
+																		<td colspan="2" class="bg-secondary-lighten"></td>
+																		<td class="text-center bg-secondary-lighten"></td>
+																	</tr>
+																</tbody>
+																<tfoot>
+																	<tr>
+																		<td colspan="11">
+																			<button type="button" class="btn" onclick="HG_WEB_COA_07_01()">+ 메시지추가</button>
+																		</td>
+																	</tr>
+																</tfoot>
+															</table>
+														</div>
+													</div>
+												
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-12 text-right">
+											<button type="button" class="btn btn-light mr-1">취소</button>
+											<button type="button" class="btn btn-secondary mr-1">대화 불러오기</button>
+											<button type="button" class="btn btn-primary">등록</button>
+										</div>
+									</div>
+								</div>
+								<!--// 대화 등록 Tab  -->
+							</div>
+						</div>
+					</div>
+					<!-- Footer Start -->
+					<footer class="footer">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-md-6">© HealthConnect Co., Ltd.</div>
+								<div class="col-md-6"></div>
+							</div>
+						</div>
+					</footer>
+					<!-- end Footer -->
+				</div>
+				<!-- container -->
+			</div>
+			<!-- content -->
+
+			<!-- ============================================================== -->
+			<!-- End Page content -->
+			<!-- ============================================================== -->
+		</div>
+		<!-- END wrapper -->
+
+		<!-- modal 메시지 등록 -->
+		<div id="HG-WEB-COA-07-01" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true" data-backdrop="static">
+			<div class="modal-dialog modal-dialog-centered modal-custom-medium">
+				<div class="modal-content">
+					<div class="modal-header modal-colored-header bg-primary">
+						<h4 class="modal-title">메시지 등록</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					</div>
+					<div class="modal-body" data-simplebar style="max-height: 600px">
+						<div class="row mb-2">
+							<label class="col-sm-12  col-lg-2 col-form-label">메시지1</label>
+							<div class="col-sm-12 col-lg-10">	
+								<div class="form-row">
+									<div class="col-sm-12 col-md-6 col-lg-3 mb-2">
+										<select class="form-control" onchange="showMsgType(this.selectedIndex, this)">
+											<option>단일문장형</option>
+											<option>다지선다형</option>
+											<option>기능제공형</option>
+											<option>OX형</option>
+										</select>
+									</div>
+									<div class="col-sm-12 col-md-6 col-lg-3 mb-2" style="display:none">
+										<select class="form-control" style="display:none">
+											<option>일반 문항</option>
+											<option>기저질환 수집</option>
+											<option>동기부여 측정</option>
+										</select>
+										<select class="form-control" style="display:none">
+											<option>코칭추천</option>
+											<option>상담추천</option>
+											<option>건강 목표 설정</option>
+										</select>										
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="col-12 input-group align-items-center attach-type-btn">
+										<button type="button" class="btn btn-light btn-icon" data-target="attach-image"><i class="uil uil-image"></i></button>
+										<button type="button" class="btn btn-light btn-icon" data-target="attach-contents"><i class="uil uil-mobile-android"></i></button>
+										<button type="button" class="btn btn-light btn-icon" data-target="attach-vod"><i class="uil uil-video"></i></button>
+										<button type="button" class="btn btn-light btn-icon"><i class="uil uil-smile"></i></button>
+										<input type="text" class="form-control" placeholder="내용을 입력하세요." value="안녕? 만나서 반가워">
+										<span class="ml-1">0/100</span>
+									</div>
+								</div>
+
+								<div class="mt-2 attach-list" id="attach-image">
+									<div class="attach-thumb avatar-md">
+										<img src="resource/images/attached-files/img-5.jpg">
+										<button type="button" class="btn btn-danger btn-icon-delete"><i class="mdi mdi-window-close"></i></button>
+									</div>
+									<div class="attach-thumb avatar-md">
+										<img src="resource/images/attached-files/img-5.jpg">
+										<button type="button" class="btn btn-danger btn-icon-delete"><i class="mdi mdi-window-close"></i></button>
+									</div>
+								</div>
+
+								<div class="mt-2 attach-list" id="attach-contents">
+									<div class="attach-thumb avatar-md">
+										<img src="resource/images/attached-files/img-4.jpg">
+										<button type="button" class="btn btn-danger btn-icon-delete"><i class="mdi mdi-window-close"></i></button>
+									</div>
+								</div>
+
+								<div class="mt-2 attach-list" id="attach-vod">
+									<div class="form-row w-100">
+										<div class="form-group col-md-4">
+											<select class="form-control" onchange="showVod(this.selectedIndex)">
+												<option>외부영상</option>
+												<option>헬스온 영상</option>
+											</select>
+										</div>
+										<div class="form-group col-md-8 vod-attach">
+											<div class="input-group">
+												<input class="form-control" placeholder="링크를 입력하세요.">
+												<button type="button" class="btn btn-primary" onclick="$('.youtube-attach').show();$(this).parents('.input-group').hide();">등록</button>
+											</div>
+											<div class="youtube-attach" style="display:none">
+												<span>https://www.youtube.com/watch?v=-0000000000000000000000000000000</span>
+												<button type="button" class="btn btn-danger btn-icon-delete"><i class="mdi mdi-window-close"></i></button>
+											</div>
+										</div>
+										<div class="form-group col-md-8 vod-attach" style="display:none">
+											<div class="healthon-attach">
+												<button type="button" class="btn btn-primary" onclick="HG_WEB_COA_07_02();$('.healthon-attach').hide();$('.healthon-thumb').show();">첨부</button>
+											</div>
+											<div class="youtube-attach healthon-thumb" style="display:none">
+												<span>무릎 대고 메디신….mp4</span>
+												<button type="button" class="btn btn-danger btn-icon-delete"><i class="mdi mdi-window-close"></i></button>
+												<div class="healthon-attach-img mt-1">
+													<a href="" class="attach-thumb avatar-md">
+														<img src="resource/images/attached-files/img-5.jpg">
+													</a>
+												</div>
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<!--단일문장형-->
+						<div class="message-type"></div>
+						
+						<!--다지선다형-->
+						<div class="message-type">
+							<div class="addelement">
+								<div class="form-row addelement-item">
+									<i class="dripicons-minus cursor widget-icon custom-widget bg-secondary rounded-circle text-white"></i>
+									<div class="form-group col-md-4">
+										<div class="input-group">
+											<button type="button" class="btn btn-light btn-icon"><i class="uil uil-smile"></i></button>
+											<input class="form-control" placeholder="내용을 입력하세요" value="고혈압" />
+										</div>
+									</div>
+									<div class="form-group col-md-4">
+										<select class="form-control" style="min-width: 80px">
+											<option>동작 선택</option>
+											<option>화면이동</option>
+											<option>다른 대화 시작</option>
+										</select>
+									</div>
+									<div class="form-group col-md-4">
+										<select class="form-control" style="min-width: 80px">
+											<option>동작상세 선택</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-row addelement-item">
+									<i class="dripicons-minus cursor widget-icon custom-widget bg-secondary rounded-circle text-white"></i>
+									<div class="form-group col-md-4">
+										<div class="input-group">
+											<button type="button" class="btn btn-light btn-icon"><i class="uil uil-smile"></i></button>
+											<input class="form-control" placeholder="내용을 입력하세요" value="당뇨병" />
+										</div>
+									</div>
+									<div class="form-group col-md-4">
+										<select class="form-control" style="min-width: 80px">
+											<option selected>화면이동</option>
+											<option>다른 대화 시작</option>
+										</select>
+									</div>
+									<div class="form-group col-md-2">
+										<select class="form-control" style="min-width: 80px">
+											<option>화면 선택</option>
+											<option>식사 입력 화면</option>
+											<option>체중 입력 화면</option>
+											<option>식사 다이어리 화면</option>
+											<option>허리둘레 입력 화면</option>
+											<option>체중 입력 화면</option>
+											<option>혈당 입력 화면</option>
+											<option>혈압 입력 화면</option>
+											<option>복약 입력 화면</option>
+											<option>인슐린 입력 화면</option>
+											<option>운동동영상(추천운동) 화면</option>
+											<option>콘텐츠 목록 화면</option>
+										</select>
+									</div>
+									<div class="form-group col-md-2">
+										<select class="form-control" style="min-width: 80px">
+											<option>피드백</option>
+											<option>메시지1</option>
+											<option>메시지2</option>
+											<option>메시지3</option>
+											<option>메시지4 추가</option>
+										</select>
+									</div>
+									<!-- <div class="form-group col-md-2">
+										<select class="form-control" style="min-width: 80px">
+											<option>미수행시 피드백</option>
+											<option>메시지1</option>
+											<option>메시지2</option>
+											<option>메시지3</option>
+											<option>메시지4 추가</option>
+										</select>
+									</div> -->
+								</div>
+								<div class="form-row addelement-item">
+									<i class="dripicons-minus cursor widget-icon custom-widget bg-secondary rounded-circle text-white"></i>
+									<div class="form-group col-md-4">
+										<div class="input-group">
+											<button type="button" class="btn btn-light btn-icon"><i class="uil uil-smile"></i></button>
+											<input class="form-control" placeholder="내용을 입력하세요" value="비만" />
+										</div>
+									</div>
+									<div class="form-group col-md-4">
+										<select class="form-control" style="min-width: 80px">
+											<option>화면이동</option>
+											<option selected>다른 대화 시작</option>
+										</select>
+									</div>
+									<div class="form-group col-md-4">
+										<select class="form-control" style="min-width: 80px">
+											<option>메시지1</option>
+											<option>메시지2</option>
+											<option>메시지3</option>
+											<option>메시지4 추가</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-row addelement-item">
+									<i class="dripicons-minus cursor widget-icon custom-widget bg-secondary rounded-circle text-white"></i>
+									<div class="form-group col-md-4">
+										<div class="input-group">
+											<button type="button" class="btn btn-light btn-icon"><i class="uil uil-smile"></i></button>
+											<input class="form-control" placeholder="내용을 입력하세요" value="해당없음" />
+										</div>
+									</div>
+									<div class="form-group col-md-4">
+										<select class="form-control" style="min-width: 80px">
+											<option>다른 대화 시작</option>
+										</select>
+									</div>
+									<div class="form-group col-md-4">
+										<select class="form-control" style="min-width: 80px">
+											<option>메시지1</option>
+											<option>메시지2</option>
+											<option>메시지3</option>
+											<option>메시지4 추가</option>
+										</select>
+									</div>
+								</div>
+								<div class="clone-item">
+									<div class="form-row addelement-item">
+										<i class="dripicons-minus cursor widget-icon custom-widget bg-secondary rounded-circle text-white"></i>
+										<div class="form-group col-md-4">
+											<div class="input-group">
+												<button type="button" class="btn btn-light btn-icon"><i class="uil uil-smile"></i></button>
+												<input class="form-control" placeholder="내용을 입력하세요" />
+											</div>
+										</div>
+										<div class="form-group col-md-4">
+											<select class="form-control" style="min-width: 80px">
+												<option>다른 메시지 시작</option>
+											</select>
+										</div>
+										<div class="form-group col-md-4">
+											<select class="form-control" style="min-width: 80px">
+												<option>메시지7 추가</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<!--기능제공형-->
+						<div class="message-type"></div>
+						
+						<!--OX형-->
+						<div class="message-type">
+							<div class="row">
+								<div class="col-sm-12 col-lg-2"></div>
+								<div class="col-sm-12 col-lg-10">
+									<div class="ox-list form-row">
+										<div class="input-group align-items-center">
+											<span class="mr-2 ml-2 "><b class="font-20">O</b></span>
+											<input class="form-control" placeholder="내용을 입력하세요.">
+											<span class="ml-1">0/100</span>
+										</div>
+									</div>
+									<div class="ox-list form-row mt-2">
+										<div class="input-group align-items-center">
+											<span class="ml-2 mr-2"><b class="font-20">X</b></span>
+											<input class="form-control" placeholder="내용을 입력하세요.">
+											<span class="ml-1">0/100</span>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer justify-content-between">
+						<div>
+							<button type="button" class="btn btn-primary btn-additem">+ 버튼 추가하기</button>
+						</div>
+						<div>
+							<button type="button" class="btn btn-light">취소</button>
+							<button type="button" class="btn btn-primary">등록</button>
+						</div>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+		<!--// modal -->
+
+		<!-- modal 동영상 첨부 -->
+		<div id="HG-WEB-COA-07-02" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true" data-backdrop="static">
+			<div class="modal-dialog modal-dialog-centered modal-80-width">
+				<div class="modal-content">
+					<div class="modal-header modal-colored-header bg-primary">
+						<h4 class="modal-title">동영상 첨부</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					</div>
+					<div class="modal-body p-0">
+						<div class="custom-box">
+							<div class="row">
+								<div class="col-xl-9 col-sm-12">
+									<div class="card mb-0 h-100">
+										<div class="card-body">
+											<table class="table user-detail-table table-centered table-hover w-100 thead-only-gray" id="vod-datatable" style="min-width:870px">
+												<colgroup>
+													<col style="width: 12%" />
+													<col style="width: 10%" />
+													<col style="width: 10%" />
+													<col />
+													<col style="width: 12%" />
+													<col style="width: 12%" />
+													<col style="width: 10%" />
+													<col style="width: 10%" />
+												</colgroup>
+												<thead class="thead-light">
+													<tr>
+														<th>구분</th>
+														<th>등급/요소</th>
+														<th>운동부위</th>
+														<th>동영상 제목</th>
+														<th>등록일자</th>
+														<th>등록자</th>
+														<th class="text-center">미리보기</th>
+														<th class="text-center">첨부</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>추천운동</td>
+														<td>근력</td>
+														<td>전신</td>
+														<td>
+															<div class="d-flex align-items-center">
+																<img src="resource/images/attached-files/img-5.jpg" alt="image" class="avatar-sm"> 
+																<span class="ml-1">전신 운동 1</span>
+															</div>
+														</td>
+														<td>2023-01-30</td>
+														<td>SystemAdmin</td>
+														<td class="text-center"><button type="button" class="btn btn-info">미리보기</button></td>
+														<td class="text-center"><button type="button" class="btn btn-primary">첨부</button></td>
+													</tr>
+													<tr>
+														<td>나만의 운동</td>
+														<td>근력</td>
+														<td>상완</td>
+														<td>
+															<div class="d-flex align-items-center">
+																<img src="resource/images/attached-files/img-5.jpg" alt="image" class="avatar-sm"> 
+																<span class="ml-1">상완 운동 따라하기</span>
+															</div>
+														</td>
+														<td>2023-01-30</td>
+														<td>SystemAdmin</td>
+														<td class="text-center"><button type="button" class="btn btn-info">미리보기</button></td>
+														<td class="text-center"><button type="button" class="btn btn-primary">첨부</button></td>
+													</tr>
+													<tr>
+														<td>나만의 운동</td>
+														<td>유연성</td>
+														<td>허리</td>
+														<td>
+															<div class="d-flex align-items-center">
+																<img src="resource/images/attached-files/img-5.jpg" alt="image" class="avatar-sm"> 
+																<span class="ml-1">상완 운동 따라하기</span>
+															</div>
+														</td>
+														<td>2023-01-30</td>
+														<td>SystemAdmin</td>
+														<td class="text-center"><button type="button" class="btn btn-info">미리보기</button></td>
+														<td class="text-center"><button type="button" class="btn btn-primary">첨부</button></td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-3 col-sm-12">
+									<div class="card mb-0 h-100">
+										<div class="card-body">
+											<h5 class="font-w-600 mb-2 mini-title text-dark">미리보기</h5>
+
+											기존 모달 참고<br>
+											운동동영상 미리보기: HG-WEB-EXMN-02
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+		<!--// modal -->
+
+		<!-- modal 대화 불러오기 -->
+		<div id="HG-WEB-COA-07-03" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true" data-backdrop="static">
+			<div class="modal-dialog modal-dialog-centered modal-custom-medium">
+				<div class="modal-content">
+					<div class="modal-header modal-colored-header bg-primary">
+						<h4 class="modal-title">대화 불러오기</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					</div>
+					<div class="modal-body">
+						<table class="table user-detail-table table-centered table-hover w-100 min-w768 thead-only-gray" id="talking-datatable">
+							<colgroup>
+								<col style="width: 8%" />
+								<col style="width: 13%" />
+								<col style="width: 16%" />
+								<col />
+								<col style="width: 10%" />
+								<col style="width: 8%" />
+								<col style="width: 17%" />
+								<col style="width: 9%" />
+							</colgroup>
+							<thead class="thead-light">
+								<tr>
+									<th>선택</th>
+									<th>대화종류</th>
+									<th>유형상세</th>
+									<th>대화명</th>
+									<th>사용여부</th>
+									<th>등록자</th>
+									<th>등록일시</th>
+									<th class="text-center">미리보기</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td></td>
+									<td>챗봇코칭</td>
+									<td>-</td>
+									<td>혈당은 무엇일까요?</td>			
+									<td>사용</td>
+									<td>홍길동</td>
+									<td>2020-01-02 09:00</td>
+									<td class="text-center">
+										<i class="dripicons-preview font-20 cursor" onclick="HG_WEB_COA_08()"></i>
+									</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td>입력유도</td>
+									<td>혈당</td>
+									<td>운동하는 방법</td>			
+									<td>사용안함</td>
+									<td>김길순</td>
+									<td>2020-01-02 09:00</td>
+									<td class="text-center">
+										<i class="dripicons-preview font-20 cursor" onclick="HG_WEB_COA_08()"></i>
+									</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td>기본버튼</td>
+									<td>대화형</td>
+									<td>혈당은 무엇일까요?</td>			
+									<td>사용</td>
+									<td>홍길동</td>
+									<td>2020-01-02 09:00</td>
+									<td class="text-center">
+										<i class="dripicons-preview font-20 cursor" onclick="HG_WEB_COA_08()"></i>
+									</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td>기본버튼</td>
+									<td>건강데이터 입력형</td>
+									<td>운동하는 방법</td>			
+									<td>사용안함</td>
+									<td>김길순</td>
+									<td>2020-01-02 09:00</td>
+									<td class="text-center">
+										<i class="dripicons-preview font-20 cursor" onclick="HG_WEB_COA_08()"></i>
+									</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td>코치의 메시지</td>
+									<td>안녕</td>
+									<td>혈당은 무엇일까요?</td>			
+									<td>사용</td>
+									<td>홍길동</td>
+									<td>2020-01-02 09:00</td>
+									<td class="text-center">
+										<i class="dripicons-preview font-20 cursor" onclick="HG_WEB_COA_08()"></i>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="modal-footer">
+							<button type="button" class="btn btn-primary">확인</button>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+		<!--// modal -->
+
+		<!-- 모달 가이드 -->
+		<div style="position: fixed; bottom: 0; right: 0px; background: rgba(0, 0, 0, 0.5); width: 500px; padding: 20px; z-index: 100">
+			<a href="javascript:void(0)" onclick="HG_WEB_COA_07_01()" style="color: #fff">HG-WEB-COA-07-01 : 메시지 등록</a><br />
+			<a href="javascript:void(0)" onclick="HG_WEB_COA_07_02()" style="color: #fff">HG-WEB-COA-07-02 : 동영상 첨부</a><br />
+			<a href="javascript:void(0)" onclick="HG_WEB_COA_07_03()" style="color: #fff">HG-WEB-COA-07-03 : 대화 불러오기</a><br />
+		</div>
+		
+		<div data-include-html="modal/account.html"></div>
+		<div data-include-html="modal/setting.html"></div>
+		<div data-include-html="modal/password.html"></div>
+
+		<script src="resource/js/vendor.min.js"></script>
+		<script src="resource/js/app.min.js"></script>
+		
+		<script src="resource/js/vendor/apexcharts.min.js"></script>
+		<script src="resource/js/vendor/jquery.dataTables.min.js"></script>
+		<script src="resource/js/vendor/dataTables.bootstrap4.js"></script>
+		<script src="resource/js/vendor/dataTables.responsive.min.js"></script>
+		<script src="resource/lib/simplelightbox/simpleLightbox.min.js"></script>
+		<script src="resource/js/vendor/dataTables.checkboxes.min.js"></script>
+		<script src="resource/js/vendor/responsive.bootstrap4.min.js"></script>
+
+		<script src="resource/js/vendor/dragula.min.js"></script>
+		<script src="resource/js/ui/component.dragula.js"></script>
+		
+		<script src="resource/js/common.js"></script>
+	
+
+		<script>
+			
+			function updateUserPassword() {
+				$("#login-password-modal").modal("hide");
+			}
+
+			function showMyAccountDlg() {
+				$("#my-info-modal").modal("show");
+			}
+
+			function updateLoginPasswordDlg() {
+				$("#login-password-modal").modal("show");
+			}
+
+			function showSettingDlg() {
+				$("#setting-modal").modal("show");
+			}
+
+			function updateUserInfo() {
+				$("#my-info-modal").modal("hide");
+			}
+			function showContents() {
+				$("#contents-modal").modal("show");
+			}
+
+			//Phase 2.2
+			//아델리
+			function HG_WEB_COA_07_01() {
+				$("#HG-WEB-COA-07-01").modal("show");
+			}
+			function HG_WEB_COA_07_02() {
+				$("#HG-WEB-COA-07-02").modal("show");
+			}
+			function HG_WEB_COA_07_03() {
+				$("#HG-WEB-COA-07-03").modal("show");
+			}
+			function HG_WEB_COA_08() {
+				location.href="HG-WEB-COA-08.html";
+			}
+
+			function showVod(num) {
+				$(".vod-attach").eq(num).show().siblings(".vod-attach").hide();
+			}
+
+			var currentType = 0;
+			function showMsgType(num, obj) {
+				$(".message-type").eq(num).show().siblings(".message-type").hide();
+				$(".attach-type-btn").removeClass("type_"+currentType).addClass("type_"+num);
+				var nextobj = $(obj).closest(".col-sm-12").next();
+				if (num == 1 || num == 2) {
+					$(nextobj).show();
+					if(num==1) {
+						$(".btn-additem").show();
+						$(nextobj).find("select").eq(0).show().siblings().hide();
+					} else {
+						$(".btn-additem").hide();
+						$(nextobj).find("select").eq(1).show().siblings().hide();
+					}
+				} else {
+					$(nextobj).hide();
+					$(".btn-additem").hide();
+				}
+				currentType = num;
+			}
+
+			$(document).on("click", ".addelement-item .dripicons-minus", function () {
+				$(this).parents(".addelement-item").remove();
+			});
+
+			
+			$(document).on("click", ".btn-additem", function () {
+				$(".clone-item .addelement-item").clone().appendTo(".addelement");
+			});
+
+			$(document).on("click", ".attach-type-btn .btn-icon", function () {
+				let targetid = "#" + $(this).data("target");
+				$(targetid).addClass("show").siblings(".attach-list").removeClass("show");
+			});
+
+			$("#vod-datatable").DataTable({
+				scrollX: true,
+				lengthChange: false,
+				language: {
+					searchPlaceholder: "제목을 입력하세요",
+					paginate: {
+						previous: "<i class='mdi mdi-chevron-left'>",
+						next: "<i class='mdi mdi-chevron-right'>",
+					},
+					info: " _PAGE_ / _PAGES_ Pages",
+					sSearch:
+						"<select class='form-control d-inline-block'><option>구분</option></select><select class='form-control d-inline-block ml-1'><option>등급</option></select><select class='form-control d-inline-block ml-1'><option>운동부위</option></select>",
+				},
+				ordering: false,
+				drawCallback: function () {
+					let dtwrapper = ($(this).closest(".dataTables_wrapper"));
+					$(".dataTables_paginate > .pagination").addClass("pagination-rounded float-right");
+					$(dtwrapper).find(".dataTables_filter").closest(".row").addClass("filter-wide");
+					$(dtwrapper).find(".filter-wide > div").eq(0).hide();
+					$(dtwrapper).find(".filter-wide > div").eq(1).addClass("col-lg-12").removeClass("col-md-6");
+				},
+			});
+
+			$("#talking-datatable").DataTable({
+				scrollX: true,
+				language: {
+					searchPlaceholder: "대화명을 검색하세요.",
+					paginate: {
+						previous: "<i class='mdi mdi-chevron-left'>",
+						next: "<i class='mdi mdi-chevron-right'>",
+					},
+					info: " _PAGE_ / _PAGES_ Pages",
+					sSearch:
+						"<select class='form-control d-inline-block'><option>대화 종류 전체</option><option>챗봇 코칭</option><option>입력유도</option><option>기본버튼</option></select><select class='form-control d-inline-block ml-1'><option>사용여부 전체</option><option>사용</option><option>사용안함</option></select><select class='form-control d-inline-block ml-1'><option>대화명</option><option>대화내용</option><option>등록자</option></select>",
+					lengthMenu:
+						'<select class=\'form-control mr-1\'><option value="10">10</option><option value="20">20</option><option value="-1">All</option></select> 개씩 보기',
+				},
+				pageLength: 10,
+				columns: [
+					{
+						orderable: !1,
+						render: function (e, t, o, l) {
+							return (
+								"display" === t &&
+									(e =
+										'<div class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input dt-checkboxes"><label class="custom-control-label">&nbsp;</label></div>'),
+								e
+							);
+						},
+						checkboxes: {
+							selectRow: !0,
+							selectAllRender:
+								'<div class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input dt-checkboxes"><label class="custom-control-label">&nbsp;</label></div>',
+						},
+					},
+					{ orderable: !1 },
+					{ orderable: !1 },
+					{ orderable: !1 },
+					{ orderable: !1 },
+					{ orderable: !1 },
+					{ orderable: !0 },
+					{ orderable: !1 },
+				],
+				select: { style: "multi" },
+				order: [[6, "desc"]],
+				drawCallback: function () {
+					let dtwrapper = ($(this).closest(".dataTables_wrapper"));
+					$(".dataTables_paginate > .pagination").addClass("pagination-rounded float-right");					
+					$(dtwrapper).find(".dataTables_filter").closest(".row").addClass("filter-wide");
+					$(dtwrapper).find(".filter-wide > div").eq(0).addClass("col-lg-3 col-xl-2").removeClass("col-md-6");
+					$(dtwrapper).find(".filter-wide > div").eq(1).addClass("col-lg-9 col-xl-10").removeClass("col-md-6");
+				},
+			});
+
+
+			// test용
+			function setTalk(idx, obj) {
+				$(obj).siblings("[class*=show_]").hide().siblings(".show_"+(idx+1)).show();
+			}
+			function setFunc(idx, obj) {
+				$(obj).find("option[class*=showopt_]").hide();
+				$(obj).find("option.showopt_"+(idx+1)).show().eq(0).prop("selected",true);
+			}
+			function setSendTime(idx,obj) {
+				$(obj).siblings("[class*=sv_]").hide().siblings(".sv_"+idx).show();
+			}
+		</script>
+	</body>
+</html>

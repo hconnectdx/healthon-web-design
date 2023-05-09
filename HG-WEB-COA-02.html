@@ -1,0 +1,2535 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Telehealth</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+		<meta content="Coderthemes" name="author" />
+		<!-- App favicon -->
+		<link rel="shortcut icon" href="resource/images/favicon.ico" />
+
+		<!-- App css -->
+		<link href="resource/css/icons.min.css" rel="stylesheet" type="text/css" />
+		<link href="resource/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
+		<link href="resource/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
+		<link href="resource/lib/simplelightbox/simpleLightbox.min.css" rel="stylesheet" type="text/css" />
+		<link href="resource/css/base.css" rel="stylesheet" type="text/css" />
+		<link href="resource/css/page/consult.css" rel="stylesheet" type="text/css" id="consult-style" />
+		<link href="resource/css/vendor/fullcalendar.min.css" rel="stylesheet" type="text/css" />
+		<link href="resource/css/page/telehealth.css" rel="stylesheet" type="text/css" />
+		<link href="resource/css/vendor/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" />
+		<link href="resource/css/vendor/responsive.bootstrap4.css" rel="stylesheet" type="text/css" />
+		<link href="resource/css/common.css" rel="stylesheet" type="text/css" id="common-style" />
+	</head>
+
+	<body
+		class="loading"
+		data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'
+	>
+		<!-- Begin page -->
+		<div class="wrapper">
+			<!-- ========== Left Sidebar Start ========== -->
+			<div class="left-side-menu">
+				<!-- LOGO -->
+				<a href="main.html" class="logo text-center logo-light">
+					<span class="logo-lg">
+						<img src="resource/images/logo.png" alt="" height="16" />
+					</span>
+					<span class="logo-sm">
+						<img src="resource/images/logo_sm.png" alt="" height="16" />
+					</span>
+				</a>
+				<!-- LOGO -->
+				<a href="main.html" class="logo text-center logo-dark">
+					<span class="logo-lg">
+						<img src="resource/images/logo-dark.png" alt="" height="16" />
+					</span>
+					<span class="logo-sm">
+						<img src="resource/images/logo_sm_dark.png" alt="" height="16" />
+					</span>
+				</a>
+
+				<div class="h-100" id="left-side-menu-container" data-simplebar>
+					<!--- Sidemenu -->
+					<ul class="metismenu side-nav">
+						<li class="side-nav-title side-nav-item">Navigation</li>
+						<li class="side-nav-item">
+							<a href="main.html" class="side-nav-link">
+								<i class="uil-presentation-lines-alt"></i>
+								<span> Dashboards </span>
+							</a>
+						</li>
+						<li class="side-nav-item">
+							<a href="#" class="side-nav-link">
+								<i class="uil-users-alt"></i>
+								<span> 사용자관리 </span>
+								<span class="menu-arrow"></span>
+							</a>
+							<ul class="side-nav-second-level" aria-expanded="false">
+								<li>
+									<a href="users.html">전체사용자</a>
+								</li>
+								<li>
+									<a href="auth01.html">승인 관리</a>
+								</li>
+								<li>
+									<a href="send_message.html">메시지관리</a>
+								</li>
+								<li>
+									<a href="message_list.html">메세지 발송 이력</a>
+								</li>
+							</ul>
+						</li>
+						<li class="side-nav-item">
+							<a href="javascript: void(0);" class="side-nav-link">
+								<i class="uil-comments-alt"></i>
+								<span> 상담 </span>
+								<span class="menu-arrow"></span>
+							</a>
+							<ul class="side-nav-second-level" aria-expanded="false">
+								<li>
+									<a href=".html">대화형 상담</a>
+								</li>
+								<li>
+									<a href=".html">단답형 상담</a>
+								</li>
+								<li>
+									<a href=".html">비대면 상담</a>
+								</li>
+								<li>
+									<a href="doc01.html">문서함</a>
+								</li>
+								<!-- <li>
+										<a href="consult.html">1:1 상담</a>
+								</li>
+								<li>
+										<a href="telehealth.html">Tel health</a>
+								</li> -->
+							</ul>
+						</li>
+						<li class="side-nav-item">
+							<a href="javascript: void(0);" class="side-nav-link">
+								<i class="uil-comments-alt"></i>
+								<span> 챗봇 코칭 </span>
+								<span class="menu-arrow"></span>
+							</a>
+							<ul class="side-nav-second-level" aria-expanded="false">
+								<li>
+									<a href=".html">프로그램 관리</a>
+								</li>
+								<li>
+									<a href=".html">기본버튼 관리</a>
+								</li>
+								<li>
+									<a href=".html">대화 관리</a>
+								</li>
+							</ul>
+						</li>
+						<li class="side-nav-item">
+							<a href="javascript: void(0);" class="side-nav-link">
+								<i class="uil-eye"></i>
+								<span> 모니터링 </span>
+								<span class="menu-arrow"></span>
+							</a>
+							<ul class="side-nav-second-level" aria-expanded="false">
+								<li>
+									<a href="moniter_danger.html">위험지수 관리</a>
+								</li>
+								<li>
+									<a href="moniter_adapter.html">순응도 관리</a>
+								</li>
+							</ul>
+						</li>
+						<li class="side-nav-item">
+							<a href="javascript: void(0);" class="side-nav-link">
+								<i class="uil uil-image"></i>
+								<span> 콘텐츠관리 </span>
+								<span class="menu-arrow"></span>
+							</a>
+							<ul class="side-nav-second-level" aria-expanded="false">
+								<li>
+									<a href="sys_content.html">콘텐츠관리</a>
+								</li>
+								<li>
+									<a href="sys_video.html">동영상 관리</a>
+								</li>
+								<li>
+									<a href="sdf.html">줄넘기 팁 관리</a>
+								</li>
+							</ul>
+						</li>
+						<li class="side-nav-item">
+							<a href="javascript: void(0);" class="side-nav-link">
+								<i class="uil-game-structure"></i>
+								<span> 시스템운영 </span>
+								<span class="menu-arrow"></span>
+							</a>
+							<ul class="side-nav-second-level" aria-expanded="false">
+								<li>
+									<a href="sys_group.html">그룹관리</a>
+								</li>
+								<li>
+									<a href="sys_webuser.html">웹 사용자관리</a>
+								</li>
+								<li>
+									<a href="sys_version.html">버전관리</a>
+								</li>
+								<li>
+									<a href="sys_appoint.html">약관 관리</a>
+								</li>
+								<li>
+									<a href="sys_service.html">서비스 문의</a>
+								</li>
+								<li>
+									<a href="sys_connecthistory.html">접속 이력 관리</a>
+								</li>
+								<li>
+									<a href=".html">결제 관리</a>
+								</li>
+								<li>
+									<a href="sys_checkitem.html">검사 항목관리</a>
+								</li>
+								<li>
+									<a href="sys_note.html">공지사항 관리</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<div class="clearfix"></div>
+				</div>
+				<!-- Sidebar -left -->
+			</div>
+			<!-- Left Sidebar End -->
+
+			<!-- ============================================================== -->
+			<!-- Start Page Content here -->
+			<!-- ============================================================== -->
+
+			<div class="content-page">
+				<div class="content">
+					<!-- Topbar Start -->
+					<div class="navbar-custom">
+						<ul class="list-unstyled topbar-right-menu float-right mb-0">
+							<li class="dropdown notification-list d-lg-none">
+								<a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+									<i class="dripicons-search noti-icon"></i>
+								</a>
+								<div class="dropdown-menu dropdown-menu-animated dropdown-lg p-0">
+									<form class="p-3">
+										<input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username" />
+									</form>
+								</div>
+							</li>
+
+							<li class="dropdown notification-list">
+								<a
+									class="nav-link dropdown-toggle nav-user arrow-none mr-0"
+									data-toggle="dropdown"
+									href="#"
+									role="button"
+									aria-haspopup="false"
+									aria-expanded="false"
+								>
+									<span class="account-user-avatar">
+										<img src="resource/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle" />
+									</span>
+									<span>
+										<span class="account-user-name">James Kim</span>
+										<span class="account-position">의사 <i class="dripicons-chevron-down"></i></span>
+									</span>
+								</a>
+								<div class="dropdown-menu dropdown-menu-right dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
+									<!-- item-->
+									<a href="javascript:void(0);" onclick="showMyAccountDlg()" class="dropdown-item notify-item">
+										<i class="mdi mdi-account-circle mr-1"></i>
+										<span>My Account</span>
+									</a>
+
+									<!-- item-->
+									<a href="javascript:void(0);" onclick="showSettingDlg()" class="dropdown-item notify-item">
+										<i class="mdi mdi-account-edit mr-1"></i>
+										<span>Settings</span>
+									</a>
+									<!-- item-->
+									<a href="login.html" class="dropdown-item notify-item">
+										<i class="mdi mdi-logout mr-1"></i>
+										<span>Logout</span>
+									</a>
+								</div>
+							</li>
+						</ul>
+						<button class="button-menu-mobile open-left disable-btn">
+							<i class="mdi mdi-menu"></i>
+						</button>
+						<h4 class="page-title color-title float-left mt-3">프로그램 관리</h4>
+						<div class="app-search dropdown d-none d-lg-block float-right">
+							<form>
+								<div class="input-group">
+									<input type="text" class="form-control dropdown-toggle" placeholder="사용자를 검색할수 있습니다." id="top-search" />
+									<span class="mdi mdi-magnify search-icon"></span>
+									<div class="input-group-append">
+										<button class="btn btn-primary" type="submit">검색</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					<!-- end Topbar -->
+
+					<!-- Start Content-->
+					<div class="container-fluid">
+						<!-- start page title -->
+						<div class="row">
+							<div class="col-12">
+								<div class="page-title-box">
+									<div class="page-title-right">
+										<ol class="breadcrumb m-0 pt-0">
+											<li class="breadcrumb-item"><a href="javascript: void(0);">챗봇 코칭</a></li>
+											<li class="breadcrumb-item active">프로그램 관리</li>
+										</ol>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- end page title -->
+
+						<div>
+							<ul class="nav nav-tabs nav-bordered mb-3 nav-tabs-my">
+								<li class="nav-item">
+									<a href="#program-tab" data-toggle="tab" aria-expanded="false" class="nav-link rounded-0">
+										<span class="d-md-block">프로그램 전체</span>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="#program-regist-tab" data-toggle="tab" aria-expanded="false" class="nav-link rounded-0 active">
+										<span class="d-md-block">프로그램 등록</span>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="#faq-tab" data-toggle="tab" aria-expanded="false" class="nav-link rounded-0">
+										<span class="d-md-block">자주 묻는 질문</span>
+									</a>
+								</li>
+							</ul>
+							<div class="tab-content">
+								<!-- 프로그램 전체 Tab -->
+								<div class="tab-pane" id="program-tab">
+									HG-WEB-COA-01
+								</div>
+								<!--// 프로그램 전체 Tab -->
+
+								<!-- 프로그램 등록 Tab -->
+								<div class="tab-pane active show" id="program-regist-tab">
+									<div class="card">
+										<div class="card-body">
+											<div class="row">
+												<div class="col-sm-6 col-lg-3 col-xl-2 mb-3">
+													<label class="form-label">구분</label>
+													<select class="form-control">
+														<option>고혈압</option>
+														<option>당뇨</option>
+														<option>비만</option>
+														<option>일반</option>
+													</select>
+												</div>
+												<div class="col-sm-6 col-lg-3 col-xl-2 mb-3">
+													<label class="form-label">프로그램 전체 기간</label>
+													<div class="input-group align-items-center">
+														<input type="text" class="form-control col-8 mr-1 pcheck2-input" value="84"> 일
+													</div>
+												</div>
+												<div class="col-sm-6 col-lg-3 col-xl-2 mb-3">
+													<label class="form-label">프로그램 주기</label>
+													<div class="input-group align-items-center">
+														<input type="text" class="form-control col-8 mr-1" value="14"> 일
+													</div>
+												</div>
+												<div class="col-sm-6 col-lg-3 col-xl-2 mb-3">
+													<label class="form-label">사용 여부</label>
+													<div class="custom-control custom-checkbox">
+														<input type="checkbox" class="custom-control-input custom-control-input-success" id="pcheck" checked />
+														<label class="custom-control-label custom-control-label-success" for="pcheck">사용</label>
+													</div>
+												</div>
+												<div class="col-sm-6 col-lg-3 col-xl-2 mb-3">
+													<label class="form-label">기본프로그램 여부</label>
+													<div class="custom-control custom-checkbox">
+														<input type="checkbox" class="custom-control-input custom-control-input-success" id="pcheck2" />
+														<label class="custom-control-label custom-control-label-success" for="pcheck2">기본 프로그램</label>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-lg-12 col-xl-8 mb-3">
+													<label class="form-label">프로그램명</label>
+													<div class="input-group align-items-center">
+														<input type="text" class="form-control" placeholder="프로그램명을 입력하세요." maxlength="50">
+														<span class="ml-2">0/50</span>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-lg-12 col-xl-8 mb-3">
+													<div class="d-flex flex-wrap justify-content-end">
+														<div class="w-100">
+															<label class="custom-form-label">
+																프로그램 대표 이미지 (APP에서 프로그램 신청 시 노출됩니다. 권장사이즈: 0000*0000px)
+															</label>
+														</div>
+														<div class="w-100">
+															<div class="custom-file state-file">
+																<input type="file" class="custom-file-input" id="inputGroupFile04" />
+																<div class="state-file__btn"><i class="uil uil-trash-alt"></i></div>
+																<label class="custom-file-label" for="inputGroupFile04" id="label-inputGroupFile04" style="color: #adb5bd">대표이미지를 업로드 하세요.(png , jpg)</label>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-12">
+													<h5 class="mini-title mt-0" style="margin-bottom:0.75rem">상품</h5>
+													<select class="form-control col-md-12 col-lg-3">
+														<option>유료코칭</option>
+													</select>
+												</div>
+												<div class="col-lg-12 col-xl-8 mb-3">
+													<div class="bg-light mt-1 p-2">
+														유료 코칭 상품입니다.
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-12">
+													<div class="d-flex align-items-center mb-1">
+														<label class="form-label mb-0">참여 그룹</label>
+														<button type="button" class="btn btn-primary ml-3" onclick="HG_WEB_COA_02_01()">그룹 선택</button>
+													</div>
+												</div>
+												<div class="col-lg-12 col-xl-8 mb-3">
+													<div class="bg-light p-2">
+														전체(10,000원), 서울대병원(5,000원), A병원(0원)
+													</div>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col-12">
+													<div class="d-flex align-items-center mb-1">
+														<h5 class="mini-title m-0">기본버튼</h5>
+														<button type="button" class="btn btn-primary ml-3" onclick="HG_WEB_COA_02_02()">설정</button>
+													</div>
+												</div>
+												<div class="col-lg-12 col-xl-8 mb-3">
+													<ul class="list-group basic-btn-list" id="simple-dragula" data-plugin="dragula">
+														<li class="list-group-item">식사 입력하기1 <i class="mdi mdi-silverware-fork-knife font-16 ml-1"></i></li>
+														<li class="list-group-item">식사 입력하기2 <i class="mdi mdi-silverware-fork-knife font-16 ml-1"></i></li>
+														<li class="list-group-item">식사 입력하기3 <i class="mdi mdi-silverware-fork-knife font-16 ml-1"></i></li>
+														<li class="list-group-item">식사 입력하기4 <i class="mdi mdi-silverware-fork-knife font-16 ml-1"></i></li>
+														<li class="list-group-item">식사 입력하기5 <i class="mdi mdi-silverware-fork-knife font-16 ml-1"></i></li>
+														<li class="list-group-item">식사 입력하기6 <i class="mdi mdi-silverware-fork-knife font-16 ml-1"></i></li>
+														<li class="list-group-item">식사 입력하기7 <i class="mdi mdi-silverware-fork-knife font-16 ml-1"></i></li>
+														<li class="list-group-item">식사 입력하기8 <i class="mdi mdi-silverware-fork-knife font-16 ml-1"></i></li>
+													</ul>						 
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col mb-3">
+													<h5 class="mini-title mt-0 mb-2">코칭 대화</h5>
+													<div class="coaching-block">
+														<label class="form-label text-dark">첫인사</label>
+														<div class="row">
+															<div class="col-md-12 col-xl-8">
+																<div class="input-group">
+																	<input type="text" class="form-control" value="고혈압 프로그램 첫인사" disabled>
+																	<button type="button" class="btn btn-primary ml-1" onclick="HG_WEB_COA_02_03()">대화 선택</button>
+																</div>
+																<p class="text-danger pt-2 mb-0">※ 첫인사는 대화 발송시간과 관계없이 사용자가 챗봇 화면에 입장한 즉시 발송됩니다.</p>
+															</div>
+														</div>														
+													</div>
+													<div class="coaching-block">
+														<label class="form-label text-dark">일차별 대화</label>
+														<div>
+															<div class="d-flex align-items-center mb-1">
+																<strong class="mr-3">정기 대화</strong>
+																<button type="button" class="btn btn-primary ml-1" onclick="HG_WEB_COA_02_04()">대화 선택</button>
+																<span class="ml-2">9개 선택됨</span>
+															</div>
+															<div class="d-flex align-items-center">
+																<strong class="mr-2">비정기 대화</strong>
+																<button type="button" class="btn btn-primary ml-1" onclick="HG_WEB_COA_02_05()">대화 선택</button>
+																<span class="ml-2">9개 선택됨</span>
+															</div>
+															<div class="position-relative">
+																<button type="button" class="btn text-primary btn-folding"  data-toggle="collapse" data-target="#collapse01" aria-expanded="true" aria-controls="collapse01"><i class="mdi mdi-chevron-right font-16"></i></button>
+															</div>
+															<div data-simplebar>
+																<div  id="collapse01" class="collapse show">
+																	<table class="table user-detail-table table-centered w-100 thead-only-gray" id="ts-datatable" style="min-width:890px">
+																		<colgroup>
+																			<col style="width: 8%" />
+																			<col style="width: 7%" />
+																			<col style="width: 10%" />
+																			<col style="width: 30%" />
+																			<col style="width: 10%" />
+																			<col/>
+																		</colgroup>
+																		<thead class="thead-light">
+																			<tr>
+																				<th>일차</th>
+																				<th>번호</th>
+																				<th>대화 구분</th>
+																				<th>대화명</th>
+																				<th>발송주기</th>
+																				<th>대화 발송시간</th>
+																			</tr>
+																		</thead>
+																		<tbody>
+																			<tr>
+																				<td rowspan="2">1일차</td>
+																				<td class="bg-primary-lighten">1</td>
+																				<td class="bg-primary-lighten">정기</td>
+																				<td class="bg-primary-lighten">운동하는 방법1 (1일 주기)</td>
+																				<td class="bg-primary-lighten">1일</td>
+																				<td class="bg-primary-lighten">
+																					<div class="d-flex">
+																						<div class="col-sm-3 pl-0 pr-1"><input type="text" class=" form-control" value="08:00"></div>
+																						<div class="col-sm-3 pl-0 pr-1"><input type="text" class=" form-control" value="08:00"></div>
+																						<div class="col-sm-3 pl-0 pr-1"><input type="text" class=" form-control" value="08:00"></div>
+																						<div class="col-sm-3 pl-0 pr-1"><input type="text" class=" form-control" value="08:00"></div>
+																					</div>
+																				</td>
+																			</tr>
+																			<tr>
+																				<td>1</td>
+																				<td>비정기</td>
+																				<td>다짐하기</td>
+																				<td>-</td>
+																				<td>
+																					<div class="d-flex">
+																						<div class="col-sm-3 pl-0 pr-1"><input type="text" class=" form-control" value="08:00"></div>
+																						<div class="col-sm-3 pl-0 pr-1"><input type="text" class=" form-control" value="08:00"></div>
+																					</div>
+																				</td>
+																			</tr>
+																			<tr>
+																				<td rowspan="2">2일차</td>
+																				<td class="bg-primary-lighten">1</td>
+																				<td class="bg-primary-lighten">정기</td>
+																				<td class="bg-primary-lighten">운동하는 방법1 (1일 주기)</td>
+																				<td class="bg-primary-lighten">1일</td>
+																				<td class="bg-primary-lighten">
+																					<div class="d-flex">
+																						<div class="col-sm-3 pl-0 pr-1"><input type="text" class=" form-control" value="08:00"></div>
+																					</div>
+																				</td>
+																			</tr>
+																			<tr>
+																				<td class="bg-primary-lighten">1</td>
+																				<td class="bg-primary-lighten">정기</td>
+																				<td class="bg-primary-lighten">운동하는 방법1 (1일 주기)</td>
+																				<td class="bg-primary-lighten">1일</td>
+																				<td class="bg-primary-lighten">
+																					<div class="d-flex">
+																						<div class="col-sm-3 pl-0 pr-1"><input type="text" class=" form-control" value="08:00"></div>
+																						<div class="col-sm-3 pl-0 pr-1"><input type="text" class=" form-control" value="08:00"></div>
+																					</div>
+																				</td>
+																			</tr>
+																		</tbody>
+																	</table>
+																</div>
+															</div>
+														</div>														
+													</div>
+													<div class="coaching-block">
+														<label class="form-label text-dark">요일별 대화</label>
+														<div>
+															<div class="d-flex align-items-center mb-1">
+																<button type="button" class="btn btn-primary" onclick="HG_WEB_COA_02_06()">대화 선택</button>
+																<span class="ml-2">9개 선택됨</span>
+															</div>															
+															<div class="position-relative">
+																<button type="button" class="btn text-primary btn-folding"  data-toggle="collapse" data-target="#collapse02" aria-expanded="true" aria-controls="collapse02"><i class="mdi mdi-chevron-right font-16"></i></button>
+															</div>
+															<div data-simplebar>
+																<div  id="collapse02" class="collapse show">
+																	<table class="table user-detail-table table-centered w-100 thead-only-gray" id="ts-datatable" style="min-width:890px">
+																		<colgroup>
+																			<col style="width: 8%" />
+																			<col style="width: 7%" />
+																			<col style="width: 10%" />
+																			<col style="width: 30%" />
+																			<col style="width: 10%" />
+																			<col/>
+																		</colgroup>
+																		<thead class="thead-light">
+																			<tr>
+																				<th>주차</th>
+																				<th>요일</th>
+																				<th>번호</th>
+																				<th>대화명</th>
+																				<th>발송요일</th>
+																				<th>대화 발송시간</th>
+																			</tr>
+																		</thead>
+																		<tbody>
+																			<tr>
+																				<td rowspan="3">1주차</td>
+																				<td rowspan="2">월</td>
+																				<td>1</td>
+																				<td>운동하는 방법1 (1일 주기)</td>
+																				<td>월,금</td>
+																				<td>
+																					<div class="d-flex">
+																						<div class="col-sm-3 pl-0 pr-1"><input type="text" class=" form-control" value="08:00"></div>
+																						<div class="col-sm-3 pl-0 pr-1"><input type="text" class=" form-control" value="08:00"></div>
+																						<div class="col-sm-3 pl-0 pr-1"><input type="text" class=" form-control" value="08:00"></div>
+																						<div class="col-sm-3 pl-0 pr-1"><input type="text" class=" form-control" value="08:00"></div>
+																					</div>
+																				</td>
+																			</tr>
+																			<tr>
+																				<td>1</td>
+																				<td>운동하는 방법1 (1일 주기)</td>
+																				<td>월,금</td>
+																				<td>
+																					<div class="d-flex">
+																						<div class="col-sm-3 pl-0 pr-1"><input type="text" class=" form-control" value="08:00"></div>
+																						<div class="col-sm-3 pl-0 pr-1"><input type="text" class=" form-control" value="08:00"></div>
+																					</div>
+																				</td>
+																			</tr>
+																			<tr>
+																				<td>금</td>
+																				<td>1</td>
+																				<td>운동하는 방법1 (1일 주기)</td>
+																				<td>월,금</td>
+																				<td>
+																					<div class="d-flex">
+																						<div class="col-sm-3 pl-0 pr-1"><input type="text" class=" form-control" value="08:00"></div>
+																					</div>
+																				</td>
+																			</tr>
+																			<tr>
+																				<td rowspan="3">1주차</td>
+																				<td>월</td>
+																				<td>1</td>
+																				<td>운동하는 방법1 (1일 주기)</td>
+																				<td>월,금</td>
+																				<td>
+																					<div class="d-flex">
+																						<div class="col-sm-3 pl-0 pr-1"><input type="text" class=" form-control" value="08:00"></div>
+																						<div class="col-sm-3 pl-0 pr-1"><input type="text" class=" form-control" value="08:00"></div>
+																					</div>
+																				</td>
+																			</tr>
+																			<tr>
+																				<td>월</td>
+																				<td>1</td>
+																				<td>운동하는 방법1 (1일 주기)</td>
+																				<td>월,금</td>
+																				<td>
+																					<div class="d-flex">
+																						<div class="col-sm-3 pl-0 pr-1"><input type="text" class=" form-control" value="08:00"></div>
+																					</div>
+																				</td>
+																			</tr>
+																			<tr>
+																				<td>금</td>
+																				<td>1</td>
+																				<td>운동하는 방법1 (1일 주기)</td>
+																				<td>월,금</td>
+																				<td>
+																					<div class="d-flex">
+																						<div class="col-sm-3 pl-0 pr-1"><input type="text" class=" form-control" value="08:00"></div>
+																						<div class="col-sm-3 pl-0 pr-1"><input type="text" class=" form-control" value="08:00"></div>
+																					</div>
+																				</td>
+																			</tr>
+																		</tbody>
+																	</table>
+																</div>
+															</div>
+														</div>														
+													</div>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col-md-12 col-xl-8 mb-3">
+													<div class="d-flex justify-content-between mb-1">
+														<div class="d-flex align-items-center">
+															<h5 class="mini-title m-0">자주 묻는 질문</h5>
+															<button type="button" class="btn btn-primary ml-3" onclick="HG_WEB_COA_02_07()">설정</button>
+														</div>
+														<div>
+															<button type="button" class="btn btn-outline-dark btn-sm font-13"><small>▲</small>Up</button>
+															<button type="button" class="btn btn-outline-dark btn-sm font-13"><small>▼</small>Down</button>
+														</div>
+													</div>
+													<table class="table user-detail-table table-centered table-hover w-100 thead-only-gray" id="faq-radio-datatable" style="margin-top:0 !important">
+														<colgroup>
+															<col style="width: 40px" />
+															<col />
+														</colgroup>
+														<thead class="thead-light">
+															<tr>
+																<th></th>
+																<th>질문</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td></td>
+																<td>언제까지 취소할 수 있나요?</td>
+															</tr>
+															<tr>
+																<td></td>
+																<td>취소하고 싶은데 어떻게 해야 하나요?</td>
+															</tr>
+														</tbody>
+													</table>
+
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="text-right">
+										<button type="button" class="btn btn-light mr-1">취소</button>
+										<button type="button" class="btn btn-secondary mr-1" onclick="HG_WEB_COA_02_08()">프로그램 불러오기</button>
+										<button type="button" class="btn btn-primary">등록</button>
+									</div>
+								</div>
+								<!--// 프로그램 등록 Tab  -->
+
+								<!-- 자주 묻는 질문 Tab -->
+								<div class="tab-pane" id="faq-tab">
+									HG-WEB-COA-03
+								</div>
+								<!--// 자주 묻는 질문 Tab  -->
+							</div>
+						</div>
+					</div>
+					<!-- Footer Start -->
+					<footer class="footer">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-md-6">© HealthConnect Co., Ltd.</div>
+								<div class="col-md-6"></div>
+							</div>
+						</div>
+					</footer>
+					<!-- end Footer -->
+				</div>
+				<!-- container -->
+			</div>
+			<!-- content -->
+
+			<!-- ============================================================== -->
+			<!-- End Page content -->
+			<!-- ============================================================== -->
+		</div>
+		<!-- END wrapper -->
+
+		<!-- modal 참여 그룹 선택 -->
+		<div id="HG-WEB-COA-02-01" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true" data-backdrop="static">
+			<div class="modal-dialog modal-dialog-centered modal-lg">
+				<div class="modal-content">
+					<div class="modal-header modal-colored-header bg-primary">
+						<h4 class="modal-title">참여 그룹 선택</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					</div>
+					<div class="modal-body">											
+            <table class="table user-detail-table table-centered table-hover w-100 thead-only-gray" id="partin-group-datatable">
+              <colgroup>
+                <col style="width: 5%" />
+                <col />
+                <col style="width: 30%" />
+                <col style="width: 30%" />
+              </colgroup>
+              <thead class="thead-light">
+                <tr>
+                  <th></th>
+                  <th>그룹</th>
+                  <th>결제 여부</th>
+                  <th>가격 설정 (KRW)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td>그룹 미소속자</td>
+                  <td>
+                    <select class="form-control" onchange="changeFee(this.selectedIndex,$(this))">
+                      <option>유료</option>
+                      <option>무료</option>
+                    </select>
+                  </td>
+                  <td><input type="text" class="form-control" value="10,000"></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>서울대학교병원</td>
+                  <td>
+                    <select class="form-control" onchange="changeFee(this.selectedIndex,$(this))">
+                      <option>유료</option>
+                      <option>무료</option>
+                    </select>
+                  </td>
+                  <td><input type="text" class="form-control" value="5,000"></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>헬스커넥트</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>A병원</td>
+                  <td>
+                    <select class="form-control" onchange="changeFee(this.selectedIndex,$(this))">
+                      <option>유료</option>
+                      <option selected>무료</option>
+                    </select>
+                  </td>
+                  <td><input type="text" class="form-control" disabled></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>B회사</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>C병원</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>D병원</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>E병원</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+					</div>
+					<div class="modal-footer">
+							<button type="button" class="btn btn-primary">확인</button>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+		<!--// modal -->
+
+		<!-- modal 기본버튼 선택 -->
+		<div id="HG-WEB-COA-02-02" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true" data-backdrop="static">
+			<div class="modal-dialog modal-dialog-centered modal-custom-medium">
+				<div class="modal-content">
+					<div class="modal-header modal-colored-header bg-primary">
+						<h4 class="modal-title">기본버튼 선택</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					</div>
+					<div class="modal-body">											
+            <table class="table user-detail-table table-centered table-hover w-100 min-w768 thead-only-gray" id="basicbtn-call-datatable">
+              <colgroup>
+                <col style="width: 5%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col />
+              </colgroup>
+              <thead class="thead-light">
+                <tr>
+                  <th></th>
+                  <th>기능</th>
+                  <th>기능상세</th>
+                  <th>대화명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td>대화형</td>
+                  <td>동기부여</td>
+                  <td>건강관리하기 힘들어요</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>건강데이터 입력형</td>
+                  <td>식사</td>
+                  <td>밥먹었어요</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>화면이동형</td>
+                  <td>운동동영상</td>
+                  <td>체중을 쟀어요</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>대화형</td>
+                  <td>동기부여</td>
+                  <td>식사일기 쓸래요</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>건강데이터 입력형</td>
+                  <td>식사</td>
+                  <td>허리둘레 쟀어요</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>화면이동형</td>
+                  <td>운동동영상</td>
+                  <td>궁금한 게 있어요</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>대화형</td>
+                  <td>동기부여</td>
+                  <td>운동영상 볼래요</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>건강데이터 입력형</td>
+                  <td>식사</td>
+                  <td>건강지식을 쌓을래요</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>화면이동형</td>
+                  <td>운동동영상</td>
+                  <td>좀더 열심히 관리하고 싶어요</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>화면이동형</td>
+                  <td>식사</td>
+                  <td>전문가와 상담할래요</td>
+                </tr>
+              </tbody>
+            </table>
+					</div>
+					<div class="modal-footer">
+            <button type="button" class="btn btn-light">취소</button>
+							<button type="button" class="btn btn-primary">확인</button>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+		<!--// modal -->
+
+		<!-- modal 첫인사 선택 -->
+		<div id="HG-WEB-COA-02-03" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true" data-backdrop="static">
+			<div class="modal-dialog modal-dialog-centered modal-custom-medium">
+				<div class="modal-content">
+					<div class="modal-header modal-colored-header bg-primary">
+						<h4 class="modal-title">첫인사 선택</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					</div>
+					<div class="modal-body">											
+            <table class="table user-detail-table table-centered table-hover w-100 min-w768 thead-only-gray" id="greetings-datatable">
+              <colgroup>
+                <col style="width: 5%" />
+                <col style="width: 15%" />
+                <col />
+                <col style="width: 30%" />
+                <col style="width: 10%" />
+              </colgroup>
+              <thead class="thead-light">
+                <tr>
+                  <th></th>
+                  <th>구분</th>
+                  <th>대화명</th>
+                  <th>대화 발송시간</th>
+                  <th>미리보기</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td>일반</td>
+                  <td class="ellipsis">혈당은 무엇일까요?</td>
+                  <td>09:00, 12:00, 18:00, 21:00</td>
+                  <td class="text-center"><i class="dripicons-preview font-20 cursor"></i></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>당뇨</td>
+                  <td class="ellipsis">당뇨 첫인사</td>
+                  <td>09:00</td>
+                  <td class="text-center"><i class="dripicons-preview font-20 cursor"></i></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>고혈압</td>
+                  <td class="ellipsis">혈당은 무엇일까요?</td>
+                  <td>21:00</td>
+                  <td class="text-center"><i class="dripicons-preview font-20 cursor"></i></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>비만</td>
+                  <td class="ellipsis">운동하는 방법</td>
+                  <td>18:00, 21:00</td>
+                  <td class="text-center"><i class="dripicons-preview font-20 cursor"></i></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>일반</td>
+                  <td class="ellipsis">혈당은 무엇일까요?</td>
+                  <td>09:00, 12:00</td>
+                  <td class="text-center"><i class="dripicons-preview font-20 cursor"></i></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>당뇨</td>
+                  <td class="ellipsis">운동하는 방법</td>
+                  <td>09:00, 12:00, 18:00</td>
+                  <td class="text-center"><i class="dripicons-preview font-20 cursor"></i></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>일반</td>
+                  <td class="ellipsis">혈당은 무엇일까요?</td>
+                  <td>09:00, 12:00</td>
+                  <td class="text-center"><i class="dripicons-preview font-20 cursor"></i></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>당뇨</td>
+                  <td class="ellipsis">운동하는 방법</td>
+                  <td>09:00, 12:00, 18:00, 21:00</td>
+                  <td class="text-center"><i class="dripicons-preview font-20 cursor"></i></td>
+                </tr>
+              </tbody>
+            </table>
+					</div>
+					<div class="modal-footer">
+            <button type="button" class="btn btn-light">취소</button>
+							<button type="button" class="btn btn-primary">확인</button>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+		<!--// modal -->
+    
+		<!-- modal 일차별 정기 대화 선택 -->
+		<div id="HG-WEB-COA-02-04" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true" data-backdrop="static">
+			<div class="modal-dialog modal-dialog-centered modal-80-width">
+				<div class="modal-content">
+					<div class="modal-header modal-colored-header bg-primary">
+						<h4 class="modal-title">일차별 정기 대화 선택</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					</div>
+					<div class="modal-body" data-simplebar style="max-height: 680px">
+            <div class="row">
+              <div class="col-xl-7 col-sm-12">
+                <div class="card mb-0 h-100">
+                  <div class="card-body">
+                    <table class="table user-detail-table table-centered table-hover w-100 thead-only-gray" id="left-select-datatable" style="min-width:610px;">
+                      <colgroup>
+                        <col style="width: 40px" />
+                        <col style="width: 10%" />
+                        <col/>
+                        <col style="width: 30%" />
+                        <col style="width: 12%" />
+                      </colgroup>
+                      <thead class="thead-light">
+                        <tr>
+                          <th></th>
+                          <th>구분</th>
+                          <th>대화명</th>
+                          <th>대화 발송시간</th>
+                          <th class="text-center">미리보기</th>
+                        </tr>
+                      </thead>
+											<tbody>
+												<tr>
+													<td></td>
+													<td>일반</td>
+													<td class="ellipsis">혈당은 무엇일까요?</td>
+													<td>09:00, 12:00, 18:00, 21:00</td>
+													<td class="text-center"><i class="dripicons-preview font-20 cursor"></i></td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>당뇨</td>
+													<td class="ellipsis">당뇨 첫인사</td>
+													<td>09:00</td>
+													<td class="text-center"><i class="dripicons-preview font-20 cursor"></i></td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>고혈압</td>
+													<td class="ellipsis">혈당은 무엇일까요?</td>
+													<td>21:00</td>
+													<td class="text-center"><i class="dripicons-preview font-20 cursor"></i></td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>비만</td>
+													<td class="ellipsis">운동하는 방법</td>
+													<td>18:00, 21:00</td>
+													<td class="text-center"><i class="dripicons-preview font-20 cursor"></i></td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>일반</td>
+													<td class="ellipsis">혈당은 무엇일까요?</td>
+													<td>09:00, 12:00</td>
+													<td class="text-center"><i class="dripicons-preview font-20 cursor"></i></td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>당뇨</td>
+													<td class="ellipsis">운동하는 방법</td>
+													<td>09:00, 12:00, 18:00</td>
+													<td class="text-center"><i class="dripicons-preview font-20 cursor"></i></td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>일반</td>
+													<td class="ellipsis">혈당은 무엇일까요?</td>
+													<td>09:00, 12:00</td>
+													<td class="text-center"><i class="dripicons-preview font-20 cursor"></i></td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>당뇨</td>
+													<td class="ellipsis">운동하는 방법</td>
+													<td>09:00, 12:00, 18:00, 21:00</td>
+													<td class="text-center"><i class="dripicons-preview font-20 cursor"></i></td>
+												</tr>
+											</tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-5 col-sm-12">
+                <div class="card mb-0 h-100">
+                  <div class="card-body">
+                    <div class="condition-block">
+                      <h5 class="font-w-600 mb-2 mini-title text-dark">조건1</h5>
+                      <div>
+                        <div class="row">
+                          <div class="col-md-12 col-lg-6 d-flex mb-1">
+                            <input type="text" class="form-control col-6 mr-1" placeholder="시작일자">
+                            <input type="text" class="form-control col-6" placeholder="발송주기">
+                          </div>
+                          <div class="col-md-12 col-lg-6 text-right mb-1">
+                            <div class="custom-control custom-checkbox d-inline-block">
+                              <input type="checkbox" class="custom-control-input" id="ck1">
+                              <label class="custom-control-label font-13" for="ck1">반복</label>
+                            </div>
+                            <button type="button" class="btn btn-outline-dark btn-sm font-13"><small>▲</small>Up</button>
+                            <button type="button" class="btn btn-outline-dark btn-sm font-13"><small>▼</small>Down</button>
+                          </div>
+                        </div>
+                        <table class="table user-detail-table table-centered table-hover w-100 thead-only-gray" id="right-select-datatable" style="margin-top:5px !important">
+                          <colgroup>
+                            <col style="width: 40px" />
+                            <col style="width: 20%" />
+                            <col/>
+                          </colgroup>
+                          <thead class="thead-light">
+                            <tr>
+                              <th></th>
+                              <th>번호</th>
+                              <th>대화명</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td></td>
+                              <td>1</td>
+                              <td>운동하는 방법1 (1일 주기)</td>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td>2</td>
+                              <td>운동하는 방법2 (1일 주기)</td>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td>3</td>
+                              <td>운동하는 방법3 (1일 주기)</td>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td>4</td>
+                              <td>운동하는 방법4 (1일 주기)</td>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td>5</td>
+                              <td>운동하는 방법5 (1일 주기)</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <div class="cell-copy-btns">
+                          <button type="button" class="btn btn-outline-dark font-24"><i class="mdi mdi-chevron-right"></i></button>
+                          <button type="button" class="btn btn-outline-dark font-24"><i class="mdi mdi-chevron-left"></i></button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="condition-block">
+                      <h5 class="font-w-600 mb-2 mini-title text-dark">조건2</h5>
+                      <div>
+                        <div class="row">
+                          <div class="col-md-12 col-lg-6 d-flex mb-1">
+                            <input type="text" class="form-control col-6 mr-1" placeholder="시작일자">
+                            <input type="text" class="form-control col-6" placeholder="발송주기">
+                          </div>
+                          <div class="col-md-12 col-lg-6 text-right mb-1">
+                            <div class="custom-control custom-checkbox d-inline-block">
+                              <input type="checkbox" class="custom-control-input" id="ck2">
+                              <label class="custom-control-label font-13" for="ck2">반복</label>
+                            </div>
+                            <button type="button" class="btn btn-outline-dark btn-sm font-13"><small>▲</small>Up</button>
+                            <button type="button" class="btn btn-outline-dark btn-sm font-13"><small>▼</small>Down</button>
+                          </div>
+                        </div>
+                        <table class="table user-detail-table table-centered table-hover w-100 thead-only-gray" id="right-select1-datatable" style="margin-top:5px !important;">
+                          <colgroup>
+                            <col style="width: 40px" />
+                            <col style="width: 20%" />
+                            <col/>
+                          </colgroup>
+                          <thead class="thead-light">
+                            <tr>
+                              <th></th>
+                              <th>번호</th>
+                              <th>대화명</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td></td>
+                              <td>1</td>
+                              <td>식사하는 방법1</td>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td>2</td>
+                              <td>식사하는 방법2</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <div class="cell-copy-btns">
+                          <button type="button" class="btn btn-outline-dark font-24"><i class="mdi mdi-chevron-right"></i></button>
+                          <button type="button" class="btn btn-outline-dark font-24"><i class="mdi mdi-chevron-left"></i></button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="addCondition-btn">
+                      <button type="button" class="btn btn-outline-dark">+ 조건 추가</button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+					</div>
+					<div class="modal-footer justify-content-between">
+						<button type="button" class="btn btn-secondary">전체 초기화</button>
+            <div>
+						  <button type="button" class="btn btn-light">취소</button>
+						  <button type="button" class="btn btn-primary">확인</button>
+            </div>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+		<!--// modal -->
+    
+		<!-- modal 일차별 비정기 대화 선택 -->
+		<div id="HG-WEB-COA-02-05" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true" data-backdrop="static">
+			<div class="modal-dialog modal-dialog-centered modal-80-width">
+				<div class="modal-content">
+					<div class="modal-header modal-colored-header bg-primary">
+						<h4 class="modal-title">일차별 비정기 대화 선택</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					</div>
+					<div class="modal-body" data-simplebar style="max-height: 680px">
+            <div class="row">
+              <div class="col-xl-7 col-sm-12">
+                <div class="card mb-0 h-100">
+                  <div class="card-body">
+                    <table class="table user-detail-table table-centered table-hover w-100 thead-only-gray" id="left2-select-datatable" style="min-width:610px;">
+                      <colgroup>
+                        <col style="width: 40px" />
+                        <col style="width: 10%" />
+                        <col/>
+                        <col style="width: 30%" />
+                        <col style="width: 12%" />
+                      </colgroup>
+                      <thead class="thead-light">
+                        <tr>
+                          <th></th>
+                          <th>구분</th>
+                          <th>대화명</th>
+                          <th>대화 발송시간</th>
+                          <th class="text-center">미리보기</th>
+                        </tr>
+                      </thead>
+											<tbody>
+												<tr>
+													<td></td>
+													<td>일반</td>
+													<td class="ellipsis">혈당은 무엇일까요?</td>
+													<td>09:00, 12:00, 18:00, 21:00</td>
+													<td class="text-center"><i class="dripicons-preview font-20 cursor"></i></td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>당뇨</td>
+													<td class="ellipsis">당뇨 첫인사</td>
+													<td>09:00</td>
+													<td class="text-center"><i class="dripicons-preview font-20 cursor"></i></td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>고혈압</td>
+													<td class="ellipsis">혈당은 무엇일까요?</td>
+													<td>21:00</td>
+													<td class="text-center"><i class="dripicons-preview font-20 cursor"></i></td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>비만</td>
+													<td class="ellipsis">운동하는 방법</td>
+													<td>18:00, 21:00</td>
+													<td class="text-center"><i class="dripicons-preview font-20 cursor"></i></td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>일반</td>
+													<td class="ellipsis">혈당은 무엇일까요?</td>
+													<td>09:00, 12:00</td>
+													<td class="text-center"><i class="dripicons-preview font-20 cursor"></i></td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>당뇨</td>
+													<td class="ellipsis">운동하는 방법</td>
+													<td>09:00, 12:00, 18:00</td>
+													<td class="text-center"><i class="dripicons-preview font-20 cursor"></i></td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>일반</td>
+													<td class="ellipsis">혈당은 무엇일까요?</td>
+													<td>09:00, 12:00</td>
+													<td class="text-center"><i class="dripicons-preview font-20 cursor"></i></td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>당뇨</td>
+													<td class="ellipsis">운동하는 방법</td>
+													<td>09:00, 12:00, 18:00, 21:00</td>
+													<td class="text-center"><i class="dripicons-preview font-20 cursor"></i></td>
+												</tr>
+											</tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-5 col-sm-12">
+								<div class="cell-copy-btns relative">
+									<button type="button" class="btn btn-outline-dark font-24"><i class="mdi mdi-chevron-right"></i></button>
+									<button type="button" class="btn btn-outline-dark font-24"><i class="mdi mdi-chevron-left"></i></button>
+								</div>
+                <div class="card mb-0 h-100">
+                  <div class="card-body">
+										<table class="table user-detail-table table-centered table-hover w-100 thead-only-gray" id="right2-select-datatable" style="margin-top:5px !important">
+											<colgroup>
+												<col style="width: 40px" />
+												<col style="width: 10%" />
+												<col style="width: 20%" />
+												<col/>
+											</colgroup>
+											<thead class="thead-light">
+												<tr>
+													<th></th>
+													<th>번호</th>
+													<th>일차</th>
+													<th>대화명</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td></td>
+													<td>1</td>
+													<td><input type="text" class="form-control" value="1"></td>
+													<td>다짐하기</td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>2</td>
+													<td><input type="text" class="form-control" value="5"></td>
+													<td>혈당은 무엇일까요?</td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>3</td>
+													<td><input type="text" class="form-control" value="13"></td>
+													<td>식사는 어떻게 하죠?</td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>4</td>
+													<td><input type="text" class="form-control" value="10"></td>
+													<td>식사는 어떻게 하죠?</td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>5</td>
+													<td><input type="text" class="form-control" value="155"></td>
+													<td>식사는 어떻게 하죠?</td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>6</td>
+													<td><input type="text" class="form-control" value="6"></td>
+													<td>식사는 어떻게 하죠?</td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>7</td>
+													<td><input type="text" class="form-control" value="8"></td>
+													<td>식사는 어떻게 하죠?</td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>8</td>
+													<td><input type="text" class="form-control" value="18"></td>
+													<td>식사는 어떻게 하죠?</td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>9</td>
+													<td><input type="text" class="form-control" value="10"></td>
+													<td>식사는 어떻게 하죠?</td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>10</td>
+													<td><input type="text" class="form-control" value="일차"></td>
+													<td>식사는 어떻게 하죠?</td>
+												</tr>
+											</tbody>
+										</table>
+                  </div>
+                </div>
+              </div>
+            </div>
+					</div>
+					<div class="modal-footer justify-content-between">
+						<button type="button" class="btn btn-secondary">전체 초기화</button>
+            <div>
+						  <button type="button" class="btn btn-light">취소</button>
+						  <button type="button" class="btn btn-primary">확인</button>
+            </div>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+		<!--// modal -->
+    
+		<!-- modal 요일별 대화 선택 -->
+		<div id="HG-WEB-COA-02-06" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true" data-backdrop="static">
+			<div class="modal-dialog modal-dialog-centered modal-80-width">
+				<div class="modal-content">
+					<div class="modal-header modal-colored-header bg-primary">
+						<h4 class="modal-title">요일별 대화 선택</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					</div>
+					<div class="modal-body" data-simplebar style="max-height: 680px">
+            <div class="row">
+              <div class="col-xl-7 col-sm-12">
+                <div class="card mb-0 h-100">
+                  <div class="card-body">
+                    <table class="table user-detail-table table-centered table-hover w-100 thead-only-gray" id="left3-select-datatable" style="min-width:610px;">
+                      <colgroup>
+                        <col style="width: 40px" />
+                        <col style="width: 10%" />
+                        <col/>
+                        <col style="width: 30%" />
+                        <col style="width: 12%" />
+                      </colgroup>
+                      <thead class="thead-light">
+                        <tr>
+                          <th></th>
+                          <th>구분</th>
+                          <th>대화명</th>
+                          <th>대화 발송시간</th>
+                          <th class="text-center">미리보기</th>
+                        </tr>
+                      </thead>
+											<tbody>
+												<tr>
+													<td></td>
+													<td>일반</td>
+													<td class="ellipsis">혈당은 무엇일까요?</td>
+													<td>09:00, 12:00, 18:00, 21:00</td>
+													<td class="text-center"><i class="dripicons-preview font-20 cursor"></i></td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>당뇨</td>
+													<td class="ellipsis">당뇨 첫인사</td>
+													<td>09:00</td>
+													<td class="text-center"><i class="dripicons-preview font-20 cursor"></i></td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>고혈압</td>
+													<td class="ellipsis">혈당은 무엇일까요?</td>
+													<td>21:00</td>
+													<td class="text-center"><i class="dripicons-preview font-20 cursor"></i></td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>비만</td>
+													<td class="ellipsis">운동하는 방법</td>
+													<td>18:00, 21:00</td>
+													<td class="text-center"><i class="dripicons-preview font-20 cursor"></i></td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>일반</td>
+													<td class="ellipsis">혈당은 무엇일까요?</td>
+													<td>09:00, 12:00</td>
+													<td class="text-center"><i class="dripicons-preview font-20 cursor"></i></td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>당뇨</td>
+													<td class="ellipsis">운동하는 방법</td>
+													<td>09:00, 12:00, 18:00</td>
+													<td class="text-center"><i class="dripicons-preview font-20 cursor"></i></td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>일반</td>
+													<td class="ellipsis">혈당은 무엇일까요?</td>
+													<td>09:00, 12:00</td>
+													<td class="text-center"><i class="dripicons-preview font-20 cursor"></i></td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>당뇨</td>
+													<td class="ellipsis">운동하는 방법</td>
+													<td>09:00, 12:00, 18:00, 21:00</td>
+													<td class="text-center"><i class="dripicons-preview font-20 cursor"></i></td>
+												</tr>
+											</tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-5 col-sm-12">
+                <div class="card mb-0 h-100">
+                  <div class="card-body">
+                    <div class="condition-block">
+                      <h5 class="font-w-600 mb-2 mini-title text-dark">조건1</h5>
+                      <div>
+                        <div class="row align-items-end">
+                          <div class="col-md-12 col-lg-6 d-flex mb-1">
+														<div class="d-flex border p-1 pl-2 pr-2">
+															<div class="custom-control custom-checkbox vertical">
+																<input type="checkbox" id="w1" class="custom-control-input">
+																<label class="custom-control-label d-md-block" for="w1">월</label>
+															</div>
+															<div class="custom-control custom-checkbox vertical">
+																<input type="checkbox" id="w2" class="custom-control-input">
+																<label class="custom-control-label d-md-block" for="w2">화</label>
+															</div>
+															<div class="custom-control custom-checkbox vertical">
+																<input type="checkbox" id="w3" class="custom-control-input">
+																<label class="custom-control-label d-md-block" for="w3">수</label>
+															</div>
+															<div class="custom-control custom-checkbox vertical">
+																<input type="checkbox" id="w4" class="custom-control-input">
+																<label class="custom-control-label d-md-block" for="w4">목</label>
+															</div>
+															<div class="custom-control custom-checkbox vertical">
+																<input type="checkbox" id="w5" class="custom-control-input">
+																<label class="custom-control-label d-md-block" for="w5">금</label>
+															</div>
+															<div class="custom-control custom-checkbox vertical">
+																<input type="checkbox" id="w6" class="custom-control-input">
+																<label class="custom-control-label d-md-block" for="w6">토</label>
+															</div>
+															<div class="custom-control custom-checkbox vertical">
+																<input type="checkbox" id="w7" class="custom-control-input">
+																<label class="custom-control-label d-md-block" for="w7">일</label>
+															</div>
+                            </div>
+                          </div>
+                          <div class="col-md-12 col-lg-6 text-right mb-1">
+                            <div class="custom-control custom-checkbox d-inline-block">
+                              <input type="checkbox" class="custom-control-input" id="ck1">
+                              <label class="custom-control-label font-13" for="ck1">반복</label>
+                            </div>
+                            <button type="button" class="btn btn-outline-dark btn-sm font-13"><small>▲</small>Up</button>
+                            <button type="button" class="btn btn-outline-dark btn-sm font-13"><small>▼</small>Down</button>
+                          </div>
+                        </div>
+                        <table class="table user-detail-table table-centered table-hover w-100 thead-only-gray" id="right3-select-datatable" style="margin-top:5px !important">
+                          <colgroup>
+                            <col style="width: 40px" />
+                            <col style="width: 20%" />
+                            <col/>
+                          </colgroup>
+                          <thead class="thead-light">
+                            <tr>
+                              <th></th>
+                              <th>번호</th>
+                              <th>대화명</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td></td>
+                              <td>1</td>
+                              <td>식사1 (월금 발송)</td>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td>2</td>
+                              <td>식사2 (월금 발송)</td>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td>3</td>
+                              <td>식사3 (월금 발송)</td>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td>4</td>
+                              <td>식사4 (월금 발송)</td>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td>5</td>
+                              <td>식사5 (월금 발송)</td>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td>6</td>
+                              <td>식사6 (월금 발송)</td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <div class="cell-copy-btns">
+                          <button type="button" class="btn btn-outline-dark font-24"><i class="mdi mdi-chevron-right"></i></button>
+                          <button type="button" class="btn btn-outline-dark font-24"><i class="mdi mdi-chevron-left"></i></button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="condition-block">
+                      <h5 class="font-w-600 mb-2 mini-title text-dark">조건2</h5>
+                      <div>
+                        <div class="row align-items-end">
+                          <div class="col-md-12 col-lg-6 d-flex mb-1">
+														<div class="d-flex border p-1 pl-2 pr-2">
+															<div class="custom-control custom-checkbox vertical">
+																<input type="checkbox" id="w21" class="custom-control-input">
+																<label class="custom-control-label d-md-block" for="w21">월</label>
+															</div>
+															<div class="custom-control custom-checkbox vertical">
+																<input type="checkbox" id="w22" class="custom-control-input">
+																<label class="custom-control-label d-md-block" for="w22">화</label>
+															</div>
+															<div class="custom-control custom-checkbox vertical">
+																<input type="checkbox" id="w23" class="custom-control-input">
+																<label class="custom-control-label d-md-block" for="w23">수</label>
+															</div>
+															<div class="custom-control custom-checkbox vertical">
+																<input type="checkbox" id="w24" class="custom-control-input">
+																<label class="custom-control-label d-md-block" for="w24">목</label>
+															</div>
+															<div class="custom-control custom-checkbox vertical">
+																<input type="checkbox" id="w25" class="custom-control-input">
+																<label class="custom-control-label d-md-block" for="w25">금</label>
+															</div>
+															<div class="custom-control custom-checkbox vertical">
+																<input type="checkbox" id="w26" class="custom-control-input">
+																<label class="custom-control-label d-md-block" for="w26">토</label>
+															</div>
+															<div class="custom-control custom-checkbox vertical">
+																<input type="checkbox" id="w27" class="custom-control-input">
+																<label class="custom-control-label d-md-block" for="w27">일</label>
+															</div>
+                            </div>
+                          </div>
+                          <div class="col-md-12 col-lg-6 text-right mb-1">
+                            <div class="custom-control custom-checkbox d-inline-block">
+                              <input type="checkbox" class="custom-control-input" id="ck2">
+                              <label class="custom-control-label font-13" for="ck2">반복</label>
+                            </div>
+                            <button type="button" class="btn btn-outline-dark btn-sm font-13"><small>▲</small>Up</button>
+                            <button type="button" class="btn btn-outline-dark btn-sm font-13"><small>▼</small>Down</button>
+                          </div>
+                        </div>
+                        <table class="table user-detail-table table-centered table-hover w-100 thead-only-gray" id="right3-select1-datatable" style="margin-top:5px !important;">
+                          <colgroup>
+                            <col style="width: 40px" />
+                            <col style="width: 20%" />
+                            <col/>
+                          </colgroup>
+                          <thead class="thead-light">
+                            <tr>
+                              <th></th>
+                              <th>번호</th>
+                              <th>대화명</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td></td>
+                              <td>1</td>
+                              <td>운동1 (월 발송)</td>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td>2</td>
+                              <td>운동2 (월 발송)</td>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td>3</td>
+                              <td>운동3 (월 발송)</td>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td>4</td>
+                              <td>운동4 (월 발송)</td>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td>5</td>
+                              <td>운동5 (월 발송)</td>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td>6</td>
+                              <td>운동6 (월 발송)</td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <div class="cell-copy-btns">
+                          <button type="button" class="btn btn-outline-dark font-24"><i class="mdi mdi-chevron-right"></i></button>
+                          <button type="button" class="btn btn-outline-dark font-24"><i class="mdi mdi-chevron-left"></i></button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="addCondition-btn">
+                      <button type="button" class="btn btn-outline-dark">+ 조건 추가</button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+					</div>
+					<div class="modal-footer justify-content-between">
+						<button type="button" class="btn btn-secondary">전체 초기화</button>
+            <div>
+						  <button type="button" class="btn btn-light">취소</button>
+						  <button type="button" class="btn btn-primary">확인</button>
+            </div>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+		<!--// modal -->
+
+		<!-- modal 자주 묻는 질문 선택 -->
+		<div id="HG-WEB-COA-02-07" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true" data-backdrop="static">
+			<div class="modal-dialog modal-dialog-centered modal-custom-large">
+				<div class="modal-content">
+					<div class="modal-header modal-colored-header bg-primary">
+						<h4 class="modal-title">자주 묻는 질문 선택</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					</div>
+					<div class="modal-body">											
+            <table class="table user-detail-table table-centered table-hover w-100 min-w768 thead-only-gray" id="faq-select-datatable">
+              <colgroup>
+                <col style="width: 4%" />
+                <col style="width: 25%" />
+                <col />
+                <col style="width: 9%" />
+                <col style="width: 10%" />
+              </colgroup>
+              <thead class="thead-light">
+                <tr>
+                  <th></th>
+                  <th>질문</th>
+                  <th>답변</th>
+                  <th>등록자</th>
+                  <th>등록일</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td>언제까지 취소가 가능한가요?</td>
+                  <td>취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. </td>
+                  <td>홍길동</td>
+                  <td>2020-01-02</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>취소 방법을 알려주세요</td>
+                  <td>취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. </td>
+                  <td>홍길동</td>
+                  <td>2020-01-02</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>재신청이 가능한가요?</td>
+                  <td>취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. 취소는 결제 후 7일 이내 가능합니다. </td>
+                  <td>홍길동</td>
+                  <td>2020-01-02</td>
+                </tr>
+              </tbody>
+            </table>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-light">취소</button>
+						<button type="button" class="btn btn-primary">확인</button>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+		<!--// modal -->
+
+		<!-- modal 프로그램 불러오기 -->
+		<div id="HG-WEB-COA-02-08" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true" data-backdrop="static">
+			<div class="modal-dialog modal-dialog-centered modal-custom-large">
+				<div class="modal-content">
+					<div class="modal-header modal-colored-header bg-primary">
+						<h4 class="modal-title">프로그램 불러오기</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					</div>
+					<div class="modal-body">											
+            <table class="table user-detail-table table-centered table-hover w-100 min-w768 thead-only-gray" id="program-call-datatable">
+              <colgroup>
+                <col style="width: 4%" />
+                <col style="width: 10%" />
+                <col style="width: 8%" />
+                <col />
+                <col style="width: 10%" />
+                <col style="width: 10%" />
+                <col style="width: 9%" />
+                <col style="width: 10%" />
+                <col style="width: 9%" />
+                <col style="width: 10%" />
+              </colgroup>
+              <thead class="thead-light">
+                <tr>
+                  <th></th>
+                  <th>결제여부</th>
+                  <th>구분</th>
+                  <th>프로그램명</th>
+                  <th>등록 대화 수</th>
+                  <th>참여자 수</th>
+                  <th>진행기간</th>
+                  <th>상태</th>
+                  <th>등록자</th>
+                  <th>등록일</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td>무료</td>
+                  <td>일반</td>
+                  <td>코칭 사용안함</td>
+                  <td>10</td>
+                  <td>10</td>
+                  <td>-</td>
+                  <td>사용</td>
+                  <td>홍길동</td>
+                  <td>2020-01-02</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>유료</td>
+                  <td>당뇨</td>
+                  <td>당뇨 코칭 무료체험</td>
+                  <td>50</td>
+                  <td>20</td>
+                  <td>100일</td>
+                  <td>사용안함</td>
+                  <td>홍길동</td>
+                  <td>2020-01-02</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>유료</td>
+                  <td>당뇨</td>
+                  <td>4주 당뇨 코칭</td>
+                  <td>100</td>
+                  <td>50</td>
+                  <td>30일</td>
+                  <td>사용안함</td>
+                  <td>홍길동</td>
+                  <td>2020-01-02</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>무료</td>
+                  <td>일반</td>
+                  <td>코칭 사용안함</td>
+                  <td>10</td>
+                  <td>10</td>
+                  <td>-</td>
+                  <td>사용</td>
+                  <td>홍길동</td>
+                  <td>2020-01-02</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>유료</td>
+                  <td>당뇨</td>
+                  <td>당뇨 코칭 무료체험</td>
+                  <td>50</td>
+                  <td>20</td>
+                  <td>100일</td>
+                  <td>사용안함</td>
+                  <td>홍길동</td>
+                  <td>2020-01-02</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>유료</td>
+                  <td>당뇨</td>
+                  <td>4주 당뇨 코칭</td>
+                  <td>100</td>
+                  <td>50</td>
+                  <td>30일</td>
+                  <td>사용안함</td>
+                  <td>홍길동</td>
+                  <td>2020-01-02</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>무료</td>
+                  <td>일반</td>
+                  <td>코칭 사용안함</td>
+                  <td>10</td>
+                  <td>10</td>
+                  <td>-</td>
+                  <td>사용</td>
+                  <td>홍길동</td>
+                  <td>2020-01-02</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>유료</td>
+                  <td>당뇨</td>
+                  <td>당뇨 코칭 무료체험</td>
+                  <td>50</td>
+                  <td>20</td>
+                  <td>100일</td>
+                  <td>사용안함</td>
+                  <td>홍길동</td>
+                  <td>2020-01-02</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>유료</td>
+                  <td>당뇨</td>
+                  <td>4주 당뇨 코칭</td>
+                  <td>100</td>
+                  <td>50</td>
+                  <td>30일</td>
+                  <td>사용안함</td>
+                  <td>홍길동</td>
+                  <td>2020-01-02</td>
+                </tr>
+              </tbody>
+            </table>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary">확인</button>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+		<!--// modal -->
+
+		<!-- 모달 가이드 -->
+		<div style="position: fixed; bottom: 0; right: 0px; background: rgba(0, 0, 0, 0.5); width: 500px; padding: 20px; z-index: 100">
+			<a href="javascript:void(0)" onclick="HG_WEB_COA_02_01()" style="color: #fff">HG-WEB-COA-02-01 : 참여 그룹 선택</a><br />
+			<a href="javascript:void(0)" onclick="HG_WEB_COA_02_02()" style="color: #fff">HG-WEB-COA-02-02 : 기본버튼 선택</a><br />
+			<a href="javascript:void(0)" onclick="HG_WEB_COA_02_03()" style="color: #fff">HG-WEB-COA-02-03 : 첫인사 선택</a><br />
+			<a href="javascript:void(0)" onclick="HG_WEB_COA_02_04()" style="color: #fff">HG-WEB-COA-02-04 : 일차별 정기 대화 선택</a><br />
+			<a href="javascript:void(0)" onclick="HG_WEB_COA_02_05()" style="color: #fff">HG-WEB-COA-02-05 : 일차별 비정기 대화 선택</a><br />
+			<a href="javascript:void(0)" onclick="HG_WEB_COA_02_06()" style="color: #fff">HG-WEB-COA-02-06 : 요일별 대화 선택</a><br />
+			<a href="javascript:void(0)" onclick="HG_WEB_COA_02_07()" style="color: #fff">HG-WEB-COA-02-07 : 자주 묻는 질문 선택</a><br />
+			<a href="javascript:void(0)" onclick="HG_WEB_COA_02_08()" style="color: #fff">HG-WEB-COA-02-08 : 프로그램 불러오기</a><br />
+		</div>
+		
+		<div data-include-html="modal/account.html"></div>
+		<div data-include-html="modal/setting.html"></div>
+		<div data-include-html="modal/password.html"></div>
+
+		<script src="resource/js/vendor.min.js"></script>
+		<script src="resource/js/app.min.js"></script>
+		
+		<script src="resource/js/vendor/apexcharts.min.js"></script>
+		<script src="resource/js/vendor/jquery.dataTables.min.js"></script>
+		<script src="resource/js/vendor/dataTables.bootstrap4.js"></script>
+		<script src="resource/js/vendor/dataTables.responsive.min.js"></script>
+		<script src="resource/lib/simplelightbox/simpleLightbox.min.js"></script>
+		<script src="resource/js/vendor/dataTables.checkboxes.min.js"></script>
+		<script src="resource/js/vendor/responsive.bootstrap4.min.js"></script>
+		<script src="resource/js/ui/responsive.bootstrap4.min.js"></script>		
+		<script src="resource/js/vendor/dragula.min.js"></script>
+		<script src="resource/js/ui/component.dragula.js"></script>
+		
+		<script src="resource/js/common.js"></script>
+
+	
+		<script>
+			function updateUserPassword() {
+				$("#login-password-modal").modal("hide");
+			}
+
+			function showMyAccountDlg() {
+				$("#my-info-modal").modal("show");
+			}
+
+			function updateLoginPasswordDlg() {
+				$("#login-password-modal").modal("show");
+			}
+
+			function showSettingDlg() {
+				$("#setting-modal").modal("show");
+			}
+
+			function updateUserInfo() {
+				$("#my-info-modal").modal("hide");
+			}
+			function showContents() {
+				$("#contents-modal").modal("show");
+			}
+
+			//Phase 2.2
+			//아델리
+     
+			function HG_WEB_COA_02_01() {
+				$("#HG-WEB-COA-02-01").modal("show");
+			}
+			function HG_WEB_COA_02_02() {
+				$("#HG-WEB-COA-02-02").modal("show");
+			}
+			function HG_WEB_COA_02_03() {
+				$("#HG-WEB-COA-02-03").modal("show");
+			}
+			function HG_WEB_COA_02_04() {
+				$("#HG-WEB-COA-02-04").modal("show");
+			}
+			function HG_WEB_COA_02_05() {
+				$("#HG-WEB-COA-02-05").modal("show");
+			}
+			function HG_WEB_COA_02_06() {
+				$("#HG-WEB-COA-02-06").modal("show");
+			}
+			function HG_WEB_COA_02_07() {
+				$("#HG-WEB-COA-02-07").modal("show");
+			}
+			function HG_WEB_COA_02_08() {
+				$("#HG-WEB-COA-02-08").modal("show");
+			}
+
+      $("#faq-radio-datatable").DataTable({
+        scrollX: true,
+        paging: false,
+				info: false,
+				searching: false,
+				columnDefs: [
+					{
+							'targets': 0,				
+							render: function(data, type, full, meta) {
+								return '<div class="custom-control custom-radio"><input type="radio" class="custom-control-input" name="faq_radioname" id="rdo_faq_'+meta.row+'"><label class="custom-control-label" for="rdo_faq_'+meta.row+'">&nbsp;</label></div>'
+							},
+					}
+				],  
+        ordering: false,
+        select: {
+             style:    'single',
+         },
+      });      			
+
+      $("#partin-group-datatable").DataTable({
+        scrollX: true,
+        paging: false,
+        info: false,
+        searching: false,
+        columnDefs: [
+          {
+              'targets': 0,
+              'checkboxes': {
+                'selectRow': true,
+                selectAllRender:
+                  '<div class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input dt-checkboxes"><label class="custom-control-label">&nbsp;</label></div>',
+              },							
+              render: function(data, type, full, meta) {
+                return '<div class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input dt-checkboxes" id="chk_1_'+meta.row+'"><label class="custom-control-label" for="chk_1_'+meta.row+'">&nbsp;</label></div>'
+              },
+          }
+        ],
+        ordering: false,
+        select: {
+            style:'multi',
+        },
+      });        
+
+      $("#basicbtn-call-datatable").DataTable({
+        scrollX: true,
+				paging: false,
+				info: false,
+        scrollY: "400px",
+        language: {
+          searchPlaceholder: "검색어를 입력하세요",
+          sSearch:
+            "<select class='form-control d-inline-block'><option>기능</option><option>고혈압</option><option>당뇨</option><option>비만</option><option>일반</option></select><select class='form-control d-inline-block ml-1'><option>대화명</option><option>등록자</option></select>",
+          lengthMenu:
+            '<select class=\'form-control mr-1\'><option value="10">10</option><option value="20">20</option><option value="-1">All</option></select> 개씩 보기',
+        },  
+				columnDefs: [
+					{
+							'targets': 0,
+							'checkboxes': {
+								'selectRow': true,
+								selectAllRender:
+									'<div class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input dt-checkboxes"><label class="custom-control-label">&nbsp;</label></div>',
+							},							
+							render: function(data, type, full, meta) {
+								return '<div class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input dt-checkboxes" id="chk_2_'+meta.row+'"><label class="custom-control-label" for="chk_2_'+meta.row+'">&nbsp;</label></div>'
+							},
+					}
+				],
+        ordering: false,
+        select: {
+             style:    'multi',
+         },
+        drawCallback: function () {
+          let dtwrapper = ($(this).closest(".dataTables_wrapper"));
+          $(dtwrapper).find(".dataTables_filter").closest(".row").addClass("filter-wide");
+          $(dtwrapper).find(".filter-wide > div").eq(0).addClass("col-lg-3 col-xl-2").removeClass("col-md-6");
+          $(dtwrapper).find(".filter-wide > div").eq(1).addClass("col-lg-9 col-xl-10").removeClass("col-md-6");
+        },
+      });
+
+      $("#greetings-datatable").DataTable({
+        scrollX: true,
+        pageLength: 10,
+        language: {
+          info: " _PAGE_ / _PAGES_ Pages",
+          searchPlaceholder: "대화명을 입력하세요",
+          paginate: {
+            previous: "<i class='mdi mdi-chevron-left'>",
+            next: "<i class='mdi mdi-chevron-right'>",
+          },
+          sSearch:
+            "<select class='form-control d-inline-block'><option>구분 전체</option><option>고혈압</option><option>당뇨</option><option>비만</option><option>일반</option></select>",
+          lengthMenu:
+            '<select class=\'form-control mr-1\'><option value="10">10</option><option value="20">20</option><option value="-1">All</option></select> 개씩 보기',
+        },  
+				columnDefs: [
+					{
+							'targets': 0,				
+							render: function(data, type, full, meta) {
+								return '<div class="custom-control custom-radio"><input type="radio" class="custom-control-input" name="radioname" id="rdo_3_'+meta.row+'"><label class="custom-control-label" for="rdo_3_'+meta.row+'">&nbsp;</label></div>'
+							},
+					}
+				],  
+        ordering: false,
+        select: {
+             style:    'single',
+         },
+        drawCallback: function () {
+          $(".dataTables_paginate > .pagination").addClass("pagination-rounded float-right");					
+          let dtwrapper = ($(this).closest(".dataTables_wrapper"));
+          $(dtwrapper).find(".dataTables_filter").closest(".row").addClass("filter-wide");
+          $(dtwrapper).find(".filter-wide > div").eq(0).addClass("col-lg-3 col-xl-2").removeClass("col-md-6");
+          $(dtwrapper).find(".filter-wide > div").eq(1).addClass("col-lg-9 col-xl-10").removeClass("col-md-6");
+        },
+      });        
+
+			$("#left-select-datatable").DataTable({
+				scrollX: true,
+				language: {
+					searchPlaceholder: "대화명을 검색하세요.",
+					paginate: {
+						previous: "<i class='mdi mdi-chevron-left'>",
+						next: "<i class='mdi mdi-chevron-right'>",
+					},
+					info: " _PAGE_ / _PAGES_ Pages",
+					sSearch:
+						"<select class='form-control d-inline-block'><option>구분 전체</option><option>고혈압</option><option>당뇨</option><option>비만</option><option>일반</option></select>",
+          lengthMenu:
+            '<select class=\'form-control mr-1\'><option value="10">10</option><option value="20">20</option><option value="-1">All</option></select> 개씩 보기',
+				},
+				pageLength: 10,
+				ordering: false,
+				columnDefs: [
+					{
+							'targets': 0,
+							'checkboxes': {
+								'selectRow': true,
+								selectAllRender:
+									'<div class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input dt-checkboxes"><label class="custom-control-label">&nbsp;</label></div>',
+							},							
+							render: function(data, type, full, meta) {
+								return '<div class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input dt-checkboxes"><label class="custom-control-label">&nbsp;</label></div>'
+							},
+					}
+				],
+				select: {
+					style: "multi"
+				},
+				drawCallback: function () {
+					let dtwrapper = ($(this).closest(".dataTables_wrapper"));
+					$(".dataTables_paginate > .pagination").addClass("pagination-rounded float-right");
+					$(dtwrapper).find(".dataTables_filter").closest(".row").addClass("filter-wide");
+          $(dtwrapper).find(".filter-wide > div").eq(0).addClass("col-lg-3 col-xl-2").removeClass("col-md-6");
+          $(dtwrapper).find(".filter-wide > div").eq(1).addClass("col-lg-9 col-xl-10").removeClass("col-md-6");
+				},
+			});
+
+			$("#right-select-datatable").DataTable({
+				scrollX: true,
+				paging: false,
+				info: false,
+        scrollY: "230px",
+        scrollCollapse: true,
+				ordering: false,
+        searching: false,
+				columnDefs: [
+					{
+							'targets': 0,
+							'checkboxes': {
+								'selectRow': true,
+								selectAllRender:
+									'<div class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input dt-checkboxes"><label class="custom-control-label">&nbsp;</label></div>',
+							},							
+							render: function(data, type, full, meta) {
+								return '<div class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input dt-checkboxes"><label class="custom-control-label">&nbsp;</label></div>'
+							},
+					}
+				],
+				select: {
+					style: "multi"
+				},
+			});
+			$("#right-select1-datatable").DataTable({
+				scrollX: true,
+        scrollY: "230px",
+        scrollCollapse: true,
+				paging: false,
+				info: false,
+				ordering: false,
+        searching: false,
+				columnDefs: [
+					{
+							'targets': 0,
+							'checkboxes': {
+								'selectRow': true,
+								selectAllRender:
+									'<div class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input dt-checkboxes"><label class="custom-control-label">&nbsp;</label></div>',
+							},							
+							render: function(data, type, full, meta) {
+								return '<div class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input dt-checkboxes"><label class="custom-control-label">&nbsp;</label></div>'
+							},
+					}
+				],
+				select: {
+					style: "multi"
+				},
+			});
+
+			$("#left2-select-datatable").DataTable({
+				scrollX: true,
+				language: {
+					searchPlaceholder: "대화명을 검색하세요.",
+					paginate: {
+						previous: "<i class='mdi mdi-chevron-left'>",
+						next: "<i class='mdi mdi-chevron-right'>",
+					},
+					info: " _PAGE_ / _PAGES_ Pages",
+					sSearch:
+						"<select class='form-control d-inline-block'><option>구분 전체</option><option>고혈압</option><option>당뇨</option><option>비만</option><option>일반</option></select>",
+          lengthMenu:
+            '<select class=\'form-control mr-1\'><option value="10">10</option><option value="20">20</option><option value="-1">All</option></select> 개씩 보기',
+				},
+				pageLength: 10,
+				ordering: false,
+				columnDefs: [
+					{
+							'targets': 0,
+							'checkboxes': {
+								'selectRow': true,
+								selectAllRender:
+									'<div class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input dt-checkboxes"><label class="custom-control-label">&nbsp;</label></div>',
+							},							
+							render: function(data, type, full, meta) {
+								return '<div class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input dt-checkboxes"><label class="custom-control-label">&nbsp;</label></div>'
+							},
+					}
+				],
+				select: {
+					style: "multi"
+				},
+				drawCallback: function () {
+					let dtwrapper = ($(this).closest(".dataTables_wrapper"));
+					$(".dataTables_paginate > .pagination").addClass("pagination-rounded float-right");
+					$(dtwrapper).find(".dataTables_filter").closest(".row").addClass("filter-wide");
+          $(dtwrapper).find(".filter-wide > div").eq(0).addClass("col-lg-3 col-xl-2").removeClass("col-md-6");
+          $(dtwrapper).find(".filter-wide > div").eq(1).addClass("col-lg-9 col-xl-10").removeClass("col-md-6");
+				},
+			});
+
+			$("#right2-select-datatable").DataTable({
+				scrollX: true,
+				paging: false,
+				info: false,
+        scrollY: "460px",
+        scrollCollapse: true,
+				ordering: false,
+        searching: false,
+				columnDefs: [
+					{
+							'targets': 0,
+							'checkboxes': {
+								'selectRow': true,
+								selectAllRender:
+									'<div class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input dt-checkboxes"><label class="custom-control-label">&nbsp;</label></div>',
+							},							
+							render: function(data, type, full, meta) {
+								return '<div class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input dt-checkboxes"><label class="custom-control-label">&nbsp;</label></div>'
+							},
+					}
+				],
+				select: {
+					style: "multi"
+				},
+			});
+
+			$("#left3-select-datatable").DataTable({
+				scrollX: true,
+				language: {
+					searchPlaceholder: "대화명을 검색하세요.",
+					paginate: {
+						previous: "<i class='mdi mdi-chevron-left'>",
+						next: "<i class='mdi mdi-chevron-right'>",
+					},
+					info: " _PAGE_ / _PAGES_ Pages",
+					sSearch:
+						"<select class='form-control d-inline-block'><option>구분 전체</option><option>고혈압</option><option>당뇨</option><option>비만</option><option>일반</option></select>",
+          lengthMenu:
+            '<select class=\'form-control mr-1\'><option value="10">10</option><option value="20">20</option><option value="-1">All</option></select> 개씩 보기',
+				},
+				pageLength: 10,
+				ordering: false,
+				columnDefs: [
+					{
+							'targets': 0,
+							'checkboxes': {
+								'selectRow': true,
+								selectAllRender:
+									'<div class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input dt-checkboxes"><label class="custom-control-label">&nbsp;</label></div>',
+							},							
+							render: function(data, type, full, meta) {
+								return '<div class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input dt-checkboxes"><label class="custom-control-label">&nbsp;</label></div>'
+							},
+					}
+				],
+				select: {
+					style: "multi"
+				},
+				drawCallback: function () {
+					let dtwrapper = ($(this).closest(".dataTables_wrapper"));
+					$(".dataTables_paginate > .pagination").addClass("pagination-rounded float-right");
+					$(dtwrapper).find(".dataTables_filter").closest(".row").addClass("filter-wide");
+          $(dtwrapper).find(".filter-wide > div").eq(0).addClass("col-lg-3 col-xl-2").removeClass("col-md-6");
+          $(dtwrapper).find(".filter-wide > div").eq(1).addClass("col-lg-9 col-xl-10").removeClass("col-md-6");
+				},
+			});
+
+			$("#right3-select-datatable").DataTable({
+				scrollX: true,
+				paging: false,
+				info: false,
+        scrollY: "230px",
+        scrollCollapse: true,
+				ordering: false,
+        searching: false,
+				columnDefs: [
+					{
+							'targets': 0,
+							'checkboxes': {
+								'selectRow': true,
+								selectAllRender:
+									'<div class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input dt-checkboxes"><label class="custom-control-label">&nbsp;</label></div>',
+							},							
+							render: function(data, type, full, meta) {
+								return '<div class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input dt-checkboxes"><label class="custom-control-label">&nbsp;</label></div>'
+							},
+					}
+				],
+				select: {
+					style: "multi"
+				},
+			});
+			$("#right3-select1-datatable").DataTable({
+				scrollX: true,
+        scrollY: "230px",
+        scrollCollapse: true,
+				paging: false,
+				info: false,
+				ordering: false,
+        searching: false,
+				columnDefs: [
+					{
+							'targets': 0,
+							'checkboxes': {
+								'selectRow': true,
+								selectAllRender:
+									'<div class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input dt-checkboxes"><label class="custom-control-label">&nbsp;</label></div>',
+							},							
+							render: function(data, type, full, meta) {
+								return '<div class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input dt-checkboxes"><label class="custom-control-label">&nbsp;</label></div>'
+							},
+					}
+				],
+				select: {
+					style: "multi"
+				},
+			});
+
+      $("#faq-select-datatable").DataTable({
+        scrollX: true,
+				paging: false,
+				info: false,
+        scrollY: "500px",
+        language: {
+          searchPlaceholder: "검색어를 입력하세요",
+          sSearch:
+            "<select class='form-control d-inline-block'><option>질문</option><option>등록자</option></select>",
+        },  
+				columnDefs: [
+					{
+							'targets': 0,
+							'checkboxes': {
+								'selectRow': true,
+								selectAllRender:
+									'<div class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input dt-checkboxes"><label class="custom-control-label">&nbsp;</label></div>',
+							},							
+							render: function(data, type, full, meta) {
+								return '<div class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input dt-checkboxes" id="chk_7_'+meta.row+'"><label class="custom-control-label" for="chk_7_'+meta.row+'">&nbsp;</label></div>'
+							},
+					}
+				],
+        ordering: false,
+        select: {
+             style:'multi',
+         },
+        drawCallback: function () {
+          let dtwrapper = ($(this).closest(".dataTables_wrapper"));
+          $(dtwrapper).find(".dataTables_filter").closest(".row").addClass("filter-wide");
+          $(dtwrapper).find(".filter-wide > div").eq(0).addClass("col-lg-12").removeClass("col-md-6");
+          $(dtwrapper).find(".filter-wide > div").eq(1).addClass("col-lg-12").removeClass("col-md-6");
+        },
+      });        
+
+      $("#program-call-datatable").DataTable({
+        scrollX: true,
+        pageLength: 10,
+        language: {
+          info: " _PAGE_ / _PAGES_ Pages",
+          searchPlaceholder: "검색어를 입력하세요",
+          paginate: {
+            previous: "<i class='mdi mdi-chevron-left'>",
+            next: "<i class='mdi mdi-chevron-right'>",
+          },
+          sSearch:
+            "<select class='form-control d-inline-block'><option>사용여부 전체</option><option>사용</option><option>사용안함</option></select><select class='form-control d-inline-block ml-1'><option>구분 전체</option><option>고혈압</option><option>당뇨</option><option>비만</option><option>일반</option></select><select class='form-control d-inline-block ml-1'><option>프로그램명</option><option>등록자</option></select>",
+          lengthMenu:
+            '<select class=\'form-control mr-1\'><option value="10">10</option><option value="20">20</option><option value="-1">All</option></select> 개씩 보기',
+        },  
+				columnDefs: [
+					{
+							'targets': 0,				
+							render: function(data, type, full, meta) {
+								return '<div class="custom-control custom-radio"><input type="radio" class="custom-control-input" name="radioname" id="rdo_8_'+meta.row+'"><label class="custom-control-label" for="rdo_8_'+meta.row+'">&nbsp;</label></div>'
+							},
+					}
+				],  
+        ordering: false,
+        select: {
+             style:    'single',
+         },
+        drawCallback: function () {
+          $(".dataTables_paginate > .pagination").addClass("pagination-rounded float-right");					
+          let dtwrapper = ($(this).closest(".dataTables_wrapper"));
+          $(dtwrapper).find(".dataTables_filter").closest(".row").addClass("filter-wide");
+          $(dtwrapper).find(".filter-wide > div").eq(0).addClass("col-lg-3 col-xl-2").removeClass("col-md-6");
+          $(dtwrapper).find(".filter-wide > div").eq(1).addClass("col-lg-9 col-xl-10").removeClass("col-md-6");
+        },
+      });
+
+			$("#pcheck2").on("change", function() {
+				($(this).prop("checked")) ? $(".pcheck2-input").prop("disabled", true) : $(".pcheck2-input").prop("disabled", false);
+			});
+
+			// select test
+			function changeFee(idx, obj) {
+				var tdobj = obj.closest("td");
+				console.log($(tdobj).next().find("input"));
+				(idx==0) ? $(tdobj).next().find("input[type=text]").prop("disabled",false) : $(tdobj).next().find("input[type=text]").prop("disabled",true).val('');
+			}
+		</script>
+	</body>
+</html>

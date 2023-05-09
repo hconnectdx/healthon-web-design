@@ -4,7 +4,12 @@ $(document).ready(function(){
     $(".summernote-basic").each(function() {
         $(this).summernote({
             placeholder: i18n('common.editor_empty'),
-            height: 230,
+            height: 150,
+            toolbar: [
+                ['style', ['bold', 'italic', 'underline', 'clear']],
+                ['fontsize', ['fontsize']],
+                ['color', ['color']]
+            ],
             callbacks: {
                 onChange: function(contents, $editable) {
                     $("input[name='" + this.id + "']").val(contents);
@@ -48,7 +53,7 @@ $(document).ready(function(){
                 $("#error-alert-modal #e_content").html(i18n('management.video.txt.limit'));
             });
             this.on("removedfile", function() {
-
+                // console.log("thumb_removedfile ~~~");
             });
 
             let sno = $('form#contentsForm #thumbFileSno').val();
@@ -79,6 +84,7 @@ $(document).ready(function(){
                 }
 
                 data.resultList.forEach(function(item) {
+                    // console.log(item);
                     $("#titleContents" + item["languageClcd"] ).val(item["contentsTitleNm"]);
                     $("#contentsWriterNm" + item["languageClcd"] ).val(item["contentsWriterNm"]);
                     $("#contentContents" + item["languageClcd"] ).summernote('code', item["contentsCtnt"]);
@@ -138,20 +144,15 @@ function applyContents(contentsSno) {
     var enContent = $("#contentsForm input[name=contentContents10801100]").val();
     var enResgiter = $("#contentsForm input[name=contentsWriterNm10801100]").val();
 
-    var thumbFileSno = $('form#contentsForm #thumbFileSno').val();
-
     var form = $('#contentsForm')[0];
     var formData = new FormData(form);
 
-    if(isEmpty(thumbFileSno)) {
-        if(isEmpty($('#new_content_thumb_Dropzone')[0].dropzone.files[0])) {
-            //썸네일 이미지 필수등록 체크
-            $("#error-alert-modal").modal('show');
-            $("#e_content").html(i18n('management.contents.null.pop.txt.image.check'));
-            return false;
-        }
-    }
-    if(isEmpty(enTitle)) {
+    if(isEmpty($('#new_content_thumb_Dropzone')[0].dropzone.files[0])) {
+        //썸네일 이미지 필수등록 체크
+        $("#error-alert-modal").modal('show');
+        $("#e_content").html(i18n('management.contents.null.pop.txt.image.check'));
+        return false;
+    } else if(isEmpty(enTitle)) {
         //영어제목 필수등록 체크
         $("#error-alert-modal").modal('show');
         $("#e_content").html(i18n('management.contents.null.pop.txt.title.eng'));
@@ -167,10 +168,8 @@ function applyContents(contentsSno) {
         $("#e_content").html(i18n('management.contents.null.pop.txt.txt.eng'));
         return false;
     } else if(!isEmpty(contentsSno)) {
-        if(!isEmpty($('#new_content_thumb_Dropzone')[0].dropzone.files[0])) {
-            //썸네일 이미지 formData에 추가
-            formData.append("image", $('#new_content_thumb_Dropzone')[0].dropzone.files[0]);
-        }
+        //썸네일 이미지 formData에 추가
+        formData.append("image", $('#new_content_thumb_Dropzone')[0].dropzone.files[0]);
         //컨텐츠 일련번호 formData에 추가
         formData.append('contentsSno', contentsSno);
 
@@ -245,9 +244,9 @@ function applyContentsReset(){
 
 //컨텐츠 썸네일 이미지 삭제
 function contentsThumbFileDel(sno){
+    // console.log("contentsThumbFileDel ~~~~~~~~~~~~~"+ sno);
     $("#contentsForm #new_note_thumbFileDelYn").val("Y");
     $('#new_content_thumb_Dropzone')[0].dropzone.removeAllFiles();
     $("#new_content_thumb_file_"+sno).remove();
     $("#new_content_thumb_Dropzone").removeClass('dz-max-files-reached');
-    $("#thumbFileSno").val('');
 }

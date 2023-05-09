@@ -2,6 +2,8 @@ updateContents();
 
 var searchPlaceholderMsg = i18n('management.contents.txt.search.placeholder');
 var pageSizeMsg = i18n('common.txt.search.pagesize');
+var emptyStr = i18n('product.search.empty');
+var searchNoneData = i18n('product.search.none.data');
 var pageChangeSelectHtml = '<select class=\'form-control mr-1\'><option value="5">5</option><option value="10">10</option><option value="20">20</option></select>';
 var lengthMenu = pageSizeMsg.replace("{0}", pageChangeSelectHtml);
 
@@ -11,9 +13,6 @@ $(document).ready(function () {
 
 
     $('#sys_content_tab').find('a').on('shown.bs.tab', function (a, b) {
-        // console.log("tab click ~~~");
-        // console.log(a);
-        // console.log(a.target.id);
 
         if(a.target.id == "sys_content_tab_1"){
             sysContentsTable.api().columns.adjust();
@@ -24,6 +23,7 @@ $(document).ready(function () {
         }
     });
 
+    //컨텐츠 데이터테이블 설정
     sysContentsTable = $("#contents-datatable").dataTable({
         scrollX: true,
         language: {
@@ -32,7 +32,8 @@ $(document).ready(function () {
                 next: "<i class='mdi mdi-chevron-right'>"
             },
             info: i18n('common.datatable_info'),
-            emptyTable : i18n('common.datatable_empty'),
+            emptyTable: "<div class='board-none'><i class='mdi mdi-account-search-outline font-48'></i> <p>"+emptyStr+"</p></div>",
+            zeroRecords : "<div class='board-none'><i class='mdi mdi-account-search-outline font-48'></i> <p>"+searchNoneData+"</p></div>",
             sSearch:i18n('common.txt.search'),
             searchPlaceholder: searchPlaceholderMsg,
             lengthMenu: lengthMenu
@@ -45,7 +46,7 @@ $(document).ready(function () {
             , {data:"contentsWriterNm", orderable: !0,width:"200px"}
             , {data:"insUserNm", orderable: !0,width:"200px"}
             , {data:"useYn", orderable: !0,width:"100px"}
-            , {data:"mngBtn",width:"150px" }
+            , {data:"mngBtn", orderable: !1,width:"150px" }
         ],
         "columnDefs": [
             { "defaultContent": "", "targets": "_all" },  /* null 처리 */
@@ -74,9 +75,12 @@ $(document).ready(function () {
                     var curManagementSno = $('form#contentForm #userSeq').val();
 
                     var strButton = '';
+
+                    //컨텐츠 상세보기
                     strButton += '<a class="text-body" data-toggle="modal" data-target="#content-view-modal" href="javascript:void(0)" onclick="showContents(\'' + row.contentsSno + '\')">';
                     strButton += '    <i class="dripicons-preview font-20 cursor mr-3"></i>';
                     strButton += ' </a>';
+
                     if(curSessionUserGrpId === "00201990" || curSessionUserGrpId === "00201900" || row.insUserSno === curManagementSno) {
                         //슈퍼관리자, 관리자 표시 / 전문가(00201100), 의사(00201200), 간호사(00201300), 운영자(00201400), 그룹관리자, 대표그룹관리자(00201800) 미표시
                         strButton += ' <i onclick="updateContents(\'update\', \'' + row.contentsSno + '\')" class="mdi mdi-square-edit-outline font-20 cursor mr-3"></i>';
@@ -123,6 +127,7 @@ $(document).ready(function () {
         }
     } );
 
+    //동영상일 경우 src 초기화
     $("#contents-modal").on('hide.bs.modal', function(e) {
         if($(".note-video-clip")){
             $(".note-video-clip").attr("src", "");
@@ -130,13 +135,14 @@ $(document).ready(function () {
     });
 
 });
+
+// 컨텐츠 삭제 API
 function deleteContents(contentsSno, contentsTitleNm) {
     if(!isEmpty(contentsSno)) {
 
         $("#confirm-modal").modal('show');
         $("#delModalBtn").off('click');
         $("#delModalBtn").on('click', function() {
-            // console.log("deleteContents ~~~" + contentsSno);
             $("#confirm-modal").modal('hide');
 
             $.ajax({
@@ -165,7 +171,7 @@ function deleteContents(contentsSno, contentsTitleNm) {
     }
 }
 
-
+//컨텐츠 상세 보기
 function showContents(sno) {
     $("#contents-modal").modal("show")
 
@@ -179,14 +185,13 @@ function showContents(sno) {
 
 }
 
-
+//컨텐츠 수정 버튼 클릭 시 tap 상태 변경
 function updateContents(flag, contentsSno){
 
     var newTitleMsg = $('#newTitleMsg').val();
     var modTitleMsg = $('#modTitleMsg').val();
 
     // 팝업 호출
-	// console.log(contentsSno);
     var params = {};
     if(flag == "update") {
         params =  {
