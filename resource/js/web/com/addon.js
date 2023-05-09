@@ -340,7 +340,7 @@ function removeWithoutDecimal(str) {
 
 function numFormat1000Sep(str) {
     var _str = removeWithoutDecimal(str);
-    _str = _str.replace(/\B(?!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+    _str = _str.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
     return _str;
 }
 
@@ -880,15 +880,18 @@ jQuery(function($) {
 
 // 컨텐츠 파일 다운로드 기능
 function saveContent(fileName, fileUrl) {
-    const a = document.createElement('a');
-    a.href = fileUrl + '?method=download&fileRealNm=' + fileName;
-    a.download = fileName;
-    a.click();
-}
+    window.URL = window.URL || window.webkitURL;
 
-// Enter keydown 막기
-function fnPreventEnter(event) {
-    if(event.key == 'Enter') {
-        event.returnValue = false;
-    }
+    var xhr = new XMLHttpRequest(),
+        a = document.createElement('a'), file;
+
+    xhr.open('GET', fileUrl, true);
+    xhr.responseType = 'blob';
+    xhr.onload = function () {
+        file = new Blob([xhr.response], { type : 'application/octet-stream' });
+        a.href = window.URL.createObjectURL(file);
+        a.download = fileName;
+        a.click();
+    };
+    xhr.send();
 }

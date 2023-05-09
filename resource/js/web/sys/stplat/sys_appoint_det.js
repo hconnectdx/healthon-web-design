@@ -64,7 +64,7 @@ function applyAppointHistoryDel(termsSno, termsHistSno) {
                             //개인정보처리방침 번호 세팅
                             document.getElementById("pvHistBtn").setAttribute("onClick","showAppointHistory(\'" + data.appointPvTermsSno + "\', \'2\')");
                             document.getElementById("pvUpdBtn").setAttribute("onClick","showAppointUpdate(\'update\', \'" + data.appointPvTermsSno + "\', \'" + data.appointPvTermsHistSno + "\', \'2\')");
-                            document.getElementById("pvUrlBtn").setAttribute("onClick","showAppointPvNewTab()");
+                            document.getElementById("pvUrlBtn").setAttribute("onClick","showAppointPvNewTab(\'" + data.appointPvTermsSno + "\', \'" + data.appointPvTermsHistSno + "\')");
                         }
                     }
                 },

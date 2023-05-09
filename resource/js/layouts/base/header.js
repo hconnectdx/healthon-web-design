@@ -14,7 +14,7 @@ function mySettingPop(){
         $(this).off("hidden.bs.modal");
         $(this).on("hidden.bs.modal", function(e){
             let uiColorClcd = $(this).find("form#settingForm #uiColorClcd").data("default");
-            if( uiColorClcd === 10808200)
+            if( uiColorClcd === '10808200')
                 $.App.activateDarkMode();
             else
             {
