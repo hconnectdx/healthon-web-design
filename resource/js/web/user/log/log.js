@@ -1,7 +1,18 @@
+// 드랍존 설정
 Dropzone.autoDiscover = false;
 
+// 페이지 사이즈 재조정
+$(window).resize(function(){
+    onResize();
+});
+
+// 페이지 사이즈 재조정
+$(window).scroll(function(){
+    onResize();
+});
+
 $(document).ready(function () {
-    // log
+    // 사용자로그 카드 호출
     initBgTypeCard();
     initHeightCard();
     initWeightCard();
@@ -17,6 +28,95 @@ $(document).ready(function () {
     initSleepCard();
     initDiaryCard();
     initJumpCard();
+    initOxygenCard();   // 안찬영 20221103
+    initMeasurementCard();   // 안찬영 20221117
+    initMeasurementCard();   // 안찬영 20221117
+    initHeartRateCard(); // 배인영 20221201
+});
+
+$(document).ready(function () {
+
+    // 컨텐츠 미리보기 테이블 조회
+    $("#contents-preview-datatable").DataTable({
+        scrollX: true,
+        searching: true,
+        lengthChange: false,
+        pageLength: 6,
+        language: {
+            paginate: {
+                previous: "<i class='mdi mdi-chevron-left'>",
+                next: "<i class='mdi mdi-chevron-right'>"
+            },
+            info: i18n('common.datatable_info'),
+            emptyTable : i18n('common.datatable_empty'),
+            search: i18n('common.txt.search')
+        },
+        columns: [
+            {
+                orderable: 1,
+                width: "300px"
+            }, {orderable: 1}, {orderable: 1}, {orderable: 1}, {orderable: 0}, {orderable: 0}],
+        order: [[1, "desc"]],
+        drawCallback: function () {
+            $("#contents-preview-datatable_paginate > .pagination").addClass("pagination-rounded");
+        },
+        createdRow: function( row, data, dataIndex ) {
+            $('td:eq(0)', row).css('min-width', '300px');
+        }
+    });
+
+    $(".story-box").on("click", function(e) {
+        $(this).toggleClass('active')
+    })
+
+    $(".direct-select").on("change", function(e) {
+        if( $(this).val() == "direct" ) $(this).parent().addClass("active")
+        else $(this).parent().removeClass("active")
+    })
+
+    // 페이지 사이즈 조정
+    onResize();
+
+    // 성공안내Modal
+    $("#success-alert-modal").on("hidden.bs.modal", function(e){
+        if( $("#successReload").val() === "Y" ) {
+            $('.modal-backdrop').remove();
+            callMenu('/user/user/log', i18n('menu.txt.mgt.user.details'), {userServiceUseSno : $("#userServiceUseSno").val()});
+        }
+    });
+
+    // 의료진 전용 메모
+    $("#chat-tab .simplebar-content-wrapper").scroll(function(e){
+        let scrollT = $(this).scrollTop();                          //스크롤바의 상단위치
+        let scrollH = $(this).height();                             //스크롤바를 갖는 div의 높이
+        let contentH = $("#chat-tab .simplebar-content").height();  //문서 전체 내용을 갖는 div의 높이
+        let offset = 2;
+        if((scrollT + scrollH + offset) >= contentH) {
+            // 스크롤바가 아래 쪽에 위치할 때
+            getChatList(2);
+        }else if(scrollT <= 0){
+            getChatList(0);
+        }
+    });
+
+    getChatList(1);
+
+    // 사용자 발송 SMS
+    $("#sms-tab .simplebar-content-wrapper").scroll(function(e){
+        let scrollT = $(this).scrollTop(); //스크롤바의 상단위치
+        let scrollH = $(this).height(); //스크롤바를 갖는 div의 높이
+        let contentH = $("#sms-tab .simplebar-content").height(); //문서 전체 내용을 갖는 div의 높이
+        let offset = 2;
+        if((scrollT + scrollH + offset) >= contentH) {
+            // 스크롤바가 아래 쪽에 위치할 때
+            getSmsList(2);
+        }else if(scrollT <= 0){
+            getSmsList(0);
+        }
+    });
+
+    getSmsList(1);
+
 });
 
 // 혈당 타입 카드
@@ -37,7 +137,7 @@ function initWeightCard() {
     $('#weightCard').load('/user/user/log/weight/body', {'userServiceUseSno': userServiceUseSno});
 }
 
-//체온 카드
+// 체온 카드
 function initBtCard() {
     let userServiceUseSno = $('#userLogForm #userServiceUseSno').val();
     $('#btCard').load('/user/user/log/bt/body', {'userServiceUseSno': userServiceUseSno});
@@ -94,7 +194,8 @@ function initExerciseCard() {
 // 수면 카드
 function initSleepCard() {
     let userServiceUseSno = $('#userLogForm #userServiceUseSno').val();
-    $('#sleepCard').load('/user/user/log/sleep/body', {'userServiceUseSno': userServiceUseSno});
+    let userServiceUseInsDdDash = $('#userLogForm #userServiceUseInsDdDash').val();
+    $('#sleepCard').load('/user/user/log/sleep/body', {'userServiceUseSno': userServiceUseSno, 'userServiceUseInsDdDash': userServiceUseInsDdDash});
 }
 
 // 식사 다이어리 카드
@@ -102,6 +203,26 @@ function initDiaryCard() {
     let userServiceUseSno = $('#userLogForm #userServiceUseSno').val();
     $('#diaryCard').load('/user/user/log/diary/body', {'userServiceUseSno': userServiceUseSno});
 }
+
+// 심박수 카드
+function initHeartRateCard() {
+    let userServiceUseSno = $('#userLogForm #userServiceUseSno').val();
+    $('#heartRateCard').load('/user/user/log/heartRate/body', {'userServiceUseSno': userServiceUseSno});
+}
+
+
+// 산소포화도 카드
+function initOxygenCard() {
+    let userServiceUseSno = $('#userLogForm #userServiceUseSno').val();
+    $('#oxygenCard').load('/user/user/log/oxygen/body', {'userServiceUseSno': userServiceUseSno});
+}
+
+// 건강측정알람 카드
+function initMeasurementCard() {
+    let userServiceUseSno = $('#userLogForm #userServiceUseSno').val();
+    $('#measurementCard').load('/user/user/log/measurement/body', {'userServiceUseSno': userServiceUseSno});
+}
+
 
 // 줄넘기 카드
 function initJumpCard() {
@@ -125,8 +246,9 @@ function initTotalTab(){
     scrollPaging();
 }
 
+// 메뉴 탭 선택
 function selectTag(tag){
-    var arr = ['user_log','total_log','check_result','question','consult','telehealth'];
+    var arr = ['user_log','total_log','check_result','consult','telehealth'];
     var index = -1;
     for(var i=0; i< arr.length; i++){
         if(tag == arr[i]){
@@ -149,19 +271,7 @@ function selectTag(tag){
     scrollPaging();
 }
 
-
-function generateDayWiseTimeSeries(e, t, a) {
-    for (var o = 0, r = []; o < t;) {
-        var s = moment(e).format('YYYY-MM-DD');
-        var n = Math.floor(Math.random() * (a.max - a.min + 1)) + a.min;
-        r.push([s, n]), e += 864e5, o++
-    }
-    // console.log(r);
-    return r
-}
-
-
-
+// 검사결과 테이블 초기표시
 function checkWrapperInit() {
     let aboveStr = i18n('common.txt.high');
     let normalStr = i18n('users.detail.checkup.result.txt.status.normal');
@@ -251,15 +361,12 @@ function checkWrapperInit() {
         }
     });
 }
+
+// 검사결과 테이블 검색
 function checkWrapper(checkupInputDd, checkupInputDdMsg, groupCheckupHistSno, unCompleteCount) {
     $("#thisIndex").val(groupCheckupHistSno);
 
-    // alert(insDt);
     var userServiceUseSno = $("#checkUserServiceUseSno").val();
-    // alert(userServiceUseSno);
-    //alert(groupCheckupHistSno);
-
-    // alert("unCompleteCount: " + unCompleteCount);
     $("#unCompleteCount").val(unCompleteCount);
     if(unCompleteCount > 0){
         $("#unCompleteCount").attr("style", "visibility:visible");
@@ -274,6 +381,7 @@ function checkWrapper(checkupInputDd, checkupInputDdMsg, groupCheckupHistSno, un
 
     $('#check-result-table').DataTable().ajax.reload();
 }
+
 //검사결과 등록 + 수정
 function checkResultDet(flag, checkupItemSno, groupCheckupHistSno){
     // 팝업 호출
@@ -299,6 +407,7 @@ function checkResultDet(flag, checkupItemSno, groupCheckupHistSno){
     }
 }
 
+// 검사결과 범위 문구 세팅
 function rangeText() {
     var csClcd = $("#groupCheckupStsClcd").val();
     if (csClcd === '90114200') {
@@ -310,14 +419,10 @@ function rangeText() {
     }
 }
 
+// 검사결과 등록수정
 function checkResultReg(){
     var groupCheckupHistSno = $("#regGroupCheckupHistSno").val();
     var userServiceUseSno = $("#regUserServiceUseSno").val();
-
-    // alert(UserServiceUseSno);
-    // var checkupInputDd = $("#checkupInputDd").val();
-    // alert(checkupInputDd);
-
     var checkupInputDd = $("#txt_checkupInputDd").val();
     var checkupItemNm = $("#checkupItemNm").val();
     var groupCheckupValue = $("#groupCheckupValue").val();
@@ -349,7 +454,6 @@ function checkResultReg(){
             cache: false,
             timeout: 300000,
             success: function (data) {
-                //alert("tempEndPage" + $("#tempEndPage").val());
                 $("#success-alert-modal").modal('show');
                 $("#success-alert-modal #title").html(i18n('users.detail.checkup.result.pop.success.txt.title'));
                 $("#success-alert-modal #content").html(i18n('users.detail.checkup.result.pop.success.txt.txt'));
@@ -383,8 +487,6 @@ function checkResultReg(){
                         $("#num1").addClass("active");
                     }
                 });
-                /* 페이지 고정 */
-                //$('#webuser-datatable').DataTable().ajax.reload(null, false);
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
                 console.log(XMLHttpRequest);
@@ -448,10 +550,6 @@ function checkResultReg(){
                         $("#num"+$("#currentIndex").val()).addClass("active");
                     }
                 });
-                //처음 생성할때 ajax만 새로고침
-                //$('#check-result-table').DataTable().ajax.reload();
-                /* 페이지 고정 */
-                //$('#webuser-datatable').DataTable().ajax.reload(null, false);
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
                 console.log(XMLHttpRequest);
@@ -461,7 +559,8 @@ function checkResultReg(){
         });
     }
 }
-//검색
+
+// 검사결과검색
 function pCheckResultSearch(){
 
     let userServiceUseSno = $("#userLogForm #userServiceUseSno").val();
@@ -492,18 +591,11 @@ function pCheckResultSearch(){
                 $("#checkitem-datatable_length").children().eq(3).text(i18n('users.detail.checkup.result.txt.reg_date'));
             }
             previous();
-            // var pageContents = html.find("div#page").html();
-            // $("#page").remove();
-            // $("#page-1").html(pageContents);
-            // $("#group-datatable_previous").addClass("disabled");
-            // if($("#tempEndPage").val() == 0 || $("#tempEndPage").val() == 1){
-            //     $("#group-datatable_next").addClass("disabled");
-            // }
-            // $("#num1").addClass("active");
         }
     });
 }
-//등록완료
+
+// 검사결과등록완료
 function checkResultComplete(){
     $("#confirm-modal-com").modal('show');
 
@@ -562,9 +654,10 @@ function checkResultComplete(){
         });
     });
 }
-//검사 항목별 비교
+
+// 검사결과 항목별 비교
 function testResultDet(groupCheckupHistSno, checkupItemSno, groupSno){
-    // alert(groupSno);
+
     var userServiceUseSno = $("form#userLogForm #userServiceUseSno").val();
 
     params = {"groupCheckupHistSno": groupCheckupHistSno, "checkupItemSno": checkupItemSno, "userServiceUseSno": userServiceUseSno, "groupSno": groupSno}
@@ -572,7 +665,8 @@ function testResultDet(groupCheckupHistSno, checkupItemSno, groupSno){
         $("#test-result-modal").modal("show");
     });
 }
-//삭제
+
+// 검사결과 삭제
 function deleteCheckResult(groupCheckupHistSno, checkupItemSno){
     $("#confirm-modal").modal('show');
     $("#groupCheckupHistSno").val(groupCheckupHistSno);
@@ -605,9 +699,6 @@ function deleteCheckResult(groupCheckupHistSno, checkupItemSno){
                             $(this).addClass("active");
                         });
 
-                        // $("#checkWrapperBtn"+$("#thisIndex").val()).trigger("click");
-
-                        // console.log($("#check-wrapper-1").text());
                         if($("#check-wrapper-1").text().match(i18n('users.detail.checkup.result.txt.checkuplist'))){
 
                         }else{
@@ -628,7 +719,7 @@ function deleteCheckResult(groupCheckupHistSno, checkupItemSno){
                         }
 
                         var checkWrapperBtn = $("#checkWrapperBtn"+groupCheckupHistSno).children().eq(5).text();
-                        // console.log("checkWrapperBtn: "+checkWrapperBtn);
+
                         if(checkWrapperBtn.match(i18n('users.detail.checkup.result.txt.item.temp'))){
                             $("#unCompleteCount").attr("style", "visibility:visible");
                         } else{
@@ -656,8 +747,6 @@ function deleteCheckResult(groupCheckupHistSno, checkupItemSno){
                         $("#num"+$("#currentIndex").val()).addClass("active");
                     }
                 });
-                /* 페이지 고정 */
-                //$('#webuser-datatable').DataTable().ajax.reload(null, false);
             },
             error:function(jqXHR, textStatus, errorThrown){
                 console.log(jqXHR);
@@ -671,103 +760,8 @@ function deleteCheckResult(groupCheckupHistSno, checkupItemSno){
     });
 }
 
-$(document).ready(function () {
-
-    $("#contents-preview-datatable").DataTable({
-        scrollX: true,
-        searching: true,
-        lengthChange: false,
-        pageLength: 6,
-        language: {
-            paginate: {
-                previous: "<i class='mdi mdi-chevron-left'>",
-                next: "<i class='mdi mdi-chevron-right'>"
-            },
-            info: i18n('common.datatable_info'),
-            emptyTable : i18n('common.datatable_empty'),
-            search: i18n('common.txt.search')
-        },
-        columns: [
-            {
-                orderable: 1,
-                width: "300px"
-            }, {orderable: 1}, {orderable: 1}, {orderable: 1}, {orderable: 0}, {orderable: 0}],
-        order: [[1, "desc"]],
-        drawCallback: function () {
-            $("#contents-preview-datatable_paginate > .pagination").addClass("pagination-rounded");
-        },
-        createdRow: function( row, data, dataIndex ) {
-            $('td:eq(0)', row).css('min-width', '300px');
-        }
-    });
-
-    $(".story-box").on("click", function(e) {
-        $(this).toggleClass('active')
-    })
-
-    $(".direct-select").on("change", function(e) {
-        if( $(this).val() == "direct" ) $(this).parent().addClass("active")
-        else $(this).parent().removeClass("active")
-    })
-
-    onResize();
-
-    $("#success-alert-modal").on("hidden.bs.modal", function(e){
-        if( $("#successReload").val() === "Y" ) {
-            $('.modal-backdrop').remove();
-            callMenu('/user/user/log', i18n('menu.txt.mgt.user.details'), {userServiceUseSno : $("#userServiceUseSno").val()});
-        }
-    });
-
-
-    $("#memo-tab .simplebar-content-wrapper").scroll(function(e){
-        let scrollT = $(this).scrollTop(); //스크롤바의 상단위치
-        let scrollH = $(this).height(); //스크롤바를 갖는 div의 높이
-        let contentH = $("#memo-tab .simplebar-content").height(); //문서 전체 내용을 갖는 div의 높이
-        let offset = 2;
-        if((scrollT + scrollH + offset) >= contentH) { // 스크롤바가 아래 쪽에 위치할 때
-            // console.log("scroll down ~~~~~~~~~~~~~~~~~~~~"+scrollT+" + "+ scrollH +" = "+ contentH+"~~~~~~~~~~~~~~~~~~~~~~~");
-            // console.log(e);
-            getMemoList(2);
-        }else if(scrollT <= 0){
-            // console.log("scroll up  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-            // console.log(e);
-            getMemoList(0);
-        }
-    });
-
-    getMemoList(1);
-
-
-    $("#sms-tab .simplebar-content-wrapper").scroll(function(e){
-        let scrollT = $(this).scrollTop(); //스크롤바의 상단위치
-        let scrollH = $(this).height(); //스크롤바를 갖는 div의 높이
-        let contentH = $("#sms-tab .simplebar-content").height(); //문서 전체 내용을 갖는 div의 높이
-        let offset = 2;
-        if((scrollT + scrollH + offset) >= contentH) { // 스크롤바가 아래 쪽에 위치할 때
-            // console.log("scroll down ~~~~~~~~~~~~~~~~~~~~"+scrollT+" + "+ scrollH +" = "+ contentH+"~~~~~~~~~~~~~~~~~~~~~~~");
-            // console.log(e);
-            getSmsList(2);
-        }else if(scrollT <= 0){
-            // console.log("scroll up  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-            // console.log(e);
-            getSmsList(0);
-        }
-    });
-
-    getSmsList(1);
-
-});
-
-$(window).resize(function(){
-    onResize();
-});
-
-$(window).scroll(function(){
-    onResize();
-});
+// 페이지 사이즈 재조정
 function onResize(){
-    var scroll_top = $(window).scrollTop();
     var w = $("#main-container").width();
     var w2 = $("#chatting-wrapper").width();
     var h = $(window).height();
@@ -780,8 +774,7 @@ function onResize(){
     }
 }
 
-
-
+// 이미지 삭제
 jQuery(function($) {
     $('.image-gallery a').simpleLightbox({
         nextBtnClass: ' dripicons-chevron-right',
@@ -795,6 +788,8 @@ jQuery(function($) {
         $(this).closest(".preview-item").remove();
     });
 });
+
+// 이미지 삭제
 jQuery(function($) {
     $('.image-preview a').simpleLightbox({
 
@@ -806,84 +801,60 @@ jQuery(function($) {
     });
 });
 
-
-
-
-/*** App Logs Modal start ***********************************************************************************/
-/** MngNo */
+// 사용자코드 담당의사 설정Modal
 function showDocMngNoModal(){
     $("#user-doctor-number-modal > .modal-dialog").load("/user/user/log/modal/doc_mng_no", {userServiceUseSno: $("#userServiceUseSno").val()}, function() {
         $("#user-doctor-number-modal").modal("show");
     });
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*** App Logs Modal end   ***********************************************************************************/
-
-
-
-
-/** 메모수정 */
-var memoModObj ;
-function showMemoEditModal(o, sno){
-    memoModObj = o;
-    $("#memo-edit-modal > .modal-dialog").empty().load("/user/user/log/memo/modal/memo_det", {userServiceUseSno: $("#userServiceUseSno").val(), userMemoSno: sno}, function() {
-        $("#memo-edit-modal").modal("show");
+// 사용자 메모 등록수정Modal
+function showUserMemoModal(){
+    $("#user-memo-modal > .modal-dialog").load("/user/user/log/modal/user_memo_ins", {userServiceUseSno: $("#userServiceUseSno").val()}, function() {
+        $("#user-memo-modal").modal("show");
     });
 }
-function getMemoList(reset){
+
+// 의료진 전용 채팅 수정Modal
+var chatModObj ;
+function showChatEditModal(o, sno){
+    chatModObj = o;
+    $("#chat-edit-modal > .modal-dialog").empty().load("/user/user/log/chat/modal/chat_det", {userServiceUseSno: $("#userServiceUseSno").val(), userMemoSno: sno}, function() {
+        $("#chat-edit-modal").modal("show");
+    });
+}
+
+// 의료진 전용 채팅 목록 조회
+function getChatList(reset){
 
     var userServiceUseSno =  $("#userServiceUseSno").val();
     var opt2 = "";
+
+    // reset 값이 0 이면 조회를 안하는 조건이라 생각하고 (즉 이전 메모일련번호로 다음 메모목록을 조회하는 행위) 아래 코드가 실행되지 않도로 return
+    if(reset === 0) return;
     
-    if(reset == 1){
-        $("#memo-tab .simplebar-content").empty();
-        $("#memo-form #memo_from_date").val("");
-        $("#memo-form #memo_to_date").val("");
-        $("#memo-form #memo_last_sno").val("");
-    }else if(reset == 2){
-        opt2 =  $("#memo-form #memo_last_sno").val();
+    if(reset === 1){
+        $("#chat-tab .simplebar-content").empty();
+        $("#chat-form #chat_from_date").val("");
+        $("#chat-form #chat_to_date").val("");
+        $("#chat-form #chat_last_sno").val("");
+    }else if(reset === 2){
+        opt2 =  $("#chat-form #chat_last_sno").val();
     }
 
     $.ajax({
-        url : "/user/user/log/memo/api/get_list",
+        url : "/user/user/log/chat/api/get_list",
         type : "POST",
         data : {
             "userServiceUseSno" : userServiceUseSno,
-            "groupSno" : $("#userDetailMemoGroupSel").val(),
-            "searchFromDd" : $("#memo-form #memo_from_date").val(),
-            "searchToDd" : $("#memo-form #memo_to_date").val(),
+            "groupSno" : $("#userDetailChatGroupSel").val(),
+            "searchFromDd" : $("#chat-form #chat_from_date").val(),
+            "searchToDd" : $("#chat-form #chat_to_date").val(),
             "opt1" : 20,
             "opt2": opt2
         },
         success : function(data){
-            // console.log("getMemoList success ~~~~~" + reset);
-            var json = data.memoList;
+            var json = data.chatList;
             if(json != null && json.length > 0) {
 
                 var tmp = '';
@@ -892,7 +863,7 @@ function getMemoList(reset){
                 var imgTmp = '';
                 var tmpFromDay = '';
                 var tmpToDay = '';
-                var tmpMemoSno = '0';
+                var tmpChatSno = '0';
                 $.each(json, function (i, obj) {
                     tmp = '';
 
@@ -905,13 +876,13 @@ function getMemoList(reset){
                         if (i == 0) {
                             tmpDay = obj.insDtDash;
                             tmpDd = obj.insDt;
-                            tmpMemoSno = obj.userMemoSno;
+                            tmpChatSno = obj.userMemoSno;
                             tmpToDay = obj.insDt;
                         } else {
                             if (tmpDay != obj.insDtDash) {
-                                $("#memo-tab .simplebar-content").prepend(
+                                $("#chat-tab .simplebar-content").prepend(
                                     '<div class="hr" style="margin-bottom:20px; margin-top:10px;" dd="' + tmpDd + '">'
-                                    + '	<span class="hr-span hr-span-left">' + tmpDay + '</span>'
+                                    + '	<span class="hr-span" style="left: calc(43%) !important">' + tmpDay + '</span>'
                                     + '</div>'
                                 );
                                 tmpDay = obj.insDtDash;
@@ -920,7 +891,7 @@ function getMemoList(reset){
                             tmpFromDay = obj.insDt;
                         }
                     }else{
-                        tmpMemoSno = obj.userMemoSno;
+                        tmpChatSno = obj.userMemoSno;
                     }
 
                     if(obj.opt1 == "Y"){
@@ -933,14 +904,14 @@ function getMemoList(reset){
                             + '	<div class="conversation-text">'
                             + '		<div class="ctext-wrap">'
                             + '			<i>'+obj.managementNm+'</i>'
-                            + '			<p>'+obj.memo+'</p>'
+                            + '			<p style="overflow-wrap: anywhere;">'+obj.memo+'</p>'
                             + '		</div>'
                             + '	</div>'
                             + '	<div class="dropdown">'
                             + '		<button class="btn btn-sm btn-link" data-toggle="dropdown" aria-expanded="false"><i class="uil uil-ellipsis-v"></i></button>'
                             + '		<div class="dropdown-menu">'
-                            + '			<a class="dropdown-item" href="javascript:void(0);" onclick="showMemoEditModal(this, '+obj.userMemoSno+');">수정</a>'
-                            + '			<a class="dropdown-item" href="javascript:void(0);" onclick="delMemo(this, '+obj.userMemoSno+')">삭제</a>'
+                            + '			<a class="dropdown-item" href="javascript:void(0);" onclick="showChatEditModal(this, '+obj.userMemoSno+');">수정</a>'
+                            + '			<a class="dropdown-item" href="javascript:void(0);" onclick="delChat(this, '+obj.userMemoSno+')">삭제</a>'
                             + '		</div>'
                             + '	</div>'
                             + '</li>'
@@ -955,7 +926,7 @@ function getMemoList(reset){
                             + '	<div class="conversation-text">'
                             + '		<div class="ctext-wrap">'
                             + '			<i>'+obj.managementNm+'</i>'
-                            + '			<p>'+obj.memo+'</p>'
+                            + '			<p style="overflow-wrap: anywhere;">'+obj.memo+'</p>'
                             + '		</div>'
                             + '	</div>'
                             + '</li>'
@@ -963,32 +934,32 @@ function getMemoList(reset){
                     }
 
                     if(reset < 2) {
-                        $("#memo-tab .simplebar-content").prepend(tmp);
+                        $("#chat-tab .simplebar-content").prepend(tmp);
                     }else{
-                        $("#memo-tab .simplebar-content").append(tmp);
+                        $("#chat-tab .simplebar-content").append(tmp);
                     }
 
                 });
 
                 if(reset < 2 && !isEmpty(tmpDay)){
-                    $("#memo-tab .simplebar-content").prepend(
+                    $("#chat-tab .simplebar-content").prepend(
                         '<div class="hr" style="margin-bottom:20px; margin-top:10px;" dd="' + tmpDd + '">'
-                        + '	<span class="hr-span hr-span-left">' + tmpDay + '</span>'
+                        + '	<span class="hr-span" style="left: calc(43%) !important">' + tmpDay + '</span>'
                         + '</div>'
                     );
                 }
 
-                if( Number(tmpMemoSno) > Number($("#memo-form #memo_last_sno").val()) ) {
-                    $("#memo-form #memo_last_sno").val(tmpMemoSno);
+                if( Number(tmpChatSno) > Number($("#chat-form #chat_last_sno").val()) ) {
+                    $("#chat-form #chat_last_sno").val(tmpChatSno);
                 }
                 if( !isEmpty(tmpFromDay)) {
-                    $("#memo-form #memo_from_date").val(tmpFromDay);
+                    $("#chat-form #chat_from_date").val(tmpFromDay);
                 }
                 if( !isEmpty(tmpToDay)) {
-                    $("#memo-form #memo_to_date").val(tmpToDay);
+                    $("#chat-form #chat_to_date").val(tmpToDay);
                 }
 
-                $("#memo-tab .simplebar-content-wrapper").scrollTop($("#memo-tab .simplebar-content-wrapper")[0].scrollHeight);
+                $("#chat-tab .simplebar-content-wrapper").scrollTop($("#chat-tab .simplebar-content-wrapper")[0].scrollHeight);
 
             }
         },
@@ -1003,42 +974,42 @@ function getMemoList(reset){
         }
     });
 }
-function setMemo() {
 
-    var memo =  $("#memo-form textarea[name=memo]").val();
+// 의료진 전용 채팅 등록
+function setChat() {
 
-    if(isEmpty(memo)) {
+    var chat =  $("#chat-form textarea[name=chat]").val();
+
+    if(isEmpty(chat)) {
         $("#error-alert-modal").modal('show');
-        $("#e_content").html(i18n('common.txt.input.memo'));
+        $("#e_content").html(i18n('common.txt.input.chat'));
         return false;
     } else {
 
         $.ajax({
-            url: "/user/user/log/memo/api/reg",
+            url: "/user/user/log/chat/api/reg",
             type: "POST",
             data: {
                 "userServiceUseSno": $("#userServiceUseSno").val(),
-                "groupSno" : $("#userDetailMemoGroupSel").val(),
-                "memo": memo
+                "groupSno" : $("#userDetailChatGroupSel").val(),
+                "memo": chat
             },
             success: function (data) {
-                // console.log("setMemo success ~~~~~");
-                // console.log(data);
-                $("#memo-form textarea[name=memo]").val("");
+                $("#chat-form textarea[name=chat]").val("");
 
                 var tmp = '';
                 var imgTmp = '/resources/images/users/avatar-1.jpg';
                 if(data.fileSaveNm != null && data.fileSaveNm != ""){
                     imgTmp = data.fileSaveNm;
                 }
-                if($("#memo-form #memo_to_date").val() < data.insDt){
+                if($("#chat-form #chat_to_date").val() < data.insDt){
                     tmp += '<div class="hr" style="margin-bottom:20px; margin-top:10px;" dd="' + data.insDt + '">'
-                        + '	<span class="hr-span hr-span-left">' + data.insDtDash + '</span>'
+                        + '	<span class="hr-span" style="left: calc(43%) !important">' + data.insDtDash + '</span>'
                         + '</div>'
                     ;
-                    $("#memo-form #memo_to_date").val(data.insDt);
+                    $("#chat-form #chat_to_date").val(data.insDt);
                 }
-                $("#memo-form #memo_last_sno").val(data.userMemoSno);
+                $("#chat-form #chat_last_sno").val(data.userMemoSno);
                 tmp += '<li class="clearfix odd">'
                     + '	<div class="chat-avatar">'
                     + '		<img src="'+imgTmp+'" class="rounded" alt="" style="width: 42px; height: 42px;" onerror="this.src=\'/resources/images/users/avatar-1.jpg\'"><i>'+data.insTime+'</i>'
@@ -1046,21 +1017,21 @@ function setMemo() {
                     + '	<div class="conversation-text">'
                     + '		<div class="ctext-wrap">'
                     + '			<i>'+data.managementNm+'</i>'
-                    + '			<p>'+data.memo+'</p>'
+                    + '			<p style="overflow-wrap: anywhere;">'+data.memo+'</p>'
                     + '		</div>'
                     + '	</div>'
                     + '	<div class="dropdown">'
                     + '		<button class="btn btn-sm btn-link" data-toggle="dropdown" aria-expanded="false"><i class="uil uil-ellipsis-v"></i></button>'
                     + '		<div class="dropdown-menu">'
-                    + '			<a class="dropdown-item" href="javascript:void(0);" onclick="showMemoEditModal(this, '+data.userMemoSno+');">수정</a>'
-                    + '			<a class="dropdown-item" href="javascript:void(0);" onclick="delMemo(this, '+data.userMemoSno+')">삭제</a>'
+                    + '			<a class="dropdown-item" href="javascript:void(0);" onclick="showChatEditModal(this, '+data.userMemoSno+');">수정</a>'
+                    + '			<a class="dropdown-item" href="javascript:void(0);" onclick="delChat(this, '+data.userMemoSno+')">삭제</a>'
                     + '		</div>'
                     + '	</div>'
                     + '</li>'
                 ;
 
-                $("#memo-tab .simplebar-content").append(tmp);
-                $("#memo-tab .simplebar-content-wrapper").scrollTop($("#memo-tab .simplebar-content-wrapper")[0].scrollHeight);
+                $("#chat-tab .simplebar-content").append(tmp);
+                $("#chat-tab .simplebar-content-wrapper").scrollTop($("#chat-tab .simplebar-content-wrapper")[0].scrollHeight);
 
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
@@ -1073,26 +1044,26 @@ function setMemo() {
 
     }
 }
-function delMemo(o, sno) {
+
+// 의료진 전용 채팅 삭제
+function delChat(o, sno) {
     $("#confirm-modal").modal('show');
     $("#delModalBtn").off('click');
     $("#delModalBtn").on('click', function(){
-        // console.log("delMemo ~~~"+ sno );
+
         $("#confirm-modal").modal('hide');
 
         $.ajax({
-            url: "/user/user/log/memo/api/del",
+            url: "/user/user/log/chat/api/del",
             type: "POST",
             data: {
                 "userServiceUseSno": $("#userServiceUseSno").val(),
                 "userMemoSno": sno
             },
             success: function (data) {
-                // console.log("delMemo success ~~~~~");
                 var sb = $(o).parent().parent().parent("li.clearfix").siblings("div.hr");
                 $(o).parent().parent().parent("li.clearfix").remove();
                 $.each( $(sb), function(i,v){
-                    // console.log("delMemo success  date clear ~~~~~");
                     if($(v).next("li.clearfix").length <= 0){
                         $(v).remove();
                     }
@@ -1109,17 +1080,21 @@ function delMemo(o, sno) {
     });
 }
 
+// 사용자 발송 SMS 목록 조회
 function getSmsList(reset){
 
     var userServiceUseSno =  $("#userServiceUseSno").val();
     var opt2 = "";
 
-    if(reset == 1){
+    // reset 값이 0 이면 조회를 안하는 조건이라 생각하고 (즉 이전 메시지일련번호로 다음 메시지 목록을 조회하는 행위) 아래 코드가 실행되지 않도로 return
+    if(reset === 0) return;
+
+    if(reset === 1){
         $("#sms-tab .simplebar-content").empty();
         $("#sms-form #sms_from_date").val("");
         $("#sms-form #sms_to_date").val("");
         $("#sms-form #sms_last_sno").val("");
-    }else if(reset == 2){
+    }else if(reset === 2){
         opt2 =  $("#sms-form #sms_last_sno").val();
     }
 
@@ -1167,7 +1142,7 @@ function getSmsList(reset){
                             if (tmpDay != obj.insDtDash) {
                                 $("#sms-tab .simplebar-content").prepend(
                                     '<div class="hr" style="margin-bottom:20px; margin-top:10px;" dd="' + tmpDd + '">'
-                                    + '	<span class="hr-span hr-span-left">' + tmpDay + '</span>'
+                                    + '	<span class="hr-span" style="left: calc(43%) !important">' + tmpDay + '</span>'
                                     + '</div>'
                                 );
                                 tmpDay = obj.insDtDash;
@@ -1223,7 +1198,7 @@ function getSmsList(reset){
                 if(reset < 2 && !isEmpty(tmpDay)){
                     $("#sms-tab .simplebar-content").prepend(
                         '<div class="hr" style="margin-bottom:20px; margin-top:10px;" dd="' + tmpDd + '">'
-                        + '	<span class="hr-span hr-span-left">' + tmpDay + '</span>'
+                        + '	<span class="hr-span" style="left: calc(43%) !important">' + tmpDay + '</span>'
                         + '</div>'
                     );
                 }
@@ -1254,42 +1229,7 @@ function getSmsList(reset){
     });
 }
 
-// function fnChkByte(obj, maxByte, target) {
-//     var str = obj.value;
-//     var str_len = str.length;
-//
-//     var rbyte = 0;
-//     var rlen = 0;
-//     var one_char = "";
-//     var str2 = "";
-//
-//     for (var i = 0; i < str_len; i++) {
-//         one_char = str.charAt(i);
-//         if (escape(one_char).length > 4) {
-//             rbyte += 2;                                         //한글2Byte
-//         }
-//         else {
-//             rbyte++;                                            //영문 등 나머지 1Byte
-//         }
-//
-//         if (rbyte <= maxByte) {
-//             rlen = i + 1;                                          //return할 문자열 갯수
-//         }
-//     }
-//
-//     if (rbyte > maxByte) {
-//         // alert("메세지는 최대 " + maxByte + "byte를 초과할 수 없습니다.")
-//         str2 = str.substr(0, rlen);                                  //문자열 자르기
-//         obj.value = str2;
-//         fnChkByte(obj, maxByte);
-//     }
-//     else {
-//         if (target) {
-//             document.getElementById(target).innerText = rbyte;
-//         }
-//     }
-// }
-
+// 사용자 발송 SMS 등록
 function setSms() {
 
     var sms =  $("#sms-form textarea[name=sms]").val();
@@ -1316,8 +1256,6 @@ function setSms() {
                         "smsMsgCtnt": sms
                     },
                     success: function (data) {
-                        // console.log("setSms success ~~~~~");
-                        // console.log(data);
                         $("#sms-form textarea[name=sms]").val("");
 
                         var tmp = '';
@@ -1327,7 +1265,7 @@ function setSms() {
                         }
                         if($("#sms-form #sms_to_date").val() < data.insDt){
                             tmp += '<div class="hr" style="margin-bottom:20px; margin-top:10px;" dd="' + data.insDt + '">'
-                                + '	<span class="hr-span hr-span-left">' + data.insDtDash + '</span>'
+                                + '	<span class="hr-span" style="left: calc(43%) !important">' + data.insDtDash + '</span>'
                                 + '</div>'
                             ;
                             $("#sms-form #sms_to_date").val(data.insDt);
@@ -1361,8 +1299,8 @@ function setSms() {
     }
 }
 
+// 통합로그조회 혈압 그래프 초기 렌더링
 var totData1_1 = [], totData1_2 = [], totData2 = [], totData3 = [], totData4 = [], totData5 = [];
-
 function drawTotChart1() {
     colors = ["#7453ff", "#0acf97", "#fa5c7c", "#ffbc00"];
     (dataColors = $("#line-chart-01").data("colors")) && (colors = dataColors.split(","));
@@ -1408,6 +1346,7 @@ function drawTotChart1() {
     totChart1.render();
 }
 
+// 통합로그조회 혈당 그래프 초기 렌더링
 function drawTotChart2() {
     (dataColors = $("#line-chart-02").data("colors")) && (colors = dataColors.split(","));
     var optionsline2 = {
@@ -1443,9 +1382,6 @@ function drawTotChart2() {
         yaxis: {
             labels: {
                 minWidth: 30
-                // ,formatter: function(val, index) {
-                //     return Number(val.toFixed(2)).toLocaleString("en-US");
-                // }
             }
         },
         grid: {row: {colors: ["transparent", "transparent"], opacity: .2}, borderColor: "#f1f3fa"}
@@ -1453,6 +1389,8 @@ function drawTotChart2() {
     totChart2 = new ApexCharts(document.querySelector("#line-chart-02"), optionsline2);
     totChart2.render();
 }
+
+// 통합로그조회 식사 그래프 초기 렌더링
 function drawTotChart3() {
     (dataColors = $("#line-chart-03").data("colors")) && (colors = dataColors.split(","));
     options = {
@@ -1499,6 +1437,8 @@ function drawTotChart3() {
     totChart3 = new ApexCharts(document.querySelector("#line-chart-03"), options);
     totChart3.render();
 }
+
+// 통합로그조회 운동 그래프 초기 렌더링
 function drawTotChart4() {
     (dataColors = $("#line-chart-04").data("colors")) && (colors = dataColors.split(","));
     var optionsline2 = {
@@ -1533,9 +1473,6 @@ function drawTotChart4() {
         yaxis: {
             labels: {
                 minWidth: 30
-                // , formatter: function(val, index) {
-                //     return parseFloat(val.toFixed(1)).toLocaleString("en-US");
-                // }
             }
         },
         grid: {row: {colors: ["transparent", "transparent"], opacity: .2}, borderColor: "#f1f3fa"}
@@ -1543,6 +1480,8 @@ function drawTotChart4() {
     totChart4 = new ApexCharts(document.querySelector("#line-chart-04"), optionsline2);
     totChart4.render();
 }
+
+// 통합로그조회 인슐린 그래프 초기 렌더링
 function drawTotChart5() {
     (dataColors = $("#line-chart-05").data("colors")) && (colors = dataColors.split(","));
     var optionsline2 = {
@@ -1577,9 +1516,6 @@ function drawTotChart5() {
         yaxis: {
             labels: {
                 minWidth: 30,
-                // formatter: function(val, index) {
-                //     return Number(val.toFixed(0)).toLocaleString("en-US");
-                // }
             }
         },
         grid: {row: {colors: ["transparent", "transparent"], opacity: .2}, borderColor: "#f1f3fa"}
@@ -1588,8 +1524,7 @@ function drawTotChart5() {
     totChart5.render();
 }
 
-
-/** 통합로그 - 조회항목 toggle */
+// 통합로그조회 조회항목 toggle
 function toggleTotalLogCond(o){
     var divId = $(o).prop("id").replace("customSwitch", "line-chart-0");
     if($(o).prop("checked")){
@@ -1614,7 +1549,6 @@ function toggleTotalLogCond(o){
         }
 
     }else{
-        // $("#"+divId).addClass("hidden");
         $("#"+divId).parent().addClass('hidden');
         switch (divId) {
             case "line-chart-01":
@@ -1650,7 +1584,8 @@ function toggleTotalLogCond(o){
         }
     }
 }
-/** 통합로그 - 조회 */
+
+// 통합로그조회 목록조회
 function getTotalLog(){
 
     var userServiceUseSno =  $("#userServiceUseSno").val();
@@ -1717,11 +1652,10 @@ function getTotalLog(){
     });
 }
 
-/** 목표삭제 */
+// 목표삭제
 function delTarget(targetDelMdl){
     $("#confirm-modal").modal('show');
     $("#confirm-modal #delModalBtn").off('click').on('click', function(){
-        // console.log("delMemo ~~~"+ targetDelMdl );
         $("#confirm-modal").modal('hide');
 
         $.ajax({
@@ -1732,8 +1666,6 @@ function delTarget(targetDelMdl){
                 "targetDelMdl": targetDelMdl
             },
             success: function (data) {
-                // console.log("delTarget success ~~~~~");
-                // console.log(data);
                 if(!isEmpty(data)) {
                     $("#successReload").val("Y");
                     $("#success-alert-modal").modal('show');
@@ -1754,6 +1686,8 @@ function delTarget(targetDelMdl){
 
     });
 }
+
+// 스크롤 페이지 세팅
 function scrollPaging(key) {
     let scroll = true;
     let playAlert = null;
@@ -1771,7 +1705,6 @@ function scrollPaging(key) {
         ;
         $(".showContent").slice(0, 10).show(); // 최초 10개 선택
         $(window).scroll(function(){ // Load More를 위한 클릭 이벤트e
-            // console.log('길이길이길이 : '+$(".showContent:hidden").length);
             if (scroll && Math.ceil($(window).scrollTop()) == $(document).height() - $(window).height()){
                 scroll = false;
                 $("#load").show();
