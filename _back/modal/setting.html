@@ -1,0 +1,93 @@
+<div id="setting-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header modal-colored-header bg-primary">
+                <h4 class="modal-title" >설정</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body">
+                <form action="#">
+                    <div class="form-group mb-0">
+                        <label  class="col-form-label"><b>Language</b></label>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control">
+                            <option value = "0">한국어</option>
+                            <option value = "1">English</option>
+                            <option value = "2">中文</option>
+                        </select>
+                    </div>
+                    <div class="form-group mb-0">
+                        <label  class="col-form-label"><b>UI Color</b></label>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" id="mode-select">
+                            <option value="0">Light mode</option>
+                            <option value="1">Dark mode</option>
+                        </select>
+                    </div>
+                    <div class="form-group mb-0">
+                        <label class="col-form-label"><b>Unit</b></label>
+                        <hr class="mt-1">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group mb-3 col-md-3">
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="unit-1a" name="unit_1" class="custom-control-input" checked>
+                                <label class="custom-control-label" for="unit-1a">mg/dL</label>
+                            </div>
+                        </div>
+                        <div class="form-group mb-3 col-md-3">
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="unit-2a" name="unit_2" class="custom-control-input" checked>
+                                <label class="custom-control-label" for="unit-2a">kg</label>
+                            </div>
+                        </div>
+                        <div class="form-group mb-3 col-md-3">
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="unit-3a" name="unit_3" class="custom-control-input" checked>
+                                <label class="custom-control-label" for="unit-3a">cm</label>
+                            </div>
+                        </div>
+                        <div class="form-group mb-3 col-md-3">
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="unit-4a" name="unit_4" class="custom-control-input" checked>
+                                <label class="custom-control-label" for="unit-4a">℃</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group mb-3 col-md-3">
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="unit-1b" name="unit_1" class="custom-control-input">
+                                <label class="custom-control-label" for="unit-1b">mmol/L</label>
+                            </div>
+                        </div>
+                        <div class="form-group mb-3 col-md-3">
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="unit-2b" name="unit_2" class="custom-control-input">
+                                <label class="custom-control-label" for="unit-2b">lb</label>
+                            </div>
+                        </div>
+                        <div class="form-group mb-3 col-md-3">
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="unit-3b" name="unit_3" class="custom-control-input">
+                                <label class="custom-control-label" for="unit-3b">ft</label>
+                            </div>
+                        </div>
+                        <div class="form-group mb-3 col-md-3">
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="unit-4b" name="unit_4" class="custom-control-input">
+                                <label class="custom-control-label" for="unit-4b">F</label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-dismiss="modal">취소</button>
+                <button type="button" class="btn btn-primary" onclick ="updateUserInfo()">설정변경</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>

@@ -1,0 +1,424 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <title>HEALTH ON 관리자 페이지 퍼블리싱 Status</title>
+    <style type="text/css">
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        overflow-y: scroll;
+      }
+
+      body {
+        color: #666;
+        background-color: #fff;
+        font: 12px/1.5 Dotum, "돋움";
+      }
+
+      a {
+        color: #27e;
+        text-decoration: none;
+      }
+
+      a:focus,
+      a:hover,
+      a:active {
+        text-decoration: underline;
+      }
+
+      .header {
+        padding: 0.5em;
+      }
+
+      .header h1 {
+        display: inline;
+        margin-right: 1em;
+        color: #000;
+        font-size: 2em;
+      }
+
+      .header ul {
+        display: inline;
+        font-size: 1.5em;
+        list-style: none;
+      }
+
+      .header ul li {
+        display: inline;
+      }
+
+      .group-title {
+        margin-top: 1em;
+        color: #000;
+        font-weight: bold;
+        font-size: 1.5em;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
+
+      table caption {
+        display: none;
+      }
+
+      table th {
+        color: #333;
+        background-color: #eee;
+      }
+
+      table th,
+      table td {
+        padding: 6px 3px 2px 3px;
+        border: 1px solid #ddd;
+        text-align: left;
+        font-size: 12px;
+        font-family: "Dotum", "돋움";
+      }
+
+      table th,
+      table td.stat {
+        text-align: center;
+      }
+
+      table td.date p {
+        margin: 2px 0 0 0;
+      }
+
+      table td.date p.new {
+        color: #9c27b0;
+        font-weight: bold;
+      }
+
+      table td .notice li {
+        list-style: none;
+        margin: 2px 0 0 0;
+        font-weight: bold;
+      }
+
+      table td .notice li.new {
+        color: #9c27b0;
+      }
+
+      table td.stat {
+        font-weight: bold;
+      }
+
+      table tr.even,
+      table tr td.multi {
+        background-color: #ffffff;
+      }
+
+      table tr.add td {
+        background-color: #fd0;
+      }
+
+      table tr.modify td {
+        background-color: #fffeb4;
+      }
+
+      table tr.hover td {
+        background-color: #fafafa;
+      }
+
+      table tr.none td {
+        color: #000;
+        background-color: #fc8989;
+      }
+
+      table tr.up td {
+        background-color: #ffe9f5;
+      }
+
+      .section {
+        margin: 3em 0;
+      }
+
+      body.js .section {
+        margin: 0;
+      }
+
+      .section .title {
+        margin: 0;
+        padding: 0;
+        color: #000;
+        font-weight: bold;
+        font-size: 100%;
+      }
+
+      body.js .section .title {
+        padding: 0.5em;
+        border: 1px solid #ccc;
+        background-color: #ddd;
+        cursor: pointer;
+      }
+
+      body.js .section + .section .title {
+        border-top: 0;
+      }
+
+      body.js .section .title .page-count {
+        color: #666;
+        font-weight: normal;
+      }
+
+      body.js .section .content {
+        display: none;
+      }
+
+      #sb-body {
+        border: none !important;
+      }
+
+      .modi {
+        background: #000 !important;
+        color: #fff;
+        font-weight: bold;
+      }
+
+      .modi.blue {
+        background: skyblue !important;
+      }
+
+      .modi.red {
+        background: red !important;
+      }
+
+      .font_form {
+        margin: 0;
+        padding: 0;
+        padding-inline-start: 5px;
+      }
+
+      .font_form li label {
+        font-size: 12px;
+        color: #444;
+        letter-spacing: 1px;
+      }
+    </style>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+    <script type="text/javascript">
+      (function ($) {
+        $.fn.stat = function (options) {
+          var settings = $.extend(
+              {
+                title: "h2.title",
+                content: "div.content",
+                화면아이디s: "tbody tr",
+                stat: "td.stat",
+                index: 0,
+                openAll: false,
+                speed: "fast",
+              },
+              options
+            ),
+            all_sections = this,
+            header = $("div.header");
+          return this.each(function () {
+            var self = this,
+              $self = $(self),
+              title_text = [],
+              completed = 0;
+            self.section_title = $(settings.title, $self);
+            self.content = $(settings.content, $self);
+            self.화면아이디s = $(settings.화면아이디s, $self);
+            self.화면아이디s.each(function () {
+              var stat = $(settings.stat, this);
+              stat.each(function () {
+                var text = $(this).text();
+                if (text) {
+                  if (text == "none") {
+                    $(this).css({ background: "#d2d2d2", color: "#fff" });
+                  } else if (text == "ing") {
+                    $(this).css({ background: "#5d9b1a", color: "#fff" });
+                  } else if (text == "done") {
+                    $(this).css({ background: "#1f78bd", color: "#fff" });
+                  } else if (text == "edit") {
+                    $(this).css({ background: "#ff2d2d", color: "#fff" });
+                  }
+                  completed++;
+                }
+              });
+            });
+            /*
+                    if(completed == 0){
+                        $(this).parent().parent().parent().hide();
+                    };
+                    */
+            self.화면아이디s
+              .bind("mouseenter", function () {
+                $(this).addClass("hover");
+              })
+              .bind("mouseleave", function () {
+                $(this).removeClass("hover");
+              });
+            title_text = [self.section_title.text(), ' <span class="page-count">(', completed, "/", self.화면아이디s.length, ")</span>"];
+            self.section_title.html(title_text.join(""));
+            self.section_title.bind("click", function () {
+              self.content.slideToggle(settings.speed);
+            });
+            if (settings.openAll || settings.index - 1 === all_sections.index(this)) {
+              self.content.css("display", "block");
+            }
+          });
+        };
+        $(document).ready(function () {
+          $("div.section").stat({ openAll: true });
+          $("#total").text($("tbody tr").length);
+          $("tbody tr:even").addClass("even");
+          $("tbody td[rowspan][rowspan!=1]").addClass("multi");
+
+          // 페이지 선택 select 스크립트
+          $("#page_chooser option").each(function ($index, $element) {
+            $element = $($element);
+            var 화면아이디 = $element.data("화면아이디");
+            if (location.href.indexOf(화면아이디) > -1) {
+              $element.attr("selected", "selected");
+            }
+          });
+          $("#page_chooser").bind("change", function () {
+            location.href = $(this).val();
+          });
+          // 페이지 선택 select 스크립트 끝
+
+          // 폰트 선택 radio 스크립트
+          $("input:radio[name=chgFntsize]").click(function () {
+            var fontAddSize = $("input[name=chgFntsize]:checked").val();
+            fontAddSize = Number(fontAddSize);
+            if (isNaN(fontAddSize)) {
+              size = 0;
+            }
+            localStorage.setItem("fntAddSz", fontAddSize);
+          });
+          // 폰트 선택 radio 스크립트
+        });
+      })(jQuery);
+    </script>
+  </head>
+
+  <body>
+    <script type="text/javascript">
+      document.body.className += " js";
+    </script>
+
+    <!-- Larkcomm 2023-05 -->
+    <h2>2023년 5월</h2>
+    <div class="section">
+      <h2 class="title">관리자 페이지 Status</h2>
+      <div class="content">
+        <table>
+          <colgroup>
+            <col style="width: 20%" />
+            <col style="width: 20%" />
+            <col style="width: 20%" />
+            <col style="width: 20%" />
+            <col style="width: 20%" />
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col">depth</th>
+              <th scope="col">내용</th>
+              <th scope="col">화면아이디</th>
+              <th scope="col">페이지링크</th>
+              <th scope="col">비고</th>
+            </tr>
+          </thead>
+          <tbody>
+						<tr>
+							<td rowspan="2">챗봇코칭 > 기본버튼 관리 > 기본버튼 전체</td>
+							<td>기본버튼 목록 조회</td>
+							<td>HG-WEB-COA-04</td>
+							<td class="stat"><a href="HG-WEB-COA-04.html" target="_blank">Link (완료 20230519)</a></td>
+							<td rowspan="4">
+								<strong>2순위</strong>
+							</td>
+						</tr>
+            <tr>
+              <td>등록 대화 조회(기본버튼 내)</td>
+              <td>HG-WEB-COA-04-01</td>
+              <td class="stat"><a href="HG-WEB-COA-04.html" target="_blank">Link (완료 20230519)</a></td>
+            </tr>
+						<tr>
+							<td rowspan="2">챗봇코칭 > 기본버튼 관리 > 기본버튼 등록</td>
+							<td>기본버튼 등록</td>
+							<td>HG-WEB-COA-05</td>
+							<td class="stat"><a href="HG-WEB-COA-05.html" target="_blank">Link (완료 20230519)</a></td>
+						</tr>
+            <tr>
+              <td>기본버튼 대화 선택</td>
+              <td>HG-WEB-COA-05-01</td>
+              <td class="stat"><a href="HG-WEB-COA-05.html" target="_blank">Link (완료 20230519)</a></td>
+            </tr>
+						<tr>
+							<td rowspan="4">챗봇코칭 > 대화 관리 > 대화 전체</td>
+							<td>대화 목록 조회(챗봇 코칭, 입력유도, 기본버튼, 코치의 메시지)</td>
+							<td>HG-WEB-COA-06</td>
+							<td class="stat"><a href="HG-WEB-COA-06.html" target="_blank">Link (완료 20230519)</a></td>
+							<td rowspan="8">
+								<strong>1순위</strong>
+							</td>
+						</tr>
+            <tr>
+              <td>코치의 메시지 발송</td>
+              <td>HG-WEB-COA-06-01</td>
+              <td class="stat"><a href="HG-WEB-COA-06.html" target="_blank">Link (완료 20230519)</a></td>
+            </tr>
+            <!-- <tr>
+              <td>코치의 메시지 발송(개별)</td>
+              <td>HG-WEB-COA-06-01-2</td>
+              <td class="stat"><a href="HG-WEB-COA-06.html" target="_blank">Link (완료 20230519)</a></td>
+            </tr> -->
+            <tr>
+              <td>코치의 메시지 발송 이력</td>
+              <td>HG-WEB-COA-06-02</td>
+              <td class="stat"><a href="HG-WEB-COA-06.html" target="_blank">Link (완료 20230519)</a></td>
+            </tr>
+            <tr>
+              <td>코치의 메시지 발송 대상자 조회</td>
+              <td>HG-WEB-COA-06-03</td>
+              <td class="stat"><a href="HG-WEB-COA-06.html" target="_blank">Link (완료 20230519)</a></td>
+            </tr>
+						<tr>
+							<td rowspan="4">챗봇코칭 > 대화 관리 > 대화 등록</td>
+							<td>대화 등록</td>
+							<td>HG-WEB-COA-07</td>
+							<td class="stat"><a href="HG-WEB-COA-07.html" target="_blank">Link (완료 20230519)</a></td>
+						</tr>
+            <tr>
+              <td>메시지 등록</td>
+              <td>HG-WEB-COA-07-01</td>
+              <td class="stat"><a href="HG-WEB-COA-07.html" target="_blank">Link (완료 20230519)</a></td>
+            </tr>
+            <tr>
+              <td>동영상 첨부</td>
+              <td>HG-WEB-COA-07-02</td>
+              <td class="stat"><a href="HG-WEB-COA-07.html" target="_blank">Link (완료 20230519)</a></td>
+            </tr>
+            <tr>
+              <td>대화 불러오기</td>
+              <td>HG-WEB-COA-07-03</td>
+              <td class="stat"><a href="HG-WEB-COA-07.html" target="_blank">Link (완료 20230519)</a></td>
+            </tr>
+						<tr>
+							<td>챗봇코칭 > (공통)</td>
+							<td>대화 미리보기</td>
+							<td>HG-WEB-COA-08</td>
+							<td class="stat"><a href="HG-WEB-COA-08.html" target="_blank">Link (완료 20230519)</a></td>
+							<td>
+								<strong>1순위</strong>
+							</td>
+						</tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- //아델리 2022-07 -->
+  </body>
+</html>

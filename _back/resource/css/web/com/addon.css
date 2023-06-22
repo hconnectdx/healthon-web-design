@@ -1,0 +1,101 @@
+.file-upload-hidden-field label {
+    cursor: pointer;
+    margin-bottom: 0px;
+}
+.file-upload-hidden-field input[type="file"] {  /* 파일 필드 숨기기 */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip:rect(0,0,0,0);
+    border: 0;
+}
+
+.medicin_cal_event{
+    background-color: yellow;
+    color: #313a46 !important;
+}
+.medicin_cal_event div{
+    color: #313a46 !important;
+}
+.msg_send_cont_elip{
+    max-width: 300px;
+}
+
+.dropzone.dz-max-files-reached {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.65;
+}
+
+.dz-max-files-reached .dz-message {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.65;
+}
+
+select.select-group {
+    width: 180px !important;
+}
+
+.pre-content {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: "Noto Sans KR", "Ubuntu", sans-serif;
+}
+
+.conversation-list.role-admin {
+    min-height: calc(84vh - 199px) !important;
+}
+
+.conversation-list.msg-position {
+    min-height: calc(84vh - 203px) !important;
+}
+
+a.disabled, i.disabled, button.disabled {
+    opacity: 0.65;
+    pointer-events: none;
+    cursor: default;
+}
+
+.modal-content-disabled-scroll {
+    max-height: 800px;
+    overflow-y: hidden;
+}
+
+.white-space-inherit {
+    white-space: inherit !important;
+}
+
+.ellipse-line-1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+    line-height: 1.5em;
+    height: 1.5em;
+}
+
+.dash-empty-data {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 175px;
+}
+
+.toggle.ios, .toggle-on.ios, .toggle-off.ios { border-radius: 20rem; }
+.toggle.ios .toggle-handle { border-radius: 20rem; }
+
+.badge-outline-dormant {
+    color: #7453ff;
+    border: 1px solid #7453ff;
+    background-color: transparent; }
+.badge-outline-dormant[href]:hover, .badge-outline-dormant[href]:focus {
+    color: #7453ff;
+    text-decoration: none;
+    background-color: rgba(68, 186, 220, 0.2); }

@@ -83,9 +83,9 @@ function includeHTML() {
 
 
 jQuery(function($) {
-    $(window).load("url", "data", function (response, status, request) {
-        $(".dataTables_length").parents(".row").addClass("dataTables_head");
-    });
+    // $(window).load("url", "data", function (response, status, request) {
+    //     $(".dataTables_length").parents(".row").addClass("dataTables_head");
+    // });
 
     $("body").on("show.bs.modal", "#login-password-modal", function() {
         $("#my-info-modal").modal("hide");

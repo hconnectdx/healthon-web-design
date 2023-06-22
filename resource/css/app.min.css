@@ -11431,7 +11431,7 @@ a.text-secondary:focus, a.text-secondary:hover {
 }
 
 .text-success {
-    color: var(--blue) !important
+    color: #0acf97 !important
 }
 
 a.text-success:focus, a.text-success:hover {
@@ -11439,7 +11439,7 @@ a.text-success:focus, a.text-success:hover {
 }
 
 .text-info {
-    color: #2c8ef8 !important
+    color: #39afd1 !important
 }
 
 a.text-info:focus, a.text-info:hover {
@@ -19559,3 +19559,10 @@ textarea::-webkit-scrollbar-thumb {
 
 
 /*# sourceMappingURL=app.min.css.map */
+
+
+/* 2023 추가 **/
+
+/*.bg-highlight {background:#F7F5FF !important;}*/
+.bg-highlight {background:#e9ecef !important;}
+.bg-highlight-primary {background:#E2DBFF !important;}
