@@ -7342,7 +7342,7 @@
 					</div>
 				</div>
 			</div>
-		</div> 
+		</div>
 
 		<!-- 2022 아델리 추가 end -->
 
@@ -7392,180 +7392,180 @@
 
 		<script>
 			function showBloodGlucoseDetailModal() {
-				$("#blood-glucose-detail-modal").modal("show");
+				$('#blood-glucose-detail-modal').modal('show');
 			}
 			function showBloodGlucoseInputModal() {
-				$("#blood-glucose-input-modal").modal("show");
+				$('#blood-glucose-input-modal').modal('show');
 			}
 			function showBloodGlucoseSettingModal() {
-				$("#blood-glucose-setting-modal").modal("show");
+				$('#blood-glucose-setting-modal').modal('show');
 			}
 			function showTargetSettingModal(flag) {
-				if (flag == "weight") {
-					$("#target-setting-weight-modal").modal("show");
-				} else if (flag == "wc") {
-					$("#target-setting-wc-modal").modal("show");
+				if (flag == 'weight') {
+					$('#target-setting-weight-modal').modal('show');
+				} else if (flag == 'wc') {
+					$('#target-setting-wc-modal').modal('show');
 				}
 			}
 			function showUserPicModal() {
-				$("#user-profile-modal").modal("show");
+				$('#user-profile-modal').modal('show');
 			}
 			function showUserDoctorNumModal() {
-				$("#user-doctor-number-modal").modal("show");
+				$('#user-doctor-number-modal').modal('show');
 			}
 
 			function showMyAccountDlg() {
-				$("#my-info-modal").modal("show");
+				$('#my-info-modal').modal('show');
 			}
 
 			function updateLoginPasswordDlg() {
-				$("#login-password-modal").modal("show");
+				$('#login-password-modal').modal('show');
 			}
 
 			function insullinRxModal() {
-				$("#insullin-rx-modal").modal("show");
+				$('#insullin-rx-modal').modal('show');
 			}
 
 			function showSettingDlg() {
-				$("#setting-modal").modal("show");
+				$('#setting-modal').modal('show');
 			}
 
 			function updateUserInfo() {
-				$("#my-info-modal").modal("hide");
+				$('#my-info-modal').modal('hide');
 			}
 			function showContents() {
-				$("#contents-modal").modal("show");
+				$('#contents-modal').modal('show');
 			}
 			function showBgTypeModal() {
-				$("#bg-type-modal").modal("show");
+				$('#bg-type-modal').modal('show');
 			}
 			function showBgHistoryModal() {
-				$("#bg-history-modal").modal("show");
+				$('#bg-history-modal').modal('show');
 			}
 			function bgtype_select() {
-				if ($("#bgtype").val() == "dtype") {
-					$("#switch_ins").removeAttr("disabled");
+				if ($('#bgtype').val() == 'dtype') {
+					$('#switch_ins').removeAttr('disabled');
 				} else {
-					$("#switch_ins").prop("disabled", true);
+					$('#switch_ins').prop('disabled', true);
 				}
 			}
 			function showHeightInputModal() {
-				$("#height-input-modal").modal("show");
+				$('#height-input-modal').modal('show');
 			}
 			function showWeightInputModal() {
-				$("#weight-input-modal").modal("show");
+				$('#weight-input-modal').modal('show');
 			}
 			function showWeightDetailModal() {
-				$("#weight-detail-modal").modal("show");
+				$('#weight-detail-modal').modal('show');
 			}
 			function showTemperatureDetailModal() {
-				$("#temperature-detail-modal").modal("show");
+				$('#temperature-detail-modal').modal('show');
 			}
 			function showTemperatureInputModal() {
-				$("#temperature-input-modal").modal("show");
+				$('#temperature-input-modal').modal('show');
 			}
 			function showWCDetailModal() {
-				$("#wc-detail-modal").modal("show");
+				$('#wc-detail-modal').modal('show');
 			}
 			function showWCInputModal() {
-				$("#wc-input-modal").modal("show");
+				$('#wc-input-modal').modal('show');
 			}
 			function showMemoEditModal() {
-				$("#memo-edit-modal").modal("show");
+				$('#memo-edit-modal').modal('show');
 			}
 			function showBloodPressureDetailModal() {
-				$("#blood-pressure-detail-modal").modal("show");
+				$('#blood-pressure-detail-modal').modal('show');
 			}
 			function showBloodPressureInputModal() {
-				$("#blood-pressure-input-modal").modal("show");
+				$('#blood-pressure-input-modal').modal('show');
 			}
 			function showBloodPressureSettingModal() {
-				$("#blood-pressure-setting-modal").modal("show");
+				$('#blood-pressure-setting-modal').modal('show');
 			}
 			function showMealDetailModal() {
-				$("#meal-detail-modal").modal("show");
+				$('#meal-detail-modal').modal('show');
 			}
 			function showMealInputModal() {
-				$("#meal-input-modal").modal("show");
+				$('#meal-input-modal').modal('show');
 			}
 			function showMealSettingModal() {
-				$("#meal-setting-modal").modal("show");
+				$('#meal-setting-modal').modal('show');
 			}
 			function showMealDiaryDetailModal() {
-				$("#meal-diary-detail-modal").modal("show");
+				$('#meal-diary-detail-modal').modal('show');
 			}
 			function showWalkingSettingModal() {
-				$("#walking-setting-modal").modal("show");
+				$('#walking-setting-modal').modal('show');
 			}
 			function showWalkingDetailModal() {
-				$("#walking-detail-modal").modal("show");
+				$('#walking-detail-modal').modal('show');
 			}
 			function showMedicineDetailModal() {
-				$("#medicine-detail-modal").modal("show");
+				$('#medicine-detail-modal').modal('show');
 				setTimeout(function () {
 					cal.render();
 				}, 300);
 			}
 			function showMedicineGuideModal() {
-				$("#medicine-guide-modal").modal("show");
+				$('#medicine-guide-modal').modal('show');
 			}
 			function showSleepDetailModal() {
-				$("#sleep-detail-modal").modal("show");
+				$('#sleep-detail-modal').modal('show');
 			}
 			function showSleepSettingModal() {
-				$("#sleep-setting-modal").modal("show");
+				$('#sleep-setting-modal').modal('show');
 			}
 			function showExerciseDetailModal() {
-				$("#exercise-detail-modal").modal("show");
+				$('#exercise-detail-modal').modal('show');
 			}
 			function showExerciseSettingModal() {
-				$("#exercise-setting-modal").modal("show");
+				$('#exercise-setting-modal').modal('show');
 			}
 			function testResult() {
-				$("#test-result-modal").modal("show");
+				$('#test-result-modal').modal('show');
 			}
 			function csModifyModal() {
-				$("#cs-modify-modal").modal("show");
+				$('#cs-modify-modal').modal('show');
 			}
 			function passwordChangeModal() {
-				$("#password-change-modal").modal("show");
+				$('#password-change-modal').modal('show');
 			}
 			function passwordResetModal() {
-				$("#password-reset-modal").modal("show");
+				$('#password-reset-modal').modal('show');
 			}
 			function reMindModal() {
-				$("#confirm-modal").modal("show");
+				$('#confirm-modal').modal('show');
 			}
 			function delSuccessModal() {
-				$("#delete-success-modal").modal("show");
+				$('#delete-success-modal').modal('show');
 			}
 			function errorAlertModal() {
-				$("#error-alert-modal").modal("show");
+				$('#error-alert-modal').modal('show');
 			}
 			function successAlertModal() {
-				$("#success-alert-modal").modal("show");
+				$('#success-alert-modal').modal('show');
 			}
 
 			// 2022 아델리 추가
 			function APPLOG_05_01() {
-				$("#APPLOG_05_01").modal("show");
+				$('#APPLOG_05_01').modal('show');
 			}
 
 			function APPLOG_05_02() {
-				$("#APPLOG_05_02").modal("show");
+				$('#APPLOG_05_02').modal('show');
 			}
 
 			function APPLOG_05_03() {
-				$("#APPLOG_05_03").modal("show");
+				$('#APPLOG_05_03').modal('show');
 			}
 
 			// 2022 아델리 추가 end
 		</script>
 		<script>
-			$(document).on("keyup", "input[inputmode=numeric]", function (event) {
-				this.value = this.value.replace(/[^0-9]/g, "");
-				this.value = this.value.replace(/,/g, "");
-				this.value = this.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+			$(document).on('keyup', 'input[inputmode=numeric]', function (event) {
+				this.value = this.value.replace(/[^0-9]/g, '');
+				this.value = this.value.replace(/,/g, '');
+				this.value = this.value.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 			});
 		</script>
 		<style>
@@ -7581,10 +7581,10 @@
 		</style>
 		<script text="javascript/text">
 			$(document).ready(function () {
-				$(".media-body").each(function () {
-					var content = $(this).children(".content-more");
+				$('.media-body').each(function () {
+					var content = $(this).children('.content-more');
 					var content_txt = content.text();
-					var content_txt_short = content_txt.substring(0, 240) + "...";
+					var content_txt_short = content_txt.substring(0, 240) + '...';
 					var btn_more = $('<a href="javascript:void(0)" class="more"><i class="dripicons-chevron-down text-primary font-16"></i> 더보기</a>');
 					$(this).append(btn_more);
 
@@ -7595,16 +7595,16 @@
 					}
 					btn_more.click(toggle_content);
 					function toggle_content() {
-						if ($(this).hasClass("short")) {
+						if ($(this).hasClass('short')) {
 							// 접기 상태
 							$(this).html('<i class="dripicons-chevron-down text-primary font-16"></i> 더보기');
 							content.html(content_txt_short);
-							$(this).removeClass("short");
+							$(this).removeClass('short');
 						} else {
 							// 더보기 상태
 							$(this).html('<i class="dripicons-chevron-up text-primary font-16"></i> 줄이기');
 							content.html(content_txt);
-							$(this).addClass("short");
+							$(this).addClass('short');
 						}
 					}
 				});

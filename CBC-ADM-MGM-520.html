@@ -1,0 +1,1695 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>시스템운영</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+		<meta content="Coderthemes" name="author" />
+		<!-- App favicon -->
+		<link rel="shortcut icon" href="resource/images/favicon.ico" />
+
+		<!-- App css -->
+		<link href="resource/css/icons.min.css" rel="stylesheet" type="text/css" />
+		<link href="resource/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
+		<link href="resource/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
+
+		<link href="resource/css/vendor/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" />
+		<link href="resource/css/vendor/responsive.bootstrap4.css" rel="stylesheet" type="text/css" />
+		<link href="resource/lib/simplelightbox/simpleLightbox.min.css" rel="stylesheet" type="text/css" />
+
+		<link href="resource/css/base.css" rel="stylesheet" type="text/css" />
+		<link href="resource/css/common.css" rel="stylesheet" type="text/css" />
+	</head>
+
+	<body
+		class="loading"
+		data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'
+	>
+		<!-- Begin page -->
+		<div class="wrapper">
+			<!-- ========== Left Sidebar Start ========== -->
+			<div class="left-side-menu">
+				<!-- LOGO -->
+				<a href="main.html" class="logo logo-light logo-text" style="align-items: center">
+					<span class="logo-lg">
+						<img src="resource/images/lumiio-logo.png" alt="" height="20" />
+					</span>
+					<span class="logo-sm">
+						<img src="resource/images/logo_sm.png" alt="" height="16" />
+					</span>
+				</a>
+				<!-- LOGO -->
+				<a href="main.html" class="logo logo-dark logo-text" style="align-items: center">
+					<span class="logo-lg">
+						<img src="resource/images/logo-dark.png" alt="" height="20" />
+					</span>
+					<span class="logo-sm">
+						<img src="resource/images/logo_sm_dark.png" alt="" height="16" />
+					</span>
+				</a>
+
+				<div class="h-100" id="left-side-menu-container" data-simplebar>
+					<!--- Sidemenu -->
+					<ul class="metismenu side-nav">
+						<li class="side-nav-title side-nav-item">Navigation</li>
+						<li class="side-nav-item">
+							<a href="main.html" class="side-nav-link">
+								<i class="uil-presentation-lines-alt"></i>
+								<span> Dashboards </span>
+							</a>
+						</li>
+						<li class="side-nav-item">
+							<a href="#" class="side-nav-link">
+								<i class="uil-users-alt"></i>
+								<span> 사용자관리 </span>
+								<span class="menu-arrow"></span>
+							</a>
+							<ul class="side-nav-second-level" aria-expanded="false">
+								<li>
+									<a href="users.html">전체사용자</a>
+								</li>
+								<li>
+									<a href="auth01.html">승인 관리</a>
+								</li>
+								<li>
+									<a href="send_message.html">메시지관리</a>
+								</li>
+								<li>
+									<a href="message_list.html">메세지 발송 이력</a>
+								</li>
+							</ul>
+						</li>
+						<li class="side-nav-item">
+							<a href="javascript: void(0);" class="side-nav-link">
+								<i class="uil uil-image"></i>
+								<span> 콘텐츠관리 </span>
+								<span class="menu-arrow"></span>
+							</a>
+							<ul class="side-nav-second-level" aria-expanded="false">
+								<li>
+									<a href="sys_content.html">콘텐츠관리</a>
+								</li>
+								<li>
+									<a href="sys_video.html">동영상 관리</a>
+								</li>
+								<li>
+									<a href="sdf.html">줄넘기 팁 관리</a>
+								</li>
+							</ul>
+						</li>
+						<li class="side-nav-item">
+							<a href="javascript: void(0);" class="side-nav-link">
+								<i class="uil-game-structure"></i>
+								<span> 시스템운영 </span>
+								<span class="menu-arrow"></span>
+							</a>
+							<ul class="side-nav-second-level" aria-expanded="false">
+								<li>
+									<a href="sys_group.html">그룹관리</a>
+								</li>
+								<li>
+									<a href="sys_webuser.html">웹 사용자관리</a>
+								</li>
+								<li>
+									<a href="sys_version.html">버전관리</a>
+								</li>
+								<li>
+									<a href="sys_appoint.html">약관 관리</a>
+								</li>
+								<li>
+									<a href="sys_service.html">서비스 문의</a>
+								</li>
+								<li>
+									<a href="sys_connecthistory.html">접속 이력 관리</a>
+								</li>
+								<li>
+									<a href=".html">결제 관리</a>
+								</li>
+								<li>
+									<a href="sys_checkitem.html">검사 항목관리</a>
+								</li>
+								<li>
+									<a href="sys_note.html">공지사항 관리</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<div class="clearfix"></div>
+				</div>
+				<!-- Sidebar -left -->
+			</div>
+			<!-- Left Sidebar End -->
+
+			<!-- ============================================================== -->
+			<!-- Start Page Content here -->
+			<!-- ============================================================== -->
+
+			<div class="content-page">
+				<div class="content">
+					<!-- Topbar Start -->
+					<div class="navbar-custom">
+						<ul class="list-unstyled topbar-right-menu float-right mb-0">
+							<li class="dropdown notification-list d-lg-none">
+								<a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+									<i class="dripicons-search noti-icon"></i>
+								</a>
+								<div class="dropdown-menu dropdown-menu-animated dropdown-lg p-0">
+									<form class="p-3">
+										<input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username" />
+									</form>
+								</div>
+							</li>
+
+							<li class="dropdown notification-list">
+								<a
+									class="nav-link dropdown-toggle nav-user arrow-none mr-0"
+									data-toggle="dropdown"
+									href="#"
+									role="button"
+									aria-haspopup="false"
+									aria-expanded="false"
+								>
+									<span class="account-user-avatar">
+										<img src="resource/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle" />
+									</span>
+									<span>
+										<span class="account-user-name">James Kim</span>
+										<span class="account-position">의사 <i class="dripicons-chevron-down"></i></span>
+									</span>
+								</a>
+								<div class="dropdown-menu dropdown-menu-right dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
+									<!-- item-->
+									<a href="javascript:void(0);" onclick="showMyAccountDlg()" class="dropdown-item notify-item">
+										<i class="mdi mdi-account-circle mr-1"></i>
+										<span>My Account</span>
+									</a>
+
+									<!-- item-->
+									<a href="javascript:void(0);" onclick="showSettingDlg()" class="dropdown-item notify-item">
+										<i class="mdi mdi-account-edit mr-1"></i>
+										<span>Settings</span>
+									</a>
+									<!-- item-->
+									<a href="login.html" class="dropdown-item notify-item">
+										<i class="mdi mdi-logout mr-1"></i>
+										<span>Logout</span>
+									</a>
+								</div>
+							</li>
+						</ul>
+						<button class="button-menu-mobile open-left disable-btn">
+							<i class="mdi mdi-menu"></i>
+						</button>
+						<h4 class="page-title color-title float-left mt-3">측정항목 기준치 관리</h4>
+						<div class="app-search dropdown d-none d-lg-block float-right">
+							<form>
+								<div class="input-group">
+									<input type="text" class="form-control dropdown-toggle" placeholder="사용자를 검색할수 있습니다." id="top-search" />
+									<span class="mdi mdi-magnify search-icon"></span>
+									<div class="input-group-append">
+										<button class="btn btn-primary" type="submit">검색</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					<!-- end Topbar -->
+					<!-- Start Content-->
+					<div class="container-fluid">
+						<!-- start page title -->
+						<div class="row">
+							<div class="col-12">
+								<div class="page-title-box">
+									<div class="page-title-right">
+										<ol class="breadcrumb m-0 pt-0">
+											<li class="breadcrumb-item"><a href="javascript: void(0);">시스템 운영</a></li>
+											<li class="breadcrumb-item">측정항목 기준치 관리</li>
+										</ol>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- end page title -->
+						<div class="row" id="main-container">
+							<div class="col-12">
+								<div class="card">
+									<div class="card-body">
+										<table class="table user-detail-table table-centered table-hover w-100 min-w768 thead-only-gray" id="manage-item-datatable">
+											<colgroup>
+												<col style="width: 10%" />
+												<col style="width: 18%" />
+												<col style="width: 7%" />
+												<col style="width: 10%" />
+												<col style="width: 10%" />
+												<col style="width: 10%" />
+												<col style="width: 10%" />
+												<col style="width: 15%" />
+												<col style="width: 10%" />
+											</colgroup>
+											<thead class="thead-light">
+												<tr>
+													<th>측정구분</th>
+													<th>측정항목</th>
+													<th>단위</th>
+													<th>표시방법</th>
+													<th>적용범위</th>
+													<th>등록일</th>
+													<th>등록자</th>
+													<th>기준치</th>
+													<th class="text-center">관리</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>혈액검사</td>
+													<td>백혈구수(WBC)</td>
+													<td>μL</td>
+													<td>정수 ##.##</td>
+													<td>전체</td>
+													<td>2023-08-18</td>
+													<td>SystemAdmin</td>
+													<td>2개 기준 <i class="mdi mdi-plus-box-multiple-outline font-20 ml-10 cursor" onclick="CBC_ADM_MGM_523()"></i></td>
+													<td class="text-center">
+														<i
+															class="mdi mdi-square-edit-outline font-20 cursor mr-1"
+															data-toggle="collapse"
+															data-target="#registStandard"
+															aria-expanded="false"
+															aria-controls="registStandard"
+														></i>
+														<i class="mdi mdi-delete font-20 cursor" onclick="reMindModal()"></i>
+													</td>
+												</tr>
+												<tr>
+													<td>혈액검사</td>
+													<td>백혈구수(WBC)</td>
+													<td>μL</td>
+													<td>정수 ##.##</td>
+													<td>전체</td>
+													<td>2023-08-18</td>
+													<td>SystemAdmin</td>
+													<td>2개 기준 <i class="mdi mdi-plus-box-multiple-outline font-20 ml-10 cursor" onclick="CBC_ADM_MGM_523()"></i></td>
+													<td class="text-center">
+														<i
+															class="mdi mdi-square-edit-outline font-20 cursor mr-1"
+															data-toggle="collapse"
+															data-target="#registStandard"
+															aria-expanded="false"
+															aria-controls="registStandard"
+														></i>
+														<i class="mdi mdi-delete font-20 cursor" onclick="reMindModal()"></i>
+													</td>
+												</tr>
+												<tr>
+													<td>혈액검사</td>
+													<td>백혈구수(WBC)</td>
+													<td>μL</td>
+													<td>정수 ##.##</td>
+													<td>전체</td>
+													<td>2023-08-18</td>
+													<td>SystemAdmin</td>
+													<td>2개 기준 <i class="mdi mdi-plus-box-multiple-outline font-20 ml-10 cursor" onclick="CBC_ADM_MGM_523()"></i></td>
+													<td class="text-center">
+														<i
+															class="mdi mdi-square-edit-outline font-20 cursor mr-1"
+															data-toggle="collapse"
+															data-target="#registStandard"
+															aria-expanded="false"
+															aria-controls="registStandard"
+														></i>
+														<i class="mdi mdi-delete font-20 cursor" onclick="reMindModal()"></i>
+													</td>
+												</tr>
+												<tr>
+													<td>혈액검사</td>
+													<td>백혈구수(WBC)</td>
+													<td>μL</td>
+													<td>정수 ##.##</td>
+													<td>전체</td>
+													<td>2023-08-18</td>
+													<td>SystemAdmin</td>
+													<td>2개 기준 <i class="mdi mdi-plus-box-multiple-outline font-20 ml-10 cursor" onclick="CBC_ADM_MGM_523()"></i></td>
+													<td class="text-center">
+														<i
+															class="mdi mdi-square-edit-outline font-20 cursor mr-1"
+															data-toggle="collapse"
+															data-target="#registStandard"
+															aria-expanded="false"
+															aria-controls="registStandard"
+														></i>
+														<i class="mdi mdi-delete font-20 cursor" onclick="reMindModal()"></i>
+													</td>
+												</tr>
+												<tr>
+													<td>혈액검사</td>
+													<td>백혈구수(WBC)</td>
+													<td>μL</td>
+													<td>정수 ##.##</td>
+													<td>전체</td>
+													<td>2023-08-18</td>
+													<td>SystemAdmin</td>
+													<td>2개 기준 <i class="mdi mdi-plus-box-multiple-outline font-20 ml-10 cursor" onclick="CBC_ADM_MGM_523()"></i></td>
+													<td class="text-center">
+														<i
+															class="mdi mdi-square-edit-outline font-20 cursor mr-1"
+															data-toggle="collapse"
+															data-target="#registStandard"
+															aria-expanded="false"
+															aria-controls="registStandard"
+														></i>
+														<i class="mdi mdi-delete font-20 cursor" onclick="reMindModal()"></i>
+													</td>
+												</tr>
+												<tr>
+													<td>혈액검사</td>
+													<td>백혈구수(WBC)</td>
+													<td>μL</td>
+													<td>정수 ##.##</td>
+													<td>전체</td>
+													<td>2023-08-18</td>
+													<td>SystemAdmin</td>
+													<td>2개 기준 <i class="mdi mdi-plus-box-multiple-outline font-20 ml-10 cursor" onclick="CBC_ADM_MGM_523()"></i></td>
+													<td class="text-center">
+														<i
+															class="mdi mdi-square-edit-outline font-20 cursor mr-1"
+															data-toggle="collapse"
+															data-target="#registStandard"
+															aria-expanded="false"
+															aria-controls="registStandard"
+														></i>
+														<i class="mdi mdi-delete font-20 cursor" onclick="reMindModal()"></i>
+													</td>
+												</tr>
+												<tr>
+													<td>혈액검사</td>
+													<td>백혈구수(WBC)</td>
+													<td>μL</td>
+													<td>정수 ##.##</td>
+													<td>전체</td>
+													<td>2023-08-18</td>
+													<td>SystemAdmin</td>
+													<td>2개 기준 <i class="mdi mdi-plus-box-multiple-outline font-20 ml-10 cursor" onclick="CBC_ADM_MGM_523()"></i></td>
+													<td class="text-center">
+														<i
+															class="mdi mdi-square-edit-outline font-20 cursor mr-1"
+															data-toggle="collapse"
+															data-target="#registStandard"
+															aria-expanded="false"
+															aria-controls="registStandard"
+														></i>
+														<i class="mdi mdi-delete font-20 cursor" onclick="reMindModal()"></i>
+													</td>
+												</tr>
+												<tr>
+													<td>혈액검사</td>
+													<td>백혈구수(WBC)</td>
+													<td>μL</td>
+													<td>정수 ##.##</td>
+													<td>전체</td>
+													<td>2023-08-18</td>
+													<td>SystemAdmin</td>
+													<td>2개 기준 <i class="mdi mdi-plus-box-multiple-outline font-20 ml-10 cursor" onclick="CBC_ADM_MGM_523()"></i></td>
+													<td class="text-center">
+														<i
+															class="mdi mdi-square-edit-outline font-20 cursor mr-1"
+															data-toggle="collapse"
+															data-target="#registStandard"
+															aria-expanded="false"
+															aria-controls="registStandard"
+														></i>
+														<i class="mdi mdi-delete font-20 cursor" onclick="reMindModal()"></i>
+													</td>
+												</tr>
+												<tr>
+													<td>혈액검사</td>
+													<td>백혈구수(WBC)</td>
+													<td>μL</td>
+													<td>정수 ##.##</td>
+													<td>전체</td>
+													<td>2023-08-18</td>
+													<td>SystemAdmin</td>
+													<td>2개 기준 <i class="mdi mdi-plus-box-multiple-outline font-20 ml-10 cursor" onclick="CBC_ADM_MGM_523()"></i></td>
+													<td class="text-center">
+														<i
+															class="mdi mdi-square-edit-outline font-20 cursor mr-1"
+															data-toggle="collapse"
+															data-target="#registStandard"
+															aria-expanded="false"
+															aria-controls="registStandard"
+														></i>
+														<i class="mdi mdi-delete font-20 cursor" onclick="reMindModal()"></i>
+													</td>
+												</tr>
+												<tr>
+													<td>혈액검사</td>
+													<td>백혈구수(WBC)</td>
+													<td>μL</td>
+													<td>정수 ##.##</td>
+													<td>전체</td>
+													<td>2023-08-18</td>
+													<td>SystemAdmin</td>
+													<td>2개 기준 <i class="mdi mdi-plus-box-multiple-outline font-20 ml-10 cursor" onclick="CBC_ADM_MGM_523()"></i></td>
+													<td class="text-center">
+														<i
+															class="mdi mdi-square-edit-outline font-20 cursor mr-1"
+															data-toggle="collapse"
+															data-target="#registStandard"
+															aria-expanded="false"
+															aria-controls="registStandard"
+														></i>
+														<i class="mdi mdi-delete font-20 cursor" onclick="reMindModal()"></i>
+													</td>
+												</tr>
+												<tr>
+													<td>혈액검사</td>
+													<td>백혈구수(WBC)</td>
+													<td>μL</td>
+													<td>정수 ##.##</td>
+													<td>전체</td>
+													<td>2023-08-18</td>
+													<td>SystemAdmin</td>
+													<td>2개 기준 <i class="mdi mdi-plus-box-multiple-outline font-20 ml-10 cursor" onclick="CBC_ADM_MGM_523()"></i></td>
+													<td class="text-center">
+														<i
+															class="mdi mdi-square-edit-outline font-20 cursor mr-1"
+															data-toggle="collapse"
+															data-target="#registStandard"
+															aria-expanded="false"
+															aria-controls="registStandard"
+														></i>
+														<i class="mdi mdi-delete font-20 cursor" onclick="reMindModal()"></i>
+													</td>
+												</tr>
+												<tr>
+													<td>혈액검사</td>
+													<td>백혈구수(WBC)</td>
+													<td>μL</td>
+													<td>정수 ##.##</td>
+													<td>전체</td>
+													<td>2023-08-18</td>
+													<td>SystemAdmin</td>
+													<td>2개 기준 <i class="mdi mdi-plus-box-multiple-outline font-20 ml-10 cursor" onclick="CBC_ADM_MGM_523()"></i></td>
+													<td class="text-center">
+														<i
+															class="mdi mdi-square-edit-outline font-20 cursor mr-1"
+															data-toggle="collapse"
+															data-target="#registStandard"
+															aria-expanded="false"
+															aria-controls="registStandard"
+														></i>
+														<i class="mdi mdi-delete font-20 cursor" onclick="reMindModal()"></i>
+													</td>
+												</tr>
+												<tr>
+													<td>혈액검사</td>
+													<td>백혈구수(WBC)</td>
+													<td>μL</td>
+													<td>정수 ##.##</td>
+													<td>전체</td>
+													<td>2023-08-18</td>
+													<td>SystemAdmin</td>
+													<td>2개 기준 <i class="mdi mdi-plus-box-multiple-outline font-20 ml-10 cursor" onclick="CBC_ADM_MGM_523()"></i></td>
+													<td class="text-center">
+														<i
+															class="mdi mdi-square-edit-outline font-20 cursor mr-1"
+															data-toggle="collapse"
+															data-target="#registStandard"
+															aria-expanded="false"
+															aria-controls="registStandard"
+														></i>
+														<i class="mdi mdi-delete font-20 cursor" onclick="reMindModal()"></i>
+													</td>
+												</tr>
+												<tr>
+													<td>혈액검사</td>
+													<td>백혈구수(WBC)</td>
+													<td>μL</td>
+													<td>정수 ##.##</td>
+													<td>전체</td>
+													<td>2023-08-18</td>
+													<td>SystemAdmin</td>
+													<td>2개 기준 <i class="mdi mdi-plus-box-multiple-outline font-20 ml-10 cursor" onclick="CBC_ADM_MGM_523()"></i></td>
+													<td class="text-center">
+														<i
+															class="mdi mdi-square-edit-outline font-20 cursor mr-1"
+															data-toggle="collapse"
+															data-target="#registStandard"
+															aria-expanded="false"
+															aria-controls="registStandard"
+														></i>
+														<i class="mdi mdi-delete font-20 cursor" onclick="reMindModal()"></i>
+													</td>
+												</tr>
+												<tr>
+													<td>혈액검사</td>
+													<td>백혈구수(WBC)</td>
+													<td>μL</td>
+													<td>정수 ##.##</td>
+													<td>전체</td>
+													<td>2023-08-18</td>
+													<td>SystemAdmin</td>
+													<td>2개 기준 <i class="mdi mdi-plus-box-multiple-outline font-20 ml-10 cursor" onclick="CBC_ADM_MGM_523()"></i></td>
+													<td class="text-center">
+														<i
+															class="mdi mdi-square-edit-outline font-20 cursor mr-1"
+															data-toggle="collapse"
+															data-target="#registStandard"
+															aria-expanded="false"
+															aria-controls="registStandard"
+														></i>
+														<i class="mdi mdi-delete font-20 cursor" onclick="reMindModal()"></i>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<!-- end card-body-->
+								</div>
+								<!-- end card-->
+							</div>
+							<!-- end col -->
+						</div>
+						<!-- end row -->
+
+						<!-- Footer Start -->
+						<footer class="footer">
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-md-6">© HealthConnect Co., Ltd.</div>
+									<div class="col-md-6"></div>
+								</div>
+							</div>
+						</footer>
+						<!-- end Footer -->
+					</div>
+
+					<!-- ============================================================== -->
+					<!-- End Page content -->
+					<!-- ============================================================== -->
+				</div>
+				<!-- END content -->
+
+				<!-- Phase 2.2 -->
+				<!-- 측정항목별 기준치 관리(숫자) -->
+				<div id="CBC-ADM-MGM-523" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true" data-backdrop="static">
+					<div class="modal-dialog modal-custom-large modal-dialog-centered">
+						<div class="modal-content" style="max-height: none">
+							<div class="modal-header modal-colored-header bg-primary">
+								<h4 class="modal-title">측정항목별 기준치 관리</h4>
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+							</div>
+							<div class="modal-body p-0">
+								<div class="custom-box">
+									<div class="horizontal-scrollable">
+										<table class="table user-detail-table table-centered thead-only-gray min-w768 border m-0">
+											<thead class="thead-light">
+												<tr>
+													<th class="text-center">측정구분</th>
+													<th class="text-center">측정항목</th>
+													<th class="text-center">단위</th>
+													<th class="text-center">표시방법</th>
+													<th class="text-center">적용범위</th>
+													<th class="text-center">등록일</th>
+													<th class="text-center">등록자</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td class="text-center">혈액검사</td>
+													<td class="text-center">백혈구수(WBC)</td>
+													<td class="text-center">μL</td>
+													<td class="text-center">정수 ##.##</td>
+													<td class="text-center">전체</td>
+													<td class="text-center">2023-08-18</td>
+													<td class="text-center">SystemAdmin</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<div class="text-right mt-2">
+										<button class="btn btn-primary" data-toggle="collapse" data-target="#registStandard" aria-expanded="false" aria-controls="registStandard">
+											기준치 추가 +
+										</button>
+									</div>
+								</div>
+
+								<div id="registStandard" class="collapse standard-form">
+									<div class="custom-box modal-bg-c pt-2 pb-2 border box-form mt-0 mb-0">
+										<form action="#">
+											<div class="form-row">
+												<div class="form-group d-flex flex-wrap align-items-center mb-0 mt-0 col-md-12">
+													<div class="form-group mb-0 col-lg-2 col-md-12">
+														<label class="col-form-label"><i class="mdi mdi-circle-medium text-danger"></i><b>구분</b></label>
+													</div>
+													<div class="d-flex flex-wrap align-items-center col-lg-10 col-md-12">
+														<div class="form-group mb-0 col-md-3 pl-0">
+															<select class="form-control select-gubun">
+																<option>일반</option>
+																<option>방사형</option>
+															</select>
+														</div>
+														<div class="form-group mb-0 col-lg-2 col-md-12 pl-0">
+															<label class="col-form-label"><i class="mdi mdi-circle-medium text-danger"></i><b>기준 성별</b></label>
+														</div>
+														<div class="col pl-0">
+															<div class="custom-control custom-radio custom-control-inline">
+																<input type="radio" id="customRadio2" name="customRadio1" class="custom-control-input" checked />
+																<label class="custom-control-label" for="customRadio2">무관</label>
+															</div>
+															<div class="custom-control custom-radio custom-control-inline">
+																<input type="radio" id="customRadio3" name="customRadio1" class="custom-control-input" />
+																<label class="custom-control-label" for="customRadio3">남자</label>
+															</div>
+															<div class="custom-control custom-radio custom-control-inline">
+																<input type="radio" id="customRadio4" name="customRadio1" class="custom-control-input" />
+																<label class="custom-control-label" for="customRadio4">여자</label>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="form-row">
+												<div class="form-group d-flex flex-wrap mb-0 align-items-center mt-0 col-md-12">
+													<div class="form-group d-flex justify-content-between align-items-center mb-0 col-lg-2 col-md-12 pr-0">
+														<label class="col-form-label"><i class="mdi mdi-circle-medium text-danger"></i><b>기준 연령</b></label>
+														<div class="checkbox">
+															<div class="custom-control custom-checkbox">
+																<input type="checkbox" class="custom-control-input custom-control-input-success" id="chk" checked />
+																<label class="custom-control-label custom-control-label-success font-13" for="chk">무관</label>
+															</div>
+														</div>
+													</div>
+													<div class="form-row col-lg-10">
+														<div class="form-group mb-0 col-md-3">
+															<input type="text" class="form-control" placeholder="숫자만 입력 가능합니다." disabled />
+														</div>
+														<div class="form-group mb-0 col-md-2">
+															<select class="form-control" disabled>
+																<option>미만</option>
+																<option>이하</option>
+																<option selected>이상</option>
+																<option>초과</option>
+															</select>
+														</div>
+														<div class="form-group mb-0 col-md-2">
+															<select class="form-control select-condition" disabled>
+																<option selected>없음</option>
+																<option>AND</option>
+																<option>OR</option>
+															</select>
+														</div>
+														<div class="form-group mb-0 col-md-3">
+															<input type="text" class="form-control" placeholder="숫자만 입력 가능합니다." disabled />
+														</div>
+														<div class="form-group mb-0 col-md-2">
+															<select class="form-control" disabled>
+																<option>미만</option>
+																<option selected>이하</option>
+																<option>이상</option>
+																<option>초과</option>
+															</select>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="form-row">
+												<div class="form-group d-flex flex-wrap align-items-center mb-0 mt-0 col-md-12">
+													<div class="form-group mb-0 col-lg-2 col-md-12">
+														<label class="col-form-label"><i class="mdi mdi-circle-medium text-danger"></i><b>기준치 범위</b></label>
+													</div>
+													<div class="form-row col-lg-10">
+														<div class="form-group mb-0 col-md-3">
+															<input type="text" class="form-control" placeholder="숫자만 입력 가능합니다." />
+														</div>
+														<div class="form-group mb-0 col-md-2">
+															<select class="form-control">
+																<option>미만</option>
+																<option>이하</option>
+																<option selected>이상</option>
+																<option>초과</option>
+															</select>
+														</div>
+														<div class="form-group mb-0 col-md-2">
+															<select class="form-control select-condition">
+																<option selected>없음</option>
+																<option>AND</option>
+																<option>OR</option>
+															</select>
+														</div>
+														<div class="form-group mb-0 col-md-3">
+															<input type="text" class="form-control" placeholder="숫자만 입력 가능합니다." disabled />
+														</div>
+														<div class="form-group mb-0 col-md-2">
+															<select class="form-control" disabled>
+																<option>미만</option>
+																<option selected>이하</option>
+																<option>이상</option>
+																<option>초과</option>
+															</select>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="form-row">
+												<div class="form-group d-flex flex-wrap align-items-center mb-0 mt-0 col-md-12">
+													<div class="form-group mb-0 col-lg-2 col-md-12">
+														<label class="col-form-label"><i class="mdi mdi-circle-medium text-danger"></i><b>결과구분</b></label>
+													</div>
+													<div class="form-row col-lg-10">
+														<div class="form-group mb-0 col-md-3">
+															<select class="form-control">
+																<option>정상</option>
+																<option>비정상</option>
+															</select>
+														</div>
+														<div class="form-group mb-0 col-md-3">
+															<input type="text" class="form-control" placeholder="결과구분 문구" />
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="form-row">
+												<div class="form-group d-flex flex-wrap align-items-center mb-0 mt-0 col-md-12">
+													<div class="form-group mb-0 col-lg-2 col-md-12">
+														<label class="col-form-label"><i class="mdi mdi-circle-medium text-danger"></i><b>방사형 그래프 점수</b></label>
+													</div>
+													<div class="form-row col-lg-10">
+														<div class="form-group mb-0 col-md-3">
+															<input type="text" class="form-control input-score" placeholder="점수" disabled />
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="text-right pr-3 mt-2">
+												<button class="btn btn-primary">기준치 저장</button>
+											</div>
+										</form>
+									</div>
+								</div>
+
+								<div class="custom-box">
+									<table
+										class="table user-detail-table table-centered table-hover w-100 min-w768 thead-only-gray"
+										id="manage-item-datatable2"
+										style="margin-top: 0 !important"
+									>
+										<colgroup>
+											<col style="width: 7%" />
+											<col style="width: 7%" />
+											<col style="width: 15%" />
+											<col style="width: 15%" />
+											<col style="width: 10%" />
+											<col style="width: 8%" />
+											<col style="width: 8%" />
+											<col style="width: 12%" />
+											<col style="width: 10%" />
+											<col />
+										</colgroup>
+										<thead class="thead-light">
+											<tr>
+												<th>구분</th>
+												<th>성별</th>
+												<th>연령</th>
+												<th>범위</th>
+												<th>결과구분</th>
+												<th>범위 문구</th>
+												<th>점수</th>
+												<th>등록일</th>
+												<th>등록자</th>
+												<th class="text-center">관리</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>일반</td>
+												<td>남</td>
+												<td>무관</td>
+												<td>20이상 and 40미만</td>
+												<td>정상</td>
+												<td>정상</td>
+												<td>-</td>
+												<td>2023-08-18</td>
+												<td>SystemAdmin</td>
+												<td class="text-center">
+													<i
+														class="mdi mdi-square-edit-outline font-20 cursor mr-1"
+														data-toggle="collapse"
+														data-target="#registStandard"
+														aria-expanded="false"
+														aria-controls="registStandard"
+													></i>
+													<i class="mdi mdi-delete font-20 cursor" onclick="reMindModal()"></i>
+												</td>
+											</tr>
+											<tr>
+												<td>일반</td>
+												<td>남</td>
+												<td>무관</td>
+												<td>22이상 and 44이하</td>
+												<td>정상</td>
+												<td>정상</td>
+												<td>-</td>
+												<td>2023-08-18</td>
+												<td>LumiioAdmin</td>
+												<td class="text-center">
+													<i
+														class="mdi mdi-square-edit-outline font-20 cursor mr-1"
+														data-toggle="collapse"
+														data-target="#registStandard"
+														aria-expanded="false"
+														aria-controls="registStandard"
+													></i>
+													<i class="mdi mdi-delete font-20 cursor" onclick="reMindModal()"></i>
+												</td>
+											</tr>
+											<tr>
+												<td>방사형</td>
+												<td>남</td>
+												<td>무관</td>
+												<td>5미만 or 60초과</td>
+												<td>무관</td>
+												<td>-</td>
+												<td>1</td>
+												<td>2023-08-18</td>
+												<td>LumiioAdmin</td>
+												<td class="text-center">
+													<i
+														class="mdi mdi-square-edit-outline font-20 cursor mr-1"
+														data-toggle="collapse"
+														data-target="#registStandard"
+														aria-expanded="false"
+														aria-controls="registStandard"
+													></i>
+													<i class="mdi mdi-delete font-20 cursor" onclick="reMindModal()"></i>
+												</td>
+											</tr>
+											<tr>
+												<td>방사형</td>
+												<td>남</td>
+												<td>무관</td>
+												<td>10이상 and 20미만</td>
+												<td>무관</td>
+												<td>-</td>
+												<td>2</td>
+												<td>2023-08-18</td>
+												<td>LumiioAdmin</td>
+												<td class="text-center">
+													<i
+														class="mdi mdi-square-edit-outline font-20 cursor mr-1"
+														data-toggle="collapse"
+														data-target="#registStandard"
+														aria-expanded="false"
+														aria-controls="registStandard"
+													></i>
+													<i class="mdi mdi-delete font-20 cursor" onclick="reMindModal()"></i>
+												</td>
+											</tr>
+											<tr>
+												<td>방사형</td>
+												<td>남</td>
+												<td>무관</td>
+												<td>20이상 and 30미만</td>
+												<td>무관</td>
+												<td>-</td>
+												<td>3</td>
+												<td>2023-08-18</td>
+												<td>LumiioAdmin</td>
+												<td class="text-center">
+													<i
+														class="mdi mdi-square-edit-outline font-20 cursor mr-1"
+														data-toggle="collapse"
+														data-target="#registStandard"
+														aria-expanded="false"
+														aria-controls="registStandard"
+													></i>
+													<i class="mdi mdi-delete font-20 cursor" onclick="reMindModal()"></i>
+												</td>
+											</tr>
+											<tr>
+												<td>방사형</td>
+												<td>남</td>
+												<td>무관</td>
+												<td>20이상 and 20미만</td>
+												<td>무관</td>
+												<td>-</td>
+												<td>4</td>
+												<td>2023-08-18</td>
+												<td>LumiioAdmin</td>
+												<td class="text-center">
+													<i
+														class="mdi mdi-square-edit-outline font-20 cursor mr-1"
+														data-toggle="collapse"
+														data-target="#registStandard"
+														aria-expanded="false"
+														aria-controls="registStandard"
+													></i>
+													<i class="mdi mdi-delete font-20 cursor" onclick="reMindModal()"></i>
+												</td>
+											</tr>
+											<tr>
+												<td>방사형</td>
+												<td>남</td>
+												<td>무관</td>
+												<td>30이상 and 40미만</td>
+												<td>무관</td>
+												<td>-</td>
+												<td>5</td>
+												<td>2023-08-18</td>
+												<td>LumiioAdmin</td>
+												<td class="text-center">
+													<i
+														class="mdi mdi-square-edit-outline font-20 cursor mr-1"
+														data-toggle="collapse"
+														data-target="#registStandard"
+														aria-expanded="false"
+														aria-controls="registStandard"
+													></i>
+													<i class="mdi mdi-delete font-20 cursor" onclick="reMindModal()"></i>
+												</td>
+											</tr>
+											<tr>
+												<td>일반</td>
+												<td>여</td>
+												<td>무관</td>
+												<td>18이상 and 38미만</td>
+												<td>정상</td>
+												<td>정상</td>
+												<td>-</td>
+												<td>2023-08-18</td>
+												<td>SystemAdmin</td>
+												<td class="text-center">
+													<i
+														class="mdi mdi-square-edit-outline font-20 cursor mr-1"
+														data-toggle="collapse"
+														data-target="#registStandard"
+														aria-expanded="false"
+														aria-controls="registStandard"
+													></i>
+													<i class="mdi mdi-delete font-20 cursor" onclick="reMindModal()"></i>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<!-- /.modal-content -->
+					</div>
+					<!-- /.modal-dialog -->
+				</div>
+
+				<!-- 측정항목별 기준치 관리(Boolean) -->
+				<div id="CBC-ADM-MGM-523-01" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true" data-backdrop="static">
+					<div class="modal-dialog modal-custom-large modal-dialog-centered">
+						<div class="modal-content" style="max-height: none">
+							<div class="modal-header modal-colored-header bg-primary">
+								<h4 class="modal-title">측정항목별 기준치 관리</h4>
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+							</div>
+							<div class="modal-body p-0">
+								<div class="custom-box">
+									<div class="horizontal-scrollable">
+										<table class="table user-detail-table table-centered thead-only-gray min-w768 border m-0">
+											<thead class="thead-light">
+												<tr>
+													<th class="text-center">측정구분</th>
+													<th class="text-center">측정항목</th>
+													<th class="text-center">단위</th>
+													<th class="text-center">표시방법</th>
+													<th class="text-center">적용범위</th>
+													<th class="text-center">등록일</th>
+													<th class="text-center">등록자</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td class="text-center">혈액검사</td>
+													<td class="text-center">혈액종양세포</td>
+													<td class="text-center">없음</td>
+													<td class="text-center">boolean</td>
+													<td class="text-center">Lumiio</td>
+													<td class="text-center">2023-08-18</td>
+													<td class="text-center">SystemAdmin</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<div class="text-right mt-2">
+										<button class="btn btn-primary" data-toggle="collapse" data-target="#registStandard2" aria-expanded="false" aria-controls="registStandard2">
+											기준치 추가 +
+										</button>
+									</div>
+								</div>
+
+								<div id="registStandard2" class="collapse standard-form">
+									<div class="custom-box modal-bg-c pt-2 pb-2 border box-form mt-0 mb-0">
+										<form action="#">
+											<div class="form-row">
+												<div class="form-group d-flex flex-wrap align-items-center mb-0 mt-0 col-md-12">
+													<div class="form-group mb-0 col-lg-2 col-md-12">
+														<label class="col-form-label"><i class="mdi mdi-circle-medium text-danger"></i><b>구분</b></label>
+													</div>
+													<div class="d-flex flex-wrap align-items-center col-lg-10 col-md-12">
+														<div class="form-group mb-0 col-md-3 pl-0">
+															<select class="form-control select-gubun">
+																<option>일반</option>
+																<option>방사형</option>
+															</select>
+														</div>
+														<div class="form-group mb-0 col-lg-2 col-md-12 pl-0">
+															<label class="col-form-label"><i class="mdi mdi-circle-medium text-danger"></i><b>기준 성별</b></label>
+														</div>
+														<div class="col pl-0">
+															<div class="custom-control custom-radio custom-control-inline">
+																<input type="radio" id="customRadio2" name="customRadio1" class="custom-control-input" />
+																<label class="custom-control-label" for="customRadio2">무관</label>
+															</div>
+															<div class="custom-control custom-radio custom-control-inline">
+																<input type="radio" id="customRadio3" name="customRadio1" class="custom-control-input" />
+																<label class="custom-control-label" for="customRadio3">남자</label>
+															</div>
+															<div class="custom-control custom-radio custom-control-inline">
+																<input type="radio" id="customRadio4" name="customRadio1" class="custom-control-input" />
+																<label class="custom-control-label" for="customRadio4">여자</label>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="form-row">
+												<div class="form-group d-flex flex-wrap mb-0 align-items-center mt-0 col-md-12">
+													<div class="form-group d-flex justify-content-between align-items-center mb-0 col-lg-2 col-md-12 pr-0">
+														<label class="col-form-label"><i class="mdi mdi-circle-medium text-danger"></i><b>기준 연령</b></label>
+														<div class="checkbox">
+															<div class="custom-control custom-checkbox">
+																<input type="checkbox" class="custom-control-input custom-control-input-success" id="chk2" checked />
+																<label class="custom-control-label custom-control-label-success font-13" for="chk2">무관</label>
+															</div>
+														</div>
+													</div>
+													<div class="form-row col-lg-10">
+														<div class="form-group mb-0 col-md-3">
+															<input type="text" class="form-control" placeholder="숫자만 입력 가능합니다." disabled />
+														</div>
+														<div class="form-group mb-0 col-md-2">
+															<select class="form-control" disabled>
+																<option>미만</option>
+																<option>이하</option>
+																<option selected>이상</option>
+																<option>초과</option>
+															</select>
+														</div>
+														<div class="form-group mb-0 col-md-2">
+															<select class="form-control select-condition" disabled>
+																<option selected>없음</option>
+																<option>AND</option>
+																<option>OR</option>
+															</select>
+														</div>
+														<div class="form-group mb-0 col-md-3">
+															<input type="text" class="form-control" placeholder="숫자만 입력 가능합니다." disabled />
+														</div>
+														<div class="form-group mb-0 col-md-2">
+															<select class="form-control" disabled>
+																<option>미만</option>
+																<option selected>이하</option>
+																<option>이상</option>
+																<option>초과</option>
+															</select>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="form-row">
+												<div class="form-group d-flex flex-wrap align-items-center mb-0 mt-0 col-md-12">
+													<div class="form-group mb-0 col-lg-2 col-md-12">
+														<label class="col-form-label"><i class="mdi mdi-circle-medium text-danger"></i><b>기준치 범위</b></label>
+													</div>
+													<div class="form-row col-lg-10">
+														<div class="form-group mb-0 col-md-3">
+															<select class="form-control">
+																<option>TRUE</option>
+															</select>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="form-row">
+												<div class="form-group d-flex flex-wrap align-items-center mb-0 mt-0 col-md-12">
+													<div class="form-group mb-0 col-lg-2 col-md-12">
+														<label class="col-form-label"><i class="mdi mdi-circle-medium text-danger"></i><b>결과구분</b></label>
+													</div>
+													<div class="form-row col-lg-10">
+														<div class="form-group mb-0 col-md-3">
+															<select class="form-control">
+																<option>정상</option>
+																<option>비정상</option>
+															</select>
+														</div>
+														<div class="form-group mb-0 col-md-3">
+															<input type="text" class="form-control" placeholder="결과구분 문구" />
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="form-row">
+												<div class="form-group d-flex flex-wrap align-items-center mb-0 mt-0 col-md-12">
+													<div class="form-group mb-0 col-lg-2 col-md-12">
+														<label class="col-form-label"><i class="mdi mdi-circle-medium text-danger"></i><b>방사형 그래프 점수</b></label>
+													</div>
+													<div class="form-row col-lg-10">
+														<div class="form-group mb-0 col-md-3">
+															<input type="text" class="form-control input-score" placeholder="점수" disabled />
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="text-right pr-3 mt-2">
+												<button class="btn btn-primary">기준치 저장</button>
+											</div>
+										</form>
+									</div>
+								</div>
+
+								<div class="custom-box">
+									<table
+										class="table user-detail-table table-centered table-hover w-100 min-w768 thead-only-gray"
+										id="manage-item-datatable2-2"
+										style="margin-top: 0 !important"
+									>
+										<colgroup>
+											<col style="width: 7%" />
+											<col style="width: 7%" />
+											<col style="width: 15%" />
+											<col style="width: 15%" />
+											<col style="width: 10%" />
+											<col style="width: 8%" />
+											<col style="width: 8%" />
+											<col style="width: 12%" />
+											<col style="width: 10%" />
+											<col />
+										</colgroup>
+										<thead class="thead-light">
+											<tr>
+												<th>구분</th>
+												<th>성별</th>
+												<th>연령</th>
+												<th>범위</th>
+												<th>결과구분</th>
+												<th>범위 문구</th>
+												<th>점수</th>
+												<th>등록일</th>
+												<th>등록자</th>
+												<th class="text-center">관리</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>일반</td>
+												<td>무관</td>
+												<td>무관</td>
+												<td>TRUE</td>
+												<td>정상</td>
+												<td>있음</td>
+												<td>-</td>
+												<td>2023-08-18</td>
+												<td>SystemAdmin</td>
+												<td class="text-center">
+													<i
+														class="mdi mdi-square-edit-outline font-20 cursor mr-1"
+														data-toggle="collapse"
+														data-target="#registStandard2"
+														aria-expanded="false"
+														aria-controls="registStandard2"
+													></i>
+													<i class="mdi mdi-delete font-20 cursor" onclick="reMindModal()"></i>
+												</td>
+											</tr>
+											<tr>
+												<td>일반</td>
+												<td>무관</td>
+												<td>무관</td>
+												<td>FALSE</td>
+												<td>비정상</td>
+												<td>없음</td>
+												<td>-</td>
+												<td>2023-08-18</td>
+												<td>LumiioAdmin</td>
+												<td class="text-center">
+													<i
+														class="mdi mdi-square-edit-outline font-20 cursor mr-1"
+														data-toggle="collapse"
+														data-target="#registStandard2"
+														aria-expanded="false"
+														aria-controls="registStandard2"
+													></i>
+													<i class="mdi mdi-delete font-20 cursor" onclick="reMindModal()"></i>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<!-- /.modal-content -->
+					</div>
+					<!-- /.modal-dialog -->
+				</div>
+
+				<!-- 검사항목 등록 -->
+				<div id="CBC-ADM-MGM-521" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true" data-backdrop="static">
+					<div class="modal-dialog modal-lg modal-dialog-centered">
+						<div class="modal-content">
+							<div class="modal-header modal-colored-header bg-primary">
+								<h4 class="modal-title">검사항목 등록</h4>
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+							</div>
+							<div class="modal-body" data-simplebar style="max-height: 600px">
+								<form action="#">
+									<div class="form-group mb-0 mt-0">
+										<label class="col-form-label"><i class="mdi mdi-circle-medium text-danger"></i><b>공개범위</b></label>
+									</div>
+									<div class="form-row">
+										<div class="form-group col-md-12">
+											<select class="form-control">
+												<option>전체</option>
+											</select>
+										</div>
+									</div>
+									<div class="form-row">
+										<div class="form-group col-md-6">
+											<div class="form-group mb-0">
+												<label class="col-form-label"><i class="mdi mdi-circle-medium text-danger"></i><b>측정구분</b></label>
+											</div>
+											<div>
+												<select class="form-control">
+													<option>혈액분석</option>
+												</select>
+											</div>
+										</div>
+										<div class="form-group col-md-6">
+											<div class="form-group mb-0">
+												<label class="col-form-label"><i class="mdi mdi-circle-medium text-danger"></i><b>측정항목</b></label>
+											</div>
+											<div>
+												<select class="form-control">
+													<option>WBC</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="form-group mb-0 mt-0">
+										<label class="col-form-label"><i class="mdi mdi-circle-medium text-danger"></i><b>측정항목명(사용자에게 제공되는 항목명)</b></label>
+									</div>
+									<div class="form-row">
+										<div class="form-group col-md-12">
+											<input type="text" class="form-control" placeholder="항목명을 입력하세요 (Ex: HbA1c)" />
+										</div>
+									</div>
+									<div class="form-row">
+										<div class="form-group col-md-6 select-result-toggle">
+											<div class="form-group mb-0">
+												<label class="col-form-label"><i class="mdi mdi-circle-medium text-danger"></i><b>측정결과 구분</b></label>
+											</div>
+											<div>
+												<select class="form-control">
+													<option>Number</option>
+													<option>Boolean</option>
+												</select>
+											</div>
+										</div>
+										<div class="form-group col-md-6">
+											<div class="form-group mb-0">
+												<label class="col-form-label"><i class="mdi mdi-circle-medium text-danger"></i><b>표시방법</b></label>
+											</div>
+											<div class="select-result">
+												<input type="text" class="form-control" placeholder="##.##" />
+											</div>
+											<div class="select-result" style="display: none">
+												<select class="form-control">
+													<option>있음/없음</option>
+													<option>True/False</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="form-group mb-0">
+										<label class="col-form-label"><i class="mdi mdi-circle-medium text-danger"></i><b>단위</b></label>
+									</div>
+									<div class="form-row">
+										<div class="form-group col-md-12">
+											<input type="text" class="form-control" placeholder="단위를 입력하세요 (Ex: mg/dL)" />
+										</div>
+									</div>
+									<div class="form-group mb-0">
+										<label class="col-form-label"><b>상세설명</b></label>
+									</div>
+									<div class="form-row">
+										<div class="form-group col-md-12">
+											<textarea class="form-control" maxlength="2000" rows="5" placeholder="검사항목에 대한 상세 내용을 입력하세요."></textarea>
+											<div class="text-right mt-1"><span>0</span>/<span>2000</span></div>
+										</div>
+									</div>
+								</form>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-light" data-dismiss="modal">취소</button>
+								<button type="button" class="btn btn-primary" onclick="">등록</button>
+							</div>
+						</div>
+						<!-- /.modal-content -->
+					</div>
+					<!-- /.modal-dialog -->
+				</div>
+
+				<!-- 검사항목 수정 -->
+				<div id="CBC-ADM-MGM-522" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true" data-backdrop="static">
+					<div class="modal-dialog modal-lg modal-dialog-centered">
+						<div class="modal-content">
+							<div class="modal-header modal-colored-header bg-primary">
+								<h4 class="modal-title">검사항목 수정</h4>
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+							</div>
+							<div class="modal-body" data-simplebar style="max-height: 600px">
+								<form action="#">
+									<div class="form-group mb-0 mt-0">
+										<label class="col-form-label"><i class="mdi mdi-circle-medium text-danger"></i><b>공개범위</b></label>
+									</div>
+									<div class="form-row">
+										<div class="form-group col-md-12">
+											<select class="form-control">
+												<option>전체</option>
+											</select>
+										</div>
+									</div>
+									<div class="form-row">
+										<div class="form-group col-md-6">
+											<div class="form-group mb-0">
+												<label class="col-form-label"><i class="mdi mdi-circle-medium text-danger"></i><b>측정구분</b></label>
+											</div>
+											<div>
+												<select class="form-control">
+													<option>혈액분석</option>
+												</select>
+											</div>
+										</div>
+										<div class="form-group col-md-6">
+											<div class="form-group mb-0">
+												<label class="col-form-label"><i class="mdi mdi-circle-medium text-danger"></i><b>측정항목</b></label>
+											</div>
+											<div>
+												<select class="form-control">
+													<option>WBC</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="form-group mb-0 mt-0">
+										<label class="col-form-label"><i class="mdi mdi-circle-medium text-danger"></i><b>측정항목명(사용자에게 제공되는 항목명)</b></label>
+									</div>
+									<div class="form-row">
+										<div class="form-group col-md-12">
+											<input type="text" class="form-control" placeholder="항목명을 입력하세요 (Ex: HbA1c)" />
+										</div>
+									</div>
+									<div class="form-row">
+										<div class="form-group col-md-6 select-result-toggle">
+											<div class="form-group mb-0">
+												<label class="col-form-label"><i class="mdi mdi-circle-medium text-danger"></i><b>측정결과 구분</b></label>
+											</div>
+											<div>
+												<select class="form-control">
+													<option>Number</option>
+													<option>Boolean</option>
+												</select>
+											</div>
+										</div>
+										<div class="form-group col-md-6">
+											<div class="form-group mb-0">
+												<label class="col-form-label"><i class="mdi mdi-circle-medium text-danger"></i><b>표시방법</b></label>
+											</div>
+											<div class="select-result">
+												<input type="text" class="form-control" placeholder="##.##" />
+											</div>
+											<div class="select-result" style="display: none">
+												<select class="form-control">
+													<option>있음/없음</option>
+													<option>True/False</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="form-group mb-0">
+										<label class="col-form-label"><i class="mdi mdi-circle-medium text-danger"></i><b>단위</b></label>
+									</div>
+									<div class="form-row">
+										<div class="form-group col-md-12">
+											<input type="text" class="form-control" placeholder="단위를 입력하세요 (Ex: mg/dL)" />
+										</div>
+									</div>
+									<div class="form-group mb-0">
+										<label class="col-form-label"><b>상세설명</b></label>
+									</div>
+									<div class="form-row">
+										<div class="form-group col-md-12">
+											<textarea class="form-control" maxlength="2000" rows="5" placeholder="검사항목에 대한 상세 내용을 입력하세요."></textarea>
+											<div class="text-right mt-1"><span>0</span>/<span>2000</span></div>
+										</div>
+									</div>
+								</form>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-light" data-dismiss="modal">취소</button>
+								<button type="button" class="btn btn-primary" onclick="">등록</button>
+							</div>
+						</div>
+						<!-- /.modal-content -->
+					</div>
+					<!-- /.modal-dialog -->
+				</div>
+
+				<div style="position: fixed; bottom: 0; right: 500px; background: rgba(0, 0, 0, 0.5); width: 500px; padding: 20px; z-index: 100">
+					<a href="javascript:void(0)" onclick="CBC_ADM_MGM_521()" style="color: #fff">CBC-ADM-MGM-521 : 검사항목 등록</a><br />
+					<a href="javascript:void(0)" onclick="CBC_ADM_MGM_522()" style="color: #fff">CBC-ADM-MGM-522 : 검사항목 수정</a><br />
+					<a href="javascript:void(0)" onclick="CBC_ADM_MGM_523()" style="color: #fff">CBC-ADM-MGM-523 : 측정항목별 기준치 관리(숫자)</a><br />
+					<a href="javascript:void(0)" onclick="CBC_ADM_MGM_523_01()" style="color: #fff">CBC-ADM-MGM-523-01 : 측정항목별 기준치 관리(Boolean)</a><br />
+				</div>
+				<!-- //Phase 2.2 -->
+				<!-- //아델리 -->
+
+				<div data-include-html="modal/account.html"></div>
+				<div data-include-html="modal/setting.html"></div>
+				<div data-include-html="modal/password.html"></div>
+
+				<div data-include-html="modal/error.html"></div>
+				<div data-include-html="modal/confirm.html"></div>
+
+				<div class="slbElement" style="display: none" id="custom-sbl">
+					<div class="slbOverlay"></div>
+					<div class="slbWrapOuter">
+						<div class="slbWrap">
+							<div class="slbContentOuter">
+								<div class="slbContent">
+									<div class="slbImageWrap"><img class="slbImage" src="resource/images/small/small-1.jpg" id="sbl-image" /></div>
+								</div>
+								<button type="button" title="Close" class="slbCloseBtn" id="close-sbl">×</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<script src="resource/js/vendor.min.js"></script>
+				<script src="resource/js/app.min.js"></script>
+
+				<script src="resource/js/vendor/jquery.dataTables.min.js"></script>
+				<script src="resource/js/vendor/dataTables.bootstrap4.js"></script>
+				<script src="resource/js/vendor/dataTables.responsive.min.js"></script>
+				<script src="resource/js/vendor/responsive.bootstrap4.min.js"></script>
+				<script src="resource/js/vendor/apexcharts.min.js"></script>
+				<script src="resource/js/vendor/dataTables.checkboxes.min.js"></script>
+				<script src="resource/lib/simplelightbox/simpleLightbox.min.js"></script>
+				<script src="resource/js/vendor/dragula.min.js"></script>
+				<script src="resource/js/ui/component.dragula.js"></script>
+
+				<script src="resource/js/common.js"></script>
+				<script>
+					function updateUserPassword() {
+						$('#login-password-modal').modal('hide');
+					}
+
+					function showMyAccountDlg() {
+						$('#my-info-modal').modal('show');
+					}
+
+					function updateLoginPasswordDlg() {
+						$('#login-password-modal').modal('show');
+					}
+
+					function showSettingDlg() {
+						$('#setting-modal').modal('show');
+					}
+
+					function updateUserInfo() {
+						$('#my-info-modal').modal('hide');
+						$('#success-alert-modal').modal('show');
+					}
+
+					function errorAlertModal() {
+						$('#error-alert-modal').modal('show');
+					}
+					function reMindModal() {
+						$('#confirm-modal').modal('show');
+					}
+
+					// Phase 2.2
+					// 아델리
+
+					function CBC_ADM_MGM_521() {
+						$('#CBC-ADM-MGM-521').modal('show');
+					}
+					function CBC_ADM_MGM_522() {
+						$('#CBC-ADM-MGM-522').modal('show');
+					}
+					function CBC_ADM_MGM_523() {
+						$('#CBC-ADM-MGM-523').modal('show');
+					}
+
+					function CBC_ADM_MGM_523_01() {
+						$('#CBC-ADM-MGM-523-01').modal('show');
+					}
+
+					$('.select-result-toggle select').on('change', function () {
+						var idx = this.selectedIndex;
+						var obj = $(this).closest('.select-result-toggle');
+						$(obj).next().find('.select-result').eq(idx).show().siblings('.select-result').hide();
+					});
+
+					$('#manage-item-datatable').DataTable({
+						scrollX: true,
+						language: {
+							searchPlaceholder: '세부항목명을 입력하세요',
+							paginate: {
+								previous: "<i class='mdi mdi-chevron-left'>",
+								next: "<i class='mdi mdi-chevron-right'>",
+							},
+							info: ' _PAGE_ / _PAGES_ Pages',
+							sSearch:
+								"검색: <select class='form-control d-inline-block ml-1' style='width:150px;'><option >그룹전체</option><option >그룹1</option><option >그룹2</option></select> <select class='form-control d-inline-block w-auto ml-1' style='width:150px;'><option >항목</option>",
+							lengthMenu:
+								'<select class=\'form-control mr-1\'><option value="10">10</option><option value="20">20</option><option value="-1">All</option></select> 개 씩 보기 <a href="javascript:void(0);" class="btn btn-primary btn-sm ml-2"  onclick="CBC_ADM_MGM_521()">신규 등록</a>',
+						},
+						pageLength: 10,
+						columns: [
+							{ orderable: !0 },
+							{ orderable: !0 },
+							{ orderable: !1 },
+							{ orderable: !1 },
+							{ orderable: !1 },
+							{ orderable: !0 },
+							{ orderable: !0 },
+							{ orderable: !1 },
+							{ orderable: !1 },
+						],
+						drawCallback: function () {
+							$('.dataTables_paginate > .pagination').addClass('pagination-rounded float-right');
+						},
+					});
+
+					$('#manage-item-datatable2').DataTable({
+						scrollX: true,
+						scrollY: '230px',
+						scrollCollapse: true,
+						paging: false,
+						searching: false,
+						info: false,
+						columns: [
+							{ orderable: !1 },
+							{ orderable: !1 },
+							{ orderable: !1 },
+							{ orderable: !1 },
+							{ orderable: !1 },
+							{ orderable: !1 },
+							{ orderable: !1 },
+							{ orderable: !1 },
+							{ orderable: !0 },
+							{ orderable: !1 },
+						],
+						order: [[8, 'desc']],
+					});
+
+					$('#manage-item-datatable2-2').DataTable({
+						scrollX: true,
+						scrollY: '230px',
+						scrollCollapse: true,
+						paging: false,
+						searching: false,
+						info: false,
+						columns: [
+							{ orderable: !1 },
+							{ orderable: !1 },
+							{ orderable: !1 },
+							{ orderable: !1 },
+							{ orderable: !1 },
+							{ orderable: !1 },
+							{ orderable: !1 },
+							{ orderable: !1 },
+							{ orderable: !0 },
+							{ orderable: !1 },
+						],
+						order: [[8, 'desc']],
+					});
+
+					$('#manage-item-datatable2-3').DataTable({
+						scrollX: true,
+						scrollY: '230px',
+						scrollCollapse: true,
+						paging: false,
+						searching: false,
+						info: false,
+						columns: [
+							{ orderable: !1 },
+							{ orderable: !1 },
+							{ orderable: !1 },
+							{ orderable: !1 },
+							{ orderable: !1 },
+							{ orderable: !1 },
+							{ orderable: !1 },
+							{ orderable: !1 },
+							{ orderable: !0 },
+							{ orderable: !1 },
+						],
+						order: [[8, 'desc']],
+					});
+
+					// form check test
+					$('.standard-form .select-gubun').on('change', function () {
+						var formobj = $(this).closest('.standard-form');
+						var idx = this.selectedIndex;
+						idx == 0 ? $(formobj).find('.input-score').prop('disabled', true) : $(formobj).find('.input-score').prop('disabled', false);
+					});
+					$('.standard-form .select-condition').on('change', function () {
+						var idx = this.selectedIndex;
+						idx == 0
+							? $(this).closest('.form-group').nextAll('.form-group').find('input, select').prop('disabled', true)
+							: $(this).closest('.form-group').nextAll('.form-group').find('input, select').prop('disabled', false);
+					});
+					$('.standard-form input[type=checkbox]').on('change', function () {
+						var bl = $(this).prop('checked');
+						var formobj = $(this).closest('.form-group');
+						if (bl) {
+							$(formobj).next().find('input, select').prop('disabled', true);
+						} else {
+							$(formobj).next().find('input, select').prop('disabled', false);
+							var selectedidx = $(formobj).next().find('.select-condition option:selected').index();
+							if (selectedidx == 0) {
+								$(formobj).next().find('input, select').eq(-1).prop('disabled', true);
+								$(formobj).next().find('input, select').eq(-2).prop('disabled', true);
+							}
+						}
+					});
+				</script>
+			</div>
+		</div>
+	</body>
+</html>

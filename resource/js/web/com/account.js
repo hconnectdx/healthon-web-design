@@ -5,6 +5,9 @@ function updateMyAccount(){
     let managementHpNo = $("#accountForm_managementHpNo").val();
     let managementPasswd = $("#accountForm_managementPasswd").val();
 
+    console.log($('#mddpSelect').length); // 1 : 존재 , 0 : 존재하지않음
+
+
     var form = $('#accountForm')[0];
     var formData = new FormData(form);
 
@@ -20,6 +23,12 @@ function updateMyAccount(){
         $("#error-alert-modal").modal('show');
         $("#e_content").html(i18n('management.web.user.new.pop.lastname.null.txt.txt'));
         return false;
+    }else if($('#mddpSelect').length > 0 && isEmpty($("#mddpSelect option:selected").val())) {
+        // 진료과 항목이 존재하지만, 선택하지 않은 경우
+        $("#error-alert-modal").modal('show');
+        $("#e_title").html(i18n('common.txt.register.fail.missing.input'));
+        $("#e_content").html(i18n('management.checkup.null.pop.mddp.txt'));
+         return;
     } else if(isEmpty(managementHpNo)) {
         $("#error-alert-modal").modal('show');
         $("#e_content").html(i18n('management.web.user.new.pop.mobile.null.txt.txt'));
@@ -29,7 +38,6 @@ function updateMyAccount(){
         $("#e_content").html(i18n('management.web.user.new.pop.login.password.null.txt.txt'));
         return false;
     } else {
-
         $.ajax({
             url : "/com/modal/set_my_account",
             type : "POST",

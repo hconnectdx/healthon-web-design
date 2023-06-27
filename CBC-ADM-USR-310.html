@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>사용자관리</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+		<meta content="Coderthemes" name="author" />
+		<!-- App favicon -->
+		<link rel="shortcut icon" href="resource/images/favicon.ico" />
+
+		<!-- App css -->
+		<link href="resource/css/icons.min.css" rel="stylesheet" type="text/css" />
+		<link href="resource/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
+		<link href="resource/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
+
+		<link href="resource/css/vendor/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" />
+		<link href="resource/css/vendor/responsive.bootstrap4.css" rel="stylesheet" type="text/css" />
+		<link href="resource/lib/simplelightbox/simpleLightbox.min.css" rel="stylesheet" type="text/css" />
+
+		<link href="resource/css/base.css" rel="stylesheet" type="text/css" />
+		<link href="resource/css/common.css" rel="stylesheet" type="text/css" />
+	</head>
+
+	<body
+		class="loading"
+		data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'
+	>
+		<!-- Begin page -->
+		<div class="wrapper">
+			<!-- ========== Left Sidebar Start ========== -->
+			<div class="left-side-menu">
+				<!-- LOGO -->
+				<a href="main.html" class="logo logo-light logo-text" style="align-items: center">
+					<span class="logo-lg">
+						<img src="resource/images/lumiio-logo.png" alt="" height="20" />
+					</span>
+					<span class="logo-sm">
+						<img src="resource/images/logo_sm.png" alt="" height="16" />
+					</span>
+				</a>
+				<!-- LOGO -->
+				<a href="main.html" class="logo logo-dark logo-text" style="align-items: center">
+					<span class="logo-lg">
+						<img src="resource/images/logo-dark.png" alt="" height="20" />
+					</span>
+					<span class="logo-sm">
+						<img src="resource/images/logo_sm_dark.png" alt="" height="16" />
+					</span>
+				</a>
+
+				<div class="h-100" id="left-side-menu-container" data-simplebar>
+					<!--- Sidemenu -->
+					<ul class="metismenu side-nav">
+						<li class="side-nav-title side-nav-item">Navigation</li>
+						<li class="side-nav-item">
+							<a href="main.html" class="side-nav-link">
+								<i class="uil-presentation-lines-alt"></i>
+								<span> Dashboards </span>
+							</a>
+						</li>
+						<li class="side-nav-item">
+							<a href="#" class="side-nav-link">
+								<i class="uil-users-alt"></i>
+								<span> 사용자관리 </span>
+								<span class="menu-arrow"></span>
+							</a>
+							<ul class="side-nav-second-level" aria-expanded="false">
+								<li>
+									<a href="users.html">전체사용자</a>
+								</li>
+								<li>
+									<a href="auth01.html">승인 관리</a>
+								</li>
+								<li>
+									<a href="send_message.html">메시지관리</a>
+								</li>
+								<li>
+									<a href="message_list.html">메세지 발송 이력</a>
+								</li>
+							</ul>
+						</li>
+						<li class="side-nav-item">
+							<a href="javascript: void(0);" class="side-nav-link">
+								<i class="uil uil-image"></i>
+								<span> 콘텐츠관리 </span>
+								<span class="menu-arrow"></span>
+							</a>
+							<ul class="side-nav-second-level" aria-expanded="false">
+								<li>
+									<a href="sys_content.html">콘텐츠관리</a>
+								</li>
+								<li>
+									<a href="sys_video.html">동영상 관리</a>
+								</li>
+								<li>
+									<a href="sdf.html">줄넘기 팁 관리</a>
+								</li>
+							</ul>
+						</li>
+						<li class="side-nav-item">
+							<a href="javascript: void(0);" class="side-nav-link">
+								<i class="uil-game-structure"></i>
+								<span> 시스템운영 </span>
+								<span class="menu-arrow"></span>
+							</a>
+							<ul class="side-nav-second-level" aria-expanded="false">
+								<li>
+									<a href="sys_group.html">그룹관리</a>
+								</li>
+								<li>
+									<a href="sys_webuser.html">웹 사용자관리</a>
+								</li>
+								<li>
+									<a href="sys_version.html">버전관리</a>
+								</li>
+								<li>
+									<a href="sys_appoint.html">약관 관리</a>
+								</li>
+								<li>
+									<a href="sys_service.html">서비스 문의</a>
+								</li>
+								<li>
+									<a href="sys_connecthistory.html">접속 이력 관리</a>
+								</li>
+								<li>
+									<a href=".html">결제 관리</a>
+								</li>
+								<li>
+									<a href="sys_checkitem.html">검사 항목관리</a>
+								</li>
+								<li>
+									<a href="sys_note.html">공지사항 관리</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<div class="clearfix"></div>
+				</div>
+				<!-- Sidebar -left -->
+			</div>
+			<!-- Left Sidebar End -->
+
+			<!-- ============================================================== -->
+			<!-- Start Page Content here -->
+			<!-- ============================================================== -->
+
+			<div class="content-page">
+				<div class="content">
+					<!-- Topbar Start -->
+					<div class="navbar-custom">
+						<ul class="list-unstyled topbar-right-menu float-right mb-0">
+							<li class="dropdown notification-list d-lg-none">
+								<a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+									<i class="dripicons-search noti-icon"></i>
+								</a>
+								<div class="dropdown-menu dropdown-menu-animated dropdown-lg p-0">
+									<form class="p-3">
+										<input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username" />
+									</form>
+								</div>
+							</li>
+
+							<li class="dropdown notification-list">
+								<a
+									class="nav-link dropdown-toggle nav-user arrow-none mr-0"
+									data-toggle="dropdown"
+									href="#"
+									role="button"
+									aria-haspopup="false"
+									aria-expanded="false"
+								>
+									<span class="account-user-avatar">
+										<img src="resource/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle" />
+									</span>
+									<span>
+										<span class="account-user-name">James Kim</span>
+										<span class="account-position">의사 <i class="dripicons-chevron-down"></i></span>
+									</span>
+								</a>
+								<div class="dropdown-menu dropdown-menu-right dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
+									<!-- item-->
+									<a href="javascript:void(0);" onclick="showMyAccountDlg()" class="dropdown-item notify-item">
+										<i class="mdi mdi-account-circle mr-1"></i>
+										<span>My Account</span>
+									</a>
+
+									<!-- item-->
+									<a href="javascript:void(0);" onclick="showSettingDlg()" class="dropdown-item notify-item">
+										<i class="mdi mdi-account-edit mr-1"></i>
+										<span>Settings</span>
+									</a>
+									<!-- item-->
+									<a href="login.html" class="dropdown-item notify-item">
+										<i class="mdi mdi-logout mr-1"></i>
+										<span>Logout</span>
+									</a>
+								</div>
+							</li>
+						</ul>
+						<button class="button-menu-mobile open-left disable-btn">
+							<i class="mdi mdi-menu"></i>
+						</button>
+						<h4 class="page-title color-title float-left mt-3">전체 사용자</h4>
+						<div class="app-search dropdown d-none d-lg-block float-right">
+							<form>
+								<div class="input-group">
+									<input type="text" class="form-control dropdown-toggle" placeholder="사용자를 검색할수 있습니다." id="top-search" />
+									<span class="mdi mdi-magnify search-icon"></span>
+									<div class="input-group-append">
+										<button class="btn btn-primary" type="submit">검색</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					<!-- end Topbar -->
+					<!-- Start Content-->
+					<div class="container-fluid">
+						<!-- start page title -->
+						<div class="row">
+							<div class="col-12">
+								<div class="page-title-box">
+									<div class="page-title-right">
+										<ol class="breadcrumb m-0 pt-0">
+											<li class="breadcrumb-item"><a href="javascript: void(0);">사용자 관리</a></li>
+											<li class="breadcrumb-item">전체 사용자</li>
+										</ol>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- end page title -->
+						<div class="row" id="main-container">
+							<!-- end col -->
+						</div>
+
+						<!-- Footer Start -->
+						<footer class="footer">
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-md-6">© HealthConnect Co., Ltd.</div>
+									<div class="col-md-6"></div>
+								</div>
+							</div>
+						</footer>
+						<!-- end Footer -->
+					</div>
+
+					<!-- ============================================================== -->
+					<!-- End Page content -->
+					<!-- ============================================================== -->
+				</div>
+				<!-- END content -->
+
+				<!-- Phase 2.2 -->
+				<!-- 아델리 -->
+				<div id="CBC-ADM-USR-300" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true" data-backdrop="static">
+					<div class="modal-dialog modal-lg modal-dialog-centered">
+						<div class="modal-content">
+							<div class="modal-header modal-colored-header bg-primary">
+								<h4 class="modal-title">사용자정보 수정/삭제</h4>
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+							</div>
+							<div class="modal-body" data-simplebar style="max-height: 600px">
+								<form action="#">
+									<!-- 그룹(의료기관) 선택 콤보박스 -->
+									<div class="form-row">
+										<div class="form-group col-md-6 mb-0">
+											<label class="col-form-label"><i class="mdi mdi-circle-medium text-danger"></i><b>그룹</b></label>
+										</div>
+										<div class="form-group col-md-6 text-right mb-0" style="line-height: 38px">
+											<span class="float-right font-13"><i class="mdi mdi-circle-medium text-danger"></i>필수입력</span>
+										</div>
+									</div>
+									<div class="form-row">
+										<div class="form-group col-md-6">
+											<select class="form-control" disabled>
+												<option>ABCDE Hospital</option>
+												<option>ABCDE Hospital</option>
+												<option>ABCDE Hospital</option>
+												<option>ABCDE Hospital</option>
+												<option>ABCDE Hospital</option>
+											</select>
+										</div>
+									</div>
+									<!-- 이름 입력 영역 -->
+									<div class="form-group mb-0 mt-0">
+										<label class="col-form-label"><i class="mdi mdi-circle-medium text-danger"></i><b>이름</b></label>
+									</div>
+									<div class="form-row">
+										<div class="form-group col-md-6">
+											<input type="text" class="form-control" placeholder="성을 입력하세요." value="이" />
+										</div>
+										<div class="form-group col-md-6">
+											<input type="text" class="form-control" placeholder="이름을 입력하세요." value="강규" />
+										</div>
+									</div>
+									<!-- 성별 선택 라디오박스 -->
+									<div class="form-group mb-0">
+										<label class="col-form-label"><i class="mdi mdi-circle-medium text-danger"></i><b>성별</b></label>
+									</div>
+									<div>
+										<div class="custom-control custom-radio custom-control-inline">
+											<input type="radio" id="customRadio3" name="customRadio1" class="custom-control-input" checked />
+											<label class="custom-control-label" for="customRadio3">남자</label>
+										</div>
+										<div class="custom-control custom-radio custom-control-inline">
+											<input type="radio" id="customRadio4" name="customRadio1" class="custom-control-input" />
+											<label class="custom-control-label" for="customRadio4">여자</label>
+										</div>
+									</div>
+									<!-- 병록번호(수진번호) 입력 영역 -->
+									<div class="form-group mb-0 mt-2">
+										<label class="col-form-label"><i class="mdi mdi-circle-medium text-danger"></i><b>병록번호(수진번호)</b></label>
+									</div>
+									<div class="form-row">
+										<div class="form-group col-md-9">
+											<input type="text" class="form-control" placeholder="병록번호를 입력하세요." value="226635204" />
+										</div>
+										<div class="form-group col-md-3">
+											<button class="btn btn-secondary form-control" type="button">중복확인</button>
+										</div>
+									</div>
+									<!-- 모바일 연락처 입력 영역 -->
+									<div class="form-group mb-0">
+										<label class="col-form-label"><i class="mdi mdi-circle-medium text-danger"></i><b>모바일 연락처</b></label>
+									</div>
+									<div class="form-row">
+										<div class="form-group col-md-3">
+											<select class="form-control">
+												<option>+82</option>
+											</select>
+										</div>
+										<div class="form-group col-md-9">
+											<input type="text" class="form-control" placeholder="'-'를 빼고 숫자만 입력하세요" value="01023456789" />
+										</div>
+									</div>
+									<!-- 생년월일 입력 영역 -->
+									<div class="form-group mb-0">
+										<label class="col-form-label"><i class="mdi mdi-circle-medium text-danger"></i><b>생년월일</b></label>
+									</div>
+									<div class="form-row">
+										<div class="form-group col-md-12">
+											<input type="text" class="form-control" placeholder="19920303 형태로 년월일 숫자만 입력하세요." value="20180303" />
+										</div>
+									</div>
+									<!-- 비고 입력 영역 -->
+									<div class="form-group mb-0">
+										<label class="col-form-label"><b>비고</b></label>
+									</div>
+									<div class="form-row">
+										<div class="form-group col-md-12">
+											<input type="text" class="form-control" placeholder="내용을 입력하세요." value="" />
+										</div>
+									</div>
+								</form>
+							</div>
+							<!-- 버튼 -->
+							<div class="modal-footer">
+								<button type="button" class="btn btn-light" data-dismiss="modal">취소</button>
+								<button type="button" class="btn btn-primary" onclick="reMindModal();">삭제</button>
+								<button type="button" class="btn btn-primary" onclick="successModal();">수정</button>
+							</div>
+						</div>
+						<!-- /.modal-content -->
+					</div>
+					<!-- /.modal-dialog -->
+				</div>
+
+				<div style="position: fixed; bottom: 0; right: 500px; background: rgba(0, 0, 0, 0.5); width: 500px; padding: 20px; z-index: 100">
+					<a href="javascript:void(0)" onclick="CBC_ADM_USR_300()" style="color: #fff">CBC-ADM-USR-300 : 사용자 등록</a><br />
+				</div>
+				<!-- //Phase 2.2 -->
+				<!-- //아델리 -->
+
+				<div data-include-html="modal/account.html"></div>
+				<div data-include-html="modal/setting.html"></div>
+				<div data-include-html="modal/password.html"></div>
+
+				<div data-include-html="modal/error.html"></div>
+				<div data-include-html="modal/confirm.html"></div>
+				<div data-include-html="modal/success.html"></div>
+
+				<div class="slbElement" style="display: none" id="custom-sbl">
+					<div class="slbOverlay"></div>
+					<div class="slbWrapOuter">
+						<div class="slbWrap">
+							<div class="slbContentOuter">
+								<div class="slbContent">
+									<div class="slbImageWrap"><img class="slbImage" src="resource/images/small/small-1.jpg" id="sbl-image" /></div>
+								</div>
+								<button type="button" title="Close" class="slbCloseBtn" id="close-sbl">×</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<script src="resource/js/vendor.min.js"></script>
+				<script src="resource/js/app.min.js"></script>
+
+				<script src="resource/js/vendor/jquery.dataTables.min.js"></script>
+				<script src="resource/js/vendor/dataTables.bootstrap4.js"></script>
+				<script src="resource/js/vendor/dataTables.responsive.min.js"></script>
+				<script src="resource/js/vendor/responsive.bootstrap4.min.js"></script>
+				<script src="resource/js/vendor/apexcharts.min.js"></script>
+				<script src="resource/js/vendor/dataTables.checkboxes.min.js"></script>
+				<script src="resource/lib/simplelightbox/simpleLightbox.min.js"></script>
+				<script src="resource/js/vendor/dragula.min.js"></script>
+				<script src="resource/js/ui/component.dragula.js"></script>
+
+				<script src="resource/js/common.js"></script>
+				<script>
+					function updateUserPassword() {
+						$('#login-password-modal').modal('hide');
+					}
+
+					function showMyAccountDlg() {
+						$('#my-info-modal').modal('show');
+					}
+
+					function updateLoginPasswordDlg() {
+						$('#login-password-modal').modal('show');
+					}
+
+					function showSettingDlg() {
+						$('#setting-modal').modal('show');
+					}
+
+					function updateUserInfo() {
+						$('#my-info-modal').modal('hide');
+						$('#success-alert-modal').modal('show');
+					}
+
+					function errorAlertModal() {
+						$('#error-alert-modal').modal('show');
+					}
+
+					function reMindModal() {
+						$('#confirm-modal').modal('show');
+					}
+
+					function successModal() {
+						$('#success-alert-modal').modal('show');
+					}
+
+					// Phase 2.2
+					// 아델리
+					function CBC_ADM_USR_300() {
+						$('#CBC-ADM-USR-300').modal('show');
+					}
+
+					CBC_ADM_USR_300();
+				</script>
+			</div>
+		</div>
+	</body>
+</html>

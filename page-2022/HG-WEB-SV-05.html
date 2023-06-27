@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>설문관리_슈퍼관리자</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+		<meta content="Coderthemes" name="author" />
+		<!-- App favicon -->
+		<link rel="shortcut icon" href="/resource/images/favicon.ico" />
+
+		<!-- App css -->
+		<link href="/resource/css/icons.min.css" rel="stylesheet" type="text/css" />
+		<link href="/resource/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
+		<link href="/resource/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
+
+		<link href="/resource/css/vendor/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" />
+		<link href="/resource/css/vendor/responsive.bootstrap4.css" rel="stylesheet" type="text/css" />
+		<link href="/resource/css/vendor/summernote-bs4.css" rel="stylesheet" type="text/css" />
+
+		<link href="/resource/css/base.css" rel="stylesheet" type="text/css" />
+		<link href="/resource/css/common.css" rel="stylesheet" type="text/css" />
+	</head>
+
+	<body class="loading">
+		<div class="survey p-2 p-xl-5">
+			<div class="card">
+				<div class="card-header"><strong class="text-secondary" style="font-size: 16px">응답자 정보</strong></div>
+				<div class="card-body">
+					<p class="d-xl-inline-block m-xl-0 mr-xl-5">
+						<strong class="mr-3">응답일시</strong>
+						2022-09-26
+					</p>
+					<p class="d-xl-inline-block m-xl-0 mr-xl-5">
+						<strong class="mr-3">생년월일</strong>
+						1993-01-01 (만 29세)
+					</p>
+					<p class="d-xl-inline-block m-xl-0 mr-xl-5">
+						<strong class="mr-3">성별</strong>
+						여
+					</p>
+					<p class="d-xl-inline-block m-xl-0 mr-xl-5">
+						<strong class="mr-3">그룹</strong>
+						서울대학교병원
+					</p>
+				</div>
+			</div>
+
+			<div class="card">
+				<div class="card-header"><strong class="text-secondary" style="font-size: 16px">상세 응답 조회</strong></div>
+				<div class="card-body">
+					<h5 class="card-title"><strong style="font-size: 20px; color: #464d55">수면평가 설문지 PSQI</strong></h5>
+					<div class="overflow-auto mb-2">
+						<table class="table table-hover border-bottom mb-0 survey__table" style="min-width: 1400px">
+							<colgroup>
+								<col style="width: 6%" />
+								<col style="width: 6%" />
+								<col style="width: 6%" />
+								<col style="width: 50%" />
+								<col style="width: 14%" />
+								<col style="width: 6%" />
+								<col style="width: 6%" />
+								<col style="width: 6%" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th class="text-center">문항 분류</th>
+									<th class="text-center">문항 순서</th>
+									<th class="text-center">문항 코드</th>
+									<th>문항</th>
+									<th>답변</th>
+									<th class="text-center">점수</th>
+									<th class="text-center">합계</th>
+									<th class="text-center">환산 점수</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="text-center"></td>
+									<td class="text-center">1</td>
+									<td class="text-center">1*</td>
+									<td>
+										지난 한달 동안, 당신은 평소 몇 시에 잠자리에 들었습니까? 지난 한달 동안, 당신은 평소 몇 시에 잠자리에 들었습니까? 지난 한달 동안, 당신은
+										평소 몇 시에 잠자리에 들었습니까? 지난 한달 동안, 당신은 평소 몇 시에 잠자리에 들었습니까? 지난 한달 동안, 당신은 평소 몇 시에 잠자리에
+										들었습니까? 지난 한달 동안, 당신은 평소 몇 시에 잠자리에 들었습니까?
+									</td>
+									<td>13</td>
+									<td class="text-center"></td>
+									<td class="text-center"></td>
+									<td class="text-center"></td>
+								</tr>
+								<tr>
+									<td class="text-center" rowspan="2">2</td>
+									<td class="text-center">2</td>
+									<td class="text-center">2-(1)</td>
+									<td>지난 한달 동안, 당신은 밤에 잠자리에 들어서 잠이 들기까지 보통 얼마나 오래 걸렸습니까?</td>
+									<td>16-30분</td>
+									<td class="text-center">1</td>
+									<td class="text-center align-middle" rowspan="2">3</td>
+									<td class="text-center text-primary align-middle" rowspan="2">2</td>
+								</tr>
+								<tr>
+									<td class="text-center border-0">3</td>
+									<td class="text-center border-0">2-(2)</td>
+									<td class="border-0">지난 한달 동안, 취침 후 30분 이내에 잠이 들지 못하는 경우가 얼마나 자주 있었습니까?</td>
+									<td class="border-0">한주에 1-2번 정도</td>
+									<td class="text-center border-0">2</td>
+								</tr>
+								<tr>
+									<td class="text-center">3</td>
+									<td class="text-center">4</td>
+									<td class="text-center">3</td>
+									<td>지난 한달 동안, 당신은 평소 아침 몇시에 일어났습니까?</td>
+									<td>7</td>
+									<td class="text-center">7</td>
+									<td class="text-center">7</td>
+									<td class="text-center text-primary">0</td>
+								</tr>
+								<tr>
+									<td class="text-center">4</td>
+									<td class="text-center">5</td>
+									<td class="text-center">4</td>
+									<td>지난 한달 동안, 당신은 밤에 실제로 잠잔 시간은 몇 시간입니까?</td>
+									<td>5</td>
+									<td class="text-center">70</td>
+									<td class="text-center">70</td>
+									<td class="text-center text-primary">2</td>
+								</tr>
+								<tr>
+									<td class="text-center" rowspan="10">5</td>
+									<td class="text-center"></td>
+									<td class="text-center"></td>
+									<td class="text-primary">지난 한달 동안, 당신은 아래의 이유로 잠자는데 얼마나 자주 문제가 있었습니까?</td>
+									<td></td>
+									<td class="text-center"></td>
+									<td class="text-center align-middle" rowspan="10">21</td>
+									<td class="text-center text-primary align-middle" rowspan="10">3</td>
+								</tr>
+								<tr>
+									<td class="border-0 text-center">6</td>
+									<td class="border-0 text-center">b</td>
+									<td class="border-0 text-primary">한밤중이나 새벽에 깼다.</td>
+									<td class="border-0">한주에 1번보다 작게</td>
+									<td class="border-0 text-center">1</td>
+								</tr>
+								<tr>
+									<td class="border-0 text-center">7</td>
+									<td class="border-0 text-center">c</td>
+									<td class="border-0">화장실에 가려고 일어나려 했다.</td>
+									<td class="border-0">한주에 1-2번 정도</td>
+									<td class="border-0 text-center">2</td>
+								</tr>
+								<tr>
+									<td class="border-0 text-center">8</td>
+									<td class="border-0 text-center">c</td>
+									<td class="border-0 text-primary">편안하게 숨을 쉴 수가 없었다.</td>
+									<td class="border-0">한주에 3번 이상</td>
+									<td class="border-0 text-center">3</td>
+								</tr>
+								<tr>
+									<td class="border-0 text-center">9</td>
+									<td class="border-0 text-center">c</td>
+									<td class="border-0">기침을 하거나 시끄럽게 코를 골았다.</td>
+									<td class="border-0">한주에 1번보다 작게</td>
+									<td class="border-0 text-center">2</td>
+								</tr>
+								<tr>
+									<td class="border-0 text-center">10</td>
+									<td class="border-0 text-center">c</td>
+									<td class="border-0 text-primary">너무 춥다고 느꼈다.</td>
+									<td class="border-0">한주에 1-2번 정도</td>
+									<td class="border-0 text-center">3</td>
+								</tr>
+								<tr>
+									<td class="border-0 text-center">11</td>
+									<td class="border-0 text-center">c</td>
+									<td class="border-0">너무 덥다고 느꼈다.</td>
+									<td class="border-0">한주에 3번 이상</td>
+									<td class="border-0 text-center">2</td>
+								</tr>
+								<tr>
+									<td class="border-0 text-center">12</td>
+									<td class="border-0 text-center">c</td>
+									<td class="border-0 text-primary">나쁜 꿈을 꾸었다.</td>
+									<td class="border-0">한주에 1번보다 작게</td>
+									<td class="border-0 text-center">3</td>
+								</tr>
+								<tr>
+									<td class="border-0 text-center">13</td>
+									<td class="border-0 text-center">c</td>
+									<td class="border-0">통증이 있었다.</td>
+									<td class="border-0">한주에 1-2번 정도</td>
+									<td class="border-0 text-center">2</td>
+								</tr>
+								<tr>
+									<td class="border-0 text-center">14</td>
+									<td class="border-0 text-center">c</td>
+									<td class="border-0 text-primary">그 외 다른 어려움이 있었다.</td>
+									<td class="border-0">한주에 3번 이상</td>
+									<td class="border-0 text-center">3</td>
+								</tr>
+								<tr>
+									<td class="text-center">6</td>
+									<td class="text-center">15</td>
+									<td class="text-center">6</td>
+									<td>지난 한달 동안, 당신은 잠이 들기 위해 얼마나 자주 약을 복용했습니까?</td>
+									<td>지난 한달 동안 없었다.</td>
+									<td class="text-center">0</td>
+									<td class="text-center">0</td>
+									<td class="text-center text-primary">0</td>
+								</tr>
+								<tr>
+									<td class="text-center" rowspan="2">7</td>
+									<td class="text-center">16</td>
+									<td class="text-center">7</td>
+									<td class="text-primary">지난 한달 동안, 당신은 운전하거나 혹은 사회활동을 하는 동안 얼마나 자주 졸음을 느꼈습니까?</td>
+									<td>한주에 1번보다 작게</td>
+									<td class="text-center">1</td>
+									<td class="text-center align-middle" rowspan="2">3</td>
+									<td class="text-center text-primary align-middle" rowspan="2">2</td>
+								</tr>
+								<tr>
+									<td class="text-center border-0">17</td>
+									<td class="text-center border-0">8</td>
+									<td class="border-0">지난 한달 동안, 당신은 일에 열중하는데 얼마나 많은 문제가 있었습니까?</td>
+									<td class="border-0">한주에 1-2번 정도</td>
+									<td class="text-center border-0">2</td>
+								</tr>
+								<tr>
+									<td class="text-center">1</td>
+									<td class="text-center">18</td>
+									<td class="text-center">9</td>
+									<td>지난 한달 동안, 당신은 전반적으로 수면의 질이 어느 정도라고 평가하십니까?</td>
+									<td>상당히 나쁨</td>
+									<td class="text-center">2</td>
+									<td class="text-center">2</td>
+									<td class="text-center text-primary">2</td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<td class="py-2 px-4 text-right" colspan="8">
+										<strong style="font-size: 16px">총점 : </strong><strong class="text-primary" style="font-size: 20px">11점</strong>
+									</td>
+								</tr>
+							</tfoot>
+						</table>
+					</div>
+					<p class="text-right"><span class="mr-2">참고치</span>0-10:mid / 11-20:modesale / 21- severe</p>
+					<div class="d-flex mt-5">
+						<p class="text-nowrap mr-4">출처</p>
+						<p>
+							Advantage old had otherwise sincerity dependent additions. It in adapted natural hastily is justice. Six draw you him full not mean evil. Prepare
+							garrets it expense windows shewing do an. She projection advantages resolution son indulgence. Part sure on no long life am at ever. In songs
+							above he as drawn to. Gay was outlived peculiar rendered led six.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="/resource/js/vendor.min.js"></script>
+		<script src="/resource/js/app.min.js"></script>
+
+		<script src="/resource/js/vendor/jquery.dataTables.min.js"></script>
+		<script src="/resource/js/vendor/dataTables.bootstrap4.js"></script>
+		<script src="/resource/js/vendor/dataTables.responsive.min.js"></script>
+		<script src="/resource/js/vendor/responsive.bootstrap4.min.js"></script>
+		<script src="/resource/js/vendor/apexcharts.min.js"></script>
+		<script src="/resource/js/vendor/dataTables.checkboxes.min.js"></script>
+
+		<script src="/resource/js/vendor/dropzone.min.js"></script>
+		<script src="/resource/js/ui/component.fileupload.js"></script>
+
+		<script src="/resource/js/vendor/summernote-bs4.min.js"></script>
+		<script src="/resource/js/pages/demo.summernote.js"></script>
+
+		<script src="/resource/js/common.js"></script>
+		<script src="/resource/js/page/sys_note.js"></script>
+	</body>
+</html>

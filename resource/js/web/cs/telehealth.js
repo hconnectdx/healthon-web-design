@@ -21,6 +21,18 @@ function scheduleCreateDiagnosisModal(userServiceUseSno){
     });
 }
 
+
+
+function detailUser(sno){
+
+ let newWindow =   window.open('/user/user/log?userServiceUseSno=' + sno);
+    newWindow.onload = function (){
+     let $headerTitle = $(newWindow.document).find("#header-page-title");
+     $headerTitle.text(i18n('menu.txt.mgt.user.details'));
+ }
+
+}
+
 //설문선택수정Modal(대상자)
 function scheduleSubjectSurveySelectModal(telehealthSno, viewType) {
     //viewType
@@ -65,14 +77,32 @@ function scheduleCreateCheckModal(telehealthSno, viewType){
 
 //예약확정Modal
 function scheduleAcceptConfirmModal(telehealthSno, viewType) {
-    //viewType
-    // RAI : 이전화면 예약내용확인Modal
-    // RAD : 이전화면 사용자로그 > 화상상담 탭 (진료)
+    //대상자 동의서 제출 여부 체크 API
+    $.ajax({
+        url: "/user/user/log/vcs/api/subjectAgreementCompleteCheck",
+        type: "POST",
+        data: {telehealthSno: telehealthSno},
+        success: function (data) {
+            if (data === 0) {
+                //대상자 동의서 제출 미완료
+                $("#error-alert-modal").modal('show');
+                $("#e_title").html(i18n('common.txt.required.file.title'));
+                $("#e_content").html(i18n('telehealth.txt.agreement.subject.submit.check'));
+            } else {
+                //대상자 동의서 제출 완료
+                //viewType
+                // RAI : 이전화면 예약내용확인Modal
+                // RAD : 이전화면 사용자로그 > 화상상담 탭 (진료)
 
-    $("#telehealthAcceptConfirmModal > .modal-dialog").load("/user/user/log/vcs/modal/scheduleAcceptConfirm", {telehealthSno: telehealthSno, viewType:viewType}, function() {
-        $(".modal").modal("hide");
-        $("#telehealthAcceptConfirmModal").modal("show");
+                $("#telehealthAcceptConfirmModal > .modal-dialog").load("/user/user/log/vcs/modal/scheduleAcceptConfirm", {telehealthSno: telehealthSno, viewType:viewType}, function() {
+                    $(".modal").modal("hide");
+                    $("#telehealthAcceptConfirmModal").modal("show");
+                });
+
+            }
+        }
     });
+
 }
 
 //요청반려Modal
@@ -109,8 +139,8 @@ function scheduleCancelConfirmModal (telehealthSno, viewType){
 }
 
 //예약내용확인Modal
-function scheduleReservationInfoModal(telehealthSno){
-    $("#telehealthReservationInfoModal > .modal-dialog").load("/user/user/log/vcs/modal/scheduleReservationInfo", {telehealthSno: telehealthSno}, function() {
+function scheduleReservationInfoModal(telehealthSno, groupSno){
+    $("#telehealthReservationInfoModal > .modal-dialog").load("/user/user/log/vcs/modal/scheduleReservationInfo", {telehealthSno: telehealthSno, groupSno:groupSno}, function() {
         $("#telehealthReservationInfoModal").modal("show");
     });
 }
@@ -132,8 +162,14 @@ function scheduleModifyConfirmModal(telehealthSno, viewType){
 }
 
 //참석자조회Modal
-function scheduleAttendessListModal(telehealthSno){
-    $("#telehealthAttendeesListModal > .modal-dialog").load("/user/user/log/vcs/modal/scheduleAttendessList", {telehealthSno: telehealthSno}, function() {
+function scheduleAttendessListModal(telehealthSno, groupSno, viewType){
+    //viewType
+    // RALH : 이전화면 화상상담 > 이력 탭
+    // RALF : 이전화면 화상상담 > 일정 탭 (피트니스)
+    // RALD : 이전화면 사용자로그 > 화상상담 탭 (진료)
+    // RALR : 이전화면 예약내용확인Modal
+
+    $("#telehealthAttendeesListModal > .modal-dialog").load("/user/user/log/vcs/modal/scheduleAttendessList", {telehealthSno: telehealthSno, groupSno:groupSno, viewType:viewType}, function() {
         $("#telehealthReservationInfoModal").modal('hide');
         $("#telehealthAttendeesListModal").modal("show");
     });
@@ -165,8 +201,10 @@ function scheduleCreateFitnessModal(){
     });
 }
 
-//화상상담 접속
-function connectTelehealth(telehealthSno, sessionTargetSno) {
+// 화상상담 접속
+function connectTelehealth(telehealthSno) {
+
+    // 화상상담 접속 가능여부 체크 API
     $.ajax({
         url: "/cs/vcs/api/connectCheck",
         type: "POST",
@@ -175,28 +213,51 @@ function connectTelehealth(telehealthSno, sessionTargetSno) {
 
             if (data) {
                 if (data === 1) {
+                    localStorage.setItem(telehealthSno, 'active');
+                    // 화상상담 진행 중에는 세션 유지하기 - 아래 이벤트로 25분마다 백앤드 호출하여 세션유지
+                    document.addEventListener("visibilitychange", ()=> visibilityChangeEventHandler(telehealthSno));
                     window.open('/cs/vcs/connectAdmin?telehealthSno=' + telehealthSno);
                 } else if (data === -1){
+                    // 지정 상담자 아님
                     $("#error-alert-modal").modal('show');
                     $("#e_title").html(connectCheckTitleTxt);
-                    $("#e_content").html("종료된 화상상담입니다.");
+                    $("#e_content").html(connectCheckMemberTxt);
                     return false;
                 } else if (data === -2) {
-                    window.open('/cs/vcs/connectAdmin?telehealthSno=' + telehealthSno);
-                    // $("#error-alert-modal").modal('show');
-                    // $("#e_title").html(connectCheckTitleTxt);
-                    // $("#e_content").html(connectCheckSurvey1Txt+"<br/>"+connectCheckSurvey2Txt);
-                    // return false;
-                } else if (data === -3) {
+                    // 상담시작시간 10분전이 아님
                     $("#error-alert-modal").modal('show');
                     $("#e_title").html(connectCheckTitleTxt);
                     $("#e_content").html(connectCheckTimeTxt);
                     return false;
-                } else if (data === -4){
+                } else if (data === -3){
+                    // 이미 반려된 상담
                     $("#error-alert-modal").modal('show');
                     $("#e_title").html(connectCheckTitleTxt);
-                    $("#e_content").html("지정된 상담자만 입장 가능합니다.\n" +
-                        "담당자에게 문의하세요.");
+                    $("#e_content").html(connectCheckWebRejectTxt);
+                    return false;
+                } else if (data === -4){
+                    // 이미 Web에서 취소된 상담
+                    $("#error-alert-modal").modal('show');
+                    $("#e_title").html(connectCheckTitleTxt);
+                    $("#e_content").html(connectCheckWebCancelTxt);
+                    return false;
+                } else if (data === -5){
+                    // 이미 App에서 취소된 상담
+                    $("#error-alert-modal").modal('show');
+                    $("#e_title").html(connectCheckTitleTxt);
+                    $("#e_content").html(connectCheckAppCancelTxt);
+                    return false;
+                } else if (data === -6){
+                    // 이미 거절된 상담
+                    $("#error-alert-modal").modal('show');
+                    $("#e_title").html(connectCheckTitleTxt);
+                    $("#e_content").html(connectCheckAppRejectTxt);
+                    return false;
+                } else if (data === -7) {
+                    // 이미 종료된 상담
+                    $("#error-alert-modal").modal('show');
+                    $("#e_title").html(connectCheckTitleTxt);
+                    $("#e_content").html(connectCheckEndTxt);
                     return false;
                 }
             }
@@ -206,3 +267,49 @@ function connectTelehealth(telehealthSno, sessionTargetSno) {
     });
 }
 
+/**
+ * 화상상담 진행 중에 세션 timeout 방지
+ */
+function extendSessionTimeout(telehealthSno) {
+    console.log('telehealth sno = ', telehealthSno);
+    $.ajax({
+        url: '/cs/vcs/extend-session',
+        type: 'GET',
+        timeout: 300000,
+        success : (data) => {
+            let hasTelehealthEnded = localStorage.getItem(telehealthSno) === null; // 화상상담 종료 상태
+            if(hasTelehealthEnded) {
+                clearTimeout(sessionExtensionInterval);
+                document.removeEventListener('visibilitychange', ()=> visibilityChangeEventHandler(telehealthSno));
+                return;
+            }
+            visibilityChangeEventHandler(telehealthSno); // setTimeout 재호출
+        },
+        error : (XMLHttpRequest, textStatus, errorThrown) => {
+            console.log("error ~~~~~");
+            console.log(XMLHttpRequest);
+            console.log(textStatus);
+            console.log(errorThrown);
+        }
+
+    });
+}
+
+let sessionExtensionInterval; // 세션연장 인터벌 변수 (인터벌 ID)
+function visibilityChangeEventHandler(telehealthSno) {
+    // localStorage 에 화상상담일련번호로 아이템이 없으면 세션유지 않한다.
+    if(!localStorage.getItem(telehealthSno)) return;
+    let timeoutValue = 25 * 1000 * 60; // 25분 간격
+    if(document.visibilityState === 'hidden'){
+        sessionExtensionInterval = setTimeout(extendSessionTimeout, timeoutValue, telehealthSno);
+    }
+}
+
+
+// 녹음/녹화 파일 모달 조회
+function showRecordingFileModal(telehealthSno, managementSno) {
+    $("#recording-file-modal > .modal-dialog").empty();
+    $("#recording-file-modal > .modal-dialog").load("/cs/vcsRs/modal/recordingFileModal", {serviceSno: telehealthSno, managementSno: managementSno}, function() {
+        $("#recording-file-modal").modal("show");
+    });
+}

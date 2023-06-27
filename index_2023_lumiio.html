@@ -1,0 +1,491 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<title>Lumiio 관리자 페이지 퍼블리싱 Status</title>
+		<style type="text/css">
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+			}
+
+			html {
+				overflow-y: scroll;
+			}
+
+			body {
+				padding: 20px;
+				color: #666;
+				background-color: #fff;
+				font: 12px/1.5 Dotum, '돋움';
+			}
+
+			a {
+				color: #27e;
+				text-decoration: none;
+			}
+
+			a:focus,
+			a:hover,
+			a:active {
+				text-decoration: underline;
+			}
+
+			.header {
+				padding: 0.5em;
+			}
+
+			.header h1 {
+				display: inline;
+				margin-right: 1em;
+				color: #000;
+				font-size: 2em;
+			}
+
+			.header ul {
+				display: inline;
+				font-size: 1.5em;
+				list-style: none;
+			}
+
+			.header ul li {
+				display: inline;
+			}
+
+			.group-title {
+				margin-top: 1em;
+				color: #000;
+				font-weight: bold;
+				font-size: 1.5em;
+			}
+
+			table {
+				width: 100%;
+				border-collapse: collapse;
+				border-spacing: 0;
+			}
+
+			table caption {
+				display: none;
+			}
+
+			table th {
+				color: #333;
+				background-color: #eee;
+			}
+
+			table th,
+			table td {
+				padding: 6px 3px 2px 3px;
+				border: 1px solid #ddd;
+				text-align: left;
+				font-size: 12px;
+				font-family: 'Dotum', '돋움';
+			}
+
+			table th,
+			table td.stat {
+				text-align: center;
+			}
+
+			table td.date p {
+				margin: 2px 0 0 0;
+			}
+
+			table td.date p.new {
+				color: #9c27b0;
+				font-weight: bold;
+			}
+
+			table td .notice li {
+				list-style: none;
+				margin: 2px 0 0 0;
+				font-weight: bold;
+			}
+
+			table td .notice li.new {
+				color: #9c27b0;
+			}
+
+			table td.stat {
+				font-weight: bold;
+			}
+
+			table tr.even,
+			table tr td.multi {
+				background-color: #ffffff;
+			}
+
+			table tr.add td {
+				background-color: #fd0;
+			}
+
+			table tr.modify td {
+				background-color: #fffeb4;
+			}
+
+			table tr.hover td {
+				background-color: #fafafa;
+			}
+
+			table tr.none td {
+				color: #000;
+				background-color: #fc8989;
+			}
+
+			table tr.up td {
+				background-color: #ffe9f5;
+			}
+
+			.section {
+				margin: 3em 0;
+			}
+
+			body.js .section {
+				margin: 0;
+			}
+
+			.section .title {
+				margin: 0;
+				padding: 0;
+				color: #000;
+				font-weight: bold;
+				font-size: 100%;
+			}
+
+			body.js .section .title {
+				padding: 0.5em;
+				border: 1px solid #ccc;
+				background-color: #ddd;
+				cursor: pointer;
+			}
+
+			body.js .section + .section .title {
+				border-top: 0;
+			}
+
+			body.js .section .title .page-count {
+				color: #666;
+				font-weight: normal;
+			}
+
+			body.js .section .content {
+				display: none;
+			}
+
+			#sb-body {
+				border: none !important;
+			}
+
+			.modi {
+				background: #000 !important;
+				color: #fff;
+				font-weight: bold;
+			}
+
+			.modi.blue {
+				background: skyblue !important;
+			}
+
+			.modi.red {
+				background: red !important;
+			}
+
+			.font_form {
+				margin: 0;
+				padding: 0;
+				padding-inline-start: 5px;
+			}
+
+			.font_form li label {
+				font-size: 12px;
+				color: #444;
+				letter-spacing: 1px;
+			}
+		</style>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+		<script type="text/javascript">
+			(function ($) {
+				$.fn.stat = function (options) {
+					var settings = $.extend(
+							{
+								title: 'h2.title',
+								content: 'div.content',
+								화면아이디s: 'tbody tr',
+								stat: 'td.stat',
+								index: 0,
+								openAll: false,
+								speed: 'fast',
+							},
+							options
+						),
+						all_sections = this,
+						header = $('div.header');
+					return this.each(function () {
+						var self = this,
+							$self = $(self),
+							title_text = [],
+							completed = 0;
+						self.section_title = $(settings.title, $self);
+						self.content = $(settings.content, $self);
+						self.화면아이디s = $(settings.화면아이디s, $self);
+						self.화면아이디s.each(function () {
+							var stat = $(settings.stat, this);
+							stat.each(function () {
+								var text = $(this).text();
+								if (text) {
+									if (text == 'none') {
+										$(this).css({ background: '#d2d2d2', color: '#fff' });
+									} else if (text == 'ing') {
+										$(this).css({ background: '#5d9b1a', color: '#fff' });
+									} else if (text == 'done') {
+										$(this).css({ background: '#1f78bd', color: '#fff' });
+									} else if (text == 'edit') {
+										$(this).css({ background: '#ff2d2d', color: '#fff' });
+									}
+									completed++;
+								}
+							});
+						});
+						/*
+                    if(completed == 0){
+                        $(this).parent().parent().parent().hide();
+                    };
+                    */
+						self.화면아이디s
+							.bind('mouseenter', function () {
+								$(this).addClass('hover');
+							})
+							.bind('mouseleave', function () {
+								$(this).removeClass('hover');
+							});
+						title_text = [self.section_title.text(), ' <span class="page-count">(', completed, '/', self.화면아이디s.length, ')</span>'];
+						self.section_title.html(title_text.join(''));
+						self.section_title.bind('click', function () {
+							self.content.slideToggle(settings.speed);
+						});
+						if (settings.openAll || settings.index - 1 === all_sections.index(this)) {
+							self.content.css('display', 'block');
+						}
+					});
+				};
+				$(document).ready(function () {
+					$('div.section').stat({ openAll: true });
+					$('#total').text($('tbody tr').length);
+					$('tbody tr:even').addClass('even');
+					$('tbody td[rowspan][rowspan!=1]').addClass('multi');
+
+					// 페이지 선택 select 스크립트
+					$('#page_chooser option').each(function ($index, $element) {
+						$element = $($element);
+						var 화면아이디 = $element.data('화면아이디');
+						if (location.href.indexOf(화면아이디) > -1) {
+							$element.attr('selected', 'selected');
+						}
+					});
+					$('#page_chooser').bind('change', function () {
+						location.href = $(this).val();
+					});
+					// 페이지 선택 select 스크립트 끝
+
+					// 폰트 선택 radio 스크립트
+					$('input:radio[name=chgFntsize]').click(function () {
+						var fontAddSize = $('input[name=chgFntsize]:checked').val();
+						fontAddSize = Number(fontAddSize);
+						if (isNaN(fontAddSize)) {
+							size = 0;
+						}
+						localStorage.setItem('fntAddSz', fontAddSize);
+					});
+					// 폰트 선택 radio 스크립트
+				});
+			})(jQuery);
+		</script>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			document.body.className += ' js';
+		</script>
+
+		<!-- larkcomm 2023-05 -->
+		<h2>2023년 lumiio</h2>
+		<select id="pageSelect">
+			<option value="">선택</option>
+			<option value="index.html">2023년 healthon</option>
+			<option value="index_2023_lumiio.html">2023년 lumiio</option>
+			<option value="index_2022.html">2022년 healthon</option>
+		</select>
+		<br />
+		<br />
+
+		<script>
+			// select 요소의 변경을 감지하는 함수
+			function handlePageChange() {
+				// select 요소를 가져옴
+				var selectElement = document.getElementById('pageSelect');
+
+				// 선택된 옵션의 값
+				var selectedOption = selectElement.value;
+
+				// 선택된 옵션의 값이 비어있지 않은 경우에만 페이지 이동
+				if (selectedOption !== '') {
+					// 새로운 URL 생성
+					var newUrl = selectedOption;
+
+					// 페이지 이동
+					window.location.href = newUrl;
+				}
+			}
+
+			// select 요소의 변경을 감지하여 handlePageChange 함수 호출
+			document.getElementById('pageSelect').addEventListener('change', handlePageChange);
+		</script>
+		<div class="section">
+			<h2 class="title">관리자 페이지 Status</h2>
+			<div class="content">
+				<table>
+					<colgroup>
+						<col style="width: 20%" />
+						<col style="width: 20%" />
+						<col style="width: 20%" />
+						<col style="width: 20%" />
+						<col style="width: 20%" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">depth</th>
+							<th scope="col">내용</th>
+							<th scope="col">화면아이디</th>
+							<th scope="col">페이지링크</th>
+							<th scope="col">비고</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>로그인</td>
+							<td></td>
+							<td>CBC-ADM-LOG-100</td>
+							<td class="stat">
+								<a href="CBC-ADM-LOG-100.html" target="_blank">Link (완료 20230501)</a>
+							</td>
+						</tr>
+
+						<!-- 혈액검사 상세조회 -->
+						<tr>
+							<td rowspan="6">사용자 관리 > 전체 사용자 > 사용자 상세</td>
+							<td>혈액검사 상세조회</td>
+							<td>CBC-ADM-USR-260</td>
+							<td class="stat">
+								<a href="CBC-ADM-USR-260.html" target="_blank">Link (완료 20230501)</a>
+							</td>
+							<td rowspan="8">
+								<strong></strong>
+							</td>
+						</tr>
+						<tr>
+							<td>혈액검사 상세조회 (WBC, RBC 이미지 없음)</td>
+							<td>CBC-ADM-USR-260-01</td>
+							<td class="stat">
+								<a href="CBC-ADM-USR-260-01.html" target="_blank">Link (완료 20230501)</a>
+							</td>
+						</tr>
+						<tr>
+							<td>혈액검사 상세조회 (데이터 없음)</td>
+							<td>CBC-ADM-USR-260-02</td>
+							<td class="stat">
+								<a href="CBC-ADM-USR-260-02.html" target="_blank">Link (완료 20230501)</a>
+							</td>
+						</tr>
+
+						<!-- 혈액검사 카트리지번호 -->
+						<tr>
+							<td>혈액검사 카트리지번호 매핑(조회 전)</td>
+							<td>CBC-ADM-USR-261</td>
+							<td class="stat">
+								<a href="CBC-ADM-USR-261.html" target="_blank">Link (완료 20230501)</a>
+							</td>
+						</tr>
+						<tr>
+							<td>혈액검사 카트리지번호 매핑(조회 결과 및 사용자 매핑)</td>
+							<td>CBC-ADM-USR-261-01</td>
+							<td class="stat">
+								<a href="CBC-ADM-USR-261-01.html" target="_blank">Link (완료 20230501)</a>
+							</td>
+						</tr>
+						<tr>
+							<td>혈액검사 카트리지번호 매핑(타사용자에 매핑, 카트리지번호 없음)</td>
+							<td>CBC-ADM-USR-261-02</td>
+							<td class="stat">
+								<a href="CBC-ADM-USR-261-02.html" target="_blank">Link (완료 20230501)</a>
+							</td>
+						</tr>
+
+						<!-- 사용자 등록 -->
+						<tr>
+							<td>사용자 관리 > 전체 사용자</td>
+							<td>사용자 등록</td>
+							<td>CBC-ADM-USR-300</td>
+							<td class="stat">
+								<a href="CBC-ADM-USR-300.html" target="_blank">Link (완료 20230501)</a>
+							</td>
+						</tr>
+
+						<!-- 사용자 수정 -->
+						<tr>
+							<td>사용자 관리 > 전체 사용자 > 사용자 상세</td>
+							<td>사용자정보 수정/삭제</td>
+							<td>CBC-ADM-USR-310</td>
+							<td class="stat">
+								<a href="CBC-ADM-USR-310.html" target="_blank">Link (완료 20230501)</a>
+							</td>
+						</tr>
+
+						<!-- 시스템 운영 -->
+						<tr>
+							<td rowspan="6">시스템 운영 > 측정항목 기준치 관리</td>
+							<td>측정항목 기준치 관리</td>
+							<td>CBC-ADM-MGM-520</td>
+							<td class="stat">
+								<a href="CBC-ADM-MGM-520.html" target="_blank">Link (완료 20230501)</a>
+							</td>
+							<td rowspan="6">
+								<strong></strong>
+							</td>
+						</tr>
+						<tr>
+							<td>측정항목 등록</td>
+							<td>CBC-ADM-MGM-521</td>
+							<td class="stat">
+								<a href="CBC-ADM-MGM-520.html" target="_blank">Link (완료 20230501)</a>
+							</td>
+						</tr>
+						<tr>
+							<td>측정항목 수정</td>
+							<td>CBC-ADM-MGM-522</td>
+							<td class="stat">
+								<a href="CBC-ADM-MGM-520.html" target="_blank">Link (완료 20230501)</a>
+							</td>
+						</tr>
+						<tr>
+							<td>측정항목별 기준치 관리 (표시방법=숫자)</td>
+							<td>CBC-ADM-MGM-523</td>
+							<td class="stat">
+								<a href="CBC-ADM-MGM-520.html" target="_blank">Link (완료 20230501)</a>
+							</td>
+						</tr>
+						<tr>
+							<td>측정항목별 기준치 관리 (표시방법=Boolean)</td>
+							<td>CBC-ADM-MGM-523-01</td>
+							<td class="stat">
+								<a href="CBC-ADM-MGM-520.html" target="_blank">Link (완료 20230501)</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<!-- //larkcomm 2023-05 -->
+	</body>
+</html>

@@ -613,13 +613,13 @@
 															<script>
 																function departmentOnChange(t) {
 																	console.log(t.value);
-																	$("#departmentButton").addClass("hidden");
-																	$("#departmentFile").addClass("hidden");
-																	if (t.value === "Y") {
-																		$("#departmentButton").removeClass("hidden");
+																	$('#departmentButton').addClass('hidden');
+																	$('#departmentFile').addClass('hidden');
+																	if (t.value === 'Y') {
+																		$('#departmentButton').removeClass('hidden');
 																	}
-																	if (t.value === "N") {
-																		$("#departmentFile").removeClass("hidden");
+																	if (t.value === 'N') {
+																		$('#departmentFile').removeClass('hidden');
 																	}
 																}
 															</script>
@@ -1137,7 +1137,6 @@
 
 																				<!-- /건강상담카드 -->
 
-
 																				<!-- 20221103 -->
 																				<!-- 증상으로 진료과 찾기 카드 -->
 
@@ -1150,7 +1149,6 @@
 
 																				<!-- /증상으로 진료과 찾기 카드 -->
 																				<!-- //20221103 -->
-
 																			</div>
 																			<!-- 비활성메뉴 카드리스트 -->
 																		</div>
@@ -1365,63 +1363,63 @@
 									<script type="application/javascript">
 										$(document).ready(function () {
 											//성별 초기 선택 표시
-											$("input:radio[name='sexClcdRadio']:eq(0)").prop("checked", true);
+											$("input:radio[name='sexClcdRadio']:eq(0)").prop('checked', true);
 
 											//취소,확인 버튼 위치 수정
-											$("#sysGroupBtnWrap").css("bottom", "60px");
+											$('#sysGroupBtnWrap').css('bottom', '60px');
 
 											// toolTip 동적으로 만드는 요소여서 popover함수 실행
 											$('[data-toggle="popover"]').popover();
 
 											//타임존 등록시 초기표시 한국시로 설정
-											if (isEmpty($("#groupSno").val())) {
-												$("#utcOffsetTime").val("+09:00").prop("selected", true);
+											if (isEmpty($('#groupSno').val())) {
+												$('#utcOffsetTime').val('+09:00').prop('selected', true);
 											}
 
 											//활성/비활성메뉴 카드 이동시 useYn 키값 변경
-											var drake = dragula([document.querySelector("#company-list-left"), document.querySelector("#company-list-right")]);
-											drake.on("drop", function (el, target, source, sibling) {
+											var drake = dragula([document.querySelector('#company-list-left'), document.querySelector('#company-list-right')]);
+											drake.on('drop', function (el, target, source, sibling) {
 												var container = target.id;
-												var key = $(el).data("key");
-												var useYn = "N";
-												if (container === "company-list-left") {
-													useYn = "Y";
+												var key = $(el).data('key');
+												var useYn = 'N';
+												if (container === 'company-list-left') {
+													useYn = 'Y';
 												}
-												$("#" + key)
+												$('#' + key)
 													.val(useYn)
 													.change();
 											});
 
 											//그룹 수정시 초기표시
-											let $groupSno = $("#groupForm #groupSno").val();
+											let $groupSno = $('#groupForm #groupSno').val();
 											if ($groupSno) {
 												//실명수집 토글버튼 표시
-												var checkedFlag = $("#collectUserNmYn").val();
-												if (checkedFlag == "Y") {
-													$("#collectUserNmYnSwitcher").prop("checked", true);
+												var checkedFlag = $('#collectUserNmYn').val();
+												if (checkedFlag == 'Y') {
+													$('#collectUserNmYnSwitcher').prop('checked', true);
 												} else {
-													$("#collectUserNmYnSwitcher").prop("checked", false);
+													$('#collectUserNmYnSwitcher').prop('checked', false);
 												}
 
 												//대표그룹관리자 리스트 조회API
-												$.post("/sys/group/api/getGroupManagerList", { groupSno: $groupSno }, function (groupManagerList) {
+												$.post('/sys/group/api/getGroupManagerList', { groupSno: $groupSno }, function (groupManagerList) {
 													//해당그룹의 그룹관리자 리스트를 select박스 옵션에 추가
 													$.each(groupManagerList, function (i, v) {
-														$("#groupForm #selectManagementSno").append(
-															"<option value='" + v.managementSno + "' data-index='" + i + "'>" + v.managementNm + "</option>"
+														$('#groupForm #selectManagementSno').append(
+															"<option value='" + v.managementSno + "' data-index='" + i + "'>" + v.managementNm + '</option>'
 														);
 													});
 
 													//현재 대표그룹관리자를 선택되게 표시
-													let $managementSno = $("#groupForm #managementSno").val();
+													let $managementSno = $('#groupForm #managementSno').val();
 													if ($managementSno) {
-														$("#groupForm #selectManagementSno").val($managementSno);
+														$('#groupForm #selectManagementSno').val($managementSno);
 														disableManagementInput(true);
 													}
 
 													//대표그룹관리자 선택시 값 세팅 & 표시
-													$("#groupForm #selectManagementSno").on("change", function () {
-														let index = $("#groupForm #selectManagementSno option:selected").data("index");
+													$('#groupForm #selectManagementSno').on('change', function () {
+														let index = $('#groupForm #selectManagementSno option:selected').data('index');
 
 														if (!isEmpty(index) && index >= 0) {
 															let $managementSno = groupManagerList[index].managementSno;
@@ -1433,37 +1431,37 @@
 															let $managementHpNo = groupManagerList[index].managementHpNo;
 															let $managementEmail = groupManagerList[index].managementEmail;
 
-															$("#groupForm #managementSno").val($managementSno);
-															$("#groupForm #managementLnm").val($managementLnm);
-															$("#groupForm #managementFnm").val($managementFnm);
-															$("#groupForm #managementId").val($managementId);
-															$("#groupForm #managementCountryNo").val($managementCountryNo).prop("selected", true);
-															$("#groupForm #managementHpNo").val($managementHpNo);
-															$("#groupForm #managementEmail").val($managementEmail);
+															$('#groupForm #managementSno').val($managementSno);
+															$('#groupForm #managementLnm').val($managementLnm);
+															$('#groupForm #managementFnm').val($managementFnm);
+															$('#groupForm #managementId').val($managementId);
+															$('#groupForm #managementCountryNo').val($managementCountryNo).prop('selected', true);
+															$('#groupForm #managementHpNo').val($managementHpNo);
+															$('#groupForm #managementEmail').val($managementEmail);
 
-															if ($managementSexClcd == "00101100") {
-																$("#groupForm #groupManagementMale").prop("checked", true);
+															if ($managementSexClcd == '00101100') {
+																$('#groupForm #groupManagementMale').prop('checked', true);
 															} else {
-																$("#groupForm #groupManagementFemale").prop("checked", true);
+																$('#groupForm #groupManagementFemale').prop('checked', true);
 															}
 
-															$("#groupForm #mngEmailCheckYn").val("Y");
-															$("#groupForm #managementId").parent().addClass("state-check");
+															$('#groupForm #mngEmailCheckYn').val('Y');
+															$('#groupForm #managementId').parent().addClass('state-check');
 
 															disableManagementInput(true);
 														} else {
-															$("#groupForm #managementSno").val("");
-															$("#groupForm #managementLnm").val("");
-															$("#groupForm #managementFnm").val("");
-															$("#groupForm #managementId").val("");
-															$("#groupForm #managementCountryNo").val("82").prop("selected", true);
-															$("#groupForm #managementHpNo").val("");
-															$("#groupForm #managementEmail").val("");
+															$('#groupForm #managementSno').val('');
+															$('#groupForm #managementLnm').val('');
+															$('#groupForm #managementFnm').val('');
+															$('#groupForm #managementId').val('');
+															$('#groupForm #managementCountryNo').val('82').prop('selected', true);
+															$('#groupForm #managementHpNo').val('');
+															$('#groupForm #managementEmail').val('');
 
-															$("#groupForm #groupManagementMale").prop("checked", true);
+															$('#groupForm #groupManagementMale').prop('checked', true);
 
-															$("#groupForm #mngEmailCheckYn").val("N");
-															$("#groupForm #managementId").parent().removeClass("state-check");
+															$('#groupForm #mngEmailCheckYn').val('N');
+															$('#groupForm #managementId').parent().removeClass('state-check');
 
 															disableManagementInput(false);
 														}
@@ -1732,47 +1730,47 @@
 				<script src="resource/js/page/202207_gr.js"></script>
 				<script>
 					function updateUserPassword() {
-						$("#login-password-modal").modal("hide");
+						$('#login-password-modal').modal('hide');
 					}
 
 					function showMyAccountDlg() {
-						$("#my-info-modal").modal("show");
+						$('#my-info-modal').modal('show');
 					}
 
 					function updateLoginPasswordDlg() {
-						$("#login-password-modal").modal("show");
+						$('#login-password-modal').modal('show');
 					}
 
 					function showSettingDlg() {
-						$("#setting-modal").modal("show");
+						$('#setting-modal').modal('show');
 					}
 
 					function updateUserInfo() {
-						$("#my-info-modal").modal("hide");
-						$("#success-alert-modal").modal("show");
+						$('#my-info-modal').modal('hide');
+						$('#success-alert-modal').modal('show');
 					}
 
-					$("#nonFace").change(function (e) {
-						if (this.value === "option02") {
-							$("#documentbox").show();
+					$('#nonFace').change(function (e) {
+						if (this.value === 'option02') {
+							$('#documentbox').show();
 						} else {
-							$("#documentbox").hide();
+							$('#documentbox').hide();
 						}
 					});
 
 					// Phase 2.2
 					// 아델리
 					function HG_WEB_GR_02_01() {
-						$("#HG-WEB-GR-02-01").modal("show");
+						$('#HG-WEB-GR-02-01').modal('show');
 					}
 
-					$(".select-gr-wrap").hide();
-					$(".select-gr").on("change", function () {
-						var val = $(".select-gr").val();
-						if (val === "grActive") {
-							$(".select-gr-wrap").show();
+					$('.select-gr-wrap').hide();
+					$('.select-gr').on('change', function () {
+						var val = $('.select-gr').val();
+						if (val === 'grActive') {
+							$('.select-gr-wrap').show();
 						} else {
-							$(".select-gr-wrap").hide();
+							$('.select-gr-wrap').hide();
 						}
 					});
 				</script>
