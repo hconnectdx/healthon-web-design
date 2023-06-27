@@ -109,13 +109,7 @@ function initDataTable(callback) {
                     targets: 2,
                     render: function (data, type, row) {
                         if (isEmpty(data)) {
-                            data = "-";
-                        }else {
-                            data = '<span  data-toggle="popover"' +
-                                '       data-trigger="hover"' +
-                                '       data-html="true"' +
-                                '       title="" data-content="' + row.noMaskUserNm + '"' +
-                                '       data-original-title="">' + data + '</span>';
+                            data = '-';
                         }
                         return data;
                     }
@@ -124,21 +118,6 @@ function initDataTable(callback) {
                     targets: 3,
                     render: function (data, type, row) {
                         return i18n('common.age_value').replace('{0}', data);
-                    }
-                },
-                {
-                    targets: 4,
-                    render: function (data, type, row) {
-                        if (isEmpty(data)) {
-                            data = "-";
-                        }else {
-                            data = '<span  data-toggle="popover"' +
-                                '       data-trigger="hover"' +
-                                '       data-html="true"' +
-                                '       title="" data-content="' + row.noMaskUserMobileNo + '"' +
-                                '       data-original-title="">' + data + '</span>';
-                        }
-                        return data;
                     }
                 },
                 {
@@ -273,11 +252,7 @@ function showHospitalListModal(sno) {
 }
 
 function detailUser(sno) {
-    let newWindow =   window.open('/user/user/log?userServiceUseSno=' + sno);
-    newWindow.onload = function (){
-        let $headerTitle = $(newWindow.document).find("#header-page-title");
-        $headerTitle.text(i18n('menu.txt.mgt.user.details'));
-    }
+    callMenu('/user/user/log', i18n('menu.txt.mgt.user.details'), {userServiceUseSno : sno});
 }
 
 

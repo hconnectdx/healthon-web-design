@@ -1,11 +1,8 @@
 //웹사용자 등록,수정Modal
-function showWebUserDlg(flag, managementSno, managementGroupSno){
-
-    if(managementGroupSno == "undefined") {managementGroupSno = null}
-
+function showWebUserDlg(flag, data, managementGroupSno){
     var params = {};
     if(flag == "update") {
-        params =  {"managementSno":managementSno, "managementGroupSno":managementGroupSno};
+        params =  {"managementSno":data, "managementGroupSno":managementGroupSno};
     }
     $("#webuser-modal > .modal-dialog").empty();
     $("#webuser-modal > .modal-dialog").load("/sys/webUser/modal/sys_webuser_det", params, function() {

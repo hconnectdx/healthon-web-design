@@ -190,37 +190,6 @@ function groupDeptFileRemove(){
     $("#deptUploaded").addClass('hidden');
 }
 
-
-//데이터매칭 파일 업로드시 표시
-$(document).on('change', '#groupUsers', function() {
-    var files = this.files;
-    if (files.length > 0) {
-        checkUploadDatamatchingFile(function(isSuccess) {
-            if (isSuccess) {
-                var filename = files[0].name;
-                if (filename) {
-                    $("#groupUsers").parent().addClass("state-file");
-                    $('#groupUsersTxt').text(filename);
-                } else {
-                    $("#groupUsers").parent().removeClass("state-file");
-                    $('#groupUsersTxt').text("");
-                }
-            } else {
-                $("#error-alert-modal").modal('show');
-                $("#error-alert-modal #e_title").html(i18n('common.txt.required.file.title'));
-                $("#error-alert-modal #e_content").html(i18n('management.group.txt.users.file.error.content'));
-                $("#groupUsers").val("").change();
-
-            }
-        });
-    } else {
-        $("#groupUsers").parent().removeClass("state-file");
-        $('#groupUsersTxt').text("");
-    }
-});
-
-
-
 //소속부서 파일 업로드시 표시
 $(document).on('change', '#groupDept', function() {
     var files = this.files;
@@ -240,7 +209,6 @@ $(document).on('change', '#groupDept', function() {
                 $("#error-alert-modal #e_title").html(i18n('common.txt.required.file.title'));
                 $("#error-alert-modal #e_content").html(i18n('management.group.txt.dept.file.error.content'));
                 $("#groupDept").val("").change();
-
             }
         });
     } else {
@@ -249,41 +217,10 @@ $(document).on('change', '#groupDept', function() {
     }
 });
 
-//데이터매칭 업로드 체크
-function checkUploadDatamatchingFile(callback) {
-
-    var formData = new FormData();
-    formData.append("groupUsers", $('#groupUsers')[0].files[0]);
-
-    //소속부서파일체크API
-    $.ajax({
-        url: "/sys/group/api/dataMatchingFile/check",
-        type: "POST",
-        enctype: 'multipart/form-data',
-        data : formData,
-        processData: false,
-        contentType: false,
-        cache: false,
-        timeout: 300000,
-        success: function (data) {
-            callback(data);
-        },
-        error: function (XMLHttpRequest, textStatus, errorThrown) {
-            console.log(XMLHttpRequest);
-            console.log(textStatus);
-            console.log(errorThrown);
-        }
-    });
-}
-
-
-
 //소속부서파일 업로드 체크
 function checkUploadFile(callback) {
-
-    var formData = new FormData();
-    formData.append("groupDept", $('#groupDept')[0].files[0]);
-
+    var form = $('#groupForm')[0];
+    var formData = new FormData(form);
     //소속부서파일체크API
     $.ajax({
         url: "/sys/group/api/groupDept/check",
@@ -399,14 +336,11 @@ $(document).on('change', '#telehealthMenuUseYn', function() {
     if (useYn === 'Y'){
         $("#leftVonageApiKey").prop("readonly", false);
         $("#leftVonageSecretKey").prop("readonly", false);
-        $("#leftTelehealthRecordingUseYn").prop("disabled", false);
         $("#rightVonageApiKey").prop("readonly", false);
         $("#rightVonageSecretKey").prop("readonly", false);
     } else {
         $("#leftVonageApiKey").prop("readonly", true);
         $("#leftVonageSecretKey").prop("readonly", true);
-        $("#leftTelehealthRecordingUseYn").prop("disabled", true);
-        $("#leftTelehealthRecordingUseYn").prop("checked", false);
         $("#rightVonageApiKey").prop("readonly", true);
         $("#rightVonageSecretKey").prop("readonly", true);
     }
@@ -522,9 +456,6 @@ function saveGroupAjax(formData){
         formData.append("groupMddpList["+idx+"].mddpCd",value.mddpCd)
         formData.append("groupMddpList["+idx+"].groupMddpNm",value.groupMddpNm)
     })
-    // 화상상담 녹음/녹화 기능 사용 여부 값 입력
-    formData.set("telehealthRecordingUseYn", $("input[name='telehealthRecordingUseYn']").val());
-
     $.ajax({
         url : "/sys/group/api/sys_group_det/mod",
         type : "POST",
@@ -557,7 +488,6 @@ function saveGroupAjax(formData){
             }
         },
         error: function (XMLHttpRequest, textStatus, errorThrown){
-            console.log('--------------fail------------------');
             console.log(XMLHttpRequest);
             console.log(textStatus);
             console.log(errorThrown);
@@ -573,15 +503,11 @@ function groupIns(groupSno) {
 
     let groupNmCheckYn = $("#groupForm #groupNmCheckYn").val();
     let groupTelNoCheckYn = $("#groupForm #groupTelNoCheckYn").val();
-    let mddpCheck = $('#mddpCheck').val();
 
     let groupUserProcCd = $("#groupForm #groupUserProcCd").val();
     let groupUsersTxt = $("#groupForm #groupUsersTxt").text();
-    let mddpYn = $('#mddpSelect option:selected').val();
     let groupDeptYn = $("#groupForm #groupDeptYn").val();
     let groupDeptTxt = $("#groupForm #groupDeptTxt").text();
-    console.log('groupDeptTxt');
-    console.log(groupDeptTxt);
 
     let groupLatitude = $("#groupForm #groupLatitude").val();
     let groupLongitude = $("#groupForm #groupLongitude").val();
@@ -592,15 +518,6 @@ function groupIns(groupSno) {
     let leftVonageSecretKey = $("#groupForm #leftVonageSecretKey").val();
     let rightVonageApiKey = $("#groupForm #rightVonageApiKey").val();
     let rightVonageSecretKey = $("#groupForm #rightVonageSecretKey").val();
-    let telehealthStrTime = $("#groupForm #telehealthStrTime").val();
-    let telehealthEndTime = $("#groupForm #telehealthEndTime").val();
-    let leftTelehealthRecordingUseYn = $("#groupForm #leftTelehealthRecordingUseYn").is(':checked');
-    let telehealthRecordingUseYn = $("#groupForm #leftTelehealthRecordingUseYn");
-
-    // 화상상담 녹음/녹화 기능 사용 여부
-    if(leftTelehealthRecordingUseYn == true) telehealthRecordingUseYn.val("Y")
-        else telehealthRecordingUseYn.val("N");
-
 
     let managementHpNo = $("#groupForm #managementHpNo").val();
     let managementId = $("#groupForm #managementId").val();
@@ -629,10 +546,6 @@ function groupIns(groupSno) {
     } else if(groupUserProcCd === "00206303" && isEmpty(groupUsersTxt)) {
         $("#error-alert-modal").modal('show');
         $("#e_content").html(i18n('management.group.new.txt.check.pop.null.users'));
-        return false;
-    } else if(mddpYn=='Y' && mddpCheck=='N') { // 진료과 등록하는데 설정한 진료과가 없다면
-        $("#error-alert-modal").modal('show');
-        $("#e_content").html(i18n('management.group.new.txt.check.pop.null.mddpNm.select'));
         return false;
     } else if(groupDeptYn === "Y" && isEmpty(groupDeptTxt)) {
         $("#error-alert-modal").modal('show');
@@ -667,16 +580,6 @@ function groupIns(groupSno) {
         $("#error-alert-modal").modal('show');
         $("#e_content").html(i18n('management.group.new.txt.check.pop.secretkey'));
         return false;
-    }else if (telehealthMenuUseYn == "Y" && initTelehealthMenuUseYn == "Y" && isEmpty(telehealthStrTime)
-        || (telehealthMenuUseYn == "Y" && initTelehealthMenuUseYn == "N" && isEmpty(telehealthStrTime))) {
-        $("#error-alert-modal").modal('show');
-        $("#e_content").html(i18n('management.group.warning_pop.telehealth.startTime'));
-        return false;
-    }else if (telehealthMenuUseYn == "Y" && initTelehealthMenuUseYn == "Y" && isEmpty(telehealthEndTime)
-        || (telehealthMenuUseYn == "Y" && initTelehealthMenuUseYn == "N" && isEmpty(telehealthEndTime))) {
-        $("#error-alert-modal").modal('show');
-        $("#e_content").html(i18n('management.group.warning_pop.telehealth.endTime'));
-        return false;
     } else if(isEmpty(managementFnm)) {
         $("#error-alert-modal").modal('show');
         $("#e_content").html(i18n('management.group.new.txt.check.pop.null.rep.lnm'));
@@ -700,6 +603,18 @@ function groupIns(groupSno) {
         return false;
     } else if(!isEmpty(groupSno)) {
         //그룹수정 API
+        if(document.querySelector('input[name="sysGroupTelehealthAuth.vonageApiKey"]:read-write')){
+            if(document.querySelector('#telehealthStrTime').value===''){
+                $("#error-alert-modal").modal('show');
+                $("#e_content").html(i18n('management.group.warning_pop.telehealth.startTime'));
+                return ;
+            }
+            else if(document.querySelector('#telehealthEndTime').value===''){
+                $("#error-alert-modal").modal('show');
+                $("#e_content").html(i18n('management.group.warning_pop.telehealth.endTime'));
+                return ;
+            }
+        }
 
         let telehealthStrTime =null
         if(document.querySelector('#telehealthStrTime').value !==''){
@@ -728,24 +643,17 @@ function groupIns(groupSno) {
                         saveGroupAjax(formData)
                     }
                     else{
-                        //예약변경필요건 리스트 초기화
-                        $("#consultationManagementReservationListTableBody").empty();
-
                         const unit = i18n('management.group.warning_pop.telehealth.chagebooking.unit');
                         document.querySelector('#reservationChangesCount').innerText='';
                         document.querySelector('#reservationChangesCount').innerText=data.length+unit
                         data.map(value=>{
-                            var mobileNum = value.requesterMobileNo;
-                            var mobileNum1 = mobileNum.substr(0,3);
-                            var mobileNum2 = mobileNum.substr(3,4);
-                            var mobileNum3 = mobileNum.substr(7,4);
                             document.querySelector('#consultationManagementReservationListTableBody').insertAdjacentHTML('beforeend',`
                               <tr>
                                   <td>`+ value.bookingDateTime +`</td>
                                   <td>`+ value.requesterNm +`</td>
-                                  <td>`+ mobileNum1 + '-' + mobileNum2 + '-' + mobileNum3 +`</td>
+                                  <td>`+ value.requesterMobileNo +`</td>
                               </tr>
-                        `   )
+                        `)
                         })
                         document.querySelector('#reservationChangesModalOtherBtn').addEventListener('click',function () {
                             saveGroupAjax(formData);

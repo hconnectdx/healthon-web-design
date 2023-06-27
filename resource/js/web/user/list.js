@@ -121,13 +121,7 @@ function initDataTable(callback) {
                     targets: 2,
                     render: function(data, type, row){
                         if (isEmpty(data)) {
-                            data = "-";
-                        }else {
-                            data = '<span  data-toggle="popover"' +
-                                '       data-trigger="hover"' +
-                                '       data-html="true"' +
-                                '       title="" data-content="' + row.noMaskUserNm + '"' +
-                                '       data-original-title="">' + data + '</span>';
+                            data = '-';
                         }
                         return data;
                     }
@@ -136,21 +130,6 @@ function initDataTable(callback) {
                     targets: 3,
                     render: function(data, type, row) {
                         return i18n('common.age_value').replace('{0}', data);
-                    }
-                },
-                {
-                    targets: 4,
-                    render: function (data, type, row) {
-                        if (isEmpty(data)) {
-                            data = "-";
-                        }else {
-                            data = '<span  data-toggle="popover"' +
-                                '       data-trigger="hover"' +
-                                '       data-html="true"' +
-                                '       title="" data-content="' + row.noMaskUserMobileNo + '"' +
-                                '       data-original-title="">' + data + '</span>';
-                        }
-                        return data;
                     }
                 },
                 {
@@ -196,13 +175,7 @@ function initDataTable(callback) {
                     targets: 6,
                     render: function(data, type, row) {
                         if (isEmpty(data)) {
-                            data = "-";
-                        }else {
-                            data = '<span  data-toggle="popover"' +
-                                '       data-trigger="hover"' +
-                                '       data-html="true"' +
-                                '       title="" data-content="' + row.noMaskUserEtcValue + '"' +
-                                '       data-original-title="">' + data + '</span>';
+                            data = '-';
                         }
                         return data;
                     }
@@ -235,7 +208,7 @@ function initDataTable(callback) {
                             if(isEmpty(row.userGroupMngNo) || Number(row.userGrpCnt) < 1) {
                                 return '<a href="javascript:void(0);" class="badge badge-outline-primary font-12" onclick="showMngNoModal(' + row.userServiceUseSno + ')">' + i18n('users.alluser.txt.user.unregister') + '</a>';
                             } else {
-                                return '<a href="javascript:void(0);" data-toggle="popover" data-trigger="hover" data-html="true" title="" data-content="' + row.noMaskUserGroupMngNo + '" + onclick="showMngNoModal('+row.userServiceUseSno+')">'+row.userGroupMngNo+'</a>';
+                                return '<a href="javascript:void(0);" onclick="showMngNoModal('+row.userServiceUseSno+')">'+row.userGroupMngNo+'</a>';
                             }
                         } else {
                             return '-';
@@ -265,7 +238,6 @@ function initDataTable(callback) {
                 "url":"/user/user/api/getPatientDoctorList",
                 "type":"POST",
                 "data": function (d) {
-
                     /* parameters */
                     if ($("form#userInitForm #initYn").val() === 'Y') {
                         let totalPatientSearchKeywd = $('form#userInitForm #totalPatientSearchKeywd').val();
@@ -277,10 +249,10 @@ function initDataTable(callback) {
                     }
                     d.page = ( d.start / d.length ) + 1;
                     d.pageSize = (d.length < 1 ? 0 : d.length);
-                    d.deptCode = $("#deptCode").val();
                     d.searchTp = $("#searchTp").val();
                     d.searchWd = d.search.value;
                     d.searchWdEnc = d.search.value;
+                    d.deptCode = $("#deptCode").val();
                     if(d.order != null && d.order.length > 0) {
                         d.dtOrderCol = d.columns[d.order[0].column].data;
                         d.dtOrderDir = d.order[0].dir;
@@ -351,11 +323,7 @@ function showMngNoModal(sno){
 }
 
 function detailUser(sno){
-    let newWindow =   window.open('/user/user/log?userServiceUseSno=' + sno);
-    newWindow.onload = function (){
-        let $headerTitle = $(newWindow.document).find("#header-page-title");
-        $headerTitle.text(i18n('menu.txt.mgt.user.details'));
-    }
+    callMenu('/user/user/log', i18n('menu.txt.mgt.user.details'), {userServiceUseSno: sno});
 }
 
 function refreshTable() {
