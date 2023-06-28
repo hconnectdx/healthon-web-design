@@ -2085,6 +2085,9 @@ textarea.form-control.autosize {
 	padding-top: 30px;
 }
 @media (max-width: 1036px) {
+	.logo-text {
+		background: none !important;
+	}
 	.logo-text ~ #left-side-menu-container {
 		padding-top: 0px;
 	}
