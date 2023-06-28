@@ -2084,6 +2084,11 @@ textarea.form-control.autosize {
 .logo-text ~ #left-side-menu-container {
 	padding-top: 30px;
 }
+@media (max-width: 1036px) {
+	.logo-text ~ #left-side-menu-container {
+		padding-top: 0px;
+	}
+}
 .left-side-menu .logo .txt-slogan {
 	font-size: 10px;
 	color: #a5aeb8;

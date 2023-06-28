@@ -12660,6 +12660,12 @@ body {
 	position: fixed;
 	top: 0;
 }
+@media (max-width: 1036px) {
+	.logo {
+		align-items: center !important;
+		padding: 0;
+	}
+}
 
 .logo span.logo-lg {
 	display: block;
@@ -12806,7 +12812,6 @@ body[data-leftbar-compact-mode='condensed'] .wrapper .left-side-menu .simplebar-
 body[data-leftbar-compact-mode='condensed'] .wrapper .left-side-menu .logo {
 	width: 70px;
 	z-index: 1;
-	background: linear-gradient(135deg, #8f75da 0, #7453ff 60%);
 }
 
 body[data-leftbar-compact-mode='condensed'] .wrapper .help-box {
