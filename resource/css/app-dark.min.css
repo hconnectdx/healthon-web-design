@@ -17759,3 +17759,6 @@ textarea::-webkit-scrollbar-thumb {
 body[data-leftbar-theme='dark'].lumiio .left-side-menu .logo-light {
 	background-color: #3a444e !important;
 }
+.left-side-menu .logo .txt-organ {
+	color: #a5aeb8 !important;
+}
