@@ -310,16 +310,20 @@
 		</script>
 
 		<!-- Larkcomm 2023-05 -->
-		<h2>2023년 healthon</h2>
-		<select id="pageSelect">
+		<h2>HealthOn - Web design</h2>
+		<!-- <select id="pageSelect">
 			<option value="">선택</option>
-			<option value="index.html">2023년 healthon</option>
+			<option value="index_2023_healthon.html">2023년 healthon</option>
 			<option value="index_2023_lumiio.html">2023년 lumiio</option>
 			<option value="index_2022.html">2022년 healthon</option>
+			<option value="./page-2021/healthon/index.html">2021년 healthon 2.0</option>
+			<option value="./page-2021/healthon/index_adelie.html">2021년 healthon 1.5</option>
+			<option value="./page-2021/shine/index.html">2021년 shine</option>
 		</select>
 		<br />
-		<br />
+		<br /> -->
 
+	
 		<script>
 			// select 요소의 변경을 감지하는 함수
 			function handlePageChange() {
@@ -335,317 +339,64 @@
 					var newUrl = selectedOption;
 
 					// 페이지 이동
-					window.location.href = newUrl;
+					// window.location.href = newUrl;
+					window.open(newUrl);
 				}
 			}
 
 			// select 요소의 변경을 감지하여 handlePageChange 함수 호출
 			document.getElementById('pageSelect').addEventListener('change', handlePageChange);
 		</script>
+
 		<div class="section">
-			<h2 class="title">관리자 페이지 Status</h2>
 			<div class="content">
 				<table>
 					<colgroup>
+						<col style="width: 30%" />
 						<col style="width: 20%" />
-						<col style="width: 20%" />
-						<col style="width: 20%" />
-						<col style="width: 20%" />
-						<col style="width: 20%" />
+						<col style="width: 50%" />
 					</colgroup>
 					<thead>
 						<tr>
-							<th scope="col">depth</th>
-							<th scope="col">내용</th>
-							<th scope="col">화면아이디</th>
-							<th scope="col">페이지링크</th>
-							<th scope="col">비고</th>
+							<th scope="col">프로젝트</th>
+							<th scope="col">링크</th>
+
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<td rowspan="3">GNB TYPE</td>
-							<td>카피문구+로고 타입</td>
-							<td></td>
+							<td>HealthOn 2.3~3.0 2023년</td>
 							<td class="stat">
-								<a href="GNB01.html" target="_blank">Link (완료 20230523)</a>
-							</td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>카피문구+로고+하위기관명 타입</td>
-							<td></td>
-							<td class="stat">
-								<a href="GNB02.html" target="_blank">Link (완료 20230523)</a>
-							</td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>헬스온 로고만 있는 타입</td>
-							<td></td>
-							<td class="stat">
-								<a href="GNB03.html" target="_blank">Link (완료 20230523)</a>
-							</td>
-							<td></td>
-						</tr>
-						<!-- 챗봇코칭 -->
-						<tr>
-							<td rowspan="4">챗봇코칭 > 프로그램 관리 > 프로그램 전체</td>
-							<td>프로그램 목록 조회</td>
-							<td>HG-WEB-COA-01</td>
-							<td class="stat">
-								<a href="HG-WEB-COA-01.html" target="_blank">Link (완료 20230523)</a>
-							</td>
-							<td rowspan="16">
-								<strong>3순위</strong>
+								<a href="index_2023_healthon.html" target="_blank">LINK</a>
 							</td>
 						</tr>
 						<tr>
-							<td>기본버튼 조회</td>
-							<td>HG-WEB-COA-01-01</td>
+							<td>Lumiio 2023년</td>
 							<td class="stat">
-								<a href="HG-WEB-COA-01.html" target="_blank">Link (완료 20230523)</a>
+								<a href="index_2023_lumiio.html" target="_blank">LINK</a>
 							</td>
 						</tr>
 						<tr>
-							<td>등록 대화 조회</td>
-							<td>HG-WEB-COA-01-02</td>
+							<td>HealthOn 2.0, 1.0 2021년</td>
 							<td class="stat">
-								<a href="HG-WEB-COA-01.html" target="_blank">Link (완료 20230523)</a>
+								<a href="./page-2021/healthon/index.html" target="_blank">LINK</a>
 							</td>
 						</tr>
 						<tr>
-							<td>참여자 조회</td>
-							<td>HG-WEB-COA-01-03</td>
+							<td>HealthOn 1.5 2021년</td>
 							<td class="stat">
-								<a href="HG-WEB-COA-01.html" target="_blank">Link (완료 20230523)</a>
+								<a href="./page-2021/healthon/index_adelie.html" target="_blank">LINK</a>
 							</td>
 						</tr>
 						<tr>
-							<td rowspan="9">챗봇코칭 > 프로그램 관리 > 프로그램 등록</td>
-							<td>신규 프로그램 등록</td>
-							<td>HG-WEB-COA-02</td>
+							<td>HealthOn Shine 2021년</td>
 							<td class="stat">
-								<a href="HG-WEB-COA-02.html" target="_blank">Link (완료 20230523)</a>
+								<a href="./page-2021/shine/index.html" target="_blank">LINK</a>
 							</td>
 						</tr>
-						<tr>
-							<td>참여 그룹 설정</td>
-							<td>HG-WEB-COA-02-01</td>
-							<td class="stat">
-								<a href="HG-WEB-COA-02.html" target="_blank">Link (완료 20230523)</a>
-							</td>
-						</tr>
-						<tr>
-							<td>기본버튼 선택</td>
-							<td>HG-WEB-COA-02-02</td>
-							<td class="stat">
-								<a href="HG-WEB-COA-02.html" target="_blank">Link (완료 20230523)</a>
-							</td>
-						</tr>
-						<tr>
-							<td>첫인사 선택</td>
-							<td>HG-WEB-COA-02-03</td>
-							<td class="stat">
-								<a href="HG-WEB-COA-02.html" target="_blank">Link (완료 20230523)</a>
-							</td>
-						</tr>
-						<tr>
-							<td>일차별 정기 대화 선택</td>
-							<td>HG-WEB-COA-02-04</td>
-							<td class="stat">
-								<a href="HG-WEB-COA-02.html" target="_blank">Link (완료 20230523)</a>
-							</td>
-						</tr>
-						<tr>
-							<td>일차별 비정기대화 선택</td>
-							<td>HG-WEB-COA-02-05</td>
-							<td class="stat">
-								<a href="HG-WEB-COA-02.html" target="_blank">Link (완료 20230523)</a>
-							</td>
-						</tr>
-						<tr>
-							<td>요일별 대화 선택</td>
-							<td>HG-WEB-COA-02-06</td>
-							<td class="stat">
-								<a href="HG-WEB-COA-02.html" target="_blank">Link (완료 20230523)</a>
-							</td>
-						</tr>
-						<tr>
-							<td>자주 묻는 질문 선택</td>
-							<td>HG-WEB-COA-02-07</td>
-							<td class="stat">
-								<a href="HG-WEB-COA-02.html" target="_blank">Link (완료 20230523)</a>
-							</td>
-						</tr>
-						<tr>
-							<td>프로그램 불러오기</td>
-							<td>HG-WEB-COA-02-08</td>
-							<td class="stat">
-								<a href="HG-WEB-COA-02.html" target="_blank">Link (완료 20230523)</a>
-							</td>
-						</tr>
-						<tr>
-							<td rowspan="3">챗봇코칭 > 프로그램 관리 > 자주 묻는 질문</td>
-							<td>자주 묻는 질문 목록 조회</td>
-							<td>HG-WEB-COA-03</td>
-							<td class="stat">
-								<a href="HG-WEB-COA-03.html" target="_blank">Link (완료 20230523)</a>
-							</td>
-						</tr>
-						<tr>
-							<td>자주 묻는 질문 신규 등록</td>
-							<td>HG-WEB-COA-03-01</td>
-							<td class="stat">
-								<a href="HG-WEB-COA-03.html" target="_blank">Link (완료 20230523)</a>
-							</td>
-						</tr>
-						<tr>
-							<td>자주 묻는 질문 상세내용 조회</td>
-							<td>HG-WEB-COA-03-02</td>
-							<td class="stat">
-								<a href="HG-WEB-COA-03.html" target="_blank">Link (완료 20230523)</a>
-							</td>
-						</tr>
-						<tr>
-							<td rowspan="2">챗봇코칭 > 기본버튼 관리 > 기본버튼 전체</td>
-							<td>기본버튼 목록 조회</td>
-							<td>HG-WEB-COA-04</td>
-							<td class="stat">
-								<a href="HG-WEB-COA-04.html" target="_blank">Link (완료 20230519)</a>
-							</td>
-							<td rowspan="4">
-								<strong>2순위</strong>
-							</td>
-						</tr>
-						<tr>
-							<td>등록 대화 조회(기본버튼 내)</td>
-							<td>HG-WEB-COA-04-01</td>
-							<td class="stat">
-								<a href="HG-WEB-COA-04.html" target="_blank">Link (완료 20230519)</a>
-							</td>
-						</tr>
-						<tr>
-							<td rowspan="2">챗봇코칭 > 기본버튼 관리 > 기본버튼 등록</td>
-							<td>기본버튼 등록</td>
-							<td>HG-WEB-COA-05</td>
-							<td class="stat">
-								<a href="HG-WEB-COA-05.html" target="_blank">Link (완료 20230519)</a>
-							</td>
-						</tr>
-						<tr>
-							<td>기본버튼 대화 선택</td>
-							<td>HG-WEB-COA-05-01</td>
-							<td class="stat">
-								<a href="HG-WEB-COA-05.html" target="_blank">Link (완료 20230519)</a>
-							</td>
-						</tr>
-						<tr>
-							<td rowspan="4">챗봇코칭 > 대화 관리 > 대화 전체</td>
-							<td>대화 목록 조회(챗봇 코칭, 입력유도, 기본버튼, 코치의 메시지)</td>
-							<td>HG-WEB-COA-06</td>
-							<td class="stat">
-								<a href="HG-WEB-COA-06.html" target="_blank">Link (완료 20230519)</a>
-							</td>
-							<td rowspan="8">
-								<strong>1순위</strong>
-							</td>
-						</tr>
-						<tr>
-							<td>코치의 메시지 발송</td>
-							<td>HG-WEB-COA-06-01</td>
-							<td class="stat">
-								<a href="HG-WEB-COA-06.html" target="_blank">Link (완료 20230519)</a>
-							</td>
-						</tr>
-						<tr>
-							<td>코치의 메시지 발송 이력</td>
-							<td>HG-WEB-COA-06-02</td>
-							<td class="stat">
-								<a href="HG-WEB-COA-06.html" target="_blank">Link (완료 20230519)</a>
-							</td>
-						</tr>
-						<tr>
-							<td>코치의 메시지 발송 대상자 조회</td>
-							<td>HG-WEB-COA-06-03</td>
-							<td class="stat">
-								<a href="HG-WEB-COA-06.html" target="_blank">Link (완료 20230519)</a>
-							</td>
-						</tr>
-						<tr>
-							<td rowspan="4">챗봇코칭 > 대화 관리 > 대화 등록</td>
-							<td>대화 등록</td>
-							<td>HG-WEB-COA-07</td>
-							<td class="stat">
-								<a href="HG-WEB-COA-07.html" target="_blank">Link (완료 20230519)</a>
-							</td>
-						</tr>
-						<tr>
-							<td>메시지 등록</td>
-							<td>HG-WEB-COA-07-01</td>
-							<td class="stat">
-								<a href="HG-WEB-COA-07.html" target="_blank">Link (완료 20230519)</a>
-							</td>
-						</tr>
-						<tr>
-							<td>동영상 첨부</td>
-							<td>HG-WEB-COA-07-02</td>
-							<td class="stat">
-								<a href="HG-WEB-COA-07.html" target="_blank">Link (완료 20230519)</a>
-							</td>
-						</tr>
-						<tr>
-							<td>대화 불러오기</td>
-							<td>HG-WEB-COA-07-03</td>
-							<td class="stat">
-								<a href="HG-WEB-COA-07.html" target="_blank">Link (완료 20230519)</a>
-							</td>
-						</tr>
-						<tr>
-							<td>챗봇코칭 > (공통)</td>
-							<td>대화 미리보기</td>
-							<td>HG-WEB-COA-08</td>
-							<td class="stat">
-								<a href="HG-WEB-COA-08.html" target="_blank">Link (완료 20230519)</a>
-								|
-								<a href="HG-WEB-COA-08_dark.html" target="_blank">Dark (완료 20230607)</a>
-							</td>
-							<td>
-								<strong>1순위</strong>
-							</td>
-						</tr>
-						<tr>
-							<td>사용자관리 > 전체사용자 > 사용자상세</td>
-							<td>사용자 상세 챗봇코칭 참여 현황</td>
-							<td>HG-WEB-APPLOG-06</td>
-							<td class="stat">
-								<a href="HG-WEB-APPLOG-06.html" target="_blank">Link (완료 20230523)</a>
-							</td>
-							<td rowspan="3">
-								<strong>4순위</strong>
-							</td>
-						</tr>
-						<tr>
-							<td>시스템운영 > 상품관리 > 상품등록</td>
-							<td>상품 등록</td>
-							<td>HG-WEB-PAY-03-01</td>
-							<td class="stat">
-								<a href="HG-WEB-PAY-03-01.html" target="_blank">Link (완료 20230523)</a>
-							</td>
-						</tr>
-						<tr>
-							<td>시스템운영 > 상품관리 > 상품등록</td>
-							<td>상품 등록(챗봇코칭용)</td>
-							<td>HG-WEB-PAY-03-02</td>
-							<td class="stat">
-								<a href="HG-WEB-PAY-03-02.html" target="_blank">Link (완료 20230523)</a>
-							</td>
-						</tr>
-						<!-- //챗봇코칭 -->
 					</tbody>
 				</table>
 			</div>
 		</div>
-		<!-- //아델리 2022-07 -->
 	</body>
 </html>
