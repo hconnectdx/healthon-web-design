@@ -1,0 +1,1121 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <title>HEALTH ON 관리자 페이지 퍼블리싱 Status</title>
+    <style type="text/css">
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            overflow-y: scroll;
+        }
+
+        body {
+            color: #666;
+            background-color: #fff;
+            font: 12px/1.5 Dotum, '돋움';
+        }
+
+        a {
+            color: #27e;
+            text-decoration: none;
+        }
+
+        a:focus,
+        a:hover,
+        a:active {
+            text-decoration: underline;
+        }
+
+        .header {
+            padding: .5em;
+        }
+
+        .header h1 {
+            display: inline;
+            margin-right: 1em;
+            color: #000;
+            font-size: 2em;
+        }
+
+        .header ul {
+            display: inline;
+            font-size: 1.5em;
+            list-style: none;
+        }
+
+        .header ul li {
+            display: inline;
+        }
+
+        .group-title {
+            margin-top: 1em;
+            color: #000;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        table caption {
+            display: none;
+        }
+
+        table th {
+            color: #333;
+            background-color: #eee;
+        }
+
+        table th,
+        table td {
+            padding: 6px 3px 2px 3px;
+            border: 1px solid #ddd;
+            text-align: left;
+            font-size: 12px;
+            font-family: 'Dotum', '돋움';
+        }
+
+        table th,
+        table td.stat {
+            text-align: center;
+        }
+
+        table td.date p {
+            margin: 2px 0 0 0;
+        }
+
+        table td.date p.new {
+            color: #9c27b0;
+            font-weight: bold;
+        }
+
+        table td .notice li {
+            list-style: none;
+            margin: 2px 0 0 0;
+            font-weight: bold;
+        }
+
+        table td .notice li.new {
+            color: #9c27b0;
+        }
+
+        table td.stat {
+            font-weight: bold;
+        }
+
+        table tr.even,
+        table tr td.multi {
+            background-color: #ffffff;
+        }
+
+        table tr.add td {
+            background-color: #fd0;
+        }
+
+        table tr.modify td {
+            background-color: #fffeb4;
+        }
+
+        table tr.hover td {
+            background-color: #fafafa;
+        }
+
+        table tr.none td {
+            color: #000;
+            background-color: #fc8989;
+        }
+
+        table tr.up td {
+            background-color: #ffe9f5;
+        }
+
+        .section {
+            margin: 3em 0;
+        }
+
+        body.js .section {
+            margin: 0;
+        }
+
+        .section .title {
+            margin: 0;
+            padding: 0;
+            color: #000;
+            font-weight: bold;
+            font-size: 100%;
+        }
+
+        body.js .section .title {
+            padding: .5em;
+            border: 1px solid #ccc;
+            background-color: #ddd;
+            cursor: pointer;
+        }
+
+        body.js .section+.section .title {
+            border-top: 0;
+        }
+
+        body.js .section .title .page-count {
+            color: #666;
+            font-weight: normal;
+        }
+
+        body.js .section .content {
+            display: none;
+        }
+
+        #sb-body {
+            border: none !important;
+        }
+
+        .modi {
+            background: #000 !important;
+            color: #fff;
+            font-weight: bold
+        }
+
+        .modi.blue {
+            background: skyblue !important
+        }
+
+        .modi.red {
+            background: red !important
+        }
+
+        .font_form {
+            margin: 0;
+            padding: 0;
+            padding-inline-start: 5px;
+        }
+
+        .font_form li label {
+            font-size: 12px;
+            color: #444;
+            letter-spacing: 1px;
+        }
+    </style>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        (function ($) {
+            $.fn.stat = function (options) {
+                var settings = $.extend({
+                    title: 'h2.title',
+                    content: 'div.content',
+                    화면아이디s: 'tbody tr',
+                    stat: 'td.stat',
+                    index: 0,
+                    openAll: false,
+                    speed: 'fast'
+                }, options),
+                    all_sections = this,
+                    header = $('div.header');
+                return this.each(function () {
+                    var self = this,
+                        $self = $(self),
+                        title_text = [],
+                        completed = 0;
+                    self.section_title = $(settings.title, $self);
+                    self.content = $(settings.content, $self);
+                    self.화면아이디s = $(settings.화면아이디s, $self);
+                    self.화면아이디s.each(function () {
+                        var stat = $(settings.stat, this);
+                        stat.each(function () {
+                            var text = $(this).text();
+                            if (text) {
+                                if (text == 'none') {
+                                    $(this).css({ 'background': '#d2d2d2', 'color': '#fff' });
+                                } else if (text == 'ing') {
+                                    $(this).css({ 'background': '#5d9b1a', 'color': '#fff' });
+                                } else if (text == 'done') {
+                                    $(this).css({ 'background': '#1f78bd', 'color': '#fff' });
+                                } else if (text == 'edit') {
+                                    $(this).css({ 'background': '#ff2d2d', 'color': '#fff' });
+                                };
+                                completed++;
+                            };
+                        });
+                    });
+                    /*
+                    if(completed == 0){
+                        $(this).parent().parent().parent().hide();
+                    };
+                    */
+                    self.화면아이디s
+                        .bind('mouseenter', function () {
+                            $(this).addClass('hover');
+                        })
+                        .bind('mouseleave', function () {
+                            $(this).removeClass('hover');
+                        });
+                    title_text = [self.section_title.text(), ' <span class="page-count">(', completed, '/', self.화면아이디s.length, ')</span>'];
+                    self.section_title.html(title_text.join(''));
+                    self.section_title.bind('click', function () {
+                        self.content.slideToggle(settings.speed);
+                    });
+                    if (settings.openAll || ((settings.index - 1) === all_sections.index(this))) {
+                        self.content.css('display', 'block');
+                    }
+                });
+            };
+            $(document).ready(function () {
+                $('div.section').stat({ openAll: true });
+                $('#total').text($('tbody tr').length);
+                $('tbody tr:even').addClass('even');
+                $('tbody td[rowspan][rowspan!=1]').addClass('multi');
+
+                // 페이지 선택 select 스크립트
+                $('#page_chooser option').each(function ($index, $element) {
+                    $element = $($element);
+                    var 화면아이디 = $element.data('화면아이디');
+                    if (location.href.indexOf(화면아이디) > -1) {
+                        $element.attr('selected', 'selected');
+                    }
+                });
+                $('#page_chooser').bind('change', function () {
+                    location.href = $(this).val();
+                });
+                // 페이지 선택 select 스크립트 끝
+
+                // 폰트 선택 radio 스크립트
+                $("input:radio[name=chgFntsize]").click(function () {
+                    var fontAddSize = $("input[name=chgFntsize]:checked").val();
+                    fontAddSize = Number(fontAddSize);
+                    if (isNaN(fontAddSize)) { size = 0; }
+                    localStorage.setItem("fntAddSz", fontAddSize);
+                });
+                // 폰트 선택 radio 스크립트
+            });
+        }(jQuery));
+    </script>
+</head>
+
+<body>
+    <script type="text/javascript">document.body.className += ' js';</script>
+
+    <!-- Status  -->
+    <div class="section">
+        <h2 class="title">관리자 페이지 Status</h2>
+        <div class="content">
+            <table>
+                <colgroup>
+                    <col style="width:20%" />
+                    <col style="width:20%" />
+                    <col style="width:20%" />
+                    <col style="width:20%" />
+                    <col style="width:20%" / </colgroup>
+                <thead>
+                    <tr>
+                        <th scope="col">1depth</th>
+                        <th scope="col">2depth</th>
+                        <th scope="col">화면아이디</th>
+                        <th scope="col">페이지링크</th>
+                        <th scope="col">비고</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="5" style="background-color: beige;">공통</td>
+                        <td>등록/취소/삭제 등 정보알림(Modal)</td>
+                        <td rowspan="5">화면ID정의필요</td>
+                        <td class="stat" rowspan="5"><a href="modal_ex.html" target="_blank">Link</a></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>공통팝업-등록취소</td>
+                        <td rowspan="4">21.08.30 2차 퍼블리싱 작업</td>
+                    </tr>
+
+                    <tr>
+                        <td>공통팝업-임시저장</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>공통팝업-알립-그룹선택</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>공통팝업-알립-질문내용 입력</td>
+                        <td></td>
+                    </tr>
+                   
+                    
+                    <tr>
+                        <td rowspan="7">로그인</td>
+                        <td>로그인</td>
+                        <td>HG-WEB-LOGIN-01</td>
+                        <td class="stat" rowspan="4"><a href="login.html" target="_blank">Link</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>초기 비밀번호 변경(1)</td>
+                        <td>HG-WEB-LOGIN-02</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>초기 비밀번호 변경(2)</td>
+                        <td>HG-WEB-LOGIN-03</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>비밀번호 찾기</td>
+                        <td>HG-WEB-LOGIN-04</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>개인정보 변경 및 설정</td>
+                        <td>HG-WEB-SET-01</td>
+                        <td class="stat" rowspan="3"><a href="main.html" target="_blank">Link</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>설정</td>
+                        <td>HG-WEB-SET-02</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>내 정보 수정</td>
+                        <td>HG-WEB-SET-03</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">대시보드</td>
+                        <td>(관리자)대시보드(홈)</td>
+                        <td>HG-WEB-대시보드-01</td>
+                        <td class="stat"><a href="main.html" target="_blank">Link</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+
+                        <td>(의료진)대시보드(홈)</td>
+                        <td>HG-WEB-대시보드-02</td>
+                        <td class="stat"><a href="doctor_main.html" target="_blank">Link</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">사용자>전체</td>
+                        <td>사용자관리>전체사용자(관리자)</td>
+                        <td>HG-WEB-USER-01</td>
+                        <td class="stat"><a href="users.html" target="_blank">Link</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>사용자관리>전체사용자(병원/그룹)</td>
+                        <td>HG-WEB-USER-02</td>
+                        <td class="stat"><a href="doctor_users.html" target="_blank">Link</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">사용자>승인</td>
+                        <td>승인 관리 (관리자 직접 승인)</td>
+                        <td>HG-WEB-AUTH-01</td>
+                        <td class="stat"><a href="auth01_none.html" .html" target="_blank">Link</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>승인 관리 (관리자 직접 승인)</td>
+                        <td>HG-WEB-AUTH-02</td>
+                        <td class="stat"><a href="auth01.html" target="_blank">Link</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>승인 관리(사전 데이터 입력 및 자동 등록)</td>
+                        <td>HG-WEB-AUTH-03</td>
+                        <td class="stat"><a href="auth02.html" target="_blank">Link</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">사용자로그</td>
+                        <td>사용자관리>(사용자선택)상세조회>사용자로그</td>
+                        <td>HG-WEB-사용자공통-01</td>
+                        <td class="stat" rowspan="48"><a href="alluser_consult.html" target="_blank">Link</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>사용자관리>사용자상세>소속병원환자관리번호/담당의료진설정</td>
+                        <td>화면ID정의필요</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">메모,메시지</td>
+                        <td>사용자관리>상세조회>SMS발송메시지</td>
+                        <td>HG-WEB-MEMO-01</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>사용자관리>공통>메모수정(모달)</td>
+                        <td>HG-WEB-MEMO-02</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">BG타입</td>
+                        <td>사용자관리>사용자상세>BGType설정및상세(모달)</td>
+                        <td>HG-WEB-LOGIC-01</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>사용자관리> 사용자 상세 > BG Type 변경 이력(모달)</td>
+                        <td>HG-WEB-LOGIC-02</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">키/체중/체온/허리</td>
+                        <td>사용자관리>사용자상세>대시보드 항목 정의</td>
+                        <td>HG-WEB-USER</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>사용자관리>사용자상세>키</td>
+                        <td>HG-WEB-WEIGHT</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>사용자 관리 > 사용자 상세 > 체중/체온(목표설정은 없음)/허리둘레 UI 동일</td>
+                        <td>HG-WEB-WEIGHT/BT/WC</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="5">혈당</td>
+                        <td>사용자관리>사용자 상세>혈당(1)</td>
+                        <td>HG-WEB-BG-01</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>사용자관리>사용자 상세>혈당(2)</td>
+                        <td>HG-WEB-BG-02</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>사용자관리>사용자 상세>혈당(3)</td>
+                        <td>HG-WEB-BG-03</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>사용자로그>상세페이지(모달팝업)>혈당</td>
+                        <td>HG-WEB-BG-04</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>결과상세보기</td>
+                        <td>HG-WEB-BG-04-1</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="4">혈압</td>
+                        <td>사용자관리>사용자상세>혈압(1)</td>
+                        <td>HG-WEB-BP-01</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>사용자관리>사용자상세>혈압(2)</td>
+                        <td>HG-WEB-BP-02</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>사용자관리>사용자상세>혈압(3)</td>
+                        <td>HG-WEB-BP-03</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>사용자로그>상세페이지(모달팝업)>혈압</td>
+                        <td>HG-WEB-BP-04</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">식사</td>
+                        <td>사용자관리>사용자상세>식사관리</td>
+                        <td>HG-WEB-DIET-01</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>사용자로그>상세페이지(모달팝업)>식사</td>
+                        <td>HG-WEB-DIET-03</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>식사다이어리</td>
+                        <td>사용자로그>상세페이지(모달팝업)>식사다이어리</td>
+                        <td>HG-WEB-DIET-04</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">걷기</td>
+                        <td>사용자관리>사용자상세>걷기</td>
+                        <td>HG-WEB-STEP-01</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>사용자로그>상세페이지(모달팝업)>걷기</td>
+                        <td>HG-WEB-STEP-03</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">약</td>
+                        <td>사용자관리>사용자상세>복약관리</td>
+                        <td>HG-WEB-MED-01</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>사용자관리>사용자상세>복약상세</td>
+                        <td>HG-WEB-MED-02</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>사용자로그>상세페이지(모달팝업)>약>복약가이드</td>
+                        <td>HG-WEB-MED-03</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="5">인슐린</td>
+                        <td>사용자관리>사용자상세>인슐린</td>
+                        <td>HG-WEB-INSUNLIN-01</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>사용자관리>사용자상세>인슐린-상세조회</td>
+                        <td>HG-WEB-INSUNLIN-02</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>사용자관리>사용자상세>인슐린>처방관리</td>
+                        <td>HG-WEB-INSUNLIN-03</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>사용자관리>사용자상세>인슐린-권고용량조절</td>
+                        <td>HG-WEB-INSUNLIN-04</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>사용자관리>사용자상세>인슐린-권고용량조절>처방변경</td>
+                        <td>HG-WEB-INSUNLIN-04-01</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">수면</td>
+                        <td>사용자관리>사용자상세>수면(1)</td>
+                        <td>HG-WEB-SL-01</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>사용자관리>사용자상세>수면(2)</td>
+                        <td>HG-WEB-SL-02</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>사용자관리>사용자상세>수면(3)</td>
+                        <td>HG-WEB-SL-03</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">운동</td>
+                        <td>사용자관리>사용자상세>운동(1)</td>
+                        <td>HG-WEB-EX-01</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>사용자관리>사용자상세>운동(1)</td>
+                        <td>HG-WEB-EX-02</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>사용자관리>사용자상세>운동상세조회</td>
+                        <td>HG-WEB-EX-03</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>통합차트</td>
+                        <td>사용자관리>사용자상세>통합로그조회</td>
+                        <td>HG-WEB-IT-01</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">병원검사결과</td>
+                        <td>사용자관리>사용자상세>병원검사결과>전체리스트</td>
+                        <td>HG-WEB-LT-01</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>사용자관리>사용자상세>병원검사결과>수정/신규등록</td>
+                        <td>HG-WEB-LT-03</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>사용자관리>사용자상세>병원검사결과>검사항목별비교</td>
+                        <td>HG-WEB-LT-02</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">1:1상담</td>
+                        <td>사용자관리>사용자상세>1:1상담</td>
+                        <td>HG-WEB-CS-U-01</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>사용자관리>사용자상세>1:1상담>이미지크게보기</td>
+                        <td>HG-WEB-CS-01</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>사용자관리>사용자상세>1:1상담>콘텐츠미리보기및전달</td>
+                        <td>HG-WEB-CS-U-02</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="4">Telehealth</td>
+                        <td>사용자관리>사용자상세>Telehealth</td>
+                        <td>HG-WEB-TH-U-01</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>사용자관리>사용자상세>Telehealth>확정/반려프로세스</td>
+                        <td>HG-WEB-TH-U-01</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>사용자관리>사용자상세>Telehealth>요청생성</td>
+                        <td>HG-WEB-TH-03</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Video Call>(Popup)화상통화연결</td>
+                        <td>HG-WEB-TH-04</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="4">메시지</td>
+                        <td>사용자관리>메시지발송</td>
+                        <td>HG-WEB-MSG-01</td>
+                        <td class="stat" rowspan="2"><a href="send_message.html" target="_blank">Link</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>사용자관리>메시지발송>수신 대상자 선택 팝업</td>
+                        <td>HG-WEB-MSG-02</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>사용자관리>메시지 발송 이력</td>
+                        <td>HG-WEB-MSG-03</td>
+                        <td class="stat" rowspan="2"><a href="message_list.html" target="_blank">Link</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>메시지 발송>발송 대상자 조회</td>
+                        <td>HG-WEB-MSG-04</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">모니터링>1:1상담</td>
+                        <td>상담>Chat(각그룹소속관리자/의사/간호사등접속했을경우)</td>
+                        <td>HG-WEB-CS-01</td>
+                        <td class="stat"><a href="consult.html" target="_blank">Link</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>상담>Chat(슈퍼관리자가접속했을경우,조회만가능)</td>
+                        <td rowspan="2">HG-WEB-CS-01-2</td>
+                        <td class="stat" rowspan="2">-</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>이미지크게보기</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="5">모니터링>Telehealth</td>
+                        <td>상담>Video Call>Schedule(예약조회)</td>
+                        <td>HG-WEB-TH-01</td>
+                        <td class="stat"><a href="telehealth.html" target="_blank">Link</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>상담>Video Call>Schedule(슈퍼관리자가접속했을경우,조회만가능)</td>
+                        <td>HG-WEB-TH-01-2</td>
+                        <td class="stat">-</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>상담>Video Call>Logs(로그조회)</td>
+                        <td>HG-WEB-TH-02</td>
+                        <td class="stat">-</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>상담>Video Call>Schedule(의료진)_예약생성)</td>
+                        <td>HG-WEB-TH-P1</td>
+                        <td class="stat"><a href="th_reservation_creat.html" target="_blank">Link</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>상담>Video Call>Schedule(의료진_예약확정)</td>
+                        <td>HG-WEB-TH-P2</td>
+                        <td class="stat">-</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">모니터링</td>
+                        <td>모니터링>위험지수</td>
+                        <td>HG-WEB-MR-01</td>
+                        <td class="stat"><a href="moniter_danger.html" target="_blank">Link</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>모니터링>순응도관리</td>
+                        <td>HG-WEB-MR-02</td>
+                        <td class="stat"><a href="moniter_adapter.html" target="_blank">Link</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">동의서관리</td>
+                        <td>콘텐츠관리>동의서관리>동의서목록</td>
+                        <td>HG-WEB-AG-01</td>
+                        <td class="stat"><a href="moniter_adapter.html" target="_blank">Link</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>콘텐츠관리>동의서등록</td>
+                        <td>HG-WEB-AG-02</td>
+                        <td class="stat"><a href="moniter_adapter.html" target="_blank">Link</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">그룹관리</td>
+                        <td>시스템운영>그룹관리</td>
+                        <td>HG-WEB-GR-01</td>
+                        <td class="stat" rowspan="2"><a href="sys_group.html" target="_blank">Link</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>시스템운영>그룹관리>신규그룹등록(수정)</td>
+                        <td>HG-WEB-GR-02</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">웹사용자관리</td>
+                        <td>시스템운영>웹사용자관리</td>
+                        <td>HG-WEB-USER-01</td>
+                        <td class="stat" rowspan="2"><a href="sys_webuser.html" target="_blank">Link</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>시스템운영>웹사용자관리>웹사용자등록(수정)</td>
+                        <td>HG-WEB-USER-02</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>버전관리</td>
+                        <td>시스템운영>버전관리</td>
+                        <td>HG-WEB-VER-01</td>
+                        <td class="stat"><a href="sys_version.html" target="_blank">Link</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">약관관리</td>
+                        <td>시스템운영>약관관리</td>
+                        <td>HG-WEB-TERM-01</td>
+                        <td class="stat" rowspan="3"><a href="sys_appoint.html" target="_blank">Link</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>시스템운영>약관관리>이력조회(팝업)</td>
+                        <td>HG-WEB-TERM-02</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>시스템운영>약관관리>약관/개인정보처리방침등록/수정</td>
+                        <td>HG-WEB-TERM-03</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">검사항목관리</td>
+                        <td>시스템운영>검사항목관리</td>
+                        <td rowspan="2">화면ID정의필요</td>
+                        <td class="stat" rowspan="2"><a href="sys_checkitem.html" target="_blank">Link</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>시스템운영>검사항목관리>검사항목등록/변경</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">콘텐츠</td>
+                        <td>시스템운영>콘텐츠</td>
+                        <td>HG-WEB-CONT-01</td>
+                        <td class="stat" rowspan="3"><a href="sys_content.html" target="_blank">Link</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>콘텐츠미리보기</td>
+                        <td>HG-WEB-CONT-02</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>시스템운영>콘텐츠>글작성</td>
+                        <td>HG-WEB-CONT-03</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">공지사항</td>
+                        <td>시스템운영>공지사항관리</td>
+                        <td>HG-WEB-NOTI-01</td>
+                        <td class="stat" rowspan="3"><a href="sys_note.html" target="_blank">Link</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>미리보기</td>
+                        <td>HG-WEB-NOTI-02</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>시스템운영>공지사항등록/수정</td>
+                        <td>HG-WEB-NOTI-03</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">서비스문의</td>
+                        <td>시스템운영>서비스문의</td>
+                        <td>HG-WEB-QC-01</td>
+                        <td class="stat" rowspan="2"><a href="sys_service.html" target="_blank">Link</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>시스템운영>서비스문의>답변작성</td>
+                        <td>HG-WEB-QC-02</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>접속이력관리</td>
+                        <td>접속이력관리</td>
+                        <td>HG-WEB-LOG-01</td>
+                        <td class="stat"><a href="sys_connecthistory.html" target="_blank">Link</a></td>
+                        <td></td>
+                    </tr>
+
+
+                    <!-- 21.08.23 1차 퍼블리싱 작업  -->
+                    <tr >
+                        <td rowspan="5" style="background-color: beige;">설문관리</td>
+                        <td>설문목록_슈퍼관리자</td>
+                        <td>HG-WEB-SV-01</td>
+                        <td class="stat"><a href="contents_survey_super.html" target="_blank">Link</a></td>
+                        <td ></td>
+                    </tr>
+                    
+                    <tr >
+                        <td>설문목록_그룹관리자</td> 
+                        <td rowspan="4">HG-WEB-SV-02</td>
+                        <td class="stat" rowspan="4"><a href="contents_survey_group.html" target="_blank">Link</a></td>
+                        <td rowspan="4"></td>
+                    </tr>
+
+                    <tr >
+                        <td>설문목록_그룹관리자>응답결과</td>
+                    </tr>
+
+                    <tr>
+                        <td>설문등록</td>
+                    </tr>
+
+                    <tr>
+                        <td>설문등록>질문 가져오기 modal</td>
+                    </tr>
+
+                    <tr >
+                        <td rowspan="5" style="background-color: beige;">동의서 관리</td>
+                        <td>동의서목록_슈퍼관리자</td>
+                        <td>HG-WEB-AG-01 </td>
+                        <td class="stat"><a href="agreement_super.html" target="_blank">Link</a></td>
+                        <td>21.08.30 2차 퍼블리싱 작업</td>
+                    </tr>
+
+                    <tr>
+                        <td> 동의서목록_그룹관리자</td>
+                        <td rowspan="4" >HG-WEB-AG-02 </td>
+                        <td class="stat" rowspan="4"><a href="agreement_group.html" target="_blank">Link</a></td>
+                        <td>21.08.30 2차 퍼블리싱 작업</td>
+                    </tr>
+                    <tr>
+                        <td>동의서목록_그룹관리자>응답결과</td>
+                        <td>21.08.30 2차 퍼블리싱 작업</td>
+                    </tr>
+                    <tr>
+                        <td>동의서등록</td>
+                        <td>21.08.30 2차 퍼블리싱 작업</td>
+                    </tr>
+                    <tr>
+                        <td>동의서등록>질문 가져오기 modal</td>
+                        <td>21.08.30 2차 퍼블리싱 작업</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="5" style="background-color: beige;">텔레헬스 설문 선택</td>
+                        <td>사용자관리>전체사용자>App로그조회>Telehealth>스케줄 생성</td>
+                        <td>HG-WEB-TH-P1</td>
+                        <td rowspan="5" class="stat"><a href="th_u01.html" target="_blank">Link</a></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>상담>Telehealth>날짜 선택>요청 확정</td>
+                        <td>HG-WEB-TH-P2</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>예약확정결과 팝업</td>
+                        <td>HG-WEB-TH-P1</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>설문 선택 모달</td>
+                        <td>화면ID정의필요</td>
+                        <td>21.08.30 2차 퍼블리싱 작업</td>
+                    </tr>
+
+
+                    <tr>
+                        <td>예약일정 확인팝업(설문 선택시/미선택시)</td>
+                        <td>HG-WEB-TH-P2</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td rowspan="4" style="background-color: beige;">텔레헬스 설문 응답 확인</td>
+                        <td>사용자관리>전체사용자>App로그조회>Telehealth</td>
+                        <td>HG-WEB-TH-U-01</td>
+                        <td class="stat"><a href="consult04.html" target="_blank">Link</a></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>상담>Telehealth>날짜 선택</td>
+                        <td rowspan="3">HG-WEB-TH-01</td>
+                        <td rowspan="3" class="stat"><a href="th_u01.html" target="_blank">Link</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>선택한 설문 수정/ 미리보기 모달</td>
+                        <td>21.08.30 2차 퍼블리싱 작업</td>
+                    </tr>
+
+                    <tr>
+                        <td>설문 응답결과 확인 모달</td>
+                        <td>21.08.30 2차 퍼블리싱 작업</td>
+                    </tr>
+
+                    <tr>
+                        <td rowspan="1" style="background-color: beige;">동의서 응답 확인</td>
+                        <td>상담>요청내용 확인 modal</td>
+                        <td>HG-WEB-TH-P2</td>
+                        <td class="stat"><a href="th_u01.html" target="_blank">Link</a></td>
+                        <td></td>
+                    </tr>
+
+
+
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- //회원가입 -->
+
+
+</body>
+
+</html>

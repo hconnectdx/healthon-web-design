@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>공지 사항 관리</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+    <meta content="Coderthemes" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+    <!-- App css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
+    <link href="assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
+
+    <link href="assets/css/vendor/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/vendor/responsive.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/vendor/summernote-bs4.css" rel="stylesheet" type="text/css" />
+    <link href="assets/lib/simplelightbox/simpleLightbox.min.css" rel="stylesheet" type="text/css" />
+
+    <link href="assets/css/base.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/common.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="loading"
+    data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
+    <!-- Begin page -->
+    <div class="wrapper">
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="left-side-menu">
+            <!-- LOGO -->
+            <a href="main.html" class="logo text-center logo-light">
+                <span class="logo-lg">
+                    <img src="assets/images/logo.png" alt="" height="16">
+                </span>
+                <span class="logo-sm">
+                    <img src="assets/images/logo_sm.png" alt="" height="16">
+                </span>
+            </a>
+            <!-- LOGO -->
+            <a href="main.html" class="logo text-center logo-dark">
+                <span class="logo-lg">
+                    <img src="assets/images/logo-dark.png" alt="" height="16">
+                </span>
+                <span class="logo-sm">
+                    <img src="assets/images/logo_sm_dark.png" alt="" height="16">
+                </span>
+            </a>
+
+            <div class="h-100" id="left-side-menu-container" data-simplebar>
+                <!--- Sidemenu -->
+                <ul class="metismenu side-nav">
+                    <li class="side-nav-title side-nav-item">Navigation</li>
+                    <li class="side-nav-item">
+                        <a href="main.html" class="side-nav-link">
+                            <i class="uil-presentation-lines-alt"></i>
+                            <span> Dashboards </span>
+                        </a>
+                    </li>
+                    <li class="side-nav-item">
+                        <a href="#" class="side-nav-link">
+                            <i class="uil-users-alt"></i>
+                            <span> 사용자관리 </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="side-nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="users.html">전체사용자</a>
+                            </li>
+                            <li>
+                                <a href="auth01.html">승인 관리</a>
+                            </li>
+                            <li>
+                                <a href="send_message.html">메시지관리</a>
+                            </li>
+                            <li>
+                                <a href="message_list.html">메세지 발송 이력</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="side-nav-item">
+                        <a href="javascript: void(0);" class="side-nav-link">
+                            <i class="uil-comments-alt"></i>
+                            <span> 상담 </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="side-nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href=".html">대화형 상담</a>
+                            </li>
+                            <li>
+                                <a href=".html">단답형 상담</a>
+                            </li>
+                            <li>
+                                <a href=".html">비대면 상담</a>
+                            </li>
+                            <li>
+                                <a href="doc01.html">문서함</a>
+                            </li>
+                            <!-- <li>
+                                <a href="consult.html">1:1 상담</a>
+                            </li>
+                            <li>
+                                <a href="telehealth.html">Tel health</a>
+                            </li> -->
+                        </ul>
+                    </li>
+                    <li class="side-nav-item">
+                        <a href="javascript: void(0);" class="side-nav-link">
+                            <i class="uil-eye"></i>
+                            <span> 모니터링 </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="side-nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="moniter_danger.html">위험지수 관리</a>
+                            </li>
+                            <li>
+                                <a href="moniter_adapter.html">순응도 관리</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="side-nav-item">
+                        <a href="javascript: void(0);" class="side-nav-link">
+                            <i class="uil uil-image"></i>
+                            <span> 콘텐츠관리 </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="side-nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="sys_content.html">콘텐츠관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_video.html">동영상 관리</a>
+                            </li>
+                            <li>
+                                <a href="sdf.html">줄넘기 팁 관리</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="side-nav-item">
+                        <a href="javascript: void(0);" class="side-nav-link">
+                            <i class="uil-game-structure"></i>
+                            <span> 시스템운영 </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="side-nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="sys_group.html">그룹관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_webuser.html">웹 사용자관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_version.html">버전관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_appoint.html">약관 관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_service.html">서비스 문의</a>
+                            </li>
+                            <li>
+                                <a href="sys_connecthistory.html">접속 이력 관리</a>
+                            </li>
+                            <li>
+                                <a href=".html">결제 관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_checkitem.html">검사 항목관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_note.html">공지사항 관리</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <!-- Sidebar -left -->
+
+        </div>
+        <!-- Left Sidebar End -->
+
+        <!-- ============================================================== -->
+        <!-- Start Page Content here -->
+        <!-- ============================================================== -->
+
+        <div class="content-page">
+            <div class="content">
+                <!-- Topbar Start -->
+                <div class="navbar-custom">
+                    <ul class="list-unstyled topbar-right-menu float-right mb-0">
+                        <li class="dropdown notification-list d-lg-none">
+                            <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button"
+                                aria-haspopup="false" aria-expanded="false">
+                                <i class="dripicons-search noti-icon"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-animated dropdown-lg p-0">
+                                <form class="p-3">
+                                    <input type="text" class="form-control" placeholder="Search ..."
+                                        aria-label="Recipient's username">
+                                </form>
+                            </div>
+                        </li>
+
+                        <li class="dropdown notification-list">
+                            <a class="nav-link dropdown-toggle nav-user arrow-none mr-0" data-toggle="dropdown" href="#"
+                                role="button" aria-haspopup="false" aria-expanded="false">
+                                <span class="account-user-avatar">
+                                    <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
+                                </span>
+                                <span>
+                                    <span class="account-user-name">James Kim</span>
+                                    <span class="account-position">의사 <i class="dripicons-chevron-down"></i></span>
+                                </span>
+                            </a>
+                            <div
+                                class="dropdown-menu dropdown-menu-right dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
+                                <!-- item-->
+                                <a href="javascript:void(0);" onclick="showMyAccountDlg()"
+                                    class="dropdown-item notify-item">
+                                    <i class="mdi mdi-account-circle mr-1"></i>
+                                    <span>My Account</span>
+                                </a>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" onclick="showSettingDlg()"
+                                    class="dropdown-item notify-item">
+                                    <i class="mdi mdi-account-edit mr-1"></i>
+                                    <span>Settings</span>
+                                </a>
+                                <!-- item-->
+                                <a href="login.html" class="dropdown-item notify-item">
+                                    <i class="mdi mdi-logout mr-1"></i>
+                                    <span>Logout</span>
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+                    <button class="button-menu-mobile open-left disable-btn">
+                        <i class="mdi mdi-menu"></i>
+                    </button>
+                    <h4 class="page-title color-title float-left mt-3">공지 사항 관리</h4>
+                    <div class="app-search dropdown d-none d-lg-block float-right">
+                        <form>
+                            <div class="input-group">
+                                <input type="text" class="form-control dropdown-toggle" placeholder="사용자를 검색할수 있습니다."
+                                    id="top-search">
+                                <span class="mdi mdi-magnify search-icon"></span>
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="submit">검색</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- end Topbar -->
+
+                <!-- Start Content-->
+                <div class="container-fluid">
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box">
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0 pt-0">
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">시스템 운영</a></li>
+                                        <li class="breadcrumb-item active">공지사항 관리</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end page title -->
+
+                    <div>
+                        <ul class="nav nav-tabs nav-bordered mb-3 nav-tabs-my">
+                            <li class="nav-item">
+                                <a href="#contents_total" data-toggle="tab" aria-expanded="false"
+                                    class="nav-link rounded-0 active">
+                                    <span class=" d-md-block">공지사항 전체</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#new_register" data-toggle="tab" aria-expanded="false"
+                                    class="nav-link rounded-0">
+                                    <span class=" d-md-block">공지사항 신규 등록</span>
+
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane show active" id="contents_total">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <table class="table table-centered table-hover w-100 nowrap"
+                                            id="note-datatable">
+                                            <thead class="thead-light">
+                                                <tr>
+                                                    <th>No</th>
+                                                    <th>그룹</th>
+                                                    <th>구분</th>
+                                                    <th>공지사항 제목</th>
+                                                    <th>게시일시</th>
+                                                    <th>등록일시</th>
+                                                    <th>등록자</th>
+                                                    <th style="width: 225px;">관리</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1000</td>
+                                                    <td>전체</td>
+                                                    <td>게시형</td>
+                                                    <td>공지사항제목입니다</td>
+                                                    <td>2020-01-01 12:00</td>
+                                                    <td>2020-01-01 12:00</td>
+                                                    <td>홍길동</td>
+                                                    <td>
+                                                        <a class="text-body" data-toggle="modal"
+                                                            data-target="#noti-view-modal" href="">
+                                                            <i
+                                                                class="dripicons-preview font-20 cursor mr-3 align-text-bottom"></i>
+                                                        </a>
+                                                        <i
+                                                            class="mdi mdi-comment-processing-outline font-20 cursor mr-3"></i>
+                                                        <i class="mdi mdi-square-edit-outline font-20 cursor mr-3"></i>
+                                                        <i class="mdi mdi-delete font-20 cursor"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1000</td>
+                                                    <td>전체</td>
+                                                    <td>참여형</td>
+                                                    <td>공지사항제목입니다</td>
+                                                    <td>2020-01-01 12:00</td>
+                                                    <td>2020-01-01 12:00</td>
+                                                    <td>홍길동</td>
+                                                    <td>
+                                                        <a class="text-body" data-toggle="modal"
+                                                            data-target="#noti-view-modal" href="">
+                                                            <i
+                                                                class="dripicons-preview font-20 cursor mr-3 align-text-bottom"></i>
+                                                        </a>
+                                                        <i
+                                                            class="mdi mdi-comment-processing-outline font-20 cursor mr-3"></i>
+                                                        <i class="mdi mdi-square-edit-outline font-20 cursor mr-3"></i>
+                                                        <i class="mdi mdi-delete font-20 cursor"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>999</td>
+                                                    <td>ABCDEF Hospital</td>
+                                                    <td>참여형</td>
+                                                    <td>공지사항제목입니다</td>
+                                                    <td>2020-01-01 12:00</td>
+                                                    <td>2020-01-01 12:00</td>
+                                                    <td>홍길동</td>
+                                                    <td>
+                                                        <a class="text-body" data-toggle="modal"
+                                                            data-target="#noti-view-modal" href="">
+                                                            <i
+                                                                class="dripicons-preview font-20 cursor mr-3 align-text-bottom"></i>
+                                                        </a>
+                                                        <i
+                                                            class="mdi mdi-comment-processing-outline font-20 cursor mr-3"></i>
+                                                        <i class="mdi mdi-square-edit-outline font-20 cursor mr-3"></i>
+                                                        <i class="mdi mdi-delete font-20 cursor"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>998</td>
+                                                    <td>전체</td>
+                                                    <td>참여형</td>
+                                                    <td>공지사항제목입니다</td>
+                                                    <td>2020-01-01 12:00</td>
+                                                    <td>2020-01-01 12:00</td>
+                                                    <td>홍길동</td>
+                                                    <td>
+                                                        <a class="text-body" data-toggle="modal"
+                                                            data-target="#noti-view-modal" href="">
+                                                            <i
+                                                                class="dripicons-preview font-20 cursor mr-3 align-text-bottom"></i>
+                                                        </a>
+                                                        <i
+                                                            class="mdi mdi-comment-processing-outline font-20 cursor mr-3"></i>
+                                                        <i class="mdi mdi-square-edit-outline font-20 cursor mr-3"></i>
+                                                        <i class="mdi mdi-delete font-20 cursor"></i>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div> <!-- end card-body-->
+                                </div> <!-- end card-->
+                            </div>
+                            <div class="tab-pane show" id="new_register">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="border-bottom pb-3 mb-3">
+                                            <div class="d-flex dataTables_head03">
+                                                <div class="form-group mr-3">
+                                                    <label for="f-c-1" class="col-form-label mr-2"><b>공개
+                                                            범위</b></label><br>
+                                                    <select class="form-control min-width-150 mr-2" id="f-c-1">
+                                                        <option value="">전체</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group mr-3">
+                                                    <label for="f-c-1" class="col-form-label mr-2"><b>구분</b></label>
+                                                    <select class="form-control min-width-150 mr-2 noti-select"
+                                                        id="f-c-1">
+                                                        <option value="option01">게시형</option>
+                                                        <option value="option02">참여형</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group mr-3">
+                                                    <label for="f-c-1" class="col-form-label mr-2"><b>게시일</b></label>
+                                                    <div class="combine-wrapper d-block">
+                                                        <input type="text" class="form-control"
+                                                            data-provide="datepicker" data-date-format="yyyy-mm-dd"
+                                                            value="2020-01-01" />
+                                                        <i class="uil-calendar-alt"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="addbanner bg-dragula" style="display:none">
+                                                <div class="d-flex p-3">
+                                                    <div class="mr-3 pt-1" style="width:200px">
+                                                        <div><b>배너 등록</b><br>(선택사항)</div>
+                                                        <div style="padding-top:76px;">
+                                                            노출일시(하단 선택일 까지)
+                                                            <div class="combine-wrapper d-block">
+                                                                <input type="text" class="form-control pl-0"
+                                                                    data-provide="datepicker"
+                                                                    data-date-format="yyyy-mm-dd" value="2020-01-01" />
+                                                                <i class="uil-calendar-alt"></i>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="w-100">
+                                                        <form action="/" method="post" class="dropzone"
+                                                            id="myAwesomeDropzone" data-plugin="dropzone"
+                                                            data-previews-container="#file-previews"
+                                                            data-upload-preview-template="#uploadPreviewTemplate">
+                                                            <div class="fallback">
+                                                                <input name="file" type="file" multiple />
+                                                            </div>
+
+                                                            <div class="dz-message needsclick">
+                                                                <i class="h1 text-muted dripicons-cloud-upload"></i>
+                                                                <h3>Drop files here or click to upload.</h3>
+                                                            </div>
+                                                        </form>
+
+                                                        <!-- Preview -->
+                                                        <div class="dropzone-previews" id="file-previews"></div>
+
+                                                        <!-- file preview template -->
+                                                        <div class="d-none" id="uploadPreviewTemplate">
+                                                            <div class="card mt-1 mb-0 shadow-none border">
+                                                                <div class="p-2">
+                                                                    <div class="row align-items-center">
+                                                                        <div class="col-auto">
+                                                                            <img data-dz-thumbnail src="#"
+                                                                                class="avatar-sm rounded bg-light"
+                                                                                alt="">
+                                                                        </div>
+                                                                        <div class="col ps-0">
+                                                                            <a href="javascript:void(0);"
+                                                                                class="text-muted fw-bold"
+                                                                                data-dz-name></a>
+                                                                            <p class="mb-0" data-dz-size></p>
+                                                                        </div>
+                                                                        <div class="col-auto">
+                                                                            <!-- Button -->
+                                                                            <a href=""
+                                                                                class="btn btn-link btn-lg text-muted"
+                                                                                data-dz-remove>
+                                                                                <i class="dripicons-cross"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+                                        <div>
+                                            <div class="mb-1"><b>English</b></div>
+                                            <div for="f-c-4" class="form-group mb-3">
+                                                <label class="mb-0 font-13">제목</label>
+                                                <div class="d-flex mt-1">
+                                                    <input type="text" class="form-control mr-2" id="f-c-4"
+                                                        placeholder="제목을 입력하세요." />
+                                                    <button class="btn btn-secondary min-width-100"
+                                                        type="button">중복확인</button>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="mb-0 font-13 mb-1">내용</label>
+                                                <textarea id="f-c-5" class="form-control summernote-basic" rows="10"
+                                                    placeholder="내용을 입력하세요"></textarea>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div>
+                                            <div class="mb-1"><b>한국어</b></div>
+                                            <div for="f-c-6" class="form-group mb-3">
+                                                <label class="mb-0 font-13">제목</label>
+                                                <div class="d-flex mt-1">
+                                                    <input type="text" class="form-control mr-2" id="f-c-6"
+                                                        placeholder="제목을 입력하세요." />
+                                                    <button class="btn btn-secondary min-width-100"
+                                                        type="button">중복확인</button>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="mb-0 font-13 mb-1">내용</label>
+                                                <textarea id="f-c-7" class="form-control summernote-basic" rows="10"
+                                                    placeholder="내용을 입력하세요"></textarea>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div>
+                                            <div class="mb-1"><b>Arabic</b></div>
+                                            <div for="f-c-8" class="form-group mb-3">
+                                                <label class="mb-0 font-13">제목</label>
+                                                <div class="d-flex mt-1">
+                                                    <input type="text" class="form-control mr-2" id="f-c-8"
+                                                        placeholder="제목을 입력하세요." />
+                                                    <button class="btn btn-secondary min-width-100"
+                                                        type="button">중복확인</button>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="mb-0 font-13 mb-1">내용</label>
+                                                <textarea id="f-c-9" class="form-control summernote-basic" rows="10"
+                                                    placeholder="내용을 입력하세요"></textarea>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div>
+                                            <div class="mb-1"><b>中文</b></div>
+                                            <div for="f-c-10" class="form-group mb-3">
+                                                <label class="mb-0 font-13">제목</label>
+                                                <div class="d-flex mt-1">
+                                                    <input type="text" class="form-control mr-2" id="f-c-10"
+                                                        placeholder="제목을 입력하세요." />
+                                                    <button class="btn btn-secondary min-width-100"
+                                                        type="button">중복확인</button>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="mb-0 font-13 mb-1">내용</label>
+                                                <textarea id="f-c-11" class="form-control summernote-basic" rows="10"
+                                                    placeholder="내용을 입력하세요"></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mt-4">
+                                            <div class="col-6">
+                                                <button class="btn btn-light" type="button">원래대로</button>
+                                            </div>
+                                            <div class="col-6 text-right">
+                                                <button class="btn btn-light mr-1" type="button">취소</button>
+                                                <button class="btn btn-primary" type="submit">신규 등록</button>
+                                            </div>
+                                        </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- end col -->
+                    </div>
+                    <!-- end row -->
+
+                </div> <!-- container -->
+
+            </div> <!-- content -->
+
+            <!-- Footer Start -->
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            © HealthConnect Co., Ltd.
+                        </div>
+                        <div class="col-md-6">
+
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- end Footer -->
+
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
+
+    </div>
+    <!-- END wrapper -->
+
+    <div data-include-html="modal/account.html"></div>
+    <div data-include-html="modal/setting.html"></div>
+    <div data-include-html="modal/password.html"></div>
+    <div id="note-register-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true"
+        data-backdrop="static">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title">신규 그룹 등록</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="form-group col-md-2">
+                                <label class="col-form-label">구분</label>
+                                <select class="form-control">
+                                    <option>전체</option>
+                                </select>
+                            </div>
+                            <div class="form-row col-md-10">
+                                <div class="col-md-12">
+                                    <label class="col-form-label">공지사항제목</label>
+                                </div>
+                                <div class="form-group col-md-8">
+                                    <input type="text" class="form-control" placeholder="'-'를 빼고 숫자만 입력하세요">
+                                </div>
+
+                                <div class="form-group col-md-4">
+                                    <button class="btn btn-primary form-control" type="button"> 중복확인 </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="summernote-basic"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">원래대로</button>
+                    <button type="button" class="btn btn-light" data-dismiss="modal">취 소</button>
+                    <button type="button" class="btn btn-primary" onclick="updateUserInfo()">약관등록</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+
+    <div id="success-alert-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <div class="modal-content bg-white">
+                <div class="modal-body p-4">
+                    <div class="text-center">
+                        <i class="dripicons-checkmark h1"></i>
+                        <h4 class="mt-2" id="title"></h4>
+                        <p class="mt-3" id="content"></p>
+                        <button type="button" class="btn btn-light my-2" onclick="returnSuccessCallbck()">확인</button>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div id="error-alert-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <div class="modal-content bg-white">
+                <div class="modal-body p-4">
+                    <div class="text-center">
+                        <i class="dripicons-checkmark h1"></i>
+                        <h4 class="mt-2" id="e_title"></h4>
+                        <p class="mt-3" id="e_content"></p>
+                        <button type="button" class="btn btn-light my-2" data-dismiss="modal">확인</button>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+    <div id="info-alert-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-body p-4">
+                    <div class="text-center">
+                        <i class="dripicons-information h1 text-info"></i>
+                        <h4 class="mt-2">Heads up!</h4>
+                        <p class="mt-3">Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac
+                            facilisis in, egestas eget quam.</p>
+                        <button type="button" class="btn btn-info my-2" data-dismiss="modal">Continue</button>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div id="noti-view-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="schedule-create-modalLabe"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title" id="schedule-create-modalLabel">공지사항</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div data-simplebar style="height:640px;">
+                            본문 노출
+                        </div>
+                    </form>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div id="notiCancel" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title">취소 확인</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="form-group mb-0" style="letter-spacing:-.5px;">
+                            작성중인 내용이 모두 삭제됩니다. 작성을 취소하시겠습니까?
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">취소</button>
+                    <button type="button" class="btn btn-primary" onclick="">확인</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+
+    <div id="commentEdit" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="success-header-modalLabel"
+        aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog modal-custom-large modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title" id="meal-diary-detail-header-modalLabel">참여 댓글 조회</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body p-0">
+                    <div class="card modal-search">
+                        <div class="card-body border-bottom">
+                            <div class="top-search mini">
+                                <label class="mb-0 mr-1">검색일</label>
+                                <div class="combine-wrapper mr-1">
+                                    <input type="text" class="form-control" style="width: 140px;display: inline-block"
+                                        data-provide="datepicker" data-date-format="yyyy-mm-dd" value="2020-01-01" />
+                                    <i class="uil-calendar-alt"></i>
+                                </div>
+                                <label class="mb-0 mr-1 dash">~</label>
+                                <div class="combine-wrapper mr-2">
+                                    <input type="text" class="form-control" style="width: 140px;display: inline-block"
+                                        data-provide="datepicker" data-date-format="yyyy-mm-dd" value="2020-01-01" />
+                                    <i class="uil-calendar-alt"></i>
+                                </div>
+                                <div class="combine-wrapper mr-1"><input type="text" class="form-control width-150"
+                                        placeholder="이름을 입력하세요.">
+                                </div>
+                                <button class="btn btn-secondary t-btn-1">조회</button>
+                                <div class="text-right" style="flex-grow: 1;">
+                                    <button class="btn btn-primary">엑셀로 내려 받기</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-simplebar class="pl-3 pr-3" style="max-height: 700px;">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="tab-content">
+                                    <div class="tab-pane show active ">
+
+                                        <!-- comment box -->
+                                        <div class="border rounded comment-area">
+                                            <form action="#" class="comment-area-box" data-plugin="dropzone"
+                                                data-previews-container="#file-previews-1"
+                                                data-upload-preview-template="#uploadPreviewTemplate-1">
+                                                <textarea rows="6" class="form-control border-0 resize-none"
+                                                    placeholder="메시지를 입력하세요...."></textarea>
+                                                <div
+                                                    class="p-1 bg-light d-flex justify-content-between align-items-start">
+                                                    <div style="min-width: 96px;">
+                                                        <a href="#"
+                                                            class="btn btn-f-16 dz-message needsclick px-2 font-16 btn-light"><i
+                                                                class="uil uil-image font-20"></i></a>
+                                                    </div>
+                                                    <div class="dropzone-previews custom-dropzone-previews d-flex flex-wrap ml-3"
+                                                        id="file-previews-1">
+                                                        <div class="mb-1 mr-1 preview-item">
+                                                            <img src="assets/images/small/small-1.jpg" class="rounded"
+                                                                alt="">
+                                                            <a href="#"
+                                                                class="btn btn-danger text-muted remove-image" />
+                                                            <i class="dripicons-cross"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ml-auto mr-1">
+                                                        <button type="submit"
+                                                            class="btn btn-primary chat-send btn-block">등록</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            <div class="d-none" id="uploadPreviewTemplate-1">
+                                                <div class="mb-1 mr-1 preview-item">
+                                                    <img data-dz-thumbnail src="#" class="rounded" alt="">
+                                                    <a href="#" class="btn btn-danger text-muted" data-dz-remove>
+                                                        <i class="dripicons-cross"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div> <!-- end .border-->
+                                        <!-- end comment box -->
+                                    </div>
+                                    <!-- end timeline content-->
+                                </div> <!-- end tab-content -->
+                            </div> <!-- end card body -->
+                        </div> <!-- end card -->
+
+                        <div class="card">
+                            <div class="card-body">
+                                <div>
+                                    <div class="dropdown float-right mt-2">
+                                        <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <i class="mdi mdi-dots-vertical"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <!-- item-->
+                                            <a href="javascript:void(0);" onclick="csModifyModal()"
+                                                class="dropdown-item">수정</a>
+                                            <!-- item-->
+                                            <a href="javascript:void(0);" class="dropdown-item">삭제</a>
+                                        </div>
+                                    </div>
+                                    <div class="media border-bottom mb-2">
+                                        <img class="mr-2 rounded-circle" src="assets/images/users/avatar-3.jpg"
+                                            alt="Generic placeholder image" height="32">
+                                        <div class="media-body">
+                                            <h5 class="m-0">홍길동</h5>
+                                            <p class="text-muted"><small>2020-02-01 오전 10:30</small></p>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <p class="content-more mb-0">입력메시지 예시입니다.입력메시지 예시입니다.입력메시지 예시입니다.
+                                            입력메시지 예시입니다입력메시지 예시입니다.입력메시지 예시입니다.입력메시지 예시입니다.입력메시지 예시입니다.입력메시지
+                                            예시입니다.입력메시지 예시입니다.입력메시지 예시입니다.입력메시지 예시입니다.입력메시지 예시입니다.입력메시지 예시입니다.입력메시지
+                                            예시입니다.입력메시지 예시입니다.입력메시지 예시입니다.입력메시지 예시입니다.입력메시지 예시입니다.입력메시지 예시입니다.입력메시지
+                                            예시입니다.입력메시지 예시입니다.입력메시지 예시입니다.입력메시지 예시입니다.입력메시지 예시입니다.입력메시지 예시입니다.입력메시지
+                                            예시입니다.입력메시지 예시입니다.입력메시지 예시입니다.
+                                        </p>
+                                    </div>
+                                    <div class="media-body">
+                                        <a href="javascript:void(0)" class="more" style="display: none;"><i
+                                                class="dripicons-chevron-down text-primary font-16"></i> 더보기</a>
+                                    </div>
+
+
+                                </div>
+                                <div class="media-body">
+                                    <a href="javascript:void(0)" class="more" style="display: none;"><i
+                                            class="dripicons-chevron-down text-primary font-16"></i> 더보기</a>
+                                </div>
+
+                            </div> <!-- end tab-content -->
+                        </div> <!-- end card body -->
+
+                        <div class="card">
+                            <div class="card-body">
+                                <div>
+                                    <div class="dropdown float-right mt-2">
+                                        <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <i class="mdi mdi-dots-vertical"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <!-- item-->
+                                            <a href="javascript:void(0);" onclick="csModifyModal()"
+                                                class="dropdown-item">수정</a>
+                                            <!-- item-->
+                                            <a href="javascript:void(0);" class="dropdown-item">삭제</a>
+                                        </div>
+                                    </div>
+                                    <div class="media border-bottom mb-2">
+                                        <img class="mr-2 rounded-circle" src="assets/images/users/avatar-3.jpg"
+                                            alt="Generic placeholder image" height="32">
+                                        <div class="media-body">
+                                            <h5 class="m-0">홍길동</h5>
+                                            <p class="text-muted"><small>2020-02-01 오전 10:30</small></p>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <p class="content-more mb-0">입력메시지 예시입니다.입력메시지 예시입니다.입력메시지 예시입니다.
+                                            입력메시지 예시입니다입력메시지 예시입니다.입력메시지 예시입니다.입력메시지 예시입니다.입력메시지 예시입니다.입력메시지
+                                            예시입니다.입력메시지 예시입니다.입력메시지 예시입니다.입력메시지 예시입니다.입력메시지 예시입니다.입력메시지 예시입니다.입력메시지
+                                            예시입니다.입력메시지 예시입니다.입력메시지 예시입니다.입력메시지 예시입니다.입력메시지 예시입니다.입력메시지 예시입니다.입력메시지
+                                            예시입니다.입력메시지 예시입니다.입력메시지 예시입니다.입력메시지 예시입니다.입력메시지 예시입니다.입력메시지 예시입니다.입력메시지
+                                            예시입니다.입력메시지 예시입니다.입력메시지 예시입니다.
+                                        </p>
+                                    </div>
+                                    <div class="row image-gallery ml-1 mt-3">
+
+                                        <div class="card mb-1">
+                                            <div class="row">
+                                                <div class="col-auto">
+                                                    <a href="assets/images/small/small-1.jpg">
+                                                        <img src="assets/images/small/small-1.jpg" alt="post-img"
+                                                            class="rounded mr-1" height="80">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="card mb-1">
+                                            <div class="row">
+                                                <div class="col-auto">
+                                                    <a href="assets/images/small/small-2.jpg">
+                                                        <img src="assets/images/small/small-2.jpg" alt="post-img"
+                                                            class="rounded mr-1" height="80">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="media-body">
+                                        <a href="javascript:void(0)" class="more" style="display: none;"><i
+                                                class="dripicons-chevron-down text-primary font-16"></i> 더보기</a>
+                                    </div>
+
+
+                                </div>
+                                <div class="media-body">
+                                    <a href="javascript:void(0)" class="more" style="display: none;"><i
+                                            class="dripicons-chevron-down text-primary font-16"></i> 더보기</a>
+                                </div>
+
+                            </div> <!-- end tab-content -->
+                        </div> <!-- end card body -->
+                    </div> <!-- end card -->
+                </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div id="cs-modify-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="success-header-modalLabel"
+        aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog modal-custom-large modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title" id="meal-diary-detail-header-modalLabel">수정</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="card-body">
+
+                    <!-- comment box -->
+                    <div class="border rounded comment-area">
+                        <form action="#" class="comment-area-box" data-plugin="dropzone"
+                            data-previews-container="#file-previews-1"
+                            data-upload-preview-template="#uploadPreviewTemplate-1">
+                            <textarea rows="6" class="form-control border-0 resize-none vertical-scroll"
+                                placeholder="메시지를 입력하세요.">기존 메시지내용입니다. 기존 메시지내용입니다. 기존 메시지내용입니다. 기존 메시지내용입니다.기존 메시지내용입니다. 기존 메시지내용입니다. 기존 메시지내용입니다. 기존 메시지내용입니다.기존 메시지내용입니다. 기존 메시지내용입니다. 기존 메시지내용입니다. 기존 메시지내용입니다.기존 메시지내용입니다. 기존 메시지내용입니다. 기존 메시지내용입니다. 기존 메시지내용입니다.기존 메시지내용입니다. 기존 메시지내용입니다. 기존 메시지내용입니다. 기존 메시지내용입니다.기존 메시지내용입니다. 기존 메시지내용입니다. 기존 메시지내용입니다. 기존 메시지내용입니다.기존 메시지내용입니다. 기존 메시지내용입니다. 기존 메시지내용입니다. 기존 메시지내용입니다.기존 메시지내용입니다. 기존 메시지내용입니다. 기존 메시지내용입니다. 기존 메시지내용입니다.기존 메시지내용입니다. 기존 메시지내용입니다. 기존 메시지내용입니다. 기존 메시지내용입니다.기존 메시지내용입니다. 기존 메시지내용입니다. 기존 메시지내용입니다. 기존 메시지내용입니다.기존 메시지내용입니다. 기존 메시지내용입니다. 기존 메시지내용입니다. 기존 메시지내용입니다.기존 메시지내용입니다. 기존 메시지내용입니다. 기존 메시지내용입니다. 기존 메시지내용입니다.기존 메시지내용입니다. 기존 메시지내용입니다. 기존 메시지내용입니다. 기존 메시지내용입니다.기존 메시지내용입니다. 기존 메시지내용입니다. 기존 메시지내용입니다. 기존 메시지내용입니다.기존 메시지내용입니다. 기존 메시지내용입니다. 기존 메시지내용입니다. 기존 메시지내용입니다.</textarea>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary">수정</button>
+                            </div>
+                            <div class="p-1 bg-light d-flex justify-content-between align-items-start">
+                                <div style="min-width: 96px;">
+                                    <a href="#" class="btn btn-f-16 dz-message needsclick px-2 font-16 btn-light"><i
+                                            class="uil uil-image font-20"></i></a>
+                                    <a href="#contents-preview-modal" data-toggle="modal"
+                                        class="btn btn-f-16 px-2 font-16 btn-light"><i
+                                            class="uil uil-book-alt font-20"></i></a>
+                                </div>
+                                <div class="dropzone-previews custom-dropzone-previews d-flex flex-wrap ml-3"
+                                    id="file-previews-1">
+                                    <div class="mb-1 mr-1 preview-item">
+                                        <img src="assets/images/small/small-1.jpg" class="rounded" alt="">
+                                        <a href="#" class="btn btn-danger text-muted remove-image" />
+                                        <i class="dripicons-cross"></i>
+                                        </a>
+                                    </div>
+                                    <div class="mb-1 mr-1 preview-item">
+                                        <img src="assets/images/small/content.png" class="rounded" alt="">
+                                        <a href="#" class="btn btn-danger text-muted remove-image" />
+                                        <i class="dripicons-cross"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="ml-auto"></div>
+                            </div>
+                        </form>
+                        <div class="d-none" id="uploadPreviewTemplate-1">
+                            <div class="mb-1 mr-1 preview-item">
+                                <img data-dz-thumbnail src="#" class="rounded" alt="">
+                                <a href="#" class="btn btn-danger text-muted" data-dz-remove>
+                                    <i class="dripicons-cross"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div> <!-- end .border-->
+                    <!-- end comment box -->
+                </div>
+
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+
+
+    <script src="assets/js/vendor.min.js"></script>
+    <script src="assets/js/app.min.js"></script>
+
+    <script src="assets/js/vendor/jquery.dataTables.min.js"></script>
+    <script src="assets/js/vendor/dataTables.bootstrap4.js"></script>
+    <script src="assets/js/vendor/dataTables.responsive.min.js"></script>
+    <script src="assets/js/vendor/responsive.bootstrap4.min.js"></script>
+    <script src="assets/js/vendor/apexcharts.min.js"></script>
+    <script src="assets/js/vendor/dataTables.checkboxes.min.js"></script>
+    <script src="assets/js/vendor/summernote-bs4.min.js"></script>
+    <script src="assets/js/pages/demo.summernote.js"></script>
+
+    <script src="assets/js/common.js"></script>
+    <script src="assets/js/page/noti.js"></script>
+    <script src="assets/js/vendor/dropzone.min.js"></script>
+    <!-- init js -->
+    <script src="assets/js/ui/component.fileupload.js"></script>
+    <script src="assets/lib/simplelightbox/simpleLightbox.min.js"></script>
+    <script>
+        function updateUserPassword() {
+            $("#login-password-modal").modal("hide");
+        }
+
+        function showMyAccountDlg() {
+            $("#my-info-modal").modal("show");
+        }
+
+        function updateLoginPasswordDlg() {
+            $("#login-password-modal").modal("show");
+        }
+
+        function showSettingDlg() {
+            $("#setting-modal").modal("show");
+        }
+
+        function updateUserInfo() {
+            $("#my-info-modal").modal("hide");
+        }
+
+        function notiCancel() {
+            $("#notiCancel").modal("show");
+        }
+
+        $(document).on("change", ".noti-select", function () {
+            if (this.value === "option01") {
+                $(".addbanner").hide()
+            } else {
+                $(".addbanner").show()
+            }
+        });
+
+        function showMealDiaryDetailModal() {
+            $("#commentEdit").modal("show");
+        }
+
+
+        jQuery(function ($) {
+            $('.image-gallery a').simpleLightbox({
+                nextBtnClass: ' dripicons-chevron-right',
+                nextBtnCaption: '',
+                prevBtnClass: ' dripicons-chevron-left',
+                prevBtnCaption: '',
+            });
+
+            $(".remove-image").on("click", function (e) {
+                e.preventDefault()
+                $(this).closest(".preview-item").remove()
+            })
+        })
+        jQuery(function ($) {
+            $('.image-preview a').simpleLightbox({
+
+            });
+
+            $(".remove-image").on("click", function (e) {
+                e.preventDefault()
+                $(this).closest(".preview-item").remove()
+            })
+        })
+
+        function csModifyModal() {
+            $("#cs-modify-modal").modal("show");
+        }
+    </script>
+    <div style="position:fixed;bottom:0;right:0;background:rgba(0, 0, 0, .5);width:200px;padding: 20px;">
+        <a href="javascript:void(0)" onclick="showMealDiaryDetailModal()" style="color: #fff;">참여 댓글 조회</a><br />
+        <a href="javascript:void(0)" onclick="csModifyModal()" style="color: #fff;">웹 사용자가 쓴 댓 글 수정</a><br />
+        <a href="javascript:void(0)" onclick="notiCancel()" style="color: #fff;">취소</a><br />
+    </div>
+
+</body>
+
+</html>

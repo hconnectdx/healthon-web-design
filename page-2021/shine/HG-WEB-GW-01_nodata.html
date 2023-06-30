@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<title>게이트웨이</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+		<meta content="Coderthemes" name="author" />
+		<!-- App favicon -->
+		<link rel="shortcut icon" href="assets/images/favicon.ico" />
+
+		<!-- App css -->
+		<link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
+		<link href="assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
+
+		<link href="assets/css/vendor/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/vendor/responsive.bootstrap4.css" rel="stylesheet" type="text/css" />
+
+		<link href="assets/css/base.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/common.css" rel="stylesheet" type="text/css" />
+	</head>
+
+	<body
+		class="loading"
+		data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'
+	>
+		<!-- Begin page -->
+		<div class="wrapper">
+			<!-- ========== Left Sidebar Start ========== -->
+			<div class="left-side-menu">
+				<!-- LOGO -->
+				<a href="main.html" class="logo text-center logo-light">
+					<span class="logo-lg">
+						<img src="assets/images/logo.png" alt="" height="16" />
+					</span>
+					<span class="logo-sm">
+						<img src="assets/images/logo_sm.png" alt="" height="16" />
+					</span>
+				</a>
+				<!-- LOGO -->
+				<a href="main.html" class="logo text-center logo-dark">
+					<span class="logo-lg">
+						<img src="assets/images/logo-dark.png" alt="" height="16" />
+					</span>
+					<span class="logo-sm">
+						<img src="assets/images/logo_sm_dark.png" alt="" height="16" />
+					</span>
+				</a>
+
+				<div class="h-100" id="left-side-menu-container" data-simplebar>
+					<!--- Sidemenu -->
+					<ul class="metismenu side-nav">
+						<li class="side-nav-title side-nav-item">Navigation</li>
+						<li class="side-nav-item">
+							<a href="main.html" class="side-nav-link">
+								<i class="dripicons-home"></i>
+								<span> Home </span>
+							</a>
+						</li>
+						<li class="side-nav-item">
+							<a href="#" class="side-nav-link">
+								<i class="uil-users-alt"></i>
+								<span> 사용자관리 </span>
+								<span class="menu-arrow"></span>
+							</a>
+							<ul class="side-nav-second-level" aria-expanded="false">
+								<li>
+									<a href="users.html">전체사용자</a>
+								</li>
+								<li>
+									<a href="auth01.html">승인 관리</a>
+								</li>
+								<li>
+									<a href="send_message.html">메시지관리</a>
+								</li>
+								<li>
+									<a href="message_list.html">메세지 발송 이력</a>
+								</li>
+							</ul>
+						</li>
+						<li class="side-nav-item">
+							<a href="javascript: void(0);" class="side-nav-link">
+								<i class="uil-comments-alt"></i>
+								<span> 상담 </span>
+								<span class="menu-arrow"></span>
+							</a>
+							<ul class="side-nav-second-level" aria-expanded="false">
+								<li>
+									<a href=".html">대화형 상담</a>
+								</li>
+								<li>
+									<a href=".html">단답형 상담</a>
+								</li>
+								<li>
+									<a href=".html">비대면 상담</a>
+								</li>
+								<li>
+									<a href="doc01.html">문서함</a>
+								</li>
+								<!-- <li>
+                                <a href="consult.html">1:1 상담</a>
+                            </li>
+                            <li>
+                                <a href="telehealth.html">Tel health</a>
+                            </li> -->
+							</ul>
+						</li>
+						<li class="side-nav-item">
+							<a href="javascript: void(0);" class="side-nav-link">
+								<i class="uil-eye"></i>
+								<span> 모니터링 </span>
+								<span class="menu-arrow"></span>
+							</a>
+							<ul class="side-nav-second-level" aria-expanded="false">
+								<li>
+									<a href="moniter_danger.html">위험지수 관리</a>
+								</li>
+								<li>
+									<a href="moniter_adapter.html">순응도 관리</a>
+								</li>
+							</ul>
+						</li>
+						<li class="side-nav-item">
+							<a href="javascript: void(0);" class="side-nav-link">
+								<i class="uil uil-image"></i>
+								<span> 콘텐츠관리 </span>
+								<span class="menu-arrow"></span>
+							</a>
+							<ul class="side-nav-second-level" aria-expanded="false">
+								<li>
+									<a href="sys_content.html">콘텐츠관리</a>
+								</li>
+								<li>
+									<a href="sys_video.html">동영상 관리</a>
+								</li>
+								<li>
+									<a href="sdf.html">줄넘기 팁 관리</a>
+								</li>
+							</ul>
+						</li>
+						<li class="side-nav-item">
+							<a href="javascript: void(0);" class="side-nav-link">
+								<i class="uil-game-structure"></i>
+								<span> 시스템운영 </span>
+								<span class="menu-arrow"></span>
+							</a>
+							<ul class="side-nav-second-level" aria-expanded="false">
+								<li>
+									<a href="sys_group.html">그룹관리</a>
+								</li>
+								<li>
+									<a href="sys_webuser.html">웹 사용자관리</a>
+								</li>
+								<li>
+									<a href="sys_version.html">버전관리</a>
+								</li>
+								<li>
+									<a href="sys_appoint.html">약관 관리</a>
+								</li>
+								<li>
+									<a href="sys_service.html">서비스 문의</a>
+								</li>
+								<li>
+									<a href="sys_connecthistory.html">접속 이력 관리</a>
+								</li>
+								<li>
+									<a href=".html">결제 관리</a>
+								</li>
+								<li>
+									<a href="sys_checkitem.html">검사 항목관리</a>
+								</li>
+								<li>
+									<a href="sys_note.html">공지사항 관리</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<div class="clearfix"></div>
+				</div>
+				<!-- Sidebar -left -->
+			</div>
+			<!-- Left Sidebar End -->
+
+			<!-- ============================================================== -->
+			<!-- Start Page Content here -->
+			<!-- ============================================================== -->
+
+			<div class="content-page">
+				<div class="content">
+					<!-- Topbar Start -->
+					<div class="navbar-custom">
+						<ul class="list-unstyled topbar-right-menu float-right mb-0">
+							<li class="dropdown notification-list d-lg-none">
+								<a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+									<i class="dripicons-search noti-icon"></i>
+								</a>
+								<div class="dropdown-menu dropdown-menu-animated dropdown-lg p-0">
+									<form class="p-3">
+										<input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username" />
+									</form>
+								</div>
+							</li>
+
+							<li class="dropdown notification-list">
+								<a
+									class="nav-link dropdown-toggle nav-user arrow-none mr-0"
+									data-toggle="dropdown"
+									href="#"
+									role="button"
+									aria-haspopup="false"
+									aria-expanded="false"
+								>
+									<span class="account-user-avatar">
+										<img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle" />
+									</span>
+									<span>
+										<span class="account-user-name">James Kim</span>
+										<span class="account-position">의사 <i class="dripicons-chevron-down"></i></span>
+									</span>
+								</a>
+								<div class="dropdown-menu dropdown-menu-right dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
+									<!-- item-->
+									<a href="javascript:void(0);" onclick="showMyAccountDlg()" class="dropdown-item notify-item">
+										<i class="mdi mdi-account-circle mr-1"></i>
+										<span>My Account</span>
+									</a>
+
+									<!-- item-->
+									<a href="javascript:void(0);" onclick="showSettingDlg()" class="dropdown-item notify-item">
+										<i class="mdi mdi-account-edit mr-1"></i>
+										<span>Settings</span>
+									</a>
+									<!-- item-->
+									<a href="login.html" class="dropdown-item notify-item">
+										<i class="mdi mdi-logout mr-1"></i>
+										<span>Logout</span>
+									</a>
+								</div>
+							</li>
+						</ul>
+						<button class="button-menu-mobile open-left disable-btn">
+							<i class="mdi mdi-menu"></i>
+						</button>
+						<h4 class="page-title color-title float-left mt-3">게이트웨이 관리</h4>
+						<div class="app-search dropdown d-none d-lg-block float-right">
+							<form>
+								<div class="input-group">
+									<input type="text" class="form-control dropdown-toggle" placeholder="닉네임 또는 이름을 입력하세요." id="top-search" />
+									<span class="mdi mdi-magnify search-icon"></span>
+									<div class="input-group-append">
+										<button class="btn btn-primary" type="submit">검색</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					<!-- end Topbar -->
+
+					<!-- Start Content-->
+					<div class="container-fluid">
+						<!-- start page title -->
+						<div class="row">
+							<div class="col-12">
+								<div class="page-title-box">
+									<div class="page-title-right">
+										<ol class="breadcrumb m-0 pt-0">
+											<li class="breadcrumb-item"><a href="javascript: void(0);">시스템 운영</a></li>
+											<li class="breadcrumb-item active">게이트웨이 관리</li>
+										</ol>
+									</div>
+									<!--<h4 class="page-title color-title">전체 사용자</h4>-->
+								</div>
+							</div>
+						</div>
+						<!-- end page title -->
+
+						<div class="row">
+							<div class="col-lg-12 col-xl-7">
+								<div class="card">
+									<div class="card-body">
+										<p class="mb-1" style="color: #fa5c7c; font-weight: 500">“장소 등록” 버튼을 눌러 장소를 등록해주세요</p>
+										<select class="form-control d-inline-block w-auto mb-1 mr-1" style="width: 160px">
+											<option>그룹그룹그룹그룹</option>
+											<option>그룹B</option>
+											<option>.....</option>
+										</select>
+										<select class="form-control d-inline-block w-auto mb-1 mr-1" style="width: 190px">
+											<option value="">건물</option>
+										</select>
+										<select class="form-control d-inline-block w-auto mb-1 mr-1" style="width: 160px">
+											<option value="">층수</option>
+										</select>
+										<button class="btn btn-primary mb-1 mr-1" onclick="addLOCATION()">+ 장소 등록</button>
+										<button class="btn btn-primary mb-1 mr-1" onclick="addMAP()">+ 평면도 등록</button>
+
+										<div class="pin-box mt-2 position-relative no-data">
+											<div class="pin-text">
+												<i class="mdi mdi-map-search-outline mdi-48px" style="color: #8d9ca3"></i>
+												<p>장소(건물, 층)를 선택해주세요.</p>
+											</div>
+										</div>
+									</div>
+									<!-- end card-body-->
+								</div>
+								<!-- end card-->
+							</div>
+							<!-- end col -->
+							<div class="col-lg-12 col-xl-5">
+								<div class="card" id="gateway">
+									<div class="card-body pb-0">
+										<div class="row">
+											<div class="col-lg-3">
+												<div class="mt-1 mb-1">
+													게이트웨이 등록<i
+														class="mdi mdi-help-circle-outline font-16 ml-1"
+														data-toggle="tooltip"
+														data-placement="bottom"
+														title=""
+														data-original-title="게이트웨이가 설치된 위치를 지도에서 클릭하여, 게이트웨이를 등록해주세요."
+													></i>
+												</div>
+											</div>
+											<div class="col-lg-9 text-right">
+												<select class="form-control d-inline-block mr-1" style="width: 160px">
+													<option>게이트웨이 ID</option>
+													<option>장소</option>
+													<option>.....</option>
+												</select>
+												<input type="text" class="form-control w-auto d-inline-block" placeholder="검색어를 입력하세요" />
+											</div>
+										</div>
+										<table class="table user-detail-table table-centered table-hover w-100 nowrap thead-only-gray" id="gateway-datatable">
+											<thead class="thead-light">
+												<tr>
+													<th>장소</th>
+													<th>게이트웨이ID</th>
+													<th>상태</th>
+													<th>업데이트시간</th>
+													<th>관리</th>
+												</tr>
+											</thead>
+										</table>
+									</div>
+									<!-- end card-body-->
+								</div>
+								<!-- end card-->
+							</div>
+							<!-- end col -->
+						</div>
+						<!-- end row -->
+					</div>
+					<!-- container -->
+				</div>
+				<!-- content -->
+
+				<!-- Footer Start -->
+				<footer class="footer">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-md-6">© HealthConnect Co., Ltd.</div>
+							<div class="col-md-6"></div>
+						</div>
+					</div>
+				</footer>
+				<!-- end Footer -->
+			</div>
+
+			<!-- ============================================================== -->
+			<!-- End Page content -->
+			<!-- ============================================================== -->
+		</div>
+		<!-- END wrapper -->
+
+		<div data-include-html="modal/account.html"></div>
+		<div data-include-html="modal/setting.html"></div>
+		<div data-include-html="modal/password.html"></div>
+
+		<div id="addLOCATION" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true" data-backdrop="static">
+			<div class="modal-dialog modal-lg modal-dialog-centered" style="max-width: 400px">
+				<div class="modal-content">
+					<div class="modal-header modal-colored-header bg-primary">
+						<h4 class="modal-title">장소 등록</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					</div>
+					<div class="modal-body">
+						<form action="#">
+							<div class="col-md-12 p-0">
+								<div class="form-group">
+									<label class="col-form-label"><b>그룹</b></label>
+									<select class="form-control" id="example-select">
+										<option>서울대학교병원</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label class="col-form-label"><b>파일업로드</b></label>
+									<div class="input-group">
+										<!-- state-file 클래스 없애면 휴지통아이콘 없어집니다. -->
+										<div class="custom-file state-file">
+											<input type="file" class="custom-file-input" id="inputGroupFile04" />
+											<div class="state-file__btn"><i class="uil uil-trash-alt"></i></div>
+											<label class="custom-file-label m-0" for="inputGroupFile04" id="label-inputGroupFile04" style="color: #adb5bd">건물, 층 엑셀 파일</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer position-relative">
+						<button type="button" class="btn btn-light" data-dismiss="modal">취소</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal">등록</button>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+
+		<div id="addMAP" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true" data-backdrop="static">
+			<div class="modal-dialog modal-lg modal-dialog-centered" style="max-width: 400px">
+				<div class="modal-content">
+					<div class="modal-header modal-colored-header bg-primary">
+						<h4 class="modal-title">평면도 등록</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					</div>
+					<div class="modal-body">
+						<form action="#">
+							<div class="col-md-12 p-0">
+								<div class="form-group">
+									<label class="col-form-label"><b>그룹</b></label>
+									<select class="form-control" id="example-select">
+										<option>서울대학교병원</option>
+									</select>
+								</div>
+
+								<div class="form-group">
+									<label class="col-form-label"><b>건물</b></label>
+									<select class="form-control" id="example-select">
+										<option>A병동</option>
+									</select>
+								</div>
+
+								<div class="form-group">
+									<label class="col-form-label"><b>층수</b></label>
+									<select class="form-control" id="example-select">
+										<option>1층</option>
+									</select>
+								</div>
+
+								<div class="form-group">
+									<label class="col-form-label"><b>파일업로드</b></label>
+									<div class="input-group">
+										<!-- state-file 클래스 없애면 휴지통아이콘 없어집니다. -->
+										<div class="custom-file state-file">
+											<input type="file" class="custom-file-input" id="inputGroupFile04" />
+											<div class="state-file__btn"><i class="uil uil-trash-alt"></i></div>
+											<label class="custom-file-label m-0" for="inputGroupFile04" id="label-inputGroupFile04" style="color: #adb5bd"
+												>평면도 이미지 파일(png, jpg 등)</label
+											>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer position-relative">
+						<button type="button" class="btn btn-light" data-dismiss="modal">취소</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal">등록</button>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+
+		<div id="addGateway" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true" data-backdrop="static">
+			<div class="modal-dialog modal-lg modal-dialog-centered" style="max-width: 400px">
+				<div class="modal-content">
+					<div class="modal-header modal-colored-header bg-primary">
+						<h4 class="modal-title">게이트웨이 등록</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					</div>
+					<div class="modal-body">
+						<form action="#">
+							<div class="col-md-12 p-0">
+								<div class="form-group">
+									<label class="col-form-label"><b>그룹</b></label>
+									<select class="form-control" id="example-select">
+										<option>서울대학교병원</option>
+									</select>
+								</div>
+
+								<div class="form-group">
+									<label class="col-form-label"><b>건물</b></label>
+									<select class="form-control" id="example-select">
+										<option>A병동</option>
+									</select>
+								</div>
+
+								<div class="form-group">
+									<label class="col-form-label"><b>층수</b></label>
+									<select class="form-control" id="example-select">
+										<option>1층</option>
+									</select>
+								</div>
+
+								<div class="form-group">
+									<label class="col-form-label"><b>장소</b></label>
+									<select class="form-control" id="example-select">
+										<option>장소를 선택해주세요</option>
+									</select>
+								</div>
+
+								<div class="form-group">
+									<label class="col-form-label"><b>일련번호</b></label>
+									<input type="text" class="form-control" placeholder="일련번호를 입력하세요" />
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer position-relative">
+						<button type="button" class="btn btn-light" data-dismiss="modal">취소</button>
+						<button type="button" class="btn btn-primary" id="addGatewayBtn" data-dismiss="modal">등록</button>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+
+		<div id="editGateway" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true" data-backdrop="static">
+			<div class="modal-dialog modal-lg modal-dialog-centered" style="max-width: 400px">
+				<div class="modal-content">
+					<div class="modal-header modal-colored-header bg-primary">
+						<h4 class="modal-title">게이트웨이 수정</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					</div>
+					<div class="modal-body">
+						<form action="#">
+							<div class="col-md-12 p-0">
+								<div class="form-group">
+									<label class="col-form-label"><b>그룹</b></label>
+									<select class="form-control" id="example-select">
+										<option>서울대학교병원</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label class="col-form-label"><b>건물</b></label>
+									<select class="form-control" id="example-select">
+										<option>A병동</option>
+									</select>
+								</div>
+
+								<div class="form-group">
+									<label class="col-form-label"><b>층수</b></label>
+									<select class="form-control" id="example-select">
+										<option>1층</option>
+									</select>
+								</div>
+
+								<div class="form-group">
+									<label class="col-form-label"><b>장소</b></label>
+									<select class="form-control" id="example-select">
+										<option>101호</option>
+									</select>
+								</div>
+
+								<div class="form-group">
+									<label class="col-form-label"><b>일련번호</b></label>
+									<input type="text" class="form-control" value="123123123" />
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer position-relative">
+						<button type="button" class="btn btn-light" data-dismiss="modal">취소</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal">저장</button>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+
+		<div id="infoGateway" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="schedule-create-modalLabe" aria-hidden="true" data-backdrop="static">
+			<div class="modal-dialog modal-dialog-centered modal">
+				<div class="modal-content">
+					<div class="modal-header modal-colored-header bg-primary">
+						<h4 class="modal-title" id="schedule-create-modalLabel">게이트웨이 정보</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					</div>
+					<div class="modal-body">
+						<form action="#">
+							<div class="form-group my-0">
+								<label for="" class="col-form-label"><b>위치</b></label>
+								<div class="d-flex justify-content-between p-20 py-2 border-bottom">
+									<div>그룹명</div>
+									<div><b>홍길동</b></div>
+								</div>
+								<div class="d-flex justify-content-between p-20 py-2 border-bottom">
+									<div>건물명</div>
+									<div><b>A병동</b></div>
+								</div>
+								<div class="d-flex justify-content-between p-20 py-2 border-bottom">
+									<div>층수</div>
+									<div><b>3층</b></div>
+								</div>
+								<div class="d-flex justify-content-between p-20 py-2">
+									<div>장소명</div>
+									<div><b>복도</b></div>
+								</div>
+							</div>
+
+							<div class="form-group mt-2">
+								<label for="" class="col-form-label"><b>기기 정보</b></label>
+								<div class="d-flex justify-content-between p-20 py-2 border-bottom">
+									<div>일렬번호</div>
+									<div><b>12345678900000</b></div>
+								</div>
+								<div class="d-flex justify-content-between p-20 py-2 border-bottom">
+									<div>버전</div>
+									<div><b>v.1.1 (2021-09-13)</b></div>
+								</div>
+								<div class="d-flex justify-content-between p-20 py-2 border-bottom">
+									<div>재기동 시간</div>
+									<div><b>2021-09-12 14:30:03</b></div>
+								</div>
+								<div class="d-flex justify-content-between p-20 py-2 border-bottom">
+									<div>재기동 요청시간</div>
+									<div class="text-right">
+										<b>2021-09-12 14:30:03</b><br />
+										<button class="btn btn-secondary mt-2">재기동 요청</button>
+									</div>
+								</div>
+								<div class="d-flex justify-content-between p-20 py-2 border-bottom">
+									<div>최종접속일</div>
+									<div><b>2021-09-12 14:30:03</b></div>
+								</div>
+								<div class="d-flex justify-content-between p-20 pb-0">
+									<div>로그</div>
+									<div class="text-right">
+										<button class="btn btn-secondary">다운로드</button>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+		<!-- /.modal -->
+
+		<div id="error-alert-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog modal-sm modal-dialog-centered">
+				<div class="modal-content bg-white">
+					<div class="modal-body p-4">
+						<div class="text-center">
+							<i class="dripicons-checkmark h1"></i>
+							<h4 class="mt-2" id="e_title"></h4>
+							<p class="mt-3" id="e_content"></p>
+							<button type="button" class="btn btn-light my-2" data-dismiss="modal">확인</button>
+						</div>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+		<!-- /.modal -->
+
+		<div id="info-alert-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog modal-sm modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-body p-4">
+						<div class="text-center">
+							<i class="dripicons-information h1 text-info"></i>
+							<h4 class="mt-2">Heads up!</h4>
+							<p class="mt-3">Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+							<button type="button" class="btn btn-info my-2" data-dismiss="modal">Continue</button>
+						</div>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+		<!-- /.modal -->
+		<script src="assets/js/vendor.min.js"></script>
+		<script src="assets/js/app.min.js"></script>
+
+		<script src="assets/js/vendor/jquery.dataTables.min.js"></script>
+		<script src="assets/js/vendor/dataTables.bootstrap4.js"></script>
+		<script src="assets/js/vendor/dataTables.responsive.min.js"></script>
+		<script src="assets/js/vendor/responsive.bootstrap4.min.js"></script>
+		<script src="assets/js/vendor/apexcharts.min.js"></script>
+		<script src="assets/js/vendor/jquery-ui.min.js"></script>
+		<script src="assets/js/vendor/dataTables.checkboxes.min.js"></script>
+		<script src="assets/js/common.js"></script>
+		<script src="assets/js/page/gateway.js"></script>
+		<script type="text/javascript">
+			function addLOCATION() {
+				$("#addLOCATION").modal("show");
+			}
+			function addMAP() {
+				$("#addMAP").modal("show");
+			}
+			function addGateway() {
+				$("#addGateway").modal("show");
+			}
+			function editGateway() {
+				$("#editGateway").modal("show");
+			}
+			function infoGateway() {
+				$("#infoGateway").modal("show");
+			}
+			$(function () {
+				$(".pin").draggable();
+				$(".pin-wrap").droppable({
+					drop: function (event, ui) {
+						editGateway();
+					},
+				});
+			});
+
+			//핀 클릭
+			$(document).on("click", ".pin", function () {
+				editGateway();
+			});
+
+			var positionTop;
+			var positionLeft;
+
+			//지도 클릭
+			$(document).on("click", ".pin-wrap", function (e) {
+				var offset = $(this).offset();
+				positionTop = e.clientY - offset.top - 20;
+				positionLeft = e.clientX - offset.left - 8;
+				addGateway();
+			});
+
+			//게이트웨이 등록 버튼
+			$(document).on("click", "#addGatewayBtn", function (e) {
+				$(".pin-box").append(
+					'<img class="pin position-absolute" style="z-index: 100; left: ' +
+						positionLeft +
+						"px; top: " +
+						positionTop +
+						'px" src="./assets/images/pin.svg" alt="" />'
+				);
+				$(".pin").draggable();
+			});
+		</script>
+	</body>
+</html>

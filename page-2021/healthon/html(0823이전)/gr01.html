@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>그룹관리</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+    <meta content="Coderthemes" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+    <!-- App css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
+    <link href="assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
+
+    <link href="assets/css/vendor/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/vendor/responsive.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <link href="assets/lib/simplelightbox/simpleLightbox.min.css" rel="stylesheet" type="text/css" />
+
+    <link href="assets/css/base.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/common.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="loading"
+    data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
+    <!-- Begin page -->
+    <div class="wrapper">
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="left-side-menu">
+            <!-- LOGO -->
+            <a href="main.html" class="logo text-center logo-light">
+                <span class="logo-lg">
+                    <img src="assets/images/logo.png" alt="" height="16">
+                </span>
+                <span class="logo-sm">
+                    <img src="assets/images/logo_sm.png" alt="" height="16">
+                </span>
+            </a>
+            <!-- LOGO -->
+            <a href="main.html" class="logo text-center logo-dark">
+                <span class="logo-lg">
+                    <img src="assets/images/logo-dark.png" alt="" height="16">
+                </span>
+                <span class="logo-sm">
+                    <img src="assets/images/logo_sm_dark.png" alt="" height="16">
+                </span>
+            </a>
+
+            <div class="h-100" id="left-side-menu-container" data-simplebar>
+                <!--- Sidemenu -->
+                <ul class="metismenu side-nav">
+                    <li class="side-nav-title side-nav-item">Navigation</li>
+                    <li class="side-nav-item">
+                        <a href="main.html" class="side-nav-link">
+                            <i class="uil-presentation-lines-alt"></i>
+                            <span> Dashboards </span>
+                        </a>
+                    </li>
+                    <li class="side-nav-item">
+                        <a href="#" class="side-nav-link">
+                            <i class="uil-users-alt"></i>
+                            <span> 사용자관리 </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="side-nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="users.html">전체사용자</a>
+                            </li>
+                            <li>
+                                <a href="auth01.html">승인 관리</a>
+                            </li>
+                            <li>
+                                <a href="send_message.html">메시지관리</a>
+                            </li>
+                            <li>
+                                <a href="message_list.html">메세지 발송 이력</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="side-nav-item">
+                        <a href="javascript: void(0);" class="side-nav-link">
+                            <i class="uil-comments-alt"></i>
+                            <span> 상담 </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="side-nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href=".html">대화형 상담</a>
+                            </li>
+                            <li>
+                                <a href=".html">단답형 상담</a>
+                            </li>
+                            <li>
+                                <a href=".html">비대면 상담</a>
+                            </li>
+                            <li>
+                                <a href="doc01.html">문서함</a>
+                            </li>
+                            <!-- <li>
+                                <a href="consult.html">1:1 상담</a>
+                            </li>
+                            <li>
+                                <a href="telehealth.html">Tel health</a>
+                            </li> -->
+                        </ul>
+                    </li>
+                    <li class="side-nav-item">
+                        <a href="javascript: void(0);" class="side-nav-link">
+                            <i class="uil-eye"></i>
+                            <span> 모니터링 </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="side-nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="moniter_danger.html">위험지수 관리</a>
+                            </li>
+                            <li>
+                                <a href="moniter_adapter.html">순응도 관리</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="side-nav-item">
+                        <a href="javascript: void(0);" class="side-nav-link">
+                            <i class="uil uil-image"></i>
+                            <span> 콘텐츠관리 </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="side-nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="sys_content.html">콘텐츠관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_video.html">동영상 관리</a>
+                            </li>
+                            <li>
+                                <a href="sdf.html">줄넘기 팁 관리</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="side-nav-item">
+                        <a href="javascript: void(0);" class="side-nav-link">
+                            <i class="uil-game-structure"></i>
+                            <span> 시스템운영 </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="side-nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="sys_group.html">그룹관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_webuser.html">웹 사용자관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_version.html">버전관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_appoint.html">약관 관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_service.html">서비스 문의</a>
+                            </li>
+                            <li>
+                                <a href="sys_connecthistory.html">접속 이력 관리</a>
+                            </li>
+                            <li>
+                                <a href=".html">결제 관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_checkitem.html">검사 항목관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_note.html">공지사항 관리</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <!-- Sidebar -left -->
+
+        </div>
+        <!-- Left Sidebar End -->
+
+        <!-- ============================================================== -->
+        <!-- Start Page Content here -->
+        <!-- ============================================================== -->
+
+        <div class="content-page">
+            <div class="content">
+                <!-- Topbar Start -->
+                <div class="navbar-custom">
+                    <ul class="list-unstyled topbar-right-menu float-right mb-0">
+                        <li class="dropdown notification-list d-lg-none">
+                            <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button"
+                                aria-haspopup="false" aria-expanded="false">
+                                <i class="dripicons-search noti-icon"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-animated dropdown-lg p-0">
+                                <form class="p-3">
+                                    <input type="text" class="form-control" placeholder="Search ..."
+                                        aria-label="Recipient's username">
+                                </form>
+                            </div>
+                        </li>
+
+                        <li class="dropdown notification-list">
+                            <a class="nav-link dropdown-toggle nav-user arrow-none mr-0" data-toggle="dropdown" href="#"
+                                role="button" aria-haspopup="false" aria-expanded="false">
+                                <span class="account-user-avatar">
+                                    <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
+                                </span>
+                                <span>
+                                    <span class="account-user-name">James Kim</span>
+                                    <span class="account-position">의사 <i class="dripicons-chevron-down"></i></span>
+                                </span>
+                            </a>
+                            <div
+                                class="dropdown-menu dropdown-menu-right dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
+                                <!-- item-->
+                                <a href="javascript:void(0);" onclick="showMyAccountDlg()"
+                                    class="dropdown-item notify-item">
+                                    <i class="mdi mdi-account-circle mr-1"></i>
+                                    <span>My Account</span>
+                                </a>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" onclick="showSettingDlg()"
+                                    class="dropdown-item notify-item">
+                                    <i class="mdi mdi-account-edit mr-1"></i>
+                                    <span>Settings</span>
+                                </a>
+                                <!-- item-->
+                                <a href="login.html" class="dropdown-item notify-item">
+                                    <i class="mdi mdi-logout mr-1"></i>
+                                    <span>Logout</span>
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+                    <button class="button-menu-mobile open-left disable-btn">
+                        <i class="mdi mdi-menu"></i>
+                    </button>
+                    <h4 class="page-title color-title float-left mt-3">그룹 관리</h4>
+                    <div class="app-search dropdown d-none d-lg-block float-right">
+                        <form>
+                            <div class="input-group">
+                                <input type="text" class="form-control dropdown-toggle" placeholder="사용자를 검색할수 있습니다."
+                                    id="top-search">
+                                <span class="mdi mdi-magnify search-icon"></span>
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="submit">검색</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- end Topbar -->
+
+                <!-- Start Content-->
+                <div class="container-fluid">
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box">
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0 pt-0">
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">시스템 운영</a></li>
+                                        <li class="breadcrumb-item">그룹 관리</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end page title -->
+                    <div>
+                        <ul class="nav nav-tabs nav-bordered mb-3 nav-tabs-my">
+                            <li class="nav-item">
+                                <a href="#group_lookup" data-toggle="tab" aria-expanded="false"
+                                    class="nav-link rounded-0 active">
+                                    <span class=" d-md-block">그룹 조회</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#group_new" data-toggle="tab" aria-expanded="false" class="nav-link rounded-0">
+                                    <span class=" d-md-block">신규 그룹 등록</span>
+
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane show active" id="group_lookup">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <table class="table table-centered table-hover w-100 nowrap"
+                                            id="note-datatable">
+                                            <thead class="thead-light">
+                                                <tr>
+                                                    <th>구분</th>
+                                                    <th>상태</th>
+                                                    <th>그룹 이름</th>
+                                                    <th>사용자 승인</th>
+                                                    <th>대표 관리자</th>
+                                                    <th>대표 관리자 이메일</th>
+                                                    <th>대표 관리자 연락처</th>
+                                                    <th>대표 관리자 등록일</th>
+                                                    <th style="width: 225px;">관리</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>병원</td>
+                                                    <td>활성</td>
+                                                    <td>ABCDEFGH Hospital</td>
+                                                    <td>해당 없음</td>
+                                                    <td>홍길동</td>
+                                                    <td>hong@hc.com</td>
+                                                    <td>+82 212345333 </td>
+                                                    <td>2020-01-01 14:20</td>
+                                                    <td>
+                                                        <button class="btn btn-primary cursor" type="submit">등록 정보
+                                                            수정</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>병원</td>
+                                                    <td>비활성</td>
+                                                    <td>ABCDE Hospital</td>
+                                                    <td>직접 승인</td>
+                                                    <td>김영미</td>
+                                                    <td>kim@hc.com</td>
+                                                    <td>+82 212334567 </td>
+                                                    <td>2020-01-01 14:20</td>
+                                                    <td>
+                                                        <button class="btn btn-primary cursor" type="submit">등록 정보
+                                                            수정</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>병원</td>
+                                                    <td>활성</td>
+                                                    <td>GG Hospital</td>
+                                                    <td><a href="javascript:void(0)">데이터 매칭</a></td>
+                                                    <td>홍길동</td>
+                                                    <td>hong@hc.com</td>
+                                                    <td>+82 212345333 </td>
+                                                    <td>2020-01-01 14:20</td>
+                                                    <td>
+                                                        <button class="btn btn-primary cursor" type="submit">등록 정보
+                                                            수정</button>
+                                                    </td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div> <!-- end card-body-->
+                                </div> <!-- end card-->
+                            </div>
+                            <div class="tab-pane show" id="group_new">
+                                <div class="row">
+                                    <div class="col-xl-7 col-lg-6 order-lg-1 order-xl-1 mb-2 mb-lg-0">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-xl-6">
+                                                        <div class="form-group mb-0">
+                                                            <label class="col-form-label"><b>구분</b></label>
+                                                        </div>
+                                                        <div class="form-row mb-2">
+                                                            <select class="form-control" id="example-select">
+                                                                <option>의료기관</option>
+                                                                <option>일반기업</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="form-group mb-0">
+                                                            <label class="col-form-label"><b>그룹 이름</b></label>
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="form-group col-xl-9">
+                                                                <input class="form-control" type="email" required=""
+                                                                    placeholder="그룹이름을 입력하세요.">
+                                                            </div>
+                                                            <div class="form-group col-xl-3">
+                                                                <button class="btn btn-secondary form-control"
+                                                                    type="button">중복확인</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="form-group mb-0">
+                                                            <label class="col-form-label"><b>인증 여부</b></label>
+                                                        </div>
+                                                        <div class="form-row mb-2">
+                                                            <select class="form-control" id="example-select">
+                                                                <option>인증 불필요</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="form-group mb-0">
+                                                            <label class="col-form-label"><b>&nbsp;</b></label>
+                                                        </div>
+                                                        <div class="form-row mb-2">
+                                                            <input type="text" class="form-control" readonly>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-xl-6">
+                                                        <div class="form-group mb-0">
+                                                            <label class="col-form-label"><b>부서</b></label>
+                                                        </div>
+                                                        <div class="form-row mb-2">
+                                                            <select class="form-control" id="example-select">
+                                                                <option>소속 불필요</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="form-group mb-0">
+                                                            <label class="col-form-label"><b>&nbsp;</b></label>
+                                                        </div>
+                                                        <div class="form-row mb-2">
+                                                            <input type="text" class="form-control" readonly>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-xl-6">
+                                                        <div class="form-group mb-0">
+                                                            <label class="col-form-label"><b>그룹 연락처</b></label>
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="form-group col-xl-3">
+                                                                <select class="form-control">
+                                                                    <option>+82</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="form-group col-xl-6">
+                                                                <input type="text" class="form-control"
+                                                                    placeholder="'-'를 빼고 숫자만 입력하세요">
+                                                            </div>
+                                                            <div class="form-group col-xl-3">
+                                                                <button class="btn btn-secondary form-control"
+                                                                    type="button">중복확인</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="form-group mb-0">
+                                                            <div class="d-flex align-items-center">
+                                                                <label class="col-form-label"><b>그룹 대표 이미지(권장 사이즈:50 X
+                                                                        50 px)</b></label>
+                                                                <div class="ml-auto"><a href="#" class="image-gallery"
+                                                                        id="preview">미리보기</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <div class="custom-file mb-2">
+                                                                <input type="file" class="custom-file-input"
+                                                                    id="inputGroupFile04">
+                                                                <label class="custom-file-label" for="inputGroupFile04"
+                                                                    id="label-inputGroupFile04">대표이미지를 업로드 하세요(png
+                                                                    jpg)</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-12">
+                                                        <div class="form-group mb-0">
+                                                            <label class="col-form-label"><b>그룹 주소 - (좌)위도, (우)경도,
+                                                                    (하단)APP표기 주소</b></label>
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-6">
+                                                                <input type="text" class="form-control"
+                                                                    placeholder="ex:) 37.551125" />
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <input type="text" class="form-control"
+                                                                    placeholder="ex:) 127.049658" />
+                                                            </div>
+                                                            <div class="form-group col-md-12">
+                                                                <input type="text" class="form-control"
+                                                                    placeholder="상세 주소를 입력하세요." />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-12">
+                                                        <div class="form-group mt-4 mb-0">
+                                                            <label for="example-textarea"><b>그룹 소개 메시지</b></label>
+                                                            <textarea class="form-control" id="example-textarea"
+                                                                placeholder="내용을 입력하세요." rows="9"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-5 col-lg-6 order-lg-2 order-xl-1">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="border p-20 mb-20 border">
+                                                    <div class="row justify-content-between mt-1">
+                                                        <div class="col">
+                                                            <b>그룹 상태</b>
+                                                        </div>
+                                                        <div class="custom-control custom-switch ml-auto">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                id="customSwitch3">
+                                                            <label class="custom-control-label"
+                                                                for="customSwitch3"></label>
+                                                        </div>
+                                                    </div>
+                                                    <p class="font-12 mt-10 mb-0">▶ 활성 상태 시, 사용자 앱 그룹 목록에 즉시 노출<br />
+                                                        ▶ 비활성 상태 시, 사용자가 소속 그룹 신규 등록 불가</p>
+                                                </div>
+                                                <div class="border p-20 border">
+                                                    <b class="mt-8 border-bottom border-dark pb-10 d-block mb-15">대표
+                                                        그룹관리자
+                                                        등록</b>
+                                                    </h5>
+                                                    <div class="form-group mb-0">
+                                                        <label class="col-form-label">이름</label>
+                                                    </div>
+                                                    <div class="form-row mb-0">
+                                                        <div class="form-group col-xl-6">
+                                                            <input class="form-control" type="text" required=""
+                                                                placeholder="이름을 입력하세요.">
+                                                        </div>
+                                                        <div class="form-group col-xl-6">
+                                                            <input class="form-control" type="text" required=""
+                                                                placeholder="성을 입력하세요.">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group mb-0">
+                                                        <label class="col-form-label">이메일 주소</label>
+                                                    </div>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-xl-9">
+                                                            <input class="form-control" type="email" required=""
+                                                                placeholder="대표 관리자 이메일 주소를 입력하세요.">
+                                                        </div>
+                                                        <div class="form-group col-xl-3">
+                                                            <button class="btn btn-secondary form-control"
+                                                                type="button">중복확인</button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group mb-0">
+                                                        <label class="col-form-label">연락처</label>
+                                                    </div>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-xl-3">
+                                                            <select class="form-control">
+                                                                <option>+82</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group col-xl-6">
+                                                            <input type="text" class="form-control"
+                                                                placeholder="대표 연락처를 입력하세요.">
+                                                        </div>
+
+                                                        <div class="form-group col-xl-3">
+                                                            <button class="btn btn-secondary form-control"
+                                                                type="button">중복확인</button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group mb-0" style="margin-top:-10px;">
+                                                        <label class="col-form-label font-12">(※ 모바일 연락처로 로그인 임시 비밀번호가
+                                                            전송됩니다.)</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div> <!-- end col -->
+                    </div>
+
+                    <!-- Footer Start -->
+                    <footer class="footer">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    © HealthConnect Co., Ltd.
+                                </div>
+                                <div class="col-md-6">
+
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                    <!-- end Footer -->
+
+                </div>
+
+                <!-- ============================================================== -->
+                <!-- End Page content -->
+                <!-- ============================================================== -->
+
+            </div>
+            <!-- END wrapper -->
+
+            <div data-include-html="modal/account.html"></div>
+            <div data-include-html="modal/setting.html"></div>
+            <div data-include-html="modal/password.html"></div>
+            <div id="group-register-modal" class="modal sys_modal fade" tabindex="-1" role="dialog" aria-labelledby=""
+                aria-hidden="true" data-backdrop="static">
+                <div class="modal-dialog modal-dialog-centered modal-custom-large-sys">
+                    <div class="modal-content">
+                        <div class="modal-header modal-colored-header bg-primary">
+                            <h4 class="modal-title">신규 그룹 등록</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="#">
+                                <div class="row">
+                                    <div class="col-xl-5 border-right pr-3">
+                                        <div class="form-group mb-0">
+                                            <label class="col-form-label"><b>구분</b></label>
+                                        </div>
+                                        <div class="form-row mb-2">
+                                            <select class="form-control" id="example-select">
+                                                <option>의료기관</option>
+                                                <option>일반기업</option>
+
+                                            </select>
+                                        </div>
+                                        <div class="form-group mb-0">
+                                            <label class="col-form-label"><b>그룹 이름</b></label>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-xl-9">
+                                                <input class="form-control" type="email" required=""
+                                                    placeholder="그룹이름을 입력하세요.">
+                                            </div>
+                                            <div class="form-group col-xl-3">
+                                                <button class="btn btn-secondary form-control"
+                                                    type="button">중복확인</button>
+                                            </div>
+                                        </div>
+                                        <div class="form-group mb-0">
+                                            <div class="d-flex align-items-center">
+                                                <label class="col-form-label"><b>그룹 대표 이미지(권장 사이즈:50 X 50
+                                                        px)</b></label>
+                                                <div class="ml-auto"><a href="#" class="image-gallery"
+                                                        id="preview">미리보기</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="input-group">
+                                            <div class="custom-file mb-2">
+                                                <input type="file" class="custom-file-input" id="inputGroupFile04">
+                                                <label class="custom-file-label" for="inputGroupFile04"
+                                                    id="label-inputGroupFile04">대표이미지를 업로드 하세요(png jpg)</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group mb-0">
+                                            <label class="col-form-label"><b>그룹 연락처</b></label>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-xl-3">
+                                                <select class="form-control">
+                                                    <option>+82</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-xl-6">
+                                                <input type="text" class="form-control" placeholder="'-'를 빼고 숫자만 입력하세요">
+                                            </div>
+
+                                            <div class="form-group col-xl-3">
+                                                <button class="btn btn-secondary form-control"
+                                                    type="button">중복확인</button>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group mb-0">
+                                            <label class="col-form-label"><b>주소를 입력하세요 (위도,경도 순)</b></label>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <input type="text" class="form-control" placeholder="ex:) 37.551125" />
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <input type="text" class="form-control" placeholder="ex:) 127.049658" />
+                                            </div>
+                                            <div class="form-group col-md-12">
+                                                <input type="text" class="form-control" placeholder="상세 주소를 입력하세요." />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xl-3 border-right pl-3 pr-3">
+                                        <div class="form-group mb-0">
+                                            <label class="col-form-label"><b>주요 기능 사용 여부</b></label>
+                                        </div>
+                                        <!--버튼-->
+                                        <div class="row justify-content-between mt-1">
+                                            <div class="col">
+                                                1:1 상담
+                                            </div>
+                                            <div class="custom-control custom-switch ml-auto">
+                                                <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                                <label class="custom-control-label" for="customSwitch1"></label>
+                                            </div>
+                                        </div>
+                                        <div class="row justify-content-between mt-2">
+                                            <div class="col">
+                                                텔레헬스
+                                            </div>
+                                            <div class="custom-control custom-switch ml-auto">
+                                                <input type="checkbox" class="custom-control-input" id="customSwitch2">
+                                                <label class="custom-control-label" for="customSwitch2"></label>
+                                            </div>
+                                            <div class="form-group col-md-12">
+                                                <input type="text" class="form-control" placeholder="API Key를 입력하세요.">
+                                                <input type="text" class="form-control" placeholder="Secret Key를 입력하세요."
+                                                    disabled="">
+                                            </div>
+
+
+                                        </div>
+                                        <div class="row justify-content-between mt-2">
+                                            <div class="col">
+                                                병원검사결과
+                                            </div>
+                                            <div class="custom-control custom-switch ml-auto">
+                                                <input type="checkbox" class="custom-control-input" id="customSwitch3">
+                                                <label class="custom-control-label" for="customSwitch3"></label>
+                                            </div>
+                                        </div>
+                                        <!--버튼-->
+                                        <!--그룹 소개 메시지-->
+                                        <div class="form-group mt-4 mb-0">
+                                            <label for="example-textarea"><b>그룹 소개 메시지</b></label>
+                                            <textarea class="form-control" id="example-textarea"
+                                                placeholder="내용을 입력하세요." rows="9"></textarea>
+                                        </div>
+                                        <!--그룹 소개 메시지-->
+                                    </div>
+                                    <div class="col-xl-4 pl-3">
+                                        <div class="form-group mb-0">
+                                            <label class="col-form-label"><b>대표 관리자 등록</b></label>
+                                        </div>
+                                        <div class="form-group mb-0">
+                                            <label class="col-form-label">대표 관리자 - 이름</label>
+                                        </div>
+                                        <div class="form-row mb-0">
+                                            <div class="form-group col-xl-6">
+                                                <input class="form-control" type="text" required=""
+                                                    placeholder="이름을 입력하세요.">
+                                            </div>
+                                            <div class="form-group col-xl-6">
+                                                <input class="form-control" type="text" required=""
+                                                    placeholder="성을 입력하세요.">
+                                            </div>
+                                        </div>
+                                        <div class="form-group mb-0">
+                                            <label class="col-form-label">대표 관리자 - 이메일</label>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-xl-9">
+                                                <input class="form-control" type="email" required=""
+                                                    placeholder="대표 관리자 이메일 주소를 입력하세요.">
+                                            </div>
+                                            <div class="form-group col-xl-3">
+                                                <button class="btn btn-secondary form-control"
+                                                    type="button">중복확인</button>
+                                            </div>
+                                        </div>
+                                        <div class="form-group mb-0">
+                                            <label class="col-form-label">대표 관리자 - 연락처</label>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-xl-3">
+                                                <select class="form-control">
+                                                    <option>+82</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-xl-6">
+                                                <input type="text" class="form-control" placeholder="대표 연락처를 입력하세요.">
+                                            </div>
+
+                                            <div class="form-group col-xl-3">
+                                                <button class="btn btn-secondary form-control"
+                                                    type="button">중복확인</button>
+                                            </div>
+                                        </div>
+                                        <div class="form-group mb-0" style="margin-top:-10px;">
+                                            <label class="col-form-label font-12">(※ 모바일 연락처로 로그인 임시 비밀번호가
+                                                전송됩니다.)</label>
+                                        </div>
+                                        <div class="form-group mb-0">
+                                            <br>
+                                            <label class="col-form-label"><b>그룹 상태</b></label>
+                                        </div>
+                                        <div class="form-row mb-2">
+                                            <select class="form-control" id="example-select">
+                                                <option>비활성</option>
+                                                <option>활성</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group mb-0" style="margin-top:-10px;">
+                                            <label class="col-form-label font-12">▶ 활성 상태 시, 사용자 앱 그룹 목록에 즉시 노출<br>▶ 비활성
+                                                상태 시,
+                                                사용자가 소속 그룹 신규 등록 불가</label>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light" data-dismiss="modal">취 소</button>
+                            <button type="button" class="btn btn-primary">정보수정</button>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div>
+
+            <div class="slbElement" style="display: none;" id="custom-sbl">
+                <div class="slbOverlay"></div>
+                <div class="slbWrapOuter">
+                    <div class="slbWrap">
+                        <div class="slbContentOuter">
+                            <div class="slbContent">
+                                <div class="slbImageWrap"><img class="slbImage" src="assets/images/small/small-1.jpg"
+                                        id="sbl-image"></div>
+                            </div>
+                            <button type="button" title="Close" class="slbCloseBtn" id="close-sbl">×</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script src="assets/js/vendor.min.js"></script>
+            <script src="assets/js/app.min.js"></script>
+
+            <script src="assets/js/vendor/jquery.dataTables.min.js"></script>
+            <script src="assets/js/vendor/dataTables.bootstrap4.js"></script>
+            <script src="assets/js/vendor/dataTables.responsive.min.js"></script>
+            <script src="assets/js/vendor/responsive.bootstrap4.min.js"></script>
+            <script src="assets/js/vendor/apexcharts.min.js"></script>
+            <script src="assets/js/vendor/dataTables.checkboxes.min.js"></script>
+            <script src="assets/lib/simplelightbox/simpleLightbox.min.js"></script>
+
+            <script src="assets/js/common.js"></script>
+            <script src="assets/js/page/gr.js"></script>
+            <script>
+                function updateUserPassword() {
+                    $("#login-password-modal").modal("hide");
+                }
+
+                function showMyAccountDlg() {
+                    $("#my-info-modal").modal("show");
+                }
+
+                function updateLoginPasswordDlg() {
+                    $("#login-password-modal").modal("show");
+                }
+
+                function showSettingDlg() {
+                    $("#setting-modal").modal("show");
+                }
+
+                function updateUserInfo() {
+                    $("#my-info-modal").modal("hide");
+                    $("#success-alert-modal").modal("show")
+                }
+            </script>
+</body>
+
+</html>

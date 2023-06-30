@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Telehealth</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+    <meta content="Coderthemes" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+    <!-- App css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
+    <link href="assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
+    <link href="assets/css/base.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/page/consult.css" rel="stylesheet" type="text/css" id="consult-style" />
+    <link href="assets/css/vendor/fullcalendar.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/page/telehealth.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/vendor/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/vendor/responsive.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/common.css" rel="stylesheet" type="text/css" id="common-style" />
+</head>
+
+<body class="loading"
+    data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
+    <!-- Begin page -->
+    <div class="wrapper">
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="left-side-menu">
+            <!-- LOGO -->
+            <a href="main.html" class="logo text-center logo-light">
+                <span class="logo-lg">
+                    <img src="assets/images/logo.png" alt="" height="16">
+                </span>
+                <span class="logo-sm">
+                    <img src="assets/images/logo_sm.png" alt="" height="16">
+                </span>
+            </a>
+            <!-- LOGO -->
+            <a href="main.html" class="logo text-center logo-dark">
+                <span class="logo-lg">
+                    <img src="assets/images/logo-dark.png" alt="" height="16">
+                </span>
+                <span class="logo-sm">
+                    <img src="assets/images/logo_sm_dark.png" alt="" height="16">
+                </span>
+            </a>
+
+            <div class="h-100" id="left-side-menu-container" data-simplebar>
+                <!--- Sidemenu -->
+                <ul class="metismenu side-nav">
+                    <li class="side-nav-title side-nav-item">Navigation</li>
+                    <li class="side-nav-item">
+                        <a href="main.html" class="side-nav-link">
+                            <i class="uil-presentation-lines-alt"></i>
+                            <span> Dashboards </span>
+                        </a>
+                    </li>
+                    <li class="side-nav-item">
+                        <a href="#" class="side-nav-link">
+                            <i class="uil-users-alt"></i>
+                            <span> 사용자관리 </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="side-nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="users.html">전체사용자</a>
+                            </li>
+                            <li>
+                                <a href="auth01.html">승인 관리</a>
+                            </li>
+                            <li>
+                                <a href="send_message.html">메시지관리</a>
+                            </li>
+                            <li>
+                                <a href="message_list.html">메세지 발송 이력</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="side-nav-item">
+                        <a href="javascript: void(0);" class="side-nav-link">
+                            <i class="uil-comments-alt"></i>
+                            <span> 상담 </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="side-nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href=".html">대화형 상담</a>
+                            </li>
+                            <li>
+                                <a href=".html">단답형 상담</a>
+                            </li>
+                            <li>
+                                <a href=".html">비대면 상담</a>
+                            </li>
+                            <li>
+                                <a href="doc01.html">문서함</a>
+                            </li>
+                            <!-- <li>
+                                <a href="consult.html">1:1 상담</a>
+                            </li>
+                            <li>
+                                <a href="telehealth.html">Tel health</a>
+                            </li> -->
+                        </ul>
+                    </li>
+                    <li class="side-nav-item">
+                        <a href="javascript: void(0);" class="side-nav-link">
+                            <i class="uil-eye"></i>
+                            <span> 모니터링 </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="side-nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="moniter_danger.html">위험지수 관리</a>
+                            </li>
+                            <li>
+                                <a href="moniter_adapter.html">순응도 관리</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="side-nav-item">
+                        <a href="javascript: void(0);" class="side-nav-link">
+                            <i class="uil uil-image"></i>
+                            <span> 콘텐츠관리 </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="side-nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="sys_content.html">콘텐츠관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_video.html">동영상 관리</a>
+                            </li>
+                            <li>
+                                <a href="sdf.html">줄넘기 팁 관리</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="side-nav-item">
+                        <a href="javascript: void(0);" class="side-nav-link">
+                            <i class="uil-game-structure"></i>
+                            <span> 시스템운영 </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="side-nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="sys_group.html">그룹관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_webuser.html">웹 사용자관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_version.html">버전관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_appoint.html">약관 관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_service.html">서비스 문의</a>
+                            </li>
+                            <li>
+                                <a href="sys_connecthistory.html">접속 이력 관리</a>
+                            </li>
+                            <li>
+                                <a href=".html">결제 관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_checkitem.html">검사 항목관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_note.html">공지사항 관리</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <!-- Sidebar -left -->
+
+        </div>
+        <!-- Left Sidebar End -->
+
+        <!-- ============================================================== -->
+        <!-- Start Page Content here -->
+        <!-- ============================================================== -->
+
+        <div class="content-page">
+            <div class="content">
+                <!-- Topbar Start -->
+                <div class="navbar-custom">
+                    <ul class="list-unstyled topbar-right-menu float-right mb-0">
+                        <li class="dropdown notification-list d-lg-none">
+                            <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button"
+                                aria-haspopup="false" aria-expanded="false">
+                                <i class="dripicons-search noti-icon"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-animated dropdown-lg p-0">
+                                <form class="p-3">
+                                    <input type="text" class="form-control" placeholder="Search ..."
+                                        aria-label="Recipient's username">
+                                </form>
+                            </div>
+                        </li>
+
+                        <li class="dropdown notification-list">
+                            <a class="nav-link dropdown-toggle nav-user arrow-none mr-0" data-toggle="dropdown" href="#"
+                                role="button" aria-haspopup="false" aria-expanded="false">
+                                <span class="account-user-avatar">
+                                    <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
+                                </span>
+                                <span>
+                                    <span class="account-user-name">James Kim</span>
+                                    <span class="account-position">의사 <i class="dripicons-chevron-down"></i></span>
+                                </span>
+                            </a>
+                            <div
+                                class="dropdown-menu dropdown-menu-right dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
+                                <!-- item-->
+                                <a href="javascript:void(0);" onclick="showMyAccountDlg()"
+                                    class="dropdown-item notify-item">
+                                    <i class="mdi mdi-account-circle mr-1"></i>
+                                    <span>My Account</span>
+                                </a>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" onclick="showSettingDlg()"
+                                    class="dropdown-item notify-item">
+                                    <i class="mdi mdi-account-edit mr-1"></i>
+                                    <span>Settings</span>
+                                </a>
+                                <!-- item-->
+                                <a href="login.html" class="dropdown-item notify-item">
+                                    <i class="mdi mdi-logout mr-1"></i>
+                                    <span>Logout</span>
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+                    <button class="button-menu-mobile open-left disable-btn">
+                        <i class="mdi mdi-menu"></i>
+                    </button>
+                    <h4 class="page-title color-title float-left mt-3">Telehealth</h4>
+                    <div class="app-search dropdown d-none d-lg-block float-right">
+                        <form>
+                            <div class="input-group">
+                                <input type="text" class="form-control dropdown-toggle" placeholder="사용자를 검색할수 있습니다."
+                                    id="top-search">
+                                <span class="mdi mdi-magnify search-icon"></span>
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="submit">검색</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- end Topbar -->
+
+                <!-- Start Content-->
+                <div class="container-fluid">
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box">
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0 pt-0">
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">상담</a></li>
+                                        <li class="breadcrumb-item active">Telehealth</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end page title -->
+
+                    <div>
+                        <ul class="nav nav-tabs nav-bordered mb-3 nav-tabs-my">
+                            <li class="nav-item">
+                                <a href="#schedule-tab" data-toggle="tab" aria-expanded="false"
+                                    class="nav-link rounded-0 active">
+                                    <span class=" d-md-block">Schedule</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#video-call-tab" data-toggle="tab" aria-expanded="false"
+                                    class="nav-link rounded-0">
+                                    <span class=" d-md-block">Video call logs</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane show active" id="schedule-tab">
+                                <div class="row">
+                                    <div class="col-xl-9 col-lg-12 col-md-12">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div id="calendar" style="max-height: 750px;"></div>
+
+                                                <div class="row no-gutters justify-content-between pt-3">
+                                                    <div class="col d-flex align-items-center">
+                                                        <span class="box-m-1"></span> 상담 미확정
+                                                        <span class="box-m-2 ml-3"></span> 상담 확정
+                                                    </div>
+                                                    <div class="col d-flex">
+                                                        <div class="ml-auto d-flex align-items-center">
+                                                            <span class="box-m-3"></span> 상담 미진행
+                                                            <span class="box-m-4 ml-3"></span> 상담 완료
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="d-none">
+                                                    <button class="btn btn-lg font-16 btn-danger btn-block"
+                                                        id="btn-new-event1"><i class="mdi mdi-plus-circle-outline"></i>
+                                                        Create New Event</button>
+                                                    <div id="external-events" class="m-t-20">
+                                                        <br>
+                                                        <p class="text-muted">Drag and drop your event or click in the
+                                                            calendar</p>
+                                                        <div class="external-event bg-primary-lighten text-success"
+                                                            data-class="bg-primary">
+                                                            <i
+                                                                class="mdi mdi-checkbox-blank-circle mr-2 vertical-middle"></i>New
+                                                            Theme Release
+                                                        </div>
+                                                        <div class="external-event bg-info-lighten text-info"
+                                                            data-class="bg-info">
+                                                            <i
+                                                                class="mdi mdi-checkbox-blank-circle mr-2 vertical-middle"></i>My
+                                                            Event
+                                                        </div>
+                                                        <div class="external-event bg-warning-lighten text-warning"
+                                                            data-class="bg-warning">
+                                                            <i
+                                                                class="mdi mdi-checkbox-blank-circle mr-2 vertical-middle"></i>Meet
+                                                            manager
+                                                        </div>
+                                                        <div class="external-event bg-danger-lighten text-danger"
+                                                            data-class="bg-danger">
+                                                            <i
+                                                                class="mdi mdi-checkbox-blank-circle mr-2 vertical-middle"></i>Create
+                                                            New theme
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-3 col-lg-12 col-md-12">
+                                        <div class="card">
+                                            <div class="px-3 pt-3">
+                                                <div class="form-group mt-1">
+                                                    <select class="form-control" id="example-select">
+                                                        <option>A 병원</option>
+                                                        <option>B 병원</option>
+                                                        <option>C 병원</option>
+                                                    </select>
+                                                </div>
+                                                <div class="d-flex">
+                                                    <span>2020년 10월 7일</span>
+                                                    <span class="ml-auto">
+                                                        <span class="text-primary">3건</span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div data-simplebar class="timeline-solo border-top mt-2"
+                                                style="max-height: 720px;">
+                                                <div class="timeline-lg-item timeline-item">
+                                                    <div class="timeline-desk">
+                                                        <div class="timeline-box">
+                                                            <span class="arrow"></span>
+                                                            <div class="timeline-icon-cont">
+                                                                <span class="timeline-icon">
+                                                                    <i class="mdi mdi-adjust"></i>
+                                                                </span>
+                                                                <span>13:20</span>
+                                                            </div>
+                                                            <div class="media mb-n2">
+                                                                <img class="mr-2 rounded-circle"
+                                                                    src="assets/images/users/avatar-3.jpg"
+                                                                    alt="Generic placeholder image" height="32">
+                                                                <div class="media-body">
+                                                                    <h5 class="m-0">홍길동<small
+                                                                            class="font-14 text-muted ml-1">(남)</small>
+                                                                    </h5>
+                                                                    <p class="text-muted"><small>1950-1-23</small></p>
+                                                                </div>
+                                                            </div>
+                                                            <div><a class="text-body" data-toggle="modal"
+                                                                    data-target="#schedule-memo-modal" href="">
+                                                                    <i
+                                                                        class="mdi mdi-file-document-outline font-20"></i>
+                                                                </a> 요청사항입니다
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="timeline-lg-item timeline-item">
+                                                    <div class="timeline-desk">
+                                                        <div class="timeline-box">
+                                                            <span class="arrow"></span>
+                                                            <div class="timeline-icon-cont">
+                                                                <span class="timeline-icon">
+                                                                    <i class="mdi mdi-adjust"></i>
+                                                                </span>
+                                                                <span>13:20</span>
+                                                            </div>
+                                                            <div class="media mb-n2">
+                                                                <img class="mr-2 rounded-circle"
+                                                                    src="assets/images/users/avatar-3.jpg"
+                                                                    alt="Generic placeholder image" height="32">
+                                                                <div class="media-body">
+                                                                    <h5 class="m-0">홍길동<small
+                                                                            class="font-14 text-muted ml-1">(남)</small>
+                                                                    </h5>
+                                                                    <p class="text-muted"><small>1950-1-23</small></p>
+                                                                </div>
+                                                            </div>
+                                                            <div><a class="text-body" data-toggle="modal"
+                                                                    data-target="#schedule-memo-modal" href="">
+                                                                    <i
+                                                                        class="mdi mdi-file-document-outline font-20"></i>
+                                                                </a> 요청사항입니다
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="timeline-lg-item timeline-item">
+                                                    <div class="timeline-desk">
+                                                        <div class="timeline-box">
+                                                            <span class="arrow"></span>
+                                                            <div class="timeline-icon-cont">
+                                                                <span class="timeline-icon">
+                                                                    <i class="mdi mdi-adjust"></i>
+                                                                </span>
+                                                                <span>13:20</span>
+                                                            </div>
+                                                            <div class="media mb-n2">
+                                                                <img class="mr-2 rounded-circle"
+                                                                    src="assets/images/users/avatar-3.jpg"
+                                                                    alt="Generic placeholder image" height="32">
+                                                                <div class="media-body">
+                                                                    <h5 class="m-0">홍길동<small
+                                                                            class="font-14 text-muted ml-1">(남)</small>
+                                                                    </h5>
+                                                                    <p class="text-muted"><small>1950-1-23</small></p>
+                                                                </div>
+                                                            </div>
+                                                            <div><a class="text-body" data-toggle="modal"
+                                                                    data-target="#schedule-memo-modal" href="">
+                                                                    <i
+                                                                        class="mdi mdi-file-document-outline font-20"></i>
+                                                                </a> 요청사항입니다
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="timeline-lg-item timeline-item">
+                                                    <div class="timeline-desk">
+                                                        <div class="timeline-box">
+                                                            <span class="arrow"></span>
+                                                            <div class="timeline-icon-cont">
+                                                                <span class="timeline-icon">
+                                                                    <i class="mdi mdi-adjust"></i>
+                                                                </span>
+                                                                <span>13:20</span>
+                                                            </div>
+                                                            <div class="media mb-n2">
+                                                                <img class="mr-2 rounded-circle"
+                                                                    src="assets/images/users/avatar-3.jpg"
+                                                                    alt="Generic placeholder image" height="32">
+                                                                <div class="media-body">
+                                                                    <h5 class="m-0">홍길동<small
+                                                                            class="font-14 text-muted ml-1">(남)</small>
+                                                                    </h5>
+                                                                    <p class="text-muted"><small>1950-1-23</small></p>
+                                                                </div>
+                                                            </div>
+                                                            <div><a class="text-body" data-toggle="modal"
+                                                                    data-target="#schedule-memo-modal" href="">
+                                                                    <i
+                                                                        class="mdi mdi-file-document-outline font-20"></i>
+                                                                </a> 요청사항입니다
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="timeline-lg-item timeline-item">
+                                                    <div class="timeline-desk">
+                                                        <div class="timeline-box">
+                                                            <span class="arrow"></span>
+                                                            <div class="timeline-icon-cont">
+                                                                <span class="timeline-icon">
+                                                                    <i class="mdi mdi-adjust"></i>
+                                                                </span>
+                                                                <span>13:20</span>
+                                                            </div>
+                                                            <div class="media mb-n2">
+                                                                <img class="mr-2 rounded-circle"
+                                                                    src="assets/images/users/avatar-3.jpg"
+                                                                    alt="Generic placeholder image" height="32">
+                                                                <div class="media-body">
+                                                                    <h5 class="m-0">홍길동<small
+                                                                            class="font-14 text-muted ml-1">(남)</small>
+                                                                    </h5>
+                                                                    <p class="text-muted"><small>1950-1-23</small></p>
+                                                                </div>
+                                                            </div>
+                                                            <div><a class="text-body" data-toggle="modal"
+                                                                    data-target="#schedule-memo-modal" href="">
+                                                                    <i
+                                                                        class="mdi mdi-file-document-outline font-20"></i>
+                                                                </a> 요청사항입니다
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="timeline-lg-item timeline-item">
+                                                    <div class="timeline-desk">
+                                                        <div class="timeline-box">
+                                                            <span class="arrow"></span>
+                                                            <div class="timeline-icon-cont">
+                                                                <span class="timeline-icon">
+                                                                    <i class="mdi mdi-adjust"></i>
+                                                                </span>
+                                                                <span>13:20</span>
+                                                            </div>
+                                                            <div class="media mb-n2">
+                                                                <img class="mr-2 rounded-circle"
+                                                                    src="assets/images/users/avatar-3.jpg"
+                                                                    alt="Generic placeholder image" height="32">
+                                                                <div class="media-body">
+                                                                    <h5 class="m-0">홍길동<small
+                                                                            class="font-14 text-muted ml-1">(남)</small>
+                                                                    </h5>
+                                                                    <p class="text-muted"><small>1950-1-23</small></p>
+                                                                </div>
+                                                            </div>
+                                                            <div><a class="text-body" data-toggle="modal"
+                                                                    data-target="#schedule-memo-modal" href="">
+                                                                    <i
+                                                                        class="mdi mdi-file-document-outline font-20"></i>
+                                                                </a> 요청사항입니다
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="timeline-lg-item timeline-item">
+                                                    <div class="timeline-desk">
+                                                        <div class="timeline-box">
+                                                            <span class="arrow"></span>
+                                                            <div class="timeline-icon-cont">
+                                                                <span class="timeline-icon">
+                                                                    <i class="mdi mdi-adjust"></i>
+                                                                </span>
+                                                                <span>13:20</span>
+                                                            </div>
+                                                            <div class="media mb-n2">
+                                                                <img class="mr-2 rounded-circle"
+                                                                    src="assets/images/users/avatar-3.jpg"
+                                                                    alt="Generic placeholder image" height="32">
+                                                                <div class="media-body">
+                                                                    <h5 class="m-0">홍길동<small
+                                                                            class="font-14 text-muted ml-1">(남)</small>
+                                                                    </h5>
+                                                                    <p class="text-muted"><small>1950-1-23</small></p>
+                                                                </div>
+                                                            </div>
+                                                            <div><a class="text-body" data-toggle="modal"
+                                                                    data-target="#schedule-memo-modal" href="">
+                                                                    <i
+                                                                        class="mdi mdi-file-document-outline font-20"></i>
+                                                                </a> 요청사항입니다
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="timeline-lg-item timeline-item">
+                                                    <div class="timeline-desk">
+                                                        <div class="timeline-box">
+                                                            <span class="arrow"></span>
+                                                            <div class="timeline-icon-cont">
+                                                                <span class="timeline-icon">
+                                                                    <i class="mdi mdi-adjust"></i>
+                                                                </span>
+                                                                <span>13:20</span>
+                                                            </div>
+                                                            <div class="media mb-n2">
+                                                                <img class="mr-2 rounded-circle"
+                                                                    src="assets/images/users/avatar-3.jpg"
+                                                                    alt="Generic placeholder image" height="32">
+                                                                <div class="media-body">
+                                                                    <h5 class="m-0">홍길동<small
+                                                                            class="font-14 text-muted ml-1">(남)</small>
+                                                                    </h5>
+                                                                    <p class="text-muted"><small>1950-1-23</small></p>
+                                                                </div>
+                                                            </div>
+                                                            <div><a class="text-body" data-toggle="modal"
+                                                                    data-target="#schedule-memo-modal" href="">
+                                                                    <i
+                                                                        class="mdi mdi-file-document-outline font-20"></i>
+                                                                </a> 요청사항입니다
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="tab-pane show" id="video-call-tab">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-4 mb-1 mb-md-0">
+                                                <div class="form-inline">
+                                                    <select class="form-control mr-1" style="width:70px;">
+                                                        <option value="10">10</option>
+                                                        <option value="20">20</option>
+                                                        <option value="-1">All</option>
+                                                    </select>
+                                                    <span class="mr-2">개 씩 보기</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="form-inline custom-inline-form justify-content-end">
+                                                    <div class="form-group mr-2">
+                                                        <label class="col-form-label">FROM</label>
+                                                        <div class="combine-wrapper">
+                                                            <input type="text" class="form-control"
+                                                                data-provide="datepicker" data-date-format="yyyy-mm-dd"
+                                                                value="2020-01-01" />
+                                                            <i class="uil-calendar-alt"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group mr-2">
+                                                        <label class="col-form-label">TO</label>
+                                                        <div class="combine-wrapper">
+                                                            <input type="text" class="form-control"
+                                                                data-provide="datepicker" data-date-format="yyyy-mm-dd"
+                                                                value="2020-01-01" />
+                                                            <i class="uil-calendar-alt"></i>
+                                                        </div>
+                                                    </div>
+                                                    <button class="btn btn-secondary">검색</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <table class="table table-centered table-hover w-100 nowrap"
+                                            id="telehsitory-datatable">
+                                            <thead class="thead-light">
+                                                <tr>
+                                                    <th>No</th>
+                                                    <th>요청자</th>
+                                                    <th>관리번호</th>
+                                                    <th>요청일자 및 시간</th>
+                                                    <th>상태</th>
+                                                    <th>발신자</th>
+                                                    <th>소속</th>
+                                                    <th>연결시간</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1001</td>
+                                                    <td>이지현</td>
+                                                    <td>23456789</td>
+                                                    <td>
+                                                        2020-10-01 13:00
+                                                        <a class="text-body" data-toggle="modal"
+                                                            data-target="#schedule-memo-modal" href="">
+                                                            <i class="mdi mdi-file-document-outline font-20 ml-1"></i>
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        완료
+                                                    </td>
+                                                    <td>[의사] 김호재</td>
+                                                    <td>힘찬병원</td>
+                                                    <td>From: 2020-08/01 14:01 ~ 14:30</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1000</td>
+                                                    <td>홍길동</td>
+                                                    <td>미지정</td>
+                                                    <td>
+                                                        2020-10-01 13:00
+                                                        <a class="text-body" data-toggle="modal"
+                                                            data-target="#schedule-memo-modal" href="">
+                                                            <i class="mdi mdi-file-document-outline font-20 ml-1"></i>
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        요청
+                                                        <button class="btn btn-sm btn-info ml-2 mr-1"><i
+                                                                class="mdi mdi-check-circle-outline mr-1"></i>확정</button>
+                                                        <button class="btn btn-sm btn-cust1" data-toggle="modal"
+                                                            data-target="#return-edit-modal"><i
+                                                                class="mdi mdi-clipboard-text-outline mr-1"></i>반려</button>
+                                                    </td>
+                                                    <td>[의사] James Lee</td>
+                                                    <td>힘찬병원</td>
+                                                    <td>From: 2020-08/01 14:01 ~ 14:30</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>999</td>
+                                                    <td>Gildong Hong</td>
+                                                    <td>10293847</td>
+                                                    <td>
+                                                        2020-10-01 13:00
+                                                        <a class="text-body" data-toggle="modal"
+                                                            data-target="#schedule-memo-modal" href="">
+                                                            <i class="mdi mdi-file-document-outline font-20 ml-1"></i>
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        확정
+                                                        <button class="btn btn-sm btn-success ml-2 mr-1"><i
+                                                                class="mdi mdi-message-video mr-1"></i>연결</button>
+                                                        <button class="btn btn-sm btn-danger"><i
+                                                                class="mdi mdi-close-circle-outline mr-1"></i>취소</button>
+                                                    </td>
+                                                    <td>[의사] James Lee</td>
+                                                    <td>ABC Hospital</td>
+                                                    <td>From: 2020-08/01 14:01 ~ 14:30</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>998</td>
+                                                    <td>최순정</td>
+                                                    <td>23456789</td>
+                                                    <td>
+                                                        2020-10-01 13:00
+                                                        <a class="text-body" data-toggle="modal"
+                                                            data-target="#schedule-memo-modal" href="">
+                                                            <i class="mdi mdi-file-document-outline font-20 ml-1"></i>
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        완료
+                                                    </td>
+                                                    <td>[의사] 김호재</td>
+                                                    <td>힘찬병원</td>
+                                                    <td>From: 2020-08/01 14:01 ~ 14:30</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>997</td>
+                                                    <td>이호준</td>
+                                                    <td>23456789</td>
+                                                    <td>
+                                                        2020-10-01 13:00
+                                                        <a class="text-body" data-toggle="modal"
+                                                            data-target="#schedule-memo-modal" href="">
+                                                            <i class="mdi mdi-file-document-outline font-20 ml-1"></i>
+                                                        </a>
+                                                    </td>
+                                                    <td class="pl-td-text">
+                                                        반려
+                                                        <a class="text-body" data-toggle="modal"
+                                                            data-target="#return-memo-modal" href="">
+                                                            <i class="mdi mdi-clipboard-text-outline font-20 ml-1"></i>
+                                                        </a>
+                                                    </td>
+                                                    <td>[의사] 김호재</td>
+                                                    <td>힘찬병원</td>
+                                                    <td>From: 2020-08/01 14:01 ~ 14:30</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>996</td>
+                                                    <td>최순정</td>
+                                                    <td>23456789</td>
+                                                    <td>
+                                                        2020-10-01 13:00
+                                                        <a class="text-body" data-toggle="modal"
+                                                            data-target="#schedule-memo-modal" href="">
+                                                            <i class="mdi mdi-file-document-outline font-20 ml-1"></i>
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        완료
+                                                    </td>
+                                                    <td>[의사] 김호재</td>
+                                                    <td>힘찬병원</td>
+                                                    <td>From: 2020-08/01 14:01 ~ 14:30</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- container -->
+
+        </div> <!-- content -->
+
+        <!-- Footer Start -->
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6">
+                        © HealthConnect Co., Ltd.
+                    </div>
+                    <div class="col-md-6">
+
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- end Footer -->
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+    </div>
+    <!-- END wrapper -->
+
+    <div id="schedule-memo-modal" class="modal fade" tabindex="-1" role="dialog"
+        aria-labelledby="schedule-create-modalLabe" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title" id="schedule-create-modalLabel">요청 내용 확인</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="form-group my-0">
+                            <label for="" class="col-form-label"><b>신청자</b></label>
+                            <div class="form-control-plaintext mt-n2">Gildong Hong</div>
+                        </div>
+                        <hr class="mt-2 mb-2">
+                        <div class="form-group my-0">
+                            <label for="" class="col-form-label"><b>신청 시간</b></label>
+                            <div class="form-control-plaintext mt-n2">2020-10-23 10:46</div>
+                        </div>
+                        <hr class="mt-2 mb-2">
+                        <label class="col-form-label"><b>신청 내용</b></label>
+                        <div style="height:300px;" class="vertical-scroll">
+                            요청 내용입니다.요청 내용입니다.요청 내용입니다.요청 내용입니다.요청 내용입니다.
+                            요청 내용입니다.요청 내용입니다.요청 내용입니다.요청 내용입니다.요청 내용입니다.
+                            요청 내용입니다.요청 내용입니다.요청 내용입니다.
+                            요청 내용입니다.요청 내용입니다.요청 내용입니다.요청 내용입니다.
+                            요청 내용입니다.요청 내용입니다.요청 내용입니다.요청 내용입니다.요청 내용입니다.요청 내용입니다.
+                            요청 내용입니다.요청 내용입니다.요청 내용입니다.요청 내용입니다.
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="">확인</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div id="return-memo-modal" class="modal fade" tabindex="-1" role="dialog"
+        aria-labelledby="schedule-create-modalLabe" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title" id="schedule-create-modalLabel">반려 내용 확인</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="form-group my-0">
+                            <label for="" class="col-form-label"><b>반려자</b></label>
+                            <div class="form-control-plaintext">[ 의사 ] Gildong Hong</div>
+                        </div>
+                        <hr class="mt-0 mb-3">
+                        <div class="form-group my-0">
+                            <label for="" class="col-form-label"><b>반려 시간</b></label>
+                            <div class="form-control-plaintext">2020-10-23 10:46</div>
+                        </div>
+                        <hr class="mt-0 mb-3">
+                        <div style="height:270px;" class="vertical-scroll">
+                            반려 내용입니다.반려 내용입니다.반려 내용입니다.반려 내용입니다.반려 내용입니다.
+                            반려 내용입니다.반려 내용입니다.반려 내용입니다.반려 내용입니다.
+                            반려 내용입니다.반려 내용입니다.반려 내용입니다.반려 내용입니다.반려 내용입니다.
+                            반려 내용입니다.반려 내용입니다.반려 내용입니다.
+                            반려 내용입니다.반려 내용입니다.반려 내용입니다.반려 내용입니다.
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="">확인</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div id="return-edit-modal" class="modal fade" tabindex="-1" role="dialog"
+        aria-labelledby="success-header-modalLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title">반려 메시지 입력</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div>
+                            <textarea class="form-control border-1" placeholder="메시지 내용을 입력하세요. 최소 10글자 이상."
+                                rows="10"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">취소</button>
+                    <button type="button" class="btn btn-primary">반려</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div data-include-html="modal/account.html"></div>
+    <div data-include-html="modal/setting.html"></div>
+    <div data-include-html="modal/password.html"></div>
+
+    <script src="assets/js/vendor.min.js"></script>
+    <script src="assets/js/app.min.js"></script>
+    <script src="assets/js/vendor/apexcharts.min.js"></script>
+    <script src="assets/js/ui/component.todo.js"></script>
+    <script src="assets/js/common.js"></script>
+    <script src="assets/js/vendor/fullcalendar.min.js"></script>
+    <script src="assets/js/pages/demo.calendar.js"></script>
+
+    <script src="assets/js/vendor/jquery.dataTables.min.js"></script>
+    <script src="assets/js/vendor/dataTables.bootstrap4.js"></script>
+    <script src="assets/js/vendor/dataTables.responsive.min.js"></script>
+    <script src="assets/js/vendor/responsive.bootstrap4.min.js"></script>
+    <script src="assets/js/vendor/apexcharts.min.js"></script>
+    <script src="assets/js/vendor/dataTables.checkboxes.min.js"></script>
+
+    <script src="assets/js/page/telehealth.js"></script>
+
+    <script>
+        function updateUserPassword() {
+            $("#login-password-modal").modal("hide");
+        }
+
+        function showMyAccountDlg() {
+            $("#my-info-modal").modal("show");
+        }
+
+        function updateLoginPasswordDlg() {
+            $("#login-password-modal").modal("show");
+        }
+
+        function showSettingDlg() {
+            $("#setting-modal").modal("show");
+        }
+
+        function updateUserInfo() {
+            $("#my-info-modal").modal("hide");
+        }
+        function showContents() {
+            $("#contents-modal").modal("show");
+        }
+    </script>
+</body>
+
+</html>

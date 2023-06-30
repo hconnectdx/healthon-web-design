@@ -1,0 +1,30 @@
+div.login-left {
+    align-items: stretch;
+    background: url(../../images/bg-auth.jpg) center;
+    background-size: cover;
+    border:2px solid black;
+}
+
+div.login-right{
+    border-right:2px solid black;
+    border-top:2px solid black;
+    border-bottom:2px solid black;
+}
+
+div.account-pages{
+    margin-top: 10.5rem!important;
+}
+
+@media (max-width: 576px) {
+    div.account-pages{
+        margin-top: 5.5rem!important;
+    }
+
+    div.login-right{
+        border:none;
+    }
+
+    div.login-left{
+        border:none;
+    }
+}

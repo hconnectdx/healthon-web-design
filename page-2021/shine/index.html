@@ -1,0 +1,572 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <title>HEALTH ON 관리자 페이지 퍼블리싱 Status</title>
+    <style type="text/css">
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            overflow-y: scroll;
+        }
+
+        body {
+            color: #666;
+            background-color: #fff;
+            font: 12px/1.5 Dotum, '돋움';
+        }
+
+        a {
+            color: #27e;
+            text-decoration: none;
+        }
+
+        a:focus,
+        a:hover,
+        a:active {
+            text-decoration: underline;
+        }
+
+        .header {
+            padding: .5em;
+        }
+
+        .header h1 {
+            display: inline;
+            margin-right: 1em;
+            color: #000;
+            font-size: 2em;
+        }
+
+        .header ul {
+            display: inline;
+            font-size: 1.5em;
+            list-style: none;
+        }
+
+        .header ul li {
+            display: inline;
+        }
+
+        .group-title {
+            margin-top: 1em;
+            color: #000;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        table caption {
+            display: none;
+        }
+
+        table th {
+            color: #333;
+            background-color: #eee;
+        }
+
+        table th,
+        table td {
+            padding: 6px 3px 2px 3px;
+            border: 1px solid #ddd;
+            text-align: left;
+            font-size: 12px;
+            font-family: 'Dotum', '돋움';
+        }
+
+        table th,
+        table td.stat {
+            text-align: center;
+        }
+
+        table td.date p {
+            margin: 2px 0 0 0;
+        }
+
+        table td.date p.new {
+            color: #9c27b0;
+            font-weight: bold;
+        }
+
+        table td .notice li {
+            list-style: none;
+            margin: 2px 0 0 0;
+            font-weight: bold;
+        }
+
+        table td .notice li.new {
+            color: #9c27b0;
+        }
+
+        table td.stat {
+            font-weight: bold;
+        }
+
+        table tr.even,
+        table tr td.multi {
+            background-color: #ffffff;
+        }
+
+        table tr.add td {
+            background-color: #fd0;
+        }
+
+        table tr.modify td {
+            background-color: #fffeb4;
+        }
+
+        table tr.hover td {
+            background-color: #fafafa;
+        }
+
+        table tr.none td {
+            color: #000;
+            background-color: #fc8989;
+        }
+
+        table tr.up td {
+            background-color: #ffe9f5;
+        }
+
+        .section {
+            margin: 3em 0;
+        }
+
+        body.js .section {
+            margin: 0;
+        }
+
+        .section .title {
+            margin: 0;
+            padding: 0;
+            color: #000;
+            font-weight: bold;
+            font-size: 100%;
+        }
+
+        body.js .section .title {
+            padding: .5em;
+            border: 1px solid #ccc;
+            background-color: #ddd;
+            cursor: pointer;
+        }
+
+        body.js .section+.section .title {
+            border-top: 0;
+        }
+
+        body.js .section .title .page-count {
+            color: #666;
+            font-weight: normal;
+        }
+
+        body.js .section .content {
+            display: none;
+        }
+
+        #sb-body {
+            border: none !important;
+        }
+
+        .modi {
+            background: #000 !important;
+            color: #fff;
+            font-weight: bold
+        }
+
+        .modi.blue {
+            background: skyblue !important
+        }
+
+        .modi.red {
+            background: red !important
+        }
+
+        .font_form {
+            margin: 0;
+            padding: 0;
+            padding-inline-start: 5px;
+        }
+
+        .font_form li label {
+            font-size: 12px;
+            color: #444;
+            letter-spacing: 1px;
+        }
+    </style>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        (function ($) {
+            $.fn.stat = function (options) {
+                var settings = $.extend({
+                    title: 'h2.title',
+                    content: 'div.content',
+                    화면아이디s: 'tbody tr',
+                    stat: 'td.stat',
+                    index: 0,
+                    openAll: false,
+                    speed: 'fast'
+                }, options),
+                    all_sections = this,
+                    header = $('div.header');
+                return this.each(function () {
+                    var self = this,
+                        $self = $(self),
+                        title_text = [],
+                        completed = 0;
+                    self.section_title = $(settings.title, $self);
+                    self.content = $(settings.content, $self);
+                    self.화면아이디s = $(settings.화면아이디s, $self);
+                    self.화면아이디s.each(function () {
+                        var stat = $(settings.stat, this);
+                        stat.each(function () {
+                            var text = $(this).text();
+                            if (text) {
+                                if (text == 'none') {
+                                    $(this).css({ 'background': '#d2d2d2', 'color': '#fff' });
+                                } else if (text == 'ing') {
+                                    $(this).css({ 'background': '#5d9b1a', 'color': '#fff' });
+                                } else if (text == 'done') {
+                                    $(this).css({ 'background': '#1f78bd', 'color': '#fff' });
+                                } else if (text == 'edit') {
+                                    $(this).css({ 'background': '#ff2d2d', 'color': '#fff' });
+                                };
+                                completed++;
+                            };
+                        });
+                    });
+                    /*
+                    if(completed == 0){
+                        $(this).parent().parent().parent().hide();
+                    };
+                    */
+                    self.화면아이디s
+                        .bind('mouseenter', function () {
+                            $(this).addClass('hover');
+                        })
+                        .bind('mouseleave', function () {
+                            $(this).removeClass('hover');
+                        });
+                    title_text = [self.section_title.text(), ' <span class="page-count">(', completed, '/', self.화면아이디s.length, ')</span>'];
+                    self.section_title.html(title_text.join(''));
+                    self.section_title.bind('click', function () {
+                        self.content.slideToggle(settings.speed);
+                    });
+                    if (settings.openAll || ((settings.index - 1) === all_sections.index(this))) {
+                        self.content.css('display', 'block');
+                    }
+                });
+            };
+            $(document).ready(function () {
+                $('div.section').stat({ openAll: true });
+                $('#total').text($('tbody tr').length);
+                $('tbody tr:even').addClass('even');
+                $('tbody td[rowspan][rowspan!=1]').addClass('multi');
+
+                // 페이지 선택 select 스크립트
+                $('#page_chooser option').each(function ($index, $element) {
+                    $element = $($element);
+                    var 화면아이디 = $element.data('화면아이디');
+                    if (location.href.indexOf(화면아이디) > -1) {
+                        $element.attr('selected', 'selected');
+                    }
+                });
+                $('#page_chooser').bind('change', function () {
+                    location.href = $(this).val();
+                });
+                // 페이지 선택 select 스크립트 끝
+
+                // 폰트 선택 radio 스크립트
+                $("input:radio[name=chgFntsize]").click(function () {
+                    var fontAddSize = $("input[name=chgFntsize]:checked").val();
+                    fontAddSize = Number(fontAddSize);
+                    if (isNaN(fontAddSize)) { size = 0; }
+                    localStorage.setItem("fntAddSz", fontAddSize);
+                });
+                // 폰트 선택 radio 스크립트
+            });
+        }(jQuery));
+    </script>
+</head>
+
+<body>
+    <script type="text/javascript">document.body.className += ' js';</script>
+
+    <!-- Status  -->
+    <div class="section">
+        <h2 class="title">관리자 페이지 Status</h2>
+        <div class="content">
+            <h2>2022-01-17</h2>
+            <table>
+                <colgroup>
+                    <col style="width:20%" />
+                    <col style="width:20%" />
+                    <col style="width:20%" />
+                    <col style="width:10%" />
+                    <col style="width:10%" />
+                    <col style="width:20%" />
+                <thead>
+                    <tr>
+                        <th scope="col">1depth</th>
+                        <th scope="col">2depth</th>
+                        <th scope="col">화면아이디</th>
+                        <th scope="col">페이지링크 - white</th>
+                        <th scope="col">페이지링크 - dark</th>
+                        <th scope="col">비고</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 1.사용자관리 -->
+                    <tr>
+                        <td rowspan="2">1.사용자관리</td>
+                        <td>02.사용자목록</td>
+                        <td>HG-WEB-USER-01</td>
+                        <td><a href="HG-WEB-USER-01.html" target="_blank">Link</a></td>
+                        <td><a href="dark/HG-WEB-USER-01.html" target="_blank">Link</a></td>
+                        <td>완료 (2022-01-17)</td>
+                    </tr>
+                    <tr>
+                        <td>03.사용자로그조회</td>
+                        <td>HG-WEB-사용자공통-01</td>
+                        <td><a href="HG-WEB-ALLUSER.html" target="_blank">Link</a></td>
+                        <td><a href="dark/HG-WEB-ALLUSER.html" target="_blank">Link</a></td>
+                        <td>완료 (2022-01-17)</td>
+                    </tr>
+                    <!-- //1.사용자관리 -->
+                    
+                    <!-- 2.디바이스관리 -->
+                    <tr>
+                        <td rowspan="3">2.디바이스관리</td>
+                        <td rowspan="3">11.디바이스관리</td>
+                        <td>HG-WEB-DVMN-01(슈퍼관리자/관리자)</td>
+                        <td><a href="HG-WEB-DVMN-01.html" target="_blank">Link</a></td>
+                        <td><a href="dark/HG-WEB-DVMN-01.html" target="_blank">Link</a></td>
+                        <td>완료 (2022-01-24)</td>
+                    </tr>
+                    <tr>
+                        <td>HG-WEB-DVMN-01(그룹관리자/의사/간호사)</td>
+                        <td><a href="HG-WEB-DVMN-01_02.html" target="_blank">Link</a></td>
+                        <td><a href="dark/HG-WEB-DVMN-01_02.html" target="_blank">Link</a></td>
+                        <td>완료 (2022-01-24)</td>
+                    </tr>
+                    <tr>
+                        <td>HG-WEB-DVMN-02</td>
+                        <td><a href="HG-WEB-DVMN-02.html" target="_blank">Link</a></td>
+                        <td><a href="dark/HG-WEB-DVMN-02.html" target="_blank">Link</a></td>
+                        <td>완료 (2022-01-24)</td>
+                    </tr>
+                    <!-- //2.디바이스관리 -->
+
+                    <!-- 3.대시보드 -->
+                    <tr>
+                        <td rowspan="7">3.대시보드</td>
+                        <td rowspan="7">01.대시보드</td>
+                        <td>HG-WEB-DASH-02</td>
+                        <td><a href="HG-WEB-DASH-02.html" target="_blank">Link</a></td>
+                        <td><a href="dark/HG-WEB-DASH-02.html" target="_blank">Link</a></td>
+                        <td>완료 (2022-01-24)</td>
+                    </tr>
+                    <tr>
+                        <td>HG-WEB-DASH-02-1</td>
+                        <td><a href="HG-WEB-DASH-02-1.html" target="_blank">Link</a></td>
+                        <td><a href="dark/HG-WEB-DASH-02-1.html" target="_blank">Link</a></td>
+                        <td>완료 (2022-01-24)</td>
+                    </tr>
+                    <tr>
+                        <td>HG-WEB-DASH-03</td>
+                        <td><a href="HG-WEB-DASH-03.html" target="_blank">Link</a></td>
+                        <td><a href="dark/HG-WEB-DASH-03.html" target="_blank">Link</a></td>
+                        <td>완료 (2022-01-24)</td>
+                    </tr>
+                    <tr>
+                        <td>HG-WEB-DASH-04 </td>
+                        <td><a href="HG-WEB-DASH-04.html" target="_blank">Link</a></td>
+                        <td><a href="dark/HG-WEB-DASH-04.html" target="_blank">Link</a></td>
+                        <td>완료 (2022-01-24)</td>
+                    </tr>
+                    <tr>
+                        <td>HG-WEB-DASH-04-1 </td>
+                        <td><a href="HG-WEB-DASH-04-1.html" target="_blank">Link</a></td>
+                        <td><a href="dark/HG-WEB-DASH-04-1.html" target="_blank">Link</a></td>
+                        <td>완료 (2022-01-24)</td>
+                    </tr>
+                    <tr>
+                        <td>HG-WEB-DASH-04-2 </td>
+                        <td><a href="HG-WEB-DASH-04-2.html" target="_blank">Link</a></td>
+                        <td><a href="dark/HG-WEB-DASH-04-2.html" target="_blank">Link</a></td>
+                        <td>완료 (2022-01-24)</td>
+                    </tr>
+                    <tr>
+                        <td>HG-WEB-DASH-04-3 </td>
+                        <td><a href="HG-WEB-DASH-04-3.html" target="_blank">Link</a></td>
+                        <td><a href="dark/HG-WEB-DASH-04-3.html" target="_blank">Link</a></td>
+                        <td>완료 (2022-01-24)</td>
+                    </tr>
+                    <!-- //3.대시보드 -->
+
+                    <!-- 4.게이트웨이관리 -->
+                    <tr>
+                        <td rowspan="6">4.게이트웨이관리</td>
+                        <td rowspan="6">12.게이트웨이관리</td>
+                        <td>HG-WEB-GW-01</td>
+                        <td><a href="HG-WEB-GW-01.html" target="_blank">Link</a></td>
+                        <td><a href="dark/HG-WEB-GW-01.html" target="_blank">Link</a></td>
+                        <td>완료 (2022-01-24)</td>
+                    </tr>
+                    <tr>
+                        <td>HG-WEB-GW-01_nodata</td>
+                        <td><a href="HG-WEB-GW-01_nodata.html" target="_blank">Link</a></td>
+                        <td><a href="dark/HG-WEB-GW-01_nodata.html" target="_blank">Link</a></td>
+                        <td>완료 (2022-01-24)</td>
+                    </tr>
+                    <tr>
+                        <td>HG-WEB-GW-02</td>
+                        <td><a href="HG-WEB-GW-01.html" target="_blank">Link</a></td>
+                        <td><a href="dark/HG-WEB-GW-01.html" target="_blank">Link</a></td>
+                        <td>완료 (2022-01-24)</td>
+                    </tr>
+                    <tr>
+                        <td>HG-WEB-GW-03</td>
+                        <td><a href="HG-WEB-GW-01.html" target="_blank">Link</a></td>
+                        <td><a href="dark/HG-WEB-GW-01.html" target="_blank">Link</a></td>
+                        <td>완료 (2022-01-24)</td>
+                    </tr>
+                    <tr>
+                        <td>HG-WEB-GW-04</td>
+                        <td><a href="HG-WEB-GW-01.html" target="_blank">Link</a></td>
+                        <td><a href="dark/HG-WEB-GW-01.html" target="_blank">Link</a></td>
+                        <td>완료 (2022-01-24)</td>
+                    </tr>
+                    <tr>
+                        <td>HG-WEB-GW-05</td>
+                        <td><a href="HG-WEB-GW-01.html" target="_blank">Link</a></td>
+                        <td><a href="dark/HG-WEB-GW-01.html" target="_blank">Link</a></td>
+                        <td>완료 (2022-01-24)</td>
+                    </tr>
+                    <!-- //4.게이트웨이관리 -->
+
+                    <!-- 5.상담 -->
+                    <tr>
+                        <td rowspan="3">5.상담</td>
+                        <td>07.건강상담</td>
+                        <td>HG-WEB-CS-01</td>
+                        <td><a href="HG-WEB-CS-01.html" target="_blank">Link</a></td>
+                        <td><a href="dark/HG-WEB-CS-01.html" target="_blank">Link</a></td>
+                        <td>완료 (2022-02-08)</td>
+                    </tr>
+                    <tr>
+                        <td>08.화상상담</td>
+                        <td>HG-WEB-TH-04</td>
+                        <td><a href="HG-WEB-TH-04.html" target="_blank">Link</a></td>
+                        <td><a href="dark/HG-WEB-TH-04.html" target="_blank">Link</a></td>
+                        <td>완료 (2022-02-08)</td>
+                    </tr>
+<!--                     
+                    <tr>
+                        <td>08.화상상담 - 2명</td>
+                        <td>HG-WEB-TH-04-02</td>
+                        <td><a href="HG-WEB-TH-04-02.html" target="_blank">Link</a></td>
+                        <td><a href="dark/HG-WEB-TH-04-02.html" target="_blank">Link</a></td>
+                        <td>완료 (2022-02-08)</td>
+                    </tr>
+                    <tr>
+                        <td>08.화상상담 - 3명</td>
+                        <td>HG-WEB-TH-04-03</td>
+                        <td><a href="HG-WEB-TH-04-03.html" target="_blank">Link</a></td>
+                        <td><a href="dark/HG-WEB-TH-04-03.html" target="_blank">Link</a></td>
+                        <td>완료 (2022-02-08)</td>
+                    </tr>
+                    <tr>
+                        <td>08.화상상담 - 4명</td>
+                        <td>HG-WEB-TH-04-04</td>
+                        <td><a href="HG-WEB-TH-04-04.html" target="_blank">Link</a></td>
+                        <td><a href="dark/HG-WEB-TH-04-04.html" target="_blank">Link</a></td>
+                        <td>완료 (2022-02-08)</td>
+                    </tr>
+                    <tr>
+                        <td>08.화상상담 - 5명</td>
+                        <td>HG-WEB-TH-04-05</td>
+                        <td><a href="HG-WEB-TH-04-05.html" target="_blank">Link</a></td>
+                        <td><a href="dark/HG-WEB-TH-04-05.html" target="_blank">Link</a></td>
+                        <td>완료 (2022-02-08)</td>
+                    </tr>
+                    <tr>
+                        <td>08.화상상담 - 6명</td>
+                        <td>HG-WEB-TH-04-06</td>
+                        <td><a href="HG-WEB-TH-04-06.html" target="_blank">Link</a></td>
+                        <td><a href="dark/HG-WEB-TH-04-06.html" target="_blank">Link</a></td>
+                        <td>완료 (2022-02-08)</td>
+                    </tr>
+                    <tr>
+                        <td>08.화상상담 - 7명</td>
+                        <td>HG-WEB-TH-04-07</td>
+                        <td><a href="HG-WEB-TH-04-07.html" target="_blank">Link</a></td>
+                        <td><a href="dark/HG-WEB-TH-04-07.html" target="_blank">Link</a></td>
+                        <td>완료 (2022-02-08)</td>
+                    </tr>
+                    <tr>
+                        <td>08.화상상담 - 8명</td>
+                        <td>HG-WEB-TH-04-08</td>
+                        <td><a href="HG-WEB-TH-04-08.html" target="_blank">Link</a></td>
+                        <td><a href="dark/HG-WEB-TH-04-08.html" target="_blank">Link</a></td>
+                        <td>완료 (2022-02-08)</td>
+                    </tr> -->
+                    <tr>
+                        <td></td>
+                        <td>HG-WEB-TH-04-share</td>
+                        <td><a href="HG-WEB-TH-04-share.html" target="_blank">Link</a></td>
+                        <td><a href="dark/HG-WEB-TH-04-share.html" target="_blank">Link</a></td>
+                        <td>완료 (2022-02-08)</td>
+                    </tr>
+                    <!-- //5.상담 -->
+
+                    <!-- 6.모니터링 -->
+                    <tr>
+                        <td>6.모니터링</td>
+                        <td>10.위험지수관리</td>
+                        <td>HG-WEB-MR-01</td>
+                        <td><a href="HG-WEB-MR-01.html" target="_blank">Link</a></td>
+                        <td><a href="dark/HG-WEB-MR-01.html" target="_blank">Link</a></td>
+                        <td>완료 (2022-02-08)</td>
+                    </tr>
+                    <!-- //6.모니터링 -->
+
+                    <!-- 7.콘텐츠관리 -->
+                    <tr>
+                        <td rowspan="2">7.콘텐츠관리</td>
+                        <td>06.메시지발송대상자modal</td>
+                        <td>HG-WEB-MSG-04</td>
+                        <td><a href="HG-WEB-MSG-04.html" target="_blank">Link</a></td>
+                        <td><a href="dark/HG-WEB-MSG-04.html" target="_blank">Link</a></td>
+                        <td>완료 (2022-01-24)</td>
+                    </tr>
+                    <tr>
+                        <td>09.보호자용 동의서 등록</td>
+                        <td>HG-WEB-AG-01</td>
+                        <td><a href="HG-WEB-AG-01.html" target="_blank">Link</a></td>
+                        <td><a href="dark/HG-WEB-AG-01.html" target="_blank">Link</a></td>
+                        <td>완료 (2022-02-08)</td>
+                    </tr>
+                    <!-- //7.콘텐츠관리 -->
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- //회원가입 -->
+
+
+</body>
+
+</html>

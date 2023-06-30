@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>동영상관리</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+    <meta content="Coderthemes" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+    <!-- App css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
+    <link href="assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
+
+    <link href="assets/css/vendor/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/vendor/responsive.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/vendor/summernote-bs4.css" rel="stylesheet" type="text/css" />
+
+    <link href="assets/css/page/sys_manager.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/base.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/common.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="loading"
+    data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
+    <!-- Begin page -->
+    <div class="wrapper">
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="left-side-menu">
+            <!-- LOGO -->
+            <a href="main.html" class="logo text-center logo-light">
+                <span class="logo-lg">
+                    <img src="assets/images/logo.png" alt="" height="16">
+                </span>
+                <span class="logo-sm">
+                    <img src="assets/images/logo_sm.png" alt="" height="16">
+                </span>
+            </a>
+            <!-- LOGO -->
+            <a href="main.html" class="logo text-center logo-dark">
+                <span class="logo-lg">
+                    <img src="assets/images/logo-dark.png" alt="" height="16">
+                </span>
+                <span class="logo-sm">
+                    <img src="assets/images/logo_sm_dark.png" alt="" height="16">
+                </span>
+            </a>
+
+            <div class="h-100" id="left-side-menu-container" data-simplebar>
+                <!--- Sidemenu -->
+                <ul class="metismenu side-nav">
+                    <li class="side-nav-title side-nav-item">Navigation</li>
+                    <li class="side-nav-item">
+                        <a href="main.html" class="side-nav-link">
+                            <i class="uil-presentation-lines-alt"></i>
+                            <span> Dashboards </span>
+                        </a>
+                    </li>
+                    <li class="side-nav-item">
+                        <a href="#" class="side-nav-link">
+                            <i class="uil-users-alt"></i>
+                            <span> 사용자관리 </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="side-nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="users.html">전체사용자</a>
+                            </li>
+                            <li>
+                                <a href="auth01.html">승인 관리</a>
+                            </li>
+                            <li>
+                                <a href="send_message.html">메시지관리</a>
+                            </li>
+                            <li>
+                                <a href="message_list.html">메세지 발송 이력</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="side-nav-item">
+                        <a href="javascript: void(0);" class="side-nav-link">
+                            <i class="uil-comments-alt"></i>
+                            <span> 상담 </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="side-nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href=".html">대화형 상담</a>
+                            </li>
+                            <li>
+                                <a href=".html">단답형 상담</a>
+                            </li>
+                            <li>
+                                <a href=".html">비대면 상담</a>
+                            </li>
+                            <li>
+                                <a href="doc01.html">문서함</a>
+                            </li>
+                            <!-- <li>
+                                <a href="consult.html">1:1 상담</a>
+                            </li>
+                            <li>
+                                <a href="telehealth.html">Tel health</a>
+                            </li> -->
+                        </ul>
+                    </li>
+                    <li class="side-nav-item">
+                        <a href="javascript: void(0);" class="side-nav-link">
+                            <i class="uil-eye"></i>
+                            <span> 모니터링 </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="side-nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="moniter_danger.html">위험지수 관리</a>
+                            </li>
+                            <li>
+                                <a href="moniter_adapter.html">순응도 관리</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="side-nav-item">
+                        <a href="javascript: void(0);" class="side-nav-link">
+                            <i class="uil uil-image"></i>
+                            <span> 콘텐츠관리 </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="side-nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="sys_content.html">콘텐츠관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_video.html">동영상 관리</a>
+                            </li>
+                            <li>
+                                <a href="sdf.html">줄넘기 팁 관리</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="side-nav-item">
+                        <a href="javascript: void(0);" class="side-nav-link">
+                            <i class="uil-game-structure"></i>
+                            <span> 시스템운영 </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="side-nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="sys_group.html">그룹관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_webuser.html">웹 사용자관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_version.html">버전관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_appoint.html">약관 관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_service.html">서비스 문의</a>
+                            </li>
+                            <li>
+                                <a href="sys_connecthistory.html">접속 이력 관리</a>
+                            </li>
+                            <li>
+                                <a href=".html">결제 관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_checkitem.html">검사 항목관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_note.html">공지사항 관리</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <!-- Sidebar -left -->
+
+        </div>
+        <!-- Left Sidebar End -->
+
+        <!-- ============================================================== -->
+        <!-- Start Page Content here -->
+        <!-- ============================================================== -->
+
+        <div class="content-page">
+            <div class="content">
+                <!-- Topbar Start -->
+                <div class="navbar-custom">
+                    <ul class="list-unstyled topbar-right-menu float-right mb-0">
+                        <li class="dropdown notification-list d-lg-none">
+                            <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button"
+                                aria-haspopup="false" aria-expanded="false">
+                                <i class="dripicons-search noti-icon"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-animated dropdown-lg p-0">
+                                <form class="p-3">
+                                    <input type="text" class="form-control" placeholder="Search ..."
+                                        aria-label="Recipient's username">
+                                </form>
+                            </div>
+                        </li>
+
+                        <li class="dropdown notification-list">
+                            <a class="nav-link dropdown-toggle nav-user arrow-none mr-0" data-toggle="dropdown" href="#"
+                                role="button" aria-haspopup="false" aria-expanded="false">
+                                <span class="account-user-avatar">
+                                    <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
+                                </span>
+                                <span>
+                                    <span class="account-user-name">James Kim</span>
+                                    <span class="account-position">의사 <i class="dripicons-chevron-down"></i></span>
+                                </span>
+                            </a>
+                            <div
+                                class="dropdown-menu dropdown-menu-right dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
+                                <!-- item-->
+                                <a href="javascript:void(0);" onclick="showMyAccountDlg()"
+                                    class="dropdown-item notify-item">
+                                    <i class="mdi mdi-account-circle mr-1"></i>
+                                    <span>My Account</span>
+                                </a>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" onclick="showSettingDlg()"
+                                    class="dropdown-item notify-item">
+                                    <i class="mdi mdi-account-edit mr-1"></i>
+                                    <span>Settings</span>
+                                </a>
+                                <!-- item-->
+                                <a href="login.html" class="dropdown-item notify-item">
+                                    <i class="mdi mdi-logout mr-1"></i>
+                                    <span>Logout</span>
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+                    <button class="button-menu-mobile open-left disable-btn">
+                        <i class="mdi mdi-menu"></i>
+                    </button>
+                    <h4 class="page-title color-title float-left mt-3">동영상 관리</h4>
+                    <div class="app-search dropdown d-none d-lg-block float-right">
+                        <form>
+                            <div class="input-group">
+                                <input type="text" class="form-control dropdown-toggle" placeholder="사용자를 검색할수 있습니다."
+                                    id="top-search">
+                                <span class="mdi mdi-magnify search-icon"></span>
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="submit">검색</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- end Topbar -->
+
+                <!-- Start Content-->
+                <div class="container-fluid">
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box">
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0 pt-0">
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">시스템 운영</a></li>
+                                        <li class="breadcrumb-item active">동영상 관리</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end page title -->
+
+                    <div>
+                        <ul class="nav nav-tabs nav-bordered mb-3 nav-tabs-my">
+                            <li class="nav-item">
+                                <a href="#video_total" data-toggle="tab" aria-expanded="false"
+                                    class="nav-link rounded-0 active">
+                                    <span class=" d-md-block">동영상 전체</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#video_set" data-toggle="tab" aria-expanded="false" class="nav-link rounded-0">
+                                    <span class=" d-md-block">동영상 세트</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#new_video" data-toggle="tab" aria-expanded="false" class="nav-link rounded-0">
+                                    <span class=" d-md-block">동영상 신규 등록</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#new_set" data-toggle="tab" aria-expanded="false" class="nav-link rounded-0">
+                                    <span class=" d-md-block">동영상 세트 등록</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- end col -->
+                    </div>
+                    <div class="row align-items-center justify-content-center" style="height: 740px;">
+                        <div class="col-lg-4">
+                            <div class="text-center">
+                                <img src="assets/images/file-searching.svg" height="160" alt="File not found Image">
+                                <h4 class="text-uppercase mt-4">등록된 데이터가 없습니다.</h4>
+                            </div> <!-- end /.text-center-->
+                        </div> <!-- end col-->
+                    </div>
+                    <!-- end row -->
+
+                </div> <!-- container -->
+
+            </div> <!-- content -->
+
+            <!-- Footer Start -->
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            © HealthConnect Co., Ltd.
+                        </div>
+                        <div class="col-md-6">
+
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- end Footer -->
+
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
+
+    </div>
+    <!-- END wrapper -->
+
+    <div data-include-html="modal/account.html"></div>
+    <div data-include-html="modal/setting.html"></div>
+    <div data-include-html="modal/password.html"></div>
+    <div id="success-alert-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content bg-white">
+                <div class="modal-body p-4">
+                    <div class="text-center">
+                        <i class="dripicons-checkmark h1"></i>
+                        <h4 class="mt-2" id="title"></h4>
+                        <p class="mt-3" id="content"></p>
+                        <button type="button" class="btn btn-light my-2" onclick="returnSuccessCallbck()">확인</button>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div id="error-alert-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <div class="modal-content bg-white">
+                <div class="modal-body p-4">
+                    <div class="text-center">
+                        <i class="dripicons-checkmark h1"></i>
+                        <h4 class="mt-2" id="e_title"></h4>
+                        <p class="mt-3" id="e_content"></p>
+                        <button type="button" class="btn btn-light my-2" data-dismiss="modal">확인</button>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+    <div id="info-alert-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body p-4">
+                    <div class="text-center">
+                        <i class="dripicons-information h1 text-info"></i>
+                        <h4 class="mt-2">Heads up!</h4>
+                        <p class="mt-3">Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac
+                            facilisis in, egestas eget quam.</p>
+                        <button type="button" class="btn btn-info my-2" data-dismiss="modal">Continue</button>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+    <div id="delete-select-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+        <div class="modal-dialog modal-custom-medium modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title">콘텐츠 조회</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body p-3" style="min-height: 500px;">
+                    Content Here
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="video-modal" class="modal fade sys_modal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true"
+        data-backdrop="static">
+        <div class="modal-dialog modal-custom-video modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title">미리보기</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body p-0">
+                    <!--video-->
+                    <div class="p-3">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item"
+                                src="https://www.youtube.com/embed/PrUxWZiQfy4?autohide=0&showinfo=0&controls=0"></iframe>
+                        </div>
+                        <h4 class="mb-0 mt-3 pb-2">무릎 대고 메디신 볼 푸쉬업 </h4>
+                        <p class="mb-0 txt-light">filename.mp4</p>
+                    </div>
+                    <div class="bg-light p-3">
+                        <div class="bg-white p-3">
+                            준비 자세: 허리를 곧게 펴고 발을 모은 상태에서 무릎을 약간 굽히고, 허리를 약
+                            90도 정도 숙인다. <br />
+                            양 팔의 팔꿈치를 가볍게 굽힌 상태에서 정강이 앞 쪽에 위치시킨다.
+                            운동 방법: 덤벨을 든 팔이 어깨와 평행하도록 위쪽으로 들어올린다.
+                            이 후 천천히 준비 자세로 돌아오도록 한다.
+                            준비 자세: 허리를 곧게 펴고 발을 모은 상태에서 무릎을 약간 굽히고, 허리를 약
+                            90도 정도 숙인다. <br />
+                            양 팔의 팔꿈치를 가볍게 굽힌 상태에서 정강이 앞 쪽에 위치시킨다.
+                            운동 방법: 덤벨을 든 팔이 어깨와 평행하도록 위쪽으로 들어올린다.
+                            이 후 천천히 준비 자세로 돌아오도록 한다.
+                            준비 자세: 허리를 곧게 펴고 발을 모은 상태에서 무릎을 약간 굽히고, 허리를 약
+                            90도 정도 숙인다.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="video-set" class="modal fade sys_modal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true"
+        data-backdrop="static">
+        <div class="modal-dialog modal-custom-video-set modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title">미리보기</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body p-0">
+                    <div class="p-3">
+                        <h4 class="mb-1">세트명 : 애플 힙 만들기</h4>
+                        <div class="d-flex">
+                            <div class="flex-sm-row">
+                                작성자 : James Lee (2020-11-02)
+                            </div>
+                            <div class="ml-auto">
+                                Active
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-light p-3">
+                        <div class="bg-white p-3">
+                            <div class="">
+                                <table class="table table-centered table-hover w-100 nowrap" id="contents-video-set">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th class="w700">카테고리</th>
+                                            <th>콘텐츠 제목</th>
+                                            <th>소비 칼로리</th>
+                                            <th>운동량</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>엉덩이</td>
+                                            <td>식사관리</td>
+                                            <td>2020-01-02 12:12</td>
+                                            <td>James Lee</td>
+                                        </tr>
+                                        <tr>
+                                            <td>다리</td>
+                                            <td>식사관리</td>
+                                            <td>2020-01-02 12:12</td>
+                                            <td>James Lee</td>
+                                        </tr>
+                                        <tr>
+                                            <td>다리</td>
+                                            <td>식사관리</td>
+                                            <td>2020-01-02 12:12</td>
+                                            <td>James Lee</td>
+                                        </tr>
+                                        <tr>
+                                            <td>다리</td>
+                                            <td>식사관리</td>
+                                            <td>2020-01-02 12:12</td>
+                                            <td>James Lee</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/vendor.min.js"></script>
+    <script src="assets/js/app.min.js"></script>
+
+    <script src="assets/js/vendor/jquery.dataTables.min.js"></script>
+    <script src="assets/js/vendor/dataTables.bootstrap4.js"></script>
+    <script src="assets/js/vendor/dataTables.responsive.min.js"></script>
+    <script src="assets/js/vendor/responsive.bootstrap4.min.js"></script>
+    <script src="assets/js/vendor/apexcharts.min.js"></script>
+    <script src="assets/js/vendor/dataTables.checkboxes.min.js"></script>
+
+    <script src="assets/js/vendor/dropzone.min.js"></script>
+    <script src="assets/js/ui/component.fileupload.js"></script>
+
+    <script src="assets/js/vendor/summernote-bs4.min.js"></script>
+    <script src="assets/js/pages/demo.summernote.js"></script>
+
+    <script src="assets/js/common.js"></script>
+    <script src="assets/js/page/sys_video.js"></script>
+    <script>
+        function updateUserPassword() {
+            $("#login-password-modal").modal("hide");
+        }
+
+        function showMyAccountDlg() {
+            $("#my-info-modal").modal("show");
+        }
+
+        function updateLoginPasswordDlg() {
+            $("#login-password-modal").modal("show");
+        }
+
+        function showSettingDlg() {
+            $("#setting-modal").modal("show");
+        }
+
+        function updateUserInfo() {
+            $("#my-info-modal").modal("hide");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1638 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>동의서관리_슈퍼관리자</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+    <meta content="Coderthemes" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+    <!-- App css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
+    <link href="assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
+
+    <link href="assets/css/vendor/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/vendor/responsive.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/vendor/summernote-bs4.css" rel="stylesheet" type="text/css" />
+
+    <link href="assets/css/base.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/common.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="loading"
+    data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
+    <!-- Begin page -->
+    <div class="wrapper">
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="left-side-menu">
+            <!-- LOGO -->
+            <a href="main.html" class="logo text-center logo-light">
+                <span class="logo-lg">
+                    <img src="assets/images/logo.png" alt="" height="16">
+                </span>
+                <span class="logo-sm">
+                    <img src="assets/images/logo_sm.png" alt="" height="16">
+                </span>
+            </a>
+            <!-- LOGO -->
+            <a href="main.html" class="logo text-center logo-dark">
+                <span class="logo-lg">
+                    <img src="assets/images/logo-dark.png" alt="" height="16">
+                </span>
+                <span class="logo-sm">
+                    <img src="assets/images/logo_sm_dark.png" alt="" height="16">
+                </span>
+            </a>
+
+            <div class="h-100" id="left-side-menu-container" data-simplebar>
+                <!--- Sidemenu -->
+                <ul class="metismenu side-nav">
+                    <li class="side-nav-title side-nav-item">Navigation</li>
+                    <li class="side-nav-item">
+                        <a href="main.html" class="side-nav-link">
+                            <i class="uil-presentation-lines-alt"></i>
+                            <span> Dashboards </span>
+                        </a>
+                    </li>
+                    <li class="side-nav-item">
+                        <a href="#" class="side-nav-link">
+                            <i class="uil-users-alt"></i>
+                            <span> 사용자관리 </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="side-nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="users.html">전체사용자</a>
+                            </li>
+                            <li>
+                                <a href="auth01.html">승인 관리</a>
+                            </li>
+                            <li>
+                                <a href="send_message.html">메시지관리</a>
+                            </li>
+                            <li>
+                                <a href="message_list.html">메세지 발송 이력</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="side-nav-item">
+                        <a href="javascript: void(0);" class="side-nav-link">
+                            <i class="uil-comments-alt"></i>
+                            <span> 상담 </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="side-nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href=".html">대화형 상담</a>
+                            </li>
+                            <li>
+                                <a href=".html">단답형 상담</a>
+                            </li>
+                            <li>
+                                <a href=".html">비대면 상담</a>
+                            </li>
+                            <li>
+                                <a href="doc01.html">문서함</a>
+                            </li>
+                            <!-- <li>
+                                <a href="consult.html">1:1 상담</a>
+                            </li>
+                            <li>
+                                <a href="telehealth.html">Tel health</a>
+                            </li> -->
+                        </ul>
+                    </li>
+                    <li class="side-nav-item">
+                        <a href="javascript: void(0);" class="side-nav-link">
+                            <i class="uil-eye"></i>
+                            <span> 모니터링 </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="side-nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="moniter_danger.html">위험지수 관리</a>
+                            </li>
+                            <li>
+                                <a href="moniter_adapter.html">순응도 관리</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="side-nav-item">
+                        <a href="javascript: void(0);" class="side-nav-link">
+                            <i class="uil uil-image"></i>
+                            <span> 콘텐츠관리 </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="side-nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="sys_content.html">콘텐츠관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_video.html">동영상 관리</a>
+                            </li>
+                            <li>
+                                <a href="sdf.html">줄넘기 팁 관리</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="side-nav-item">
+                        <a href="javascript: void(0);" class="side-nav-link">
+                            <i class="uil-game-structure"></i>
+                            <span> 시스템운영 </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="side-nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="sys_group.html">그룹관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_webuser.html">웹 사용자관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_version.html">버전관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_appoint.html">약관 관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_service.html">서비스 문의</a>
+                            </li>
+                            <li>
+                                <a href="sys_connecthistory.html">접속 이력 관리</a>
+                            </li>
+                            <li>
+                                <a href=".html">결제 관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_checkitem.html">검사 항목관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_note.html">공지사항 관리</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <!-- Sidebar -left -->
+
+        </div>
+        <!-- Left Sidebar End -->
+
+        <!-- ============================================================== -->
+        <!-- Start Page Content here -->
+        <!-- ============================================================== -->
+
+        <div class="content-page">
+            <div class="content">
+                <!-- Topbar Start -->
+                <div class="navbar-custom">
+                    <ul class="list-unstyled topbar-right-menu float-right mb-0">
+                        <li class="dropdown notification-list d-lg-none">
+                            <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button"
+                                aria-haspopup="false" aria-expanded="false">
+                                <i class="dripicons-search noti-icon"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-animated dropdown-lg p-0">
+                                <form class="p-3">
+                                    <input type="text" class="form-control" placeholder="Search ..."
+                                        aria-label="Recipient's username">
+                                </form>
+                            </div>
+                        </li>
+
+                        <li class="dropdown notification-list">
+                            <a class="nav-link dropdown-toggle nav-user arrow-none mr-0" data-toggle="dropdown" href="#"
+                                role="button" aria-haspopup="false" aria-expanded="false">
+                                <span class="account-user-avatar">
+                                    <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
+                                </span>
+                                <span>
+                                    <span class="account-user-name">James Kim</span>
+                                    <span class="account-position">의사 <i class="dripicons-chevron-down"></i></span>
+                                </span>
+                            </a>
+                            <div
+                                class="dropdown-menu dropdown-menu-right dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
+                                <!-- item-->
+                                <a href="javascript:void(0);" onclick="showMyAccountDlg()"
+                                    class="dropdown-item notify-item">
+                                    <i class="mdi mdi-account-circle mr-1"></i>
+                                    <span>My Account</span>
+                                </a>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" onclick="showSettingDlg()"
+                                    class="dropdown-item notify-item">
+                                    <i class="mdi mdi-account-edit mr-1"></i>
+                                    <span>Settings</span>
+                                </a>
+                                <!-- item-->
+                                <a href="login.html" class="dropdown-item notify-item">
+                                    <i class="mdi mdi-logout mr-1"></i>
+                                    <span>Logout</span>
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+                    <button class="button-menu-mobile open-left disable-btn">
+                        <i class="mdi mdi-menu"></i>
+                    </button>
+                    <h4 class="page-title color-title float-left mt-3">동의서 관리</h4>
+                    <div class="app-search dropdown d-none d-lg-block float-right">
+                        <form>
+                            <div class="input-group">
+                                <input type="text" class="form-control dropdown-toggle" placeholder="사용자를 검색할수 있습니다."
+                                    id="top-search">
+                                <span class="mdi mdi-magnify search-icon"></span>
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="submit">검색</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- end Topbar -->
+
+                <!-- Start Content-->
+                <div class="container-fluid">
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end page title -->
+
+                    <div>
+                        <ul class="nav nav-tabs nav-bordered mb-3 nav-tabs-my">
+                            <li class="nav-item">
+                                <a href="#contents_total" id="list-agm" data-toggle="tab" aria-expanded="false"
+                                    class="nav-link rounded-0 active">
+                                    <span class=" d-md-block">동의서 목록</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#new_register" id="register-agm"data-toggle="tab" aria-expanded="false"
+                                    class="nav-link rounded-0">
+                                    <span class=" d-md-block">동의서 등록</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane show active" id="contents_total">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row dataTables_head02">
+                                            <div class="col-sm-12 col-md-3 mb-1 mb-md-0">
+                                                <div class="form-inline">
+                                                    <div class="dataTables_length form-inline"
+                                                        id="auth-datatable_length">
+                                                        <select class="form-control mr-1">
+                                                            <option value="10">10</option>
+                                                            <option value="20">20</option>
+                                                            <option value="-1">All</option>
+                                                        </select> 개 씩 보기
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-9">
+                                                <div
+                                                    class="form-inline custom-inline-form monitor-form justify-content-end">
+                                                    <div class="form-group">
+                                                        <label class="mr-1">검색 : </label>
+                                                        <select class="form-control form-select mr-1" style="width: 160px;">
+                                                            <option value="">그룹 전체</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <select class="form-control form-select mr-1" style="width: 160px;">
+                                                            <option value="">상담 유형 전체</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <select class="form-select form-control mr-1" style="width: 160px;">
+                                                            <option value="">사용여부 전체</option>
+                                                            <option value="">사용가능</option>
+                                                            <option value="">사용불가</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <select class="form-control form-select mr-1">
+                                                            <option value="">제목</option>
+                                                            <option value="">등록자</option>
+                                                        </select>
+                                                        <div class="search-box">
+                                                            <input type="search" class="form-control" placeholder=""
+                                                                aria-controls="adapter-datatable">
+                                                            <button class="btn btn-positive" type="submit">검색</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <table class="table table-centered table-hover w-100 nowrap" id="HG-WEB-AG-01-table01">
+                                            <!--id="note-datatable -->
+                                            <thead class="thead-light">
+                                                <tr>
+                                                    <th>그룹</th>
+                                                    <th>상담 유형</th>
+                                                    <th>대상</th>
+                                                    <th>제목</th>
+                                                    <th>등록자</th>
+                                                    <th>사용기간</th>
+                                                    <th>사용여부</th>
+                                                    <th>응답건수</th>
+                                                    <th>언어</th>
+                                                    <th style="width: 225px;">관리</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>SK하이닉스</td>
+                                                    <td>의료상담</td>
+                                                    <td>환자용</td>
+                                                    <td>서비스 만족도 설문</td>
+                                                    <td>홍길동</td>
+                                                    <td>2021-08-30 ~ 2026-08-30</td>
+                                                    <td>사용가능</td>
+                                                    <td>13</td>
+                                                    <td>AR</td>
+                                                    <td>
+                                                        <a class="text-body" data-toggle="modal"
+                                                            data-target="#noti-view-modal" href="">
+                                                            <i class="dripicons-preview font-20 cursor mr-3"></i>
+                                                        </a>
+                                                        <i class="mdi mdi-square-edit-outline font-20 cursor mr-3"></i>
+                                                        <i class="mdi mdi-delete font-20 cursor mr-3"></i>
+                                                        <a class="text-body" data-toggle="modal"
+                                                            data-target="#passward-input-modal" href="">
+                                                            <i class="mdi mdi-file-download-outline font-20 cursor"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>서울대학교병원</td>
+                                                    <td>의료상담</td>
+                                                    <td>환자용</td>
+                                                    <td>서비스 만족도 설문</td>
+                                                    <td>홍길동</td>
+                                                    <td>2021-08-30 ~ 2026-08-30</td>
+                                                    <td>사용가능</td>
+                                                    <td>13</td>
+                                                    <td>AR</td>
+                                                    <td>
+                                                        <a class="text-body" data-toggle="modal"
+                                                            data-target="#noti-view-modal" href="">
+                                                            <i class="dripicons-preview font-20 cursor mr-3"></i>
+                                                        </a>
+                                                        <i class="mdi mdi-square-edit-outline font-20 cursor mr-3"></i>
+                                                        <i class="mdi mdi-delete font-20 cursor mr-3"></i>
+                                                        <a class="text-body" data-toggle="modal"
+                                                            data-target="#passward-input-modal" href="">
+                                                            <i class="mdi mdi-file-download-outline font-20 cursor"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>SK하이닉스</td>
+                                                    <td>의료상담</td>
+                                                    <td>환자용</td>
+                                                    <td>서비스 만족도 설문</td>
+                                                    <td>홍길동</td>
+                                                    <td>2021-08-30 ~ 2026-08-30</td>
+                                                    <td>사용가능</td>
+                                                    <td>13</td>
+                                                    <td>AR</td>
+                                                    <td>
+                                                        <a class="text-body" data-toggle="modal"
+                                                            data-target="#noti-view-modal" href="">
+                                                            <i class="dripicons-preview font-20 cursor mr-3"></i>
+                                                        </a>
+                                                        <i class="mdi mdi-square-edit-outline font-20 cursor mr-3"></i>
+                                                        <i class="mdi mdi-delete font-20 cursor mr-3"></i>
+                                                        <a class="text-body" data-toggle="modal"
+                                                            data-target="#passward-input-modal" href="">
+                                                            <i class="mdi mdi-file-download-outline font-20 cursor"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>서울대학교병원</td>
+                                                    <td>의료상담</td>
+                                                    <td>환자용</td>
+                                                    <td>서비스 만족도 설문</td>
+                                                    <td>홍길동</td>
+                                                    <td>2021-08-30 ~ 2026-08-30</td>
+                                                    <td>사용가능</td>
+                                                    <td>13</td>
+                                                    <td>AR</td>
+                                                    <td>
+                                                        <a class="text-body" data-toggle="modal"
+                                                            data-target="#noti-view-modal" href="">
+                                                            <i class="dripicons-preview font-20 cursor mr-3"></i>
+                                                        </a>
+                                                        <i class="mdi mdi-square-edit-outline font-20 cursor mr-3"></i>
+                                                        <i class="mdi mdi-delete font-20 cursor mr-3"></i>
+                                                        <a class="text-body" data-toggle="modal"
+                                                            data-target="#passward-input-modal" href="">
+                                                            <i class="mdi mdi-file-download-outline font-20 cursor"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>SK하이닉스</td>
+                                                    <td>의료상담</td>
+                                                    <td>환자용</td>
+                                                    <td>서비스 만족도 설문</td>
+                                                    <td>홍길동</td>
+                                                    <td>2021-08-30 ~ 2026-08-30</td>
+                                                    <td>사용가능</td>
+                                                    <td>13</td>
+                                                    <td>AR</td>
+                                                    <td>
+                                                        <a class="text-body" data-toggle="modal"
+                                                            data-target="#noti-view-modal" href="">
+                                                            <i class="dripicons-preview font-20 cursor mr-3"></i>
+                                                        </a>
+                                                        <i class="mdi mdi-square-edit-outline font-20 cursor mr-3"></i>
+                                                        <i class="mdi mdi-delete font-20 cursor mr-3"></i>
+                                                        <a class="text-body" data-toggle="modal"
+                                                            data-target="#passward-input-modal" href="">
+                                                            <i class="mdi mdi-file-download-outline font-20 cursor"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>서울대학교병원</td>
+                                                    <td>의료상담</td>
+                                                    <td>환자용</td>
+                                                    <td>서비스 만족도 설문</td>
+                                                    <td>홍길동</td>
+                                                    <td>2021-08-30 ~ 2026-08-30</td>
+                                                    <td>사용가능</td>
+                                                    <td>13</td>
+                                                    <td>AR</td>
+                                                    <td>
+                                                        <a class="text-body" data-toggle="modal"
+                                                            data-target="#noti-view-modal" href="">
+                                                            <i class="dripicons-preview font-20 cursor mr-3"></i>
+                                                        </a>
+                                                        <i class="mdi mdi-square-edit-outline font-20 cursor mr-3"></i>
+                                                        <i class="mdi mdi-delete font-20 cursor mr-3"></i>
+                                                        <a class="text-body" data-toggle="modal"
+                                                            data-target="#passward-input-modal" href="">
+                                                            <i class="mdi mdi-file-download-outline font-20 cursor"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>SK하이닉스</td>
+                                                    <td>의료상담</td>
+                                                    <td>환자용</td>
+                                                    <td>서비스 만족도 설문</td>
+                                                    <td>홍길동</td>
+                                                    <td>2021-08-30 ~ 2026-08-30</td>
+                                                    <td>사용가능</td>
+                                                    <td>13</td>
+                                                    <td>AR</td>
+                                                    <td>
+                                                        <a class="text-body" data-toggle="modal"
+                                                            data-target="#noti-view-modal" href="">
+                                                            <i class="dripicons-preview font-20 cursor mr-3"></i>
+                                                        </a>
+                                                        <i class="mdi mdi-square-edit-outline font-20 cursor mr-3"></i>
+                                                        <i class="mdi mdi-delete font-20 cursor mr-3"></i>
+                                                        <a class="text-body" data-toggle="modal"
+                                                            data-target="#passward-input-modal" href="">
+                                                            <i class="mdi mdi-file-download-outline font-20 cursor"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>서울대학교병원</td>
+                                                    <td>의료상담</td>
+                                                    <td>환자용</td>
+                                                    <td>서비스 만족도 설문</td>
+                                                    <td>홍길동</td>
+                                                    <td>2021-08-30 ~ 2026-08-30</td>
+                                                    <td>사용가능</td>
+                                                    <td>13</td>
+                                                    <td>AR</td>
+                                                    <td>
+                                                        <a class="text-body" data-toggle="modal"
+                                                            data-target="#noti-view-modal" href="">
+                                                            <i class="dripicons-preview font-20 cursor mr-3"></i>
+                                                        </a>
+                                                        <i class="mdi mdi-square-edit-outline font-20 cursor mr-3"></i>
+                                                        <i class="mdi mdi-delete font-20 cursor mr-3"></i>
+                                                        <a class="text-body" data-toggle="modal"
+                                                            data-target="#passward-input-modal" href="">
+                                                            <i class="mdi mdi-file-download-outline font-20 cursor"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>SK하이닉스</td>
+                                                    <td>의료상담</td>
+                                                    <td>환자용</td>
+                                                    <td>서비스 만족도 설문</td>
+                                                    <td>홍길동</td>
+                                                    <td>2021-08-30 ~ 2026-08-30</td>
+                                                    <td>사용가능</td>
+                                                    <td>13</td>
+                                                    <td>AR</td>
+                                                    <td>
+                                                        <a class="text-body" data-toggle="modal"
+                                                            data-target="#noti-view-modal" href="">
+                                                            <i class="dripicons-preview font-20 cursor mr-3"></i>
+                                                        </a>
+                                                        <i class="mdi mdi-square-edit-outline font-20 cursor mr-3"></i>
+                                                        <i class="mdi mdi-delete font-20 cursor mr-3"></i>
+                                                        <a class="text-body" data-toggle="modal"
+                                                            data-target="#passward-input-modal" href="">
+                                                            <i class="mdi mdi-file-download-outline font-20 cursor"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>서울대학교병원</td>
+                                                    <td>의료상담</td>
+                                                    <td>환자용</td>
+                                                    <td>서비스 만족도 설문</td>
+                                                    <td>홍길동</td>
+                                                    <td>2021-08-30 ~ 2026-08-30</td>
+                                                    <td>사용가능</td>
+                                                    <td>13</td>
+                                                    <td>AR</td>
+                                                    <td>
+                                                        <a class="text-body" data-toggle="modal"
+                                                            data-target="#noti-view-modal" href="">
+                                                            <i class="dripicons-preview font-20 cursor mr-3"></i>
+                                                        </a>
+                                                        <i class="mdi mdi-square-edit-outline font-20 cursor mr-3"></i>
+                                                        <i class="mdi mdi-delete font-20 cursor mr-3"></i>
+                                                        <a class="text-body" data-toggle="modal"
+                                                            data-target="#passward-input-modal" href="">
+                                                            <i class="mdi mdi-file-download-outline font-20 cursor"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>SK하이닉스</td>
+                                                    <td>의료상담</td>
+                                                    <td>환자용</td>
+                                                    <td>서비스 만족도 설문</td>
+                                                    <td>홍길동</td>
+                                                    <td>2021-08-30 ~ 2026-08-30</td>
+                                                    <td>사용가능</td>
+                                                    <td>13</td>
+                                                    <td>AR</td>
+                                                    <td>
+                                                        <a class="text-body" data-toggle="modal"
+                                                            data-target="#noti-view-modal" href="">
+                                                            <i class="dripicons-preview font-20 cursor mr-3"></i>
+                                                        </a>
+                                                        <i class="mdi mdi-square-edit-outline font-20 cursor mr-3"></i>
+                                                        <i class="mdi mdi-delete font-20 cursor mr-3"></i>
+                                                        <a class="text-body" data-toggle="modal"
+                                                            data-target="#passward-input-modal" href="">
+                                                            <i class="mdi mdi-file-download-outline font-20 cursor"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>서울대학교병원</td>
+                                                    <td>의료상담</td>
+                                                    <td>환자용</td>
+                                                    <td>서비스 만족도 설문</td>
+                                                    <td>홍길동</td>
+                                                    <td>2021-08-30 ~ 2026-08-30</td>
+                                                    <td>사용가능</td>
+                                                    <td>13</td>
+                                                    <td>AR</td>
+                                                    <td>
+                                                        <a class="text-body" data-toggle="modal"
+                                                            data-target="#noti-view-modal" href="">
+                                                            <i class="dripicons-preview font-20 cursor mr-3"></i>
+                                                        </a>
+                                                        <i class="mdi mdi-square-edit-outline font-20 cursor mr-3"></i>
+                                                        <i class="mdi mdi-delete font-20 cursor mr-3"></i>
+                                                        <a class="text-body" data-toggle="modal"
+                                                            data-target="#passward-input-modal" href="">
+                                                            <i class="mdi mdi-file-download-outline font-20 cursor"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div> <!-- end card-body-->
+                                </div> <!-- end card-->
+                            </div>
+                            <div class="tab-pane show" id="new_register">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <form action="">
+                                            <div class="d-flex dataTables_head03">
+                                                <div class="form-group mr-3">
+                                                    <label for="f-c-1" class="col-form-label mr-2"><b>그룹</b></label><br>
+                                                    <select class="form-control min-width-150 mr-2" id="f-c-1">
+                                                        <option value="">그룹 전체</option>
+                                                        <option value="">서울대학교 병원</option>
+                                                        <option value="">헬스커넥트</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group mr-3">
+                                                    <label for="f-c-1" class="col-form-label mr-2"><b>구분</b></label>
+                                                    <select class="form-control min-width-150 mr-2 noti-select"
+                                                        id="f-c-1">
+                                                        <option value="option01">상담 유형</option>
+                                                        <option value="option01">의료 상담</option>
+                                                        <option value="option02">화상 상담</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group mr-3">
+                                                    <label for="f-c-1" class="col-form-label mr-2"><b>대상</b></label>
+                                                    <select class="form-control min-width-150 mr-2 noti-select"
+                                                        id="f-c-1">
+                                                        <option value="option01">환자용</option>
+                                                        <option value="option02">보호자용</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group mr-3">
+                                                    <label for="f-c-1" class="col-form-label mr-2"><b>언어</b></label>
+                                                    <select class="form-control min-width-150 mr-2 noti-select"
+                                                        id="f-c-1">
+                                                        <option value="option01">영어(기본)</option>
+                                                        <option value="option01">한국어</option>
+                                                        <option value="option02">아랍어</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group mr-3 w-200">
+                                                    <label for="f-c-1" class="col-form-label mr-2"><b>사용기간</b></label>
+                                                    <div class="mb-3">
+                                                        <div class="form-group mb-4">
+                                                            <div class="form-group mb-4">
+                                                                <input type="text" class="form-control date"
+                                                                    id="singledaterange"
+                                                                    data-cancel-class="btn-warning">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <div for="f-c-4" class="form-group mb-3">
+                                                    <div class="form-flex mr-2 justify-content-between">
+                                                        <label for="f-c-1" class="col-form-label mr-2"><b>제목</b></label>
+                                                        <p class="col-form-label"><span id="textLength">0 / 50</p>
+                                                    </div>
+                                                    <div class="d-flex mt-1">
+                                                        <input type="text" class="form-control mr-2" id="titleInput"
+                                                            placeholder="제목을 입력하세요." />
+                                                    </div>
+                                                </div>
+                                                <div for="f-c-4">
+                                                    <div class="form-flex mr-2 justify-content-between">
+                                                        <label for="f-c-1" class="col-form-label mr-2"
+                                                            id="Input"><b>설명</b></label>
+                                                        <p class="col-form-label"><span id="exptextLength">0 / 50</p>
+                                                    </div>
+                                                    <div class="d-flex mt-1">
+                                                        <input type="text" class="form-control mr-2" id="expInput"
+                                                            placeholder="설명을 입력하세요." />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                
+                                
+                                
+                                <!-- 단일선택형 -->
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="checkbox ml-50 mb-1">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox"
+                                                    class="custom-control-input custom-control-input-success"
+                                                    id="customCheck2">
+                                                <label class="custom-control-label custom-control-label-success"
+                                                    for="customCheck2">필수항목</label>
+                                            </div>
+                                        </div>
+                                        <form action>
+                                            <div class="form-qst-input mb-2">
+                                                <label for="f-c-1" class="form-qst form-qst-title mb-0">질문1</label>
+                                                <div class="form-qst-text mr-2">
+                                                    <input type="text" class="form-control mr-2" id="f-c-4"
+                                                        placeholder="질문을 입력하세요." />
+                                                </div>
+                                                <div class="upload">
+                                                    <i class="uil-scenery upload-icon mr-2 cursor" action="/"
+                                                        method="post" id="myAwesomeDropzone" data-plugin="dropzone"
+                                                        data-previews-container="#file-previews"
+                                                        data-upload-preview-template="#uploadPreviewTemplate"></i>
+                                                </div>
+                                                <select
+                                                    class="form-control min-width-150 mr-2 noti-select form-qst-type"
+                                                    id="f-c-1">
+                                                    <option selected>필수 동의형</option>
+                                                    <option value="2">주관식형</option>
+                                                    <option value="3">목록 선택형</option>
+                                                </select>
+                                            </div>
+
+                                        </form>
+
+                                        <div class="row mb-2">
+                                            <div class="col-md-3 col-sm-12 ml-50">
+                                                <!-- Preview -->
+                                                <div class="dropzone-previews drop-card" id="file-previews"></div>
+
+                                                <!-- file preview template -->
+                                                <div class="d-none" id="uploadPreviewTemplate">
+                                                    <div class="card mb-0 shadow-none border">
+                                                        <div class="p-2">
+                                                            <div class="row align-items-center drop-card-image">
+                                                                <div class="col-auto">
+                                                                    <img data-dz-thumbnail src="#"
+                                                                        class="avatar-sm rounded bg-light" alt="">
+                                                                </div>
+                                                                <div class="col pl-0">
+                                                                    <a href="javascript:void(0);"
+                                                                        class="text-muted font-weight-bold"
+                                                                        data-dz-name></a>
+                                                                    <p class="mb-0" data-dz-size></p>
+                                                                </div>
+
+                                                                <div class="col-auto">
+                                                                    <!-- Button -->
+                                                                    <a href="" class="btn btn-link btn-lg text-muted"
+                                                                        data-dz-remove>
+                                                                        <i class="dripicons-cross"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <form action>
+                                            <div class="form-qst-input mb-2">
+                                                <label for="f-c-1" class="form-qst form-qst-title mb-0"></label>
+                                                <div>
+                                                    <div class="qst-option mb-3">
+    
+                                                        <!-- 필수 옵션블럭 -->
+                                                        <div>
+                                                            <div class="col-form-label text-right pb-0"><span id="esoptLength_S">0 / 6</div>
+                                                            <div class="flex-center mb-1" id="optionEssentialBox">
+                                                                <div class="custom-control custom-radio" id="qst-option-radio">
+                                                                    <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                                                    <label class="custom-control-label form-flex" for="customRadio1"></label>
+                                                                </div>
+                                                                <div class="flex-center h-35p">
+                                                                    <div class="highlight-fc w-120 mr-2">필수동의항목</div>
+                                                                    <input id="esoptInput_S" type="text" class="form-control" id="f-c-4"placeholder="옵션1" />
+                                                                </div>
+                                                            </div> 
+    
+                                                        </div>
+                                                        <!-- 필수 옵션블럭 -->
+    
+                                                        
+                                                        <!-- 옵션블럭 -->
+                                                        <div>
+                                                            <div class="col-form-label text-right pb-0"><span id="optLength_S">0 / 6</div>
+                                                            <div class="flex-center mb-1" id="optionBox">
+                                                                <div class="custom-control custom-radio" id="qst-option-radio">
+                                                                    <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                                                                    <label class="custom-control-label form-flex" for="customRadio2"></label>
+                                                                </div>
+                                                                <div class="flex-center h-35p">
+                                                                    <div class="highlight-fc w-120 mr-2"></div>
+                                                                    <input id="optInput_S" type="text" class="form-control" id="f-c-4"placeholder="옵션2" />
+                                                                </div>
+                                                            </div> 
+                                                        </div>
+                                                        <!-- 옵션블럭 -->
+                                                    
+                                                    </div>
+                                                </div>
+    
+                                            </div>
+    
+                                        </form>
+
+                                        <div class="qst-btn text-right">
+                                            <button class="btn btn-light mr-1" type="button">복제</button>
+                                            <button id="qstDelete" class="qstDelete btn btn-primary"
+                                                type="button">삭제</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 단일선택형 -->
+
+                                
+                                <!-- 주관식형 -->
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="checkbox ml-50 mb-1">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox"
+                                                    class="custom-control-input custom-control-input-success"
+                                                    id="customCheck1">
+                                                <label class="custom-control-label custom-control-label-success"
+                                                    for="customCheck1">필수항목</label>
+                                            </div>
+                                        </div>
+                                        <form action>
+                                            <div class="form-qst-input mb-2">
+                                                <label for="f-c-1" class="form-qst form-qst-title mb-0">질문2</label>
+                                                <div class="form-qst-text mr-2">
+                                                    <input type="text" class="form-control mr-2" id="f-c-4"
+                                                        placeholder="질문을 입력하세요." />
+                                                </div>
+                                                <div class="upload">
+                                                    <i class="uil-scenery upload-icon mr-2 cursor" action="/"
+                                                        method="post" id="myAwesomeDropzone" data-plugin="dropzone"
+                                                        data-previews-container="#file-previews2"
+                                                        data-upload-preview-template="#uploadPreviewTemplate"></i>
+                                                </div>
+                                                <select
+                                                    class="form-control min-width-150 mr-2 noti-select form-qst-type"
+                                                    id="f-c-1">
+                                                    <option value="1">필수 동의형</option>
+                                                    <option selected>주관식형</option>
+                                                    <option value="3">목록 선택형</option>
+                                                </select>
+                                            </div>
+
+                                        </form>
+
+                                        <div class="row mb-2">
+                                            <div class="col-md-3 col-sm-12 ml-50">
+                                                <!-- Preview -->
+                                                <div class="dropzone-previews drop-card" id="file-previews2"></div>
+
+                                                <!-- file preview template -->
+                                                <div class="d-none" id="uploadPreviewTemplate">
+                                                    <div class="card mb-0 shadow-none border">
+                                                        <div class="p-2">
+                                                            <div class="row align-items-center drop-card-image">
+                                                                <div class="col-auto">
+                                                                    <img data-dz-thumbnail src="#"
+                                                                        class="avatar-sm rounded bg-light" alt="">
+                                                                </div>
+                                                                <div class="col pl-0">
+                                                                    <a href="javascript:void(0);"
+                                                                        class="text-muted font-weight-bold"
+                                                                        data-dz-name></a>
+                                                                    <p class="mb-0" data-dz-size></p>
+                                                                </div>
+
+                                                                <div class="col-auto">
+                                                                    <!-- Button -->
+                                                                    <a href="" class="btn btn-link btn-lg text-muted"
+                                                                        data-dz-remove>
+                                                                        <i class="dripicons-cross"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <form action>
+                                            <div class="form-qst-input mb-2">
+                                                <label for="f-c-1" class="form-qst form-qst-title mb-0"></label>
+                                                <div class="form-qst-text mr-2">
+                                                    <input type="text" class="form-control mr-2 answer-bg" id="f-c-4"
+                                                        placeholder="답변" />
+                                                </div>
+
+                                            </div>
+
+                                        </form>
+                                        <div class="qst-btn text-right">
+                                            <button class="btn btn-light mr-1" type="button">복제</button>
+                                            <button id="qstDelete" class="qstDelete btn btn-primary"
+                                                type="button">삭제</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 주관식형 -->
+
+
+                                <!-- 목록 선택형_checkbox -->
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="checkbox ml-50 mb-1">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox"
+                                                    class="custom-control-input custom-control-input-success"
+                                                    id="customCheck2">
+                                                <label class="custom-control-label custom-control-label-success"
+                                                    for="customCheck2">필수항목</label>
+                                            </div>
+                                        </div>
+                                        <form action>
+                                            <div class="form-qst-input mb-2">
+                                                <label for="f-c-1" class="form-qst form-qst-title mb-0">질문3</label>
+                                                <div class="form-qst-text mr-2">
+                                                    <input type="text" class="form-control mr-2" id="f-c-4"
+                                                        placeholder="질문을 입력하세요." />
+                                                </div>
+                                                <div class="upload">
+                                                    <i class="uil-scenery upload-icon mr-2 cursor" action="/"
+                                                        method="post" id="myAwesomeDropzone" data-plugin="dropzone"
+                                                        data-previews-container="#file-previews3"
+                                                        data-upload-preview-template="#uploadPreviewTemplate"></i>
+                                                </div>
+                                                <select
+                                                    class="form-control min-width-150 mr-2 noti-select form-qst-type"
+                                                    id="f-c-1">
+                                                    <option value="1">필수 동의형</option>
+                                                    <option value="2">주관식형</option>
+                                                    <option selected>목록 선택형</option>
+                                                </select>
+                                            </div>
+                                        </form>
+
+                                        <div class="row mb-2">
+                                            <div class="col-md-3 col-sm-12 ml-50">
+                                                <!-- Preview -->
+                                                <div class="dropzone-previews" id="file-previews3"></div>
+
+                                                <!-- file preview template -->
+                                                <div class="d-none" id="uploadPreviewTemplate">
+                                                    <div class="card mb-0 shadow-none border">
+                                                        <div class="p-2">
+                                                            <div class="row align-items-center drop-card-image">
+                                                                <div class="col-auto">
+                                                                    <img data-dz-thumbnail src="#"
+                                                                        class="avatar-sm rounded bg-light" alt="">
+                                                                </div>
+                                                                <div class="col pl-0">
+                                                                    <a href="javascript:void(0);"
+                                                                        class="text-muted font-weight-bold"
+                                                                        data-dz-name></a>
+                                                                    <p class="mb-0" data-dz-size></p>
+                                                                </div>
+
+                                                                <div class="col-auto">
+                                                                    <!-- Button -->
+                                                                    <a href="" class="btn btn-link btn-lg text-muted"
+                                                                        data-dz-remove>
+                                                                        <i class="dripicons-cross"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <form action>
+                                            <div class="form-qst-input mb-2">
+                                                <label for="f-c-1" class="form-qst form-qst-title mb-0"></label>
+                                                <div>
+                                                    <div class="qst-option mb-3">
+                                                        <div class="form-qst-top mb-2">
+                                                            <label class="chart-title mr-2" for="chart">1
+                                                            </label>
+                                                            <input type="text" class="form-control mr-2 mt--5"
+                                                                id="f-c-4" placeholder="옵션1" />
+                                                            <i class="mdi mdi-close cursor"></i>
+                                                        </div>
+                                                        <div class="form-qst-top mb-2">
+                                                            <label class="chart-title mr-2" for="chart">2
+                                                            </label>
+                                                            <input type="text" class="form-control mr-2 mt--5"
+                                                                id="f-c-4" placeholder="옵션2" />
+                                                            <i class="mdi mdi-close cursor"></i>
+                                                        </div>
+                                                        <div class="form-qst-top mb-2">
+                                                            <label class="chart-title mr-2" for="chart">3
+                                                            </label>
+                                                            <input type="text" class="form-control mr-2 mt--5"
+                                                                id="f-c-4" placeholder="옵션3" />
+                                                            <i class="mdi mdi-close cursor"></i>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="qst-add">
+                                                        <i class="mdi mdi-label"></i> <a
+                                                            href="javascript:void(0)">옵션 추가
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </form>
+
+                                        <div class="qst-btn text-right">
+                                            <button class="btn btn-light mr-1" type="button">복제</button>
+                                            <button id="qstDelete" class="qstDelete btn btn-primary"
+                                                type="button">삭제</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 목록 선택형_checkbox -->
+
+
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="text-middle">
+                                            <button class="btn btn-light mr-1" type="button" onclick="showGetAgmModal()">질문 가져오기</button>
+                                            <button class="btn btn-light mr-1" type="button">+ 질문추가</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-3">
+                                    </div>
+                                    <div class="col-md-9 text-right">
+                                        <button class="btn btn-light mr-1" type="button">미리보기</button>
+                                        <button class="btn btn-light mr-1" type="button">취소</button>
+                                        <button class="btn btn-primary" type="submit">임시저장</button>
+                                        <button class="btn btn-primary" type="submit">등록</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- end col -->
+                    </div>
+                    <!-- end row -->
+
+                </div> <!-- container -->
+
+            </div> <!-- content -->
+
+            <!-- Footer Start -->
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            © HealthConnect Co., Ltd.
+                        </div>
+                        <div class="col-md-6">
+
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- end Footer -->
+
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
+
+    </div>
+    <!-- END wrapper -->
+
+    <div data-include-html="modal/account.html"></div>
+    <div data-include-html="modal/setting.html"></div>
+    <div data-include-html="modal/password.html"></div>
+    <div id="note-register-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true"
+        data-backdrop="static">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title">신규 그룹 등록</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="form-group col-md-2">
+                                <label class="col-form-label">구분</label>
+                                <select class="form-control">
+                                    <option>전체</option>
+                                </select>
+                            </div>
+                            <div class="form-row col-md-10">
+                                <div class="col-md-12">
+                                    <label class="col-form-label">공지사항제목</label>
+                                </div>
+                                <div class="form-group col-md-8">
+                                    <input type="text" class="form-control" placeholder="'-'를 빼고 숫자만 입력하세요">
+                                </div>
+
+                                <div class="form-group col-md-4">
+                                    <button class="btn btn-primary form-control" type="button"> 중복확인 </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="summernote-basic"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">원래대로</button>
+                    <button type="button" class="btn btn-light" data-dismiss="modal">취 소</button>
+                    <button type="button" class="btn btn-primary" onclick="updateUserInfo()">약관등록</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+
+    <div id="success-alert-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <div class="modal-content bg-white">
+                <div class="modal-body p-4">
+                    <div class="text-center">
+                        <i class="dripicons-checkmark h1"></i>
+                        <h4 class="mt-2" id="title"></h4>
+                        <p class="mt-3" id="content"></p>
+                        <button type="button" class="btn btn-light my-2" onclick="returnSuccessCallbck()">확인</button>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div id="error-alert-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <div class="modal-content bg-white">
+                <div class="modal-body p-4">
+                    <div class="text-center">
+                        <i class="dripicons-checkmark h1"></i>
+                        <h4 class="mt-2" id="e_title"></h4>
+                        <p class="mt-3" id="e_content"></p>
+                        <button type="button" class="btn btn-light my-2" data-dismiss="modal">확인</button>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+    <div id="info-alert-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-body p-4">
+                    <div class="text-center">
+                        <i class="dripicons-information h1 text-info"></i>
+                        <h4 class="mt-2">Heads up!</h4>
+                        <p class="mt-3">Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac
+                            facilisis in, egestas eget quam.</p>
+                        <button type="button" class="btn btn-info my-2" data-dismiss="modal">Continue</button>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div id="noti-view-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="schedule-create-modalLabe"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title" id="schedule-create-modalLabel">공지사항</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div data-simplebar style="height:640px;">
+                            본문 노출
+                        </div>
+                    </form>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+    <div id="passward-input-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true"
+        data-backdrop="static">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">응답결과 엑셀 비밀번호 설정</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <p>엑셀파일에 비밀번호를 설정하세요.</p>
+                    <form action="#">
+                        <div class="col-md-12 pl-2 pr-2">
+                            <div class="form-row password">
+                                <div class="form-group password">
+                                    <label class="col-form-label"><b>비밀번호 입력</b></label>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" type="password">
+                                </div>
+                            </div>
+                            <div class="form-row password">
+                                <div class="form-group password">
+                                    <label class="col-form-label"><b>비밀번호 재입력</b></label>
+                                </div>
+                                <div class="form-group ">
+                                    <input class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">확인</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+
+    <div id="get-agm-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="question-header-modalLabel"
+    aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog modal-custom-large modal-dialog-centered mw-1000">
+        <div class="modal-content">
+            <div class="modal-header modal-colored-header bg-primary">
+                <h4 class="modal-title">질문 가져오기</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body get-question">
+                <div class="row mb-3">
+                    <div class="col-md-6 col-xs-12 col-lg-8">
+                        <div class="card mb-0">
+                            <div class="card-body h-550p">
+                                <h4 class="header-title mb-2 font-16"><b>설문 목록</b></h4>
+                                <div class="search-box form-group form-flex">
+                                    <input type="search" class="form-control w-0 m-0 mr-2" placeholder=""
+                                        aria-controls="adapter-datatable">
+                                    <button class="btn btn-positive" type="submit">검색</button>
+                                </div>
+                                <table class="table table-centered table-hover w-100 nowrap"
+                                    id="qstsurvey-datatable">
+                                    <!--id="note-datatable -->
+                                    <thead class="thead-light get-qst-table">
+                                        <tr>
+                                            <th>제목</th>
+                                            <th>등록자</th>
+                                            <th>최종 수정일시</th>
+                                            <th>언어</th>
+                                            <th>미리보기</th>
+                                            <th>선택</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="get-qst-table">
+                                        <tr>
+                                            <td>서울대학교병원 텔레헬스 사전 문진</td>
+                                            <td>홍길동</td>
+                                            <td>2020-01-01 12:00</td>
+                                            <td class="text-ct">AR</td>
+                                            <td class="text-ct">
+                                                <a class="text-body" data-toggle="modal"
+                                                    data-target="#noti-view-modal" href="">
+                                                    <i class="dripicons-preview font-20 cursor"></i>
+                                                </a>
+                                            </td>
+                                            <td><button class="btn btn-positive mr-10 getQstBtn"><i
+                                                        class="mdi mdi-check pr-10"></i>선택</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>서울대학교병원 텔레헬스 사전 문진</td>
+                                            <td>홍길동</td>
+                                            <td>2020-01-01 12:00</td>
+                                            <td class="text-ct">AR</td>
+                                            <td class="text-ct">
+                                                <a class="text-body" data-toggle="modal"
+                                                    data-target="#noti-view-modal" href="">
+                                                    <i class="dripicons-preview font-20 cursor"></i>
+                                                </a>
+                                            </td>
+                                            <td><button class="btn btn-positive mr-10 getQstBtn"><i
+                                                        class="mdi mdi-check pr-10"></i>선택</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>서울대학교병원 텔레헬스 사전 문진</td>
+                                            <td>홍길동</td>
+                                            <td>2020-01-01 12:00</td>
+                                            <td class="text-ct">AR</td>
+                                            <td class="text-ct">
+                                                <a class="text-body" data-toggle="modal"
+                                                    data-target="#noti-view-modal" href="">
+                                                    <i class="dripicons-preview font-20 cursor"></i>
+                                                </a>
+                                            </td>
+                                            <td><button class="btn btn-positive mr-10 getQstBtn"><i
+                                                        class="mdi mdi-check pr-10"></i>선택</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>서울대학교병원 텔레헬스 사전 문진</td>
+                                            <td>홍길동</td>
+                                            <td>2020-01-01 12:00</td>
+                                            <td class="text-ct">AR</td>
+                                            <td class="text-ct">
+                                                <a class="text-body" data-toggle="modal"
+                                                    data-target="#noti-view-modal" href="">
+                                                    <i class="dripicons-preview font-20 cursor"></i>
+                                                </a>
+                                            </td>
+                                            <td><button class="btn btn-positive mr-10 getQstBtn"><i
+                                                        class="mdi mdi-check pr-10"></i>선택</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>서울대학교병원 텔레헬스 사전 문진</td>
+                                            <td>홍길동</td>
+                                            <td>2020-01-01 12:00</td>
+                                            <td class="text-ct">AR</td>
+                                            <td class="text-ct">
+                                                <a class="text-body" data-toggle="modal"
+                                                    data-target="#noti-view-modal" href="">
+                                                    <i class="dripicons-preview font-20 cursor"></i>
+                                                </a>
+                                            </td>
+                                            <td><button class="btn btn-positive mr-10 getQstBtn"><i
+                                                        class="mdi mdi-check pr-10"></i>선택</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>서울대학교병원 텔레헬스 사전 문진</td>
+                                            <td>홍길동</td>
+                                            <td>2020-01-01 12:00</td>
+                                            <td class="text-ct">AR</td>
+                                            <td class="text-ct">
+                                                <a class="text-body" data-toggle="modal"
+                                                    data-target="#noti-view-modal" href="">
+                                                    <i class="dripicons-preview font-20 cursor"></i>
+                                                </a>
+                                            </td>
+                                            <td><button class="btn btn-positive mr-10 getQstBtn"><i
+                                                        class="mdi mdi-check pr-10"></i>선택</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>서울대학교병원 텔레헬스 사전 문진</td>
+                                            <td>홍길동</td>
+                                            <td>2020-01-01 12:00</td>
+                                            <td class="text-ct">AR</td>
+                                            <td class="text-ct">
+                                                <a class="text-body" data-toggle="modal"
+                                                    data-target="#noti-view-modal" href="">
+                                                    <i class="dripicons-preview font-20 cursor"></i>
+                                                </a>
+                                            </td>
+                                            <td><button class="btn btn-positive mr-10 getQstBtn"><i
+                                                        class="mdi mdi-check pr-10"></i>선택</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col -->
+
+                    <div class="col-md-6 col-xs-12 col-lg-4">
+                        <div class="card mb-0">
+                            <div class="card-body pt-3 h-550p dt-custom">
+                                <div class="card-body-titlebox mb-2">
+                                    <h4 class="header-title font-16 mb-0"><b>질문 목록</b></h4>
+                                </div>
+                                <form id="get-qst-survey" class="form-qst-survey" data-simplebar style="max-height: 550px;">
+                                    <table
+                                        class="table user-detail-table table-centered table-hover w-100 thead-only-gra"
+                                        id="agreement-getlist-datatable">
+                                        <thead class="thead-light custom-td">
+                                            <tr>
+                                                <th id="qstcheck">
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input type="checkbox"
+                                                            class="custom-control-input custom-control-input-success"
+                                                            id="customCheck1">
+                                                        <label class="custom-control-label custom-control-label-success"
+                                                            for="customCheck1">&nbsp;</label>
+                                                    </div>
+                                                    <div>모두선택</div>
+                                                </th>
+                                                <th>모두선택</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input type="checkbox"
+                                                            class="custom-control-input custom-control-input-success"
+                                                            id="customCheck2">
+                                                        <label class="custom-control-label custom-control-label-success"
+                                                            for="customCheck2">&nbsp;</label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="mb-1">
+                                                        재외국민 온라인 내면진료는 재외국민에게만 해당되며 재외국민이 아닌 사람은 이용에 
+                                                        제한이 있을 수 있습니다. 본인은 대한민국 재외국민 입니다. (재외국민이란? 대한민국의 국민으로서 외국의 영주권을
+                                                        취득한 사람이나 영주 할 목적으로 외국에 거주하고 있는 사람)
+                                                    </div>
+                                                    <div class="label-sub">필수 동의형:옵션2개</div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input type="checkbox"
+                                                            class="custom-control-input custom-control-input-success"
+                                                            id="customCheck2">
+                                                        <label class="custom-control-label custom-control-label-success"
+                                                            for="customCheck2">&nbsp;</label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="mb-1">
+                                                        아래의 내용은 환자가 제공받을 온라인 대면진료와 관련한 정보를 제공하여 환자 스스로의 의사에 따라 
+                                                        진료 야부를 결정 할 수 있도록 설명하는 내용입니다. 설명내용 중 이해가 되지 않는 부분은 추가설명을 
+                                                        요청 할 수 있습니다. 본인은 서울대병원에서 제공되는 재외국민 온라인 대면 진료에 대한 정보를
+                                                        충분히 제공 받았으며, 재외국민 온라인 대면 진료를 받는 것에 동의합니다.
+                                                    </div>
+                                                    <div class="label-sub">필수 동의형:옵션2개</div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input type="checkbox"
+                                                            class="custom-control-input custom-control-input-success"
+                                                            id="customCheck3">
+                                                        <label class="custom-control-label custom-control-label-success"
+                                                            for="customCheck3">&nbsp;</label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="mb-1">
+                                                        아래의 내용은 환자가 제공받을 온라인 대면진료와 관련한 정보를 제공하여 환자 스스로의 의사에 따라 
+                                                        진료 야부를 결정 할 수 있도록 설명하는 내용입니다. 설명내용 중 이해가 되지 않는 부분은 추가설명을 
+                                                        요청 할 수 있습니다. 본인은 서울대병원에서 제공되는 재외국민 온라인 대면 진료에 대한 정보를
+                                                        충분히 제공 받았으며, 재외국민 온라인 대면 진료를 받는 것에 동의합니다.
+                                                    </div>
+                                                    <div class="label-sub">필수 동의형:옵션2개</div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input type="checkbox"
+                                                            class="custom-control-input custom-control-input-success"
+                                                            id="customCheck2">
+                                                        <label class="custom-control-label custom-control-label-success"
+                                                            for="customCheck2">&nbsp;</label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="mb-1">
+                                                        아래의 내용은 환자가 제공받을 온라인 대면진료와 관련한 정보를 제공하여 환자 스스로의 의사에 따라 
+                                                        진료 야부를 결정 할 수 있도록 설명하는 내용입니다. 설명내용 중 이해가 되지 않는 부분은 추가설명을 
+                                                        요청 할 수 있습니다. 본인은 서울대병원에서 제공되는 재외국민 온라인 대면 진료에 대한 정보를
+                                                        충분히 제공 받았으며, 재외국민 온라인 대면 진료를 받는 것에 동의합니다.
+                                                    </div>
+                                                    <div class="label-sub">필수 동의형:옵션2개</div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input type="checkbox"
+                                                            class="custom-control-input custom-control-input-success"
+                                                            id="customCheck2">
+                                                        <label class="custom-control-label custom-control-label-success"
+                                                            for="customCheck2">&nbsp;</label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="mb-1">
+                                                        아래의 내용은 환자가 제공받을 온라인 대면진료와 관련한 정보를 제공하여 환자 스스로의 의사에 따라 
+                                                        진료 야부를 결정 할 수 있도록 설명하는 내용입니다. 설명내용 중 이해가 되지 않는 부분은 추가설명을 
+                                                        요청 할 수 있습니다. 본인은 서울대병원에서 제공되는 재외국민 온라인 대면 진료에 대한 정보를
+                                                        충분히 제공 받았으며, 재외국민 온라인 대면 진료를 받는 것에 동의합니다.
+                                                    </div>
+                                                    <div class="label-sub">필수 동의형:옵션2개</div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input type="checkbox"
+                                                            class="custom-control-input custom-control-input-success"
+                                                            id="customCheck2">
+                                                        <label class="custom-control-label custom-control-label-success"
+                                                            for="customCheck2">&nbsp;</label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="mb-1">
+                                                        아래의 내용은 환자가 제공받을 온라인 대면진료와 관련한 정보를 제공하여 환자 스스로의 의사에 따라 
+                                                        진료 야부를 결정 할 수 있도록 설명하는 내용입니다. 설명내용 중 이해가 되지 않는 부분은 추가설명을 
+                                                        요청 할 수 있습니다. 본인은 서울대병원에서 제공되는 재외국민 온라인 대면 진료에 대한 정보를
+                                                        충분히 제공 받았으며, 재외국민 온라인 대면 진료를 받는 것에 동의합니다.
+                                                    </div>
+                                                    <div class="label-sub">필수 동의형:옵션2개</div>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </form>
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col -->
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" onclick="" data-dismiss="modal"
+                        aria-hidden="true">취소</button>
+                    <button type="button" class="btn btn-primary" onclick="">가져오기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- 팝업 가이드 -->
+    <div style="position:fixed;bottom:0;right:0px;background:rgba(0, 0, 0, .5);width:500px;padding: 20px; z-index:100;">
+        <a href="javascript:void(0)" onclick="passwardInputModal()" style="color: #fff;">응답결과 엑셀 다운로드 팝업 클릭시</a><br />
+        <a href="javascript:void(0)" onclick="showGetAgmModal()" style="color: #fff;">질문가져오기 모달</a><br />
+    </div>
+
+
+    <script src="assets/js/vendor.min.js"></script>
+    <script src="assets/js/app.min.js"></script>
+
+    <script src="assets/js/vendor/apexcharts.min.js"></script>
+    <script src="assets/js/vendor/fullcalendar.min.js"></script>
+
+    <script src="assets/js/vendor/jquery.dataTables.min.js"></script>
+    <script src="assets/js/vendor/dataTables.bootstrap4.js"></script>
+    <script src="assets/js/vendor/dataTables.responsive.min.js"></script>
+    <script src="assets/js/vendor/responsive.bootstrap4.min.js"></script>
+    <script src="assets/js/vendor/apexcharts.min.js"></script>
+    <script src="assets/js/vendor/dataTables.checkboxes.min.js"></script>
+
+
+    <script src="assets/js/vendor/dropzone.min.js"></script>
+    <script src="assets/js/ui/component.fileupload.js"></script>
+    <script src="assets/lib/simplelightbox/simpleLightbox.min.js"></script>
+
+    <script src="assets/js/vendor/summernote-bs4.min.js"></script>
+    <script src="assets/js/pages/demo.summernote.js"></script>
+
+    <script src="assets/js/common.js"></script>
+    <script src="assets/js/page/HG-WEB-AG-01.js"></script>
+
+ 
+    <script src="assets/js/bootstrap4-toggle.min.js"></script>
+    <script>
+
+
+        function updateUserPassword() {
+            $("#login-password-modal").modal("hide");
+        }
+
+        function showMyAccountDlg() {
+            $("#my-info-modal").modal("show");
+        }
+
+        function updateLoginPasswordDlg() {
+            $("#login-password-modal").modal("show");
+        }
+
+        function showSettingDlg() {
+            $("#setting-modal").modal("show");
+        }
+
+        function updateUserInfo() {
+            $("#my-info-modal").modal("hide");
+        }
+
+
+        ///////////////////// 모달 가이드
+
+        
+        function showGetAgmModal() {
+            $("#get-agm-modal").modal("show")
+        }
+
+        function passwardInputModal() {
+            $("#passward-input-modal").modal("show");
+        }
+    </script>
+</body>
+
+</html>

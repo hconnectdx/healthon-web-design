@@ -1,0 +1,8 @@
+.dropzone .dz-message {
+    margin: 0 !important;
+}
+.dropzone {
+     border: 2px dashed #dee2e6;
+     min-height: 50px; !important;
+     padding: 2px;
+}

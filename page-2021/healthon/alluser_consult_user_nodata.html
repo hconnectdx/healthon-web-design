@@ -1,0 +1,2546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>상세 조회</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+    <meta content="Coderthemes" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+    <!-- App css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
+    <link href="assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
+
+
+    <link href="assets/css/vendor/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/vendor/responsive.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/vendor/fullcalendar.min.css" rel="stylesheet" type="text/css" />
+
+    <link href="assets/css/base.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/common.css" rel="stylesheet" type="text/css" id="common-style" />
+    <link href="assets/css/page/alluser_consult.css" rel="stylesheet" type="text/css" id="consult-style" />
+</head>
+
+<body class="loading"
+    data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
+    <!-- Begin page -->
+    <div class="wrapper">
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="left-side-menu">
+            <!-- LOGO -->
+            <a href="main.html" class="logo text-center logo-light">
+                <span class="logo-lg">
+                    <img src="assets/images/logo.png" alt="" height="16">
+                </span>
+                <span class="logo-sm">
+                    <img src="assets/images/logo_sm.png" alt="" height="16">
+                </span>
+            </a>
+            <!-- LOGO -->
+            <a href="main.html" class="logo text-center logo-dark">
+                <span class="logo-lg">
+                    <img src="assets/images/logo-dark.png" alt="" height="16">
+                </span>
+                <span class="logo-sm">
+                    <img src="assets/images/logo_sm_dark.png" alt="" height="16">
+                </span>
+            </a>
+
+            <div class="h-100" id="left-side-menu-container" data-simplebar>
+                <!--- Sidemenu -->
+                <ul class="metismenu side-nav">
+                    <li class="side-nav-title side-nav-item">Navigation</li>
+                    <li class="side-nav-item">
+                        <a href="main.html" class="side-nav-link">
+                            <i class="uil-presentation-lines-alt"></i>
+                            <span> Dashboards </span>
+                        </a>
+                    </li>
+                    <li class="side-nav-item">
+                        <a href="#" class="side-nav-link">
+                            <i class="uil-users-alt"></i>
+                            <span> 사용자관리 </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="side-nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="users.html">전체사용자</a>
+                            </li>
+                            <li>
+                                <a href="auth01.html">승인 관리</a>
+                            </li>
+                            <li>
+                                <a href="send_message.html">메시지관리</a>
+                            </li>
+                            <li>
+                                <a href="message_list.html">메세지 발송 이력</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="side-nav-item">
+                        <a href="javascript: void(0);" class="side-nav-link">
+                            <i class="uil-comments-alt"></i>
+                            <span> 상담 </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="side-nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href=".html">대화형 상담</a>
+                            </li>
+                            <li>
+                                <a href=".html">단답형 상담</a>
+                            </li>
+                            <li>
+                                <a href=".html">비대면 상담</a>
+                            </li>
+                            <li>
+                                <a href="doc01.html">문서함</a>
+                            </li>
+                            <!-- <li>
+                                <a href="consult.html">1:1 상담</a>
+                            </li>
+                            <li>
+                                <a href="telehealth.html">Tel health</a>
+                            </li> -->
+                        </ul>
+                    </li>
+                    <li class="side-nav-item">
+                        <a href="javascript: void(0);" class="side-nav-link">
+                            <i class="uil-eye"></i>
+                            <span> 모니터링 </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="side-nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="moniter_danger.html">위험지수 관리</a>
+                            </li>
+                            <li>
+                                <a href="moniter_adapter.html">순응도 관리</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="side-nav-item">
+                        <a href="javascript: void(0);" class="side-nav-link">
+                            <i class="uil uil-image"></i>
+                            <span> 콘텐츠관리 </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="side-nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="sys_content.html">콘텐츠관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_video.html">동영상 관리</a>
+                            </li>
+                            <li>
+                                <a href="sdf.html">줄넘기 팁 관리</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="side-nav-item">
+                        <a href="javascript: void(0);" class="side-nav-link">
+                            <i class="uil-game-structure"></i>
+                            <span> 시스템운영 </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="side-nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="sys_group.html">그룹관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_webuser.html">웹 사용자관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_version.html">버전관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_appoint.html">약관 관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_service.html">서비스 문의</a>
+                            </li>
+                            <li>
+                                <a href="sys_connecthistory.html">접속 이력 관리</a>
+                            </li>
+                            <li>
+                                <a href=".html">결제 관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_checkitem.html">검사 항목관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_note.html">공지사항 관리</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <!-- Sidebar -left -->
+
+        </div>
+        <!-- Left Sidebar End -->
+
+        <!-- ============================================================== -->
+        <!-- Start Page Content here -->
+        <!-- ============================================================== -->
+
+        <div class="content-page" style="padding-bottom:43px;">
+            <div class="content">
+                <!-- Topbar Start -->
+                <div class="navbar-custom">
+                    <ul class="list-unstyled topbar-right-menu float-right mb-0">
+                        <li class="dropdown notification-list d-lg-none">
+                            <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button"
+                                aria-haspopup="false" aria-expanded="false">
+                                <i class="dripicons-search noti-icon"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-animated dropdown-lg p-0">
+                                <form class="p-3">
+                                    <input type="text" class="form-control" placeholder="Search ..."
+                                        aria-label="Recipient's username">
+                                </form>
+                            </div>
+                        </li>
+
+                        <li class="dropdown notification-list">
+                            <a class="nav-link dropdown-toggle nav-user arrow-none mr-0" data-toggle="dropdown" href="#"
+                                role="button" aria-haspopup="false" aria-expanded="false">
+                                <span class="account-user-avatar">
+                                    <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
+                                </span>
+                                <span>
+                                    <span class="account-user-name">James Kim</span>
+                                    <span class="account-position">관리자 <i class="dripicons-chevron-down"></i></span>
+                                </span>
+                            </a>
+                            <div
+                                class="dropdown-menu dropdown-menu-right dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
+                                <!-- item-->
+                                <a href="javascript:void(0);" onclick="showMyAccountDlg()"
+                                    class="dropdown-item notify-item">
+                                    <i class="mdi mdi-account-circle mr-1"></i>
+                                    <span>My Account</span>
+                                </a>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" onclick="showSettingDlg()"
+                                    class="dropdown-item notify-item">
+                                    <i class="uil-cog mr-1"></i>
+                                    <span>Settings</span>
+                                </a>
+                                <!-- item-->
+                                <a href="login.html" class="dropdown-item notify-item">
+                                    <i class="mdi mdi-logout mr-1"></i>
+                                    <span>Logout</span>
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+                    <button class="button-menu-mobile open-left disable-btn">
+                        <i class="mdi mdi-menu"></i>
+                    </button>
+
+                    <h4 class="page-title color-title float-left mt-3">전체 사용자</h4>
+                    <div class="app-search dropdown d-none d-lg-block float-right">
+                        <form>
+                            <div class="input-group">
+                                <input type="text" class="form-control dropdown-toggle" placeholder="사용자를 검색할수 있습니다."
+                                    id="top-search">
+                                <span class="mdi mdi-magnify search-icon"></span>
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="submit">검색</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- end Topbar -->
+
+                <!-- Start Content-->
+                <div class="container-fluid">
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box">
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0 pt-0">
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">사용자 관리</a></li>
+                                        <li class="breadcrumb-item active">전체 사용자</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end page title -->
+                    <div class="row align-items-center justify-content-center" style="height: 740px;">
+                        <div class="col-lg-4">
+                            <div class="text-center">
+                                <img src="assets/images/file-searching.svg" height="160" alt="File not found Image">
+                                <h4 class="text-uppercase mt-4">등록된 데이터가 없습니다.</h4>
+                            </div> <!-- end /.text-center-->
+                        </div> <!-- end col-->
+                    </div>
+                    <!-- end row -->
+                </div>
+            </div> <!-- content -->
+
+            <!-- Footer Start -->
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            © HealthConnect Co., Ltd.
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- end Footer -->
+
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
+
+    </div>
+    <!-- END wrapper -->
+
+    <div data-include-html="modal/account.html"></div>
+    <div data-include-html="modal/setting.html"></div>
+    <div data-include-html="modal/password.html"></div>
+    <div id="user-doctor-number-modal" class="modal fade" tabindex="-1" role="dialog"
+        aria-labelledby="success-header-modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title" id="success-header-modalLabel">환자번호 및 담당의사 설정</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="form-group mb-0">
+                            <label class="col-form-label">환자 관리 번호</label>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-8">
+                                <input type="text" class="form-control" placeholder="환자 관리 번호를 입력하세요">
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <button class="btn btn-primary form-control" type="button"> 중복확인 </button>
+                            </div>
+                        </div>
+                        <div class="form-group mb-0">
+                            <label class="col-form-label">담당 의사 등록</label>
+                        </div>
+                        <div class="form-row">
+                            <select class="form-control">
+                                <option>담당의료진을 선택하세요.</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">취소</button>
+                    <button type="button" class="btn btn-primary">등록</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div id="user-profile-modal" class="modal fade" tabindex="-1" role="dialog"
+        aria-labelledby="success-header-modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title" id="user-profile-header-modalLabel">프로필</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="form-group mb-0">
+                            <img src="assets/images/users/avatar-1.jpg" style="width:100%;" />
+                        </div>
+                    </form>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div id="target-setting-weight-modal" class="modal fade" tabindex="-1" role="dialog"
+        aria-labelledby="success-header-modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title" id="target-setting-header-modalLabel">목표설정-체중</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="form-group mb-3">
+                            <label class="col-form-label"><b>목표 체중 (kg)</b></label>
+                            <input type="text" class="form-control" placeholder="목표 체중을 입력하세요.">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">취 소</button>
+                    <button type="button" class="btn btn-primary" onclick="">등록</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div id="target-setting-wc-modal" class="modal fade" tabindex="-1" role="dialog"
+        aria-labelledby="success-header-modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title" id="target-setting-wc-header-modalLabel">목표설정-허리둘레</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="form-group mb-3">
+                            <label class="col-form-label"><b>허리둘레 (cm)</b></label>
+                            <input type="text" class="form-control" placeholder="목표 허리둘레를 입력하세요.">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">취 소</button>
+                    <button type="button" class="btn btn-primary" onclick="">등록</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div id="blood-glucose-setting-modal" class="modal fade" tabindex="-1" role="dialog"
+        aria-labelledby="success-header-modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title" id="blood-glucose-setting-header-modalLabel">목표설정-혈당측정</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="form-group mb-0">
+                            <label class="col-form-label"><b>자가 관리 목표설정 - 혈당 측정횟수</b></label>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <select class="form-control">
+                                    <option value="1">일</option>
+                                    <option value="2">주</option>
+                                    <option value="3">월</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <select class="form-control">
+                                    <option value="1">1회이상</option>
+                                    <option value="2">2회이상</option>
+                                    <option value="3">3회이상</option>
+                                    <option value="4">4회이상</option>
+                                    <option value="5">5회이상</option>
+                                    <option value="6">6회이상</option>
+                                    <option value="7">7회이상</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">취 소</button>
+                    <button type="button" class="btn btn-primary" onclick="">등록</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div id="blood-glucose-input-modal" class="modal fade" tabindex="-1" role="dialog"
+        aria-labelledby="success-header-modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title" id="blood-glucose-input-header-modalLabel">직접입력-혈당</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="form-group mb-0">
+                            <label class="col-form-label"><b>입력일자</b></label>
+                        </div>
+                        <div class="form-group mb-2">
+                            <input type="text" class="form-control" data-provide="datepicker">
+                        </div>
+                        <div class="form-group mb-0">
+                            <label class="col-form-label"><b>입력시간</b></label>
+                        </div>
+                        <div class="form-group mb-2">
+                            <div class="input-group">
+                                <input type="text" class="form-control" data-toggle='timepicker'
+                                    data-show-meridian="false">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="dripicons-clock"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mb-2">
+                            <label class="col-form-label"><b>측정시점</b></label>
+                            <select class="form-control">
+                                <option value="1">아침 식전</option>
+                                <option value="2">아침 식후</option>
+                                <option value="3">점심 식전</option>
+                                <option value="4">점심 식후</option>
+                                <option value="5">저녁 식전</option>
+                                <option value="6">저녁 식후</option>
+                                <option value="7">취침 전</option>
+                                <option value="8">운동 전</option>
+                            </select>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label class="col-form-label"><b>측정결과 (mg/dL)</b></label>
+                            <input type="text" class="form-control" />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">취 소</button>
+                    <button type="button" class="btn btn-primary" onclick="">등록</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div id="blood-glucose-detail-modal" class="modal fade" tabindex="-1" role="dialog"
+        aria-labelledby="success-header-modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-80-width modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title" id="blood-glucose-detail-header-modalLabel">상세조회-혈당</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body p-0">
+                    <div class="card p-0">
+                        <div class="card-body border-bottom">
+                            <div class="top-search big">
+                                <label class="mr-1 mb-0">FROM</label>
+                                <div class="combine-wrapper mr-1">
+                                    <input type="text" class="form-control" style="width: 140px;display: inline-block;"
+                                        data-provide="datepicker" data-date-format="yyyy-mm-dd" value="2020-01-01" />
+                                    <i class="uil-calendar-alt"></i>
+                                </div>
+                                <label class="mr-1 mb-0">TO</label>
+                                <div class="combine-wrapper mr-1">
+                                    <input type="text" class="form-control" style="width: 140px;display: inline-block;"
+                                        data-provide="datepicker" data-date-format="yyyy-mm-dd" value="2020-01-01" />
+                                    <i class="uil-calendar-alt"></i>
+                                </div>
+                                <select class="form-control t-btn-1" style="width:120px; display:inline-block;">
+                                    <option value="1">아침 식전</option>
+                                    <option value="2">아침 식후</option>
+                                    <option value="3">점심 식전</option>
+                                    <option value="4">점심 식후</option>
+                                    <option value="5">저녁 식전</option>
+                                    <option value="6">저녁 식후</option>
+                                    <option value="7">취침 전</option>
+                                    <option value="8">운동 전</option>
+                                </select>
+                                <button class="btn btn-secondary ml-1 t-btn-1">조회</button>
+                                <div class="top-search-btn">
+                                    <select class="form-control t-btn-2" style="width:120px; display:inline-block;">
+                                        <option value="1">아침 식전</option>
+                                        <option value="2">아침 식후</option>
+                                        <option value="3">점심 식전</option>
+                                        <option value="4">점심 식후</option>
+                                        <option value="5">저녁 식전</option>
+                                        <option value="6">저녁 식후</option>
+                                        <option value="7">취침 전</option>
+                                        <option value="8">운동 전</option>
+                                    </select>
+                                    <button class="btn btn-secondary t-btn-2">조회</button>
+                                    <button class="btn btn-primary">신규입력</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<hr style="margin-left:-16px;margin-right:-16px;    border-top: 2px solid #eef2f7;margin-top:0px;">-->
+                    <div class="row ml-2 mr-2">
+                        <div class="col-md-6 pl-2">
+                            <div class="card">
+                                <div class="card-body pl-3 pt-3 pb-2" style="padding-right:62px;">
+                                    <!--<h5>측정일자별 결과</h5>-->
+                                    <div id="line-chart-11" data-colors="#7b4bff"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-body pl-3 pt-3 pb-2" style="padding-right:62px;">
+                                    <!--<h5>측정시간별 결과</h5>-->
+                                    <div id="line-chart-12" data-colors="#33d3d3"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row ml-2 mr-2 pb-3">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="font-w-600 mb-3 mt-0 mini-title">위험혈당분포</h5>
+                                    <div class="table-responsive">
+                                        <table class="table table-in-modal table-centered mb-0 thead-only-gray"
+                                            style="min-width: 400px;">
+                                            <thead>
+                                                <tr>
+                                                    <th>측정혈당</th>
+                                                    <th>저혈당</th>
+                                                    <th>정상</th>
+                                                    <th>고혈압</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>아침식사전</td>
+                                                    <td>25(25%)</td>
+                                                    <td>50(50%)</td>
+                                                    <td>25(25%)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>식사전</td>
+                                                    <td>25(25%)</td>
+                                                    <td>50(50%)</td>
+                                                    <td>25(25%)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>식사후</td>
+                                                    <td>25(25%)</td>
+                                                    <td>50(50%)</td>
+                                                    <td>25(25%)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>운동전</td>
+                                                    <td>25(25%)</td>
+                                                    <td>50(50%)</td>
+                                                    <td>25(25%)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>운동후</td>
+                                                    <td>25(25%)</td>
+                                                    <td>50(50%)</td>
+                                                    <td>25(25%)</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="font-w-600 mb-3 mt-0 mini-title">결과분포-아침식전</h5>
+                                    <div class="table-responsive">
+                                        <table class="table table-sm table-centered mb-0 thead-only-gray"
+                                            style="min-width: 300px;">
+                                            <thead>
+                                                <tr>
+                                                    <th>측정혈당</th>
+                                                    <th>발생횟수</th>
+                                                    <th>발생 빈도(%)</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>0-69</td>
+                                                    <td>12</td>
+                                                    <td>3</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>70-189</td>
+                                                    <td>1,234</td>
+                                                    <td>12</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>190-249</td>
+                                                    <td>234</td>
+                                                    <td>23</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>250-319</td>
+                                                    <td>12</td>
+                                                    <td>3</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>320이상</td>
+                                                    <td>12</td>
+                                                    <td>3</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="font-w-600 mb-3 mt-0 mini-title">입력방법-아침식전</h5>
+                                    <table class="table table-centered mb-0 thead-only-gray morning-table">
+                                        <thead>
+                                            <tr>
+                                                <th>구분</th>
+                                                <th>발생횟수</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>직접입력</td>
+                                                <td>10,222</td>
+                                            </tr>
+                                            <tr>
+                                                <td>디바이스연동</td>
+                                                <td>134</td>
+                                            </tr>
+                                            <tr>
+                                                <td>의료진입력</td>
+                                                <td>11</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div id="blood-pressure-setting-modal" class="modal fade" tabindex="-1" role="dialog"
+        aria-labelledby="success-header-modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title" id="blood-pressure-setting-header-modalLabel">목표설정-혈압측정</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="form-group mb-0">
+                            <label class="col-form-label"><b>자가 관리 목표설정 - 혈압 측정횟수</b></label>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <select class="form-control">
+                                    <option value="1">일</option>
+                                    <option value="2">주</option>
+                                    <option value="3">월</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <select class="form-control">
+                                    <option value="1">1회이상</option>
+                                    <option value="2">2회이상</option>
+                                    <option value="3">3회이상</option>
+                                    <option value="4">4회이상</option>
+                                    <option value="5">5회이상</option>
+                                    <option value="6">6회이상</option>
+                                    <option value="7">7회이상</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">취 소</button>
+                    <button type="button" class="btn btn-primary" onclick="">등록</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div id="blood-pressure-detail-modal" class="modal fade" tabindex="-1" role="dialog"
+        aria-labelledby="success-header-modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-80-width modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title" id="blood-pressure-detail-header-modalLabel">상세조회-혈압</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body p-0">
+                    <div class="card p-0">
+                        <div class="card-body border-bottom">
+                            <div class="top-search big">
+                                <label class="mr-1 mb-0">FROM</label>
+                                <div class="combine-wrapper mr-1">
+                                    <input type="text" class="form-control" style="width: 140px;display: inline-block;"
+                                        data-provide="datepicker" data-date-format="yyyy-mm-dd" value="2020-01-01" />
+                                    <i class="uil-calendar-alt"></i>
+                                </div>
+                                <label class="mr-1 mb-0">TO</label>
+                                <div class="combine-wrapper">
+                                    <input type="text" class="form-control" style="width: 140px;display: inline-block;"
+                                        data-provide="datepicker" data-date-format="yyyy-mm-dd" value="2020-01-01" />
+                                    <i class="uil-calendar-alt"></i>
+                                </div>
+                                <button class="btn btn-secondary ml-1 t-btn-1">조회</button>
+                                <div class="top-search-btn">
+                                    <button class="btn btn-secondary t-btn-2">조회</button>
+                                    <button class="btn btn-primary">신규입력</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row ml-2 mr-2">
+                        <div class="col-md-6 pl-2">
+                            <div class="card">
+                                <div class="card-body pl-3 pt-3 pb-0" style="padding-right:62px;">
+                                    <div id="line-chart-p1" data-colors="#33d3d3,#7b4bff"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-body pl-3 pt-3 pb-0" style="padding-right:26px;">
+                                    <div id="line-chart-p2" data-colors="#7b4bff,#33d3d3"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row ml-2 mr-2 mb-3">
+                        <div class="col-lg-3" |>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="font-w-600 mt-0 mb-0 mini-title">평균혈압</h5>
+                                    <div id="basic-radialbar" class="apex-charts" data-colors="#7453ff"></div>
+                                    <div class="text-center" style="padding-top:1px;"> <span class="font-w-600">총 1,234회
+                                            측정</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-body pt-3">
+                                    <h5 class="font-w-600 mb-3 mt-0 mini-title">결과분석</h5>
+                                    <div class="table-responsive">
+                                        <table class="table table-sm table-centered mb-0 thead-only-gray"
+                                            style="min-width: 470px;">
+                                            <thead>
+                                                <tr>
+                                                    <th>Range</th>
+                                                    <th>Systolic</th>
+                                                    <th></th>
+                                                    <th>Diastolic</th>
+                                                    <th>Count</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Normal</td>
+                                                    <td>Less than 120</td>
+                                                    <td>and</td>
+                                                    <td>Less than 80</td>
+                                                    <td>1200</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>ELEVATED</td>
+                                                    <td>120-129</td>
+                                                    <td>and</td>
+                                                    <td>Less than 80</td>
+                                                    <td>100</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>HIGH STAGE1</td>
+                                                    <td>130-139</td>
+                                                    <td>or</td>
+                                                    <td>89-90</td>
+                                                    <td>0</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>HIGH STAGE2</td>
+                                                    <td>140 or Higher</td>
+                                                    <td>or</td>
+                                                    <td>90 or Higher</td>
+                                                    <td>1200</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>HYPERTENSIVE</td>
+                                                    <td>Higher than 180</td>
+                                                    <td>and/or</td>
+                                                    <td>higher than 90</td>
+                                                    <td>1200</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="card">
+                                <div class="card-body pt-3">
+                                    <h5 class="font-w-600 mb-3 mt-0 mini-title">입력방법</h5>
+                                    <div class="table-responsive">
+                                        <table class="table  morning-table table-centered mb-0 thead-only-gray"
+                                            style="min-width: 170px;">
+                                            <thead>
+                                                <tr>
+                                                    <th>구분</th>
+                                                    <th>발생횟수</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>직접입력</td>
+                                                    <td>10,222</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>디바이스연동</td>
+                                                    <td>134</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>의료진입력</td>
+                                                    <td>11</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div id="blood-pressure-input-modal" class="modal fade" tabindex="-1" role="dialog"
+        aria-labelledby="success-header-modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title" id="blood-prssure-input-header-modalLabel">직접입력-혈압</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="form-group mb-0">
+                            <label class="col-form-label"><b>입력일자</b></label>
+                        </div>
+                        <div class="form-group mb-2">
+                            <input type="text" class="form-control" data-provide="datepicker">
+                        </div>
+                        <div class="form-group mb-0">
+                            <label class="col-form-label"><b>입력시간</b></label>
+                        </div>
+                        <div class="form-group mb-2">
+                            <div class="input-group">
+                                <input type="text" class="form-control" data-toggle='timepicker'
+                                    data-show-meridian="false">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="dripicons-clock"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label class="col-form-label"><b>수축기 (mmHg)</b></label>
+                            <input type="text" class="form-control" placeholder="수축기 측정결과를 입력하세요(숫자만 입력)">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label class="col-form-label"><b>이완기 (mmHg)</b></label>
+                            <input type="text" class="form-control" placeholder="이완기 측정결과를 입력하세요(숫자만 입력)">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">취 소</button>
+                    <button type="button" class="btn btn-primary" onclick="">등록</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div id="bg-type-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="success-header-modalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title">BG Type 설정</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body pl-3 pr-3 pt-3 pb-0">
+                    <form action="#">
+                        <div class="form-group mb-1">
+                            <label class="col-form-label"><b>BG Type</b></label>
+                            <select id="bgtype" class="form-control" onchange="bgtype_select()">
+                                <option>A Type</option>
+                                <option>B Type</option>
+                                <option>C Type</option>
+                                <option value="dtype">D Type</option>
+                                <option>None</option>
+                            </select>
+                        </div>
+                        <div class="form-group mb-2 mt-3">
+                            <div class="d-flex align-items-center">
+                                <label class="col-form-label col-form-label-sm"><b>인슐린 용량조절 로직</b><small
+                                        class="ml-1">For D-type user</small></label>
+                                <div class="ml-auto">
+                                    <div class="d-flex align-items-center">
+                                        <input type="checkbox" id="switch_ins" data-switch="none" />
+                                        <label for="switch_ins" class="mb-0" data-on-label="" data-off-label=""></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mb-1">
+                            <i class="mdi mdi-circle-medium"></i><label><b>위급 상활 알림 연락처</b></label>
+                            <select class="form-control">
+                                <option>직접입력</option>
+                            </select>
+                        </div>
+                        <div class="form-group mb-1">
+                            <i class="dripicons-dot font-16"></i><label class="mb-0 font-13"><b>의사</b></label>
+                            <select class="form-control mt-1">
+                                <option>선택안함</option>
+                            </select>
+                        </div>
+                        <div class="form-group mb-1">
+                            <i class="dripicons-dot font-16"></i><label class="mb-0 font-13"><b>간호사</b></label>
+                            <select class="form-control mt-1">
+                                <option>김영미</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <i class="dripicons-dot font-16"></i><label class="mb-0 font-13"><b>보호자</b></label>
+                            <div class="form-row mt-1">
+                                <div class="form-group col-md-3">
+                                    <select class="form-control">
+                                        <option>+82</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-9">
+                                    <input type="text" class="form-control" placeholder="'-'를 빼고 숫자만 입력하세요">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer pr-3 pb-3 pt-2">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">취소</button>
+                    <button type="button" class="btn btn-primary">등록</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div id="bg-history-modal" class="modal fade" tabindex="-1" role="dialog"
+        aria-labelledby="success-header-modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title">BG Type 설정 변경 이력</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body p-3">
+                    <div>
+                        <table class="table table-centered mb-0 w-100 nowrap thead-only-gray"
+                            id="bg-history-modal-table">
+                            <thead class="">
+                                <tr>
+                                    <th>No</th>
+                                    <th>등록일시</th>
+                                    <th>등록자</th>
+                                    <th>혈당타입</th>
+                                    <th>인슐린 로직</th>
+                                    <th>긴급전화</th>
+                                    <th>의사</th>
+                                    <th>간호사</th>
+                                    <th>보호자</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>2020-10-31 12:00</td>
+                                    <td>
+                                        [의사]홍길동
+                                    </td>
+                                    <td>D</td>
+                                    <td>Active</td>
+                                    <td>+82 12345677</td>
+                                    <td>홍길동</td>
+                                    <td>김영미</td>
+                                    <td>+82 12345677</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>2020-11-31 12:00</td>
+                                    <td>
+                                        [NR]James Kim
+                                    </td>
+                                    <td>None</td>
+                                    <td>inactive</td>
+                                    <td>+82 12345677</td>
+                                    <td>None동</td>
+                                    <td>None</td>
+                                    <td>none</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>2020-10-31 12:00</td>
+                                    <td>
+                                        [의사]홍길동
+                                    </td>
+                                    <td>D</td>
+                                    <td>Active</td>
+                                    <td>+82 12345677</td>
+                                    <td>홍길동</td>
+                                    <td>김영미</td>
+                                    <td>+82 12345677</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>2020-11-31 12:00</td>
+                                    <td>
+                                        [NR]James Kim
+                                    </td>
+                                    <td>None</td>
+                                    <td>inactive</td>
+                                    <td>+82 12345677</td>
+                                    <td>None동</td>
+                                    <td>None</td>
+                                    <td>none</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>2020-10-31 12:00</td>
+                                    <td>
+                                        [의사]홍길동
+                                    </td>
+                                    <td>D</td>
+                                    <td>Active</td>
+                                    <td>+82 12345677</td>
+                                    <td>홍길동</td>
+                                    <td>김영미</td>
+                                    <td>+82 12345677</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>2020-11-31 12:00</td>
+                                    <td>
+                                        [NR]James Kim
+                                    </td>
+                                    <td>None</td>
+                                    <td>inactive</td>
+                                    <td>+82 12345677</td>
+                                    <td>None동</td>
+                                    <td>None</td>
+                                    <td>none</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>2020-10-31 12:00</td>
+                                    <td>
+                                        [의사]홍길동
+                                    </td>
+                                    <td>D</td>
+                                    <td>Active</td>
+                                    <td>+82 12345677</td>
+                                    <td>홍길동</td>
+                                    <td>김영미</td>
+                                    <td>+82 12345677</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>2020-11-31 12:00</td>
+                                    <td>
+                                        [NR]James Kim
+                                    </td>
+                                    <td>None</td>
+                                    <td>inactive</td>
+                                    <td>+82 12345677</td>
+                                    <td>None동</td>
+                                    <td>None</td>
+                                    <td>none</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- /.modal -->
+    <div id="height-input-modal" class="modal fade" tabindex="-1" role="dialog"
+        aria-labelledby="success-header-modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title">직접입력 - 키</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="form-group mb-0">
+                            <label class="col-form-label"><b>입력일시</b></label>
+                        </div>
+                        <div class="form-group mb-1">
+                            <div class="form-group">
+                                <input type="text" class="form-control" data-provide="datepicker"
+                                    data-date-autoclose="true">
+                            </div>
+                            <div class="input-group">
+                                <input type="text" class="form-control" data-toggle='timepicker'
+                                    data-show-meridian="false" data-show-seconds="false" data-minute-step="1">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="dripicons-clock"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-0">
+                            <label class="col-form-label"><b>키(cm)</b></label>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <input type="number" class="form-control">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">취소</button>
+                    <button type="button" class="btn btn-primary">등록</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div id="weight-input-modal" class="modal fade" tabindex="-1" role="dialog"
+        aria-labelledby="success-header-modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title">직접입력 - 체중</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="form-group mb-0">
+                            <label class="col-form-label"><b>입력일시</b></label>
+                        </div>
+                        <div class="form-group mb-1">
+                            <div class="form-group">
+                                <input type="text" class="form-control" data-provide="datepicker"
+                                    data-date-autoclose="true">
+                            </div>
+                            <div class="input-group">
+                                <input type="text" class="form-control" data-toggle='timepicker'
+                                    data-show-meridian="false" data-show-seconds="false" data-minute-step="1">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="dripicons-clock"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-0">
+                            <label class="col-form-label"><b>체중(kg)</b></label>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <input type="number" class="form-control" placeholder="체중을 입력하세요">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">취소</button>
+                    <button type="button" class="btn btn-primary">등록</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div id="weight-detail-modal" class="modal fade" tabindex="-1" role="dialog"
+        aria-labelledby="success-header-modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title" id="weight-detail-header-modalLabel">상세조회-체중</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body p-0">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="top-search mini">
+                                <label class="mr-1 mb-0">FROM</label>
+                                <div class="combine-wrapper mr-1">
+                                    <input type="text" class="form-control" style="width: 140px;display: inline-block;"
+                                        data-provide="datepicker" data-date-format="yyyy-mm-dd" value="2020-01-01" />
+                                    <i class="uil-calendar-alt"></i>
+                                </div>
+                                <label class="mr-1 mb-0">TO</label>
+                                <div class="combine-wrapper mr-1">
+                                    <input type="text" class="form-control" style="width: 140px;display: inline-block;"
+                                        data-provide="datepicker" data-date-format="yyyy-mm-dd" value="2020-01-01" />
+                                    <i class="uil-calendar-alt"></i>
+                                </div>
+                                <button class="btn btn-secondary t-btn-1">조회</button>
+
+                                <div class="top-search-btn">
+                                    <button class="btn btn-secondary t-btn-2">조회</button>
+                                    <button class="btn btn-primary">신규입력</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="custom-box">
+                        <div class="card">
+                            <div class="card-body">
+                                <div id="line-chart-weight" data-colors="#7453ff,#6c757d"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div id="temperature-input-modal" class="modal fade" tabindex="-1" role="dialog"
+        aria-labelledby="success-header-modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title">직접입력 - 체온</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="form-group mb-0">
+                            <label class="col-form-label"><b>입력일시</b></label>
+                        </div>
+                        <div class="form-group mb-1">
+                            <div class="form-group">
+                                <input type="text" class="form-control" data-provide="datepicker"
+                                    data-date-autoclose="true">
+                            </div>
+                            <div class="input-group">
+                                <input type="text" class="form-control" data-toggle='timepicker'
+                                    data-show-meridian="false" data-show-seconds="false" data-minute-step="1">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="dripicons-clock"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-0">
+                            <label class="col-form-label"><b>체온(°C)</b></label>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <input type="number" class="form-control" placeholder="체온을 입력하세요">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">취소</button>
+                    <button type="button" class="btn btn-primary">등록</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div id="temperature-detail-modal" class="modal fade" tabindex="-1" role="dialog"
+        aria-labelledby="success-header-modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title" id="temperateurre-detail-header-modalLabel">상세조회-체온</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body p-0">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="top-search mini">
+                                <label class="mb-0 mr-1">FROM</label>
+                                <div class="combine-wrapper mr-1">
+                                    <input type="text" class="form-control" style="width: 140px;display: inline-block;"
+                                        data-provide="datepicker" data-date-format="yyyy-mm-dd" value="2020-01-01" />
+                                    <i class="uil-calendar-alt"></i>
+                                </div>
+                                <label class="mb-0 mr-1">TO</label>
+                                <div class="combine-wrapper">
+                                    <input type="text" class="form-control" style="width: 140px;display: inline-block;"
+                                        data-provide="datepicker" data-date-format="yyyy-mm-dd" value="2020-01-01" />
+                                    <i class="uil-calendar-alt"></i>
+                                </div>
+                                <button class="btn btn-secondary ml-1 t-btn-1">조회</button>
+                                <div class="top-search-btn">
+                                    <button class="btn btn-secondary t-btn-2">조회</button>
+                                    <button class="btn btn-primary">신규입력</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="custom-box">
+                        <div class="card">
+                            <div class="card-body">
+                                <div id="line-chart-temperature" class="mr-1" data-colors="#7453ff,#6c757d"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div id="wc-input-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="success-header-modalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title">직접입력 - 허리둘레</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="form-group mb-0">
+                            <label class="col-form-label"><b>입력일시</b></label>
+                        </div>
+                        <div class="form-group mb-1">
+                            <div class="form-group">
+                                <input type="text" class="form-control" data-provide="datepicker"
+                                    data-date-autoclose="true">
+                            </div>
+                            <div class="input-group">
+                                <input type="text" class="form-control" data-toggle='timepicker'
+                                    data-show-meridian="false" data-show-seconds="false" data-minute-step="1">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="dripicons-clock"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-0">
+                            <label class="col-form-label"><b>허리둘레 (cm)</b></label>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <input type="number" class="form-control" placeholder="허리둘레를 입력하세요">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">취소</button>
+                    <button type="button" class="btn btn-primary">등록</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div id="wc-detail-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="success-header-modalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title" id="wc-detail-header-modalLabel">상세조회-허리둘레</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body p-0">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="top-search mini">
+                                <label class="mb-0 mr-1">FROM</label>
+                                <div class="combine-wrapper mr-1">
+                                    <input type="text" class="form-control" style="width: 140px;display: inline-block;"
+                                        data-provide="datepicker" data-date-format="yyyy-mm-dd" value="2020-01-01" />
+                                    <i class="uil-calendar-alt"></i>
+                                </div>
+                                <label class="mb-0 mr-1">TO</label>
+                                <div class="combine-wrapper">
+                                    <input type="text" class="form-control" style="width: 140px;display: inline-block;"
+                                        data-provide="datepicker" data-date-format="yyyy-mm-dd" value="2020-01-01" />
+                                    <i class="uil-calendar-alt"></i>
+                                </div>
+                                <button class="btn btn-secondary ml-1 t-btn-1">조회</button>
+                                <div class="top-search-btn">
+                                    <button class="btn btn-secondary t-btn-2">조회</button>
+                                    <button class="btn btn-primary">신규입력</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="custom-box">
+                        <div class="card">
+                            <div class="card-body">
+                                <div id="line-chart-wc" class="mr-1" data-colors="#7453ff,#6c757d"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div id="memo-edit-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="success-header-modalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title">메모 수정</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="col-md-12">
+                            <textarea class="form-control border-1" placeholder="메시지를 입력하세요." rows="5">기존 메시지가 나옵니다.기존 메시지가 나옵니다.기존 메시지가 나옵니다.기존 메시지가 나옵니다.기존 메시지가 나옵니다.기존 메시지가 나옵니다
+                                </textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">취소</button>
+                    <button type="button" class="btn btn-primary">수정</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div id="meal-setting-modal" class="modal fade" tabindex="-1" role="dialog"
+        aria-labelledby="success-header-modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title" id="meal-setting-header-modalLabel">목표설정-섭취 칼로리</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="form-group mb-0">
+                            <label class="col-form-label"><b>자가 관리 목표설정 - 일 섭취 칼로리</b></label>
+                        </div>
+                        <div class="form-row">
+                            <input type="number" class="form-control">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">취 소</button>
+                    <button type="button" class="btn btn-primary" onclick="">등록</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div id="meal-input-modal" class="modal fade" tabindex="-1" role="dialog"
+        aria-labelledby="success-header-modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title">직접입력 - 일 섭취 칼로리</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="form-group mb-0">
+                            <label class="col-form-label"><b>입력일시</b></label>
+                        </div>
+                        <div class="form-group mb-1">
+                            <div class="form-group">
+                                <input type="text" class="form-control" data-provide="datepicker"
+                                    data-date-autoclose="true">
+                            </div>
+                            <div class="input-group">
+                                <input type="text" class="form-control" data-toggle='timepicker'
+                                    data-show-meridian="false" data-show-seconds="false" data-minute-step="1">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="dripicons-clock"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-0">
+                            <label class="col-form-label"><b>일 섭취 칼로리 (cal)</b></label>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <input type="number" class="form-control" placeholder="칼로리를 입력하세요">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">취소</button>
+                    <button type="button" class="btn btn-primary">등록</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div id="meal-detail-modal" class="modal fade" tabindex="-1" role="dialog"
+        aria-labelledby="success-header-modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title" id="meal-detail-header-modalLabel">상세조회-식사</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body p-0">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="top-search mini">
+                                <label class="mb-0 mr-1">FROM</label>
+                                <div class="combine-wrapper mr-1">
+                                    <input type="text" class="form-control" style="width: 140px;display: inline-block;"
+                                        data-provide="datepicker" data-date-format="yyyy-mm-dd" value="2020-01-01" />
+                                    <i class="uil-calendar-alt"></i>
+                                </div>
+                                <label class="mb-0 mr-1">TO</label>
+                                <div class="combine-wrapper">
+                                    <input type="text" class="form-control" style="width: 140px;display: inline-block;"
+                                        data-provide="datepicker" data-date-format="yyyy-mm-dd" value="2020-01-01" />
+                                    <i class="uil-calendar-alt"></i>
+                                </div>
+                                <button class="btn btn-secondary ml-1 t-btn-1">조회</button>
+                                <div class="top-search-btn">
+                                    <button class="btn btn-secondary t-btn-2">조회</button>
+                                    <button class="btn btn-primary">신규입력</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="custom-box">
+                        <div class="card">
+                            <div class="card-body">
+                                <div id="line-chart-meal" data-colors="#7453ff,#6c757d"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="custom-box">
+                        <div class="row">
+                            <div class="col-md-6 mb-24">
+                                <div class="card mb-0 h-100">
+                                    <div class="card-body">
+                                        <h5 class="font-w-600 mb-3 mini-title">영양소 섭취량</h5>
+                                        <table class="table table-sm table-centered mb-0 thead-only-gray">
+                                            <thead>
+                                                <tr>
+                                                    <th>구분</th>
+                                                    <th>총 섭취량</th>
+                                                    <th style="width:40%;"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>목표섭취량</td>
+                                                    <td>2100kcal</td>
+                                                    <td>
+                                                        <div class="progress" style="height: 3px;">
+                                                            <div class="progress-bar" role="progressbar"
+                                                                style="width: 65%; height: 20px;" aria-valuenow="65"
+                                                                aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>평균섭취량</td>
+                                                    <td>1234kcal</td>
+                                                    <td>
+                                                        <div class="progress" style="height: 3px;">
+                                                            <div class="progress-bar" role="progressbar"
+                                                                style="width: 65%; height: 20px;" aria-valuenow="65"
+                                                                aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-24">
+                                <div class="card mb-0 h-100">
+                                    <div class="card-body">
+                                        <h5 class="font-w-600 mb-3 mini-title">영양소 비율</h5>
+                                        <table class="table table-sm table-centered mb-0 thead-only-gray">
+                                            <thead>
+                                                <tr>
+                                                    <th>구분</th>
+                                                    <th>실제 섭취율</th>
+                                                    <th>권장 섭취율</th>
+                                                    <th style="width:40%;"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>탄수화물</td>
+                                                    <td>74%(초과)</td>
+                                                    <td>55%</td>
+                                                    <td>
+                                                        <div class="progress" style="height: 3px;">
+                                                            <div class="progress-bar" role="progressbar"
+                                                                style="width: 65%; height: 20px;" aria-valuenow="65"
+                                                                aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>단백질</td>
+                                                    <td>12%</td>
+                                                    <td>20%</td>
+                                                    <td>
+                                                        <div class="progress" style="height: 3px;">
+                                                            <div class="progress-bar" role="progressbar"
+                                                                style="width: 65%; height: 20px;" aria-valuenow="65"
+                                                                aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>지방</td>
+                                                    <td>14%</td>
+                                                    <td>25%</td>
+                                                    <td>
+                                                        <div class="progress" style="height: 3px;">
+                                                            <div class="progress-bar" role="progressbar"
+                                                                style="width: 65%; height: 20px;" aria-valuenow="65"
+                                                                aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div id="meal-diary-detail-modal" class="modal fade" tabindex="-1" role="dialog"
+        aria-labelledby="success-header-modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title" id="meal-diary-detail-header-modalLabel">상세조회-식사</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body pl-0 pr-0" style="padding-top: 20px;">
+                    <div class="row " style="padding-bottom: 20px;">
+                        <div class="col-md-7">
+                            <label class="form-control border-0 pl-3 "
+                                style="display:inline;padding-right: 8px;">FROM</label>
+                            <div class="combine-wrapper">
+                                <input type="text" class="form-control"
+                                    style="width: 140px;display: inline-block;padding-right: 25px;"
+                                    data-provide="datepicker" data-date-format="yyyy-mm-dd" value="2020-01-01" />
+                                <i class="uil-calendar-alt"></i>
+                            </div>
+                            <label class="form-control border-0"
+                                style="display:inline;padding-left:18px;padding-right:8px;">TO</label>
+                            <div class="combine-wrapper">
+                                <input type="text" class="form-control"
+                                    style="width: 140px;display: inline-block;padding-right: 25px;"
+                                    data-provide="datepicker" data-date-format="yyyy-mm-dd" value="2020-01-01" />
+                                <i class="uil-calendar-alt"></i>
+                            </div>
+                            <button class="btn btn-secondary" style="margin-top:-5px;margin-left:8px;">조회</button>
+                        </div>
+                        <div class="col-md-5 text-right pr-4" style="margin-top:3px;">
+                            <button class="btn btn-primary">신규입력</button>
+                        </div>
+                    </div>
+                    <hr style=" border-top: 1px solid #eef2f7;margin-top:0px;">
+                    <div class="row mt-3 mb-1 ml-0 mr-0">
+                        <div class="col-md-12 pl-3 pr-3">
+                            <form action="#" method="post" class="border-1 border rounded" id="myAwesomeDropzone"
+                                data-plugin="dropzone" data-previews-container="#file-previews"
+                                data-upload-preview-template="#uploadPreviewTemplate">
+                                <textarea rows="3" class="form-control border-0 resize-none"
+                                    placeholder="내용을 입력하세요...."></textarea>
+                                <div class="pt-2 pb-2 bg-light d-flex justify-content-between align-items-center">
+                                    <a class="dz-message needsclick btn px-2 font-16"><i class="mdi mdi-image"></i></a>
+                                    <button type="submit" class="btn btn-sm btn-primary waves-effect">SEND</button>
+                                </div>
+                                <!-- Preview -->
+                                <div class="dropzone-previews bg-light-lighten diplay-flex pl-3" id="file-previews">
+
+                                </div>
+                            </form>
+
+
+                            <!-- file preview template -->
+                            <div class="d-none" id="uploadPreviewTemplate">
+                                <div class="card mt-1 mb-1 shadow-none border float-left">
+                                    <div class="p-1">
+                                        <div class="row align-items-center">
+                                            <div class="col-auto">
+                                                <img data-dz-thumbnail src="#" class="avatar-sm rounded bg-light"
+                                                    alt="">
+                                            </div>
+                                            <div class="col-auto">
+                                                <!-- Button -->
+                                                <a href="" class="btn btn-link btn-sm text-muted" data-dz-remove>
+                                                    <i class="dripicons-cross"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/file preview template-->
+                            <!-- Story Box-->
+                            <div class="col-md-12 border border-light rounded p-2 mb-1 mt-2 mt-1">
+                                <div class="media">
+                                    <img class="mr-2 rounded-circle" src="assets/images/users/avatar-3.jpg"
+                                        alt="Generic placeholder image" height="32">
+                                    <div class="media-body">
+                                        <h5 class="m-0">홍길동</h5>
+                                        <p class="text-muted"><small>2020-02-01 오전 10:30</small></p>
+                                    </div>
+                                </div>
+                                <p>입력메시지 예시입니다.입력메시지 예시입니다.입력메시지 예시입니다.입력메시지 예시입니다.</p>
+                                <img src="assets/images/small/small-1.jpg" alt="post-img" class="rounded mr-2 mb-2"
+                                    height="80" />
+                                <img src="assets/images/small/small-2.jpg" alt="post-img" class="rounded mr-2 mb-2"
+                                    height="80" />
+                                <img src="assets/images/small/small-3.jpg" alt="post-img" class="rounded mr-2 mb-2"
+                                    height="80" />
+                            </div>
+
+                            <!-- Story Box-->
+                            <div class="border border-light  rounded pl-2 pr-2">
+                                <div class="mx-n2 p-2 mt-0 bg-light ">
+                                    <div class="dropdown float-right">
+                                        <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <i class="mdi mdi-dots-vertical"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <!-- item-->
+                                            <a href="javascript:void(0);" class="dropdown-item">수정</a>
+                                            <!-- item-->
+                                            <a href="javascript:void(0);" class="dropdown-item">삭제</a>
+                                        </div>
+                                    </div>
+                                    <div class="media">
+                                        <img class="mr-2 rounded-circle" src="assets/images/users/avatar-3.jpg"
+                                            alt="Generic placeholder image" height="32">
+                                        <div class="media-body">
+                                            <h5 class="m-0">[의사] James Lee </h5>
+                                            <p class="text-muted"><small>2020-02-01 오전 10:30</small></p>
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control border-0" placeholder="댓글을 입력하세요...">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary btn-sm" type="submit"><i
+                                                    class="uil uil-message"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--</div>-->
+                    <!--</div>-->
+                </div>
+
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div id="walking-setting-modal" class="modal fade" tabindex="-1" role="dialog"
+        aria-labelledby="success-header-modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title" id="walking-setting-header-modalLabel">목표설정-일일 걸음수</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="form-group mb-0">
+                            <label class="col-form-label"><b>자가 관리 목표설정 - 목표 걸음수</b></label>
+                        </div>
+                        <div class="form-row">
+                            <input type="number" class="form-control" placeholder="일 목표 걸음수를 입력해주세요">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">취 소</button>
+                    <button type="button" class="btn btn-primary" onclick="">등록</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div id="walking-detail-modal" class="modal fade" tabindex="-1" role="dialog"
+        aria-labelledby="success-header-modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title">상세조회-걷기</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body p-0">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="top-search mini">
+                                <label class="mb-0 mr-1">FROM</label>
+                                <div class="combine-wrapper mr-1">
+                                    <input type="text" class="form-control" style="width: 140px;display: inline-block;"
+                                        data-provide="datepicker" data-date-format="yyyy-mm-dd" value="2020-01-01" />
+                                    <i class="uil-calendar-alt"></i>
+                                </div>
+                                <label class="mb-0 mr-1">TO</label>
+                                <div class="combine-wrapper">
+                                    <input type="text" class="form-control" style="width: 140px;display: inline-block;"
+                                        data-provide="datepicker" data-date-format="yyyy-mm-dd" value="2020-01-01" />
+                                    <i class="uil-calendar-alt"></i>
+                                </div>
+                                <button class="btn btn-secondary ml-1 t-btn-1">조회</button>
+                                <div class="top-search-btn">
+                                    <button class="btn btn-secondary t-btn-2">조회</button>
+                                    <button class="btn btn-primary">신규입력</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="custom-box">
+                        <div class="card">
+                            <div class="card-body">
+                                <div id="line-chart-walking" data-colors="#7453ff,#6c757d"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="custom-box">
+                        <div class="row">
+                            <div class="col-md-6 mb-24">
+                                <div class="card mb-0">
+                                    <div class="card-body">
+                                        <h5 class="font-w-600 mb-3 mini-title">목표 달성 률</h5>
+                                        <table class="table table-sm table-centered mb-0 thead-only-gray">
+                                            <thead>
+                                                <tr>
+                                                    <th>구분</th>
+                                                    <th>걸음수</th>
+                                                    <th>소비칼로리</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>목표걸음수</td>
+                                                    <td>7660 걸음</td>
+                                                    <td>8293 kcal</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td>일 평균 걸음 수</td>
+                                                    <td>6330 걸음</td>
+                                                    <td>8293 kcal</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td>목표 달성 률</td>
+                                                    <td>30%</td>
+                                                    <td>-</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-24">
+                                <div class="card mb-0">
+                                    <div class="card-body">
+                                        <h5 class="font-w-600 mb-3 mini-title">걸음수 통계</h5>
+                                        <table class="table table-sm table-centered mb-0 thead-only-gray">
+                                            <thead>
+                                                <tr>
+                                                    <th>구분</th>
+                                                    <th>걸음 수</th>
+                                                    <th>소비 칼로리(kcal)</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>일평균 걸음 수</td>
+                                                    <td>7,660걸음</td>
+                                                    <td>7,430</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>일 최대 걸음수</td>
+                                                    <td>23,303걸음</td>
+                                                    <td>10,302</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>일 최소 걸음 수</td>
+                                                    <td>1,232걸음</td>
+                                                    <td>2,302</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div id="medicine-detail-modal" class="modal fade" tabindex="-1" role="dialog"
+        aria-labelledby="success-header-modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-80-width modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title">상세조회-복약 관리</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body pt-3 pr-2 pl-2 pb-3">
+                    <div class="col-md-12">
+                        <div id="calendar"></div>
+                        <div class="d-none">
+                            <button class="btn btn-lg font-16 btn-danger btn-block" id="btn-new-event1"><i
+                                    class="mdi mdi-plus-circle-outline"></i> Create New Event</button>
+                            <div id="external-events" class="m-t-20">
+                                <br>
+                                <p class="text-muted">Drag and drop your event or click in the calendar</p>
+                                <div class="external-event bg-primary-lighten text-success" data-class="bg-primary">
+                                    <i class="mdi mdi-checkbox-blank-circle mr-2 vertical-middle"></i>New Theme Release
+                                </div>
+                                <div class="external-event bg-info-lighten text-info" data-class="bg-info">
+                                    <i class="mdi mdi-checkbox-blank-circle mr-2 vertical-middle"></i>My Event
+                                </div>
+                                <div class="external-event bg-warning-lighten text-warning" data-class="bg-warning">
+                                    <i class="mdi mdi-checkbox-blank-circle mr-2 vertical-middle"></i>Meet manager
+                                </div>
+                                <div class="external-event bg-danger-lighten text-danger" data-class="bg-danger">
+                                    <i class="mdi mdi-checkbox-blank-circle mr-2 vertical-middle"></i>Create New theme
+                                </div>
+                            </div>
+                        </div> <!-- end col-->
+                    </div>
+                </div>
+
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div id="medicine-guide-modal" class="modal fade" tabindex="-1" role="dialog"
+        aria-labelledby="success-header-modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title">복약 가이드</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body p-3">
+                    <div class="row">
+                        <div class="col-md-6 border-right pl-2 pr-2 mt-2">
+                            <div class="form-group">
+                                <input type="text" class="form-control date" id="" data-toggle="date-picker"
+                                    data-cancel-class="btn-warning">
+                            </div>
+                            <hr />
+                            <div class="row pl-1">
+                                <div class="col-md-12 mb-2">2020년 9월 3일 12:00</div>
+                                <div class="col-md-2">약 이름:</div>
+                                <div class="col-md-9">고혈압 약</div>
+                                <div class="col-md-2">횟수 : </div>
+                                <div class="col-md-9"> 1일 3회</div>
+                                <div class="col-md-2">가이드:</div>
+                                <div class="col-md-9"> 작용발현에는 30분 가량이 필요하므로 식사 후 혈당치의 상승을 막기 위해 식사 30분전에 투약한다.
+                                    단, 위장장애를 고려하여 식사 직후에 투약 권고</div>
+                            </div>
+                            <hr />
+                            <div class="row pl-1">
+                                <div class="col-md-12 mb-2">2020년 7월 13일 12:00</div>
+                                <div class="col-md-2">약 이름:</div>
+                                <div class="col-md-9">당뇨 약</div>
+                                <div class="col-md-2">횟수 : </div>
+                                <div class="col-md-9"> 1일 3회</div>
+                                <div class="col-md-2">가이드:</div>
+                                <div class="col-md-9"> 약물의 작용발현에는 30분 가량이 필요하므로 식사 후 혈당치의 상승을 막기 위해 식사 30분전에 투약한다.
+                                    단, 위장장애를 고려하여 식사 직후에 투약 권고</div>
+                            </div>
+                            <hr />
+                            <div class="row pl-1">
+                                <div class="col-md-12 mb-2">2020년 7월 13일 12:00</div>
+                                <div class="col-md-2">약 이름:</div>
+                                <div class="col-md-9">당뇨 약</div>
+                                <div class="col-md-2">횟수 : </div>
+                                <div class="col-md-9"> 1일 3회</div>
+                                <div class="col-md-2">가이드:</div>
+                                <div class="col-md-9"> 약물의 작용발현에는 30분 가량이 필요하므로 식사 후 혈당치의 상승을 막기 위해 식사 30분전에 투약한다.
+                                    단, 위장장애를 고려하여 식사 직후에 투약 권고</div>
+                            </div>
+                            <hr class="mb-0">
+                        </div>
+                        <div class="col-md-6 pl-2 pr-2 mt-2">
+                            <h5 class="modal-title">복약 가이드</h5>
+                            <div class="form-group row mb-3 mt-3">
+                                <label class="col-3 col-form-label">약 이름:</label>
+                                <div class="col-9">
+                                    <input class="form-control" placeholder="약이름을 입력하세요">
+                                </div>
+                            </div>
+                            <div class="form-group row mb-3">
+                                <label class="col-3 col-form-label">복약 권고 횟수:</label>
+                                <div class="col-9">
+                                    <select class="form-control">
+                                        <option>하루 3회</option>
+                                        <option>하루 2회</option>
+                                        <option>하루 1회</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row mb-3">
+                                <label class="col-3 col-form-label">복약 지도:</label>
+                                <div class="col-9">
+                                    <textarea rows="10" class="form-control border-1 " placeholder="텍스트를 입력하세요."
+                                        style="max-height: 250px"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group mb-2 ">
+                                <button class="btn btn-primary float-right">등록</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div id="sleep-setting-modal" class="modal fade" tabindex="-1" role="dialog"
+        aria-labelledby="success-header-modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title" id="sleep-setting-header-modalLabel">목표설정-수면</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="form-group mb-0">
+                            <label class="col-form-label"><b>자가 관리 목표설정 - 수면</b></label>
+                        </div>
+                        <div class="form-row">
+                            <input type="number" class="form-control" placeholder="일 수면 목표 시간을 입력해주세요.">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">취 소</button>
+                    <button type="button" class="btn btn-primary" onclick="">등록</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div id="sleep-detail-modal" class="modal fade" tabindex="-1" role="dialog"
+        aria-labelledby="success-header-modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title" id="sleep-detail-header-modalLabel">상세조회-수면</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body p-0">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="top-search mini">
+                                <label class="mb-0 mr-1">FROM</label>
+                                <div class="combine-wrapper mr-1">
+                                    <input type="text" class="form-control" style="width: 140px;display: inline-block"
+                                        data-provide="datepicker" data-date-format="yyyy-mm-dd" value="2020-01-01" />
+                                    <i class="uil-calendar-alt"></i>
+                                </div>
+                                <label class="mb-0 mr-1">TO</label>
+                                <div class="combine-wrapper">
+                                    <input type="text" class="form-control" style="width: 140px;display: inline-block"
+                                        data-provide="datepicker" data-date-format="yyyy-mm-dd" value="2020-01-01" />
+                                    <i class="uil-calendar-alt"></i>
+                                </div>
+                                <button class="btn btn-secondary ml-1 t-btn-1">조회</button>
+                                <div class="top-search-btn">
+                                    <button class="btn btn-secondary t-btn-2">조회</button>
+                                    <button class="btn btn-primary">신규입력</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="custom-box">
+                        <div class="card">
+                            <div class="card-body">
+                                <div id="line-chart-sleep" data-colors="#7453ff,#6c757d"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div id="exercise-setting-modal" class="modal fade" tabindex="-1" role="dialog"
+        aria-labelledby="success-header-modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title" id="exercise-setting-header-modalLabel">목표설정-일소비 열량</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="form-group mb-0">
+                            <label class="col-form-label"><b>자가 관리 목표설정 - 일 소비 열량</b></label>
+                        </div>
+                        <div class="form-row">
+                            <input type="number" class="form-control" placeholder="일 소비 열량(kcal)을 입력해주세요.">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">취 소</button>
+                    <button type="button" class="btn btn-primary" onclick="">등록</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div id="exercise-detail-modal" class="modal fade" tabindex="-1" role="dialog"
+        aria-labelledby="success-header-modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title" id="exercise-detail-header-modalLabel">상세조회-운동</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body p-0">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="top-search big">
+                                <label class="mb-0 mr-1">FROM</label>
+                                <div class="combine-wrapper mr-1">
+                                    <input type="text" class="form-control" style="width: 140px;display: inline-block;"
+                                        data-provide="datepicker" data-date-format="yyyy-mm-dd" value="2020-01-01" />
+                                    <i class="uil-calendar-alt"></i>
+                                </div>
+                                <label class="mb-0 mr-1">TO</label>
+                                <div class="combine-wrapper">
+                                    <input type="text" class="form-control" style="width: 140px;display: inline-block;"
+                                        data-provide="datepicker" data-date-format="yyyy-mm-dd" value="2020-01-01" />
+                                    <i class="uil-calendar-alt"></i>
+                                </div>
+                                <button class="btn btn-secondary t-btn-1 ml-1">조회</button>
+                                <div class="top-search-btn">
+                                    <button class="btn btn-secondary t-btn-2">조회</button>
+                                    <button class="btn btn-primary">신규입력</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="custom-box">
+                        <div class="card">
+                            <div class="card-body">
+                                <div id="bar-chart-exercise" class="mr-1" data-colors="#33d3d3,#7453ff"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div class="card">
+        <!-- Add New Event MODAL -->
+        <div class="modal fade" id="event-modal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header modal-colored-header bg-primary py-3 px-4 border-bottom-0 d-block">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h5 class="modal-title" id="modal-title">EventEvent</h5>
+                    </div>
+                    <div class="modal-body px-4 pb-4 pt-0">
+                        <form class="needs-validation" name="event-form" id="form-event" novalidate>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="control-label">사건이름</label>
+                                        <input class="form-control" placeholder="Insert Event Name" type="text"
+                                            name="title" id="event-title" required />
+                                        <div class="invalid-feedback">Please provide a valid event name</div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="control-label">분류</label>
+                                        <select class="form-control form-control" name="category" id="event-category"
+                                            required>
+                                            <option value="bg-danger" selected>Danger</option>
+                                            <option value="bg-success">Success</option>
+                                            <option value="bg-primary">Primary</option>
+                                            <option value="bg-info">Info</option>
+                                            <option value="bg-dark">Dark</option>
+                                            <option value="bg-warning">Warning</option>
+                                        </select>
+                                        <div class="invalid-feedback">Please select a valid event category</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-6">
+                                    <button type="button" class="btn btn-danger" id="btn-delete-event">삭제</button>
+                                </div>
+                                <div class="col-6 text-right">
+                                    <button type="button" class="btn btn-light mr-1" data-dismiss="modal">닫기</button>
+                                    <button type="submit" class="btn btn-primary" id="btn-save-event">보관</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div> <!-- end modal-content-->
+            </div> <!-- end modal dialog-->
+        </div>
+        <!-- end modal-->
+    </div>
+
+    <div id="hospital-test-modal" class="modal fade" tabindex="-1" role="dialog"
+        aria-labelledby="hospital-test-modalLabe" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title" id="hospital-test-modalLabel">병원 검사 결과 – 신규 등록</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="form-group">
+                            <label class="col-form-label"><b>입력일자</b></label>
+                            <div class="combine-wrapper d-block">
+                                <input type="text" class="form-control" data-provide="datepicker"
+                                    data-date-format="yyyy-mm-dd" />
+                                <i class="uil-calendar-alt"></i>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label"><b>검사 항목</b></label>
+                            <input type="text" class="form-control" placeholder="검사항목을 입력하세요">
+                        </div>
+                        <div class="form-group">
+                            <div class="d-flex align-items-center">
+                                <label class="col-form-label"><b>검사 결과 (단위: )</b></label>
+                                <b class="ml-auto">정상</b>
+                            </div>
+                            <input type="text" class="form-control" placeholder="검사결과를 입력하세요">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">취 소</button>
+                    <button type="button" class="btn btn-primary" onclick="">등록</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div id="schedule-create-modal" class="modal fade" tabindex="-1" role="dialog"
+        aria-labelledby="schedule-create-modalLabe" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title" id="schedule-create-modalLabel">신규 스케쥴 생성</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="form-group my-0">
+                            <label for="" class="col-form-label"><b>대상자</b></label>
+                            <div class="form-control-plaintext">Gildong Hong</div>
+                        </div>
+                        <hr>
+                        <div class="form-group my-0">
+                            <label class="col-form-label"><b>일정</b></label>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="combine-wrapper d-block">
+                                        <input type="text" class="form-control" data-provide="datepicker"
+                                            data-date-format="yyyy-mm-dd" />
+                                        <i class="uil-calendar-alt"></i>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" data-toggle='timepicker'
+                                            data-show-meridian="false">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"><i class="dripicons-clock"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="form-group mb-0">
+                            <label class="col-form-label"><b>전달 메시지</b></label>
+                            <textarea rows="6" class="form-control" placeholder="메시지를 입력하세요."></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">취 소</button>
+                    <button type="button" class="btn btn-primary" onclick="">보내기</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <script src="assets/js/vendor.min.js"></script>
+    <script src="assets/js/app.min.js"></script>
+    <script src="assets/js/vendor/apexcharts.min.js"></script>
+
+    <script src="assets/js/vendor/fullcalendar.min.js"></script>
+    <script src="assets/js/pages/demo.calendar.js"></script>
+
+    <script src="assets/js/vendor/jquery.dataTables.min.js"></script>
+    <script src="assets/js/vendor/dataTables.bootstrap4.js"></script>
+    <script src="assets/js/vendor/dataTables.responsive.min.js"></script>
+    <script src="assets/js/vendor/responsive.bootstrap4.min.js"></script>
+    <script src="assets/js/vendor/dataTables.checkboxes.min.js"></script>
+
+    <script src="assets/js/vendor/dropzone.min.js"></script>
+    <script src="assets/js/ui/component.fileupload.js"></script>
+
+    <script src="assets/js/common.js"></script>
+    <script src="assets/js/page/alluser_consult.js"></script>
+    <script>
+        function showBloodGlucoseDetailModal() {
+            $("#blood-glucose-detail-modal").modal("show");
+        }
+        function showBloodGlucoseInputModal() {
+            $("#blood-glucose-input-modal").modal("show");
+        }
+        function showBloodGlucoseSettingModal() {
+            $("#blood-glucose-setting-modal").modal("show");
+        }
+        function showTargetSettingModal(flag) {
+            if (flag == 'weight') {
+                $("#target-setting-weight-modal").modal("show");
+            } else if (flag == 'wc') {
+                $("#target-setting-wc-modal").modal("show");
+            }
+
+        }
+        function showUserPicModal() {
+            $("#user-profile-modal").modal("show");
+        }
+        function showUserDoctorNumModal() {
+            $("#user-doctor-number-modal").modal("show");
+        }
+
+        function updateUserPassword() {
+            $("#login-password-modal").modal("hide");
+        }
+
+        function showMyAccountDlg() {
+            $("#my-info-modal").modal("show");
+        }
+
+        function updateLoginPasswordDlg() {
+            $("#login-password-modal").modal("show");
+        }
+
+        function showSettingDlg() {
+            $("#setting-modal").modal("show");
+        }
+
+        function updateUserInfo() {
+            $("#my-info-modal").modal("hide");
+        }
+        function showContents() {
+            $("#contents-modal").modal("show");
+        }
+        function showBgTypeModal() {
+            $("#bg-type-modal").modal("show");
+        }
+        function showBgHistoryModal() {
+            $("#bg-history-modal").modal("show");
+        }
+        function bgtype_select() {
+            if ($("#bgtype").val() == "dtype") {
+                $("#switch_ins").removeAttr("disabled");
+            }
+            else {
+                $("#switch_ins").prop("disabled", true);
+            }
+        }
+        function showHeightInputModal() {
+            $("#height-input-modal").modal("show");
+        }
+        function showWeightInputModal() {
+            $("#weight-input-modal").modal("show");
+        }
+        function showWeightDetailModal() {
+            $("#weight-detail-modal").modal("show");
+        }
+        function showTemperatureDetailModal() {
+            $("#temperature-detail-modal").modal("show");
+        }
+        function showTemperatureInputModal() {
+            $("#temperature-input-modal").modal("show");
+        }
+        function showWCDetailModal() {
+            $("#wc-detail-modal").modal("show");
+        }
+        function showWCInputModal() {
+            $("#wc-input-modal").modal("show");
+        }
+        function showMemoEditModal() {
+            $("#memo-edit-modal").modal("show");
+        }
+        function showBloodPressureDetailModal() {
+            $("#blood-pressure-detail-modal").modal("show");
+        }
+        function showBloodPressureInputModal() {
+            $("#blood-pressure-input-modal").modal("show");
+        }
+        function showBloodPressureSettingModal() {
+            $("#blood-pressure-setting-modal").modal("show");
+        }
+        function showMealDetailModal() {
+            $("#meal-detail-modal").modal("show");
+        }
+        function showMealInputModal() {
+            $("#meal-input-modal").modal("show");
+        }
+        function showMealSettingModal() {
+            $("#meal-setting-modal").modal("show");
+        }
+        function showMealDiaryDetailModal() {
+            $("#meal-diary-detail-modal").modal("show");
+        }
+        function showWalkingSettingModal() {
+            $("#walking-setting-modal").modal("show");
+        }
+        function showWalkingDetailModal() {
+            $("#walking-detail-modal").modal("show");
+        }
+        function showMedicineDetailModal() {
+            $("#medicine-detail-modal").modal("show");
+            setTimeout(function () {
+                window.jQuery.CalendarApp.$calendarObj.render();
+            }, 300);
+        }
+        function showMedicineGuideModal() {
+            $("#medicine-guide-modal").modal("show");
+        }
+        function showSleepDetailModal() {
+            $("#sleep-detail-modal").modal("show");
+        }
+        function showSleepSettingModal() {
+            $("#sleep-setting-modal").modal("show");
+        }
+        function showExerciseDetailModal() {
+            $("#exercise-detail-modal").modal("show");
+        }
+        function showExerciseSettingModal() {
+            $("#exercise-setting-modal").modal("show");
+        }
+
+    </script>
+</body>
+
+</html>

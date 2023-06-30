@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>콘텐츠관리</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+    <meta content="Coderthemes" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+    <!-- App css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
+    <link href="assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
+
+    <link href="assets/css/vendor/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/vendor/responsive.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/vendor/summernote-bs4.css" rel="stylesheet" type="text/css" />
+
+    <link href="assets/css/page/sys_manager.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/base.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/common.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="loading"
+    data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
+    <!-- Begin page -->
+    <div class="wrapper">
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="left-side-menu">
+            <!-- LOGO -->
+            <a href="main.html" class="logo text-center logo-light">
+                <span class="logo-lg">
+                    <img src="assets/images/logo.png" alt="" height="16">
+                </span>
+                <span class="logo-sm">
+                    <img src="assets/images/logo_sm.png" alt="" height="16">
+                </span>
+            </a>
+            <!-- LOGO -->
+            <a href="main.html" class="logo text-center logo-dark">
+                <span class="logo-lg">
+                    <img src="assets/images/logo-dark.png" alt="" height="16">
+                </span>
+                <span class="logo-sm">
+                    <img src="assets/images/logo_sm_dark.png" alt="" height="16">
+                </span>
+            </a>
+
+            <div class="h-100" id="left-side-menu-container" data-simplebar>
+                <!--- Sidemenu -->
+                <ul class="metismenu side-nav">
+                    <li class="side-nav-title side-nav-item">Navigation</li>
+                    <li class="side-nav-item">
+                        <a href="main.html" class="side-nav-link">
+                            <i class="uil-presentation-lines-alt"></i>
+                            <span> Dashboards </span>
+                        </a>
+                    </li>
+                    <li class="side-nav-item">
+                        <a href="#" class="side-nav-link">
+                            <i class="uil-users-alt"></i>
+                            <span> 사용자관리 </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="side-nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="users.html">전체사용자</a>
+                            </li>
+                            <li>
+                                <a href="auth01.html">승인 관리</a>
+                            </li>
+                            <li>
+                                <a href="send_message.html">메시지관리</a>
+                            </li>
+                            <li>
+                                <a href="message_list.html">메세지 발송 이력</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="side-nav-item">
+                        <a href="javascript: void(0);" class="side-nav-link">
+                            <i class="uil-comments-alt"></i>
+                            <span> 상담 </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="side-nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href=".html">대화형 상담</a>
+                            </li>
+                            <li>
+                                <a href=".html">단답형 상담</a>
+                            </li>
+                            <li>
+                                <a href=".html">비대면 상담</a>
+                            </li>
+                            <li>
+                                <a href="doc01.html">문서함</a>
+                            </li>
+                            <!-- <li>
+                                <a href="consult.html">1:1 상담</a>
+                            </li>
+                            <li>
+                                <a href="telehealth.html">Tel health</a>
+                            </li> -->
+                        </ul>
+                    </li>
+                    <li class="side-nav-item">
+                        <a href="javascript: void(0);" class="side-nav-link">
+                            <i class="uil-eye"></i>
+                            <span> 모니터링 </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="side-nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="moniter_danger.html">위험지수 관리</a>
+                            </li>
+                            <li>
+                                <a href="moniter_adapter.html">순응도 관리</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="side-nav-item">
+                        <a href="javascript: void(0);" class="side-nav-link">
+                            <i class="uil uil-image"></i>
+                            <span> 콘텐츠관리 </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="side-nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="sys_content.html">콘텐츠관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_video.html">동영상 관리</a>
+                            </li>
+                            <li>
+                                <a href="sdf.html">줄넘기 팁 관리</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="side-nav-item">
+                        <a href="javascript: void(0);" class="side-nav-link">
+                            <i class="uil-game-structure"></i>
+                            <span> 시스템운영 </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="side-nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="sys_group.html">그룹관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_webuser.html">웹 사용자관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_version.html">버전관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_appoint.html">약관 관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_service.html">서비스 문의</a>
+                            </li>
+                            <li>
+                                <a href="sys_connecthistory.html">접속 이력 관리</a>
+                            </li>
+                            <li>
+                                <a href=".html">결제 관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_checkitem.html">검사 항목관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_note.html">공지사항 관리</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <!-- Sidebar -left -->
+
+        </div>
+        <!-- Left Sidebar End -->
+
+        <!-- ============================================================== -->
+        <!-- Start Page Content here -->
+        <!-- ============================================================== -->
+
+        <div class="content-page">
+            <div class="content">
+                <!-- Topbar Start -->
+                <div class="navbar-custom">
+                    <ul class="list-unstyled topbar-right-menu float-right mb-0">
+                        <li class="dropdown notification-list d-lg-none">
+                            <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button"
+                                aria-haspopup="false" aria-expanded="false">
+                                <i class="dripicons-search noti-icon"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-animated dropdown-lg p-0">
+                                <form class="p-3">
+                                    <input type="text" class="form-control" placeholder="Search ..."
+                                        aria-label="Recipient's username">
+                                </form>
+                            </div>
+                        </li>
+
+                        <li class="dropdown notification-list">
+                            <a class="nav-link dropdown-toggle nav-user arrow-none mr-0" data-toggle="dropdown" href="#"
+                                role="button" aria-haspopup="false" aria-expanded="false">
+                                <span class="account-user-avatar">
+                                    <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
+                                </span>
+                                <span>
+                                    <span class="account-user-name">James Kim</span>
+                                    <span class="account-position">의사 <i class="dripicons-chevron-down"></i></span>
+                                </span>
+                            </a>
+                            <div
+                                class="dropdown-menu dropdown-menu-right dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
+                                <!-- item-->
+                                <a href="javascript:void(0);" onclick="showMyAccountDlg()"
+                                    class="dropdown-item notify-item">
+                                    <i class="mdi mdi-account-circle mr-1"></i>
+                                    <span>My Account</span>
+                                </a>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" onclick="showSettingDlg()"
+                                    class="dropdown-item notify-item">
+                                    <i class="mdi mdi-account-edit mr-1"></i>
+                                    <span>Settings</span>
+                                </a>
+                                <!-- item-->
+                                <a href="login.html" class="dropdown-item notify-item">
+                                    <i class="mdi mdi-logout mr-1"></i>
+                                    <span>Logout</span>
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+                    <button class="button-menu-mobile open-left disable-btn">
+                        <i class="mdi mdi-menu"></i>
+                    </button>
+                    <h4 class="page-title color-title float-left mt-3">콘텐츠 관리</h4>
+                    <div class="app-search dropdown d-none d-lg-block float-right">
+                        <form>
+                            <div class="input-group">
+                                <input type="text" class="form-control dropdown-toggle" placeholder="사용자를 검색할수 있습니다."
+                                    id="top-search">
+                                <span class="mdi mdi-magnify search-icon"></span>
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="submit">검색</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- end Topbar -->
+
+                <!-- Start Content-->
+                <div class="container-fluid">
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box">
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0 pt-0">
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">시스템 운영</a></li>
+                                        <li class="breadcrumb-item active">콘텐츠 관리</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end page title -->
+
+                    <div>
+                        <ul class="nav nav-tabs nav-bordered mb-3 nav-tabs-my">
+                            <li class="nav-item">
+                                <a href="#contents_total" data-toggle="tab" aria-expanded="false"
+                                    class="nav-link rounded-0 active">
+                                    <span class=" d-md-block">콘텐츠 전체</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#new_register" data-toggle="tab" aria-expanded="false"
+                                    class="nav-link rounded-0">
+                                    <span class=" d-md-block">콘텐츠 신규 등록</span>
+
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane show active" id="contents_total">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <table class="table table-centered table-hover w-100 nowrap"
+                                            id="contents-datatable">
+                                            <thead class="thead-light">
+                                                <tr>
+                                                    <th>카테고리</th>
+                                                    <th>콘텐츠 제목</th>
+                                                    <th>등록일</th>
+                                                    <th>작성자</th>
+                                                    <th>등록자</th>
+                                                    <th>상태</th>
+                                                    <th style="width: 225px;">작업</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>식사관리</td>
+                                                    <td class="table-thumbnail">
+                                                        <img src="assets/images/users/avatar-4.jpg"
+                                                            alt="table-thumbnail" class="mr-2 rounded">
+                                                        당뇨 관리를 위한 옳바른 식습관 안내
+                                                    </td>
+                                                    <td>2020-01-02 12:12</td>
+                                                    <td>HealthConnect</td>
+                                                    <td>James Lee</td>
+                                                    <td>Active</td>
+                                                    <td>
+                                                        <a class="text-body" data-toggle="modal"
+                                                            data-target="#content-view-modal" href="">
+                                                            <i class="dripicons-preview font-20 cursor mr-3"></i>
+                                                        </a>
+                                                        <i class="mdi mdi-square-edit-outline font-20 cursor mr-3"></i>
+                                                        <i class="mdi mdi-delete font-20 cursor"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>식사관리</td>
+                                                    <td class="table-thumbnail">
+                                                        <img src="assets/images/users/avatar-4.jpg"
+                                                            alt="table-thumbnail" class="mr-2 rounded">
+                                                        당뇨 관리를 위한 옳바른 식습관 안내
+                                                    </td>
+                                                    <td>2020-01-02 12:12</td>
+                                                    <td>HealthConnect</td>
+                                                    <td>James Lee</td>
+                                                    <td>Active</td>
+                                                    <td>
+                                                        <a class="text-body" data-toggle="modal"
+                                                            data-target="#content-view-modal" href="">
+                                                            <i class="dripicons-preview font-20 cursor mr-3"></i>
+                                                        </a>
+                                                        <i class="mdi mdi-square-edit-outline font-20 cursor mr-3"></i>
+                                                        <i class="mdi mdi-delete font-20 cursor"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>식사관리</td>
+                                                    <td class="table-thumbnail">
+                                                        <img src="assets/images/users/avatar-4.jpg"
+                                                            alt="table-thumbnail" class="mr-2 rounded">
+                                                        당뇨 관리를 위한 옳바른 식습관 안내
+                                                    </td>
+                                                    <td>2020-01-02 12:12</td>
+                                                    <td>HealthConnect</td>
+                                                    <td>James Lee</td>
+                                                    <td>Active</td>
+                                                    <td>
+                                                        <a class="text-body" data-toggle="modal"
+                                                            data-target="#content-view-modal" href="">
+                                                            <i class="dripicons-preview font-20 cursor mr-3"></i>
+                                                        </a>
+                                                        <i class="mdi mdi-square-edit-outline font-20 cursor mr-3"></i>
+                                                        <i class="mdi mdi-delete font-20 cursor"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>식사관리</td>
+                                                    <td class="table-thumbnail">
+                                                        <img src="assets/images/users/avatar-4.jpg"
+                                                            alt="table-thumbnail" class="mr-2 rounded">
+                                                        당뇨 관리를 위한 옳바른 식습관 안내
+                                                    </td>
+                                                    <td>2020-01-02 12:12</td>
+                                                    <td>HealthConnect</td>
+                                                    <td>James Lee</td>
+                                                    <td>Active</td>
+                                                    <td>
+                                                        <a class="text-body" data-toggle="modal"
+                                                            data-target="#content-view-modal" href="">
+                                                            <i class="dripicons-preview font-20 cursor mr-3"></i>
+                                                        </a>
+                                                        <i class="mdi mdi-square-edit-outline font-20 cursor mr-3"></i>
+                                                        <i class="mdi mdi-delete font-20 cursor"></i>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div> <!-- end card-body-->
+                                </div> <!-- end card-->
+                            </div>
+                            <div class="tab-pane show" id="new_register">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <b>카테고리</b>
+                                            </div>
+                                            <div class="form-group col-md-3 col-sm-12">
+                                                <select class="form-control">
+                                                    <option>카테고리를 선택하세요</option>
+                                                    <option>카테고리를 선택하세요</option>
+                                                </select>
+                                            </div>
+
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-md-2 mt-2">
+                                                <b>썸네일 이미지 등록</b>
+                                            </div>
+                                            <div class="col-md-3 col-sm-12  mt-2 mb-2">
+                                                <!-- File Upload -->
+                                                <form action="/" method="post" class="dropzone" id="myAwesomeDropzone"
+                                                    data-plugin="dropzone" data-previews-container="#file-previews"
+                                                    data-upload-preview-template="#uploadPreviewTemplate">
+                                                    <div class="fallback">
+                                                        <input name="file" type="file" multiple />
+                                                    </div>
+
+                                                    <div class="dz-message needsclick">
+                                                        <i class="h1 text-muted dripicons-cloud-upload"></i>
+                                                        <h6>Drop files here or click to upload.</h6>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="col-md-3 col-sm-12">
+
+                                                <!-- Preview -->
+                                                <div class="dropzone-previews" id="file-previews"></div>
+
+                                                <!-- file preview template -->
+                                                <div class="d-none" id="uploadPreviewTemplate">
+                                                    <div class="card mb-0 shadow-none border">
+                                                        <div class="p-2">
+                                                            <div class="row align-items-center">
+                                                                <div class="col-auto">
+                                                                    <img data-dz-thumbnail src="#"
+                                                                        class="avatar-sm rounded bg-light" alt="">
+                                                                </div>
+                                                                <div class="col pl-0">
+                                                                    <a href="javascript:void(0);"
+                                                                        class="text-muted font-weight-bold"
+                                                                        data-dz-name></a>
+                                                                    <p class="mb-0" data-dz-size></p>
+                                                                </div>
+
+                                                                <div class="col-auto">
+                                                                    <!-- Button -->
+                                                                    <a href="" class="btn btn-link btn-lg text-muted"
+                                                                        data-dz-remove>
+                                                                        <i class="dripicons-cross"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div>
+                                            <div class="mt-3"><b>English</b></div>
+                                            <div class="form-row mb-1">
+                                                <div class="form-group col-md-9">
+                                                    <label class="mb-0 font-13">제목</label>
+                                                    <input type="text" class="form-control mt-1"
+                                                        placeholder="제목을 입력하세요.">
+                                                </div>
+                                                <div class="form-group col-md-3">
+                                                    <label class="mb-0 font-13">작성자</label>
+                                                    <input type="text" class="form-control mt-1"
+                                                        placeholder="HealthConnect">
+                                                </div>
+                                            </div>
+                                            <div class="summernote-basic"></div>
+                                        </div>
+                                        <hr />
+                                        <div>
+                                            <div class="mb-1"><b>한국어</b></div>
+                                            <div class="form-row mb-1">
+                                                <div class="form-group col-md-9">
+                                                    <label class="mb-0 font-13">제목</label>
+                                                    <input type="text" class="form-control mt-1"
+                                                        placeholder="제목을 입력하세요.">
+                                                </div>
+                                                <div class="form-group col-md-3">
+                                                    <label class="mb-0 font-13">작성자</label>
+                                                    <input type="text" class="form-control mt-1"
+                                                        placeholder="HealthConnect">
+                                                </div>
+                                            </div>
+                                            <div class="summernote-basic"></div>
+                                        </div>
+                                        <hr />
+                                        <div>
+                                            <div class="mb-1"><b>Arabic</b></div>
+                                            <div class="form-row mb-1">
+                                                <div class="form-group col-md-9">
+                                                    <label class="mb-0 font-13">제목</label>
+                                                    <input type="text" class="form-control mt-1"
+                                                        placeholder="제목을 입력하세요.">
+                                                </div>
+                                                <div class="form-group col-md-3">
+                                                    <label class="mb-0 font-13">작성자</label>
+                                                    <input type="text" class="form-control mt-1"
+                                                        placeholder="HealthConnect">
+                                                </div>
+                                            </div>
+                                            <div class="summernote-basic"></div>
+                                        </div>
+                                        <hr />
+                                        <div>
+                                            <div class="mb-1"><b>中文</b></div>
+                                            <div class="form-row mb-1">
+                                                <div class="form-group col-md-9">
+                                                    <label class="mb-0 font-13">제목</label>
+                                                    <input type="text" class="form-control mt-1"
+                                                        placeholder="제목을 입력하세요.">
+                                                </div>
+                                                <div class="form-group col-md-3">
+                                                    <label class="mb-0 font-13">작성자</label>
+                                                    <input type="text" class="form-control mt-1"
+                                                        placeholder="HealthConnect">
+                                                </div>
+                                            </div>
+                                            <div class="summernote-basic"></div>
+                                        </div>
+                                    </div>
+                                    <div class="pb-3 pt-2 text-right">
+                                        <button class="btn btn-light mr-1" type="button">취소</button>
+                                        <button class="btn btn-primary mr-3">신규 등록</button>
+                                    </div>
+                                </div> <!-- end card-body-->
+
+                            </div> <!-- end card-->
+                        </div> <!-- end col -->
+                    </div>
+                    <!-- end row -->
+
+                </div> <!-- container -->
+
+            </div> <!-- content -->
+
+            <!-- Footer Start -->
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            © HealthConnect Co., Ltd.
+                        </div>
+                        <div class="col-md-6">
+
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- end Footer -->
+
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
+
+    </div>
+    <!-- END wrapper -->
+
+    <div data-include-html="modal/account.html"></div>
+    <div data-include-html="modal/setting.html"></div>
+    <div data-include-html="modal/password.html"></div>
+    <div id="success-alert-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content bg-white">
+                <div class="modal-body p-4">
+                    <div class="text-center">
+                        <i class="dripicons-checkmark h1"></i>
+                        <h4 class="mt-2" id="title"></h4>
+                        <p class="mt-3" id="content"></p>
+                        <button type="button" class="btn btn-light my-2" onclick="returnSuccessCallbck()">확인</button>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div id="error-alert-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <div class="modal-content bg-white">
+                <div class="modal-body p-4">
+                    <div class="text-center">
+                        <i class="dripicons-checkmark h1"></i>
+                        <h4 class="mt-2" id="e_title"></h4>
+                        <p class="mt-3" id="e_content"></p>
+                        <button type="button" class="btn btn-light my-2" data-dismiss="modal">확인</button>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+    <div id="info-alert-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body p-4">
+                    <div class="text-center">
+                        <i class="dripicons-information h1 text-info"></i>
+                        <h4 class="mt-2">Heads up!</h4>
+                        <p class="mt-3">Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac
+                            facilisis in, egestas eget quam.</p>
+                        <button type="button" class="btn btn-info my-2" data-dismiss="modal">Continue</button>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div id="content-view-modal" class="modal fade sys_modal" tabindex="-1" role="dialog" aria-labelledby=""
+        aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog modal-custom-video modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title">콘텐츠 조회</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body p-0">
+                    <!--video-->
+                    <div data-simplebar style="height:760px;">
+                        <div class="p-3">
+                            <h4 class="mb-1">당뇨 관리를 위한 올바른 식습관 안내</h4>
+                            <div>
+                                <small class="text-muted mr-2">작성자 : HealthConnect</small><small class="text-muted">등록일
+                                    : 2020-11-02</small>
+                            </div>
+                            <hr class="mt-2 mb-2">
+                            <div class="mb-3"><img class="card-img-top" src="assets/images/ex_stretching.png"></div>
+                            준비 자세: 허리를 곧게 펴고 발을 모은 상태에서 무릎을 약간 굽히고, 허리를 약
+                            90도 정도 숙인다.
+                            양 팔의 팔꿈치를 가볍게 굽힌 상태에서 정강이 앞 쪽에 위치시킨다.
+                            운동 방법: 덤벨을 든 팔이 어깨와 평행하도록 위쪽으로 들어올린다.
+                            이 후 천천히 준비 자세로 돌아오도록 한다.
+                            준비 자세: 허리를 곧게 펴고 발을 모은 상태에서 무릎을 약간 굽히고, 허리를 약
+                            90도 정도 숙인다. <br />
+                            양 팔의 팔꿈치를 가볍게 굽힌 상태에서 정강이 앞 쪽에 위치시킨다.
+                            운동 방법: 덤벨을 든 팔이 어깨와 평행하도록 위쪽으로 들어올린다.
+                            이 후 천천히 준비 자세로 돌아오도록 한다.
+                            준비 자세: 허리를 곧게 펴고 발을 모은 상태에서 무릎을 약간 굽히고, 허리를 약
+                            90도 정도 숙인다.
+                            준비 자세: 허리를 곧게 펴고 발을 모은 상태에서 무릎을 약간 굽히고, 허리를 약
+                            90도 정도 숙인다. <br />
+                            양 팔의 팔꿈치를 가볍게 굽힌 상태에서 정강이 앞 쪽에 위치시킨다.
+                            운동 방법: 덤벨을 든 팔이 어깨와 평행하도록 위쪽으로 들어올린다.
+                            이 후 천천히 준비 자세로 돌아오도록 한다.
+                            준비 자세: 허리를 곧게 펴고 발을 모은 상태에서 무릎을 약간 굽히고, 허리를 약
+                            90도 정도 숙인다. <br />
+                            양 팔의 팔꿈치를 가볍게 굽힌 상태에서 정강이 앞 쪽에 위치시킨다.
+                            운동 방법: 덤벨을 든 팔이 어깨와 평행하도록 위쪽으로 들어올린다.
+                            이 후 천천히 준비 자세로 돌아오도록 한다.
+                            준비 자세: 허리를 곧게 펴고 발을 모은 상태에서 무릎을 약간 굽히고, 허리를 약
+                            90도 정도 숙인다.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="delete-select-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+        <div class="modal-dialog modal-custom-medium modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title">콘텐츠 조회</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body p-3" style="min-height: 500px;">
+                    Content Here
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/vendor.min.js"></script>
+    <script src="assets/js/app.min.js"></script>
+
+    <script src="assets/js/vendor/jquery.dataTables.min.js"></script>
+    <script src="assets/js/vendor/dataTables.bootstrap4.js"></script>
+    <script src="assets/js/vendor/dataTables.responsive.min.js"></script>
+    <script src="assets/js/vendor/responsive.bootstrap4.min.js"></script>
+    <script src="assets/js/vendor/apexcharts.min.js"></script>
+    <script src="assets/js/vendor/dataTables.checkboxes.min.js"></script>
+
+    <script src="assets/js/vendor/dropzone.min.js"></script>
+    <script src="assets/js/ui/component.fileupload.js"></script>
+
+    <script src="assets/js/vendor/summernote-bs4.min.js"></script>
+    <script src="assets/js/pages/demo.summernote.js"></script>
+
+    <script src="assets/js/common.js"></script>
+    <script src="assets/js/page/sys_contents.js"></script>
+    <script>
+        function updateUserPassword() {
+            $("#login-password-modal").modal("hide");
+        }
+
+        function showMyAccountDlg() {
+            $("#my-info-modal").modal("show");
+        }
+
+        function updateLoginPasswordDlg() {
+            $("#login-password-modal").modal("show");
+        }
+
+        function showSettingDlg() {
+            $("#setting-modal").modal("show");
+        }
+
+        function updateUserInfo() {
+            $("#my-info-modal").modal("hide");
+        }
+    </script>
+</body>
+
+</html>

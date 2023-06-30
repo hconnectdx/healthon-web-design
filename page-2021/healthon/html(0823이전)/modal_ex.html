@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>modal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+    <meta content="Coderthemes" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+    <!-- App css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
+    <link href="assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
+
+
+    <link href="assets/css/vendor/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/vendor/responsive.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/vendor/fullcalendar.min.css" rel="stylesheet" type="text/css" />
+
+    <link href="assets/css/base.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/common.css" rel="stylesheet" type="text/css" id="common-style" />
+    <link href="assets/css/page/alluser_consult.css" rel="stylesheet" type="text/css" id="consult-style" />
+</head>
+
+<body class="loading"
+    data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
+    <!-- Begin page -->
+    <div class="wrapper">
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="left-side-menu">
+            <!-- LOGO -->
+            <a href="main.html" class="logo text-center logo-light">
+                <span class="logo-lg">
+                    <img src="assets/images/logo.png" alt="" height="16">
+                </span>
+                <span class="logo-sm">
+                    <img src="assets/images/logo_sm.png" alt="" height="16">
+                </span>
+            </a>
+            <!-- LOGO -->
+            <a href="main.html" class="logo text-center logo-dark">
+                <span class="logo-lg">
+                    <img src="assets/images/logo-dark.png" alt="" height="16">
+                </span>
+                <span class="logo-sm">
+                    <img src="assets/images/logo_sm_dark.png" alt="" height="16">
+                </span>
+            </a>
+
+            <div class="h-100" id="left-side-menu-container" data-simplebar>
+                <!--- Sidemenu -->
+                <ul class="metismenu side-nav">
+                    <li class="side-nav-title side-nav-item">Navigation</li>
+                    <li class="side-nav-item">
+                        <a href="main.html" class="side-nav-link">
+                            <i class="uil-presentation-lines-alt"></i>
+                            <span> Dashboards </span>
+                        </a>
+                    </li>
+                    <li class="side-nav-item">
+                        <a href="#" class="side-nav-link">
+                            <i class="uil-users-alt"></i>
+                            <span> 사용자관리 </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="side-nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="users.html">전체사용자</a>
+                            </li>
+                            <li>
+                                <a href="auth01.html">승인 관리</a>
+                            </li>
+                            <li>
+                                <a href="send_message.html">메시지관리</a>
+                            </li>
+                            <li>
+                                <a href="message_list.html">메세지 발송 이력</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="side-nav-item">
+                        <a href="javascript: void(0);" class="side-nav-link">
+                            <i class="uil-comments-alt"></i>
+                            <span> 상담 </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="side-nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href=".html">대화형 상담</a>
+                            </li>
+                            <li>
+                                <a href=".html">단답형 상담</a>
+                            </li>
+                            <li>
+                                <a href=".html">비대면 상담</a>
+                            </li>
+                            <li>
+                                <a href="doc01.html">문서함</a>
+                            </li>
+                            <!-- <li>
+                                <a href="consult.html">1:1 상담</a>
+                            </li>
+                            <li>
+                                <a href="telehealth.html">Tel health</a>
+                            </li> -->
+                        </ul>
+                    </li>
+                    <li class="side-nav-item">
+                        <a href="javascript: void(0);" class="side-nav-link">
+                            <i class="uil-eye"></i>
+                            <span> 모니터링 </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="side-nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="moniter_danger.html">위험지수 관리</a>
+                            </li>
+                            <li>
+                                <a href="moniter_adapter.html">순응도 관리</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="side-nav-item">
+                        <a href="javascript: void(0);" class="side-nav-link">
+                            <i class="uil uil-image"></i>
+                            <span> 콘텐츠관리 </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="side-nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="sys_content.html">콘텐츠관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_video.html">동영상 관리</a>
+                            </li>
+                            <li>
+                                <a href="sdf.html">줄넘기 팁 관리</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="side-nav-item">
+                        <a href="javascript: void(0);" class="side-nav-link">
+                            <i class="uil-game-structure"></i>
+                            <span> 시스템운영 </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="side-nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="sys_group.html">그룹관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_webuser.html">웹 사용자관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_version.html">버전관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_appoint.html">약관 관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_service.html">서비스 문의</a>
+                            </li>
+                            <li>
+                                <a href="sys_connecthistory.html">접속 이력 관리</a>
+                            </li>
+                            <li>
+                                <a href=".html">결제 관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_checkitem.html">검사 항목관리</a>
+                            </li>
+                            <li>
+                                <a href="sys_note.html">공지사항 관리</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <!-- Sidebar -left -->
+
+        </div>
+        <!-- Left Sidebar End -->
+
+        <!-- ============================================================== -->
+        <!-- Start Page Content here -->
+        <!-- ============================================================== -->
+
+        <div class="content-page" style="padding-bottom:43px;">
+            <div class="content">
+                <!-- Topbar Start -->
+                <div class="navbar-custom">
+                    <ul class="list-unstyled topbar-right-menu float-right mb-0">
+                        <li class="dropdown notification-list d-lg-none">
+                            <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button"
+                                aria-haspopup="false" aria-expanded="false">
+                                <i class="dripicons-search noti-icon"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-animated dropdown-lg p-0">
+                                <form class="p-3">
+                                    <input type="text" class="form-control" placeholder="Search ..."
+                                        aria-label="Recipient's username">
+                                </form>
+                            </div>
+                        </li>
+
+                        <li class="dropdown notification-list">
+                            <a class="nav-link dropdown-toggle nav-user arrow-none mr-0" data-toggle="dropdown" href="#"
+                                role="button" aria-haspopup="false" aria-expanded="false">
+                                <span class="account-user-avatar">
+                                    <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
+                                </span>
+                                <span>
+                                    <span class="account-user-name">James Kim</span>
+                                    <span class="account-position">관리자 <i class="dripicons-chevron-down"></i></span>
+                                </span>
+                            </a>
+                            <div
+                                class="dropdown-menu dropdown-menu-right dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
+                                <!-- item-->
+                                <a href="javascript:void(0);" onclick="showMyAccountDlg()"
+                                    class="dropdown-item notify-item">
+                                    <i class="mdi mdi-account-circle mr-1"></i>
+                                    <span>My Account</span>
+                                </a>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" onclick="showSettingDlg()"
+                                    class="dropdown-item notify-item">
+                                    <i class="uil-cog mr-1"></i>
+                                    <span>Settings</span>
+                                </a>
+                                <!-- item-->
+                                <a href="login.html" class="dropdown-item notify-item">
+                                    <i class="mdi mdi-logout mr-1"></i>
+                                    <span>Logout</span>
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+                    <button class="button-menu-mobile open-left disable-btn">
+                        <i class="mdi mdi-menu"></i>
+                    </button>
+
+                    <h4 class="page-title color-title float-left mt-3">전체 사용자</h4>
+                    <div class="app-search dropdown d-none d-lg-block float-right">
+                        <form>
+                            <div class="input-group">
+                                <input type="text" class="form-control dropdown-toggle" placeholder="사용자를 검색할수 있습니다."
+                                    id="top-search">
+                                <span class="mdi mdi-magnify search-icon"></span>
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="submit">검색</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- end Topbar -->
+
+                <!-- Start Content-->
+                <div class="container-fluid">
+                    <div class="row align-items-center justify-content-center" style="height: 740px;">
+                        <div class="col-lg-6">
+                            <div class="text-center">
+                                <button type="button" class="btn btn-light mr-2" onclick="passwordChangeModal()">비밀번호
+                                    변경</button>
+                                <button type="button" class="btn btn-light mr-2" onclick="passwordResetModal()">비밀번호
+                                    설정</button>
+                                <button type="button" class="btn btn-light mr-2" onclick="reMindModal()">Remind</button>
+                                <button type="button" class="btn btn-light mr-2"
+                                    onclick="delSuccessModal()">Delete</button>
+                                <button type="button" class="btn btn-light mr-2"
+                                    onclick="errorAlertModal()">Error</button>
+                                <button type="button" class="btn btn-light"
+                                    onclick="successAlertModal()">Success</button>
+                            </div>
+                            <!-- end /.text-center-->
+                        </div> <!-- end col-->
+                    </div>
+                    <!-- end row -->
+                </div>
+            </div> <!-- content -->
+
+            <!-- Footer Start -->
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            © HealthConnect Co., Ltd.
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- end Footer -->
+
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
+
+    </div>
+    <!-- END wrapper -->
+
+    <div data-include-html="modal/account.html"></div>
+    <div data-include-html="modal/setting.html"></div>
+    <div data-include-html="modal/password.html"></div>
+    <div data-include-html="modal/password_change.html"></div>
+    <div data-include-html="modal/password_reset.html"></div>
+    <div data-include-html="modal/confirm.html"></div>
+    <div data-include-html="modal/delete.html"></div>
+    <div data-include-html="modal/error.html"></div>
+    <div data-include-html="modal/success.html"></div>
+
+
+    <script src="assets/js/vendor.min.js"></script>
+    <script src="assets/js/app.min.js"></script>
+    <script src="assets/js/vendor/apexcharts.min.js"></script>
+
+    <script src="assets/js/vendor/fullcalendar.min.js"></script>
+    <script src="assets/js/pages/demo.calendar.js"></script>
+
+    <script src="assets/js/vendor/jquery.dataTables.min.js"></script>
+    <script src="assets/js/vendor/dataTables.bootstrap4.js"></script>
+    <script src="assets/js/vendor/dataTables.responsive.min.js"></script>
+    <script src="assets/js/vendor/responsive.bootstrap4.min.js"></script>
+    <script src="assets/js/vendor/dataTables.checkboxes.min.js"></script>
+
+    <script src="assets/js/vendor/dropzone.min.js"></script>
+    <script src="assets/js/ui/component.fileupload.js"></script>
+
+    <script src="assets/js/common.js"></script>
+    <script src="assets/js/page/alluser_consult.js"></script>
+    <script>
+        function showBloodGlucoseDetailModal() {
+            $("#blood-glucose-detail-modal").modal("show");
+        }
+        function showBloodGlucoseInputModal() {
+            $("#blood-glucose-input-modal").modal("show");
+        }
+        function showBloodGlucoseSettingModal() {
+            $("#blood-glucose-setting-modal").modal("show");
+        }
+        function showTargetSettingModal(flag) {
+            if (flag == 'weight') {
+                $("#target-setting-weight-modal").modal("show");
+            } else if (flag == 'wc') {
+                $("#target-setting-wc-modal").modal("show");
+            }
+
+        }
+        function showUserPicModal() {
+            $("#user-profile-modal").modal("show");
+        }
+        function showUserDoctorNumModal() {
+            $("#user-doctor-number-modal").modal("show");
+        }
+
+        function updateUserPassword() {
+            $("#login-password-modal").modal("hide");
+        }
+
+        function showMyAccountDlg() {
+            $("#my-info-modal").modal("show");
+        }
+
+        function updateLoginPasswordDlg() {
+            $("#login-password-modal").modal("show");
+        }
+
+        function showSettingDlg() {
+            $("#setting-modal").modal("show");
+        }
+
+        function updateUserInfo() {
+            $("#my-info-modal").modal("hide");
+        }
+        function showContents() {
+            $("#contents-modal").modal("show");
+        }
+        function showBgTypeModal() {
+            $("#bg-type-modal").modal("show");
+        }
+        function showBgHistoryModal() {
+            $("#bg-history-modal").modal("show");
+        }
+        function bgtype_select() {
+            if ($("#bgtype").val() == "dtype") {
+                $("#switch_ins").removeAttr("disabled");
+            }
+            else {
+                $("#switch_ins").prop("disabled", true);
+            }
+        }
+        function showHeightInputModal() {
+            $("#height-input-modal").modal("show");
+        }
+        function showWeightInputModal() {
+            $("#weight-input-modal").modal("show");
+        }
+        function showWeightDetailModal() {
+            $("#weight-detail-modal").modal("show");
+        }
+        function showTemperatureDetailModal() {
+            $("#temperature-detail-modal").modal("show");
+        }
+        function showTemperatureInputModal() {
+            $("#temperature-input-modal").modal("show");
+        }
+        function showWCDetailModal() {
+            $("#wc-detail-modal").modal("show");
+        }
+        function showWCInputModal() {
+            $("#wc-input-modal").modal("show");
+        }
+        function showMemoEditModal() {
+            $("#memo-edit-modal").modal("show");
+        }
+        function showBloodPressureDetailModal() {
+            $("#blood-pressure-detail-modal").modal("show");
+        }
+        function showBloodPressureInputModal() {
+            $("#blood-pressure-input-modal").modal("show");
+        }
+        function showBloodPressureSettingModal() {
+            $("#blood-pressure-setting-modal").modal("show");
+        }
+        function showMealDetailModal() {
+            $("#meal-detail-modal").modal("show");
+        }
+        function showMealInputModal() {
+            $("#meal-input-modal").modal("show");
+        }
+        function showMealSettingModal() {
+            $("#meal-setting-modal").modal("show");
+        }
+        function showMealDiaryDetailModal() {
+            $("#meal-diary-detail-modal").modal("show");
+        }
+        function showWalkingSettingModal() {
+            $("#walking-setting-modal").modal("show");
+        }
+        function showWalkingDetailModal() {
+            $("#walking-detail-modal").modal("show");
+        }
+        function showMedicineDetailModal() {
+            $("#medicine-detail-modal").modal("show");
+            setTimeout(function () {
+                window.jQuery.CalendarApp.$calendarObj.render();
+            }, 300);
+        }
+        function showMedicineGuideModal() {
+            $("#medicine-guide-modal").modal("show");
+        }
+        function showSleepDetailModal() {
+            $("#sleep-detail-modal").modal("show");
+        }
+        function showSleepSettingModal() {
+            $("#sleep-setting-modal").modal("show");
+        }
+        function showExerciseDetailModal() {
+            $("#exercise-detail-modal").modal("show");
+        }
+        function showExerciseSettingModal() {
+            $("#exercise-setting-modal").modal("show");
+        }
+
+        function passwordChangeModal() {
+            $("#password-change-modal").modal("show");
+        }
+        function passwordResetModal() {
+            $("#password-reset-modal").modal("show");
+        }
+        function reMindModal() {
+            $("#confirm-modal").modal("show");
+        }
+        function delSuccessModal() {
+            $("#delete-success-modal").modal("show");
+        }
+        function errorAlertModal() {
+            $("#error-alert-modal").modal("show");
+        }
+        function successAlertModal() {
+            $("#success-alert-modal").modal("show");
+        }
+
+    </script>
+</body>
+
+</html>
