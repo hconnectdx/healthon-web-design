@@ -15,7 +15,7 @@ $(window).on('popstate', function(event) {
     }
 });
 
-function callMenu(menuUrl, menuTitle, data, backFlag) {
+function /**/callMenu(menuUrl, menuTitle, data, backFlag) {
     const noFrame = {'frameYn' : 'N'};
 
     if (data && typeof data === 'object') {

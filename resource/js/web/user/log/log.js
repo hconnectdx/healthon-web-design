@@ -32,6 +32,7 @@ $(document).ready(function () {
     initMeasurementCard();   // 안찬영 20221117
     initMeasurementCard();   // 안찬영 20221117
     initHeartRateCard(); // 배인영 20221201
+    initBlExamCard();    // 백정명 20230619
 });
 
 $(document).ready(function () {
@@ -118,6 +119,13 @@ $(document).ready(function () {
     getSmsList(1);
 
 });
+
+// 혈액검사 타입 카드
+function initBlExamCard() {
+    let userServiceUseSno = $('#userLogForm #userServiceUseSno').val();
+    $('#blExamCard').load('/user/user/log/blExam/body', {'userServiceUseSno': userServiceUseSno});
+}
+
 
 // 혈당 타입 카드
 function initBgTypeCard() {
@@ -442,7 +450,7 @@ function checkResultReg(){
         $("#error-alert-modal").modal('show');
         $("#e_content").html(i18n('users.detail.checkup.result.pop.null.txt.title'));
         return false;
-     } else if(isEmpty(groupCheckupHistSno)){
+    } else if(isEmpty(groupCheckupHistSno)){
         //formData.set('checkupItemSno', $("#regcheckupItemSno").val());
         $.ajax({
             url: "/user/user/log/checkup/api/user_detail_check_result_reg",
@@ -815,6 +823,13 @@ function showUserMemoModal(){
     });
 }
 
+// 사용자 정보 수정Modal
+function showUserModModal(){
+    $("#user-mod-modal > .modal-dialog").load("/user/user/log/modal/user_mod", {userServiceUseSno: $("#userServiceUseSno").val()}, function() {
+        $("#user-mod-modal").modal("show");
+    });
+}
+
 // 의료진 전용 채팅 수정Modal
 var chatModObj ;
 function showChatEditModal(o, sno){
@@ -832,7 +847,7 @@ function getChatList(reset){
 
     // reset 값이 0 이면 조회를 안하는 조건이라 생각하고 (즉 이전 메모일련번호로 다음 메모목록을 조회하는 행위) 아래 코드가 실행되지 않도로 return
     if(reset === 0) return;
-    
+
     if(reset === 1){
         $("#chat-tab .simplebar-content").empty();
         $("#chat-form #chat_from_date").val("");
@@ -904,7 +919,7 @@ function getChatList(reset){
                             + '	<div class="conversation-text">'
                             + '		<div class="ctext-wrap">'
                             + '			<i>'+obj.managementNm+'</i>'
-                            + '			<p style="overflow-wrap: anywhere;">'+obj.memo+'</p>'
+                            + '			<p style="overflow-wrap: anywhere;">'+obj.memo.replace(/(?:\r\n|\r|\n)/g, "<br>")+'</p>'
                             + '		</div>'
                             + '	</div>'
                             + '	<div class="dropdown">'
@@ -926,7 +941,7 @@ function getChatList(reset){
                             + '	<div class="conversation-text">'
                             + '		<div class="ctext-wrap">'
                             + '			<i>'+obj.managementNm+'</i>'
-                            + '			<p style="overflow-wrap: anywhere;">'+obj.memo+'</p>'
+                            + '			<p style="overflow-wrap: anywhere;">'+obj.memo.replace(/(?:\r\n|\r|\n)/g, "<br>")+'</p>'
                             + '		</div>'
                             + '	</div>'
                             + '</li>'
@@ -1017,7 +1032,7 @@ function setChat() {
                     + '	<div class="conversation-text">'
                     + '		<div class="ctext-wrap">'
                     + '			<i>'+data.managementNm+'</i>'
-                    + '			<p style="overflow-wrap: anywhere;">'+data.memo+'</p>'
+                    + '			<p style="overflow-wrap: anywhere;">'+data.memo.replace(/(?:\r\n|\r|\n)/g, "<br>")+'</p>'
                     + '		</div>'
                     + '	</div>'
                     + '	<div class="dropdown">'
@@ -1165,7 +1180,7 @@ function getSmsList(reset){
                             + '	<div class="conversation-text">'
                             + '		<div class="ctext-wrap">'
                             + '			<i>'+obj.managementNm+'</i>'
-                            + '			<p>'+obj.smsMsgCtnt+'</p>'
+                            + '			<p>'+obj.smsMsgCtnt.replace(/(?:\r\n|\r|\n)/g, "<br>")+'</p>'
                             + '		</div>'
                             + '	</div>'
                             + '</li>'
@@ -1180,7 +1195,7 @@ function getSmsList(reset){
                             + '	<div class="conversation-text">'
                             + '		<div class="ctext-wrap">'
                             + '			<i>'+obj.managementNm+'</i>'
-                            + '			<p>'+obj.smsMsgCtnt+'</p>'
+                            + '			<p>'+obj.smsMsgCtnt.replace(/(?:\r\n|\r|\n)/g, "<br>")+'</p>'
                             + '		</div>'
                             + '	</div>'
                             + '</li>'
@@ -1278,7 +1293,7 @@ function setSms() {
                             + '	<div class="conversation-text">'
                             + '		<div class="ctext-wrap">'
                             + '			<i>'+data.managementNm+'</i>'
-                            + '			<p>'+data.smsMsgCtnt+'</p>'
+                            + '			<p>'+data.smsMsgCtnt.replace(/(?:\r\n|\r|\n)/g, "<br>")+'</p>'
                             + '		</div>'
                             + '	</div>'
                             + '</li>'

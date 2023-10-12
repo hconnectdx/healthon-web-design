@@ -1,0 +1,73 @@
+<script>
+	const isMobile = {
+	    Android: function() {
+	        return navigator.userAgent.match(/Android/i);
+	    },
+	    BlackBerry: function() {
+	        return navigator.userAgent.match(/BlackBerry/i);
+	    },
+	    iOS: function() {
+	        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+	    },
+	    Opera: function() {
+	        return navigator.userAgent.match(/Opera Mini/i);
+	    },
+	    Windows: function() {
+	        return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
+	    },
+	    any: function() {
+	        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+	    }
+	};
+
+	if (isMobile.any()) {
+		setTimeout(() => {
+			location.replace("about:blank");
+		}, 2000)
+	}
+	else {
+		setTimeout(() => {
+			location.replace("/");
+		}, 1000)
+	}
+
+	let code = '';
+	let path = '';
+
+	if (window["URLSearchParams"]) {
+		let params = new URLSearchParams(location.search);
+		code = params.get("code") || "";
+		path = params.get("path") || "";
+	}
+	else {
+		let search = location.search;
+		if (search.length > 0) {
+			search = search.substr(1);
+		}
+
+		let paramList = search.split('&');
+		for (let i = 0; i < paramList.length; i++) {
+			let params = paramList[i].split('=');
+			let key = params[0];
+			let val = params.length >= 2 ? params[1] : '';
+
+			switch (key) {
+				case 'code':
+					code = val;
+					break;
+				case 'path':
+					path = val;
+					break;
+			}
+		}
+	}
+
+	let appUrl = "";
+	if (path.length > 0) {
+		appUrl = `healthonchmc://fitbitlogin/${path}?code=${code}`;
+	}
+	else {
+		appUrl = `healthonchmc://fitbitlogin${location.search}`;
+	}
+	location.replace(appUrl);
+</script>

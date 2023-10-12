@@ -393,6 +393,33 @@ $(document).on('change', '#groupImage', function() {
     }
 });
 
+//그룹대표이미지 파일 삭제
+function groupLogoImageRemove(){
+    $("#groupLogoImage").val("");
+    $("#groupLogoImage").change();
+}
+//그룹대표로고이미지 파일업로드 표시
+$(document).on('change', '#groupLogoImage', function() {
+    var placeholder = i18n('management.group.new.txt.image.placeholder');
+    var files = this.files;
+    if (files.length > 0) {
+        var filename = files[0].name;
+        if (filename) {
+            $("#groupLogoImage").parent().addClass("state-file");
+            $('#groupLogoImageTxt').text(filename);
+            $("#groupLogoImgFileUpdate").val("");
+        } else {
+            $("#groupLogoImage").parent().removeClass("state-file");
+            $('#groupLogoImageTxt').text(placeholder);
+            $("#groupLogoImgFileUpdate").val("Y");
+        }
+    } else {
+        $("#groupLogoImage").parent().removeClass("state-file");
+        $('#groupLogoImageTxt').text(placeholder);
+        $("#groupLogoImgFileUpdate").val("Y");
+    }
+});
+
 //화상상담 활성/비활성시 API Key/Secret Key 표시
 $(document).on('change', '#telehealthMenuUseYn', function() {
     let useYn = this.value;
@@ -400,11 +427,14 @@ $(document).on('change', '#telehealthMenuUseYn', function() {
         $("#leftVonageApiKey").prop("readonly", false);
         $("#leftVonageSecretKey").prop("readonly", false);
         $("#leftTelehealthRecordingUseYn").prop("disabled", false);
+        $("#rightTelehealthRecordingUseYn").prop("disabled", false);
         $("#rightVonageApiKey").prop("readonly", false);
         $("#rightVonageSecretKey").prop("readonly", false);
     } else {
         $("#leftVonageApiKey").prop("readonly", true);
         $("#leftVonageSecretKey").prop("readonly", true);
+        $("#rightTelehealthRecordingUseYn").prop("disabled", true);
+        $("#rightTelehealthRecordingUseYn").prop("checked", false);
         $("#leftTelehealthRecordingUseYn").prop("disabled", true);
         $("#leftTelehealthRecordingUseYn").prop("checked", false);
         $("#rightVonageApiKey").prop("readonly", true);
@@ -522,8 +552,6 @@ function saveGroupAjax(formData){
         formData.append("groupMddpList["+idx+"].mddpCd",value.mddpCd)
         formData.append("groupMddpList["+idx+"].groupMddpNm",value.groupMddpNm)
     })
-    // 화상상담 녹음/녹화 기능 사용 여부 값 입력
-    formData.set("telehealthRecordingUseYn", $("input[name='telehealthRecordingUseYn']").val());
 
     $.ajax({
         url : "/sys/group/api/sys_group_det/mod",
@@ -595,12 +623,12 @@ function groupIns(groupSno) {
     let telehealthStrTime = $("#groupForm #telehealthStrTime").val();
     let telehealthEndTime = $("#groupForm #telehealthEndTime").val();
     let leftTelehealthRecordingUseYn = $("#groupForm #leftTelehealthRecordingUseYn").is(':checked');
-    let telehealthRecordingUseYn = $("#groupForm #leftTelehealthRecordingUseYn");
+    let rightTelehealthRecordingUseYn = $("#groupForm #rightTelehealthRecordingUseYn").is(':checked');
+    let telehealthRecordingUseYn = $("input[name='telehealthRecordingUseYn']");
 
     // 화상상담 녹음/녹화 기능 사용 여부
-    if(leftTelehealthRecordingUseYn == true) telehealthRecordingUseYn.val("Y")
+    if(leftTelehealthRecordingUseYn == true || rightTelehealthRecordingUseYn == true) telehealthRecordingUseYn.val("Y")
         else telehealthRecordingUseYn.val("N");
-
 
     let managementHpNo = $("#groupForm #managementHpNo").val();
     let managementId = $("#groupForm #managementId").val();
@@ -613,6 +641,9 @@ function groupIns(groupSno) {
 
     var form = $('#groupForm')[0];
     var formData = new FormData(form);
+
+    // 화상상담 녹음/녹화 기능 사용 여부 값 입력
+    formData.set("telehealthRecordingUseYn", $("input[name='telehealthRecordingUseYn']").val());
 
     //입력치 체크
     $("#e_title").html(i18n('common.txt.register.fail.missing.input'));

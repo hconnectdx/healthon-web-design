@@ -20,10 +20,17 @@ function initDataTable(callback) {
             "   <p id='emptyString'>" + i18n('common.txt.nodata') + "</p>" +
             "</div>";
 
+        let groupPersonClcd = data.groupPersonClcd;
+
         let pageChangeSelectHtml = "<select class='form-control mr-1'><option value='10'>10</option><option value='20'>20</option><option value='50'>50</option></select>";
         let etcHtml = "<button type='button' id='sendMsgBtn' onclick='sendMessage()' class='btn btn-primary btn-sm ml-2' disabled>" + i18n('users.alluser.btn.send.msg') + "</button>";
-        let lengthMenu = i18n('common.txt.search.pagesize').replace("{0}", pageChangeSelectHtml) + ' ' + etcHtml;
-
+        let userRegHtml = "<button type='button' id='userRegBtn' onclick='showUseRegModal()' class='btn btn-primary btn-sm ml-2' >" + i18n('users.alluser.btn.user.req.msg') + "</button>";
+        let lengthMenu="";
+        if (groupPersonClcd === '00725200'){
+            lengthMenu = i18n('common.txt.search.pagesize').replace("{0}", pageChangeSelectHtml) + ' ' + etcHtml +' ' + userRegHtml;
+        } else {
+            lengthMenu = i18n('common.txt.search.pagesize').replace("{0}", pageChangeSelectHtml) + ' ' + etcHtml ;
+        }
         if (lastGroupDeptList && lastGroupDeptList.length > 0) {
             groupDeptList += "<select class='form-control d-inline-block w-auto ml-1 select-group' id='deptCode' onchange='refreshTable()'>";
             groupDeptList += "   <option value=''>" + i18n('users.auth.txt.proc.all') + "</option>";
@@ -250,7 +257,12 @@ function initDataTable(callback) {
                     render: function(data, type, row){
                         var ret = "";
                         if (row.curGroupYn === 'Y') {
-                            ret = '<i class="dripicons-preview font-20 cursor" onclick="detailUser(' + row.userServiceUseSno + ');"></i>';
+                            if (groupPersonClcd === '00725200') {
+                                return '<a id="updateBtn" onclick="updateUser(' + row.userServiceUseSno + ');"> <i class="mdi mdi-square-edit-outline font-20 cursor mr-3"></i></a>' +
+                                    '<i class="dripicons-preview font-20 cursor" onclick="detailUser(' + row.userServiceUseSno + ');"></i>';
+                            } else {
+                                return '<i class="dripicons-preview font-20 cursor" onclick="detailUser(' + row.userServiceUseSno + ');"></i>';
+                            }
                         }
                         return ret;
                     }
@@ -347,6 +359,18 @@ function sendMessage(userServiceUseSno) {
 function showMngNoModal(sno){
     $("#manage-number-modal > .modal-dialog").load("/user/user/modal/mng_no", {userServiceUseSno : sno}, function() {
         $("#manage-number-modal").modal("show");
+    });
+}
+
+function showUseRegModal() {
+    $("#hospital-userReg-modal > .modal-dialog").load("/user/user/modal/user_det", {}, function () {
+        $("#hospital-userReg-modal").modal("show");
+    });
+}
+
+function updateUser(sno) {
+    $("#hospital-userMod-modal > .modal-dialog").load("/user/user/modal/user_det_mod", {userServiceUseSno: sno}, function () {
+        $("#hospital-userMod-modal").modal("show");
     });
 }
 

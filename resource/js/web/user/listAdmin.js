@@ -5,8 +5,10 @@ $(function() {
 function initDataTable(callback) {
 
     $.post('/user/user/api/init', function(data) {
-        let groupList = data.groupList;
 
+        let curSessionUserGrpId = $('form#listAdminForm #userGroupId').val();
+
+        let groupList = data.groupList;
         let groupDeptList = '';
         groupDeptList += "<select class='form-control d-inline-block ml-1 select-group' id='groupSno' onchange='refreshTable()'>";
         groupDeptList += "   <option value=''>" + i18n('dashboard.dropdown.all') + "</option>";
@@ -36,10 +38,22 @@ function initDataTable(callback) {
             "   <p id='emptyString'>" + i18n('common.txt.nodata') + "</p>" +
             "</div>";
 
+        let groupPersonClcd = data.groupPersonClcd;
         let pageSizeMsg = i18n('common.txt.search.pagesize');
         let pageChangeSelectHtml = '<select class="form-control mr-1"><option value="10">10</option><option value="20">20</option><option value="50">50</option></select>';
         let etcHtml = '<button href="javascript:void(0);" id="sendMsgBtn" onclick="sendMessage()" disabled="true" class="btn btn-primary btn-sm ml-2">' + i18n('users.alluser.btn.send.msg') + '</button>'
-        let lengthMenu = pageSizeMsg.replace("{0}", pageChangeSelectHtml) + ' ' + etcHtml;
+        let userRegHtml = '<button type="button" id="userRegBtn" onclick="showUseRegModal()" class="btn btn-primary btn-sm ml-2" >' + i18n('users.alluser.btn.user.req.msg') + '</button>';
+        let exportUserInfoHtml = '<button type="button" id="exportUserInfoBtn" onclick="showExportUserInfoModal()" class="btn btn-primary btn-sm ml-2" >' + i18n('users.alluser.btn.export.user.info.msg') + '</button>';
+        let lengthMenu = i18n('common.txt.search.pagesize').replace("{0}", pageChangeSelectHtml) + ' ' + etcHtml;
+
+        // 사용자 정보 추출 버튼 (슈퍼관리자만 표시)
+        if(curSessionUserGrpId === "00201990") {
+            lengthMenu += ' ' + exportUserInfoHtml;
+        }
+
+        if (groupPersonClcd === '00725200'){      //  임시
+            lengthMenu += ' ' + userRegHtml;
+        }
 
         let oTable = $("#users-datatable").dataTable({
             scrollX: true,
@@ -176,7 +190,12 @@ function initDataTable(callback) {
                     render: function (data, type, row) {
                         let serviceUseStcd = (typeof row.serviceUseStcd === 'string') ? row.serviceUseStcd : '';
                         if (serviceUseStcd === '00102100' || serviceUseStcd === '00102200' || serviceUseStcd === '00102300') {
-                            return '<i class="dripicons-preview font-20 cursor" onclick="detailUser(' + row.userServiceUseSno + ');"></i>';
+                            if (groupPersonClcd === '00725200') {
+                                return '<a id="updateBtn" onclick="updateUser(' + row.userServiceUseSno + ');"> <i class="mdi mdi-square-edit-outline font-20 cursor mr-3"></i></a>' +
+                                    '<i class="dripicons-preview font-20 cursor" onclick="detailUser(' + row.userServiceUseSno + ');"></i>';
+                            } else {
+                                return '<i class="dripicons-preview font-20 cursor" onclick="detailUser(' + row.userServiceUseSno + ');"></i>';
+                            }
                         } else {
                             return '';
                         }
@@ -265,6 +284,32 @@ function sendMessage() {
     }
 }
 
+function showUseRegModal() {
+    $("#hospital-userReg-modal > .modal-dialog").load("/user/user/modal/user_det", {}, function () {
+        $("#hospital-userReg-modal").modal("show");
+    });
+}
+
+function showExportUserInfoModal() {
+
+    // 선택한 추출대상 그룹 일련번호
+    let exportGroupSno = $("#groupSno option:selected").val();
+    if(isEmpty(exportGroupSno)){
+        $("#error-alert-modal").modal('show');
+        $("#e_content").html(i18n('users.alluser.export.user.info.pop.null.txt.title'));
+        return false;
+    }
+
+    $("#hospital-exportUserInfo-modal > .modal-dialog").load("/user/user/modal/export_user_info", {exportGroupSno : exportGroupSno}, function () {
+        $("#hospital-exportUserInfo-modal").modal("show");
+    });
+}
+
+function updateUser(sno) {
+    $("#hospital-userMod-modal > .modal-dialog").load("/user/user/modal/user_det_mod", {userServiceUseSno: sno}, function () {
+        $("#hospital-userMod-modal").modal("show");
+    });
+}
 
 function showHospitalListModal(sno) {
     $("#hospital-list-modal > .modal-dialog").load("/user/user/modal/hospital_list", {userServiceUseSno: sno}, function () {
@@ -279,6 +324,7 @@ function detailUser(sno) {
         $headerTitle.text(i18n('menu.txt.mgt.user.details'));
     }
 }
+
 
 
 function refreshTable() {

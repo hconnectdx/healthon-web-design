@@ -12812,7 +12812,7 @@ body.auth-fluid-pages[data-leftbar-compact-mode=condensed] {
   min-height: 10px !important; }
   .apex-charts text {
     font-family: "Noto Sans KR", "Ubuntu", sans-serif !important;
-    fill: #adb5bd; }
+     }
   .apex-charts .apexcharts-canvas {
     margin: 0 auto; }
 
@@ -12855,7 +12855,7 @@ body.auth-fluid-pages[data-leftbar-compact-mode=condensed] {
   fill: #fff !important; }
 
 .apexcharts-datalabels-group text {
-  fill: #adb5bd !important; }
+  fill: #aab8c5 !important; }
 
 .scatter-images-chart .apexcharts-legend {
   overflow: hidden !important;
