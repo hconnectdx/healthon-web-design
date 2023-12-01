@@ -310,15 +310,12 @@
 		</script>
 
 		<!-- Larkcomm 2023-05 -->
-		<h2>HealthOn - Web design</h2>
+		<h2>2023년 10월 healthon</h2>
 		<!-- <select id="pageSelect">
 			<option value="">선택</option>
-			<option value="index_2023_healthon.html">2023년 healthon</option>
+			<option value="index.html">2023년 healthon</option>
 			<option value="index_2023_lumiio.html">2023년 lumiio</option>
 			<option value="index_2022.html">2022년 healthon</option>
-			<option value="./page-2021/healthon/index.html">2021년 healthon 2.0</option>
-			<option value="./page-2021/healthon/index_adelie.html">2021년 healthon 1.5</option>
-			<option value="./page-2021/shine/index.html">2021년 shine</option>
 		</select>
 		<br />
 		<br /> -->
@@ -338,75 +335,139 @@
 					var newUrl = selectedOption;
 
 					// 페이지 이동
-					// window.location.href = newUrl;
-					window.open(newUrl);
+					window.location.href = newUrl;
 				}
 			}
 
 			// select 요소의 변경을 감지하여 handlePageChange 함수 호출
 			document.getElementById('pageSelect').addEventListener('change', handlePageChange);
 		</script>
-
 		<div class="section">
+			<h2 class="title">관리자 페이지 Status</h2>
 			<div class="content">
 				<table>
 					<colgroup>
-						<col style="width: 30%" />
 						<col style="width: 20%" />
-						<col style="width: 50%" />
+						<col style="width: 20%" />
+						<col style="width: 20%" />
+						<col style="width: 20%" />
+						<col style="width: 20%" />
 					</colgroup>
 					<thead>
 						<tr>
-							<th scope="col">프로젝트</th>
-							<th scope="col">링크</th>
+							<th scope="col">depth</th>
+							<th scope="col">내용</th>
+							<th scope="col">화면아이디</th>
+							<th scope="col">페이지링크</th>
+							<th scope="col">비고</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<td>HealthOn 3.1 2023년</td>
+							<td></td>
+							<td>사용자상세</td>
+							<td></td>
 							<td class="stat">
-								<a href="index_202310_healthon.html" target="_blank">LINK</a>
+								<a href="HG-WEB-APPLOG-05.html" target="_blank">HG-WEB-APPLOG-05.html</a>
 							</td>
+							<td></td>
 						</tr>
 						<tr>
-							<td>HealthOn 2.3~3.0 2023년</td>
+							<td></td>
+							<td>그룹관리</td>
+							<td></td>
 							<td class="stat">
-								<a href="index_2023_healthon.html" target="_blank">LINK</a>
+								<a href="HG-WEB-GR-02.html" target="_blank">HG-WEB-GR-02.html</a>
 							</td>
+							<td></td>
+						</tr>
+
+						<tr>
+							<td></td>
+							<td>음성/화상상담</td>
+							<td></td>
+							<td class="stat">
+								<a href="HG-WEB-TH-01.html" target="_blank">HG-WEB-TH-01.html</a>
+							</td>
+							<td></td>
+						</tr>
+						<!-- <tr>
+							<td></td>
+							<td>음성/화상상담 (텍스트)</td>
+							<td></td>
+							<td class="stat">
+								<a href="HG-WEB-TH-01-text.html" target="_blank">HG-WEB-TH-01.html</a>
+							</td>
+							<td></td>
+						</tr> -->
+
+						<tr>
+							<td></td>
+							<td>음성상담 진행</td>
+							<td></td>
+							<td class="stat">
+								<a href="HG-WEB-VOI-01.html" target="_blank">HG-WEB-VOI-01.html</a>
+							</td>
+							<td></td>
 						</tr>
 						<tr>
-							<td>Lumiio 2023년</td>
+							<td></td>
+							<td>음성상담 입장대기중</td>
+							<td></td>
 							<td class="stat">
-								<a href="index_2023_lumiio.html" target="_blank">LINK</a>
+								<a href="HG-WEB-VOI-01-wait.html" target="_blank">HG-WEB-VOI-01-wait.html</a>
 							</td>
+							<td></td>
 						</tr>
 						<tr>
-							<td>HealthOn 2.2 2022년</td>
+							<td></td>
+							<td>음성상담 dark</td>
+							<td></td>
 							<td class="stat">
-								<a href="index_2022.html" target="_blank">LINK</a>
+								<a href="HG-WEB-VOI-01-dark.html" target="_blank">HG-WEB-VOI-01-dark.html</a>
 							</td>
+							<td></td>
+						</tr>
+						<!-- <tr>
+							<td></td>
+							<td>음성상담 조회</td>
+							<td></td>
+							<td class="stat">
+								<a href="HG-WEB-VOI-01-modify.html" target="_blank">HG-WEB-VOI-01-modify.html</a>
+							</td>
+							<td></td>
+						</tr> -->
+						<tr>
+							<td></td>
+							<td>화상상담 진행</td>
+							<td></td>
+							<td class="stat">
+								<a href="HG-WEB-TH-03.html" target="_blank">HG-WEB-TH-03.html</a>
+							</td>
+							<td></td>
 						</tr>
 						<tr>
-							<td>HealthOn 2.0, 1.0 2021년</td>
+							<td></td>
+							<td>화상상담 dark</td>
+							<td></td>
 							<td class="stat">
-								<a href="./page-2021/healthon/index.html" target="_blank">LINK</a>
+								<a href="HG-WEB-TH-03-dark.html" target="_blank">HG-WEB-TH-03-dark.html</a>
 							</td>
+							<td></td>
 						</tr>
-						<tr>
-							<td>HealthOn 1.5 2021년</td>
+						<!-- <tr>
+							<td></td>
+							<td>화상상담 조회</td>
+							<td></td>
 							<td class="stat">
-								<a href="./page-2021/healthon/index_adelie.html" target="_blank">LINK</a>
+								<a href="HG-WEB-TH-03-modify.html" target="_blank">HG-WEB-TH-03-modify.html</a>
 							</td>
-						</tr>
-						<tr>
-							<td>HealthOn Shine 2021년</td>
-							<td class="stat">
-								<a href="./page-2021/shine/index.html" target="_blank">LINK</a>
-							</td>
-						</tr>
+							<td></td>
+						</tr> -->
 					</tbody>
 				</table>
 			</div>
 		</div>
+		<!-- //아델리 2022-07 -->
 	</body>
 </html>

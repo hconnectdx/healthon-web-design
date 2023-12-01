@@ -4,7 +4,7 @@
 	function e() {
 		(this.$body = l('body')),
 			(this.$modal = l('#event-modal')),
-			(this.$calendar = l('#calendar3')),
+			(this.$calendar = l('#calendar')),
 			(this.$formEvent = l('#form-event')),
 			(this.$btnNewEvent = l('#btn-new-event')),
 			(this.$btnDeleteEvent = l('#btn-delete-event')),
@@ -39,119 +39,104 @@
 			var e = new Date(l.now());
 			new FullCalendar.Draggable(document.getElementById('external-events'), {
 				itemSelector: '.external-event',
-
 				eventData: function (e) {
 					return { title: e.innerText, className: l(e).data('class') };
 				},
 			});
-
 			var t = [
 					{
 						title: '박정연',
 						start: new Date(2023, 10, 4),
-						className: 'bg-cal-dim',
+						className: 'bg-cal-dim bg-audio-text',
 					},
 					{
 						title: '최진성',
 						start: new Date(2023, 10, 4),
-						className: 'bg-cal-dim',
+						className: 'bg-cal-dim bg-video-text',
 					},
 					{
 						title: '최진성',
 						start: new Date(2023, 10, 4),
-						className: 'bg-cal-success',
+						className: 'bg-cal-success bg-audio-text',
 					},
 					{
 						title: '최진성',
 						start: new Date(2023, 10, 10),
-						className: 'bg-cal-dim',
+						className: 'bg-cal-dim bg-video-text',
 					},
 					{
 						title: '최진성',
 						start: new Date(2023, 10, 10),
-						className: 'bg-cal-warning',
+						className: 'bg-cal-warning bg-audio-text',
 					},
 					{
 						title: '최진성',
 						start: new Date(2023, 10, 10),
-						className: 'bg-cal-success',
+						className: 'bg-cal-success bg-video-text',
 					},
 					{
 						title: '최진성',
 						start: new Date(2023, 10, 10),
-						className: 'bg-cal-info',
+						className: 'bg-cal-info bg-audio-text',
 					},
 					{
 						title: '이주회',
 						start: new Date(2023, 10, 10),
-						className: 'bg-cal-dim',
+						className: 'bg-cal-dim bg-video-text',
 					},
 					{
 						title: '이주회',
 						start: new Date(2023, 10, 8),
-						className: 'bg-cal-warning',
+						className: 'bg-cal-warning bg-audio-text',
 					},
 					{
 						title: '이주회',
 						start: new Date(2023, 10, 8),
-						className: 'bg-cal-warning',
+						className: 'bg-cal-warning bg-video-text',
 					},
 					{
 						title: '이주회',
 						start: new Date(2023, 10, 8),
-						className: 'bg-cal-warning',
+						className: 'bg-cal-warning bg-audio-text',
 					},
 					{
 						title: '이주회',
 						start: new Date(2023, 10, 8),
-						className: 'bg-cal-info',
+						className: 'bg-cal-info bg-video-text',
 					},
 					{
 						title: '이주회',
 						start: new Date(2023, 10, 8),
-						className: 'bg-cal-info',
+						className: 'bg-cal-info bg-audio-text',
 					},
 					{
 						title: '이주회',
 						start: new Date(2023, 10, 8),
-						className: 'bg-cal-info',
+						className: 'bg-cal-info bg-video-text',
 					},
 					{
 						title: '이주회',
 						start: new Date(2023, 10, 8),
-						className: 'bg-cal-dim',
+						className: 'bg-cal-dim bg-audio-text',
 					},
 					{
 						title: '이주회',
 						start: new Date(2023, 10, 13),
-						className: 'bg-cal-success',
+						className: 'bg-cal-success bg-video-text',
 					},
 					{
 						title: '최진성',
 						start: new Date(2023, 10, 13),
-						className: 'bg-cal-success',
+						className: 'bg-cal-success bg-audio-text',
 					},
 					{
 						title: '최진성',
 						start: new Date(2023, 10, 14),
 						className: 'bg-cal-info',
-					},
-					{
-						title: '아델리',
-						start: new Date(2023, 10, 14),
-						className: 'bg-danger',
 					},
 				],
 				a = this;
 			(a.$calendarObj = new FullCalendar.Calendar(a.$calendar[0], {
-				//Phase 2.2
-				//아델리
-				dayMaxEvents: true,
-				dayMaxEvents: 3,
-				moreLinkContent: function (args) {
-					return '+' + args.num + '명';
-				},
-
 				slotDuration: '00:15:00',
 				slotMinTime: '08:00:00',
 				slotMaxTime: '19:00:00',
@@ -183,6 +168,11 @@
 				},
 				eventClick: function (e) {
 					a.onEventClick(e);
+				},
+				eventContent: function (arg) {
+					return {
+						html: `<div class="fc-daygrid-event-dot"></div><div class="fc-event-time">${arg.timeText}</div><div class="fc-event-title">${arg.event.title}</div>`,
+					};
 				},
 			})),
 				a.$calendarObj.render(),
@@ -219,8 +209,3 @@
 		'use strict';
 		window.jQuery.CalendarApp.init();
 	})();
-$('.nav-item a').on('click', function () {
-	setTimeout(function () {
-		window.jQuery.CalendarApp.init();
-	}, 100);
-});

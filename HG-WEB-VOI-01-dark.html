@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>화상통화 연결</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+		<meta content="Coderthemes" name="author" />
+		<!-- App favicon -->
+		<link rel="shortcut icon" href="resource/images/favicon.ico" />
+
+		<!-- App css -->
+		<link href="resource/css/icons.min.css" rel="stylesheet" type="text/css" />
+		<link href="resource/css/app-dark.min.css" rel="stylesheet" type="text/css" />
+		<link href="resource/css/vendor/responsive.bootstrap4.css" rel="stylesheet" type="text/css" />
+		<link href="resource/lib/simplelightbox/simpleLightbox.min.css" rel="stylesheet" type="text/css" />
+		<link href="resource/css/base.css" rel="stylesheet" type="text/css" />
+		<link href="resource/css/common.css" rel="stylesheet" type="text/css" id="common-style" />
+		<link href="resource/css/page/alluser_consult.css" rel="stylesheet" type="text/css" id="consult-style" />
+		<link href="resource/css/bootstrap4-toggle.min.css" rel="stylesheet" />
+		<link href="resource/css/vendor/summernote-bs4.css" rel="stylesheet" />
+	</head>
+
+	<body
+		class="loading"
+		data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'
+	>
+		<div class="consultation">
+			<div class="wrapper p-3">
+				<div class="row h-100">
+					<div class="col-12 col-lg-3 h-100">
+						<div class="card h-100">
+							<div class="card-body p-0">
+								<div class="card m-0" style="background-color: #693cf8 !important">
+									<div class="card-body p-4" style="min-height: 220px">
+										<div class="d-flex align-items-center justify-content-center">
+											<div class="text-center">
+												<span class="image-preview">
+													<a href="">
+														<img src="./resource/images/users/avatar-10.jpg" style="height: 100px" alt="" class="rounded-circle img-thumbnail" />
+													</a>
+												</span>
+												<h3 class="m-0 mt-3 text-white">00:00:05</h3>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="media m-0 m-3">
+									<div class="media-body">
+										<div class="p-1 pl-3 pr-3 mb-2 bg-light rounded d-flex align-items-center">
+											닉네임:
+											<span class="h4">건강이</span>
+											<span class="ml-10">실명: <span class="h4">김건강</span></span
+											><span class="badge badge-info ml-2">남성</span>
+										</div>
+										<ul class="mb-0 list-inline">
+											<li class="position-relative mt-1 pl-3">
+												<i class="uil-gift font-16 text-primary position-absolute" style="left: -0px"></i>
+												<span class="mb-0 font-13">1982년 05월 25일생 (41)</span>
+											</li>
+											<li class="position-relative mt-1 pl-3">
+												<i class="uil-phone font-16 text-primary position-absolute" style="left: -0px"></i>
+												<span class="mb-0 font-13">+82 010111112222</span>
+											</li>
+											<li class="position-relative mt-1 pl-3">
+												<i class="mdi mdi-email-outline font-16 text-primary position-absolute" style="left: -0px"></i>
+												<span class="mb-0 font-13">hj12jjang@hconnect.co.kr</span>
+											</li>
+											<li class="position-relative mt-1 pl-3">
+												<i class="uil-user-circle font-16 text-primary position-absolute" style="left: -0px"></i>
+												<span class="mb-0 font-13">미등록</span>
+											</li>
+											<li class="position-relative mt-1 pl-3">
+												<i class="mdi mdi-account-circle font-16 text-primary position-absolute" style="left: -0px"></i>
+												<span class="mb-0 font-13">펭전문가</span>
+											</li>
+											<li class="position-relative mt-1 pl-3">
+												<i class="mdi mdi-tag-outline font-16 text-primary position-absolute" style="left: -0px"></i>
+												<span class="mb-0 font-13">펭귄번호: 12345678</span>
+											</li>
+											<li class="position-relative mt-1 pl-3">
+												<i class="mdi mdi-note-text-outline font-16 mr-1 text-primary position-absolute" style="left: -0px"></i>
+												<span class="mb-0 font-13">과거 oo수술 이력있음. 당뇨, 고협압 가족력 있음. 당뇨약, 혈압약 복용중</span>
+											</li>
+										</ul>
+									</div>
+									<!-- end media-body-->
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-lg-9 h-100 overflow-auto" data-simplebar id="myScrollElement">
+						<div class="card">
+							<div class="card-body">
+								<div class="form-group mb-3 d-flex justify-content-between">
+									<strong class="font-20 mr-5">8/10일 영양상담 기록8/10일 영양상담 기록8/10일 영양상담 기록8/10일 영양상담 기록8/10일 영양상담 기록</strong>
+									<span class="font-13" style="white-space: nowrap">[의사] 홍길동 <span class="font-11 mx-1">|</span> 2023-11-17 10:00</span>
+								</div>
+								<div class="form-group mb-3">
+									8/10 영양상담 진행함. 탄수화물 단백질 지방 … 8/10 영양상담 진행함. 탄수화물 단백질 지방 … 8/10 영양상담 진행함. 탄수화물 단백질 지방 … 8/10
+									영양상담 진행함. 탄수화물 단백질 지방 … 8/10 영양상담 진행함. 탄수화물 단백질 지방 … 8/10 영양상담 진행함. 탄수화물 단백 질 지방 …
+								</div>
+								<div class="d-flex align-items-center justify-content-between">
+									<div class="d-flex align-items-center"></div>
+									<div class="d-flex align-items-center">
+										<button type="button" class="ml-1 btn btn-light">삭제</button>
+										<button type="button" class="ml-1 btn btn-primary">수정</button>
+									</div>
+								</div>
+								<hr class="my-5" />
+								<div class="form-group mb-3 d-flex justify-content-between">
+									<strong class="font-20 mr-5">8/10일 영양상담 기록8/10일 영양상담 기록8/10일 영양상담 기록8/10일 영양상담 기록8/10일 영양상담 기록</strong>
+									<span class="font-13" style="white-space: nowrap">[의사] 홍길동 <span class="font-11 mx-1">|</span> 2023-11-17 10:00</span>
+								</div>
+								<div class="form-group mb-3">
+									<div class="viewContent">
+										<p>
+											<span style="color: rgb(61, 133, 198); font-size: 12pt"
+												>- 서울대병원, 초발정신증 및 정신증 고위험군 환자 대상 ‘MRI 질감 분석’최초 적용<br /></span
+											><span style="color: rgb(61, 133, 198); font-size: 12pt"
+												>- 정신증 고위험군, 질감지표↑...초발정신증과 달리 전두엽 회색질 부피·두께 변화는 없어<br /></span
+											><br />
+											<span style="font-size: 12pt"
+												>&nbsp; 국내 연구진이 조현병 전단계 및 초기 조현병 환자의 미세한 뇌조직 변화를 질감 분석을 통해 포착했다. 일반 뇌영상 분석으로는 확인할
+												수 없었던 이 미세한 변화는 조현병 조기 진단의 가능성을 열어줄 것으로 기대된다.</span
+											><span style="font-size: 12pt"><br /></span
+											><span style="font-size: 12pt"
+												><br />&nbsp; 서울대병원 정신건강의학과 권준수·분당서울대병원 문선영 교수팀이 뇌자기공명(MRI) 질감 분석을 조기 조현병 환자들에게 최초로
+												적용해 뇌조직을 분석한 결과를 27일 발표했다.</span
+											><span style="font-size: 12pt"><br /></span>
+										</p>
+										<p><br /></p>
+										<span style="font-size: 12pt"
+											>&nbsp; 과거 정신분열병으로도 불렸던 ‘조현병’은 망상, 환청, 와해된 언어 및 행동과 같은 증상과 사회적 기능 장애를 동반하는 대표적인 중증
+											정신질환이다. 발병과 함께 회백질 감소 등 다양한 뇌조직의 변화가 발견된다. 시간이 갈수록 인지기능이 떨어질 수 있어서 조기 발견과 발병 직후
+											4~5년간 치료가 매우 중요한데, 조현병 전단계에서 초기에 일어나는 뇌 변화에 대해서는 잘 알려져 있지 않다.</span
+										><span style="font-size: 12pt"><br /></span>
+										<p><br /></p>
+										<span style="font-size: 12pt"
+											>&nbsp; 연구팀은 ▲초발정신증군(조현병 초기 단계, 101명) ▲정신증 고위험군(조현병 전단계, 85명) ▲대조군(147명)의 MRI 영상을 바탕으로
+											조현병과 관련된 뇌 영역에 대한 질감 분석을 실시해 영역별 회색질 부피·두께와 질감 특성의 연관성을 조사했다.</span
+										><span style="font-size: 12pt"><br /></span>
+										<p><br /></p>
+										<span style="font-size: 12pt"
+											>&nbsp; 질감 분석(Texture analysis)이란, MRI 영상을 구성하는 작은 3차원 단위(복셀) 중 인접한 단위들의 상호관계를 조사하여 질감 특성을
+											분석하는 기법이다. 이 기법은 뇌조직의 부피 변화나 신호 강도에 기반한 분석으로는 감지하기 어려운 미세한 변화까지 포착할 수 있다.</span
+										><span style="font-size: 12pt"><br /></span>
+										<p><br /></p>
+										<span style="font-size: 12pt"
+											>&nbsp; 분석 결과, 초발정신증군은 대조군에 비해 전두엽을 비롯한 뇌 부위에서 회색질 부피 및 두께의 유의한 감소를 보였다.</span
+										>
+										<p>
+											<span style="font-size: 12pt"><br /></span>
+										</p>
+										<span style="font-size: 12pt"
+											>&nbsp; 반면 정신증 고위험군에서는 회색질 부피 및 두께 변화는 발견되지 않았지만, 전두엽 부위에서 회색질의 복잡성 및 상호의존정도을
+											반영하는 ‘IMC1 질감지표’가 대조군 및 초발정신증군에 비해 뚜렷하게 증가하는 결과가 나타났다.</span
+										>
+										<p>
+											<span style="font-size: 12pt"><br /></span
+											><span style="font-size: 12pt"
+												>&nbsp; IMC1 지표는 뇌조직의 국소영역의 복잡성이 크고, 영역 간 상호의존정도가 적을수록 그 값이 증가한다.<br />
+												<br
+											/></span>
+										</p>
+										<p style="text-align: center">
+											<span style="font-size: 10pt"
+												><img
+													src="http://www.snuh.org/upload/editor/images/000072/20231031101209312_5WSJB2VO.png"
+													title=""
+													alt="그래프"
+													style="vertical-align: baseline; border: 0px solid rgb(0, 0, 0); width: 100%"
+												/><br />
+												[그래프] 정신증 고위험군의 전두엽 각 부위에서 양성 증상 심각도 및 IMC1 지표의 상관관계.<br />양성 증상 심각도는 IMC1 지표가 증가할수록
+												감소하는 양상이 나타났다.</span
+											>
+										</p>
+										<p>
+											<span style="font-size: 12pt"><br /></span>
+										</p>
+										<span style="font-size: 12pt"
+											>&nbsp; 특히 정신증 고위험군에서 전두엽 IMC1 지표는 양성 증상의 심각도와 음의 상관관계를 보였다. 즉 전두엽 회색질 국소영역의 복잡성이
+											증가할수록 양성 증상의 정도가 덜했던 것이다.</span
+										>
+										<p>
+											<span style="font-size: 12pt"><br /></span>
+										</p>
+										<span style="font-size: 12pt"
+											>&nbsp; 이 결과는 정신증 고위험군 단계에서 신경가소성의 일종인 ‘피질재구성’ 현상의 가능성을 시사한다는 것이 연구팀의 설명이다.
+											신경가소성은 뇌가 환경·상황에 따라 스스로 신경구조와 회로를 바꾸는 현상을 말한다.</span
+										>
+										<p>
+											<span style="font-size: 12pt"><br /></span>
+										</p>
+										<span style="font-size: 12pt"
+											>&nbsp; 연구팀은 정신증 고위험군에서 회색질의 부피와 두께의 변화가 없더라도, 높은 민감도를 가진 ‘질감분석’을 통해 조현병 증상에 관련된
+											미세한 회색질 변화를 포착하여 조기 치료에 도움을 받을 수 있다고 강조했다.</span
+										>
+										<p>
+											<span style="font-size: 12pt"><br /></span>
+										</p>
+										<span style="font-size: 12pt"
+											>&nbsp; 문선영 교수(제1저자)는 “이번 연구는 조기 정신증 환자의 뇌에서 일어나는 미세한 변화를 보다 민감하게 파악할 수 있는 새로운 도구를
+											제시한다”고 연구 의의를 밝혔다.</span
+										>
+										<p>
+											<span style="font-size: 12pt"><br /></span>
+										</p>
+										<span style="font-size: 12pt"
+											>&nbsp; 권준수 교수는 “정신증 고위험군을 비롯한 조기 정신증에서 일어나는 초기의 뇌 구조적 변화를 제대로 이해하면 초기 진단 및 치료에 더욱
+											효과적인 방법을 제시할 수 있을 것”이라며 “질감 분석은 특히 정신증 고위험군이 정신병으로 전환을 조기에 방지하는데 도움을 줄 것으로
+											예상된다”고 말했다.</span
+										>
+										<p>
+											<span style="font-size: 12pt"><br /></span>
+										</p>
+										<span style="font-size: 12pt">&nbsp; 한편, 이번 연구 결과는 국제학술지 ‘분자 정신의학(Molecular Psychiatry)’ 최신호에 발표됐다.</span>
+										<p style="text-align: center">
+											<span style="font-size: 10pt"><br /></span
+											><img
+												src="http://www.snuh.org/upload/editor/images/000072/20231031101324991_L4EODLKK.jpg"
+												title=""
+												alt=" 서울대병원 권준수 교수, 분당서울대병원 문선영 교수"
+												style="vertical-align: baseline; border: 0px solid rgb(0, 0, 0); width: 50%"
+											/><span style="font-size: 10pt"><br />[사진 왼쪽부터] 서울대병원 권준수 교수, 분당서울대병원 문선영 교수</span>
+										</p>
+										<p></p>
+
+										<!-- viewFileWrap -->
+										<div class="viewFileWrap clearFix">
+											<em class="colorPoint">파일첨부</em>
+
+											<span><a href="/board/B003/boardDownload.do?bbs_ano=502" class="">[논문] detox.pdf</a></span>
+										</div>
+										<!-- //viewFileWrap -->
+									</div>
+								</div>
+								<div class="d-flex align-items-center justify-content-between">
+									<div class="d-flex align-items-center"></div>
+									<div class="d-flex align-items-center">
+										<button type="button" class="ml-1 btn btn-light">삭제</button>
+										<button type="button" class="ml-1 btn btn-primary">수정</button>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="card mb-0">
+							<div class="card-body">
+								<div class="form-group mb-3">
+									<div class="d-flex justify-content-between">
+										<label class="mb-0 font-14 text-dark"><b style="color: #6c757d">상담노트 제목</b></label>
+										<small>0/30</small>
+									</div>
+									<div class="mt-1">
+										<input type="text" class="form-control" id="f-c-6" placeholder="상담노트 제목을 입력하세요." />
+									</div>
+								</div>
+								<div class="form-group mb-3">
+									<div class="d-flex justify-content-between">
+										<label class="mb-0 font-14 text-dark"><b style="color: #6c757d">상담노트 내용</b></label>
+										<small>0/1,000</small>
+									</div>
+									<div class="mt-1">
+										<textarea id="f-c-7" class="form-control summernote-basic" rows="10" placeholder="상담노트 내용을 입력하세요."></textarea>
+									</div>
+								</div>
+
+								<div class="d-flex align-items-center justify-content-between pb-3">
+									<div class="d-flex align-items-center">
+										<button type="button" class="ml-1 btn btn-outline-primary"><i class="mdi mdi-plus"></i>노트 추가</button>
+									</div>
+									<div class="d-flex align-items-center">
+										<button type="button" class="ml-1 btn btn-light">취소</button>
+										<button type="button" class="ml-1 btn btn-primary">저장</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<script
+						src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+						integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+						crossorigin="anonymous"
+						referrerpolicy="no-referrer"
+					></script>
+					<script>
+						$(document).ready(function () {
+							setTimeout(() => {
+								var element = $('.simplebar-content-wrapper');
+								element.scrollTop(element.prop('scrollHeight'));
+							}, 100);
+						});
+					</script>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="card">
+						<div class="card-body mt-n1 mb-n1">
+							<div class="row d-flex align-items-center">
+								<div class="col-xl-7 col-lg-7 col-md-12 col-xs-12">
+									<div class="form-row form-inline custom-inline-form">
+										<div class="d-flex align-items-center mr-3">
+											<label class="col-form-label ml-2 mr-2">Audio</label>
+											<select class="form-control" style="width: 220px">
+												<option value="1">기본값 - 마이크 (Realtek High Definition Audio)</option>
+												<option value="2">마이크 (S2240L High Definition Audio)</option>
+												<option value="3">마이크 (2-NVIDIA High Definition Audio)</option>
+											</select>
+										</div>
+										<div class="d-flex align-items-center">
+											<!-- <p class="m-0 mr-2">상담진행시간 <span class="ml-1">00:00:50</span></p> -->
+											<button type="button" class="ml-1 btn btn-primary"><i class="mdi mdi-record-circle-outline font-16 mr-1"></i>녹음</button>
+											<button type="button" class="ml-1 btn btn-outline-primary"><i class="mdi mdi-stop font-16 mr-1"></i>완료</button>
+											<button type="button" class="ml-1 btn btn-outline-primary"><i class="mdi mdi-close font-16 mr-1"></i>취소</button>
+											<button type="button" class="ml-1 btn btn-danger"><i class="mdi mdi-record-circle-outline font-16 mr-1"></i>녹음중</button>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-5 col-lg-5 col-md-12 col-xs-12 th-bottom-wrap">
+									<div class="text-right">
+										<input
+											type="checkbox"
+											checked
+											data-toggle="toggle"
+											data-style="ios"
+											data-size="lg"
+											data-onstyle="danger"
+											data-on="<i class='mdi mdi-microphone'></i>"
+											data-off="<i class='mdi mdi-microphone-off'></i>"
+										/>
+										<button class="btn btn-danger btn-rounded width-150 th-btn-end">
+											<i class="mdi mdi-phone-hangup font-16 text-white mr-1"></i>
+											상담종료
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- end card-body-->
+					</div>
+					<!-- end card-->
+				</div>
+				<!-- end col-->
+			</div>
+		</div>
+		<!-- end row -->
+		<!-- END wrapper -->
+
+		<!-- bundle -->
+		<script src="resource/js/vendor.min.js"></script>
+		<script src="resource/js/app.min.js"></script>
+		<script src="resource/js/vendor/apexcharts.min.js"></script>
+		<script src="resource/js/vendor/fullcalendar.min.js"></script>
+		<script src="resource/js/vendor/jquery.dataTables.min.js"></script>
+		<script src="resource/js/vendor/dataTables.bootstrap4.js"></script>
+		<script src="resource/js/vendor/dataTables.responsive.min.js"></script>
+		<script src="resource/js/vendor/responsive.bootstrap4.min.js"></script>
+		<script src="resource/js/vendor/dataTables.checkboxes.min.js"></script>
+		<script src="resource/js/vendor/dropzone.min.js"></script>
+		<script src="resource/js/vendor/summernote-bs4.min.js"></script>
+		<script src="resource/js/ui/component.fileupload.js"></script>
+		<script src="resource/lib/simplelightbox/simpleLightbox.min.js"></script>
+		<script src="resource/js/common.js"></script>
+
+		<script src="resource/js/bootstrap4-toggle.min.js"></script>
+		<script>
+			$(document).ready(function () {
+				$('.summernote-basic').each(function () {
+					$(this).summernote({
+						height: 230,
+					});
+				});
+			});
+		</script>
+		<style>
+			.toggle.ios,
+			.toggle-on.ios,
+			.toggle-off.ios {
+				border-radius: 20rem;
+			}
+
+			.toggle.ios .toggle-handle {
+				border-radius: 20rem;
+			}
+
+			.btn {
+				line-height: 1.3;
+				padding: 0.5rem 1rem !important;
+			}
+
+			.btn-vc-share {
+				padding-left: 14px !important;
+				padding-right: 14px !important;
+			}
+
+			.btn-vc-chat {
+				padding-left: 14px !important;
+				padding-right: 14px !important;
+			}
+		</style>
+		<style>
+			.consultation {
+				display: flex;
+				flex-direction: column;
+				height: 100vh;
+			}
+			@media (max-width: 992px) {
+				.consultation {
+					height: 100%;
+				}
+			}
+		</style>
+	</body>
+</html>

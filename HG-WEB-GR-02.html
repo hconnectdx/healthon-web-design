@@ -909,6 +909,31 @@
 																	<p class="font-12">※ 활성 메뉴 제일 상단에 놓인 메뉴는 APP 그룹카드 내 제일 좌측에 표기됩니다</p>
 																</div>
 																<!-- /그룹메뉴설정 타이틀 -->
+
+																<!-- 사용자상세 화면 설정 -->
+																<div class="row bg-dragula m-0 mb-2 px-2 align-items-center" style="padding: 15px 0">
+																	<!-- 사용자상세 화면 설정 툴팁 -->
+																	<div class="col-md-6" id="hover-popover01">
+																		<b>▶ 사용자상세 화면 설정</b>
+																		<i
+																			class="dripicons-question font-16 pr-1"
+																			data-toggle="popover"
+																			data-trigger="hover"
+																			data-html="true"
+																			title=""
+																			data-content="text"
+																			data-original-title="사용자상세 화면 설정"
+																		></i>
+																	</div>
+																	<!-- 사용자상세 화면 설정 선택 -->
+																	<div class="col-md-6 text-right">
+																		<button type="button" class="btn btn-primary form-control w-auto" id="mngEmailCheckBtn" onclick="HG_WEB_GR_02_02()">
+																			항목 설정
+																		</button>
+																	</div>
+																</div>
+																<!-- /사용자상세 화면 설정 -->
+
 																<!-- 그룹카드 하단 메뉴 -->
 																<div class="row bg-dragula m-0 mb-2 px-2 align-items-center" style="padding: 15px 0">
 																	<!-- 그룹카드 하단 메뉴 툴팁 -->
@@ -1688,8 +1713,95 @@
 					<!-- /.modal-dialog -->
 				</div>
 
+				<div
+					id="HG-WEB-GR-02-02"
+					class="modal fade"
+					tabindex="-1"
+					role="dialog"
+					aria-labelledby="schedule-create-modalLabe"
+					aria-hidden="true"
+					data-backdrop="static"
+				>
+					<div class="modal-dialog modal-dialog-centered" style="max-width: 1000px">
+						<div class="modal-content">
+							<div class="modal-header modal-colored-header bg-primary">
+								<h4 class="modal-title" id="schedule-create-modalLabel">사용자상세 화면 설정</h4>
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+							</div>
+							<div class="modal-body pr-0 pl-0" data-simplebar style="max-height: 620px">
+								<div class="row ml-2 mr-2">
+									<div class="col-12 col-md-8">
+										<div class="card">
+											<div class="card-body">
+												<h4 class="card-title"><span class="text-dark">노출 항목 </span></h4>
+												<div id="card-left" class="card-list card-list--left">
+													<div class="card-list-item">
+														혈압 <button><i class="mdi mdi-close"></i></button>
+													</div>
+													<div class="card-list-item">
+														혈당<button><i class="mdi mdi-close"></i></button>
+													</div>
+													<div class="card-list-item">
+														식사<button><i class="mdi mdi-close"></i></button>
+													</div>
+													<div class="card-list-item">
+														걷기<button><i class="mdi mdi-close"></i></button>
+													</div>
+													<div class="card-list-item">
+														인슐린<button><i class="mdi mdi-close"></i></button>
+													</div>
+													<div class="card-list-item w-25">
+														복약<button><i class="mdi mdi-close"></i></button>
+													</div>
+													<div class="card-list-item">
+														수면<button><i class="mdi mdi-close"></i></button>
+													</div>
+													<div class="card-list-item">
+														식사다이어리<button><i class="mdi mdi-close"></i></button>
+													</div>
+													<div class="card-list-item">
+														심박수<button><i class="mdi mdi-close"></i></button>
+													</div>
+													<div class="card-list-item w-25">
+														산소포화도<button><i class="mdi mdi-close"></i></button>
+													</div>
+													<div class="card-list-item w-25">
+														건강 측정<button><i class="mdi mdi-close"></i></button>
+													</div>
+													<div class="card-list-item">
+														줄넘기<button><i class="mdi mdi-close"></i></button>
+													</div>
+													<div class="card-list-item">
+														혈액검사<button><i class="mdi mdi-close"></i></button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-12 col-md-4">
+										<div class="card">
+											<div class="card-body">
+												<h4 class="card-title"><span class="text-dark">미노출 항목 </span></h4>
+												<div id="card-right" class="card-list card-list--right"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="modal-footer">
+								<button type="button" class="ml-1 btn btn-light" onclick="">취소</button>
+								<button type="button" class="ml-1 btn btn-primary" onclick="">확인</button>
+							</div>
+						</div>
+						<!-- /.modal-content -->
+					</div>
+					<!-- /.modal-dialog -->
+				</div>
+
 				<div style="position: fixed; bottom: 0; right: 500px; background: rgba(0, 0, 0, 0.5); width: 500px; padding: 20px; z-index: 100">
 					<a href="javascript:void(0)" onclick="HG_WEB_GR_02_01()" style="color: #fff">HG-WEB-GR-02-01 : 진료과 설정</a><br />
+					<a href="javascript:void(0)" onclick="HG_WEB_GR_02_02()" style="color: #fff">HG-WEB-GR-02-02 : 항목 설정</a><br />
 				</div>
 				<!-- //Phase 2.2 -->
 				<!-- //아델리 -->
@@ -1772,6 +1884,30 @@
 						} else {
 							$('.select-gr-wrap').hide();
 						}
+					});
+
+					function HG_WEB_GR_02_02() {
+						$('#HG-WEB-GR-02-02').modal('show');
+					}
+				</script>
+				<script src="resource/js/vendor/Sortable.min.js"></script>
+				<script>
+					var cardLeft = document.getElementById('card-left'),
+						cardRight = document.getElementById('card-right');
+
+					new Sortable(cardLeft, {
+						group: 'shared', // set both lists to same group
+						animation: 150,
+					});
+
+					new Sortable(cardRight, {
+						group: 'shared',
+						animation: 150,
+					});
+
+					$('.card-list-item button').on('click', function () {
+						var contents = $(this).parents('.card-list-item');
+						$('#card-right').append(contents);
 					});
 				</script>
 			</div>

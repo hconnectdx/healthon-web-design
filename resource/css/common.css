@@ -30,7 +30,7 @@
 	/* border-bottom: 2px solid #7453ff; */
 }
 
-body[data-leftbar-theme="dark"] .side-nav .side-nav-second-level li.mm-active > a {
+body[data-leftbar-theme='dark'] .side-nav .side-nav-second-level li.mm-active > a {
 	color: #33d3d3 !important;
 }
 
@@ -57,7 +57,7 @@ body[data-leftbar-theme="dark"] .side-nav .side-nav-second-level li.mm-active > 
 }
 
 .breadcrumb-item a {
-	font-family: "Noto Sans KR", "Ubuntu", sans-serif;
+	font-family: 'Noto Sans KR', 'Ubuntu', sans-serif;
 }
 
 .w-pro-40 {
@@ -70,8 +70,8 @@ table.dataTable thead .sorting_asc_disabled:before,
 table.dataTable thead .sorting_desc:before,
 table.dataTable thead .sorting_desc_disabled:before {
 	right: 0.5rem;
-	content: "\F0360";
-	font-family: "Material Design Icons";
+	content: '\F0360';
+	font-family: 'Material Design Icons';
 	font-size: 1rem;
 	top: 6px;
 }
@@ -82,8 +82,8 @@ table.dataTable thead .sorting_asc_disabled:after,
 table.dataTable thead .sorting_desc:after,
 table.dataTable thead .sorting_desc_disabled:after {
 	right: 0.5em;
-	content: "\F035D";
-	font-family: "Material Design Icons";
+	content: '\F035D';
+	font-family: 'Material Design Icons';
 	top: 12px;
 	font-size: 1rem;
 }
@@ -306,7 +306,7 @@ div.dataTables_scrollBody {
 	margin-right: 0.375rem;
 }
 
-.form-inline.custom-inline-form .combine-wrapper input[type="text"] {
+.form-inline.custom-inline-form .combine-wrapper input[type='text'] {
 	width: 130px;
 	max-width: 100%;
 }
@@ -328,13 +328,13 @@ div.dataTables_scrollBody {
 		flex: 1;
 	}
 
-	.form-inline.custom-inline-form .form-group .combine-wrapper input[type="text"],
+	.form-inline.custom-inline-form .form-group .combine-wrapper input[type='text'],
 	.form-inline.custom-inline-form .form-group .form-control {
 		flex-grow: 1;
 		width: 100%;
 	}
 
-	.form-inline.custom-inline-form.monitor-form .form-group .combine-wrapper input[type="text"],
+	.form-inline.custom-inline-form.monitor-form .form-group .combine-wrapper input[type='text'],
 	.form-inline.custom-inline-form.monitor-form .form-group .form-control {
 		width: 0;
 	}
@@ -429,11 +429,11 @@ div.dataTables_scrollBody {
 }
 
 .slbArrow.next:before {
-	content: "\56";
+	content: '\56';
 }
 
 .slbArrow.prev:before {
-	content: "\55";
+	content: '\55';
 }
 
 .slbCloseBtn {
@@ -508,7 +508,7 @@ div.dataTables_scrollBody {
 	width: calc(1.875rem + 2px);
 	height: calc(1.875rem + 2px);
 	padding-right: 2.2rem;
-	content: "\e8ca";
+	content: '\e8ca';
 	font-family: unicons;
 	font-style: normal;
 	font-weight: 400;
@@ -596,6 +596,10 @@ div.dataTables_scrollBody {
 	margin-right: 40px;
 }
 
+#video-consultation {
+	display: none;
+}
+
 #video-aside {
 	display: none;
 }
@@ -610,6 +614,17 @@ div.dataTables_scrollBody {
 	color: #ffffff;
 	background-color: #0a59cf;
 	border-color: #0a59cf;
+}
+
+.btn-vc-modify {
+	color: #fa5c7c;
+	background-color: #ffffff;
+	border-color: #ffffff;
+}
+.btn-vc-modify:hover {
+	color: #ffffff;
+	background-color: #fa5c7c;
+	border-color: #fa5c7c;
 }
 
 .btn-vc-chat.focus,
@@ -683,7 +698,7 @@ select.form-control::-ms-expand {
 }
 
 .select.form-control[multiple],
-.select.form-control[size]:not([size="1"]) {
+.select.form-control[size]:not([size='1']) {
 	background-image: none;
 }
 
@@ -739,7 +754,7 @@ select.form-control::-ms-expand {
 	color: #d3d3d3;
 }
 
-[class*="btn-outline"] {
+[class*='btn-outline'] {
 	border: 1px solid;
 	padding: 8.5px 13px 9.5px !important;
 	background-color: #fff;
@@ -864,7 +879,7 @@ button i {
 }
 
 .mCustomScrollBox:after {
-	content: "";
+	content: '';
 	display: block;
 	position: absolute;
 	top: 0;
@@ -877,7 +892,7 @@ button i {
 }
 
 .mCustomScrollBox::before {
-	content: "";
+	content: '';
 	display: block;
 	position: absolute;
 	top: 0;
@@ -1185,13 +1200,26 @@ button i {
 	}
 }
 
-.timeline-box--danger {
+/* .timeline-box--danger {
 	border: 1px solid #fa5c7c;
 }
-
 .timeline-solo .timeline-lg-item .timeline-desk .timeline-box--danger .arrow {
 	border-right-color: #fa5c7c !important;
 }
+
+.timeline-box--info {
+	border: 1px solid #39afd1;
+}
+.timeline-solo .timeline-lg-item .timeline-desk .timeline-box--info .arrow {
+	border-right-color: #39afd1 !important;
+}
+
+.timeline-box--primary {
+	border: 1px solid #7453ff;
+}
+.timeline-solo .timeline-lg-item .timeline-desk .timeline-box--primary .arrow {
+	border-right-color: #7453ff !important;
+} */
 
 .fc-popover-body.popover-body {
 	background-color: #fff;
@@ -1209,9 +1237,9 @@ button i {
 	position: absolute;
 	top: 0;
 	right: 2px;
-	content: "\F05D6";
+	content: '\F05D6';
 	display: inline-block;
-	font: normal normal normal 24px/1 "Material Design Icons";
+	font: normal normal normal 24px/1 'Material Design Icons';
 	font-size: inherit;
 	text-rendering: auto;
 	line-height: inherit;
@@ -1223,21 +1251,109 @@ button i {
 }
 .timeline-solo .timeline-box.timeline-box--danger:before {
 	position: absolute;
-	top: 0;
-	right: 2px;
-	content: "\F05D6";
+	top: 3px;
+	right: 9px;
+	content: '\F02FC';
 	display: inline-block;
-	font: normal normal normal 24px/1 "Material Design Icons";
+	font: normal normal normal 24px/1 'Material Design Icons';
 	font-size: inherit;
 	text-rendering: auto;
 	line-height: inherit;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	color: #fa5c7c;
-	font-size: 22px;
+	font-size: 27px;
 	line-height: 1.4;
 }
-
+.timeline-solo .timeline-box.timeline-box--info:before {
+	position: absolute;
+	top: 3px;
+	right: 9px;
+	content: '\F03F2';
+	display: inline-block;
+	font: normal normal normal 24px/1 'Material Design Icons';
+	font-size: inherit;
+	text-rendering: auto;
+	line-height: inherit;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: #39afd1;
+	font-size: 27px;
+	line-height: 1.4;
+}
+.timeline-solo .timeline-box.timeline-box--primary:before {
+	position: absolute;
+	top: 3px;
+	right: 9px;
+	content: '\F0567';
+	display: inline-block;
+	font: normal normal normal 24px/1 'Material Design Icons';
+	font-size: inherit;
+	text-rendering: auto;
+	line-height: inherit;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: #7453ff;
+	font-size: 27px;
+	line-height: 1.4;
+}
+.fc-daygrid-event-dot {
+	display: none;
+}
+.bg-audio-text:before {
+	/* position: absolute;
+	top: 0;
+	right: 2px; */
+	content: '음';
+	display: inline-block;
+	margin: 0 4px 0 4px;
+	color: #fff;
+}
+.bg-audio:before {
+	/* position: absolute;
+	top: 0;
+	right: 2px; */
+	content: '\F03F2';
+	display: inline-block;
+	font: normal normal normal 24px/1 'Material Design Icons';
+	font-size: inherit;
+	text-rendering: auto;
+	line-height: inherit;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: #fff;
+	font-size: 16px;
+	line-height: 1.4;
+	margin-right: 4px;
+	margin-left: 4px;
+}
+.bg-video-text:before {
+	/* position: absolute;
+	top: 0;
+	right: 2px; */
+	content: '화';
+	display: inline-block;
+	margin: 0 4px 0 4px;
+	color: #fff;
+}
+.bg-video:before {
+	/* position: absolute;
+	top: 0;
+	right: 2px; */
+	content: '\F0567';
+	display: inline-block;
+	font: normal normal normal 24px/1 'Material Design Icons';
+	font-size: inherit;
+	text-rendering: auto;
+	line-height: inherit;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: #fff;
+	font-size: 16px;
+	line-height: 1.4;
+	margin-right: 4px;
+	margin-left: 4px;
+}
 .border-4 {
 	border-width: 4px !important;
 }
@@ -1272,9 +1388,9 @@ button i {
 .conversation #chat-input-wrapper {
 	min-width: 300px;
 }
-.conversation .conversation-windows__wrap {
+/* .conversation .conversation-windows__wrap {
 	height: calc(100vh - 138px);
-}
+} */
 .conversation .conversation-windows__one,
 .conversation .conversation-windows__list {
 	height: calc(100vh - 162px);
@@ -1286,7 +1402,7 @@ button i {
 	height: 100%;
 	padding-left: 12px;
 	padding-right: 12px;
-	padding-bottom: 24px;
+	padding-bottom: 14px;
 }
 .conversation .conversation-windows__wrap.length2 .conversation-windows__item {
 	width: 50%;
@@ -1327,15 +1443,15 @@ button i {
 .conversation-windows__list .div-ct .spinner-border {
 	margin-top: 20px;
 }
-.conversation .card .dropdown {
+/* .conversation .card .dropdown {
 	margin: -8px -14px 0 0;
 }
 .conversation .card .dropdown-toggle {
 	border-radius: 3px;
 	background: rgba(49, 58, 70, 0.5) !important;
 	color: #fff;
-}
-
+} */
+/* 
 @media (max-width: 1806px) {
 	.conversation .conversation-windows__wrap {
 		height: calc(100vh - 168px);
@@ -1362,7 +1478,7 @@ button i {
 	.conversation .conversation-windows__list {
 		height: calc(100vh - 256px);
 	}
-}
+} */
 @media (max-width: 991px) {
 	/* .conversation .conversation-btn {
 		display: none;
@@ -1488,7 +1604,6 @@ button i {
 /* //2022 아델리 추가 */
 /* //Phase 2.2 */
 
-
 /* //2023 아델리 추가 에서 발췌함 */
 /* // - 테이블이 모두 깨지는 현상이 있어서 사용을 하지 못함.
 /* // Phase 2.5 */
@@ -1535,3 +1650,49 @@ button i {
 }
 
 /* // Phase 2.5 */
+.card-list {
+	margin: -5px;
+	margin-top: 20px;
+	min-height: 300px;
+}
+.card-list-item {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	float: left;
+	width: calc(50% - 10px);
+	height: 100px;
+	margin: 5px;
+	padding: 0.75rem 1.25rem;
+	background-color: #fff;
+	border: 1px solid #999;
+}
+.card-list-item button {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 20px;
+	height: 20px;
+	border-radius: 20px;
+	background: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: none;
+	color: #666;
+	background-color: #dee2e6;
+}
+.card-list-item.w-25 {
+	width: calc(25% - 10px) !important;
+}
+.card-list--right .card-list-item {
+	width: calc(100% - 10px);
+}
+.card-list--right .card-list-item.w-25 {
+	width: calc(50% - 10px) !important;
+}
+
+.tooltip {
+	word-break: keep-all;
+}

@@ -1,540 +1,783 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>화상통화 연결</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+		<meta content="Coderthemes" name="author" />
+		<!-- App favicon -->
+		<link rel="shortcut icon" href="resource/images/favicon.ico" />
 
-<head>
-    <meta charset="utf-8" />
-    <title>화상통화 연결</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
-    <meta content="Coderthemes" name="author" />
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="resource/images/favicon.ico">
+		<!-- App css -->
+		<link href="resource/css/icons.min.css" rel="stylesheet" type="text/css" />
+		<link href="resource/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
+		<link href="resource/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
+		<link href="resource/css/vendor/responsive.bootstrap4.css" rel="stylesheet" type="text/css" />
+		<link href="resource/lib/simplelightbox/simpleLightbox.min.css" rel="stylesheet" type="text/css" />
+		<link href="resource/css/base.css" rel="stylesheet" type="text/css" />
+		<link href="resource/css/common.css" rel="stylesheet" type="text/css" id="common-style" />
+		<link href="resource/css/page/alluser_consult.css" rel="stylesheet" type="text/css" id="consult-style" />
+		<link href="resource/css/bootstrap4-toggle.min.css" rel="stylesheet" />
+		<link href="resource/css/vendor/summernote-bs4.css" rel="stylesheet" />
+	</head>
 
-    <!-- App css -->
-    <link href="resource/css/icons.min.css" rel="stylesheet" type="text/css" />
-    <link href="resource/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
-    <link href="resource/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
-    <link href="resource/css/vendor/responsive.bootstrap4.css" rel="stylesheet" type="text/css" />
-    <link href="resource/lib/simplelightbox/simpleLightbox.min.css" rel="stylesheet" type="text/css" />
-    <link href="resource/css/base.css" rel="stylesheet" type="text/css" />
-    <link href="resource/css/common.css" rel="stylesheet" type="text/css" id="common-style" />
-    <link href="resource/css/page/alluser_consult.css" rel="stylesheet" type="text/css" id="consult-style" />
-    <link href="resource/css/bootstrap4-toggle.min.css" rel="stylesheet">
+	<body
+		class="loading"
+		data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'
+	>
+		<div class="consultation">
+			<div class="wrapper p-3">
+				<div class="row h-100 conversation" id="demo1">
+					<div id="video-main" class="col-12 col-lg-12 h-100">
+						<!-- 균등분할형 -->
+						<div id="chatMode01" class="h-100">
+							<div class="row conversation-windows__wrap h-100">
+								<div class="conversation-windows__item chat-mode-change-double-click">
+									<div class="card">
+										<div class="card-body bg-cam rounded border border-primary border-4">
+											<div class="dropdown float-right">
+												<a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
+													<i class="mdi mdi-dots-vertical"></i>
+												</a>
+												<div class="dropdown-menu dropdown-menu-right">
+													<a href="javascript:void(0)" class="dropdown-item chat-mode02">확대하기</a>
+												</div>
+											</div>
+											<div class="d-flex justify-content-center div-ct">
+												<i class="mdi mdi-video-off-outline mdi-48px"></i>
+											</div>
+											<div class="row inner">
+												<div class="col-md-6 img-overlay">
+													<h4><div class="badge badge-dark-lighten float-left text-white p-2">[ 의사 ] James</div></h4>
+												</div>
+												<div class="col-md-6">
+													<div class="avatar-sm float-right mr-3" style="margin-bottom: 20px">
+														<span class="avatar-title bg-dark-lighten rounded-circle"><i class="mdi mdi-microphone mdi-24px"></i></span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- //균등분할형 -->
 
-</head>
+						<!-- 특정인강조형 -->
+						<div id="chatMode02" class="gu-hide">
+							<div class="row">
+								<div class="col-lg-10">
+									<div class="card">
+										<div class="card-body bg-cam rounded conversation-windows__one">
+											<div class="dropdown float-right">
+												<a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
+													<i class="mdi mdi-dots-vertical"></i>
+												</a>
+												<div class="dropdown-menu dropdown-menu-right">
+													<a href="javascript:void(0)" class="dropdown-item chat-mode02">확대하기</a>
+												</div>
+											</div>
+											<div class="d-flex justify-content-center div-ct">
+												<i class="mdi mdi-video-off-outline mdi-48px"></i>
+											</div>
+											<div class="row inner">
+												<div class="col-md-6 img-overlay">
+													<h4><div class="badge badge-dark-lighten float-left text-white p-2">[ 의사 ] James</div></h4>
+												</div>
+												<div class="col-md-6">
+													<div class="avatar-sm float-right mr-3" style="margin-bottom: 20px">
+														<span class="avatar-title bg-dark-lighten rounded-circle"><i class="mdi mdi-microphone mdi-24px"></i></span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- end card-body-->
+									</div>
+									<!-- end card-->
+								</div>
+								<!-- end col-->
 
-<body class="loading"
-    data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
-    <!-- Begin page -->
-    <div class="wrapper">
+								<div class="col-lg-2">
+									<div data-simplebar class="conversation-windows__list" style="overflow-x: hidden">
+										<div class="card">
+											<div
+												class="card-body bg-cam rounded border border-primary border-4"
+												style="background-image: url(resource/images/doctor.png); background-repeat: no-repeat; background-position: 50% 0%; height: 220px"
+											>
+												<div class="dropdown float-right">
+													<a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
+														<i class="mdi mdi-dots-vertical"></i>
+													</a>
+													<div class="dropdown-menu dropdown-menu-right">
+														<a href="javascript:void(0)" class="dropdown-item chat-mode02">확대하기</a>
+													</div>
+												</div>
+												<div class="row inner mb-1">
+													<div class="col-md-6 img-overlay p-0">
+														<h4 class="d-flex align-items-center h-100 m-0">
+															<div class="badge badge-dark-lighten float-left text-white p-2">[ 의사 ] James</div>
+														</h4>
+													</div>
+													<div class="col-md-6 p-0">
+														<div class="avatar-sm float-right mr-3">
+															<span class="avatar-title bg-dark-lighten rounded-circle"><i class="mdi mdi-microphone mdi-24px"></i></span>
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- end card-body-->
+										</div>
+										<!-- end card-->
+										<div class="card">
+											<div class="card-body bg-cam rounded" style="height: 220px">
+												<div class="d-flex justify-content-center div-ct">
+													<i class="mdi mdi-video-off-outline mdi-48px"></i>
+												</div>
+												<div class="dropdown float-right">
+													<a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
+														<i class="mdi mdi-dots-vertical"></i>
+													</a>
+													<div class="dropdown-menu dropdown-menu-right">
+														<a href="javascript:void(0)" class="dropdown-item chat-mode02">확대하기</a>
+														<a href="javascript:void(0)" class="dropdown-item chat-minus">내보내기</a>
+													</div>
+												</div>
+												<div class="row inner mb-1">
+													<div class="col-md-6 img-overlay p-0">
+														<h4 class="d-flex align-items-center h-100 m-0">
+															<div class="badge badge-dark-lighten float-left text-white p-2">이주연</div>
+														</h4>
+													</div>
+													<div class="col-md-6 p-0">
+														<div class="avatar-sm float-right mr-3">
+															<span class="avatar-title bg-dark-lighten rounded-circle"><i class="mdi mdi-microphone mdi-24px"></i></span>
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- end card-body-->
+										</div>
+										<!-- end card-->
+										<div class="card">
+											<div
+												class="card-body bg-cam rounded"
+												style="background-image: url(resource/images/patient.png); background-repeat: no-repeat; background-position: 50% 0%; height: 220px"
+											>
+												<div class="dropdown float-right">
+													<a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
+														<i class="mdi mdi-dots-vertical"></i>
+													</a>
+													<div class="dropdown-menu dropdown-menu-right">
+														<a href="javascript:void(0)" class="dropdown-item chat-mode02">확대하기</a>
+														<a href="javascript:void(0)" class="dropdown-item chat-minus">내보내기</a>
+													</div>
+												</div>
+												<div class="row inner mb-1">
+													<div class="col-md-6 img-overlay p-0">
+														<h4 class="d-flex align-items-center h-100 m-0">
+															<div class="badge badge-dark-lighten float-left text-white p-2">이주연</div>
+														</h4>
+													</div>
+													<div class="col-md-6 p-0">
+														<div class="avatar-sm float-right mr-3">
+															<span class="avatar-title bg-dark-lighten rounded-circle"><i class="mdi mdi-microphone-off mdi-24px text-danger"></i></span>
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- end card-body-->
+										</div>
+										<!-- end card-->
+										<div class="card">
+											<div
+												class="card-body bg-cam rounded"
+												style="background-image: url(resource/images/patient.png); background-repeat: no-repeat; background-position: 50% 0%; height: 220px"
+											>
+												<div class="dropdown float-right">
+													<a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
+														<i class="mdi mdi-dots-vertical"></i>
+													</a>
+													<div class="dropdown-menu dropdown-menu-right">
+														<a href="javascript:void(0)" class="dropdown-item chat-mode02">확대하기</a>
+														<a href="javascript:void(0)" class="dropdown-item chat-minus">내보내기</a>
+													</div>
+												</div>
+												<div class="row inner mb-1">
+													<div class="col-md-6 img-overlay p-0">
+														<h4 class="d-flex align-items-center h-100 m-0">
+															<div class="badge badge-dark-lighten float-left text-white p-2">이주연</div>
+														</h4>
+													</div>
+													<div class="col-md-6 p-0">
+														<div class="avatar-sm float-right mr-3">
+															<span class="avatar-title bg-dark-lighten rounded-circle"><i class="mdi mdi-microphone mdi-24px"></i></span>
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- end card-body-->
+										</div>
+										<!-- end card-->
+										<div class="card">
+											<div class="card-body bg-cam rounded" style="height: 220px">
+												<div class="d-flex justify-content-center div-ct">
+													<div class="spinner-border" role="status"></div>
+												</div>
+												<div class="dropdown float-right">
+													<a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
+														<i class="mdi mdi-dots-vertical"></i>
+													</a>
+													<div class="dropdown-menu dropdown-menu-right">
+														<a href="javascript:void(0)" class="dropdown-item chat-mode02">확대하기</a>
+														<a href="javascript:void(0)" class="dropdown-item chat-minus">내보내기</a>
+													</div>
+												</div>
+												<div class="row inner mb-1">
+													<div class="col-md-6 img-overlay p-0">
+														<h4 class="d-flex align-items-center h-100 m-0">
+															<div class="badge badge-dark-lighten float-left text-white p-2">이주연</div>
+														</h4>
+													</div>
+													<div class="col-md-6 p-0">
+														<div class="avatar-sm float-right mr-3">
+															<span class="avatar-title bg-dark-lighten rounded-circle"><i class="mdi mdi-microphone mdi-24px"></i></span>
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- end card-body-->
+										</div>
+										<!-- end card-->
+									</div>
+								</div>
+								<!-- end col-->
+							</div>
+						</div>
+						<!-- //특정인강조형 -->
+					</div>
 
-        <!-- ========== Start ========== -->
-        <div class="row ml-2 mr-2 mt-3 conversation">
-            <!-- col-xl-8 col-lg-8 col-md-12 col-xs-12 -->
-            <div id="video-main" class="col-xl-12 col-lg-12 col-md-12 col-xs-12">
-                <!-- 균등분할형 -->
-                <div id="chatMode01">
-                    <div class="row conversation-windows__wrap ">
-                        <div class="conversation-windows__item chat-mode-change-double-click">
-                            <div class="card">
-                                <div class="card-body bg-cam rounded border border-primary border-4">
-                                    <div class="dropdown float-right">
-                                        <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
-                                            <i class="mdi mdi-dots-vertical"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right">
-                                            <a href="javascript:void(0)" class="dropdown-item chat-mode02">확대하기</a>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex justify-content-center div-ct">
-                                        <i class="mdi mdi-video-off-outline mdi-48px"></i>
-                                    </div>
-                                    <div class="row inner">
-                                        <div class="col-md-6 img-overlay">
-                                            <h4><div class="badge badge-dark-lighten float-left text-white p-2">[ 의사 ] James</div></h4>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="avatar-sm float-right mr-3" style="margin-bottom: 20px">
-                                                <span class="avatar-title bg-dark-lighten rounded-circle"><i class="mdi mdi-microphone mdi-24px"></i></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+					<div id="video-consultation" class="col-12 col-lg-4 h-100 overflow-auto" data-simplebar>
+						<div class="card">
+							<div class="card-body">
+								<div class="form-group mb-3">
+									<strong class="font-20">일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십</strong>
+									<div class="mt-1 font-13 text-right text-nowrap">[의사] 홍길동 <span class="font-11 mx-1">|</span> 2023-11-17 10:00</div>
+								</div>
+								<div class="form-group mb-3">
+									8/10 영양상담 진행함. 탄수화물 단백질 지방 … 8/10 영양상담 진행함. 탄수화물 단백질 지방 … 8/10 영양상담 진행함. 탄수화물 단백질 지방 … 8/10
+									영양상담 진행함. 탄수화물 단백질 지방 … 8/10 영양상담 진행함. 탄수화물 단백질 지방 … 8/10 영양상담 진행함. 탄수화물 단백 질 지방 …
+								</div>
+								<div class="d-flex align-items-center justify-content-between">
+									<div class="d-flex align-items-center"></div>
+									<div class="d-flex align-items-center">
+										<button type="button" class="ml-1 btn btn-light">삭제</button>
+										<button type="button" class="ml-1 btn btn-primary">수정</button>
+									</div>
+								</div>
+								<hr class="my-4" />
+								<div class="form-group mb-3">
+									<strong class="font-20">일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십</strong>
+									<div class="mt-1 font-13 text-right text-nowrap">[의사] 홍길동 <span class="font-11 mx-1">|</span> 2023-11-17 10:00</div>
+								</div>
+								<div class="form-group mb-3">
+									<div class="viewContent">
+										<p>
+											<span style="color: rgb(61, 133, 198); font-size: 12pt"
+												>- 서울대병원, 초발정신증 및 정신증 고위험군 환자 대상 ‘MRI 질감 분석’최초 적용<br /></span
+											><span style="color: rgb(61, 133, 198); font-size: 12pt"
+												>- 정신증 고위험군, 질감지표↑...초발정신증과 달리 전두엽 회색질 부피·두께 변화는 없어<br /></span
+											><br />
+											<span style="font-size: 12pt"
+												>&nbsp; 국내 연구진이 조현병 전단계 및 초기 조현병 환자의 미세한 뇌조직 변화를 질감 분석을 통해 포착했다. 일반 뇌영상 분석으로는 확인할
+												수 없었던 이 미세한 변화는 조현병 조기 진단의 가능성을 열어줄 것으로 기대된다.</span
+											><span style="font-size: 12pt"><br /></span
+											><span style="font-size: 12pt"
+												><br />&nbsp; 서울대병원 정신건강의학과 권준수·분당서울대병원 문선영 교수팀이 뇌자기공명(MRI) 질감 분석을 조기 조현병 환자들에게 최초로
+												적용해 뇌조직을 분석한 결과를 27일 발표했다.</span
+											><span style="font-size: 12pt"><br /></span>
+										</p>
+										<p><br /></p>
+										<span style="font-size: 12pt"
+											>&nbsp; 과거 정신분열병으로도 불렸던 ‘조현병’은 망상, 환청, 와해된 언어 및 행동과 같은 증상과 사회적 기능 장애를 동반하는 대표적인 중증
+											정신질환이다. 발병과 함께 회백질 감소 등 다양한 뇌조직의 변화가 발견된다. 시간이 갈수록 인지기능이 떨어질 수 있어서 조기 발견과 발병 직후
+											4~5년간 치료가 매우 중요한데, 조현병 전단계에서 초기에 일어나는 뇌 변화에 대해서는 잘 알려져 있지 않다.</span
+										><span style="font-size: 12pt"><br /></span>
+										<p><br /></p>
+										<span style="font-size: 12pt"
+											>&nbsp; 연구팀은 ▲초발정신증군(조현병 초기 단계, 101명) ▲정신증 고위험군(조현병 전단계, 85명) ▲대조군(147명)의 MRI 영상을 바탕으로
+											조현병과 관련된 뇌 영역에 대한 질감 분석을 실시해 영역별 회색질 부피·두께와 질감 특성의 연관성을 조사했다.</span
+										><span style="font-size: 12pt"><br /></span>
+										<p><br /></p>
+										<span style="font-size: 12pt"
+											>&nbsp; 질감 분석(Texture analysis)이란, MRI 영상을 구성하는 작은 3차원 단위(복셀) 중 인접한 단위들의 상호관계를 조사하여 질감 특성을
+											분석하는 기법이다. 이 기법은 뇌조직의 부피 변화나 신호 강도에 기반한 분석으로는 감지하기 어려운 미세한 변화까지 포착할 수 있다.</span
+										><span style="font-size: 12pt"><br /></span>
+										<p><br /></p>
+										<span style="font-size: 12pt"
+											>&nbsp; 분석 결과, 초발정신증군은 대조군에 비해 전두엽을 비롯한 뇌 부위에서 회색질 부피 및 두께의 유의한 감소를 보였다.</span
+										>
+										<p>
+											<span style="font-size: 12pt"><br /></span>
+										</p>
+										<span style="font-size: 12pt"
+											>&nbsp; 반면 정신증 고위험군에서는 회색질 부피 및 두께 변화는 발견되지 않았지만, 전두엽 부위에서 회색질의 복잡성 및 상호의존정도을
+											반영하는 ‘IMC1 질감지표’가 대조군 및 초발정신증군에 비해 뚜렷하게 증가하는 결과가 나타났다.</span
+										>
+										<p>
+											<span style="font-size: 12pt"><br /></span
+											><span style="font-size: 12pt"
+												>&nbsp; IMC1 지표는 뇌조직의 국소영역의 복잡성이 크고, 영역 간 상호의존정도가 적을수록 그 값이 증가한다.<br />
+												<br
+											/></span>
+										</p>
+										<p style="text-align: center">
+											<span style="font-size: 10pt"
+												><img
+													src="http://www.snuh.org/upload/editor/images/000072/20231031101209312_5WSJB2VO.png"
+													title=""
+													alt="그래프"
+													style="vertical-align: baseline; border: 0px solid rgb(0, 0, 0); width: 100%"
+												/><br />
+												[그래프] 정신증 고위험군의 전두엽 각 부위에서 양성 증상 심각도 및 IMC1 지표의 상관관계.<br />양성 증상 심각도는 IMC1 지표가 증가할수록
+												감소하는 양상이 나타났다.</span
+											>
+										</p>
+										<p>
+											<span style="font-size: 12pt"><br /></span>
+										</p>
+										<span style="font-size: 12pt"
+											>&nbsp; 특히 정신증 고위험군에서 전두엽 IMC1 지표는 양성 증상의 심각도와 음의 상관관계를 보였다. 즉 전두엽 회색질 국소영역의 복잡성이
+											증가할수록 양성 증상의 정도가 덜했던 것이다.</span
+										>
+										<p>
+											<span style="font-size: 12pt"><br /></span>
+										</p>
+										<span style="font-size: 12pt"
+											>&nbsp; 이 결과는 정신증 고위험군 단계에서 신경가소성의 일종인 ‘피질재구성’ 현상의 가능성을 시사한다는 것이 연구팀의 설명이다.
+											신경가소성은 뇌가 환경·상황에 따라 스스로 신경구조와 회로를 바꾸는 현상을 말한다.</span
+										>
+										<p>
+											<span style="font-size: 12pt"><br /></span>
+										</p>
+										<span style="font-size: 12pt"
+											>&nbsp; 연구팀은 정신증 고위험군에서 회색질의 부피와 두께의 변화가 없더라도, 높은 민감도를 가진 ‘질감분석’을 통해 조현병 증상에 관련된
+											미세한 회색질 변화를 포착하여 조기 치료에 도움을 받을 수 있다고 강조했다.</span
+										>
+										<p>
+											<span style="font-size: 12pt"><br /></span>
+										</p>
+										<span style="font-size: 12pt"
+											>&nbsp; 문선영 교수(제1저자)는 “이번 연구는 조기 정신증 환자의 뇌에서 일어나는 미세한 변화를 보다 민감하게 파악할 수 있는 새로운 도구를
+											제시한다”고 연구 의의를 밝혔다.</span
+										>
+										<p>
+											<span style="font-size: 12pt"><br /></span>
+										</p>
+										<span style="font-size: 12pt"
+											>&nbsp; 권준수 교수는 “정신증 고위험군을 비롯한 조기 정신증에서 일어나는 초기의 뇌 구조적 변화를 제대로 이해하면 초기 진단 및 치료에 더욱
+											효과적인 방법을 제시할 수 있을 것”이라며 “질감 분석은 특히 정신증 고위험군이 정신병으로 전환을 조기에 방지하는데 도움을 줄 것으로
+											예상된다”고 말했다.</span
+										>
+										<p>
+											<span style="font-size: 12pt"><br /></span>
+										</p>
+										<span style="font-size: 12pt">&nbsp; 한편, 이번 연구 결과는 국제학술지 ‘분자 정신의학(Molecular Psychiatry)’ 최신호에 발표됐다.</span>
+										<p style="text-align: center">
+											<span style="font-size: 10pt"><br /></span
+											><img
+												src="http://www.snuh.org/upload/editor/images/000072/20231031101324991_L4EODLKK.jpg"
+												title=""
+												alt=" 서울대병원 권준수 교수, 분당서울대병원 문선영 교수"
+												style="vertical-align: baseline; border: 0px solid rgb(0, 0, 0); width: 50%"
+											/><span style="font-size: 10pt"><br />[사진 왼쪽부터] 서울대병원 권준수 교수, 분당서울대병원 문선영 교수</span>
+										</p>
+										<p></p>
 
-                    </div>
-                </div>
-                <!-- //균등분할형 -->
-                
-                <!-- 특정인강조형 -->
-                <div id="chatMode02" class="gu-hide">
-                    <div class="row">
-                        <div class="col-lg-10">
-                            <div class="card">
-                                <div class="card-body bg-cam rounded conversation-windows__one">
-                                    <div class="dropdown float-right">
-                                        <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
-                                            <i class="mdi mdi-dots-vertical"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right">
-                                            <a href="javascript:void(0)" class="dropdown-item chat-mode02">확대하기</a>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex justify-content-center div-ct">
-                                        <i class="mdi mdi-video-off-outline mdi-48px"></i>
-                                    </div>
-                                    <div class="row inner">
-                                        <div class="col-md-6 img-overlay">
-                                            <h4><div class="badge badge-dark-lighten float-left text-white p-2">[ 의사 ] James</div></h4>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="avatar-sm float-right mr-3" style="margin-bottom: 20px">
-                                                <span class="avatar-title bg-dark-lighten rounded-circle"><i class="mdi mdi-microphone mdi-24px"></i></span>
-                                            </div>
-                                        </div>
-                                    </div>                                    
-                                </div>
-                                <!-- end card-body-->
-                            </div>
-                            <!-- end card-->
-                        </div>
-                        <!-- end col-->
+										<!-- viewFileWrap -->
+										<div class="viewFileWrap clearFix">
+											<em class="colorPoint">파일첨부</em>
 
-                        <div class="col-lg-2">
-                            <div data-simplebar class="conversation-windows__list" style="overflow-x: hidden">
-                                <div class="card">
-                                    <div
-                                        class="card-body bg-cam rounded border border-primary border-4"
-                                        style="background-image: url(resource/images/doctor.png); background-repeat: no-repeat; background-position: 50% 0%; height: 220px"
-                                    >
-                                        <div class="dropdown float-right">
-                                            <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
-                                                <i class="mdi mdi-dots-vertical"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a href="javascript:void(0)" class="dropdown-item chat-mode02">확대하기</a>
-                                            </div>
-                                        </div>
-                                        <div class="row inner mb-1">
-                                            <div class="col-md-6 img-overlay p-0">
-                                                <h4 class="d-flex align-items-center h-100 m-0">
-                                                    <div class="badge badge-dark-lighten float-left text-white p-2">[ 의사 ] James</div>
-                                                </h4>
-                                            </div>
-                                            <div class="col-md-6 p-0">
-                                                <div class="avatar-sm float-right mr-3">
-                                                    <span class="avatar-title bg-dark-lighten rounded-circle"><i class="mdi mdi-microphone mdi-24px"></i></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end card-body-->
-                                </div>
-                                <!-- end card-->
-                                <div class="card">
-                                    <div class="card-body bg-cam rounded" style="height: 220px">
-                                        <div class="d-flex justify-content-center div-ct">
-                                            <i class="mdi mdi-video-off-outline mdi-48px"></i>
-                                        </div>
-                                        <div class="dropdown float-right">
-                                            <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
-                                                <i class="mdi mdi-dots-vertical"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a href="javascript:void(0)" class="dropdown-item chat-mode02">확대하기</a>
-                                                <a href="javascript:void(0)" class="dropdown-item chat-minus">내보내기</a>
-                                            </div>
-                                        </div>
-                                        <div class="row inner mb-1">
-                                            <div class="col-md-6 img-overlay p-0">
-                                                <h4 class="d-flex align-items-center h-100 m-0">
-                                                    <div class="badge badge-dark-lighten float-left text-white p-2">이주연</div>
-                                                </h4>
-                                            </div>
-                                            <div class="col-md-6 p-0">
-                                                <div class="avatar-sm float-right mr-3">
-                                                    <span class="avatar-title bg-dark-lighten rounded-circle"><i class="mdi mdi-microphone mdi-24px"></i></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end card-body-->
-                                </div>
-                                <!-- end card-->
-                                <div class="card">
-                                    <div
-                                        class="card-body bg-cam rounded"
-                                        style="background-image: url(resource/images/patient.png); background-repeat: no-repeat; background-position: 50% 0%; height: 220px"
-                                    >
-                                        <div class="dropdown float-right">
-                                            <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
-                                                <i class="mdi mdi-dots-vertical"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a href="javascript:void(0)" class="dropdown-item chat-mode02">확대하기</a>
-                                                <a href="javascript:void(0)" class="dropdown-item chat-minus">내보내기</a>
-                                            </div>
-                                        </div>
-                                        <div class="row inner mb-1">
-                                            <div class="col-md-6 img-overlay p-0">
-                                                <h4 class="d-flex align-items-center h-100 m-0">
-                                                    <div class="badge badge-dark-lighten float-left text-white p-2">이주연</div>
-                                                </h4>
-                                            </div>
-                                            <div class="col-md-6 p-0">
-                                                <div class="avatar-sm float-right mr-3">
-                                                    <span class="avatar-title bg-dark-lighten rounded-circle"><i class="mdi mdi-microphone-off mdi-24px text-danger"></i></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end card-body-->
-                                </div>
-                                <!-- end card-->
-                                <div class="card">
-                                    <div
-                                        class="card-body bg-cam rounded"
-                                        style="background-image: url(resource/images/patient.png); background-repeat: no-repeat; background-position: 50% 0%; height: 220px"
-                                    >
-                                        <div class="dropdown float-right">
-                                            <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
-                                                <i class="mdi mdi-dots-vertical"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a href="javascript:void(0)" class="dropdown-item chat-mode02">확대하기</a>
-                                                <a href="javascript:void(0)" class="dropdown-item chat-minus">내보내기</a>
-                                            </div>
-                                        </div>
-                                        <div class="row inner mb-1">
-                                            <div class="col-md-6 img-overlay p-0">
-                                                <h4 class="d-flex align-items-center h-100 m-0">
-                                                    <div class="badge badge-dark-lighten float-left text-white p-2">이주연</div>
-                                                </h4>
-                                            </div>
-                                            <div class="col-md-6 p-0">
-                                                <div class="avatar-sm float-right mr-3">
-                                                    <span class="avatar-title bg-dark-lighten rounded-circle"><i class="mdi mdi-microphone mdi-24px"></i></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end card-body-->
-                                </div>
-                                <!-- end card-->
-                                <div class="card">
-                                    <div
-                                        class="card-body bg-cam rounded"
-                                        style="height: 220px"
-                                    >
-                                        <div class="d-flex justify-content-center div-ct">
-                                            <div class="spinner-border" role="status"></div>
-                                        </div>
-                                        <div class="dropdown float-right">
-                                            <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
-                                                <i class="mdi mdi-dots-vertical"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a href="javascript:void(0)" class="dropdown-item chat-mode02">확대하기</a>
-                                                <a href="javascript:void(0)" class="dropdown-item chat-minus">내보내기</a>
-                                            </div>
-                                        </div>
-                                        <div class="row inner mb-1">
-                                            <div class="col-md-6 img-overlay p-0">
-                                                <h4 class="d-flex align-items-center h-100 m-0">
-                                                    <div class="badge badge-dark-lighten float-left text-white p-2">이주연</div>
-                                                </h4>
-                                            </div>
-                                            <div class="col-md-6 p-0">
-                                                <div class="avatar-sm float-right mr-3">
-                                                    <span class="avatar-title bg-dark-lighten rounded-circle"><i class="mdi mdi-microphone mdi-24px"></i></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end card-body-->
-                                </div>
-                                <!-- end card-->
-                            </div>
-                        </div>
-                        <!-- end col-->
-                    </div>
-                </div>
-                <!-- //특정인강조형 -->
-            </div> <!-- end col -->
+											<span><a href="/board/B003/boardDownload.do?bbs_ano=502" class="">[논문] detox.pdf</a></span>
+										</div>
+										<!-- //viewFileWrap -->
+									</div>
+								</div>
+								<div class="d-flex align-items-center justify-content-between">
+									<div class="d-flex align-items-center"></div>
+									<div class="d-flex align-items-center">
+										<button type="button" class="ml-1 btn btn-light">삭제</button>
+										<button type="button" class="ml-1 btn btn-primary">수정</button>
+									</div>
+								</div>
+							</div>
+						</div>
 
-            <!-- 테스트 -->
-            <div style="position: fixed; bottom: 0; right: 0; padding: 10px; background: rgba(0, 0, 0, .5); z-index: 10000;">
-                <button class="test-plus">추가</button>
-                <button class="test-minus">삭제</button>
-            </div>
-            <!-- //테스트 -->
+						<div class="card">
+							<div class="card-body">
+								<div class="form-group mb-3">
+									<div class="d-flex justify-content-between">
+										<label class="mb-0 font-14 text-dark"><b style="color: #6c757d">상담노트 제목</b></label>
+										<small>0/30</small>
+									</div>
+									<div class="mt-1">
+										<input type="text" class="form-control" id="f-c-6" placeholder="상담노트 제목을 입력하세요." />
+									</div>
+								</div>
+								<div class="form-group mb-3">
+									<div class="d-flex justify-content-between">
+										<label class="mb-0 font-14 text-dark"><b style="color: #6c757d">상담노트 내용</b></label>
+										<small>0/1,000</small>
+									</div>
+									<div class="mt-1">
+										<textarea id="f-c-7" class="form-control summernote-basic" rows="10" placeholder="상담노트 내용을 입력하세요."></textarea>
+									</div>
+								</div>
 
-            <div id="video-aside" class="col-xl-2 col-lg-12 col-md-12 col-xs-12">
-                <div class="card">
-                    <div class="tasks border-0 w-100 pt-3 border-0  pl-2 pr-2 mb-0 pb-3">
-                        <ul class="conversation-list" data-simplebar="init">
-                            <div class="simplebar-wrapper" style="margin: 0px -15px;">
-                                <div class="simplebar-height-auto-observer-wrapper">
-                                    <div class="simplebar-height-auto-observer"></div>
-                                </div>
-                                <div class="simplebar-mask">
-                                    <div class="simplebar-offset" style="right: 0px; bottom: 0px;">
-                                        <div class="simplebar-content-wrapper"
-                                            style="height: auto; overflow: hidden scroll;">
-                                            <div class="simplebar-content" style="padding: 0px 15px;">
-                                                <li class="clearfix position-relative">
-                                                    <div class="chat-avatar">
-                                                        <img src="resource/images/users/avatar-5.jpg" class="rounded"
-                                                            alt="Shreyu N">
-                                                        <i>10:00</i>
-                                                    </div>
-                                                    <div class="conversation-text">
-                                                        <div class="ctext-wrap">
-                                                            <i>Shreyu N</i>
-                                                            <p>
-                                                                Hello!
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="clearfix odd">
-                                                    <div class="chat-avatar">
-                                                        <img src="resource/images/users/avatar-1.jpg" class="rounded"
-                                                            alt="dominic">
-                                                        <i>10:01</i>
-                                                    </div>
-                                                    <div class="conversation-text position-relative">
-                                                        <div class="ctext-wrap">
-                                                            <i>Dominic</i>
-                                                            <p>
-                                                                Hi, How are you? What about our next meeting? What about
-                                                                our next meeting? What about our next meeting?
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </li>
+								<div class="d-flex align-items-center justify-content-between pb-3">
+									<div class="d-flex align-items-center">
+										<button type="button" class="ml-1 btn btn-outline-primary"><i class="mdi mdi-plus"></i>노트 추가</button>
+									</div>
+									<div class="d-flex align-items-center">
+										<button type="button" class="ml-1 btn btn-light">취소</button>
+										<button type="button" class="ml-1 btn btn-primary">저장</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 
-                                                <li class="clearfix position-relative">
-                                                    <div class="chat-avatar">
-                                                        <img src="resource/images/users/avatar-5.jpg" class="rounded"
-                                                            alt="Shreyu N">
-                                                        <i>10:00</i>
-                                                    </div>
-                                                    <div class="conversation-text">
-                                                        <div class="ctext-wrap">
-                                                            <i>Shreyu N</i>
-                                                            <p>
-                                                                Hello!
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="clearfix odd ">
-                                                    <div class="chat-avatar">
-                                                        <img src="resource/images/users/avatar-1.jpg" class="rounded"
-                                                            alt="dominic">
-                                                        <i>10:01</i>
-                                                    </div>
-                                                    <div class="conversation-text position-relative">
-                                                        <div class="ctext-wrap">
-                                                            <i>Dominic</i>
-                                                            <p>
-                                                                Hi, How are you? What about our next meeting? What about
-                                                                our next meeting? What about our next meeting?
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="clearfix odd ">
-                                                    <div class="chat-avatar">
-                                                        <img src="resource/images/users/avatar-1.jpg" class="rounded"
-                                                            alt="dominic">
-                                                        <i>10:01</i>
-                                                    </div>
-                                                    <div class="conversation-text position-relative">
-                                                        <div class="ctext-wrap">
-                                                            <i>Dominic</i>
-                                                            <p>
-                                                                Hi, How are you? What about our next meeting? What about
-                                                                our next meeting? What about our next meeting?
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="clearfix odd ">
-                                                    <div class="chat-avatar">
-                                                        <img src="resource/images/users/avatar-1.jpg" class="rounded"
-                                                            alt="dominic">
-                                                        <i>10:01</i>
-                                                    </div>
-                                                    <div class="conversation-text position-relative">
-                                                        <div class="ctext-wrap">
-                                                            <i>Dominic</i>
-                                                            <p>
-                                                                Hi, How are you? What about our next meeting? What about
-                                                                our next meeting? What about our next meeting?
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="clearfix odd ">
-                                                    <div class="chat-avatar">
-                                                        <img src="resource/images/users/avatar-1.jpg" class="rounded"
-                                                            alt="dominic">
-                                                        <i>10:01</i>
-                                                    </div>
-                                                    <div class="conversation-text position-relative">
-                                                        <div class="ctext-wrap">
-                                                            <i>Dominic</i>
-                                                            <p>
-                                                                Hi, How are you? What about our next meeting? What about
-                                                                our next meeting?What about our next meeting?
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+					<div id="video-aside" class="col-12 col-lg-4 h-100">
+						<div class="card">
+							<div class="tasks border-0 w-100 pt-3 border-0 pl-2 pr-2 mb-0 pb-3">
+								<ul class="conversation-list" data-simplebar="init">
+									<div class="simplebar-wrapper" style="margin: 0px -15px">
+										<div class="simplebar-height-auto-observer-wrapper">
+											<div class="simplebar-height-auto-observer"></div>
+										</div>
+										<div class="simplebar-mask">
+											<div class="simplebar-offset" style="right: 0px; bottom: 0px">
+												<div class="simplebar-content-wrapper" style="height: auto; overflow: hidden scroll">
+													<div class="simplebar-content" style="padding: 0px 15px">
+														<li class="clearfix position-relative">
+															<div class="chat-avatar">
+																<img src="resource/images/users/avatar-5.jpg" class="rounded" alt="Shreyu N" />
+																<i>10:00</i>
+															</div>
+															<div class="conversation-text">
+																<div class="ctext-wrap">
+																	<i>Shreyu N</i>
+																	<p>Hello!</p>
+																</div>
+															</div>
+														</li>
+														<li class="clearfix odd">
+															<div class="chat-avatar">
+																<img src="resource/images/users/avatar-1.jpg" class="rounded" alt="dominic" />
+																<i>10:01</i>
+															</div>
+															<div class="conversation-text position-relative">
+																<div class="ctext-wrap">
+																	<i>Dominic</i>
+																	<p>Hi, How are you? What about our next meeting? What about our next meeting? What about our next meeting?</p>
+																</div>
+															</div>
+														</li>
 
-                        </ul>
+														<li class="clearfix position-relative">
+															<div class="chat-avatar">
+																<img src="resource/images/users/avatar-5.jpg" class="rounded" alt="Shreyu N" />
+																<i>10:00</i>
+															</div>
+															<div class="conversation-text">
+																<div class="ctext-wrap">
+																	<i>Shreyu N</i>
+																	<p>Hello!</p>
+																</div>
+															</div>
+														</li>
+														<li class="clearfix odd">
+															<div class="chat-avatar">
+																<img src="resource/images/users/avatar-1.jpg" class="rounded" alt="dominic" />
+																<i>10:01</i>
+															</div>
+															<div class="conversation-text position-relative">
+																<div class="ctext-wrap">
+																	<i>Dominic</i>
+																	<p>Hi, How are you? What about our next meeting? What about our next meeting? What about our next meeting?</p>
+																</div>
+															</div>
+														</li>
+														<li class="clearfix odd">
+															<div class="chat-avatar">
+																<img src="resource/images/users/avatar-1.jpg" class="rounded" alt="dominic" />
+																<i>10:01</i>
+															</div>
+															<div class="conversation-text position-relative">
+																<div class="ctext-wrap">
+																	<i>Dominic</i>
+																	<p>Hi, How are you? What about our next meeting? What about our next meeting? What about our next meeting?</p>
+																</div>
+															</div>
+														</li>
+														<li class="clearfix odd">
+															<div class="chat-avatar">
+																<img src="resource/images/users/avatar-1.jpg" class="rounded" alt="dominic" />
+																<i>10:01</i>
+															</div>
+															<div class="conversation-text position-relative">
+																<div class="ctext-wrap">
+																	<i>Dominic</i>
+																	<p>Hi, How are you? What about our next meeting? What about our next meeting? What about our next meeting?</p>
+																</div>
+															</div>
+														</li>
+														<li class="clearfix odd">
+															<div class="chat-avatar">
+																<img src="resource/images/users/avatar-1.jpg" class="rounded" alt="dominic" />
+																<i>10:01</i>
+															</div>
+															<div class="conversation-text position-relative">
+																<div class="ctext-wrap">
+																	<i>Dominic</i>
+																	<p>Hi, How are you? What about our next meeting? What about our next meeting?What about our next meeting?</p>
+																</div>
+															</div>
+														</li>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</ul>
 
-                        <div class="row pl-3 pr-3 pb-0" id="chat-input-wrapper">
-                            <div class="bg-light rounded col-md-12" style="padding:10px;">
-                                <form class="needs-validation" novalidate="" name="chat-form" id="chat-form">
-                                    <div class="input-group">
-                                        <textarea name="message" class="form-control" rows="2"
-                                            placeholder="메시지를 입력하세요..."></textarea>
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary btn-sm" type="submit"><i
-                                                    class="uil uil-message"></i></button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
+								<div class="row pl-3 pr-3 pb-0" id="chat-input-wrapper">
+									<div class="bg-light rounded col-md-12" style="padding: 10px">
+										<form class="needs-validation" novalidate="" name="chat-form" id="chat-form">
+											<div class="input-group">
+												<textarea name="message" class="form-control" rows="2" placeholder="메시지를 입력하세요..."></textarea>
+												<div class="input-group-append">
+													<button class="btn btn-primary btn-sm" type="submit"><i class="uil uil-message"></i></button>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+							<!-- end card-body-->
+						</div>
+						<!-- end card-->
+					</div>
+				</div>
+				<!-- 테스트 -->
+				<div style="position: fixed; bottom: 0; right: 0; padding: 10px; background: rgba(0, 0, 0, 0.5); z-index: 10000">
+					<button class="test-plus">추가</button>
+					<button class="test-minus">삭제</button>
+				</div>
+				<!-- //테스트 -->
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="card">
+						<div class="card-body mt-n1 mb-n1">
+							<div class="row d-flex align-items-center">
+								<div class="col-xl-7 col-lg-7 col-md-12 col-xs-12">
+									<div class="form-row form-inline custom-inline-form">
+										<div class="d-flex align-items-center mr-3">
+											<label class="col-form-label ml-2 mr-2">Audio</label>
+											<select class="form-control" style="width: 220px">
+												<option value="1">기본값 - 마이크 (Realtek High Definition Audio)</option>
+												<option value="2">마이크 (S2240L High Definition Audio)</option>
+												<option value="3">마이크 (2-NVIDIA High Definition Audio)</option>
+											</select>
+										</div>
+										<div class="d-flex align-items-center mr-3">
+											<label class="col-form-label ml-2 mr-2">Video</label>
+											<select class="form-control" style="width: 220px">
+												<option value="1">NB Pro (FHD S53390438)</option>
+												<option value="2">LG HDR (S53390438)</option>
+												<option value="3">THOR CAM (34203S53390438)</option>
+											</select>
+										</div>
+										<div class="d-flex align-items-center">
+											<p class="m-0 mr-2">상담진행시간 <span class="ml-1">00:00:50</span></p>
+											<!-- <button type="button" class="ml-1 btn btn-primary"><i class="mdi mdi-record-circle-outline font-16 mr-1"></i>녹음</button> -->
+											<button type="button" class="ml-1 btn btn-outline-primary"><i class="mdi mdi-stop font-16 mr-1"></i>완료</button>
+											<button type="button" class="ml-1 btn btn-outline-primary"><i class="mdi mdi-close font-16 mr-1"></i>취소</button>
+											<button type="button" class="ml-1 btn btn-danger"><i class="mdi mdi-record-circle-outline font-16 mr-1"></i>녹음중</button>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-5 col-lg-5 col-md-12 col-xs-12 th-bottom-wrap">
+									<div class="text-right">
+										<input
+											type="checkbox"
+											checked
+											data-toggle="toggle"
+											data-style="ios"
+											data-size="lg"
+											data-onstyle="info"
+											data-on="<i class='mdi mdi-video-outline'></i>"
+											data-off="<i class='mdi mdi-video-off-outline'></i>"
+										/>
+										<input
+											type="checkbox"
+											checked
+											data-toggle="toggle"
+											data-style="ios"
+											data-size="lg"
+											data-onstyle="danger"
+											data-on="<i class='mdi mdi-microphone'></i>"
+											data-off="<i class='mdi mdi-microphone-off'></i>"
+										/>
+										<button
+											type="button"
+											class="btn btn-vc-division maintenance-icon mr-2 chat-mode-change"
+											data-toggle="tooltip"
+											data-placement="top"
+											data-original-title="화면 분할"
+										>
+											<i class="mdi mdi-grid-large" style="margin-left: -4px"></i>
+										</button>
+										<button
+											type="button"
+											class="btn btn-vc-blur maintenance-icon mr-2"
+											data-toggle="tooltip"
+											data-placement="top"
+											data-original-title="배경 흐리게"
+										>
+											<i class="mdi mdi-blur" style="margin-left: -4px"></i>
+										</button>
+										<button
+											type="button"
+											class="btn btn-vc-share maintenance-icon mr-2"
+											data-toggle="tooltip"
+											data-placement="top"
+											data-original-title="화면 공유"
+										>
+											<i class="mdi mdi-monitor-share" style="margin-left: -1px"></i>
+										</button>
+										<span class="position-relative">
+											<span class="noti-icon-badge animate__heartBeat"></span>
+											<button
+												id="btn-chat"
+												type="button"
+												class="btn btn-vc-chat maintenance-icon mr-2"
+												data-toggle="tooltip"
+												data-placement="top"
+												data-original-title="채팅"
+											>
+												<i class="uil uil-comment-alt-dots" style="margin-left: -1px"></i>
+											</button>
+										</span>
+										<button
+											id="btn-modify"
+											type="button"
+											class="btn btn-vc-modify maintenance-icon mr-2"
+											data-toggle="tooltip"
+											data-placement="top"
+											data-original-title="상담노트"
+										>
+											<i class="uil uil-edit" style="margin-left: -1px"></i>
+										</button>
+										<button class="btn btn-danger btn-rounded width-150 th-btn-end">종료</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- end card-body-->
+					</div>
+					<!-- end card-->
+				</div>
+				<!-- end col-->
+			</div>
+		</div>
+		<!-- bundle -->
+		<script src="resource/js/vendor.min.js"></script>
+		<script src="resource/js/app.min.js"></script>
+		<script src="resource/js/vendor/apexcharts.min.js"></script>
+		<script src="resource/js/vendor/fullcalendar.min.js"></script>
+		<script src="resource/js/vendor/jquery.dataTables.min.js"></script>
+		<script src="resource/js/vendor/dataTables.bootstrap4.js"></script>
+		<script src="resource/js/vendor/dataTables.responsive.min.js"></script>
+		<script src="resource/js/vendor/responsive.bootstrap4.min.js"></script>
+		<script src="resource/js/vendor/dataTables.checkboxes.min.js"></script>
+		<script src="resource/js/vendor/dropzone.min.js"></script>
+		<script src="resource/js/ui/component.fileupload.js"></script>
+		<script src="resource/lib/simplelightbox/simpleLightbox.min.js"></script>
+		<script src="resource/js/vendor/jsRapSpliter.js"></script>
+		<script src="resource/js/common.js"></script>
 
-                    </div> <!-- end card-body-->
-                </div> <!-- end card-->
+		<script src="resource/js/bootstrap4-toggle.min.js"></script>
+		<script src="resource/js/vendor/summernote-bs4.min.js"></script>
+		<script>
+			$(document).ready(function () {
+				$('.summernote-basic').each(function () {
+					$(this).summernote({
+						height: 230,
+					});
+				});
+			});
+		</script>
+		<style>
+			.toggle.ios,
+			.toggle-on.ios,
+			.toggle-off.ios {
+				border-radius: 20rem;
+			}
 
-            </div> <!-- end col -->
+			.toggle.ios .toggle-handle {
+				border-radius: 20rem;
+			}
 
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="card">
-                    <div class="card-body mt-n1 mb-n1">
-                        <div class="row d-flex align-items-center">
-                            <div class="col-xl-6 col-lg-4 col-md-12 col-xs-12">
-                                <div class="form-row form-inline custom-inline-form">
-                                    <div class="row d-flex align-items-center mr-3">
-                                        <label class="col-form-label ml-2 mr-2">Audio</label>
-                                        <select class="form-control" style="width: 220px;">
-                                            <option value="1">기본값 - 마이크 (Realtek High Definition Audio)</option>
-                                            <option value="2">마이크 (S2240L High Definition Audio)</option>
-                                            <option value="3">마이크 (2-NVIDIA High Definition Audio)</option>
-                                        </select>
-                                    </div>
-                                    <div class="row d-flex align-items-center">
-                                        <label class="col-form-label ml-2 mr-2">Video</label>
-                                        <select class="form-control" style="width: 220px;">
-                                            <option value="1">NB Pro (FHD S53390438)</option>
-                                            <option value="2">LG HDR (S53390438)</option>
-                                            <option value="3">THOR CAM (34203S53390438)</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div><!-- end col -->
-                            <div class="col-xl-6 col-lg-8 col-md-12 col-xs-12 th-bottom-wrap">
-                                <div class="text-right">
-                                    <input type="checkbox" checked data-toggle="toggle" data-style="ios" data-size="lg"
-                                        data-onstyle="info" data-on="<i class='mdi mdi-video-outline'></i>"
-                                        data-off="<i class='mdi mdi-video-off-outline'></i>">
-                                    <input type="checkbox" checked data-toggle="toggle" data-style="ios" data-size="lg"
-                                        data-onstyle="danger" data-on="<i class='mdi mdi-microphone'></i>"
-                                        data-off="<i class='mdi mdi-microphone-off'></i>">
-                                    <button type="button" class="btn btn-vc-division maintenance-icon mr-2 chat-mode-change" data-toggle="tooltip" data-placement="top" data-original-title="화면 분할"><i
-                                            class="mdi mdi-grid-large" style="margin-left: -4px;"></i></button>
-                                    <button type="button" class="btn btn-vc-blur maintenance-icon mr-2" data-toggle="tooltip" data-placement="top" data-original-title="배경 흐리게"><i
-                                            class="mdi mdi-blur" style="margin-left: -4px;"></i></button>                                            
-                                    <button type="button" class="btn btn-vc-share maintenance-icon mr-2" data-toggle="tooltip" data-placement="top" data-original-title="화면 공유"><i
-                                            class="mdi mdi-monitor-share" style="margin-left: -1px;"></i></button>
-                                    <span class="position-relative">
-                                            <span class="noti-icon-badge animate__heartBeat"></span>
-                                            <button id="btn-chat" type="button" class="btn btn-vc-chat maintenance-icon mr-2" data-toggle="tooltip" data-placement="top" data-original-title="채팅"><i
-                                        class="uil uil-comment-alt-dots" style="margin-left: -1px;"></i></button>
-                                    </span>
-                                    <button class="btn btn-danger btn-rounded width-150 th-btn-end">종료</button>
-                                </div>
-                            </div><!-- end col -->
-                        </div>
-                    </div> <!-- end card-body-->
-                </div> <!-- end card-->
-            </div> <!-- end col-->
-        </div> <!-- end row -->
-        <!-- END wrapper -->
+			.btn {
+				line-height: 1.3;
+				padding: 0.5rem 1rem !important;
+			}
 
-        <!-- bundle -->
-        <script src="resource/js/vendor.min.js"></script>
-        <script src="resource/js/app.min.js"></script>
-        <script src="resource/js/vendor/apexcharts.min.js"></script>
-        <script src="resource/js/vendor/fullcalendar.min.js"></script>
-        <script src="resource/js/vendor/jquery.dataTables.min.js"></script>
-        <script src="resource/js/vendor/dataTables.bootstrap4.js"></script>
-        <script src="resource/js/vendor/dataTables.responsive.min.js"></script>
-        <script src="resource/js/vendor/responsive.bootstrap4.min.js"></script>
-        <script src="resource/js/vendor/dataTables.checkboxes.min.js"></script>
-        <script src="resource/js/vendor/dropzone.min.js"></script>
-        <script src="resource/js/ui/component.fileupload.js"></script>
-        <script src="resource/lib/simplelightbox/simpleLightbox.min.js"></script>
-        <script src="resource/js/common.js"></script>
+			.btn-vc-share {
+				padding-left: 14px !important;
+				padding-right: 14px !important;
+			}
 
-        <script src="resource/js/bootstrap4-toggle.min.js"></script>
-        <style>
-            .toggle.ios,
-            .toggle-on.ios,
-            .toggle-off.ios {
-                border-radius: 20rem;
-            }
-
-            .toggle.ios .toggle-handle {
-                border-radius: 20rem;
-            }
-
-            .btn {
-                line-height: 1.3;
-                padding: .5rem 1rem !important;
-            }
-
-            .btn-vc-share {
-                padding-left: 14px !important;
-                padding-right: 14px !important;
-            }
-
-            .btn-vc-chat {
-                padding-left: 14px !important;
-                padding-right: 14px !important;
-            }
-        </style>
-        <script>
-            $(function () {
-                $("#btn-chat").on("click", function () {
-                    $("#video-aside").toggleClass('d-block');
-                    $("#video-aside textarea").focus(); 
-                    if ($("#video-main").hasClass("col-xl-12")) {
-                        $("#video-main").attr('class', 'col-xl-10 col-lg-12 col-md-12 col-xs-12');
-                        $(".noti-icon-badge").remove();    
-                    } else {
-                        $("#video-main").attr('class', 'col-xl-12 col-lg-12 col-md-12 col-xs-12')
-                    }
-                });
-            })
-            $(document).ready(function () {
-                var itemLength = 1;
-                var html = '<div class="conversation-windows__item chat-mode-change-double-click">\
+			.btn-vc-chat {
+				padding-left: 14px !important;
+				padding-right: 14px !important;
+			}
+		</style>
+		<script>
+			$(function () {
+				$('#btn-chat, #btn-modify').on('click', function () {
+					$('#video-main').attr('class', 'col-12 col-lg-8 h-100');
+					if ($(this)[0].id === 'btn-chat') {
+						$('.noti-icon-badge').remove();
+						if ($('#video-aside').hasClass('d-block')) {
+							$('#video-main').attr('class', 'col-12 col-lg-12 h-100');
+							$('#video-aside').removeClass('d-block');
+						} else {
+							$('#video-aside').removeClass('d-block');
+							$('#video-consultation').removeClass('d-block');
+							$('#video-aside').addClass('d-block');
+						}
+					}
+					if ($(this)[0].id === 'btn-modify') {
+						if ($('#video-consultation').hasClass('d-block')) {
+							$('#video-main').attr('class', 'col-12 col-lg-12 h-100');
+							$('#video-consultation').removeClass('d-block');
+						} else {
+							$('#video-aside').removeClass('d-block');
+							$('#video-consultation').removeClass('d-block');
+							$('#video-consultation').addClass('d-block');
+							var element = $('#video-consultation .simplebar-content-wrapper');
+							element.scrollTop(element.prop('scrollHeight'));
+						}
+					}
+				});
+			});
+			$(document).ready(function () {
+				var itemLength = 1;
+				var html =
+					'<div class="conversation-windows__item chat-mode-change-double-click">\
                         <div class="card">\
                             <div class="card-body bg-cam rounded">\
                                 <div class="dropdown float-right">\
@@ -561,89 +804,105 @@
                                 </div>\
                             </div>\
                         </div>\
-                    </div>'
-                    
-                    //채팅 추가
-                    $(".test-plus").on("click", function () {                       
-                        if (itemLength < 8){
-                            $(".conversation-windows__wrap").removeClass("length2");
-                            $(".conversation-windows__wrap").removeClass("length3");
-                            $(".conversation-windows__wrap").removeClass("length4");
-                            $(".conversation-windows__wrap").removeClass("length5");
-                            $(".conversation-windows__wrap").removeClass("length6");
-                            $(".conversation-windows__wrap").removeClass("length7");
-                            $(".conversation-windows__wrap").removeClass("length8");                             
-                            $(".conversation-windows__wrap").append(html);
-                            itemLength =  $(".conversation-windows__wrap .conversation-windows__item").length;
-                            $(".conversation-windows__wrap").addClass("length" + itemLength);    
-                        }
-                        return false;
-                    });
+                    </div>';
 
-                    //채팅 삭제
-                    $(".test-minus").on("click", function () {  
-                        if (itemLength > 1){
-                            $(".conversation-windows__wrap").removeClass("length2");
-                            $(".conversation-windows__wrap").removeClass("length3");
-                            $(".conversation-windows__wrap").removeClass("length4");
-                            $(".conversation-windows__wrap").removeClass("length5");
-                            $(".conversation-windows__wrap").removeClass("length6");
-                            $(".conversation-windows__wrap").removeClass("length7");
-                            $(".conversation-windows__wrap").removeClass("length8");                              
-                            $(".conversation-windows__wrap .conversation-windows__item:last").remove();
-                            itemLength =  $(".conversation-windows__wrap .conversation-windows__item").length;
-                            $(".conversation-windows__wrap").addClass("length" + itemLength);
-                        }
-                        return false;
-                    });
+				//채팅 추가
+				$('.test-plus').on('click', function () {
+					if (itemLength < 8) {
+						$('.conversation-windows__wrap').removeClass('length2');
+						$('.conversation-windows__wrap').removeClass('length3');
+						$('.conversation-windows__wrap').removeClass('length4');
+						$('.conversation-windows__wrap').removeClass('length5');
+						$('.conversation-windows__wrap').removeClass('length6');
+						$('.conversation-windows__wrap').removeClass('length7');
+						$('.conversation-windows__wrap').removeClass('length8');
+						$('.conversation-windows__wrap').append(html);
+						itemLength = $('.conversation-windows__wrap .conversation-windows__item').length;
+						$('.conversation-windows__wrap').addClass('length' + itemLength);
+					}
+					return false;
+				});
 
-                    //특정인 강조형
-                    $(document).on("click", ".chat-mode02", function () {
-                        $("#chatMode02").removeClass("gu-hide");
-                        $("#chatMode01").addClass("gu-hide");
-                    });
+				//채팅 삭제
+				$('.test-minus').on('click', function () {
+					if (itemLength > 1) {
+						$('.conversation-windows__wrap').removeClass('length2');
+						$('.conversation-windows__wrap').removeClass('length3');
+						$('.conversation-windows__wrap').removeClass('length4');
+						$('.conversation-windows__wrap').removeClass('length5');
+						$('.conversation-windows__wrap').removeClass('length6');
+						$('.conversation-windows__wrap').removeClass('length7');
+						$('.conversation-windows__wrap').removeClass('length8');
+						$('.conversation-windows__wrap .conversation-windows__item:last').remove();
+						itemLength = $('.conversation-windows__wrap .conversation-windows__item').length;
+						$('.conversation-windows__wrap').addClass('length' + itemLength);
+					}
+					return false;
+				});
 
-                    //채팅 모드 변환
-                    $(document).on("click", ".chat-mode-change", function () {
-                        if($("#chatMode01").hasClass("gu-hide")){
-                            $("#chatMode01").removeClass("gu-hide");
-                            $("#chatMode02").addClass("gu-hide");
-                        }else {
-                            $("#chatMode02").removeClass("gu-hide");
-                            $("#chatMode01").addClass("gu-hide");
-                        }
-                    });
+				//특정인 강조형
+				$(document).on('click', '.chat-mode02', function () {
+					$('#chatMode02').removeClass('gu-hide');
+					$('#chatMode01').addClass('gu-hide');
+				});
 
-                    //채팅 모드 변환 (더블클릭)
-                    $(document).on("dblclick", ".chat-mode-change-double-click", function () {
-                        if($("#chatMode01").hasClass("gu-hide")){
-                            $("#chatMode01").removeClass("gu-hide");
-                            $("#chatMode02").addClass("gu-hide");
-                        }else {
-                            $("#chatMode02").removeClass("gu-hide");
-                            $("#chatMode01").addClass("gu-hide");
-                        }
-                    });
+				//채팅 모드 변환
+				$(document).on('click', '.chat-mode-change', function () {
+					if ($('#chatMode01').hasClass('gu-hide')) {
+						$('#chatMode01').removeClass('gu-hide');
+						$('#chatMode02').addClass('gu-hide');
+					} else {
+						$('#chatMode02').removeClass('gu-hide');
+						$('#chatMode01').addClass('gu-hide');
+					}
+				});
 
-                    //내보내기
-                    $(document).on("click", ".chat-minus", function () {
-                        if (itemLength > 1){
-                            $(".conversation-windows__wrap").removeClass("length2");
-                            $(".conversation-windows__wrap").removeClass("length3");
-                            $(".conversation-windows__wrap").removeClass("length4");
-                            $(".conversation-windows__wrap").removeClass("length5");
-                            $(".conversation-windows__wrap").removeClass("length6");
-                            $(".conversation-windows__wrap").removeClass("length7");
-                            $(".conversation-windows__wrap").removeClass("length8");                              
-                            $(this).parents(".conversation-windows__item").remove();
-                            itemLength =  $(".conversation-windows__wrap .conversation-windows__item").length;
-                            $(".conversation-windows__wrap").addClass("length" + itemLength);
-                        }
-                        return false;
-                    });
+				//채팅 모드 변환 (더블클릭)
+				$(document).on('dblclick', '.chat-mode-change-double-click', function () {
+					if ($('#chatMode01').hasClass('gu-hide')) {
+						$('#chatMode01').removeClass('gu-hide');
+						$('#chatMode02').addClass('gu-hide');
+					} else {
+						$('#chatMode02').removeClass('gu-hide');
+						$('#chatMode01').addClass('gu-hide');
+					}
+				});
 
-            });
-        </script>
-</body>
+				//내보내기
+				$(document).on('click', '.chat-minus', function () {
+					if (itemLength > 1) {
+						$('.conversation-windows__wrap').removeClass('length2');
+						$('.conversation-windows__wrap').removeClass('length3');
+						$('.conversation-windows__wrap').removeClass('length4');
+						$('.conversation-windows__wrap').removeClass('length5');
+						$('.conversation-windows__wrap').removeClass('length6');
+						$('.conversation-windows__wrap').removeClass('length7');
+						$('.conversation-windows__wrap').removeClass('length8');
+						$(this).parents('.conversation-windows__item').remove();
+						itemLength = $('.conversation-windows__wrap .conversation-windows__item').length;
+						$('.conversation-windows__wrap').addClass('length' + itemLength);
+					}
+					return false;
+				});
+			});
 
+			// $(document).ready(function () {
+			// 	$('#demo1').jsRapSpliter({
+			// 		height: '300px',
+			// 	});
+			// });
+		</script>
+		<style>
+			.consultation {
+				display: flex;
+				flex-direction: column;
+				height: 100vh;
+			}
+			@media (max-width: 992px) {
+				.consultation {
+					height: 100%;
+				}
+			}
+		</style>
+	</body>
 </html>
