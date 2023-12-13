@@ -3721,7 +3721,7 @@ options = {
         opacity: 0,
         label: {
           offsetX: 0,
-          offsetY: 6,
+          offsetY: 16,
           borderColor: '#8265ff',
           text: '70',
           style: {
@@ -3738,7 +3738,7 @@ options = {
         opacity: 0.1,
         label: {
           offsetX: 0,
-          offsetY: 6,
+          offsetY: -4,
           borderColor: '#8265ff',
           text: '100',
           style: {
@@ -3878,7 +3878,7 @@ var options = {
           opacity: 0,
           label: {
             offsetX: 0,
-            offsetY: 6,
+            offsetY: 16,
             borderColor: '#8265ff',
             text: '80',
             style: {
@@ -3895,7 +3895,7 @@ var options = {
           opacity: 0.1,
           label: {
             offsetX: 0,
-            offsetY: 6,
+            offsetY: -4,
             borderColor: '#8265ff',
             text: '120',
             style: {
@@ -4070,22 +4070,22 @@ dataColors && (colors = dataColors.split(','));
 var options = {
     annotations: {
       yaxis: [
-        {
-          y: 0,
-          borderColor: 'transparent',
-          fillColor: 'transparent',
-          opacity: 0,
-          label: {
-            offsetX: 0,
-            offsetY: 6,
-            borderColor: '#8265ff',
-            text: '0',
-            style: {
-              background: '#8265ff',
-              color: '#fff',
-            },
-          },
-        },
+        // {
+        //   y: 0,
+        //   borderColor: 'transparent',
+        //   fillColor: 'transparent',
+        //   opacity: 0,
+        //   label: {
+        //     offsetX: 0,
+        //     offsetY: 6,
+        //     borderColor: '#8265ff',
+        //     text: '0',
+        //     style: {
+        //       background: '#8265ff',
+        //       color: '#fff',
+        //     },
+        //   },
+        // },
         {
           y: 0,
           y2: 50,
@@ -4094,7 +4094,7 @@ var options = {
           opacity: 0.1,
           label: {
             offsetX: 0,
-            offsetY: 6,
+            offsetY: -4,
             borderColor: '#8265ff',
             text: '50',
             style: {
@@ -4270,7 +4270,7 @@ options = {
         opacity: 0,
         label: {
           offsetX: 0,
-          offsetY: 6,
+          offsetY: 16,
           borderColor: '#65b6ff',
           text: '1800',
           style: {
@@ -4288,7 +4288,7 @@ options = {
 
         label: {
           offsetX: 0,
-          offsetY: 6,
+          offsetY: -4,
           borderColor: '#65b6ff',
           text: '2100',
           style: {
