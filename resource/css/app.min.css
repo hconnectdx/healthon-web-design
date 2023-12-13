@@ -17709,9 +17709,6 @@ body.authentication-bg {
     fill: #adb5bd
 }
 
-.apexcharts-point-annotations text, .apexcharts-xaxis-annotations text, .apexcharts-yaxis-annotations text {
-    fill: #fff
-}
 
 .apexcharts-radar-series polygon {
     fill: transparent;
